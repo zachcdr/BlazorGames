@@ -1,0 +1,122 @@
+﻿@page "/games/{GameId}"
+
+@using Quarantine.Models;
+@using Quarantine.Interfaces;
+@using Quarantine.Models.Enums;
+@using System.Threading;
+@using Microsoft.AspNetCore.WebUtilities;
+@inject IHandleGameState _gameState;
+@inject NavigationManager navManager;
+
+<h1>Current Game: @GameId</h1>
+
+<p>Pull up a given game's details</p>
+
+@if (rideTheBus == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    @if (rideTheBus.GameState == GameState.New && NewPlayer.Id == 0)
+    {
+        <EditForm Model="@NewPlayer" OnValidSubmit="@SubmitPlayer">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <p>
+                <label for="playerName">Player Name: </label>
+                <InputText id="playerName" @bind-Value="NewPlayer.Name"></InputText>
+            </p>
+            <button class="btn btn-success" type="submit">Join Game</button>
+        </EditForm>
+    }
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>State</th>
+                <th>IsAdmin</th>
+                <th>Drinks</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var player in rideTheBus.Players)
+            {
+                <tr>
+                    <td>@player.Id</td>
+                    <td>@player.Name</td>
+                    <td>@player.State</td>
+                    <td>@player.IsAdmin</td>
+                    <td>@player.Drinks</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public string GameId { get; set; }
+
+    public Player NewPlayer = new Player();
+
+    private Quarantine.Games.RideTheBusGame rideThebusBusGame;
+    private Models.RideTheBus rideTheBus;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var uri = navManager.ToAbsoluteUri(navManager.Uri);
+
+        var name = "";
+
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("name", out var param))
+        {
+            name = param.First();
+        }
+
+        rideThebusBusGame = new Games.RideTheBusGame(_gameState, new Guid(GameId));
+
+        while (rideThebusBusGame.Game == null)
+        {
+            await Task.Run(() => Thread.Sleep(500));
+        }
+
+        rideTheBus = rideThebusBusGame.Game;
+
+        if (!string.IsNullOrWhiteSpace(name))
+        {
+            NewPlayer = rideThebusBusGame.Game.Players.Single(player => player.Name == name);
+        }
+
+        Refresh();
+    }
+
+    private async Task SubmitPlayer()
+    {
+        await rideThebusBusGame.Join(NewPlayer);
+
+        NewPlayer = rideThebusBusGame.Game.Players.Single(player => player.Name == NewPlayer.Name);
+    }
+
+    private async void Refresh()
+    {
+        while (true)
+        {
+            if (NewPlayer.Id == 0 || NewPlayer.State == Models.Enums.PlayerState.WaitingTurn)
+            {
+                var loadedGame = await rideThebusBusGame.Load();
+
+                if (loadedGame.LastModified > rideTheBus.LastModified)
+                {
+                    rideTheBus = loadedGame;
+                    StateHasChanged();
+                }
+            }
+
+            await Task.Run(() => Thread.Sleep(500));
+        }
+    }
+}

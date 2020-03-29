@@ -1,0 +1,85 @@
+﻿@page "/games"
+
+@using Quarantine.Interfaces
+@using Quarantine.Services
+@using Quarantine.Models
+@using Quarantine.Games
+@using Microsoft.AspNetCore.WebUtilities;
+@inject IHandleRetreivingGames _iServiceGames;
+@inject IHandleGameState _gameState;
+@inject NavigationManager NavigationManager;
+
+<h1>All Games</h1>
+
+<p>Lists all the games found in the Games Directory.</p>
+
+@if (Games == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    <EditForm Model="@NewGame" OnValidSubmit="@SubmitNewGame">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <p>
+            <label for="playerName">Player Name: </label>
+            <InputText id="playerName" @bind-Value="NewGame.PlayerName"></InputText>
+        </p>
+        <p>
+            <label for="gameName">Game Name: </label>
+            <InputText id="gameName" @bind-Value="NewGame.GameName"></InputText>
+        </p>
+        <button class="btn btn-primary" type="submit">Create Game</button>
+    </EditForm>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Game Type</th>
+                <th>Game State</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var game in Games)
+            {
+                <tr>
+                    <a href="/games/@game.Id"><td>@game.Name</td></a>
+                    <td>@game.GameType</td>
+                    <td>@game.GameState</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private GameService _gameService;
+    private List<GameDetails> Games;
+    private RideTheBusGame rideThebusBusGame;
+
+    private InitiateGame NewGame = new InitiateGame();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _gameService = new GameService(_iServiceGames);
+
+        var games = await _gameService.GetGames();
+        Games = games.ToList();
+    }
+
+    private async Task SubmitNewGame()
+    {
+        rideThebusBusGame = new RideTheBusGame(_gameState);
+
+        rideThebusBusGame.AssignName(NewGame.GameName);
+
+        await rideThebusBusGame.Join(new Player() { Name = NewGame.PlayerName });
+
+        var query = new Dictionary<string, string> { { "name", NewGame.PlayerName } };
+
+        NavigationManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{rideThebusBusGame.Game.Id}", query));
+    }
+}
