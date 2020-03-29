@@ -7,39 +7,29 @@ namespace Quarantine.Helpers
     public static class FileProcessor
     {
         #region Public Methods
-        public static string ReadFile(string file)
+        public static string ReadFile(string path, string file)
         {
-            try
-            {
-                using (StreamReader reader = new StreamReader(file))
-                {
-                    return reader.ReadToEnd();
-                }
-            }
-            catch (Exception ex)
-            {
+            DirectoryCheck(path);
 
-            }
-
-            return string.Empty;
-        }
-
-        public static void WriteFile(string contents, string location)
-        {
-            try
+            using (StreamReader reader = new StreamReader($"{path}/{file}"))
             {
-                File.WriteAllText(location, contents);
-            }
-            catch (Exception ex)
-            {
-
+                return reader.ReadToEnd();
             }
         }
 
-        public static List<string> GetFiles(string location)
+        public static void WriteFile(string contents, string path, string file)
         {
-            DirectoryInfo d = new DirectoryInfo(location);//Assuming Test is your Folder
-            FileInfo[] Files = d.GetFiles(); //Getting Text files
+            DirectoryCheck(path);
+
+            File.WriteAllText($"{path}/{file}", contents);
+        }
+
+        public static List<string> GetFiles(string path)
+        {
+            DirectoryCheck(path);
+
+            DirectoryInfo d = new DirectoryInfo(path);
+            FileInfo[] Files = d.GetFiles();
             var files = new List<string>();
             foreach (FileInfo file in Files)
             {
@@ -49,7 +39,14 @@ namespace Quarantine.Helpers
 
             return files;
         }
-
         #endregion
+
+        private static void DirectoryCheck(string path)
+        {
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+        }
     }
 }
