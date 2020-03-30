@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Quarantine.Models;
+
+<div class="card-deck" style="max-width: 100rem;">
+    @foreach (var card in Cards)
+    {
+    <div class="card">
+        @if (!card.IsVisible)
+        {
+            <img class="card-img" src="../Images/@card.FileName" alt="Card image cap">
+        }
+        else
+        {
+            <img class="card-img" src="../Images/CardBackground.png" alt="Card image cap">
+        }
+    </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public IList<Card> Cards { get; set; }
+}

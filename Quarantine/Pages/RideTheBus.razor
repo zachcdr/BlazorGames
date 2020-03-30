@@ -55,12 +55,32 @@ else
             }
         </tbody>
     </table>
+
+    <CardHand Cards="@NewPlayer.Cards"></CardHand>
+
+    @if (Options?.Count > 0)
+    {
+        @foreach (string option in Options)
+        {
+            <button class="btn btn-primary" type="button" @onclick="(async() => { await SubmitTurn(option); })">@option</button>
+        }
+    }
+
+    @if (NewPlayer.IsAdmin && rideTheBus.GameState == GameState.New)
+    {
+        <button class="btn btn-primary" type="button" @onclick="StartGame">Start Game</button>
+    }
+
+    @if (NewPlayer.State == PlayerState.Turn && rideTheBus.GameState == GameState.InProgress)
+    {
+        <button class="btn btn-secondary" type="button" @onclick="PlayTurn">Play Turn</button>
+    }
 }
 
 @code {
     [Parameter]
     public string GameId { get; set; }
-
+    public IList<string> Options { get; set; }
     public Player NewPlayer = new Player();
 
     private Quarantine.Games.RideTheBusGame rideThebusBusGame;
@@ -118,5 +138,22 @@ else
 
             await Task.Run(() => Thread.Sleep(500));
         }
+    }
+
+    private async Task StartGame()
+    {
+        await rideThebusBusGame.Deal();
+        await rideThebusBusGame.Start();
+    }
+
+    private async Task PlayTurn()
+    {
+        Options = await rideThebusBusGame.Play();
+    }
+
+    private async Task SubmitTurn(string choice)
+    {
+        await rideThebusBusGame.SubmitTurn(choice);
+        Options = null;
     }
 }

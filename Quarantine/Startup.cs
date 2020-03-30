@@ -31,8 +31,10 @@ namespace Quarantine
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
-            services.AddTransient<IHandleGameState, LocalGameRepo>();
-            services.AddTransient<IHandleRetreivingGames, LocalGameRepo>();
+            //services.AddTransient<IHandleGameState, LocalGameRepo>();
+            //services.AddTransient<IHandleRetreivingGames, LocalGameRepo>();  uncomment and comment AzureGameRepo lines to enable local storage
+            services.AddTransient<IHandleGameState, AzureGameRepo>();
+            services.AddTransient<IHandleRetreivingGames, AzureGameRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
