@@ -81,7 +81,7 @@ else
     [Parameter]
     public string GameId { get; set; }
     public IList<string> Options { get; set; }
-    public Player NewPlayer = new Player();
+    public Player NewPlayer = new Player(){ State = PlayerState.WaitingTurn };
 
     private Quarantine.Games.RideTheBusGame rideThebusBusGame;
     private Models.RideTheBus rideTheBus;
@@ -118,25 +118,28 @@ else
     {
         await rideThebusBusGame.Join(NewPlayer);
 
-        NewPlayer = rideThebusBusGame.Game.Players.Single(player => player.Name == NewPlayer.Name);
+        var query = new Dictionary<string, string> { { "name", NewPlayer.Name } };
+
+        navManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{rideThebusBusGame.Game.Id}", query));
     }
 
     private async void Refresh()
     {
         while (true)
         {
-            if (NewPlayer.Id == 0 || NewPlayer.State == Models.Enums.PlayerState.WaitingTurn)
+            if (string.IsNullOrWhiteSpace(NewPlayer.Name) || NewPlayer.State == Models.Enums.PlayerState.WaitingTurn)
             {
                 var loadedGame = await rideThebusBusGame.Load();
 
                 if (loadedGame.LastModified > rideTheBus.LastModified)
                 {
                     rideTheBus = loadedGame;
+                    NewPlayer = loadedGame.Players.Single(player => player.Name == NewPlayer.Name);
                     StateHasChanged();
                 }
             }
 
-            await Task.Run(() => Thread.Sleep(500));
+            await Task.Run(() => Thread.Sleep(1500));
         }
     }
 

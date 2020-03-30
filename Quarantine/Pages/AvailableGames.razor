@@ -1,9 +1,10 @@
 ﻿@page "/games"
 
-@using Quarantine.Interfaces
-@using Quarantine.Services
-@using Quarantine.Models
-@using Quarantine.Games
+@using Quarantine.Interfaces;
+@using Quarantine.Services;
+@using Quarantine.Models;
+@using Quarantine.Games;
+@using Quarantine.Responses;
 @using Microsoft.AspNetCore.WebUtilities;
 @inject IHandleRetreivingGames _iServiceGames;
 @inject IHandleGameState _gameState;
@@ -13,52 +14,59 @@
 
 <p>Lists all the games found in the Games Directory.</p>
 
-@if (Games == null)
+@if (ServiceResponse != null && !ServiceResponse.IsSuccess)
 {
-    <p><em>Loading...</em></p>
+    <div class="alert alert-danger">
+        @ServiceResponse.Message
+    </div>
+}
+
+@if (ServiceResponse?.Data == null)
+{
+<p><em>Loading...</em></p>
 }
 else
 {
 
-    <EditForm Model="@NewGame" OnValidSubmit="@SubmitNewGame">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
-        <p>
-            <label for="playerName">Player Name: </label>
-            <InputText id="playerName" @bind-Value="NewGame.PlayerName"></InputText>
-        </p>
-        <p>
-            <label for="gameName">Game Name: </label>
-            <InputText id="gameName" @bind-Value="NewGame.GameName"></InputText>
-        </p>
-        <button class="btn btn-primary" type="submit">Create Game</button>
-    </EditForm>
+<EditForm Model="@NewGame" OnValidSubmit="@SubmitNewGame">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <p>
+        <label for="playerName">Player Name: </label>
+        <InputText id="playerName" @bind-Value="NewGame.PlayerName"></InputText>
+    </p>
+    <p>
+        <label for="gameName">Game Name: </label>
+        <InputText id="gameName" @bind-Value="NewGame.GameName"></InputText>
+    </p>
+    <button class="btn btn-primary" type="submit">Create Game</button>
+</EditForm>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Game Type</th>
-                <th>Game State</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var game in Games)
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Game Type</th>
+            <th>Game State</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var game in ServiceResponse?.Data)
             {
-                <tr>
-                    <a href="/games/@game.Id"><td>@game.Name</td></a>
-                    <td>@game.GameType</td>
-                    <td>@game.GameState</td>
-                </tr>
+        <tr>
+            <a href="/games/@game.Id"><td>@game.Name</td></a>
+            <td>@game.GameType</td>
+            <td>@game.GameState</td>
+        </tr>
             }
-        </tbody>
-    </table>
+    </tbody>
+</table>
 }
 
 @code {
     private GameService _gameService;
-    private List<GameDetails> Games;
     private RideTheBusGame rideThebusBusGame;
+private ServiceResponse<IList<GameDetails>> ServiceResponse;
 
     private InitiateGame NewGame = new InitiateGame();
 
@@ -66,8 +74,7 @@ else
     {
         _gameService = new GameService(_iServiceGames);
 
-        var games = await _gameService.GetGames(Models.Enums.GameType.RideTheBus);
-        Games = games.ToList();
+        ServiceResponse = await _gameService.GetGames(Models.Enums.GameType.RideTheBus);
     }
 
     private async Task SubmitNewGame()

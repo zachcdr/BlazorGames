@@ -5,7 +5,7 @@
     @foreach (var card in Cards)
     {
     <div class="card">
-        @if (!card.IsVisible)
+        @if (card.IsVisible)
         {
             <img class="card-img" src="../Images/@card.FileName" alt="Card image cap">
         }

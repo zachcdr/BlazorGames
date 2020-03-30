@@ -1,11 +1,11 @@
 {
   "Round": 0,
-  "Id": "c46040ab-b50d-4a2f-814f-a2efe981967d",
-  "Name": "BlobTest",
+  "Id": "45907d23-6315-4518-be65-1c7cb508af97",
+  "Name": "gg",
   "Players": [
     {
       "Id": 1,
-      "Name": "Blob",
+      "Name": "gg",
       "Cards": [],
       "IsAdmin": true,
       "State": 2,
@@ -328,6 +328,6 @@
   ],
   "GameState": 0,
   "GameType": 0,
-  "CreatedOn": "2020-03-29T20:29:01.009346-07:00",
-  "LastModified": "2020-03-29T20:29:01.0153247-07:00"
+  "CreatedOn": "2020-03-30T10:14:38.8661701-07:00",
+  "LastModified": "2020-03-30T10:14:38.8661822-07:00"
 }

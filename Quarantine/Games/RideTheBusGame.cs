@@ -124,42 +124,60 @@ namespace Quarantine.Games
             return options;
         }
 
-        public async Task SubmitTurn(string option)
+        public async Task SubmitTurn(string choise)
         {
             bool success = false;
 
             var player = Game.Players.Single(player => player.State == PlayerState.PlayingTurn);
 
-            List<string> options = null;
-
             switch (Game.Round)
             {
                 case RideTheBusRounds.RedOrBlack:
-                    options = _redOrBlackOptions;
+                    success = PlayRedOrBlack(choise, player);
+                    player.Cards[0].IsVisible = true;
+                    if (Game.Players.All(p => p.Cards[0].IsVisible))
+                    {
+                        Game.Round = RideTheBusRounds.HigherOrLower;
+                    }
                     break;
                 case RideTheBusRounds.HigherOrLower:
-                    options = _higherOrLowerOptions;
+                    success = PlayHighOrLow(choise, player);
+                    player.Cards[1].IsVisible = true;
+                    if (Game.Players.All(p => p.Cards[1].IsVisible))
+                    {
+                        Game.Round = RideTheBusRounds.InsideOrOutside;
+                    }
                     break;
                 case RideTheBusRounds.InsideOrOutside:
-                    options = _insideOrOutsideOptions;
+                    success = PlayInsideOrOutside(choise, player);
+                    player.Cards[2].IsVisible = true;
+                    if (Game.Players.All(p => p.Cards[2].IsVisible))
+                    {
+                        Game.Round = RideTheBusRounds.NameTheSuit;
+                    }
                     break;
                 case RideTheBusRounds.NameTheSuit:
-                    options = _suitOptions;
+                    success = PlayNameTheSuit(choise, player);
+                    player.Cards[3].IsVisible = true;
+                    if (Game.Players.All(p => p.Cards[3].IsVisible))
+                    {
+                        Game.Round = RideTheBusRounds.RideTheBus;
+                    }
                     break;
             }
 
-            var drinks = (int)Game.Round;
+            var drinks = (int)Game.Round + 1;
 
             if (!success)
             {
                 player.Drinks = drinks;
-
-                await CyclePlayer();
             }
             else
             {
 
             }
+
+            await CyclePlayer();
         }
 
         #region Private Methods
@@ -193,6 +211,82 @@ namespace Quarantine.Games
             var gameResponse = await _gameState.LoadGame(GameType.RideTheBus, id);
 
             Game = Converter<RideTheBus>.FromJson(gameResponse);
+        }
+
+        private bool PlayRedOrBlack(string choice, Player player)
+        {
+            var correct = false;
+
+            switch (player.Cards[0].Suit)
+            {
+                case Suit.Diamond:
+                case Suit.Heart:
+                    if (choice == "Red")
+                        correct = true;
+                    break;
+                case Suit.Spade:
+                case Suit.Club:
+                    if (choice == "Black")
+                        correct = true;
+                    break;
+            }
+
+            return correct;
+        }
+
+        private bool PlayHighOrLow(string choice, Player player)
+        {
+            var correct = false;
+
+            switch (choice)
+            {
+                case "Higher":
+                    if (player.Cards[0].Value < player.Cards[1].Value)
+                    {
+                        correct = true;
+                    }
+                    break;
+                case "Lower":
+                    if (player.Cards[0].Value < player.Cards[1].Value)
+                    {
+                        correct = true;
+                    }
+                    break;
+            }
+
+            return correct;
+        }
+
+        private bool PlayInsideOrOutside(string choice, Player player)
+        {
+            var correct = false;
+
+            var cards = new List<Card>() { player.Cards[0], player.Cards[1] }.OrderBy(c => c.Value).ToList();
+
+            switch (choice)
+            {
+                case "Inside":
+                    if (cards[0].Value < player.Cards[2].Value && cards[1].Value > player.Cards[2].Value)
+                    {
+                        correct = true;
+                    }
+                    break;
+                case "Outside":
+                    if (cards[0].Value > player.Cards[2].Value || cards[1].Value < player.Cards[2].Value)
+                    {
+                        correct = true;
+                    }
+                    break;
+            }
+
+            return correct;
+        }
+
+        private bool PlayNameTheSuit(string choice, Player player)
+        {
+            var suit = (Suit)Enum.Parse(typeof(Suit), choice);
+
+            return suit == player.Cards[3].Suit;
         }
         #endregion
     }

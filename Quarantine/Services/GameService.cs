@@ -2,6 +2,8 @@
 using Quarantine.Interfaces;
 using Quarantine.Models;
 using Quarantine.Models.Enums;
+using Quarantine.Responses;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -15,18 +17,25 @@ namespace Quarantine.Services
             _gameRepo = handleRetreivingGames;
         }
 
-        public async Task<IList<GameDetails>> GetGames(GameType gameType)
+        public async Task<ServiceResponse<IList<GameDetails>>> GetGames(GameType gameType)
         {
-            var gameResponse = await _gameRepo.GetGames(gameType);
-
-            var gameDetails = new List<GameDetails>();
-
-            foreach (var game in gameResponse)
+            try
             {
-                gameDetails.Add(Converter<GameDetails>.FromJson(game));
-            }
+                var gameResponse = await _gameRepo.GetGames(gameType);
 
-            return gameDetails;
+                var gameDetails = new List<GameDetails>();
+
+                foreach (var game in gameResponse)
+                {
+                    gameDetails.Add(Converter<GameDetails>.FromJson(game));
+                }
+
+                return new ServiceResponse<IList<GameDetails>>(gameDetails, true);
+            }
+            catch (Exception ex)
+            {
+                return new ServiceResponse<IList<GameDetails>>(null, false, ex.Message);
+            }
         }
     }
 }
