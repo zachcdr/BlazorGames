@@ -1,12 +1,37 @@
 {
   "Round": 0,
-  "Id": "e47ffacc-224b-459f-9d3a-dbd0dacd277d",
-  "Name": "b",
+  "Id": "45907d23-6315-4518-be65-1c7cb508af97",
+  "Name": "gg",
   "Players": [
     {
       "Id": 1,
-      "Name": "b",
-      "Cards": [],
+      "Name": "gg",
+      "Cards": [
+        {
+          "Value": 1,
+          "Suit": 2,
+          "IsVisible": false,
+          "FileName": "2D.png"
+        },
+        {
+          "Value": 8,
+          "Suit": 3,
+          "IsVisible": false,
+          "FileName": "9S.png"
+        },
+        {
+          "Value": 5,
+          "Suit": 0,
+          "IsVisible": false,
+          "FileName": "6H.png"
+        },
+        {
+          "Value": 1,
+          "Suit": 3,
+          "IsVisible": false,
+          "FileName": "2S.png"
+        }
+      ],
       "IsAdmin": true,
       "State": 2,
       "Drinks": 0
@@ -42,12 +67,6 @@
       "Suit": 0,
       "IsVisible": false,
       "FileName": "5H.png"
-    },
-    {
-      "Value": 5,
-      "Suit": 0,
-      "IsVisible": false,
-      "FileName": "6H.png"
     },
     {
       "Value": 6,
@@ -176,12 +195,6 @@
       "FileName": "AD.png"
     },
     {
-      "Value": 1,
-      "Suit": 2,
-      "IsVisible": false,
-      "FileName": "2D.png"
-    },
-    {
       "Value": 2,
       "Suit": 2,
       "IsVisible": false,
@@ -254,12 +267,6 @@
       "FileName": "AS.png"
     },
     {
-      "Value": 1,
-      "Suit": 3,
-      "IsVisible": false,
-      "FileName": "2S.png"
-    },
-    {
       "Value": 2,
       "Suit": 3,
       "IsVisible": false,
@@ -296,12 +303,6 @@
       "FileName": "8S.png"
     },
     {
-      "Value": 8,
-      "Suit": 3,
-      "IsVisible": false,
-      "FileName": "9S.png"
-    },
-    {
       "Value": 9,
       "Suit": 3,
       "IsVisible": false,
@@ -328,6 +329,6 @@
   ],
   "GameState": 0,
   "GameType": 0,
-  "CreatedOn": "2020-03-29T20:35:42.7549064-07:00",
-  "LastModified": "2020-03-29T20:35:42.7580106-07:00"
+  "CreatedOn": "2020-03-30T10:14:38.8661701-07:00",
+  "LastModified": "2020-03-30T10:43:29.7852098-07:00"
 }

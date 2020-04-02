@@ -1,12 +1,37 @@
 {
   "Round": 0,
-  "Id": "164a4871-645b-4d9a-becd-af9b868db9fb",
-  "Name": "h",
+  "Id": "835e6d74-3fb9-4f8f-b837-f03899f67d6e",
+  "Name": "fsd",
   "Players": [
     {
       "Id": 1,
-      "Name": "h",
-      "Cards": [],
+      "Name": "asdf",
+      "Cards": [
+        {
+          "Value": 0,
+          "Suit": 2,
+          "IsVisible": false,
+          "FileName": "AD.png"
+        },
+        {
+          "Value": 3,
+          "Suit": 1,
+          "IsVisible": false,
+          "FileName": "4C.png"
+        },
+        {
+          "Value": 11,
+          "Suit": 2,
+          "IsVisible": false,
+          "FileName": "QD.png"
+        },
+        {
+          "Value": 3,
+          "Suit": 3,
+          "IsVisible": false,
+          "FileName": "4S.png"
+        }
+      ],
       "IsAdmin": true,
       "State": 2,
       "Drinks": 0
@@ -110,12 +135,6 @@
       "FileName": "3C.png"
     },
     {
-      "Value": 3,
-      "Suit": 1,
-      "IsVisible": false,
-      "FileName": "4C.png"
-    },
-    {
       "Value": 4,
       "Suit": 1,
       "IsVisible": false,
@@ -168,12 +187,6 @@
       "Suit": 1,
       "IsVisible": false,
       "FileName": "KC.png"
-    },
-    {
-      "Value": 0,
-      "Suit": 2,
-      "IsVisible": false,
-      "FileName": "AD.png"
     },
     {
       "Value": 1,
@@ -236,12 +249,6 @@
       "FileName": "JD.png"
     },
     {
-      "Value": 11,
-      "Suit": 2,
-      "IsVisible": false,
-      "FileName": "QD.png"
-    },
-    {
       "Value": 12,
       "Suit": 2,
       "IsVisible": false,
@@ -264,12 +271,6 @@
       "Suit": 3,
       "IsVisible": false,
       "FileName": "3S.png"
-    },
-    {
-      "Value": 3,
-      "Suit": 3,
-      "IsVisible": false,
-      "FileName": "4S.png"
     },
     {
       "Value": 4,
@@ -328,6 +329,6 @@
   ],
   "GameState": 0,
   "GameType": 0,
-  "CreatedOn": "2020-03-29T20:38:52.9046397-07:00",
-  "LastModified": "2020-03-29T20:38:52.9047283-07:00"
+  "CreatedOn": "2020-03-30T10:14:30.7780677-07:00",
+  "LastModified": "2020-03-30T10:46:10.6425176-07:00"
 }

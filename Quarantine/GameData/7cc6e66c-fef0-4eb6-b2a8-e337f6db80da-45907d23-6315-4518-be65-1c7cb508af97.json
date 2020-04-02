@@ -1,30 +1,43 @@
 {
   "Round": 0,
-  "Id": "21aa43cc-f57a-42d2-8d2b-7b3061e31815",
-  "Name": "BlobTest",
+  "Id": "45907d23-6315-4518-be65-1c7cb508af97",
+  "Name": "gg",
   "Players": [
     {
       "Id": 1,
-      "Name": "Blob",
-      "Cards": [],
+      "Name": "gg",
+      "Cards": [
+        {
+          "Value": 0,
+          "Suit": 0,
+          "IsVisible": false,
+          "FileName": "AH.png"
+        },
+        {
+          "Value": 1,
+          "Suit": 0,
+          "IsVisible": false,
+          "FileName": "2H.png"
+        },
+        {
+          "Value": 6,
+          "Suit": 0,
+          "IsVisible": false,
+          "FileName": "7H.png"
+        },
+        {
+          "Value": 7,
+          "Suit": 2,
+          "IsVisible": false,
+          "FileName": "8D.png"
+        }
+      ],
       "IsAdmin": true,
       "State": 2,
       "Drinks": 0
     }
   ],
   "Deck": [
-    {
-      "Value": 0,
-      "Suit": 0,
-      "IsVisible": false,
-      "FileName": "AH.png"
-    },
-    {
-      "Value": 1,
-      "Suit": 0,
-      "IsVisible": false,
-      "FileName": "2H.png"
-    },
     {
       "Value": 2,
       "Suit": 0,
@@ -48,12 +61,6 @@
       "Suit": 0,
       "IsVisible": false,
       "FileName": "6H.png"
-    },
-    {
-      "Value": 6,
-      "Suit": 0,
-      "IsVisible": false,
-      "FileName": "7H.png"
     },
     {
       "Value": 7,
@@ -212,12 +219,6 @@
       "FileName": "7D.png"
     },
     {
-      "Value": 7,
-      "Suit": 2,
-      "IsVisible": false,
-      "FileName": "8D.png"
-    },
-    {
       "Value": 8,
       "Suit": 2,
       "IsVisible": false,
@@ -328,6 +329,6 @@
   ],
   "GameState": 0,
   "GameType": 0,
-  "CreatedOn": "2020-03-29T20:32:29.6392876-07:00",
-  "LastModified": "2020-03-29T20:32:29.6426644-07:00"
+  "CreatedOn": "2020-03-30T10:14:38.8661701-07:00",
+  "LastModified": "2020-03-30T10:44:02.0782997-07:00"
 }
