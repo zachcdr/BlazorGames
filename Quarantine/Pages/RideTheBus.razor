@@ -2,6 +2,7 @@
 
 @using Quarantine.Models;
 @using Quarantine.Interfaces;
+@using Quarantine.Shared;
 @using Quarantine.Models.Enums;
 @using System.Threading;
 @using Microsoft.AspNetCore.WebUtilities;
@@ -81,7 +82,11 @@ else
     [Parameter]
     public string GameId { get; set; }
     public IList<string> Options { get; set; }
+<<<<<<< Updated upstream
     public Player NewPlayer = new Player();
+=======
+    public Player NewPlayer = new Player() { State = PlayerState.WaitingTurn };
+>>>>>>> Stashed changes
 
     private Quarantine.Games.RideTheBusGame rideThebusBusGame;
     private Models.RideTheBus rideTheBus;

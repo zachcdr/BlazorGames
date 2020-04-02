@@ -126,6 +126,8 @@ namespace Quarantine.Games
 
         public async Task SubmitTurn(string option)
         {
+            var drinks = (int)Game.Round + 1;
+
             bool success = false;
 
             var player = Game.Players.Single(player => player.State == PlayerState.PlayingTurn);
@@ -148,8 +150,11 @@ namespace Quarantine.Games
                     break;
             }
 
+<<<<<<< Updated upstream
             var drinks = (int)Game.Round;
 
+=======
+>>>>>>> Stashed changes
             if (!success)
             {
                 player.Drinks = drinks;
