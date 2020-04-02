@@ -10,6 +10,7 @@ namespace Quarantine.Models
         {
             Players = new List<Player>();
             Deck = GetDeck();
+            Bus = new List<Card>();
         }
         public IList<Card> Bus { get; set; }
         public RideTheBusRounds Round { get; set; }

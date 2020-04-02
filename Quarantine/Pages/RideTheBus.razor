@@ -2,15 +2,12 @@
 
 @using Quarantine.Models;
 @using Quarantine.Interfaces;
+@using Quarantine.Shared;
 @using Quarantine.Models.Enums;
 @using System.Threading;
 @using Microsoft.AspNetCore.WebUtilities;
 @inject IHandleGameState _gameState;
 @inject NavigationManager navManager;
-
-<h1>Current Game: @GameId</h1>
-
-<p>Pull up a given game's details</p>
 
 @if (rideTheBus == null)
 {
@@ -32,48 +29,83 @@ else
         </EditForm>
     }
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>State</th>
-                <th>IsAdmin</th>
-                <th>Drinks</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var player in rideTheBus.Players)
-            {
-                <tr>
-                    <td>@player.Id</td>
-                    <td>@player.Name</td>
-                    <td>@player.State</td>
-                    <td>@player.IsAdmin</td>
-                    <td>@player.Drinks</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <h1>- @rideTheBus.Name -</h1>
 
-    <CardHand Cards="@NewPlayer.Cards"></CardHand>
+    @if (ShowTable || rideTheBus.GameState == GameState.New)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>State</th>
+                    <th>Drinks</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var player in rideTheBus.Players)
+                {
+                    <tr>
+                        <td>@player.Name</td>
+                        <td>@player.State</td>
+                        <td>@player.Drinks</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    @if (rideTheBus.Round == RideTheBusRounds.RideTheBus)
+    {
+        <h3>The Bus</h3>
+        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(12,4)"></PlayerCards>
+        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(8,4)"></PlayerCards>
+        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(4,4)"></PlayerCards>
+        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(0,4)"></PlayerCards>
+    }
+
+    @if (NewPlayer.Cards.Count() > 0)
+    {
+        <div style="padding-top: 25px"><h3>Your Cards</h3></div>
+
+        @if (NewPlayer?.Drinks > 0)
+        {
+            <div style="padding: 5px" class="alert alert-danger">
+                <b>@NewPlayer.Name drink @NewPlayer.Drinks</b>
+            </div>
+        }
+
+        <PlayerCards Cards="@NewPlayer.Cards"></PlayerCards>
+    }
 
     @if (Options?.Count > 0)
     {
         @foreach (string option in Options)
         {
-            <button class="btn btn-primary" type="button" @onclick="(async() => { await SubmitTurn(option); })">@option</button>
+            <div style="padding: 5px">
+                <button class="btn btn-primary btn-block" type="button" @onclick="(async() => { await SubmitTurn(option); })">@option</button>
+            </div>
         }
     }
 
-    @if (NewPlayer.IsAdmin && rideTheBus.GameState == GameState.New)
+    @if (NewPlayer.IsAdmin && rideTheBus.GameState != GameState.InProgress)
     {
-        <button class="btn btn-primary" type="button" @onclick="StartGame">Start Game</button>
+        <div style="padding: 5px">
+            <button class="btn btn-primary btn-block" type="button" @onclick="StartGame">Start Game</button>
+        </div>
     }
 
-    @if (NewPlayer.State == PlayerState.Turn && rideTheBus.GameState == GameState.InProgress)
+    @if (NewPlayer.State == PlayerState.Turn && rideTheBus.GameState == GameState.InProgress && rideTheBus.Round != RideTheBusRounds.RideTheBus)
     {
-        <button class="btn btn-secondary" type="button" @onclick="PlayTurn">Play Turn</button>
+        <div style="padding: 5px">
+            <button class="btn btn-success btn-block" type="button" @onclick="PlayTurn">Play Turn</button>
+        </div>
+    }
+
+    @if (NewPlayer.IsAdmin && rideTheBus.GameState != GameState.Complete && rideTheBus.Round == RideTheBusRounds.RideTheBus)
+    {
+        <div style="padding-top: 5px">
+            <button class="btn btn-danger btn-block" type="button" @onclick="PlayRideTheBus">Flip</button>
+        </div>
     }
 }
 
@@ -81,7 +113,8 @@ else
     [Parameter]
     public string GameId { get; set; }
     public IList<string> Options { get; set; }
-    public Player NewPlayer = new Player(){ State = PlayerState.WaitingTurn };
+    public Player NewPlayer = new Player() { State = PlayerState.WaitingTurn };
+    public bool ShowTable = false;
 
     private Quarantine.Games.RideTheBusGame rideThebusBusGame;
     private Models.RideTheBus rideTheBus;
@@ -97,6 +130,11 @@ else
             name = param.First();
         }
 
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("showtable", out var show))
+        {
+            ShowTable = true;
+        }
+
         rideThebusBusGame = new Games.RideTheBusGame(_gameState, new Guid(GameId));
 
         while (rideThebusBusGame.Game == null)
@@ -109,6 +147,11 @@ else
         if (!string.IsNullOrWhiteSpace(name))
         {
             NewPlayer = rideThebusBusGame.Game.Players.Single(player => player.Name == name);
+
+            if (NewPlayer.State == PlayerState.PlayingTurn)
+            {
+                NewPlayer.State = PlayerState.Turn;
+            }
         }
 
         Refresh();
@@ -134,7 +177,14 @@ else
                 if (loadedGame.LastModified > rideTheBus.LastModified)
                 {
                     rideTheBus = loadedGame;
-                    NewPlayer = loadedGame.Players.Single(player => player.Name == NewPlayer.Name);
+                    try
+                    {
+                        NewPlayer = loadedGame.Players.Single(player => player.Name == NewPlayer.Name);
+                    }
+                    catch
+                    {
+
+                    }
                     StateHasChanged();
                 }
             }
@@ -152,6 +202,11 @@ else
     private async Task PlayTurn()
     {
         Options = await rideThebusBusGame.Play();
+    }
+
+    private async Task PlayRideTheBus()
+    {
+        await rideThebusBusGame.PlayRideTheBus();
     }
 
     private async Task SubmitTurn(string choice)
