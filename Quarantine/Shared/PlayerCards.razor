@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Quarantine.Models;
+
+@if (Cards.Count > 0)
+{
+    <tr>
+        <td>
+            @if (Cards[0].IsVisible)
+            {
+                <img class="card-table" src="../Images/@Cards[0].FileName" alt="Card image cap">
+            }
+            else
+            {
+                <img class="card-table" src="../Images/CardBackground.png" alt="Card image cap">
+            }
+        </td>
+        <td>
+            @if (Cards[1].IsVisible)
+            {
+                <img class="card-table" src="../Images/@Cards[1].FileName" alt="Card image cap">
+            }
+            else
+            {
+                <img class="card-table" src="../Images/CardBackground.png" alt="Card image cap">
+            }
+        </td>
+        <td>
+            @if (Cards[2].IsVisible)
+            {
+                <img class="card-table" src="../Images/@Cards[2].FileName" alt="Card image cap">
+            }
+            else
+            {
+                <img class="card-table" src="../Images/CardBackground.png" alt="Card image cap">
+            }
+        </td>
+        <td>
+            @if (Cards[3].IsVisible)
+            {
+                <img class="card-table" src="../Images/@Cards[3].FileName" alt="Card image cap">
+            }
+            else
+            {
+                <img class="card-table" src="../Images/CardBackground.png" alt="Card image cap">
+            }
+        </td>
+    </tr>
+}
+
+@code {
+    [Parameter]
+    public IList<Card> Cards { get; set; }
+}

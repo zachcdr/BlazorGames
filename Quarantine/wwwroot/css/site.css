@@ -97,6 +97,11 @@ app {
                 color: white;
             }
 
+.card-table {
+    width: 150px;
+    height: 210px;
+}
+
 .content {
     padding-top: 1.1rem;
 }
@@ -147,6 +152,25 @@ app {
 
     .main .top-row a, .main .top-row .btn-link {
         margin-left: 0;
+    }
+
+    .card-table {
+        width: 125px;
+        height: 175px;
+    }
+}
+
+@media (max-width: 450px) {
+    .card-table {
+        width: 92px;
+        height: 128px;
+    }
+}
+
+@media (max-width: 400px) {
+    .card-table {
+        width: 80px;
+        height: 112px;
     }
 }
 

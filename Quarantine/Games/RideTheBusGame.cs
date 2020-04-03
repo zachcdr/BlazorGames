@@ -60,6 +60,8 @@ namespace Quarantine.Games
 
         public async Task Deal()
         {
+            Game.Round = RideTheBusRounds.RedOrBlack;
+
             while (Game.Players.Any(player => player.Cards.Count != _playerHand))
             {
                 foreach (var player in Game.Players)
@@ -67,6 +69,15 @@ namespace Quarantine.Games
                     var position = _random.Next(Game.Deck.Count);
 
                     player.Cards.Add(Game.Deck[position]);
+
+                    Game.Deck.RemoveAt(position);
+                }
+
+                while (Game.Bus.Count != 16)
+                {
+                    var position = _random.Next(Game.Deck.Count);
+
+                    Game.Bus.Add(Game.Deck[position]);
 
                     Game.Deck.RemoveAt(position);
                 }
@@ -126,6 +137,12 @@ namespace Quarantine.Games
 
         public async Task SubmitTurn(string choise)
         {
+            bool cycleAllPlayers = false;
+
+            Game.Players.ToList().ForEach(p => p.Drinks = 0);
+
+            var drinks = (int)Game.Round + 1;
+
             bool success = false;
 
             var player = Game.Players.Single(player => player.State == PlayerState.PlayingTurn);
@@ -162,11 +179,10 @@ namespace Quarantine.Games
                     if (Game.Players.All(p => p.Cards[3].IsVisible))
                     {
                         Game.Round = RideTheBusRounds.RideTheBus;
+                        cycleAllPlayers = true;
                     }
                     break;
             }
-
-            var drinks = (int)Game.Round + 1;
 
             if (!success)
             {
@@ -174,10 +190,60 @@ namespace Quarantine.Games
             }
             else
             {
+                player.Drinks = 0;
 
+                Game.Players.Where(p => p.Id != player.Id).ToList()[_random.Next(Game.Players.Count - 1)].Drinks = drinks;
             }
 
-            await CyclePlayer();
+            CyclePlayer();
+
+            if (cycleAllPlayers)
+            {
+                Game.Players.ToList().ForEach(p => p.State = PlayerState.WaitingTurn);
+            }
+
+            await Save();
+        }
+
+        public async Task PlayRideTheBus()
+        {
+            Game.Players.ToList().ForEach(p => p.Drinks = 0);
+
+            var card = Game.Bus.First(c => !c.IsVisible);
+
+            var index = Game.Bus.IndexOf(card);
+
+            var drinks = GetDrinks(index);
+
+            var players = Game.Players.Where(p => p.Cards.Any(c => c.Value == card.Value)).ToList();
+
+            if (index % 2 == 0)
+            {
+                drinks = drinks * players.Select(p => p.Cards.Where(c => c.Value == card.Value)).Count();
+
+                players = Game.Players.Where(p => !players.Contains(p)).ToList();
+
+                if (players.Count > 0)
+                {
+                    for (int i = 1; i <= drinks; i++)
+                    {
+                        players[_random.Next(players.Count)].Drinks += 1;
+                    } 
+                }
+            }
+            else
+            {
+                players.ForEach(p => p.Drinks = drinks * p.Cards.Where(c => c.Value == card.Value).Count());
+            }
+
+            if (index == 15)
+            {
+                Game.GameState = GameState.Complete;
+            }
+
+            card.IsVisible = true;
+
+            await Save();
         }
 
         #region Private Methods
@@ -188,7 +254,7 @@ namespace Quarantine.Games
             await _gameState.SaveGame(Game.GameType, Game.Id, Converter<RideTheBus>.ToJson(Game));
         }
 
-        private async Task CyclePlayer()
+        private void CyclePlayer()
         {
             var player = Game.Players.Single(player => player.State == PlayerState.PlayingTurn);
 
@@ -202,8 +268,6 @@ namespace Quarantine.Games
             {
                 Game.Players[player.Id].State = PlayerState.Turn;
             }
-
-            await Save();
         }
 
         private async void Load(Guid id)
@@ -247,7 +311,7 @@ namespace Quarantine.Games
                     }
                     break;
                 case "Lower":
-                    if (player.Cards[0].Value < player.Cards[1].Value)
+                    if (player.Cards[0].Value > player.Cards[1].Value)
                     {
                         correct = true;
                     }
@@ -287,6 +351,34 @@ namespace Quarantine.Games
             var suit = (Suit)Enum.Parse(typeof(Suit), choice);
 
             return suit == player.Cards[3].Suit;
+        }
+
+        private int GetDrinks(int index)
+        {
+            if (index == 0 || index == 3)
+            {
+                return 2;
+            }
+            if (index == 1 || index == 2)
+            {
+                return 1;
+            }
+            else if (index >= 4 && index < 8)
+            {
+                return 2;
+            }
+            else if (index >= 8 && index < 12)
+            {
+                return 3;
+            }
+            else if (index == 12 || index == 15)
+            {
+                return 8;
+            }
+            else
+            {
+                return 4;
+            }
         }
         #endregion
     }

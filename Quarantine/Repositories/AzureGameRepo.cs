@@ -12,7 +12,7 @@ namespace Quarantine.Repositories
     public class AzureGameRepo : IHandleGameState, IHandleRetreivingGames
     {
         private BlobServiceClient _blobServiceClient;
-        private readonly string _connectionString = "";
+        private readonly string _connectionString = "CONNECTIONSTRING";
 
         public AzureGameRepo()
         {
