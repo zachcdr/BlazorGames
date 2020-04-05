@@ -29,9 +29,9 @@ else
         </EditForm>
     }
 
-    <h1>- @rideTheBus.Name -</h1>
+    <h2>- @rideTheBus.Name -</h2>
 
-    @if (ShowTable || rideTheBus.GameState == GameState.New)
+    @if (NewPlayer.Id == 0 || ShowTable || rideTheBus.GameState == GameState.New)
     {
         <table class="table">
             <thead>
@@ -45,13 +45,18 @@ else
                 @foreach (var player in rideTheBus.Players)
                 {
                     <tr>
-                        <td>@player.Name</td>
+                        <td><a @onclick="(() => SwitchPlayer(player.Name))">@player.Name</a></td>
                         <td>@player.State</td>
                         <td>@player.Drinks</td>
                     </tr>
                 }
             </tbody>
         </table>
+    }
+
+    @if (NewPlayer.Id != 0)
+    {
+        <b>Playing as: @NewPlayer.Name</b>
     }
 
     @if (rideTheBus.Round == RideTheBusRounds.RideTheBus)
@@ -213,5 +218,16 @@ else
     {
         await rideThebusBusGame.SubmitTurn(choice);
         Options = null;
+    }
+
+    private void SwitchPlayer(string name)
+    {
+        var query = new Dictionary<string, string> { { "name", name } };
+
+        navManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{GameId}", query));
+
+        NewPlayer = rideTheBus.Players.Single(player => player.Name == name);
+
+        StateHasChanged();
     }
 }
