@@ -187,12 +187,16 @@ namespace Quarantine.Games
             if (!success)
             {
                 player.Drinks = drinks;
+                player.TotalDrinks += drinks;
             }
             else
             {
                 player.Drinks = 0;
 
-                Game.Players.Where(p => p.Id != player.Id).ToList()[_random.Next(Game.Players.Count - 1)].Drinks = drinks;
+                var p = Game.Players.Where(p => p.Id != player.Id).ToList()[_random.Next(Game.Players.Count - 1)];
+
+                p.Drinks = drinks;
+                p.TotalDrinks += drinks;
             }
 
             CyclePlayer();
@@ -227,13 +231,21 @@ namespace Quarantine.Games
                 {
                     for (int i = 1; i <= drinks; i++)
                     {
-                        players[_random.Next(players.Count)].Drinks += 1;
+                        var player = players[_random.Next(players.Count)];
+                        player.Drinks += 1;
+                        player.TotalDrinks += 1;
                     } 
                 }
             }
             else
             {
-                players.ForEach(p => p.Drinks = drinks * p.Cards.Where(c => c.Value == card.Value).Count());
+                foreach (var player in players)
+                {
+                    var swallows = drinks * player.Cards.Where(c => c.Value == card.Value).Count();
+
+                    player.Drinks = swallows;
+                    player.TotalDrinks += swallows;
+                }
             }
 
             if (index == 15)

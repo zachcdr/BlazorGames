@@ -31,7 +31,7 @@ else
 
     <h2>- @rideTheBus.Name -</h2>
 
-    @if (NewPlayer.Id == 0 || ShowTable || rideTheBus.GameState == GameState.New)
+    @if (ShowTable || (rideTheBus.GameState != GameState.Complete && (NewPlayer.Id == 0 || rideTheBus.GameState == GameState.New)))
     {
         <table class="table">
             <thead>
@@ -48,6 +48,27 @@ else
                         <td><a @onclick="(() => SwitchPlayer(player.Name))">@player.Name</a></td>
                         <td>@player.State</td>
                         <td>@player.Drinks</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    @if (rideTheBus.GameState == GameState.Complete)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>TotalDrinks</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var player in rideTheBus.Players.OrderByDescending(p => p.TotalDrinks))
+                {
+                    <tr>
+                        <td>@player.Name</td>
+                        <td>@player.TotalDrinks</td>
                     </tr>
                 }
             </tbody>
@@ -92,7 +113,7 @@ else
         }
     }
 
-    @if (NewPlayer.IsAdmin && rideTheBus.GameState != GameState.InProgress)
+    @if (NewPlayer.IsAdmin && rideTheBus.GameState == GameState.New)
     {
         <div style="padding: 5px">
             <button class="btn btn-primary btn-block" type="button" @onclick="StartGame">Start Game</button>

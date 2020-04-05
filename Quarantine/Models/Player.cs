@@ -18,5 +18,6 @@ namespace Quarantine.Models
         public bool IsAdmin { get; set; }
         public PlayerState State { get; set; }
         public int Drinks { get; set; }
+        public int TotalDrinks { get; set; }
     }
 }
