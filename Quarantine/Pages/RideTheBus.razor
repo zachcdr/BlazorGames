@@ -8,6 +8,7 @@
 @using Microsoft.AspNetCore.WebUtilities;
 @inject IHandleGameState _gameState;
 @inject NavigationManager navManager;
+@inject IJSRuntime jsRuntime;
 
 @if (rideTheBus == null)
 {
@@ -25,7 +26,7 @@ else
                 <label for="playerName">Player Name: </label>
                 <InputText id="playerName" @bind-Value="NewPlayer.Name"></InputText>
             </p>
-            <button class="btn btn-success" type="submit">Join Game</button>
+            <button class="btn btn-success" disabled="@IsDisabled" type="submit">Join Game</button>
         </EditForm>
     }
 
@@ -45,7 +46,7 @@ else
                 @foreach (var player in rideTheBus.Players)
                 {
                     <tr>
-                        <td><a @onclick="(() => SwitchPlayer(player.Name))">@player.Name</a></td>
+                        <td><a @onclick="(async() => await SwitchPlayer(player.Name))">@player.Name</a></td>
                         <td>@player.State</td>
                         <td>@player.Drinks</td>
                     </tr>
@@ -141,6 +142,7 @@ else
     public IList<string> Options { get; set; }
     public Player NewPlayer = new Player() { State = PlayerState.WaitingTurn };
     public bool ShowTable = false;
+    protected bool IsDisabled = false;
 
     private Quarantine.Games.RideTheBusGame rideThebusBusGame;
     private Models.RideTheBus rideTheBus;
@@ -172,7 +174,7 @@ else
 
         if (!string.IsNullOrWhiteSpace(name))
         {
-            NewPlayer = rideThebusBusGame.Game.Players.Single(player => player.Name == name);
+            NewPlayer = rideThebusBusGame.Game.Players.Single(player => player.Name.ToLower() == name.ToLower());
 
             if (NewPlayer.State == PlayerState.PlayingTurn)
             {
@@ -185,11 +187,19 @@ else
 
     private async Task SubmitPlayer()
     {
-        await rideThebusBusGame.Join(NewPlayer);
+        IsDisabled = true;
 
-        var query = new Dictionary<string, string> { { "name", NewPlayer.Name } };
+        if (!rideTheBus.Players.Any(p => p.Name.ToLower() == NewPlayer.Name.ToLower()))
+        {
 
-        navManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{rideThebusBusGame.Game.Id}", query));
+            await rideThebusBusGame.Join(NewPlayer);
+
+            var query = new Dictionary<string, string> { { "name", NewPlayer.Name } };
+
+            navManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{rideThebusBusGame.Game.Id}", query));
+        }
+
+        IsDisabled = false;
     }
 
     private async void Refresh()
@@ -203,14 +213,12 @@ else
                 if (loadedGame.LastModified > rideTheBus.LastModified)
                 {
                     rideTheBus = loadedGame;
-                    try
+
+                    if (NewPlayer.Id > 0)
                     {
                         NewPlayer = loadedGame.Players.Single(player => player.Name == NewPlayer.Name);
                     }
-                    catch
-                    {
 
-                    }
                     StateHasChanged();
                 }
             }
@@ -241,14 +249,19 @@ else
         Options = null;
     }
 
-    private void SwitchPlayer(string name)
+    private async Task SwitchPlayer(string name)
     {
-        var query = new Dictionary<string, string> { { "name", name } };
+        bool confirmed = await jsRuntime.InvokeAsync<bool>("confirm", $"Are you sure you want to play as {name}?");
 
-        navManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{GameId}", query));
+        if (confirmed)
+        {
+            var query = new Dictionary<string, string> { { "name", name } };
 
-        NewPlayer = rideTheBus.Players.Single(player => player.Name == name);
+            navManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{GameId}", query));
 
-        StateHasChanged();
+            NewPlayer = rideTheBus.Players.Single(player => player.Name == name);
+
+            StateHasChanged();
+        }
     }
 }
