@@ -234,7 +234,7 @@ namespace Quarantine.Games
                         var player = players[_random.Next(players.Count)];
                         player.Drinks += 1;
                         player.TotalDrinks += 1;
-                    } 
+                    }
                 }
             }
             else
@@ -272,13 +272,15 @@ namespace Quarantine.Games
 
             player.State = PlayerState.WaitingTurn;
 
-            if (player.Id == Game.Players.Count)
+            var index = Game.Players.IndexOf(player);
+
+            if (index == Game.Players.Count - 1)
             {
                 Game.Players[0].State = PlayerState.Turn;
             }
             else
             {
-                Game.Players[player.Id].State = PlayerState.Turn;
+                Game.Players[index + 1].State = PlayerState.Turn;
             }
         }
 
