@@ -13,6 +13,7 @@ namespace Quarantine.Models
 
         public int Id { get; set; }
         [Required]
+        [MaxLength(25)]
         public string Name { get; set; }
         public IList<Card> Cards { get; set; }
         public bool IsAdmin { get; set; }

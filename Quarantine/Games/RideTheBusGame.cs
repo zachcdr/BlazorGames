@@ -38,9 +38,10 @@ namespace Quarantine.Games
             }
         }
 
-        public void AssignName(string name)
+        public void AssignName(string name, string password)
         {
             Game.Name = name;
+            Game.Password = password;
         }
 
         public async Task Join(Player player)
@@ -133,6 +134,22 @@ namespace Quarantine.Games
             }
 
             return options;
+        }
+
+        public async Task<RideTheBus> PlayerSwitch(string name)
+        {
+            var player = Game.Players.Single(player => player.Name == name);
+
+            if (player.State == PlayerState.PlayingTurn)
+            {
+                player.State = PlayerState.Turn;
+
+                await Save();
+
+                Game = await Load();
+            }
+
+            return Game;
         }
 
         public async Task SubmitTurn(string choise)
