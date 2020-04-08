@@ -5,6 +5,7 @@ using Quarantine.Models.Enums;
 using Quarantine.Responses;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Quarantine.Services
@@ -30,7 +31,7 @@ namespace Quarantine.Services
                     gameDetails.Add(Converter<GameDetails>.FromJson(game));
                 }
 
-                return new ServiceResponse<IList<GameDetails>>(gameDetails, true);
+                return new ServiceResponse<IList<GameDetails>>(gameDetails.OrderByDescending(g => g.CreatedOn).ToList(), true);
             }
             catch (Exception ex)
             {

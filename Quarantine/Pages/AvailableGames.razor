@@ -9,6 +9,7 @@
 @inject IHandleRetreivingGames _iServiceGames;
 @inject IHandleGameState _gameState;
 @inject NavigationManager NavigationManager;
+@inject IJSRuntime jsRuntime;
 
 <h1>All Games</h1>
 
@@ -23,50 +24,54 @@
 
 @if (ServiceResponse?.Data == null)
 {
-<p><em>Loading...</em></p>
+    <p><em>Loading...</em></p>
 }
 else
 {
 
-<EditForm Model="@NewGame" OnValidSubmit="@SubmitNewGame">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-    <p>
-        <label for="playerName">Player Name: </label>
-        <InputText id="playerName" @bind-Value="NewGame.PlayerName"></InputText>
-    </p>
-    <p>
-        <label for="gameName">Game Name: </label>
-        <InputText id="gameName" @bind-Value="NewGame.GameName"></InputText>
-    </p>
-    <button class="btn btn-primary" type="submit">Create Game</button>
-</EditForm>
+    <EditForm Model="@NewGame" OnValidSubmit="@SubmitNewGame">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <p>
+            <label for="playerName">Player Name: </label>
+            <InputText id="playerName" @bind-Value="NewGame.PlayerName"></InputText>
+        </p>
+        <p>
+            <label for="gameName">Game Name: </label>
+            <InputText id="gameName" @bind-Value="NewGame.GameName"></InputText>
+        </p>
+        <p>
+            <label style="padding-right: 20px" for="password">Password: </label>
+            <InputText id="password" @bind-Value="NewGame.Password"></InputText>
+        </p>
+        <div style="padding-bottom: 25px"><button class="btn btn-primary" type="submit">Create Game</button></div>
+    </EditForm>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Game Type</th>
-            <th>Game State</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var game in ServiceResponse?.Data)
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Game Type</th>
+                <th>Game State</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var game in ServiceResponse?.Data)
             {
-        <tr>
-            <a href="/games/@game.Id"><td>@game.Name</td></a>
-            <td>@game.GameType</td>
-            <td>@game.GameState</td>
-        </tr>
+                <tr>
+                    <a @onclick="(async() => await JoinGame(game))"><td>@game.Name</td></a>
+                    <td>@game.GameType</td>
+                    <td>@game.GameState</td>
+                </tr>
             }
-    </tbody>
-</table>
+        </tbody>
+    </table>
 }
 
 @code {
     private GameService _gameService;
     private RideTheBusGame rideThebusBusGame;
-private ServiceResponse<IList<GameDetails>> ServiceResponse;
+    private ServiceResponse<IList<GameDetails>> ServiceResponse;
 
     private InitiateGame NewGame = new InitiateGame();
 
@@ -81,12 +86,29 @@ private ServiceResponse<IList<GameDetails>> ServiceResponse;
     {
         rideThebusBusGame = new RideTheBusGame(_gameState);
 
-        rideThebusBusGame.AssignName(NewGame.GameName);
+        rideThebusBusGame.AssignName(NewGame.GameName, NewGame.Password);
 
         await rideThebusBusGame.Join(new Player() { Name = NewGame.PlayerName });
 
         var query = new Dictionary<string, string> { { "name", NewGame.PlayerName } };
 
         NavigationManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{rideThebusBusGame.Game.Id}", query));
+    }
+
+    private async Task JoinGame(GameDetails game)
+    {
+        if (game.IsPasswordProtected)
+        {
+            string input = await jsRuntime.InvokeAsync<string>("passwordPrompt.showPrompt", "Enter Password (case sensitive)");
+
+            if (input == game.Password)
+            {
+                NavigationManager.NavigateTo($"/games/{game.Id}");
+            }
+        }
+        else
+        {
+            NavigationManager.NavigateTo($"/games/{game.Id}");
+        }
     }
 }

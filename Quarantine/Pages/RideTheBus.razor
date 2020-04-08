@@ -17,7 +17,7 @@
 else
 {
 
-    @if (rideTheBus.GameState == GameState.New && NewPlayer.Id == 0)
+    @if (rideTheBus.GameState == GameState.New && NewPlayer.Id == 0 && rideTheBus.Players.Count < 10)
     {
         <EditForm Model="@NewPlayer" OnValidSubmit="@SubmitPlayer">
             <DataAnnotationsValidator />
@@ -76,6 +76,15 @@ else
         </table>
     }
 
+    @if (rideTheBus.Players.Any(player => player.State == PlayerState.Turn))
+    {
+        var player = rideTheBus.Players.Single(player => player.State == PlayerState.Turn);
+
+        <div style="padding: 5px" class="alert alert-success maxwidth">
+            <b>It is @player.Name's turn</b>
+        </div>
+    }
+
     @if (NewPlayer.Id != 0)
     {
         <b>Playing as: @NewPlayer.Name</b>
@@ -94,11 +103,23 @@ else
     {
         <div style="padding-top: 25px"><h3>Your Cards</h3></div>
 
-        @if (NewPlayer?.Drinks > 0)
+        @foreach (var player in rideTheBus.Players)
         {
-            <div style="padding: 5px" class="alert alert-danger">
-                <b>@NewPlayer.Name drink @NewPlayer.Drinks</b>
-            </div>
+            @if (player.Drinks > 0)
+            {
+                if (player == NewPlayer)
+                {
+                    <div style="padding: 5px" class="alert alert-danger maxwidth">
+                        <b>@player.Name drink @player.Drinks</b>
+                    </div>
+                }
+                else
+                {
+                    <div style="padding: 5px" class="alert alert-success maxwidth">
+                        <b>@player.Name drink @player.Drinks</b>
+                    </div>
+                }
+            }
         }
 
         <PlayerCards Cards="@NewPlayer.Cards"></PlayerCards>
@@ -108,29 +129,29 @@ else
     {
         @foreach (string option in Options)
         {
-            <div style="padding: 5px">
+            <div class="maxwidth" style="padding: 5px">
                 <button class="btn btn-primary btn-block" type="button" @onclick="(async() => { await SubmitTurn(option); })">@option</button>
             </div>
         }
     }
 
-    @if (NewPlayer.IsAdmin && rideTheBus.GameState == GameState.New)
+    @if (NewPlayer.IsAdmin && rideTheBus.GameState == GameState.New && rideTheBus.Players.Count > 1)
     {
-        <div style="padding: 5px">
+        <div class="maxwidth" style="padding: 5px">
             <button class="btn btn-primary btn-block" type="button" @onclick="StartGame">Start Game</button>
         </div>
     }
 
     @if (NewPlayer.State == PlayerState.Turn && rideTheBus.GameState == GameState.InProgress && rideTheBus.Round != RideTheBusRounds.RideTheBus)
     {
-        <div style="padding: 5px">
+        <div class="maxwidth" style="padding: 5px">
             <button class="btn btn-success btn-block" type="button" @onclick="PlayTurn">Play Turn</button>
         </div>
     }
 
     @if (NewPlayer.IsAdmin && rideTheBus.GameState != GameState.Complete && rideTheBus.Round == RideTheBusRounds.RideTheBus)
     {
-        <div style="padding-top: 5px">
+        <div class="maxwidth" style="padding-top: 5px; padding-bottom: 50px">
             <button class="btn btn-danger btn-block" type="button" @onclick="PlayRideTheBus">Flip</button>
         </div>
     }
@@ -255,11 +276,16 @@ else
 
         if (confirmed)
         {
+
+            rideTheBus = await rideThebusBusGame.PlayerSwitch(name);
+
+            NewPlayer = rideTheBus.Players.Single(player => player.Name == name);
+
             var query = new Dictionary<string, string> { { "name", name } };
 
             navManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{GameId}", query));
 
-            NewPlayer = rideTheBus.Players.Single(player => player.Name == name);
+            Options = null;
 
             StateHasChanged();
         }

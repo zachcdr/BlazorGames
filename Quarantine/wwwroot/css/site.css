@@ -102,6 +102,10 @@ app {
     height: 210px;
 }
 
+.maxwidth {
+    max-width: 600px;
+}
+
 .content {
     padding-top: 1.1rem;
 }
