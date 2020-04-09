@@ -30,7 +30,6 @@ namespace Quarantine.Games
                 Game = new RideTheBus();
                 Game.Id = Guid.NewGuid();
                 Game.GameState = GameState.New;
-                Game.CreatedOn = DateTime.Now;
             }
             else
             {
@@ -278,7 +277,7 @@ namespace Quarantine.Games
         #region Private Methods
         private async Task Save()
         {
-            Game.LastModified = DateTime.Now;
+            Game.LastModified = DateTime.UtcNow;
 
             await _gameState.SaveGame(Game.GameType, Game.Id, Converter<RideTheBus>.ToJson(Game));
         }
