@@ -26,7 +26,7 @@ else
                 <label for="playerName">Player Name: </label>
                 <InputText id="playerName" @bind-Value="NewPlayer.Name"></InputText>
             </p>
-            <button class="btn btn-success" disabled="@IsDisabled" type="submit">Join Game</button>
+            <button class="btn btn-success" disabled="@IsJoinDisabled" type="submit">Join Game</button>
         </EditForm>
     }
 
@@ -152,7 +152,7 @@ else
     @if (NewPlayer.IsAdmin && rideTheBus.GameState != GameState.Complete && rideTheBus.Round == RideTheBusRounds.RideTheBus)
     {
         <div class="maxwidth" style="padding-top: 5px; padding-bottom: 50px">
-            <button class="btn btn-danger btn-block" type="button" @onclick="PlayRideTheBus">Flip</button>
+            <button disabled="@IsFlipDisabled" class="btn btn-danger btn-block" type="button" @onclick="PlayRideTheBus">Flip</button>
         </div>
     }
 }
@@ -163,7 +163,8 @@ else
     public IList<string> Options { get; set; }
     public Player NewPlayer = new Player() { State = PlayerState.WaitingTurn };
     public bool ShowTable = false;
-    protected bool IsDisabled = false;
+    protected bool IsJoinDisabled = false;
+    protected bool IsFlipDisabled = false;
 
     private Quarantine.Games.RideTheBusGame rideThebusBusGame;
     private Models.RideTheBus rideTheBus;
@@ -208,7 +209,7 @@ else
 
     private async Task SubmitPlayer()
     {
-        IsDisabled = true;
+        IsJoinDisabled = true;
 
         if (!rideTheBus.Players.Any(p => p.Name.ToLower() == NewPlayer.Name.ToLower()))
         {
@@ -220,7 +221,7 @@ else
             navManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{rideThebusBusGame.Game.Id}", query));
         }
 
-        IsDisabled = false;
+        IsJoinDisabled = false;
     }
 
     private async void Refresh()
@@ -261,7 +262,18 @@ else
 
     private async Task PlayRideTheBus()
     {
+        var visibleCards = rideTheBus.Bus.Where(c => c.IsVisible).Count();
+
+        IsFlipDisabled = true;
+
         await rideThebusBusGame.PlayRideTheBus();
+
+        while (visibleCards == rideTheBus.Bus.Where(c => c.IsVisible).Count())
+        {
+            await Task.Run(() => Thread.Sleep(500));
+        }
+
+        IsFlipDisabled = false;
     }
 
     private async Task SubmitTurn(string choice)
