@@ -16,6 +16,19 @@ namespace Quarantine.Models
         public IList<Card> Bus { get; set; }
         public RideTheBusRounds Round { get; set; }
 
+        public void Restart()
+        {
+            Deck = GetDeck();
+
+            Bus = new List<Card>();
+            
+            foreach (var player in Players)
+            {
+                player.Cards = new List<Card>();
+                player.Drinks = 0;
+            }
+        }
+
         private IList<Card> GetDeck()
         {
             var deck = new List<Card>();

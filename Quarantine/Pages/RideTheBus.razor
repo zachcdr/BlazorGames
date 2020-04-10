@@ -46,7 +46,7 @@ else
                 @foreach (var player in rideTheBus.Players)
                 {
                     <tr>
-                        <td><a @onclick="(async() => await SwitchPlayer(player.Name))">@player.Name</a></td>
+                        <td><a @onclick="(async () => await SwitchPlayer(player.Name))">@player.Name</a></td>
                         <td>@player.State</td>
                         <td>@player.Drinks</td>
                     </tr>
@@ -93,10 +93,10 @@ else
     @if (rideTheBus.Round == RideTheBusRounds.RideTheBus)
     {
         <h3>The Bus</h3>
-        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(12,4)"></PlayerCards>
-        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(8,4)"></PlayerCards>
-        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(4,4)"></PlayerCards>
-        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(0,4)"></PlayerCards>
+        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(12, 4)"></PlayerCards>
+        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(8, 4)"></PlayerCards>
+        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(4, 4)"></PlayerCards>
+        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(0, 4)"></PlayerCards>
     }
 
     @if (NewPlayer.Cards.Count() > 0)
@@ -130,7 +130,7 @@ else
         @foreach (string option in Options)
         {
             <div class="maxwidth" style="padding: 5px">
-                <button class="btn btn-primary btn-block" type="button" @onclick="(async() => { await SubmitTurn(option); })">@option</button>
+                <button class="btn btn-primary btn-block" type="button" @onclick="(async () => { await SubmitTurn(option); })">@option</button>
             </div>
         }
     }
@@ -155,6 +155,13 @@ else
             <button disabled="@IsFlipDisabled" class="btn btn-danger btn-block" type="button" @onclick="PlayRideTheBus">Flip</button>
         </div>
     }
+
+    @if (rideTheBus.GameState == GameState.Complete && NewPlayer.IsAdmin)
+    {
+        <div class="maxwidth" style="padding-top: 5px; padding-bottom: 50px">
+            <button disabled="@IsReplayDisabled" class="btn btn-info btn-block" type="button" @onclick="Replay">Replay</button>
+        </div>
+    }
 }
 
 @code {
@@ -165,6 +172,7 @@ else
     public bool ShowTable = false;
     protected bool IsJoinDisabled = false;
     protected bool IsFlipDisabled = false;
+    protected bool IsReplayDisabled = false;
 
     private Quarantine.Games.RideTheBusGame rideThebusBusGame;
     private Models.RideTheBus rideTheBus;
@@ -249,6 +257,15 @@ else
 
             await Task.Run(() => Thread.Sleep(1500));
         }
+    }
+
+    private async Task Replay()
+    {
+        IsReplayDisabled = true;
+
+        rideThebusBusGame.Game.Restart();
+
+        await StartGame();
     }
 
     private async Task StartGame()
