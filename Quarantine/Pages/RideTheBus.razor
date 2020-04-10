@@ -211,6 +211,8 @@ else
     {
         IsJoinDisabled = true;
 
+        NewPlayer.Name = NewPlayer.Name.Trim();
+
         if (!rideTheBus.Players.Any(p => p.Name.ToLower() == NewPlayer.Name.ToLower()))
         {
 

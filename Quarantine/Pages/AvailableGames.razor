@@ -86,11 +86,11 @@ else
     {
         rideThebusBusGame = new RideTheBusGame(_gameState);
 
-        rideThebusBusGame.AssignName(NewGame.GameName, NewGame.Password);
+        rideThebusBusGame.AssignName(NewGame.GameName.Trim(), NewGame.Password.Trim());
 
-        await rideThebusBusGame.Join(new Player() { Name = NewGame.PlayerName });
+        await rideThebusBusGame.Join(new Player() { Name = NewGame.PlayerName.Trim() });
 
-        var query = new Dictionary<string, string> { { "name", NewGame.PlayerName } };
+        var query = new Dictionary<string, string> { { "name", NewGame.PlayerName.Trim() } };
 
         NavigationManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{rideThebusBusGame.Game.Id}", query));
     }
