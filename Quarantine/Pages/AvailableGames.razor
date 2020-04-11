@@ -86,7 +86,7 @@ else
     {
         rideThebusBusGame = new RideTheBusGame(_gameState);
 
-        rideThebusBusGame.AssignName(NewGame.GameName.Trim(), NewGame.Password.Trim());
+        rideThebusBusGame.AssignName(NewGame.GameName.Trim(), NewGame.Password);
 
         await rideThebusBusGame.Join(new Player() { Name = NewGame.PlayerName.Trim() });
 
