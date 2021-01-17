@@ -1,0 +1,87 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Quarantine.Models;
+@using Quarantine.Models.Enums;
+
+@if (Group != null)
+{
+    currentHole = Group.CurrentHole;
+    <div>
+        <b>Hole #@currentHole</b>
+    </div>
+    <div id="accordion">
+        @foreach (var golfer in Group.Golfers)
+        {
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" @onclick="eventArgs => { Toggle(golfer.Id); }" data-toggle="collapse" data-target="#@golfer.Name" aria-expanded="true" aria-controls="@golfer.Name">
+                            @golfer.Name
+                        </button>
+                    </h5>
+                </div>
+                @if (golfer.IsVisible)
+                {
+                    <div id="@golfer.Name" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            <GolferView DotTypes="@AvailableDots" CurrentHole="@currentHole" Golfer="@golfer"></GolferView>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        <div style="padding-bottom: 5px">
+            <button class="maxwidth btn btn-info btn-block" type="button" @onclick="Next">Next</button>
+        </div>
+        <div style="padding-bottom: 5px">
+            <button class="maxwidth btn btn-warning btn-block" type="button" @onclick="Previous">Previous</button>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public GolfGroup Group { get; set; }
+    [Parameter]
+    public int MaxHole { get; set; }
+    [Parameter]
+    public List<DotType> AvailableDots { get; set; }
+    [Parameter]
+    public EventCallback<HoleUpdate> HoleUpdate { get; set; }
+    private int currentHole;
+
+    private async Task Previous()
+    {
+        if (currentHole > 1)
+        {
+            currentHole--;
+
+            await PerformUpdate();
+        }
+    }
+
+    private async Task Next()
+    {
+        if (currentHole < MaxHole)
+        {
+            currentHole++;
+
+            await PerformUpdate();
+        }
+        else
+        {
+            await PerformUpdate(true);
+        }
+    }
+
+    private void Toggle(int golferId)
+    {
+        Group.Golfers.ForEach(g => g.IsVisible = false);
+        Group.Golfers.Single(g => g.Id == golferId).IsVisible = true;
+    }
+
+    private async Task PerformUpdate(bool gameOver = false)
+    {
+        Group.Golfers.ForEach(g => g.IsVisible = false);
+        await HoleUpdate.InvokeAsync(new Models.HoleUpdate() { Golfers = Group.Golfers, CurrentHole = currentHole, GroupId = Group.Id, CompleteGame = gameOver });
+    }
+}

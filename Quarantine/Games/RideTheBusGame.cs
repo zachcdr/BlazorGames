@@ -45,15 +45,17 @@ namespace Quarantine.Games
 
         public async Task Join(Player player)
         {
-            if (Game.Players.Count == 0)
+            Drinker drinker = (Drinker)player;
+
+            if (Game.Players.Count == 0)    
             {
-                player.IsAdmin = true;
+                drinker.IsAdmin = true;
             }
 
-            player.Id = Game.Players.Count + 1;
-            player.State = PlayerState.WaitingTurn;
+            drinker.Id = Game.Players.Count + 1;
+            drinker.State = PlayerState.WaitingTurn;
 
-            Game.Players.Add(player);
+            Game.Players.Add(drinker);
 
             await Save();
         }
@@ -307,7 +309,7 @@ namespace Quarantine.Games
             Game = Converter<RideTheBus>.FromJson(gameResponse);
         }
 
-        private bool PlayRedOrBlack(string choice, Player player)
+        private bool PlayRedOrBlack(string choice, Drinker player)
         {
             var correct = false;
 
@@ -328,7 +330,7 @@ namespace Quarantine.Games
             return correct;
         }
 
-        private bool PlayHighOrLow(string choice, Player player)
+        private bool PlayHighOrLow(string choice, Drinker player)
         {
             var correct = false;
 
@@ -351,7 +353,7 @@ namespace Quarantine.Games
             return correct;
         }
 
-        private bool PlayInsideOrOutside(string choice, Player player)
+        private bool PlayInsideOrOutside(string choice, Drinker player)
         {
             var correct = false;
 
@@ -376,7 +378,7 @@ namespace Quarantine.Games
             return correct;
         }
 
-        private bool PlayNameTheSuit(string choice, Player player)
+        private bool PlayNameTheSuit(string choice, Drinker player)
         {
             var suit = (Suit)Enum.Parse(typeof(Suit), choice);
 

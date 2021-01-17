@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Quarantine.Models;
+@using Quarantine.Models.Enums;
+
+@if (Group != null)
+{
+    var iterator = 1;
+    foreach (var golfer in Group.Golfers)
+    {
+        <div>
+            <label for="@golfer.Name">Player #@iterator: </label>
+            <label name="@golfer.Name">@golfer.Name</label>
+        </div>
+        iterator++;
+    }
+    <EditForm Model="@NewPlayer" OnValidSubmit="@SubmitPlayer">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div>
+            <label for="playerName">Player Name: </label>
+            <InputText id="playerName" @bind-Value="NewPlayer.Name"></InputText>
+        </div>
+            <button class="maxwidth btn btn-success btn-block" type="submit">Add Player to @Group.Name</button>
+    </EditForm>
+}
+
+@code {
+    [Parameter]
+    public GolfGroup Group { get; set; }
+    [Parameter]
+    public GolfRoundType GolfRoundType { get; set; }
+
+    public Player NewPlayer = new Player();
+
+    private void SubmitPlayer()
+    {
+        Group.AddPlayer(NewPlayer, GolfRoundType);
+        NewPlayer = new Player();
+    }
+}

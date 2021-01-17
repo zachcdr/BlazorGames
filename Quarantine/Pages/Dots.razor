@@ -1,0 +1,155 @@
+﻿@page "/dots/{GameId}"
+
+@using Quarantine.Models;
+@using Quarantine.Interfaces;
+@using Quarantine.Shared;
+@using Quarantine.Models.Enums;
+@using System.Threading;
+@inject IHandleGameState _gameState;
+@inject NavigationManager navManager;
+@inject IJSRuntime jsRuntime;
+
+@if (dotsGame?.Game == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    @if (dotsGame.Game.GameState == GameState.New)
+    {
+        var iterator = 1;
+        @foreach (var group in dotsGame.Game.Groups)
+        {
+            <b>Group #@iterator</b>
+            <GolfGroupView Group="@group" GolfRoundType="@dotsGame.Game.GolfRoundType"></GolfGroupView>
+            iterator++;
+            <br />
+        }
+
+        @*<div style="padding-bottom: 5px">
+                <button class="maxwidth btn btn-info btn-block" type="button" @onclick="ToggleNewGroup">New Group</button>
+            </div>*@
+
+        @if (NewGroup)
+        {
+            <EditForm Model="@NewPlayer" OnValidSubmit="@SubmitGroup">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div>
+                    <label for="playerName">Player Name: </label>
+                    <InputText id="playerName" @bind-Value="NewPlayer.Name"></InputText>
+                </div>
+                <div style="padding-top: 5px">
+                    <button class="maxwidth btn btn-success btn-block" type="submit">Create Group</button>
+                </div>
+            </EditForm>
+        }
+        <div style="padding-bottom: 5px">
+            <button class="maxwidth btn btn-danger btn-block" type="button" @onclick="Start">Start</button>
+        </div>
+    }
+    else if (dotsGame.Game.GameState == GameState.InProgress)
+    {
+        var iterator = 1;
+        foreach (var group in dotsGame.Game.Groups)
+        {
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" @onclick="eventArgs => { Toggle(group.Id); }">
+                            Group #@iterator
+                        </button>
+                    </h5>
+                </div>
+                @if (group.IsVisible)
+                {
+                    <div>
+                        <div class="card-body">
+                            <HoleView AvailableDots="@dotsGame.Game.DotTypes" Group="group" MaxHole="(int)dotsGame.Game.GolfRoundType" HoleUpdate="UpdateGame"></HoleView>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            iterator++;
+        }
+    }
+    if (showScores)
+    {
+        <GolferScores Golfers="@dotsGame.Game.Groups.SelectMany(g => g.Golfers)"></GolferScores>
+    }
+}
+
+@code {
+    [Parameter]
+    public string GameId { get; set; }
+    public IList<string> Options { get; set; }
+    public Player NewPlayer = new Player();
+    protected bool NewGroup = false;
+    protected bool showScores = false;
+    protected bool IsReplayDisabled = false;
+
+    private Quarantine.Games.DotsGame dotsGame;
+
+    protected override async Task OnInitializedAsync()
+    {
+        dotsGame = new Games.DotsGame(_gameState, new Guid(GameId));
+
+        while (dotsGame.Game == null)
+        {
+            await Task.Run(() => Thread.Sleep(100));
+        }
+    }
+
+    private void ToggleNewGroup()
+    {
+        NewGroup = !NewGroup;
+    }
+
+    private void SubmitGroup()
+    {
+        dotsGame.AddNewGroup(NewPlayer.Name, dotsGame.Game.GolfRoundType);
+        NewPlayer = new Player();
+        NewGroup = !NewGroup;
+    }
+
+    private async Task Start()
+    {
+        if (dotsGame.Game.Groups.Select(group => group.Golfers).Count() == 1)
+        {
+            if (!await jsRuntime.InvokeAsync<bool>("confirm", $"There is only 1 player in your game.\r\nAre you sure you want to start your round?"))
+            {
+                return;
+            }
+        }
+
+        await dotsGame.Start();
+        showScores = true;
+    }
+
+    private void Toggle(Guid groupId)
+    {
+        dotsGame.Game.Groups.ForEach(g => g.IsVisible = false);
+        dotsGame.Game.Groups.Single(g => g.Id == groupId).IsVisible = true;
+    }
+
+    private async Task UpdateGame(HoleUpdate holeUpdate)
+    {
+        if (holeUpdate.CompleteGame)
+        {
+            string message = "";
+
+            if (dotsGame.Game.Groups.Any(group => group.Golfers.Any(golfer => golfer.Holes.Any(hole => hole.Score == 0))))
+            {
+                message = "There are unentered scores within your group.\r\n";
+            }
+
+            if (!await jsRuntime.InvokeAsync<bool>("confirm", $"{message}Are you sure you wish to complete your round?"))
+            {
+                return;
+            }
+        }
+
+        await dotsGame.UpdateHole(holeUpdate);
+    }
+}

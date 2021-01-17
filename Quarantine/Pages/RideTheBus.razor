@@ -1,4 +1,4 @@
-﻿@page "/games/{GameId}"
+﻿@page "/ridethebus/{GameId}"
 
 @using Quarantine.Models;
 @using Quarantine.Interfaces;
@@ -168,7 +168,7 @@ else
     [Parameter]
     public string GameId { get; set; }
     public IList<string> Options { get; set; }
-    public Player NewPlayer = new Player() { State = PlayerState.WaitingTurn };
+    public Drinker NewPlayer = new Drinker() { State = PlayerState.WaitingTurn };
     public bool ShowTable = false;
     protected bool IsJoinDisabled = false;
     protected bool IsFlipDisabled = false;
@@ -228,7 +228,7 @@ else
 
             var query = new Dictionary<string, string> { { "name", NewPlayer.Name } };
 
-            navManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{rideThebusBusGame.Game.Id}", query));
+            navManager.NavigateTo(QueryHelpers.AddQueryString($"/ridethebus/{rideThebusBusGame.Game.Id}", query));
         }
 
         IsJoinDisabled = false;
@@ -314,7 +314,7 @@ else
 
             var query = new Dictionary<string, string> { { "name", name } };
 
-            navManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{GameId}", query));
+            navManager.NavigateTo(QueryHelpers.AddQueryString($"/ridethebus/{GameId}", query));
 
             Options = null;
 
