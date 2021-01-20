@@ -1,4 +1,4 @@
-﻿@page "/games"
+﻿@page "/ridethebus"
 
 @using Quarantine.Interfaces;
 @using Quarantine.Services;
@@ -11,9 +11,9 @@
 @inject NavigationManager NavigationManager;
 @inject IJSRuntime jsRuntime;
 
-<h1>All Games</h1>
+<h1>Ride The Bus</h1>
 
-<p>Lists all the games found in the Games Directory.</p>
+<p>Lists all existing and previous Ride The Bus games.</p>
 
 @if (ServiceResponse != null && !ServiceResponse.IsSuccess)
 {
@@ -59,7 +59,7 @@ else
             @foreach (var game in ServiceResponse?.Data)
             {
                 <tr>
-                    <a @onclick="(async() => await JoinGame(game))"><td>@game.Name</td></a>
+                    <td @onclick="(async() => await JoinGame(game))" style="color: blue; cursor: pointer;">@game.Name</td>
                     <td>@game.GameType</td>
                     <td>@game.GameState</td>
                 </tr>
@@ -88,11 +88,11 @@ else
 
         rideThebusBusGame.AssignName(NewGame.GameName.Trim(), NewGame.Password);
 
-        await rideThebusBusGame.Join(new Player() { Name = NewGame.PlayerName.Trim() });
+        await rideThebusBusGame.Join(new Drinker() { Name = NewGame.PlayerName.Trim() });
 
         var query = new Dictionary<string, string> { { "name", NewGame.PlayerName.Trim() } };
 
-        NavigationManager.NavigateTo(QueryHelpers.AddQueryString($"/games/{rideThebusBusGame.Game.Id}", query));
+        NavigationManager.NavigateTo(QueryHelpers.AddQueryString($"/ridethebus/{rideThebusBusGame.Game.Id}", query));
     }
 
     private async Task JoinGame(GameDetails game)
@@ -103,12 +103,12 @@ else
 
             if (input == game.Password)
             {
-                NavigationManager.NavigateTo($"/games/{game.Id}");
+                NavigationManager.NavigateTo($"/ridethebus/{game.Id}");
             }
         }
         else
         {
-            NavigationManager.NavigateTo($"/games/{game.Id}");
+            NavigationManager.NavigateTo($"/ridethebus/{game.Id}");
         }
     }
 }

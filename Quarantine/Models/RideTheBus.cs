@@ -4,14 +4,15 @@ using System.Collections.Generic;
 
 namespace Quarantine.Models
 {
-    public class RideTheBus : Game
+    public class RideTheBus : CardGame
     {
         public RideTheBus()
         {
-            Players = new List<Player>();
+            Players = new List<Drinker>();
             Deck = GetDeck();
             Bus = new List<Card>();
             CreatedOn = DateTime.UtcNow;
+            GameType = GameType.RideTheBus;
         }
         public IList<Card> Bus { get; set; }
         public RideTheBusRounds Round { get; set; }

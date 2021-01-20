@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Quarantine.Models;
+
+@if (Golfers != null)
+{
+    var golferViews = Golfers.Select(g => new GolferScoreView(g)).OrderByDescending(gsv => gsv.TotalDots);
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Total Dots</th>
+                <th>Round Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var golfer in golferViews)
+            {
+                <tr>
+                    <td>@golfer.Name</td>
+                    <td>@golfer.TotalDots</td>
+                    <td>@golfer.RoundScore</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public IEnumerable<Golfer> Golfers { get; set; }
+}

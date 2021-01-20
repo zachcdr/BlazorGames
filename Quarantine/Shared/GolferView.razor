@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Quarantine.ExtensionMethods;
+@using Quarantine.Models;
+@using Quarantine.Models.Enums;
+
+@if (Golfer != null)
+{
+    <input @bind="@currentHole.Score" type="number" class="score-field" maxlength="1" onClick="this.select();" >
+    <div>
+        <label style="padding-right: 20px" for="availableDots">Dots: </label>
+        <div name="availableDots">
+            @foreach (var dot in DotTypes)
+            {
+                var text = dot.GetDescription();
+                <label class="switch">
+                    <input type="checkbox" checked="@currentHole.Dots.Contains(dot)" @onchange="eventArgs => { CheckboxClicked(dot); }">
+                    <span class="slider round"></span>
+                </label>
+                @text <br />
+            }
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public Golfer Golfer { get; set; }
+    [Parameter]
+    public List<DotType> DotTypes { get; set; }
+    [Parameter]
+    public int CurrentHole { get; set; }
+    private Hole currentHole { get => Golfer?.Holes?.Single(h => h.Id == CurrentHole); }
+
+    private void CheckboxClicked(DotType dot)
+    {
+        if (currentHole.Dots.Contains(dot))
+        {
+            currentHole.Dots.Remove(dot);
+        }
+        else
+        {
+            currentHole.Dots.Add(dot);
+        }
+    }
+}

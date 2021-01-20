@@ -1,18 +1,83 @@
 ﻿@page "/"
+@using Quarantine.ExtensionMethods;
+@using Quarantine.Models.Enums;
 
-<h1>Welcome to Quarantine</h1>
+<h1>Welcome</h1>
 
-<p>Currently, the only offered game is <a href="games">Ride The Bus</a></p>
+<p>I am using this platform in an iterative process to learn Blazor while having some fun.</p>
+<p>Below is a list of available games and thier rules. You can also browse straight to a game via the nav menu.</p>
 
-<p>To play, you must either create a new game, or join an existing</p>
-<p>To create a game, fill out the Player Name, Game Name, and optional Password field - the game will be created and added to the list of available games</p>
-<p>The creator of the game has the ability to start the game and is in charge of 'flipping' cards during the 'Ride The Bus' portion</p>
-<p>To join an existing game, select the game from the game list, enter a password if prompted, enter your name, and press join</p>
-<p>If the game has already started, you may press the name of your player in the displayed table and confirm you want to play as that player</p>
+<div>
+    <b>Games</b>
+</div>
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn" @onclick="eventArgs => { Toggle(GameType.RideTheBus); }">
+                    @GameType.RideTheBus.GetDescription()
+                </button>
+            </h5>
+        </div>
+        @if (ExpandedGames.Contains(GameType.RideTheBus))
+        {
+            <div>
+                <div class="card-body">
+                    <p>
+                        - To play, you must either create a new game, or join an existing<br />
+                        - To create a game, fill out the Player Name, Game Name, and optional Password field - the game will be created and added to the list of available games<br />
+                        - The creator of the game has the ability to start the game and is in charge of 'flipping' cards during the 'Ride The Bus' portion<br />
+                        - To join an existing game, select the game from the game list, enter a password if prompted, enter your name, and press join<br />
+                        - If the game has already started, you may press the name of your player in the displayed table and confirm you want to play as that player
+                    </p>
+                    <p>
+                        <b>NOTES:</b>
+                        - Drinks are randomly assigned.<br />
+                        - Each game is limited to <b>9</b> players.<br />
+                        - Once a game starts, no additional players can be added.<br />
+                        - Have fun and drink responsibly.<br />
+                        - This is most definitely a <b>Beta</b>.
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn" @onclick="eventArgs => { Toggle(GameType.Dots); }">
+                    @GameType.Dots.GetDescription()
+                </button>
+            </h5>
+        </div>
+        @if (ExpandedGames.Contains(GameType.Dots))
+        {
+            <div>
+                <div class="card-body">
+                    <p>
+                        - To play, you must either create a new game, or join an existing<br />
+                        - To create a game, fill out the Player Name, Game Name, and optional Password field - the game will be created and added to the list of available games<br />
+                        - You can now add players to your game<br />
+                        - Once a game is started you will not be able to add anymore players
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
 
-<b>NOTES:</b>
-<p>Drinks are randomly assigned</p>
-<p>Each game is limited to 9 players</p>
-<p>Once a game starts, no additional players can be added</p>
-<p>Have fun and drink responsibly</p>
-<p>This is most definitely a <b>Beta</b></p>
+@code {
+    private List<GameType> ExpandedGames = new List<GameType>();
+
+    private void Toggle(GameType gameType)
+    {
+        if (ExpandedGames.Contains(gameType))
+        {
+            ExpandedGames.Remove(gameType);
+        }
+        else
+        {
+            ExpandedGames.Add(gameType);
+        }
+    }
+}
