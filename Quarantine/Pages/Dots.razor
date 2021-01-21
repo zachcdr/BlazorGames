@@ -74,7 +74,7 @@ else
             iterator++;
         }
     }
-    if (showScores)
+    if (showScores || dotsGame.Game.GameState == GameState.Complete)
     {
         <GolferScores Golfers="@dotsGame.Game.Groups.SelectMany(g => g.Golfers)"></GolferScores>
     }
@@ -115,14 +115,6 @@ else
 
     private async Task Start()
     {
-        if (dotsGame.Game.Groups.Select(group => group.Golfers).Count() == 1)
-        {
-            if (!await jsRuntime.InvokeAsync<bool>("confirm", $"There is only 1 player in your game.\r\nAre you sure you want to start your round?"))
-            {
-                return;
-            }
-        }
-
         await dotsGame.Start();
         showScores = true;
     }
