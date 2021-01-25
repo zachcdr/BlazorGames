@@ -1,0 +1,46 @@
+﻿@page "/traqjaq"
+
+@using Quarantine.Interfaces;
+@using Quarantine.Services;
+@using Quarantine.Models;
+@using Quarantine.Responses;
+@inject IHandleRetreivingGames _iServiceGames;
+@inject IJSRuntime jsRuntime;
+
+<h1>TraqJaq</h1>
+
+<p>A simple solution to monitoring all things Jaq</p>
+
+@if (ServiceResponse != null && !ServiceResponse.IsSuccess)
+{
+    <div class="alert alert-danger">
+        @ServiceResponse.Message
+    </div>
+}
+
+@if (ServiceResponse?.Data == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <p>Hello World</p>
+}
+
+@code {
+    private GameService gameService;
+    private ServiceResponse<IList<GameDetails>> ServiceResponse;
+
+    protected override async Task OnInitializedAsync()
+    {
+        string input = await jsRuntime.InvokeAsync<string>("passwordPrompt.showPrompt", "Enter Password (case sensitive)");
+
+        if (input == "012121")
+        {
+            gameService = new GameService(_iServiceGames);
+
+            ServiceResponse = await gameService.GetGames(Models.Enums.GameType.Dots);
+        }
+    }
+}
+
