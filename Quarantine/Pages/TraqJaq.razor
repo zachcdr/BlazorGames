@@ -2,9 +2,12 @@
 
 @using Quarantine.Interfaces;
 @using Quarantine.Services;
+@using Quarantine.ExtensionMethods;
 @using Quarantine.Models;
+@using Quarantine.Models.Enums;
 @using Quarantine.Responses;
 @inject IHandleRetreivingGames _iServiceGames;
+@inject IHandleGameState _gameState;
 @inject IJSRuntime jsRuntime;
 
 <h1>TraqJaq</h1>
@@ -18,29 +21,68 @@
     </div>
 }
 
-@if (ServiceResponse?.Data == null)
+@if (traqJaqService == null ||  traqJaqService.IsLoaded == false)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <p>Hello World</p>
+    @foreach (var traqView in traqJaqService.TraqTypeViews)
+    {
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" @onclick="eventArgs => { Toggle(traqView.TraqType); }">
+                        @traqView.TraqType.GetDescription()
+                    </button>
+                </h5>
+            </div>
+            @if (traqView.IsVisible)
+            {
+                <div>
+                    <div class="card-body">
+                        @switch (traqView.TraqType)
+                        {
+                            case TraqType.Medicine:
+                                <Medications Meds="traqJaqService.GetMedications()" MedicineType="UpdateMedicine"></Medications>
+                                break;
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
 }
 
 @code {
     private GameService gameService;
+    private TraqJaqService traqJaqService;
     private ServiceResponse<IList<GameDetails>> ServiceResponse;
 
     protected override async Task OnInitializedAsync()
     {
-        string input = await jsRuntime.InvokeAsync<string>("passwordPrompt.showPrompt", "Enter Password (case sensitive)");
+        //string input = await jsRuntime.InvokeAsync<string>("passwordPrompt.showPrompt", "Enter Password (case sensitive)");
 
-        if (input == "012121")
-        {
-            gameService = new GameService(_iServiceGames);
+        //if (input == "012121")
+        //{
+        gameService = new GameService(_iServiceGames);
 
-            ServiceResponse = await gameService.GetGames(Models.Enums.GameType.Dots);
-        }
+        ServiceResponse = await gameService.GetGames(Models.Enums.GameType.TraqJaq);
+
+        traqJaqService = new TraqJaqService(_gameState, ServiceResponse.Data?.FirstOrDefault()?.Id);
+
+        await traqJaqService.Loading();
+        //}
+    }
+
+    private void Toggle(TraqType traqType)
+    {
+        traqJaqService.ToggleTraq(traqType);
+    }
+
+    private async Task UpdateMedicine(MedicationType medicationType)
+    {
+        await traqJaqService.UpdateMedicine(medicationType);
     }
 }
 

@@ -1,0 +1,49 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Quarantine.Models;
+@using Quarantine.Models.Enums;
+@using Quarantine.ExtensionMethods;
+
+@if (Meds != null)
+{
+    <table class="table">
+        <tbody>
+            @foreach (var medication in Meds)
+            {
+                @medication.MedicationType.GetDescription()
+            <tr>
+                <td>@medication.Quantity</td>
+                <td>@GetFormattedDate(medication.NextDose).ToString("MM/dd/yyyy h:mm tt")</td>
+                <td>
+                    @if (DateTime.UtcNow < medication.NextDose.AddMinutes(-10))
+                    {
+                        <button class="btn btn-success" disabled type="button">Take</button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-success" type="button" @onclick="async () => { await Take(medication.MedicationType); }">Take</button>
+                    }
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public IEnumerable<Medication> Meds { get; set; }
+    [Parameter]
+    public EventCallback<MedicationType> MedicineType { get; set; }
+
+    private async Task Take(MedicationType medicationType)
+    {
+        await MedicineType.InvokeAsync(medicationType);
+    }
+
+    private DateTime GetFormattedDate(DateTime utcTime)
+    {
+        var zone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+
+        return TimeZoneInfo.ConvertTimeFromUtc(utcTime, zone);
+    }
+}
