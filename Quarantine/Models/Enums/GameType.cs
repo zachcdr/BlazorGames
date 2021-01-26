@@ -6,6 +6,7 @@ namespace Quarantine.Models.Enums
     {
         [Description("Ride The Bus")]
         RideTheBus,
-        Dots
+        Dots,
+        TraqJaq
     }
 }
