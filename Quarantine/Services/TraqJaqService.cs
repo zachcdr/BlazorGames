@@ -86,6 +86,11 @@ namespace Quarantine.Services
             return _traqJaq.Medications;
         }
 
+        public List<Pump> GetPumpSessions()
+        {
+            return _traqJaq.Pumps.OrderByDescending(p => p.StartTimeUtc).ToList();
+        }
+
         public async Task UpdateMedicine(MedicationType medicationType)
         {
             _traqJaq.Medications.Single(med => med.MedicationType == medicationType).TimeTaken = DateTime.UtcNow;
@@ -93,6 +98,18 @@ namespace Quarantine.Services
             await Save();
         }
 
+        public async Task UpdatePump(PumpState pumpState)
+        {
+            if (pumpState == PumpState.Start)
+            {
+                _traqJaq.Pumps.Add(new Pump() { StartTimeUtc = DateTime.UtcNow });
+            }
+            else
+            {
+                _traqJaq.Pumps.Single(p => p.EndTimeUtc == null).EndTimeUtc = DateTime.UtcNow;
+            }
 
+            await Save();
+        }
     }
 }
