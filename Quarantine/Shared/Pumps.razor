@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Quarantine.Models;
+@using Quarantine.Models.Enums;
+
+@if (PumpSessions != null)
+{
+    <div class="maxwidth" style="padding: 5px">
+        @if (PumpSessions.Count() > 0 && PumpSessions.Any(ps => ps.EndTimeUtc == null))
+        {
+            <button class="btn btn-danger btn-block" type="button" @onclick="async () => { await StartOrFinishPump(PumpState.Finish); }">Finish</button>
+        }
+        else
+        {
+            <button class="btn btn-success btn-block" type="button" @onclick="async () => { await StartOrFinishPump(PumpState.Start); }">Start Pump #@(PumpSessions.Count() + 1)</button>
+        }
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Start</th>
+                <th>End</th>
+                <th>Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pump in PumpSessions)
+            {
+                <tr>
+                    <td>@GetFormattedDate(pump.StartTimeUtc)</td>
+                    <td>@GetFormattedDate(pump.EndTimeUtc)</td>
+                    <td>@pump.Duration</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public IEnumerable<Pump> PumpSessions { get; set; }
+    [Parameter]
+    public EventCallback<PumpState> StartOrFinish { get; set; }
+
+    private async Task StartOrFinishPump(PumpState pumpState)
+    {
+        await StartOrFinish.InvokeAsync(pumpState);
+    }
+
+    private string GetFormattedDate(DateTime? utcTime)
+    {
+        if (utcTime == null)
+        {
+            return "";
+        }
+
+        var zone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+
+        return TimeZoneInfo.ConvertTimeFromUtc(Convert.ToDateTime(utcTime), zone).ToString("MM/dd/yyyy h:mm tt");
+    }
+}

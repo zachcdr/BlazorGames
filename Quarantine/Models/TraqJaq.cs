@@ -7,5 +7,6 @@ namespace Quarantine.Models
     {
         public Guid Id { get; set; }
         public List<Medication> Medications { get; set; }
+        public List<Pump> Pumps { get; set; }
     }
 }
