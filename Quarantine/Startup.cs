@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -38,6 +39,7 @@ namespace Quarantine
             //services.AddTransient<IHandleRetreivingGames, LocalGameRepo>();  uncomment and comment AzureGameRepo lines to enable local storage
             services.AddTransient<IHandleGameState, AzureGameRepo>();
             services.AddTransient<IHandleRetreivingGames, AzureGameRepo>();
+            services.AddBlazoredLocalStorage(config => config.JsonSerializerOptions.WriteIndented = true);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

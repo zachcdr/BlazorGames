@@ -8,6 +8,7 @@
 @using Quarantine.Responses;
 @inject IHandleRetreivingGames _iServiceGames;
 @inject IHandleGameState _gameState;
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 
 <h1>TraqJaq</h1>
 
@@ -26,12 +27,14 @@
 }
 else
 {
-    @if (password != "12121")
+    @if (!isAuthenticated)
     {
-        <div class="maxwidth">
-            <label for="password">Password: </label>
-            <input id="password" @bind="@password" class="maxwidth" type="password">
-        </div>
+        <EditForm Model="@simplePassword" OnSubmit="@Authenticate">
+            <div class="maxwidth">
+                <label for="password">Password: </label>
+                <input id="password" @bind-value="@simplePassword.Password" class="maxwidth" type="password">
+            </div>
+        </EditForm>
     }
     else
     {
@@ -70,8 +73,10 @@ else
     private GameService gameService;
     private TraqJaqService traqJaqService;
     private ServiceResponse<IList<GameDetails>> ServiceResponse;
-    private string password;
-    private bool isAuthenticated = true;
+    private const string traqJaqPassword = "[TRAQ_JAQ_PASSWORD]";
+    private SimplePassword simplePassword = new SimplePassword();
+    private string localPassword;
+    private bool isAuthenticated;
 
     protected override async Task OnInitializedAsync()
     {
@@ -82,6 +87,16 @@ else
         traqJaqService = new TraqJaqService(_gameState, ServiceResponse.Data?.FirstOrDefault()?.Id);
 
         await traqJaqService.Loading();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        localPassword = await localStorage.GetItemAsync<string>("traqJaq_password");
+
+        if (localPassword == traqJaqPassword)
+        {
+            isAuthenticated = true;
+        }
     }
 
     private void Toggle(TraqType traqType)
@@ -97,6 +112,15 @@ else
     private async Task UpdatePump(PumpState pumpState)
     {
         await traqJaqService.UpdatePump(pumpState);
+    }
+
+    private async Task Authenticate()
+    {
+        if (simplePassword.Password == traqJaqPassword)
+        {
+            await localStorage.SetItemAsync("traqJaq_password", traqJaqPassword);
+            isAuthenticated = true;
+        }
     }
 }
 
