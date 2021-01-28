@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Components;
 @using Quarantine.Models;
 @using Quarantine.Models.Enums;
+@using System.Threading;
 
 @if (PumpSessions != null)
 {
@@ -41,6 +42,11 @@
     [Parameter]
     public EventCallback<PumpState> StartOrFinish { get; set; }
 
+    protected override async Task OnInitializedAsync()
+    {
+        Timer();
+    }
+
     private async Task StartOrFinishPump(PumpState pumpState)
     {
         await StartOrFinish.InvokeAsync(pumpState);
@@ -56,5 +62,15 @@
         var zone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
 
         return TimeZoneInfo.ConvertTimeFromUtc(Convert.ToDateTime(utcTime), zone).ToString("MM/dd/yyyy h:mm tt");
+    }
+
+    private async void Timer()
+    {
+        while (true)
+        {
+            await Task.Run(() => Thread.Sleep(5000));
+
+            await InvokeAsync(StateHasChanged);
+        }
     }
 }

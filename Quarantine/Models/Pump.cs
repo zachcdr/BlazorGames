@@ -10,12 +10,20 @@ namespace Quarantine.Models
 
         public string GetDuration()
         {
+            double duration = 0;
+
             if (EndTimeUtc == null)
             {
-                return null;
+                duration = Math.Floor((Convert.ToDateTime(DateTime.UtcNow) - StartTimeUtc).Duration().TotalMinutes);
+            }
+            else
+            {
+                duration = Math.Floor((Convert.ToDateTime(EndTimeUtc) - StartTimeUtc).Duration().TotalMinutes);
             }
 
-            return $"{Math.Floor((Convert.ToDateTime(EndTimeUtc) - StartTimeUtc).Duration().TotalMinutes)} minutes";
+            var plural = duration == 1 ? "" : "s";
+
+            return $"{duration} minute{plural}";
         }
     }
 }
