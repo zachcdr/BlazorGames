@@ -1,0 +1,89 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Quarantine.ExtensionMethods;
+@using Quarantine.Models;
+@using Quarantine.Models.Enums;
+
+@if (DiaperChanges != null)
+{
+    <div>
+        <label style="padding-right: 20px" for="availableDiaperContents">Diaper Contents: </label>
+        <div name="availableDiaperContents">
+            @foreach (var diaperType in ((DiaperType[])Enum.GetValues(typeof(DiaperType))).ToList())
+            {
+                var text = diaperType.GetDescription();
+                <label class="switch">
+                    <input type="checkbox" checked="@diaperContents.Contains(diaperType)" @onchange="eventArgs => { Toggle(diaperType); }">
+                    <span class="slider round"></span>
+                </label>
+                @text <br />
+            }
+        </div>
+        <button class="btn btn-success btn-block" type="button" @onclick="async () => { await ChangeDiaper(); }">Change Diaper #@(DiaperChanges.TotalDiaperChanges + 1)</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Contents</th>
+                <th>Changed At</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var diaper in DiaperChanges.DiaperChanges)
+            {
+                <tr>
+                    <td>
+                        @foreach (var diaperType in ((DiaperType[])Enum.GetValues(typeof(DiaperType))).ToList())
+                        {
+                            var text = diaperType.GetDescription();
+                            <label class="switch">
+                                <input type="checkbox" checked="@diaper.DiaperTypes.Contains(diaperType)" disabled>
+                                <span class="slider round"></span>
+                            </label>
+                            @text <br />
+                        }
+                    </td>
+                    <td>@GetFormattedDate(diaper.ChangeTimeUtc)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<DiaperType> diaperContents = new List<DiaperType>();
+
+    [Parameter]
+    public DiaperChangeView DiaperChanges { get; set; }
+    [Parameter]
+    public EventCallback<List<DiaperType>> DiaperContents { get; set; }
+
+    private async Task ChangeDiaper()
+    {
+        await DiaperContents.InvokeAsync(diaperContents);
+        diaperContents = new List<DiaperType>();
+    }
+
+    private string GetFormattedDate(DateTime? utcTime)
+    {
+        if (utcTime == null)
+        {
+            return "";
+        }
+
+        var zone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+
+        return TimeZoneInfo.ConvertTimeFromUtc(Convert.ToDateTime(utcTime), zone).ToString("MM/dd/yyyy h:mm tt");
+    }
+
+    private void Toggle(DiaperType diaperType)
+    {
+        if (diaperContents.Contains(diaperType))
+        {
+            diaperContents.Remove(diaperType);
+        }
+        else
+        {
+            diaperContents.Add(diaperType);
+        }
+    }
+}

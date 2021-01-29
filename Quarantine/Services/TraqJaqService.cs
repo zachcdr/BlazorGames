@@ -96,6 +96,16 @@ namespace Quarantine.Services
             };
         }
 
+        public DiaperChangeView GetDiaperChanges(int? limit = null)
+        {
+            return new DiaperChangeView()
+            {
+                TotalDiaperChanges = _traqJaq.DiaperChanges.Count,
+                DiaperChanges = limit == null ? _traqJaq.DiaperChanges.OrderByDescending(p => p.ChangeTimeUtc).ToList()
+                                      : _traqJaq.DiaperChanges.OrderByDescending(p => p.ChangeTimeUtc).Take((int)limit).ToList()
+            };
+        }
+
         public async Task UpdateMedicine(MedicationType medicationType)
         {
             _traqJaq.Medications.Single(med => med.MedicationType == medicationType).TimeTaken = DateTime.UtcNow;
@@ -116,6 +126,17 @@ namespace Quarantine.Services
                 pumpToUpdate.EndTimeUtc = DateTime.UtcNow;
                 pumpToUpdate.Volume = pump.Volume;
             }
+
+            await Save();
+        }
+
+        public async Task DiaperChange(List<DiaperType> diaperTypes)
+        {
+            _traqJaq.DiaperChanges.Add(new Diaper()
+            {
+                ChangeTimeUtc = DateTime.UtcNow,
+                DiaperTypes = diaperTypes
+            });
 
             await Save();
         }
