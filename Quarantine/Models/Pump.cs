@@ -7,6 +7,7 @@ namespace Quarantine.Models
         public DateTime StartTimeUtc { get; set; }
         public DateTime? EndTimeUtc { get; set; }
         public string Duration { get => GetDuration(); }
+        public int? Volume { get; set; }
 
         public string GetDuration()
         {

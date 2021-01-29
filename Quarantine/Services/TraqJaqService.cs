@@ -98,15 +98,18 @@ namespace Quarantine.Services
             await Save();
         }
 
-        public async Task UpdatePump(PumpState pumpState)
+        public async Task UpdatePump(DoPump pump)
         {
-            if (pumpState == PumpState.Start)
+            if (pump.PumpState == PumpState.Start)
             {
                 _traqJaq.Pumps.Add(new Pump() { StartTimeUtc = DateTime.UtcNow });
             }
             else
             {
-                _traqJaq.Pumps.Single(p => p.EndTimeUtc == null).EndTimeUtc = DateTime.UtcNow;
+                var pumpToUpdate = _traqJaq.Pumps.Single(p => p.EndTimeUtc == null);
+
+                pumpToUpdate.EndTimeUtc = DateTime.UtcNow;
+                pumpToUpdate.Volume = pump.Volume;
             }
 
             await Save();
