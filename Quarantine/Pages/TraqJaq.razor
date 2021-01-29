@@ -58,7 +58,7 @@ else
                                     <Medications Meds="traqJaqService.GetMedications()" MedicineType="UpdateMedicine"></Medications>
                                     break;
                                 case TraqType.Pump:
-                                    <Pumps PumpSessions="traqJaqService.GetPumpSessions()" StartOrFinish="UpdatePump"></Pumps>
+                                    <Pumps PumpSessions="traqJaqService.GetPumpSessions(10)" StartOrFinish="UpdatePump"></Pumps>
                                     break;
                             }
                         </div>

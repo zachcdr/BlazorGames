@@ -86,9 +86,14 @@ namespace Quarantine.Services
             return _traqJaq.Medications;
         }
 
-        public List<Pump> GetPumpSessions()
+        public PumpSessionsView GetPumpSessions(int? limit = null)
         {
-            return _traqJaq.Pumps.OrderByDescending(p => p.StartTimeUtc).ToList();
+            return new PumpSessionsView()
+            {
+                TotalPumps = _traqJaq.Pumps.Count,
+                Pumps = limit == null ? _traqJaq.Pumps.OrderByDescending(p => p.StartTimeUtc).ToList()
+                                      : _traqJaq.Pumps.OrderByDescending(p => p.StartTimeUtc).Take((int)limit).ToList()
+            };
         }
 
         public async Task UpdateMedicine(MedicationType medicationType)
