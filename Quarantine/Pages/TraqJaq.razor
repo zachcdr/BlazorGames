@@ -109,9 +109,9 @@ else
         await traqJaqService.UpdateMedicine(medicationType);
     }
 
-    private async Task UpdatePump(PumpState pumpState)
+    private async Task UpdatePump(DoPump pump)
     {
-        await traqJaqService.UpdatePump(pumpState);
+        await traqJaqService.UpdatePump(pump);
     }
 
     private async Task Authenticate()

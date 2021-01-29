@@ -8,7 +8,15 @@
     <div class="maxwidth" style="padding: 5px">
         @if (PumpSessions.Count() > 0 && PumpSessions.Any(ps => ps.EndTimeUtc == null))
         {
-            <button class="btn btn-danger btn-block" type="button" @onclick="async () => { await StartOrFinishPump(PumpState.Finish); }">Finish</button>
+            <EditForm Model="@doPump" OnValidSubmit="@FinishPump">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class="maxwidth">
+                    <label for="volume">Volume: </label>
+                    <input id="volume" @bind-value="@doPump.Volume" class="maxwidth">
+                    <button class="btn btn-danger btn-block" type="submit">Finish</button>
+                </div>
+            </EditForm>
         }
         else
         {
@@ -19,8 +27,8 @@
         <thead>
             <tr>
                 <th>Start</th>
-                <th>End</th>
                 <th>Duration</th>
+                <th>Volume</th>
             </tr>
         </thead>
         <tbody>
@@ -28,8 +36,8 @@
             {
                 <tr>
                     <td>@GetFormattedDate(pump.StartTimeUtc)</td>
-                    <td>@GetFormattedDate(pump.EndTimeUtc)</td>
                     <td>@pump.Duration</td>
+                    <td>@pump.Volume</td>
                 </tr>
             }
         </tbody>
@@ -37,19 +45,28 @@
 }
 
 @code {
+    private DoPump doPump = new DoPump();
+
     [Parameter]
     public IEnumerable<Pump> PumpSessions { get; set; }
     [Parameter]
-    public EventCallback<PumpState> StartOrFinish { get; set; }
+    public EventCallback<DoPump> StartOrFinish { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        Timer();
+        await Timer();
     }
 
     private async Task StartOrFinishPump(PumpState pumpState)
     {
-        await StartOrFinish.InvokeAsync(pumpState);
+        doPump.PumpState = pumpState;
+
+        await StartOrFinish.InvokeAsync(doPump);
+    }
+
+    private async Task FinishPump()
+    {
+        await StartOrFinishPump(PumpState.Finish);
     }
 
     private string GetFormattedDate(DateTime? utcTime)
@@ -64,7 +81,7 @@
         return TimeZoneInfo.ConvertTimeFromUtc(Convert.ToDateTime(utcTime), zone).ToString("MM/dd/yyyy h:mm tt");
     }
 
-    private async void Timer()
+    private async Task Timer()
     {
         while (true)
         {
