@@ -8,6 +8,7 @@ namespace Quarantine.Models
         public DateTime? EndTimeUtc { get; set; }
         public string Duration { get => GetDuration(); }
         public int? Volume { get; set; }
+        public bool IsDaily { get => GetIsDaily(); }
 
         public string GetDuration()
         {
@@ -25,6 +26,22 @@ namespace Quarantine.Models
             var plural = duration == 1 ? "" : "s";
 
             return $"{duration} minute{plural}";
+        }
+
+        private bool GetIsDaily()
+        {
+            var zone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+
+            var dateOfStart = TimeZoneInfo.ConvertTimeFromUtc(StartTimeUtc, zone).Date;
+
+            if (dateOfStart == TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, zone).Date)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
