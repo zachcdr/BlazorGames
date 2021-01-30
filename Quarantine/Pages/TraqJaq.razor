@@ -58,13 +58,13 @@ else
                                     <Medications Meds="traqJaqService.GetMedications()" MedicineType="UpdateMedicine"></Medications>
                                     break;
                                 case TraqType.Pump:
-                                    <Pumps PumpSessions="traqJaqService.GetPumpSessions(listLimit)" StartOrFinish="UpdatePump"></Pumps>
+                                    <MilkSession Session="traqJaqService.GetPumpSessions(listLimit)" HandleMilk="UpdatePump"></MilkSession>
                                     break;
                                 case TraqType.Diaper:
                                     <Diapers DiaperChanges="traqJaqService.GetDiaperChanges(listLimit)" DiaperContents="DiaperChange"></Diapers>
                                     break;
                                 case TraqType.Feed:
-                                    <Feeds Feed="traqJaqService.GetFeeds(listLimit)" Volume="Feed"></Feeds>
+                                    <MilkSession Session="traqJaqService.GetFeeds(listLimit)" HandleMilk="UpdateFeed"></MilkSession>
                                     break;
                             }
                         </div>
@@ -116,7 +116,7 @@ else
         await traqJaqService.UpdateMedicine(medicationType);
     }
 
-    private async Task UpdatePump(DoPump pump)
+    private async Task UpdatePump(HandleMilk pump)
     {
         await traqJaqService.UpdatePump(pump);
     }
@@ -126,9 +126,9 @@ else
         await traqJaqService.DiaperChange(diaperTypes);
     }
 
-    private async Task Feed(SimpleVolume volume)
+    private async Task UpdateFeed(HandleMilk feed)
     {
-        await traqJaqService.Feed(volume.Volume);
+        await traqJaqService.Feed(feed);
     }
 
     private async Task Authenticate()

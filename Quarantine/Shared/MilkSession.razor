@@ -3,25 +3,25 @@
 @using Quarantine.Models.Enums;
 @using System.Threading;
 
-@if (PumpSessions != null)
+@if (Session != null)
 {
     <div style="padding: 5px">
-        @if (PumpSessions.Pumps.Count() > 0 && PumpSessions.Pumps.Any(ps => ps.EndTimeUtc == null))
+        @if (Session.Milks.Count() > 0 && Session.Milks.Any(ps => ps.EndTimeUtc == null))
         {
-            <EditForm Model="@doPump" OnValidSubmit="@FinishPump">
+            <EditForm Model="@handle" OnValidSubmit="@Finish">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
                 <div class="maxwidth">
                     <label for="volume">Volume: </label>
-                    <input id="volume" @bind-value="@doPump.Volume" class="jaq-input">
+                    <input id="volume" @bind-value="@handle.Volume" class="jaq-input">
                     <button class="btn btn-danger btn-block" type="submit">Finish</button>
                 </div>
             </EditForm>
         }
         else
         {
-            <label style="float: right; font-weight: bold;">Daily Total: @PumpSessions.DailyVolume ml</label>
-            <button class="btn btn-success btn-block" type="button" @onclick="async () => { await StartOrFinishPump(PumpState.Start); }">Start Pump #@(PumpSessions.TotalPumps + 1)</button>
+            <label style="float: right; font-weight: bold;">Daily Total: @Session.DailyVolume ml</label>
+            <button class="btn btn-success btn-block" type="button" @onclick="async () => { await StartOrFinish(MilkState.Start); }">Start  #@(Session.Total + 1)</button>
         }
     </div>
     <table class="table">
@@ -33,7 +33,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var pump in PumpSessions.Pumps)
+            @foreach (var pump in Session.Milks)
             {
                 <tr>
                     <td>@GetFormattedDate(pump.StartTimeUtc)</td>
@@ -46,28 +46,28 @@
 }
 
 @code {
-    private DoPump doPump = new DoPump();
+    private HandleMilk handle = new HandleMilk();
 
     [Parameter]
-    public PumpSessionsView PumpSessions { get; set; }
+    public MilkSessionView Session { get; set; }
     [Parameter]
-    public EventCallback<DoPump> StartOrFinish { get; set; }
+    public EventCallback<HandleMilk> HandleMilk { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         await Timer();
     }
 
-    private async Task StartOrFinishPump(PumpState pumpState)
+    private async Task StartOrFinish(MilkState pumpState)
     {
-        doPump.PumpState = pumpState;
+        handle.MilkState = pumpState;
 
-        await StartOrFinish.InvokeAsync(doPump);
+        await HandleMilk.InvokeAsync(handle);
     }
 
-    private async Task FinishPump()
+    private async Task Finish()
     {
-        await StartOrFinishPump(PumpState.Finish);
+        await StartOrFinish(MilkState.Finish);
     }
 
     private string GetFormattedDate(DateTime? utcTime)

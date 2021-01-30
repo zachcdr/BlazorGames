@@ -86,12 +86,12 @@ namespace Quarantine.Services
             return _traqJaq.Medications;
         }
 
-        public PumpSessionsView GetPumpSessions(int? limit = null)
+        public MilkSessionView GetPumpSessions(int? limit = null)
         {
-            return new PumpSessionsView()
+            return new MilkSessionView()
             {
-                TotalPumps = _traqJaq.Pumps.Count,
-                Pumps = limit == null ? _traqJaq.Pumps.OrderByDescending(p => p.StartTimeUtc).ToList()
+                Total = _traqJaq.Pumps.Count,
+                Milks = limit == null ? _traqJaq.Pumps.OrderByDescending(p => p.StartTimeUtc).ToList()
                                       : _traqJaq.Pumps.OrderByDescending(p => p.StartTimeUtc).Take((int)limit).ToList()
             };
         }
@@ -106,13 +106,13 @@ namespace Quarantine.Services
             };
         }
 
-        public FeedView GetFeeds(int? limit = null)
+        public MilkSessionView GetFeeds(int? limit = null)
         {
-            return new FeedView()
+            return new MilkSessionView()
             {
-                TotalFeeds = _traqJaq.Feeds.Count,
-                Feeds = limit == null ? _traqJaq.Feeds.OrderByDescending(p => p.FeedTimeUtc).ToList()
-                                      : _traqJaq.Feeds.OrderByDescending(p => p.FeedTimeUtc).Take((int)limit).ToList()
+                Total = _traqJaq.Feeds.Count,
+                Milks = limit == null ? _traqJaq.Feeds.OrderByDescending(p => p.StartTimeUtc).ToList()
+                                      : _traqJaq.Feeds.OrderByDescending(p => p.StartTimeUtc).Take((int)limit).ToList()
             };
         }
 
@@ -123,11 +123,11 @@ namespace Quarantine.Services
             await Save();
         }
 
-        public async Task UpdatePump(DoPump pump)
+        public async Task UpdatePump(HandleMilk pump)
         {
-            if (pump.PumpState == PumpState.Start)
+            if (pump.MilkState == MilkState.Start)
             {
-                _traqJaq.Pumps.Add(new Pump() { StartTimeUtc = DateTime.UtcNow });
+                _traqJaq.Pumps.Add(new Milk() { StartTimeUtc = DateTime.UtcNow });
             }
             else
             {
@@ -151,13 +151,19 @@ namespace Quarantine.Services
             await Save();
         }
 
-        public async Task Feed(int? volume)
+        public async Task Feed(HandleMilk feed)
         {
-            _traqJaq.Feeds.Add(new Feed()
+            if (feed.MilkState == MilkState.Start)
             {
-                FeedTimeUtc = DateTime.UtcNow,
-                Volume = volume
-            });
+                _traqJaq.Feeds.Add(new Milk() { StartTimeUtc = DateTime.UtcNow });
+            }
+            else
+            {
+                var feedToUpdate = _traqJaq.Feeds.Single(p => p.EndTimeUtc == null);
+
+                feedToUpdate.EndTimeUtc = DateTime.UtcNow;
+                feedToUpdate.Volume = feed.Volume;
+            }
 
             await Save();
         }

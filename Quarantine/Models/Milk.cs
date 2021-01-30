@@ -2,7 +2,7 @@
 
 namespace Quarantine.Models
 {
-    public class Pump
+    public class Milk
     {
         public DateTime StartTimeUtc { get; set; }
         public DateTime? EndTimeUtc { get; set; }

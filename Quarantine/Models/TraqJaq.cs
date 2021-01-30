@@ -7,8 +7,8 @@ namespace Quarantine.Models
     {
         public Guid Id { get; set; }
         public List<Medication> Medications { get; set; }
-        public List<Pump> Pumps { get; set; }
+        public List<Milk> Pumps { get; set; }
         public List<Diaper> DiaperChanges { get; set; }
-        public List<Feed> Feeds { get; set; }
+        public List<Milk> Feeds { get; set; }
     }
 }
