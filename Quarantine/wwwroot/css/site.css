@@ -186,6 +186,12 @@ input:checked + .slider:before {
     font-size: xx-large;
 }
 
+/* Jaq Inputs*/
+.jaq-input {
+    margin-bottom: .5rem;
+    width: 100%;
+}
+
 /* Rounded sliders */
 .slider.round {
     border-radius: 34px;
