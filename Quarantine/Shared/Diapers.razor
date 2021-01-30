@@ -35,10 +35,6 @@
                         @foreach (var diaperType in ((DiaperType[])Enum.GetValues(typeof(DiaperType))).ToList())
                         {
                             var text = diaperType.GetDescription();
-                            <label class="switch">
-                                <input type="checkbox" checked="@diaper.DiaperTypes.Contains(diaperType)" disabled>
-                                <span class="slider round"></span>
-                            </label>
                             @text <br />
                         }
                     </td>

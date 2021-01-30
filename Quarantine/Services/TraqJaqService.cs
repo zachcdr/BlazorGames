@@ -106,6 +106,16 @@ namespace Quarantine.Services
             };
         }
 
+        public FeedView GetFeeds(int? limit = null)
+        {
+            return new FeedView()
+            {
+                TotalFeeds = _traqJaq.Feeds.Count,
+                Feeds = limit == null ? _traqJaq.Feeds.OrderByDescending(p => p.FeedTimeUtc).ToList()
+                                      : _traqJaq.Feeds.OrderByDescending(p => p.FeedTimeUtc).Take((int)limit).ToList()
+            };
+        }
+
         public async Task UpdateMedicine(MedicationType medicationType)
         {
             _traqJaq.Medications.Single(med => med.MedicationType == medicationType).TimeTaken = DateTime.UtcNow;
@@ -136,6 +146,17 @@ namespace Quarantine.Services
             {
                 ChangeTimeUtc = DateTime.UtcNow,
                 DiaperTypes = diaperTypes
+            });
+
+            await Save();
+        }
+
+        public async Task Feed(int? volume)
+        {
+            _traqJaq.Feeds.Add(new Feed()
+            {
+                FeedTimeUtc = DateTime.UtcNow,
+                Volume = volume
             });
 
             await Save();

@@ -9,5 +9,6 @@ namespace Quarantine.Models
         public List<Medication> Medications { get; set; }
         public List<Pump> Pumps { get; set; }
         public List<Diaper> DiaperChanges { get; set; }
+        public List<Feed> Feeds { get; set; }
     }
 }
