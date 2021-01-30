@@ -5,7 +5,7 @@
 
 @if (PumpSessions != null)
 {
-    <div class="maxwidth" style="padding: 5px">
+    <div style="padding: 5px">
         @if (PumpSessions.Pumps.Count() > 0 && PumpSessions.Pumps.Any(ps => ps.EndTimeUtc == null))
         {
             <EditForm Model="@doPump" OnValidSubmit="@FinishPump">
@@ -20,6 +20,7 @@
         }
         else
         {
+            <label style="float: right; font-weight: bold;">Daily Total: @PumpSessions.DailyVolume ml</label>
             <button class="btn btn-success btn-block" type="button" @onclick="async () => { await StartOrFinishPump(PumpState.Start); }">Start Pump #@(PumpSessions.TotalPumps + 1)</button>
         }
     </div>
