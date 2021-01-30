@@ -58,10 +58,13 @@ else
                                     <Medications Meds="traqJaqService.GetMedications()" MedicineType="UpdateMedicine"></Medications>
                                     break;
                                 case TraqType.Pump:
-                                    <Pumps PumpSessions="traqJaqService.GetPumpSessions(10)" StartOrFinish="UpdatePump"></Pumps>
+                                    <Pumps PumpSessions="traqJaqService.GetPumpSessions(listLimit)" StartOrFinish="UpdatePump"></Pumps>
                                     break;
                                 case TraqType.Diaper:
-                                    <Diapers DiaperChanges="traqJaqService.GetDiaperChanges(10)" DiaperContents="DiaperChange"></Diapers>
+                                    <Diapers DiaperChanges="traqJaqService.GetDiaperChanges(listLimit)" DiaperContents="DiaperChange"></Diapers>
+                                    break;
+                                case TraqType.Feed:
+                                    <Feeds Feed="traqJaqService.GetFeeds(listLimit)" Volume="Feed"></Feeds>
                                     break;
                             }
                         </div>
@@ -77,6 +80,7 @@ else
     private TraqJaqService traqJaqService;
     private ServiceResponse<IList<GameDetails>> ServiceResponse;
     private const string traqJaqPassword = "[TRAQ_JAQ_PASSWORD]";
+    private const int listLimit = 10;
     private SimplePassword simplePassword = new SimplePassword();
     private string localPassword;
     private bool isAuthenticated;
@@ -120,6 +124,11 @@ else
     private async Task DiaperChange(List<DiaperType> diaperTypes)
     {
         await traqJaqService.DiaperChange(diaperTypes);
+    }
+
+    private async Task Feed(SimpleVolume volume)
+    {
+        await traqJaqService.Feed(volume.Volume);
     }
 
     private async Task Authenticate()
