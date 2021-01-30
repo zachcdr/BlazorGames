@@ -6,9 +6,10 @@
     <EditForm Model="@volume" OnValidSubmit="@RecordFeed">
         <DataAnnotationsValidator />
         <ValidationSummary />
+        <label style="float: right; font-weight: bold;">Daily Total: @Feed.DailyVolume ml</label>
         <div>
             <label for="volume">Volume: </label>
-            <input id="volume" @bind-value="@volume.Volume" class="maxwidth">
+            <input id="volume" @bind-value="@volume.Volume" class="jaq-input">
             <button class="btn btn-success btn-block" type="submit">Record Feed #@(Feed.TotalFeeds + 1)</button>
         </div>
     </EditForm>
