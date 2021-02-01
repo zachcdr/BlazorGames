@@ -15,8 +15,13 @@ namespace Quarantine.Services
         private readonly IHandleGameState _gameState;
         private TraqJaq _traqJaq;
         private List<TraqTypeView> _traqViews = new List<TraqTypeView>();
+        private MilkSessionView _pumps;
+        private MilkSessionView _feeds;
 
         public bool IsLoaded;
+        public MilkSessionView Pumps { get => _pumps; }
+        public MilkSessionView Feeds { get => _feeds; }
+
         public List<TraqTypeView> TraqTypeViews { get => _traqViews; }
 
         public TraqJaqService(IHandleGameState gameState, Guid? id)
@@ -28,13 +33,7 @@ namespace Quarantine.Services
 
             if (id == null)
             {
-                _traqJaq = new TraqJaq()
-                {
-                    Medications = GenerateMedications(),
-                    Id = Guid.NewGuid()
-                };
-
-                IsLoaded = true;
+                throw new KeyNotFoundException();
             }
             else
             {
@@ -48,6 +47,9 @@ namespace Quarantine.Services
 
             _traqJaq = Converter<TraqJaq>.FromJson(gameResponse);
 
+            FreshPumps();
+            FreshFeeds();
+
             IsLoaded = true;
         }
 
@@ -56,15 +58,31 @@ namespace Quarantine.Services
             await _gameState.SaveGame(GameType.TraqJaq, _traqJaq.Id, Converter<TraqJaq>.ToJson(_traqJaq));
         }
 
-        private List<Medication> GenerateMedications()
+        private DateTime GetCurrentPstDate(DateTime utcDate)
         {
-            var medications = new List<Medication>();
+            var zone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
 
+            return TimeZoneInfo.ConvertTimeFromUtc(utcDate, zone).Date;
+        }
 
-            ((MedicationType[])Enum.GetValues(typeof(MedicationType))).ToList()
-                .ForEach(med => medications.Add(new Medication() { MedicationType = med, TimeTaken = DateTime.UtcNow }));
+        public void FreshPumps(DateTime? startDate = null)
+        {
+            if (startDate == null)
+            {
+                startDate = GetCurrentPstDate(DateTime.UtcNow);
+            }
 
-            return medications;
+            _pumps = new MilkSessionView(_traqJaq.Pumps, (DateTime)startDate);
+        }
+
+        public void FreshFeeds(DateTime? startDate = null)
+        {
+            if (startDate == null)
+            {
+                startDate = GetCurrentPstDate(DateTime.UtcNow);
+            }
+
+            _feeds = new MilkSessionView(_traqJaq.Feeds, (DateTime)startDate);
         }
 
         public async Task Loading()
@@ -79,21 +97,21 @@ namespace Quarantine.Services
         {
             _traqViews.ForEach(tv => tv.IsVisible = false);
             _traqViews.Single(tv => tv.TraqType == traqType).IsVisible = true;
+
+            switch (traqType)
+            {
+                case TraqType.Feed:
+                    FreshFeeds();
+                    break;
+                case TraqType.Pump:
+                    FreshPumps();
+                    break;
+            }
         }
 
         public List<Medication> GetMedications()
         {
             return _traqJaq.Medications;
-        }
-
-        public MilkSessionView GetPumpSessions(int? limit = null)
-        {
-            return new MilkSessionView()
-            {
-                Total = _traqJaq.Pumps.Count,
-                Milks = limit == null ? _traqJaq.Pumps.OrderByDescending(p => p.StartTimeUtc).ToList()
-                                      : _traqJaq.Pumps.OrderByDescending(p => p.StartTimeUtc).Take((int)limit).ToList()
-            };
         }
 
         public DiaperChangeView GetDiaperChanges(int? limit = null)
@@ -103,16 +121,6 @@ namespace Quarantine.Services
                 TotalDiaperChanges = _traqJaq.DiaperChanges.Count,
                 DiaperChanges = limit == null ? _traqJaq.DiaperChanges.OrderByDescending(p => p.ChangeTimeUtc).ToList()
                                       : _traqJaq.DiaperChanges.OrderByDescending(p => p.ChangeTimeUtc).Take((int)limit).ToList()
-            };
-        }
-
-        public MilkSessionView GetFeeds(int? limit = null)
-        {
-            return new MilkSessionView()
-            {
-                Total = _traqJaq.Feeds.Count,
-                Milks = limit == null ? _traqJaq.Feeds.OrderByDescending(p => p.StartTimeUtc).ToList()
-                                      : _traqJaq.Feeds.OrderByDescending(p => p.StartTimeUtc).Take((int)limit).ToList()
             };
         }
 
@@ -136,6 +144,8 @@ namespace Quarantine.Services
                 pumpToUpdate.EndTimeUtc = DateTime.UtcNow;
                 pumpToUpdate.Volume = pump.Volume;
             }
+
+            _pumps = new MilkSessionView(_traqJaq.Pumps, GetCurrentPstDate(DateTime.UtcNow));
 
             await Save();
         }
@@ -164,6 +174,8 @@ namespace Quarantine.Services
                 feedToUpdate.EndTimeUtc = DateTime.UtcNow;
                 feedToUpdate.Volume = feed.Volume;
             }
+
+            _feeds = new MilkSessionView(_traqJaq.Feeds, GetCurrentPstDate(DateTime.UtcNow));
 
             await Save();
         }

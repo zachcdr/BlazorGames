@@ -4,6 +4,7 @@ namespace Quarantine.Models
 {
     public class Milk
     {
+        public DateTime StartTimePst { get => GetStartTimePst(); }
         public DateTime StartTimeUtc { get; set; }
         public DateTime? EndTimeUtc { get; set; }
         public string Duration { get => GetDuration(); }
@@ -42,6 +43,13 @@ namespace Quarantine.Models
             {
                 return false;
             }
+        }
+
+        private DateTime GetStartTimePst()
+        {
+            var zone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+
+            return TimeZoneInfo.ConvertTimeFromUtc(StartTimeUtc, zone);
         }
     }
 }

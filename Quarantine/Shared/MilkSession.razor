@@ -6,7 +6,7 @@
 @if (Session != null)
 {
     <div style="padding: 5px">
-        @if (Session.Milks.Count() > 0 && Session.Milks.Any(ps => ps.EndTimeUtc == null))
+        @if (Session.DailyMilks.Any(ps => ps.EndTimeUtc == null))
         {
             <EditForm Model="@handle" OnValidSubmit="@Finish">
                 <DataAnnotationsValidator />
@@ -20,8 +20,28 @@
         }
         else
         {
-            <label style="float: right; font-weight: bold;">Daily Total: @Session.DailyVolume ml</label>
-            <button class="btn btn-success btn-block" type="button" @onclick="async () => { await StartOrFinish(MilkState.Start); }">Start  #@(Session.Total + 1)</button>
+            <div class="row" style="float: right;">
+                <label style="font-weight: bold;">@Session.SessionDate.ToShortDateString() Total: @Session.DailyVolume ml</label>
+            </div>
+            <div class="row justify-content-center" style="margin-top: 2rem;">
+                @if (Session.IsMinDate)
+                {
+                    <button class="btn btn-warning" disabled><span class="oi oi-caret-left"></span></button>
+                }
+                else
+                {
+                    <button class="btn btn-warning" type="button" @onclick="async () => { await Cycle(DayCycleType.Previous); }"><span class="oi oi-caret-left"></span></button>
+                }
+                <button class="btn btn-success milk-start" type="button" @onclick="async () => { await StartOrFinish(MilkState.Start); }">Start  #@(Session.Total + 1)</button>
+                @if (Session.IsMaxDate)
+                {
+                    <button class="btn btn-warning" disabled><span class="oi oi-caret-right"></span></button>
+                }
+                else
+                {
+                    <button class="btn btn-warning" type="button" @onclick="async () => { await Cycle(DayCycleType.Next); }"><span class="oi oi-caret-right"></span></button>
+                }
+            </div>
         }
     </div>
     <table class="table">
@@ -33,10 +53,10 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var pump in Session.Milks)
+            @foreach (var pump in Session.DailyMilks)
             {
                 <tr>
-                    <td>@GetFormattedDate(pump.StartTimeUtc)</td>
+                    <td>@pump.StartTimePst.ToShortTimeString()</td>
                     <td>@pump.Duration</td>
                     <td>@pump.Volume</td>
                 </tr>
@@ -52,6 +72,8 @@
     public MilkSessionView Session { get; set; }
     [Parameter]
     public EventCallback<HandleMilk> HandleMilk { get; set; }
+    [Parameter]
+    public EventCallback<DayCycleType> CycleDay { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -70,16 +92,9 @@
         await StartOrFinish(MilkState.Finish);
     }
 
-    private string GetFormattedDate(DateTime? utcTime)
+    private async Task Cycle(DayCycleType dayCycleType)
     {
-        if (utcTime == null)
-        {
-            return "";
-        }
-
-        var zone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
-
-        return TimeZoneInfo.ConvertTimeFromUtc(Convert.ToDateTime(utcTime), zone).ToString("MM/dd/yyyy h:mm tt");
+        await CycleDay.InvokeAsync(dayCycleType);
     }
 
     private async Task Timer()
