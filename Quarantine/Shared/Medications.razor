@@ -7,7 +7,7 @@
 {
     <table class="table">
         <tbody>
-            @foreach (var medication in Meds)
+            @foreach (var medication in Meds.Where(med => med.IsEnabled))
             {
                 @medication.MedicationType.GetDescription()
             <tr>

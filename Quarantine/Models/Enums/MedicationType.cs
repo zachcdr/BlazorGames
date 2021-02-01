@@ -10,6 +10,11 @@ namespace Quarantine.Models.Enums
         [Description("Stool Softener")]
         StoolSoftener,
         [Description("MiraLAX")]
-        Miralax
+        Miralax,
+        PreNatal,
+        [Description("Vitamin D")]
+        VitaminD,
+        [Description("Sunflower Lecithin")]
+        SunflowerLecithin
     }
 }

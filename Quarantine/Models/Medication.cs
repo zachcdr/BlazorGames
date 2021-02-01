@@ -9,6 +9,7 @@ namespace Quarantine.Models
         public string Quantity { get => GetQuantity(); }
         public DateTime TimeTaken { get; set; }
         public DateTime NextDose { get => GetNextDose(); }
+        public bool IsEnabled { get; set; }
 
         private string GetQuantity()
         {
@@ -30,6 +31,15 @@ namespace Quarantine.Models
                     break;
                 case MedicationType.Miralax:
                     prettyQuantity = "Full Serving";
+                    break;
+                case MedicationType.PreNatal:
+                    prettyQuantity = "4";
+                    break;
+                case MedicationType.VitaminD:
+                    prettyQuantity = "1";
+                    break;
+                case MedicationType.SunflowerLecithin:
+                    prettyQuantity = "1";
                     break;
             }
 
@@ -55,6 +65,15 @@ namespace Quarantine.Models
                     newDate = newDate.AddHours(24);
                     break;
                 case MedicationType.Miralax:
+                    newDate = newDate.AddHours(24);
+                    break;
+                case MedicationType.PreNatal:
+                    newDate = newDate.AddHours(24);
+                    break;
+                case MedicationType.SunflowerLecithin:
+                    newDate = newDate.AddHours(12);
+                    break;
+                case MedicationType.VitaminD:
                     newDate = newDate.AddHours(24);
                     break;
             }
