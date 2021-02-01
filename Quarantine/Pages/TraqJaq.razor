@@ -58,13 +58,13 @@ else
                                     <Medications Meds="traqJaqService.GetMedications()" MedicineType="UpdateMedicine"></Medications>
                                     break;
                                 case TraqType.Pump:
-                                    <MilkSession Session="traqJaqService.GetPumpSessions(listLimit)" HandleMilk="UpdatePump"></MilkSession>
+                                    <MilkSession Session="traqJaqService.Pumps" HandleMilk="UpdatePump" CycleDay="CyclePumps"></MilkSession>
                                     break;
                                 case TraqType.Diaper:
                                     <Diapers DiaperChanges="traqJaqService.GetDiaperChanges(listLimit)" DiaperContents="DiaperChange"></Diapers>
                                     break;
                                 case TraqType.Feed:
-                                    <MilkSession Session="traqJaqService.GetFeeds(listLimit)" HandleMilk="UpdateFeed"></MilkSession>
+                                    <MilkSession Session="traqJaqService.Feeds" HandleMilk="UpdateFeed" CycleDay="CycleFeeds"></MilkSession>
                                     break;
                             }
                         </div>
@@ -137,6 +137,32 @@ else
         {
             await localStorage.SetItemAsync("traqJaq_password", traqJaqPassword);
             isAuthenticated = true;
+        }
+    }
+
+    private void CycleFeeds(DayCycleType dayCycleType)
+    {
+        switch (dayCycleType)
+        {
+            case DayCycleType.Next:
+                traqJaqService.FreshFeeds(traqJaqService.Feeds.SessionDate.AddDays(1));
+                break;
+            case DayCycleType.Previous:
+                traqJaqService.FreshFeeds(traqJaqService.Feeds.SessionDate.AddDays(-1));
+                break;
+        }
+    }
+
+    private void CyclePumps(DayCycleType dayCycleType)
+    {
+        switch (dayCycleType)
+        {
+            case DayCycleType.Next:
+                traqJaqService.FreshPumps(traqJaqService.Pumps.SessionDate.AddDays(1));
+                break;
+            case DayCycleType.Previous:
+                traqJaqService.FreshPumps(traqJaqService.Pumps.SessionDate.AddDays(-1));
+                break;
         }
     }
 }
