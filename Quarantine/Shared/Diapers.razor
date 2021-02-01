@@ -32,7 +32,7 @@
             {
                 <tr>
                     <td>
-                        @foreach (var diaperType in ((DiaperType[])Enum.GetValues(typeof(DiaperType))).ToList())
+                        @foreach (var diaperType in diaper.DiaperTypes)
                         {
                             var text = diaperType.GetDescription();
                             @text <br />
