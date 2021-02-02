@@ -6,7 +6,7 @@
 @if (Session != null)
 {
     <div style="padding: 5px">
-        @if (Session.DailyMilks.Any(ps => ps.EndTimeUtc == null))
+        @if (Session.IsActiveSession)
         {
             <EditForm Model="@handle" OnValidSubmit="@Finish">
                 <DataAnnotationsValidator />

@@ -18,6 +18,7 @@ namespace Quarantine.Models
             Total = milks.Count();
             IsMaxDate = !(milks.Any(milk => milk.StartTimePst >= SessionDate.AddDays(1)));
             IsMinDate = !(milks.Any(milk => milk.StartTimePst < SessionDate));
+            IsActiveSession = milks.Any(milk => milk.EndTimeUtc == null);
         }
 
         public IEnumerable<Milk> DailyMilks { get; private set; }
@@ -26,6 +27,7 @@ namespace Quarantine.Models
         public DateTime SessionDate { get; private set; }
         public bool IsMaxDate { get; private set; }
         public bool IsMinDate { get; private set; }
+        public bool IsActiveSession { get; private set; }
 
         private int GetDailyVolume() 
         {
