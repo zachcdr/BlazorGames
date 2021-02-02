@@ -3,20 +3,21 @@ using Azure.Storage.Blobs.Models;
 using Quarantine.Interfaces;
 using Quarantine.Models.Enums;
 using System;
+using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Quarantine.Models;
 
 namespace Quarantine.Repositories
 {
     public class AzureGameRepo : IHandleGameState, IHandleRetreivingGames
     {
         private BlobServiceClient _blobServiceClient;
-        private readonly string _connectionString = "CONNECTIONSTRING";
 
-        public AzureGameRepo()
+        public AzureGameRepo(IOptions<ApplicationSettings> settings)
         {
-            _blobServiceClient = new BlobServiceClient(_connectionString);
+            _blobServiceClient = new BlobServiceClient(settings.Value.BlobStorageConnectionString);
         }
 
         public async Task<string> LoadGame(GameType gameType, Guid gameGuid)
