@@ -8,5 +8,7 @@ namespace Quarantine.Models
     {   
         public DateTime ChangeTimeUtc { get; set; }
         public List<DiaperType> DiaperTypes { get; set; }
+        public string CreatedByUserName { get; set; }
+        public string UpdatedByUserName { get; set; }
     }
 }

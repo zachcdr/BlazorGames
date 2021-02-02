@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Quarantine.Data;
 using Quarantine.Interfaces;
+using Quarantine.Models;
 using Quarantine.Repositories;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -25,6 +26,7 @@ namespace Quarantine
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<ApplicationSettings>(Configuration);
             services.AddMvc().AddJsonOptions(options =>
                 {
                     options.JsonSerializerOptions.WriteIndented = true;

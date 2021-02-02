@@ -10,6 +10,8 @@ namespace Quarantine.Models
         public string Duration { get => GetDuration(); }
         public int? Volume { get; set; }
         public bool IsDaily { get => GetIsDaily(); }
+        public string CreatedByUserName { get; set; }
+        public string UpdatedByUserName { get; set; }
 
         public string GetDuration()
         {

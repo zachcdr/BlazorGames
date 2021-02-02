@@ -23,6 +23,7 @@ namespace Quarantine.Services
         public MilkSessionView Feeds { get => _feeds; }
 
         public List<TraqTypeView> TraqTypeViews { get => _traqViews; }
+        public string UserName { get; set; }
 
         public TraqJaqService(IHandleGameState gameState, Guid? id)
         {
@@ -135,7 +136,7 @@ namespace Quarantine.Services
         {
             if (pump.MilkState == MilkState.Start)
             {
-                _traqJaq.Pumps.Add(new Milk() { StartTimeUtc = DateTime.UtcNow });
+                _traqJaq.Pumps.Add(new Milk() { StartTimeUtc = DateTime.UtcNow, CreatedByUserName = UserName });
             }
             else
             {
@@ -143,6 +144,7 @@ namespace Quarantine.Services
 
                 pumpToUpdate.EndTimeUtc = DateTime.UtcNow;
                 pumpToUpdate.Volume = pump.Volume;
+                pumpToUpdate.UpdatedByUserName = UserName;
             }
 
             _pumps = new MilkSessionView(_traqJaq.Pumps, GetCurrentPstDate(DateTime.UtcNow));
@@ -155,7 +157,8 @@ namespace Quarantine.Services
             _traqJaq.DiaperChanges.Add(new Diaper()
             {
                 ChangeTimeUtc = DateTime.UtcNow,
-                DiaperTypes = diaperTypes
+                DiaperTypes = diaperTypes,
+                CreatedByUserName = UserName
             });
 
             await Save();
@@ -165,7 +168,7 @@ namespace Quarantine.Services
         {
             if (feed.MilkState == MilkState.Start)
             {
-                _traqJaq.Feeds.Add(new Milk() { StartTimeUtc = DateTime.UtcNow });
+                _traqJaq.Feeds.Add(new Milk() { StartTimeUtc = DateTime.UtcNow, CreatedByUserName = UserName });
             }
             else
             {
@@ -173,6 +176,7 @@ namespace Quarantine.Services
 
                 feedToUpdate.EndTimeUtc = DateTime.UtcNow;
                 feedToUpdate.Volume = feed.Volume;
+                feedToUpdate.UpdatedByUserName = UserName;
             }
 
             _feeds = new MilkSessionView(_traqJaq.Feeds, GetCurrentPstDate(DateTime.UtcNow));

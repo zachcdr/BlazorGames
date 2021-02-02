@@ -1,13 +1,16 @@
 ﻿@page "/traqjaq"
 
+@using Microsoft.Extensions.Options;
 @using Quarantine.Interfaces;
 @using Quarantine.Services;
 @using Quarantine.ExtensionMethods;
 @using Quarantine.Models;
 @using Quarantine.Models.Enums;
 @using Quarantine.Responses;
+@using System.Threading;
 @inject IHandleRetreivingGames _iServiceGames;
 @inject IHandleGameState _gameState;
+@inject IOptions<ApplicationSettings> _settings;
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 
 <h1>TraqJaq</h1>
@@ -79,7 +82,6 @@ else
     private GameService gameService;
     private TraqJaqService traqJaqService;
     private ServiceResponse<IList<GameDetails>> ServiceResponse;
-    private const string traqJaqPassword = "[TRAQ_JAQ_PASSWORD]";
     private const int listLimit = 10;
     private SimplePassword simplePassword = new SimplePassword();
     private string localPassword;
@@ -98,11 +100,24 @@ else
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        localPassword = await localStorage.GetItemAsync<string>("traqJaq_password");
+        while (traqJaqService == null || traqJaqService.IsLoaded == false)
+        {
+            await Task.Run(() => Thread.Sleep(500));
+        }
 
-        if (localPassword == traqJaqPassword)
+        localPassword = await localStorage.GetItemAsync<string>("traqJaq_auth");
+
+        if (localPassword == _settings.Value.TraqJaqPasswordKyleah)
         {
             isAuthenticated = true;
+            traqJaqService.UserName = "Kyleah";
+            StateHasChanged();
+        }
+        else if (localPassword == _settings.Value.TraqJaqPasswordZach)
+        {
+            isAuthenticated = true;
+            traqJaqService.UserName = "Zach";
+            StateHasChanged();
         }
     }
 
@@ -133,10 +148,17 @@ else
 
     private async Task Authenticate()
     {
-        if (simplePassword.Password == traqJaqPassword)
+        if (simplePassword.Password == _settings.Value.TraqJaqPasswordKyleah)
         {
-            await localStorage.SetItemAsync("traqJaq_password", traqJaqPassword);
+            await localStorage.SetItemAsync("traqJaq_auth", simplePassword.Password);
             isAuthenticated = true;
+            traqJaqService.UserName = "Kyleah";
+        }
+        else if (simplePassword.Password == _settings.Value.TraqJaqPasswordZach)
+        {
+            await localStorage.SetItemAsync("traqJaq_auth", simplePassword.Password);
+            isAuthenticated = true;
+            traqJaqService.UserName = "Zach";
         }
     }
 
