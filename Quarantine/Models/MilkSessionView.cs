@@ -19,6 +19,12 @@ namespace Quarantine.Models
             IsMaxDate = !(milks.Any(milk => milk.StartTimePst >= SessionDate.AddDays(1)));
             IsMinDate = !(milks.Any(milk => milk.StartTimePst < SessionDate));
             IsActiveSession = milks.Any(milk => milk.EndTimeUtc == null);
+            Stats = milks.GroupBy(milk => milk.CreatedByUserName)
+                                    .Select(group => new MilkSessionStat() 
+                                    { 
+                                        UserName = group.First().CreatedByUserName ?? "Unknown", 
+                                        Total = group.Count() 
+                                    });
         }
 
         public IEnumerable<Milk> DailyMilks { get; private set; }
@@ -28,10 +34,18 @@ namespace Quarantine.Models
         public bool IsMaxDate { get; private set; }
         public bool IsMinDate { get; private set; }
         public bool IsActiveSession { get; private set; }
+        public IEnumerable<MilkSessionStat> Stats { get; private set; }
 
-        private int GetDailyVolume() 
+        private int GetDailyVolume()
         {
             return DailyMilks.Sum(p => p.Volume == null ? 0 : (int)p.Volume);
+        }
+
+        private List<MilkSessionStat> GetMilkSessionStats()
+        {
+            var stats = new List<MilkSessionStat>();
+
+            return stats;
         }
     }
 }

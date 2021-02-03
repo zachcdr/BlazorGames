@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Quarantine.Models;
+@inject IJSRuntime jsRuntime;
+
+@if (Stats != null)
+{
+    <div id="chartdiv"></div>
+}
+
+@code {
+    [Parameter]
+    public IEnumerable<MilkSessionStat> Stats { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await jsRuntime.InvokeVoidAsync("generatePieChart", Stats);
+            StateHasChanged();
+        }
+    }
+}

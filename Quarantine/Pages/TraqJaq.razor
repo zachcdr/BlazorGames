@@ -61,13 +61,27 @@ else
                                     <Medications Meds="traqJaqService.GetMedications()" MedicineType="UpdateMedicine"></Medications>
                                     break;
                                 case TraqType.Pump:
-                                    <MilkSession Session="traqJaqService.Pumps" HandleMilk="UpdatePump" CycleDay="CyclePumps"></MilkSession>
+                                    if (showStats)
+                                    {
+                                        <MilkStats Stats="traqJaqService.Pumps.Stats"></MilkStats>
+                                    }
+                                    else
+                                    {
+                                        <MilkSession Session="traqJaqService.Pumps" HandleMilk="UpdatePump" CycleDay="CyclePumps" ShowStats="ShowStats"></MilkSession>
+                                    }
                                     break;
                                 case TraqType.Diaper:
                                     <Diapers DiaperChanges="traqJaqService.GetDiaperChanges(listLimit)" DiaperContents="DiaperChange"></Diapers>
                                     break;
                                 case TraqType.Feed:
-                                    <MilkSession Session="traqJaqService.Feeds" HandleMilk="UpdateFeed" CycleDay="CycleFeeds"></MilkSession>
+                                    if (showStats)
+                                    {
+                                        <MilkStats Stats="traqJaqService.Feeds.Stats"></MilkStats>
+                                    }
+                                    else
+                                    {
+                                        <MilkSession Session="traqJaqService.Feeds" HandleMilk="UpdateFeed" CycleDay="CycleFeeds" ShowStats="ShowStats"></MilkSession>
+                                    }
                                     break;
                             }
                         </div>
@@ -86,6 +100,7 @@ else
     private SimplePassword simplePassword = new SimplePassword();
     private string localPassword;
     private bool isAuthenticated;
+    private bool showStats;
 
     protected override async Task OnInitializedAsync()
     {
@@ -100,30 +115,40 @@ else
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        while (traqJaqService == null || traqJaqService.IsLoaded == false)
+        if (firstRender)
         {
-            await Task.Run(() => Thread.Sleep(500));
-        }
+            while (traqJaqService == null || traqJaqService.IsLoaded == false)
+            {
+                await Task.Run(() => Thread.Sleep(500));
+            }
 
-        localPassword = await localStorage.GetItemAsync<string>("traqJaq_auth");
+            localPassword = await localStorage.GetItemAsync<string>("traqJaq_auth");
 
-        if (localPassword == _settings.Value.TraqJaqPasswordKyleah)
-        {
-            isAuthenticated = true;
-            traqJaqService.UserName = "Kyleah";
-            StateHasChanged();
-        }
-        else if (localPassword == _settings.Value.TraqJaqPasswordZach)
-        {
-            isAuthenticated = true;
-            traqJaqService.UserName = "Zach";
-            StateHasChanged();
+            if (localPassword == _settings.Value.TraqJaqPasswordKyleah)
+            {
+                isAuthenticated = true;
+                traqJaqService.UserName = "Kyleah";
+                StateHasChanged();
+            }
+            else if (localPassword == _settings.Value.TraqJaqPasswordZach)
+            {
+                isAuthenticated = true;
+                traqJaqService.UserName = "Zach";
+                StateHasChanged();
+            }
         }
     }
 
     private void Toggle(TraqType traqType)
     {
+        showStats = false;
         traqJaqService.ToggleTraq(traqType);
+    }
+
+    private void ShowStats(bool show)
+    {
+        showStats = show;
+        StateHasChanged();
     }
 
     private async Task UpdateMedicine(MedicationType medicationType)
