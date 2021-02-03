@@ -23,6 +23,9 @@
             <div class="row" style="float: right;">
                 <label style="font-weight: bold;">@Session.SessionDate.ToShortDateString() Total: @Session.DailyVolume ml</label>
             </div>
+            <div class="row" style="float: left;">
+                <button type="button" @onclick="InvokeStats" class="btn"><span class="oi oi-pie-chart"></span></button>
+            </div>
             <div class="row justify-content-center" style="margin-top: 2rem;">
                 @if (Session.IsMinDate)
                 {
@@ -74,6 +77,8 @@
     public EventCallback<HandleMilk> HandleMilk { get; set; }
     [Parameter]
     public EventCallback<DayCycleType> CycleDay { get; set; }
+    [Parameter]
+    public EventCallback<bool> ShowStats { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -95,6 +100,11 @@
     private async Task Cycle(DayCycleType dayCycleType)
     {
         await CycleDay.InvokeAsync(dayCycleType);
+    }
+
+    private async Task InvokeStats()
+    {
+        await ShowStats.InvokeAsync(true);
     }
 
     private async Task Timer()
