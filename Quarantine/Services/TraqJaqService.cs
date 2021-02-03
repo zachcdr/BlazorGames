@@ -24,6 +24,7 @@ namespace Quarantine.Services
 
         public List<TraqTypeView> TraqTypeViews { get => _traqViews; }
         public string UserName { get; set; }
+        public bool RefreshView { get; set; }
 
         public TraqJaqService(IHandleGameState gameState, Guid? id)
         {
@@ -44,18 +45,35 @@ namespace Quarantine.Services
 
         private async void Load(Guid id)
         {
-            var gameResponse = await _gameState.LoadGame(GameType.TraqJaq, id);
+            while (true)
+            {
+                var gameResponse = await _gameState.LoadGame(GameType.TraqJaq, id);
 
-            _traqJaq = Converter<TraqJaq>.FromJson(gameResponse);
+                var traqJaq = Converter<TraqJaq>.FromJson(gameResponse);
 
-            FreshPumps();
-            FreshFeeds();
+                if (_traqJaq == null || _traqJaq.LastUpdatedUtc < traqJaq?.LastUpdatedUtc)
+                {
+                    _traqJaq = traqJaq;
 
-            IsLoaded = true;
+                    FreshPumps();
+                    FreshFeeds();
+
+                    if (IsLoaded)
+                    {
+                        RefreshView = true;
+                    }
+
+                    IsLoaded = true;
+                }
+
+                await Task.Run(() => Thread.Sleep(5000));
+            }
         }
 
         private async Task Save()
         {
+            _traqJaq.LastUpdatedUtc = DateTime.UtcNow;
+
             await _gameState.SaveGame(GameType.TraqJaq, _traqJaq.Id, Converter<TraqJaq>.ToJson(_traqJaq));
         }
 

@@ -111,6 +111,8 @@ else
         traqJaqService = new TraqJaqService(_gameState, ServiceResponse.Data?.FirstOrDefault()?.Id);
 
         await traqJaqService.Loading();
+
+        CheckRefreshStatus();
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -149,6 +151,21 @@ else
     {
         showStats = show;
         StateHasChanged();
+    }
+
+    private async void CheckRefreshStatus()
+    {
+        while (true)
+        {
+            await Task.Run(() => Thread.Sleep(100));
+
+            if (traqJaqService != null && traqJaqService.RefreshView)
+            {
+                traqJaqService.RefreshView = false;
+
+                StateHasChanged();
+            }
+        }
     }
 
     private async Task UpdateMedicine(MedicationType medicationType)
