@@ -10,5 +10,6 @@ namespace Quarantine.Models
         public List<Milk> Pumps { get; set; }
         public List<Diaper> DiaperChanges { get; set; }
         public List<Milk> Feeds { get; set; }
+        public DateTime LastUpdatedUtc { get; set; }
     }
 }
