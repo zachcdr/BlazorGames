@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quarantine.Models.Enums;
+using System;
 
 namespace Quarantine.Models
 {
@@ -12,6 +13,7 @@ namespace Quarantine.Models
         public bool IsDaily { get => GetIsDaily(); }
         public string CreatedByUserName { get; set; }
         public string UpdatedByUserName { get; set; }
+        public Chorer? Chorer { get; set; }
 
         public string GetDuration()
         {

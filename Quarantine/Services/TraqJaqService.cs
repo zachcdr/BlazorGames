@@ -91,7 +91,7 @@ namespace Quarantine.Services
                 startDate = GetCurrentPstDate(DateTime.UtcNow);
             }
 
-            _pumps = new MilkSessionView(_traqJaq.Pumps, (DateTime)startDate);
+            _pumps = new MilkSessionView(_traqJaq.Pumps, (DateTime)startDate, TraqType.Pump);
         }
 
         public void FreshFeeds(DateTime? startDate = null)
@@ -101,7 +101,7 @@ namespace Quarantine.Services
                 startDate = GetCurrentPstDate(DateTime.UtcNow);
             }
 
-            _feeds = new MilkSessionView(_traqJaq.Feeds, (DateTime)startDate);
+            _feeds = new MilkSessionView(_traqJaq.Feeds, (DateTime)startDate, TraqType.Feed);
         }
 
         public async Task Loading()
@@ -165,19 +165,16 @@ namespace Quarantine.Services
                 pumpToUpdate.UpdatedByUserName = UserName;
             }
 
-            _pumps = new MilkSessionView(_traqJaq.Pumps, GetCurrentPstDate(DateTime.UtcNow));
+            _pumps = new MilkSessionView(_traqJaq.Pumps, GetCurrentPstDate(DateTime.UtcNow), TraqType.Pump);
 
             await Save();
         }
 
-        public async Task DiaperChange(List<DiaperType> diaperTypes)
+        public async Task DiaperChange(Diaper diaperChange)
         {
-            _traqJaq.DiaperChanges.Add(new Diaper()
-            {
-                ChangeTimeUtc = DateTime.UtcNow,
-                DiaperTypes = diaperTypes,
-                CreatedByUserName = UserName
-            });
+            diaperChange.CreatedByUserName = UserName;
+
+            _traqJaq.DiaperChanges.Add(diaperChange);
 
             await Save();
         }
@@ -195,9 +192,10 @@ namespace Quarantine.Services
                 feedToUpdate.EndTimeUtc = DateTime.UtcNow;
                 feedToUpdate.Volume = feed.Volume;
                 feedToUpdate.UpdatedByUserName = UserName;
+                feedToUpdate.Chorer = feed.Chorer;
             }
 
-            _feeds = new MilkSessionView(_traqJaq.Feeds, GetCurrentPstDate(DateTime.UtcNow));
+            _feeds = new MilkSessionView(_traqJaq.Feeds, GetCurrentPstDate(DateTime.UtcNow), TraqType.Feed);
 
             await Save();
         }
