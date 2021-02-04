@@ -63,7 +63,7 @@ else
                                 case TraqType.Pump:
                                     if (showStats)
                                     {
-                                        <MilkStats Stats="traqJaqService.Pumps.Stats"></MilkStats>
+                                        <ChorerStats Stats="traqJaqService.Pumps.Stats"></ChorerStats>
                                     }
                                     else
                                     {
@@ -71,12 +71,19 @@ else
                                     }
                                     break;
                                 case TraqType.Diaper:
-                                    <Diapers DiaperChanges="traqJaqService.GetDiaperChanges(listLimit)" DiaperContents="DiaperChange"></Diapers>
+                                    if (showStats)
+                                    {
+                                        <ChorerStats Stats="traqJaqService.Diapers.Stats"></ChorerStats>
+                                    }
+                                    else
+                                    {
+                                        <Diapers Session="traqJaqService.Diapers" DiaperContents="DiaperChange" CycleDay="CycleDiapers" ShowStats="ShowStats"></Diapers>
+                                    }
                                     break;
                                 case TraqType.Feed:
                                     if (showStats)
                                     {
-                                        <MilkStats Stats="traqJaqService.Feeds.Stats"></MilkStats>
+                                        <ChorerStats Stats="traqJaqService.Feeds.Stats"></ChorerStats>
                                     }
                                     else
                                     {
@@ -226,6 +233,19 @@ else
                 break;
             case DayCycleType.Previous:
                 traqJaqService.FreshPumps(traqJaqService.Pumps.SessionDate.AddDays(-1));
+                break;
+        }
+    }
+
+    private void CycleDiapers(DayCycleType dayCycleType)
+    {
+        switch (dayCycleType)
+        {
+            case DayCycleType.Next:
+                traqJaqService.FreshDiapers(traqJaqService.Diapers.SessionDate.AddDays(1));
+                break;
+            case DayCycleType.Previous:
+                traqJaqService.FreshDiapers(traqJaqService.Diapers.SessionDate.AddDays(-1));
                 break;
         }
     }

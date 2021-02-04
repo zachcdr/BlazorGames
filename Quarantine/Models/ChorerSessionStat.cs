@@ -1,6 +1,6 @@
 ﻿namespace Quarantine.Models
 {
-    public class MilkSessionStat
+    public class ChorerSessionStat
     {
         public string UserName { get; set; }
         public int Total { get; set; }

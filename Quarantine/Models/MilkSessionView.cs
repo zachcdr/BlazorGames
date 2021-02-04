@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Quarantine.Models
 {
-    public class MilkSessionView
+    public class MilkSessionView : Session
     {
         public MilkSessionView(IEnumerable<Milk> milks, DateTime dateToDisplay, TraqType traqType)
         {
@@ -22,7 +22,7 @@ namespace Quarantine.Models
             IsMinDate = !(milks.Any(milk => milk.StartTimePst < SessionDate));
             IsActiveSession = milks.Any(milk => milk.EndTimeUtc == null);
             Stats = milks.GroupBy(milk => milk.Chorer)
-                                    .Select(group => new MilkSessionStat() 
+                                    .Select(group => new ChorerSessionStat() 
                                     { 
                                         UserName = group.First().Chorer?.GetDescription() ?? "Unknown", 
                                         Total = group.Count() 
@@ -31,25 +31,12 @@ namespace Quarantine.Models
         }
 
         public IEnumerable<Milk> DailyMilks { get; private set; }
-        public int Total { get; private set; }
         public int DailyVolume { get => GetDailyVolume(); }
-        public DateTime SessionDate { get; private set; }
-        public bool IsMaxDate { get; private set; }
-        public bool IsMinDate { get; private set; }
-        public bool IsActiveSession { get; private set; }
-        public IEnumerable<MilkSessionStat> Stats { get; private set; }
         public TraqType TraqType { get; private set; }
 
         private int GetDailyVolume()
         {
             return DailyMilks.Sum(p => p.Volume == null ? 0 : (int)p.Volume);
-        }
-
-        private List<MilkSessionStat> GetMilkSessionStats()
-        {
-            var stats = new List<MilkSessionStat>();
-
-            return stats;
         }
     }
 }
