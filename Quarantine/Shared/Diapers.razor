@@ -3,9 +3,15 @@
 @using Quarantine.Models;
 @using Quarantine.Models.Enums;
 
-@if (DiaperChanges != null)
+@if (Session != null)
 {
-    <div>
+    <div class="row" style="float: left;">
+        <button type="button" @onclick="InvokeStats" style="padding-bottom: 0px;" class="btn"><span class="oi oi-pie-chart"></span></button>
+    </div>
+    <div class="row" style="float: right;">
+        <label style="font-weight: bold;">@Session.SessionDate.ToShortDateString()</label>
+    </div>
+    <div style="margin-top: 2rem;">
         <label style="padding-right: 20px" for="availableDiaperContents">Diaper Contents: </label>
         <div name="availableDiaperContents">
             @foreach (var diaperType in ((DiaperType[])Enum.GetValues(typeof(DiaperType))).ToList())
@@ -25,7 +31,25 @@
             <input type="radio" name="zach" id="@Chorer.Zach" value="@Chorer.Zach" @onchange="RadioSelection" checked=@(RadioValue == Chorer.Zach) />
             <label for="@Chorer.Zach">@Chorer.Zach.ToString()</label>
         </div>
-        <button class="btn btn-success btn-block" type="button" @onclick="async () => { await ChangeDiaper(); }">Change Diaper #@(DiaperChanges.TotalDiaperChanges + 1)</button>
+        <div class="row justify-content-center" style="margin-top: 2rem;">
+            @if (Session.IsMinDate)
+            {
+                <button class="btn btn-warning" disabled><span class="oi oi-caret-left"></span></button>
+            }
+            else
+            {
+                <button class="btn btn-warning" type="button" @onclick="async () => { await Cycle(DayCycleType.Previous); }"><span class="oi oi-caret-left"></span></button>
+            }
+            <button class="btn btn-success milk-start" type="button" @onclick="async () => { await ChangeDiaper(); }">Change Diaper  #@(Session.Total + 1)</button>
+            @if (Session.IsMaxDate)
+            {
+                <button class="btn btn-warning" disabled><span class="oi oi-caret-right"></span></button>
+            }
+            else
+            {
+                <button class="btn btn-warning" type="button" @onclick="async () => { await Cycle(DayCycleType.Next); }"><span class="oi oi-caret-right"></span></button>
+            }
+        </div>
     </div>
     <table class="table">
         <thead>
@@ -36,7 +60,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var diaper in DiaperChanges.DiaperChanges)
+            @foreach (var diaper in Session.DailyChanges)
             {
                 <tr>
                     <td>
@@ -59,9 +83,13 @@
     private Diaper diaperChange = new Diaper();
 
     [Parameter]
-    public DiaperChangeView DiaperChanges { get; set; }
+    public DiaperChangeView Session { get; set; }
     [Parameter]
     public EventCallback<Diaper> DiaperContents { get; set; }
+    [Parameter]
+    public EventCallback<DayCycleType> CycleDay { get; set; }
+    [Parameter]
+    public EventCallback<bool> ShowStats { get; set; }
 
     Chorer RadioValue = Chorer.Kyleah;
     void RadioSelection(ChangeEventArgs args)
@@ -102,5 +130,15 @@
         {
             diaperContents.Add(diaperType);
         }
+    }
+
+    private async Task Cycle(DayCycleType dayCycleType)
+    {
+        await CycleDay.InvokeAsync(dayCycleType);
+    }
+
+    private async Task InvokeStats()
+    {
+        await ShowStats.InvokeAsync(true);
     }
 }

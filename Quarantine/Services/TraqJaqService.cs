@@ -17,10 +17,12 @@ namespace Quarantine.Services
         private List<TraqTypeView> _traqViews = new List<TraqTypeView>();
         private MilkSessionView _pumps;
         private MilkSessionView _feeds;
+        private DiaperChangeView _diapers;
 
         public bool IsLoaded;
         public MilkSessionView Pumps { get => _pumps; }
         public MilkSessionView Feeds { get => _feeds; }
+        public DiaperChangeView Diapers { get => _diapers; }
 
         public List<TraqTypeView> TraqTypeViews { get => _traqViews; }
         public string UserName { get; set; }
@@ -57,6 +59,7 @@ namespace Quarantine.Services
 
                     FreshPumps();
                     FreshFeeds();
+                    FreshDiapers();
 
                     if (IsLoaded)
                     {
@@ -104,6 +107,16 @@ namespace Quarantine.Services
             _feeds = new MilkSessionView(_traqJaq.Feeds, (DateTime)startDate, TraqType.Feed);
         }
 
+        public void FreshDiapers(DateTime? startDate = null)
+        {
+            if (startDate == null)
+            {
+                startDate = GetCurrentPstDate(DateTime.UtcNow);
+            }
+
+            _diapers = new DiaperChangeView(_traqJaq.DiaperChanges, (DateTime)startDate);
+        }
+
         public async Task Loading()
         {
             while (!IsLoaded)
@@ -125,22 +138,15 @@ namespace Quarantine.Services
                 case TraqType.Pump:
                     FreshPumps();
                     break;
+                case TraqType.Diaper:
+                    FreshDiapers();
+                    break;
             }
         }
 
         public List<Medication> GetMedications()
         {
             return _traqJaq.Medications;
-        }
-
-        public DiaperChangeView GetDiaperChanges(int? limit = null)
-        {
-            return new DiaperChangeView()
-            {
-                TotalDiaperChanges = _traqJaq.DiaperChanges.Count,
-                DiaperChanges = limit == null ? _traqJaq.DiaperChanges.OrderByDescending(p => p.ChangeTimeUtc).ToList()
-                                      : _traqJaq.DiaperChanges.OrderByDescending(p => p.ChangeTimeUtc).Take((int)limit).ToList()
-            };
         }
 
         public async Task UpdateMedicine(MedicationType medicationType)
@@ -175,6 +181,8 @@ namespace Quarantine.Services
             diaperChange.CreatedByUserName = UserName;
 
             _traqJaq.DiaperChanges.Add(diaperChange);
+
+            _diapers = new DiaperChangeView(_traqJaq.DiaperChanges, GetCurrentPstDate(DateTime.UtcNow));
 
             await Save();
         }
