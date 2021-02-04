@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Quarantine.ExtensionMethods;
+using Quarantine.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,7 +8,7 @@ namespace Quarantine.Models
 {
     public class MilkSessionView
     {
-        public MilkSessionView(IEnumerable<Milk> milks, DateTime dateToDisplay)
+        public MilkSessionView(IEnumerable<Milk> milks, DateTime dateToDisplay, TraqType traqType)
         {
             if (milks == null)
             {
@@ -19,12 +21,13 @@ namespace Quarantine.Models
             IsMaxDate = !(milks.Any(milk => milk.StartTimePst >= SessionDate.AddDays(1)));
             IsMinDate = !(milks.Any(milk => milk.StartTimePst < SessionDate));
             IsActiveSession = milks.Any(milk => milk.EndTimeUtc == null);
-            Stats = milks.GroupBy(milk => milk.CreatedByUserName)
+            Stats = milks.GroupBy(milk => milk.Chorer)
                                     .Select(group => new MilkSessionStat() 
                                     { 
-                                        UserName = group.First().CreatedByUserName ?? "Unknown", 
+                                        UserName = group.First().Chorer?.GetDescription() ?? "Unknown", 
                                         Total = group.Count() 
                                     });
+            TraqType = traqType;
         }
 
         public IEnumerable<Milk> DailyMilks { get; private set; }
@@ -35,6 +38,7 @@ namespace Quarantine.Models
         public bool IsMinDate { get; private set; }
         public bool IsActiveSession { get; private set; }
         public IEnumerable<MilkSessionStat> Stats { get; private set; }
+        public TraqType TraqType { get; private set; }
 
         private int GetDailyVolume()
         {

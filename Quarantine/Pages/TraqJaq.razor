@@ -178,9 +178,9 @@ else
         await traqJaqService.UpdatePump(pump);
     }
 
-    private async Task DiaperChange(List<DiaperType> diaperTypes)
+    private async Task DiaperChange(Diaper diaperChange)
     {
-        await traqJaqService.DiaperChange(diaperTypes);
+        await traqJaqService.DiaperChange(diaperChange);
     }
 
     private async Task UpdateFeed(HandleMilk feed)

@@ -18,12 +18,20 @@
                 @text <br />
             }
         </div>
+        <div>
+            <label style="padding-right: 20px" for="changer">Changer: </label>
+            <input type="radio" name="kyleah" id="@Chorer.Kyleah" value="@Chorer.Kyleah" @onchange="RadioSelection" checked=@(RadioValue == Chorer.Kyleah) />
+            <label for="@Chorer.Kyleah">@Chorer.Kyleah.ToString()</label>
+            <input type="radio" name="zach" id="@Chorer.Zach" value="@Chorer.Zach" @onchange="RadioSelection" checked=@(RadioValue == Chorer.Zach) />
+            <label for="@Chorer.Zach">@Chorer.Zach.ToString()</label>
+        </div>
         <button class="btn btn-success btn-block" type="button" @onclick="async () => { await ChangeDiaper(); }">Change Diaper #@(DiaperChanges.TotalDiaperChanges + 1)</button>
     </div>
     <table class="table">
         <thead>
             <tr>
                 <th>Contents</th>
+                <th>Changed By</th>
                 <th>Changed At</th>
             </tr>
         </thead>
@@ -35,9 +43,10 @@
                         @foreach (var diaperType in diaper.DiaperTypes)
                         {
                             var text = diaperType.GetDescription();
-                            @text <br />
+                            @text<br />
                         }
                     </td>
+                    <td>@diaper.Chorer?.GetDescription()</td>
                     <td>@GetFormattedDate(diaper.ChangeTimeUtc)</td>
                 </tr>
             }
@@ -47,15 +56,27 @@
 
 @code {
     private List<DiaperType> diaperContents = new List<DiaperType>();
+    private Diaper diaperChange = new Diaper();
 
     [Parameter]
     public DiaperChangeView DiaperChanges { get; set; }
     [Parameter]
-    public EventCallback<List<DiaperType>> DiaperContents { get; set; }
+    public EventCallback<Diaper> DiaperContents { get; set; }
+
+    Chorer RadioValue = Chorer.Kyleah;
+    void RadioSelection(ChangeEventArgs args)
+    {
+        Enum.TryParse(args.Value.ToString(), out Chorer user);
+        RadioValue = user;
+    }
 
     private async Task ChangeDiaper()
     {
-        await DiaperContents.InvokeAsync(diaperContents);
+        diaperChange.ChangeTimeUtc = DateTime.UtcNow;
+        diaperChange.Chorer = RadioValue;
+        diaperChange.DiaperTypes = diaperContents;
+        await DiaperContents.InvokeAsync(diaperChange);
+        diaperChange = new Diaper();
         diaperContents = new List<DiaperType>();
     }
 

@@ -11,6 +11,16 @@
             <EditForm Model="@handle" OnValidSubmit="@Finish">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
+                @if (Session.TraqType == TraqType.Feed)
+                {
+                    <div>
+                        <label style="padding-right: 20px" for="changer">Feeder: </label>
+                        <input type="radio" name="kyleah" id="@Chorer.Kyleah" value="@Chorer.Kyleah" @onchange="RadioSelection" checked=@(RadioValue == Chorer.Kyleah) />
+                        <label for="@Chorer.Kyleah">@Chorer.Kyleah.ToString()</label>
+                        <input type="radio" name="zach" id="@Chorer.Zach" value="@Chorer.Zach" @onchange="RadioSelection" checked=@(RadioValue == Chorer.Zach) />
+                        <label for="@Chorer.Zach">@Chorer.Zach.ToString()</label>
+                    </div>
+                }
                 <div class="maxwidth">
                     <label for="volume">Volume: </label>
                     <input id="volume" @bind-value="@handle.Volume" class="jaq-input">
@@ -23,9 +33,12 @@
             <div class="row" style="float: right;">
                 <label style="font-weight: bold;">@Session.SessionDate.ToShortDateString() Total: @Session.DailyVolume ml</label>
             </div>
-            <div class="row" style="float: left;">
-                <button type="button" @onclick="InvokeStats" class="btn"><span class="oi oi-pie-chart"></span></button>
-            </div>
+            @if (Session.TraqType == TraqType.Feed)
+            {
+                <div class="row" style="float: left;">
+                    <button type="button" @onclick="InvokeStats" style="padding-bottom: 0px;" class="btn"><span class="oi oi-pie-chart"></span></button>
+                </div>
+            }
             <div class="row justify-content-center" style="margin-top: 2rem;">
                 @if (Session.IsMinDate)
                 {
@@ -80,6 +93,13 @@
     [Parameter]
     public EventCallback<bool> ShowStats { get; set; }
 
+    Chorer RadioValue = Chorer.Kyleah;
+    void RadioSelection(ChangeEventArgs args)
+    {
+        Enum.TryParse(args.Value.ToString(), out Chorer user);
+        RadioValue = user;
+    }
+
     protected override async Task OnInitializedAsync()
     {
         await Timer();
@@ -88,6 +108,11 @@
     private async Task StartOrFinish(MilkState pumpState)
     {
         handle.MilkState = pumpState;
+
+        if (Session.TraqType == TraqType.Feed)
+        {
+            handle.Chorer = RadioValue;
+        }
 
         await HandleMilk.InvokeAsync(handle);
     }
