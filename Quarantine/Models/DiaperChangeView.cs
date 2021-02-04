@@ -18,7 +18,7 @@ namespace Quarantine.Models
             Total = diapers.Count();
             IsMaxDate = !(diapers.Any(diaper => diaper.ChangeTimePst >= SessionDate.AddDays(1)));
             IsMinDate = !(diapers.Any(diaper => diaper.ChangeTimePst < SessionDate));
-            Stats = diapers.GroupBy(diaper => diaper.Chorer)
+            ChorerStats = diapers.GroupBy(diaper => diaper.Chorer)
                                     .Select(group => new ChorerSessionStat()
                                     {
                                         UserName = group.First().Chorer?.GetDescription() ?? "Unknown",

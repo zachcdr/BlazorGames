@@ -21,12 +21,17 @@ namespace Quarantine.Models
             IsMaxDate = !(milks.Any(milk => milk.StartTimePst >= SessionDate.AddDays(1)));
             IsMinDate = !(milks.Any(milk => milk.StartTimePst < SessionDate));
             IsActiveSession = milks.Any(milk => milk.EndTimeUtc == null);
-            Stats = milks.GroupBy(milk => milk.Chorer)
+            ChorerStats = milks.GroupBy(milk => milk.Chorer)
                                     .Select(group => new ChorerSessionStat() 
                                     { 
                                         UserName = group.First().Chorer?.GetDescription() ?? "Unknown", 
                                         Total = group.Count() 
                                     });
+            VolumeStats = milks.Where(milk => milk.Volume != null).GroupBy(milk => milk.StartTimePst.Date).Select(group => new ValueDateSessionStat()
+            {
+                Date = group.First().StartTimePst,
+                Value = group.Sum(g => (int)g.Volume)
+            });
             TraqType = traqType;
         }
 

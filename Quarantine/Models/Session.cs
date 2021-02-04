@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Quarantine.Models
 {
@@ -12,6 +10,7 @@ namespace Quarantine.Models
         public bool IsMaxDate { get; set; }
         public bool IsMinDate { get; set; }
         public bool IsActiveSession { get; set; }
-        public IEnumerable<ChorerSessionStat> Stats { get; set; }
+        public IEnumerable<ChorerSessionStat> ChorerStats { get; set; }
+        public IEnumerable<ValueDateSessionStat> VolumeStats { get; set; }
     }
 }

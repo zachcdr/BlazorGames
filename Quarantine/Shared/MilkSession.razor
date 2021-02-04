@@ -39,6 +39,12 @@
                     <button type="button" @onclick="InvokeStats" style="padding-bottom: 0px;" class="btn"><span class="oi oi-pie-chart"></span></button>
                 </div>
             }
+            else if (Session.TraqType == TraqType.Pump)
+            {
+                <div class="row" style="float: left;">
+                    <button type="button" @onclick="InvokeStats" style="padding-bottom: 0px;" class="btn"><span class="oi oi-graph"></span></button>
+                </div>
+            }
             <div class="row justify-content-center" style="margin-top: 2rem;">
                 @if (Session.IsMinDate)
                 {
