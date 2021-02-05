@@ -11,6 +11,7 @@ namespace Quarantine.Models
         public bool IsMinDate { get; set; }
         public bool IsActiveSession { get; set; }
         public IEnumerable<ChorerSessionStat> ChorerStats { get; set; }
-        public IEnumerable<ValueDateSessionStat> VolumeStats { get; set; }
+        public IEnumerable<ValueDateSessionStat> DailyVolumeStats { get; set; }
+        public IEnumerable<ValueDateSessionStat> HourlyVolumeStats { get; set; }
     }
 }
