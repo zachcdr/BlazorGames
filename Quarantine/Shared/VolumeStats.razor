@@ -2,20 +2,22 @@
 @using Quarantine.Models;
 @inject IJSRuntime jsRuntime;
 
-@if (Stats != null)
+@if (DailyStats != null && HourlyStats != null)
 {
     <div id="chartdiv"></div>
 }
 
 @code {
     [Parameter]
-    public IEnumerable<ValueDateSessionStat> Stats { get; set; }
+    public IEnumerable<ValueDateSessionStat> DailyStats { get; set; }
+    [Parameter]
+    public IEnumerable<ValueDateSessionStat> HourlyStats { get; set; }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            await jsRuntime.InvokeVoidAsync("generateLineGraph", Stats);
+            await jsRuntime.InvokeVoidAsync("volumeTimeStats", DailyStats, HourlyStats);
             StateHasChanged();
         }
     }
