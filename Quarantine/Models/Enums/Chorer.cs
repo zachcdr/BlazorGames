@@ -3,6 +3,7 @@
     public enum Chorer
     {
         Kyleah,
-        Zach
+        Zach,
+        Other
     }
 }
