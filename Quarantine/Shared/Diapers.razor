@@ -26,10 +26,12 @@
         </div>
         <div>
             <label style="padding-right: 20px" for="changer">Changer: </label>
-            <input type="radio" name="kyleah" id="@Chorer.Kyleah" value="@Chorer.Kyleah" @onchange="RadioSelection" checked=@(RadioValue == Chorer.Kyleah) />
-            <label for="@Chorer.Kyleah">@Chorer.Kyleah.ToString()</label>
-            <input type="radio" name="zach" id="@Chorer.Zach" value="@Chorer.Zach" @onchange="RadioSelection" checked=@(RadioValue == Chorer.Zach) />
-            <label for="@Chorer.Zach">@Chorer.Zach.ToString()</label>
+            <select style="width: 55%;" name="changer" @onchange=@ChorerSelection>
+                @foreach (var chorer in ((Chorer[])Enum.GetValues(typeof(Chorer))).ToList())
+                {
+                    <option value=@chorer>@chorer</option>
+                }
+            </select>
         </div>
         <div class="row justify-content-center" style="margin-top: 2rem;">
             @if (Session.IsMinDate)
@@ -91,17 +93,17 @@
     [Parameter]
     public EventCallback<bool> ShowStats { get; set; }
 
-    Chorer RadioValue = Chorer.Kyleah;
-    void RadioSelection(ChangeEventArgs args)
+    private Chorer chorer = Chorer.Kyleah;
+    void ChorerSelection(ChangeEventArgs args)
     {
         Enum.TryParse(args.Value.ToString(), out Chorer user);
-        RadioValue = user;
+        chorer = user;
     }
 
     private async Task ChangeDiaper()
     {
         diaperChange.ChangeTimeUtc = DateTime.UtcNow;
-        diaperChange.Chorer = RadioValue;
+        diaperChange.Chorer = chorer;
         diaperChange.DiaperTypes = diaperContents;
         await DiaperContents.InvokeAsync(diaperChange);
         diaperChange = new Diaper();

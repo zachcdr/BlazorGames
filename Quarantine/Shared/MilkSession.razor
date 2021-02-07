@@ -8,25 +8,27 @@
     <div style="padding: 5px">
         @if (Session.IsActiveSession)
         {
-            <EditForm Model="@handle" OnValidSubmit="@Finish">
-                <DataAnnotationsValidator />
-                <ValidationSummary />
-                @if (Session.TraqType == TraqType.Feed)
-                {
-                    <div>
-                        <label style="padding-right: 20px" for="changer">Feeder: </label>
-                        <input type="radio" name="kyleah" id="@Chorer.Kyleah" value="@Chorer.Kyleah" @onchange="RadioSelection" checked=@(RadioValue == Chorer.Kyleah) />
-                        <label for="@Chorer.Kyleah">@Chorer.Kyleah.ToString()</label>
-                        <input type="radio" name="zach" id="@Chorer.Zach" value="@Chorer.Zach" @onchange="RadioSelection" checked=@(RadioValue == Chorer.Zach) />
-                        <label for="@Chorer.Zach">@Chorer.Zach.ToString()</label>
-                    </div>
-                }
-                <div class="maxwidth">
-                    <label for="volume">Volume: </label>
-                    <input id="volume" @bind-value="@handle.Volume" class="jaq-input">
-                    <button class="btn btn-danger btn-block" type="submit">Finish</button>
+        <EditForm Model="@handle" OnValidSubmit="@Finish">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            @if (Session.TraqType == TraqType.Feed)
+            {
+                <div>
+                    <label style="padding-right: 20px" for="changer">Changer: </label>
+                    <select style="width: 55%;" name="changer" @onchange=@ChorerSelection>
+                        @foreach (var chorer in ((Chorer[])Enum.GetValues(typeof(Chorer))).ToList())
+                        {
+                            <option value=@chorer>@chorer</option>
+                        }
+                    </select>
                 </div>
-            </EditForm>
+            }
+            <div class="maxwidth">
+                <label for="volume">Volume: </label>
+                <input id="volume" @bind-value="@handle.Volume" class="jaq-input">
+                <button class="btn btn-danger btn-block" type="submit">Finish</button>
+            </div>
+        </EditForm>
         }
         else
         {
@@ -99,11 +101,11 @@
     [Parameter]
     public EventCallback<bool> ShowStats { get; set; }
 
-    Chorer RadioValue = Chorer.Kyleah;
-    void RadioSelection(ChangeEventArgs args)
+    private Chorer chorer = Chorer.Kyleah;
+    void ChorerSelection(ChangeEventArgs args)
     {
         Enum.TryParse(args.Value.ToString(), out Chorer user);
-        RadioValue = user;
+        chorer = user;
     }
 
     protected override async Task OnInitializedAsync()
@@ -117,7 +119,7 @@
 
         if (Session.TraqType == TraqType.Feed)
         {
-            handle.Chorer = RadioValue;
+            handle.Chorer = chorer;
         }
 
         await HandleMilk.InvokeAsync(handle);
