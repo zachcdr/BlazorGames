@@ -7,6 +7,7 @@ namespace Quarantine.Models.Enums
         [Description("Ride The Bus")]
         RideTheBus,
         Dots,
-        TraqJaq
+        TraqJaq,
+        TraqNiko
     }
 }

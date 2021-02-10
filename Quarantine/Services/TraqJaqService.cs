@@ -169,6 +169,7 @@ namespace Quarantine.Services
                 pumpToUpdate.EndTimeUtc = DateTime.UtcNow;
                 pumpToUpdate.Volume = pump.Volume;
                 pumpToUpdate.UpdatedByUserName = UserName;
+                pumpToUpdate.IsPumpAndDump = pump.IsPumpAndDump;
             }
 
             _pumps = new MilkSessionView(_traqJaq.Pumps, GetCurrentPstDate(DateTime.UtcNow), TraqType.Pump);

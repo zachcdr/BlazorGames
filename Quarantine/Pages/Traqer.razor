@@ -1,4 +1,4 @@
-﻿@page "/traqjaq"
+﻿@page "/traqer/{name}"
 
 @using Microsoft.Extensions.Options;
 @using Quarantine.Interfaces;
@@ -100,6 +100,8 @@ else
 }
 
 @code {
+    [Parameter]
+    public string name { get; set; }
     private GameService gameService;
     private TraqJaqService traqJaqService;
     private ServiceResponse<IList<GameDetails>> ServiceResponse;
@@ -112,8 +114,9 @@ else
     protected override async Task OnInitializedAsync()
     {
         gameService = new GameService(_iServiceGames);
-
-        ServiceResponse = await gameService.GetGames(Models.Enums.GameType.TraqJaq);
+        
+        Enum.TryParse(name, out GameType game);
+        ServiceResponse = await gameService.GetGames(game);
 
         traqJaqService = new TraqJaqService(_gameState, ServiceResponse.Data?.FirstOrDefault()?.Id);
 
