@@ -41,6 +41,9 @@ namespace Quarantine.Models
                 case MedicationType.SunflowerLecithin:
                     prettyQuantity = "1";
                     break;
+                case MedicationType.GasReliever:
+                    prettyQuantity = "0.2 ml";
+                    break;
             }
 
             return prettyQuantity;
@@ -75,6 +78,9 @@ namespace Quarantine.Models
                     break;
                 case MedicationType.VitaminD:
                     newDate = newDate.AddHours(24);
+                    break;
+                case MedicationType.GasReliever:
+                    newDate = newDate.AddHours(4);
                     break;
             }
 

@@ -15,6 +15,8 @@ namespace Quarantine.Models.Enums
         [Description("Vitamin D")]
         VitaminD,
         [Description("Sunflower Lecithin")]
-        SunflowerLecithin
+        SunflowerLecithin,
+        [Description("Gas Reliever")]
+        GasReliever
     }
 }
