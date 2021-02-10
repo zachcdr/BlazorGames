@@ -13,6 +13,7 @@ namespace Quarantine.Models
         public string CreatedByUserName { get; set; }
         public string UpdatedByUserName { get; set; }
         public Chorer? Chorer { get; set; }
+        public bool? IsPumpAndDump { get; set; }
 
         public string GetDuration()
         {

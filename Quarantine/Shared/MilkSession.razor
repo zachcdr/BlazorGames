@@ -8,27 +8,37 @@
     <div style="padding: 5px">
         @if (Session.IsActiveSession)
         {
-        <EditForm Model="@handle" OnValidSubmit="@Finish">
-            <DataAnnotationsValidator />
-            <ValidationSummary />
-            @if (Session.TraqType == TraqType.Feed)
-            {
-                <div>
-                    <label style="padding-right: 20px" for="changer">Changer: </label>
-                    <select style="width: 55%;" name="changer" @onchange=@ChorerSelection>
-                        @foreach (var chorer in ((Chorer[])Enum.GetValues(typeof(Chorer))).ToList())
-                        {
-                            <option value=@chorer>@chorer</option>
-                        }
-                    </select>
+            <EditForm Model="@handle" OnValidSubmit="@Finish">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                @if (Session.TraqType == TraqType.Feed)
+                {
+                    <div>
+                        <label style="padding-right: 13px" for="feeder">Feeder: </label>
+                        <select style="width: 55%;" name="feeder" @onchange=@ChorerSelection>
+                            @foreach (var chorer in ((Chorer[])Enum.GetValues(typeof(Chorer))).ToList())
+                            {
+                                <option value=@chorer>@chorer</option>
+                            }
+                        </select>
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <label style="padding-right: 30px" for="pumpAndDump">P&D: </label>
+                        <label class="switch">
+                            <input name="pumpAndDump" type="checkbox" @onchange="@Toggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                }
+                <div class="maxwidth">
+                    <label style="padding-right: 9px;" for="volume">Volume: </label>
+                    <input id="volume" type="tel" @bind-value="@handle.Volume" class="jaq-input">
+                    <button class="btn btn-danger btn-block" type="submit">Finish</button>
                 </div>
-            }
-            <div class="maxwidth">
-                <label for="volume">Volume: </label>
-                <input id="volume" @bind-value="@handle.Volume" class="jaq-input">
-                <button class="btn btn-danger btn-block" type="submit">Finish</button>
-            </div>
-        </EditForm>
+            </EditForm>
         }
         else
         {
@@ -111,6 +121,11 @@
     protected override async Task OnInitializedAsync()
     {
         await Timer();
+    }
+
+    private void Toggle()
+    {
+        handle.IsPumpAndDump = !handle.IsPumpAndDump;
     }
 
     private async Task StartOrFinish(MilkState pumpState)

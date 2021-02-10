@@ -6,5 +6,6 @@ namespace Quarantine.Models
     {
         public MilkState MilkState { get; set; }
         public Chorer? Chorer { get; set; }
+        public bool IsPumpAndDump { get; set; } 
     }
 }
