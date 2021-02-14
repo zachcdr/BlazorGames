@@ -6,7 +6,11 @@
 @if (Session != null)
 {
     <div style="padding: 5px">
-        @if (Session.IsActiveSession)
+        @if (saving)
+        {
+            <p><em>Saving...</em></p>
+        }
+        else if (Session.IsActiveSession)
         {
             <EditForm Model="@handle" OnValidSubmit="@Finish">
                 <DataAnnotationsValidator />
@@ -101,6 +105,7 @@
 
 @code {
     private HandleMilk handle = new HandleMilk();
+    private bool saving;
 
     [Parameter]
     public MilkSessionView Session { get; set; }
@@ -142,7 +147,11 @@
 
     private async Task Finish()
     {
+        saving = true;
+
         await StartOrFinish(MilkState.Finish);
+
+        saving = false;
     }
 
     private async Task Cycle(DayCycleType dayCycleType)
