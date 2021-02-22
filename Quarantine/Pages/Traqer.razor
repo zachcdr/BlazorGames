@@ -13,10 +13,6 @@
 @inject IOptions<ApplicationSettings> _settings;
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 
-<h1>TraqJaq</h1>
-
-<p>A simple solution to monitoring all things Jaq</p>
-
 @if (ServiceResponse != null && !ServiceResponse.IsSuccess)
 {
     <div class="alert alert-danger">
@@ -24,12 +20,16 @@
     </div>
 }
 
-@if (traqJaqService == null || traqJaqService.IsLoaded == false)
+@if (traqerService == null || traqerService.IsLoaded == false)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
+    <h1>@traqerService.Title</h1>
+
+    <p>@traqerService.Description</p>
+
     @if (!isAuthenticated)
     {
         <EditForm Model="@simplePassword" OnSubmit="@Authenticate">
@@ -41,7 +41,7 @@ else
     }
     else
     {
-        @foreach (var traqView in traqJaqService.TraqTypeViews)
+        @foreach (var traqView in traqerService.TraqTypeViews)
         {
             <div class="card">
                 <div class="card-header">
@@ -58,36 +58,36 @@ else
                             @switch (traqView.TraqType)
                             {
                                 case TraqType.Medicine:
-                                    <Medications Meds="traqJaqService.GetMedications()" MedicineType="UpdateMedicine"></Medications>
+                                    <Medications Meds="traqerService.GetMedications()" MedicineType="UpdateMedicine"></Medications>
                                     break;
                                 case TraqType.Pump:
                                     if (showStats)
                                     {
-                                        <VolumeStats HourlyStats="traqJaqService.Pumps.HourlyVolumeStats" DailyStats="traqJaqService.Pumps.DailyVolumeStats"></VolumeStats>
+                                        <VolumeStats HourlyStats="traqerService.Pumps.HourlyVolumeStats" DailyStats="traqerService.Pumps.DailyVolumeStats"></VolumeStats>
                                     }
                                     else
                                     {
-                                        <MilkSession Session="traqJaqService.Pumps" HandleMilk="UpdatePump" CycleDay="CyclePumps" ShowStats="ShowStats"></MilkSession>
+                                        <MilkSession Session="traqerService.Pumps" HandleMilk="UpdatePump" CycleDay="CyclePumps" ShowStats="ShowStats"></MilkSession>
                                     }
                                     break;
                                 case TraqType.Diaper:
                                     if (showStats)
                                     {
-                                        <ChorerStats Stats="traqJaqService.Diapers.ChorerStats"></ChorerStats>
+                                        <ChorerStats Stats="traqerService.Diapers.ChorerStats"></ChorerStats>
                                     }
                                     else
                                     {
-                                        <Diapers Session="traqJaqService.Diapers" DiaperContents="DiaperChange" CycleDay="CycleDiapers" ShowStats="ShowStats"></Diapers>
+                                        <Diapers Session="traqerService.Diapers" DiaperContents="DiaperChange" CycleDay="CycleDiapers" ShowStats="ShowStats"></Diapers>
                                     }
                                     break;
                                 case TraqType.Feed:
                                     if (showStats)
                                     {
-                                        <ChorerStats Stats="traqJaqService.Feeds.ChorerStats"></ChorerStats>
+                                        <ChorerStats Stats="traqerService.Feeds.ChorerStats"></ChorerStats>
                                     }
                                     else
                                     {
-                                        <MilkSession Session="traqJaqService.Feeds" HandleMilk="UpdateFeed" CycleDay="CycleFeeds" ShowStats="ShowStats"></MilkSession>
+                                        <MilkSession Session="traqerService.Feeds" HandleMilk="UpdateFeed" CycleDay="CycleFeeds" ShowStats="ShowStats"></MilkSession>
                                     }
                                     break;
                             }
@@ -102,8 +102,7 @@ else
 @code {
     [Parameter]
     public string name { get; set; }
-    private GameService gameService;
-    private TraqJaqService traqJaqService;
+    private TraqerService traqerService;
     private ServiceResponse<IList<GameDetails>> ServiceResponse;
     private const int listLimit = 10;
     private SimplePassword simplePassword = new SimplePassword();
@@ -113,14 +112,11 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        gameService = new GameService(_iServiceGames);
-        
-        Enum.TryParse(name, out GameType game);
-        ServiceResponse = await gameService.GetGames(game);
+        Enum.TryParse(name, out GameType gameType);
 
-        traqJaqService = new TraqJaqService(_gameState, ServiceResponse.Data?.FirstOrDefault()?.Id);
+        traqerService = new TraqerService(_gameState, gameType);
 
-        await traqJaqService.Loading();
+        await traqerService.Loading();
 
         CheckRefreshStatus();
     }
@@ -129,7 +125,7 @@ else
     {
         if (firstRender)
         {
-            while (traqJaqService == null || traqJaqService.IsLoaded == false)
+            while (traqerService == null || traqerService.IsLoaded == false)
             {
                 await Task.Run(() => Thread.Sleep(500));
             }
@@ -139,13 +135,13 @@ else
             if (localPassword == _settings.Value.TraqJaqPasswordKyleah)
             {
                 isAuthenticated = true;
-                traqJaqService.UserName = "Kyleah";
+                traqerService.UserName = "Kyleah";
                 StateHasChanged();
             }
             else if (localPassword == _settings.Value.TraqJaqPasswordZach)
             {
                 isAuthenticated = true;
-                traqJaqService.UserName = "Zach";
+                traqerService.UserName = "Zach";
                 StateHasChanged();
             }
         }
@@ -154,7 +150,7 @@ else
     private void Toggle(TraqType traqType)
     {
         showStats = false;
-        traqJaqService.ToggleTraq(traqType);
+        traqerService.ToggleTraq(traqType);
     }
 
     private void ShowStats(bool show)
@@ -169,9 +165,9 @@ else
         {
             await Task.Run(() => Thread.Sleep(100));
 
-            if (traqJaqService != null && traqJaqService.RefreshView)
+            if (traqerService != null && traqerService.RefreshView)
             {
-                traqJaqService.RefreshView = false;
+                traqerService.RefreshView = false;
 
                 StateHasChanged();
             }
@@ -180,22 +176,22 @@ else
 
     private async Task UpdateMedicine(MedicationType medicationType)
     {
-        await traqJaqService.UpdateMedicine(medicationType);
+        await traqerService.UpdateMedicine(medicationType);
     }
 
     private async Task UpdatePump(HandleMilk pump)
     {
-        await traqJaqService.UpdatePump(pump);
+        await traqerService.UpdatePump(pump);
     }
 
     private async Task DiaperChange(Diaper diaperChange)
     {
-        await traqJaqService.DiaperChange(diaperChange);
+        await traqerService.DiaperChange(diaperChange);
     }
 
     private async Task UpdateFeed(HandleMilk feed)
     {
-        await traqJaqService.Feed(feed);
+        await traqerService.Feed(feed);
     }
 
     private async Task Authenticate()
@@ -204,13 +200,13 @@ else
         {
             await localStorage.SetItemAsync("traqJaq_auth", simplePassword.Password);
             isAuthenticated = true;
-            traqJaqService.UserName = "Kyleah";
+            traqerService.UserName = "Kyleah";
         }
         else if (simplePassword.Password == _settings.Value.TraqJaqPasswordZach)
         {
             await localStorage.SetItemAsync("traqJaq_auth", simplePassword.Password);
             isAuthenticated = true;
-            traqJaqService.UserName = "Zach";
+            traqerService.UserName = "Zach";
         }
     }
 
@@ -219,10 +215,10 @@ else
         switch (dayCycleType)
         {
             case DayCycleType.Next:
-                traqJaqService.FreshFeeds(traqJaqService.Feeds.SessionDate.AddDays(1));
+                traqerService.FreshFeeds(traqerService.Feeds.SessionDate.AddDays(1));
                 break;
             case DayCycleType.Previous:
-                traqJaqService.FreshFeeds(traqJaqService.Feeds.SessionDate.AddDays(-1));
+                traqerService.FreshFeeds(traqerService.Feeds.SessionDate.AddDays(-1));
                 break;
         }
     }
@@ -232,10 +228,10 @@ else
         switch (dayCycleType)
         {
             case DayCycleType.Next:
-                traqJaqService.FreshPumps(traqJaqService.Pumps.SessionDate.AddDays(1));
+                traqerService.FreshPumps(traqerService.Pumps.SessionDate.AddDays(1));
                 break;
             case DayCycleType.Previous:
-                traqJaqService.FreshPumps(traqJaqService.Pumps.SessionDate.AddDays(-1));
+                traqerService.FreshPumps(traqerService.Pumps.SessionDate.AddDays(-1));
                 break;
         }
     }
@@ -245,10 +241,10 @@ else
         switch (dayCycleType)
         {
             case DayCycleType.Next:
-                traqJaqService.FreshDiapers(traqJaqService.Diapers.SessionDate.AddDays(1));
+                traqerService.FreshDiapers(traqerService.Diapers.SessionDate.AddDays(1));
                 break;
             case DayCycleType.Previous:
-                traqJaqService.FreshDiapers(traqJaqService.Diapers.SessionDate.AddDays(-1));
+                traqerService.FreshDiapers(traqerService.Diapers.SessionDate.AddDays(-1));
                 break;
         }
     }

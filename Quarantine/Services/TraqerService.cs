@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace Quarantine.Services
 {
-    public class TraqJaqService
+    public class TraqerService
     {
         private readonly IHandleGameState _gameState;
-        private TraqJaq _traqJaq;
+        private Traqer _traqer;
         private List<TraqTypeView> _traqViews = new List<TraqTypeView>();
         private MilkSessionView _pumps;
         private MilkSessionView _feeds;
@@ -23,43 +23,33 @@ namespace Quarantine.Services
         public MilkSessionView Pumps { get => _pumps; }
         public MilkSessionView Feeds { get => _feeds; }
         public DiaperChangeView Diapers { get => _diapers; }
-
         public List<TraqTypeView> TraqTypeViews { get => _traqViews; }
+        public string Title => _traqer?.Title;
+        public string Description => _traqer?.Description;
         public string UserName { get; set; }
         public bool RefreshView { get; set; }
 
-        public TraqJaqService(IHandleGameState gameState, Guid? id)
+        public TraqerService(IHandleGameState gameState, GameType gameType)
         {
             _gameState = gameState;
 
             ((TraqType[])Enum.GetValues(typeof(TraqType))).ToList()
                 .ForEach(traqType => _traqViews.Add(new TraqTypeView() { TraqType = traqType }));
 
-            if (id == null)
-            {
-                throw new KeyNotFoundException();
-            }
-            else
-            {
-                Load((Guid)id);
-            }
+            Load(gameType);
         }
 
-        private async void Load(Guid id)
+        private async void Load(GameType gameType)
         {
             while (true)
             {
-                var gameResponse = await _gameState.LoadGame(GameType.TraqJaq, id);
+                var gameResponse = await _gameState.LoadGame(gameType, "main");
 
-                var traqJaq = Converter<TraqJaq>.FromJson(gameResponse);
+                var traqer = Converter<Traqer>.FromJson(gameResponse);
 
-                if (_traqJaq == null || _traqJaq.LastUpdatedUtc < traqJaq?.LastUpdatedUtc)
+                if (_traqer == null || _traqer.LastUpdatedUtc < traqer?.LastUpdatedUtc)
                 {
-                    _traqJaq = traqJaq;
-
-                    FreshPumps();
-                    FreshFeeds();
-                    FreshDiapers();
+                    _traqer = traqer;
 
                     if (IsLoaded)
                     {
@@ -67,17 +57,56 @@ namespace Quarantine.Services
                     }
 
                     IsLoaded = true;
+
+                    LoadFeeds();
+                    LoadPumps();
+                    LoadDiapers();
+                    LoadMedications();
                 }
 
                 await Task.Run(() => Thread.Sleep(5000));
             }
         }
 
-        private async Task Save()
+        private async void LoadFeeds()
         {
-            _traqJaq.LastUpdatedUtc = DateTime.UtcNow;
+            var feeds = await _gameState.LoadGame(GameType.TraqJaq, "feeds");
 
-            await _gameState.SaveGame(GameType.TraqJaq, _traqJaq.Id, Converter<TraqJaq>.ToJson(_traqJaq));
+            _traqer.Feeds = Converter<List<Milk>>.FromJson(feeds);
+
+            FreshFeeds();
+        }
+
+        private async void LoadPumps()
+        {
+            var pumps = await _gameState.LoadGame(GameType.TraqJaq, "pumps");
+
+            _traqer.Pumps = Converter<List<Milk>>.FromJson(pumps);
+
+            FreshPumps();
+        }
+
+        private async void LoadDiapers()
+        {
+            var diaperchanges = await _gameState.LoadGame(GameType.TraqJaq, "diaperchanges");
+            _traqer.DiaperChanges = Converter<List<Diaper>>.FromJson(diaperchanges);
+
+            FreshDiapers();
+        }
+
+        private async void LoadMedications()
+        {
+            var medications = await _gameState.LoadGame(GameType.TraqJaq, "medications");
+            _traqer.Medications = Converter<List<Medication>>.FromJson(medications);
+        }
+
+        private async Task Save(string file, string data)
+        {
+            _traqer.LastUpdatedUtc = DateTime.UtcNow;
+
+            await _gameState.SaveGame(GameType.TraqJaq, "main", Converter<Traqer>.ToJson(_traqer));
+
+            await _gameState.SaveGame(GameType.TraqJaq, file, data);
         }
 
         private DateTime GetCurrentPstDate(DateTime utcDate)
@@ -94,7 +123,7 @@ namespace Quarantine.Services
                 startDate = GetCurrentPstDate(DateTime.UtcNow);
             }
 
-            _pumps = new MilkSessionView(_traqJaq.Pumps, (DateTime)startDate, TraqType.Pump);
+            _pumps = new MilkSessionView(_traqer.Pumps, (DateTime)startDate, TraqType.Pump);
         }
 
         public void FreshFeeds(DateTime? startDate = null)
@@ -104,7 +133,7 @@ namespace Quarantine.Services
                 startDate = GetCurrentPstDate(DateTime.UtcNow);
             }
 
-            _feeds = new MilkSessionView(_traqJaq.Feeds, (DateTime)startDate, TraqType.Feed);
+            _feeds = new MilkSessionView(_traqer.Feeds, (DateTime)startDate, TraqType.Feed);
         }
 
         public void FreshDiapers(DateTime? startDate = null)
@@ -114,7 +143,7 @@ namespace Quarantine.Services
                 startDate = GetCurrentPstDate(DateTime.UtcNow);
             }
 
-            _diapers = new DiaperChangeView(_traqJaq.DiaperChanges, (DateTime)startDate);
+            _diapers = new DiaperChangeView(_traqer.DiaperChanges, (DateTime)startDate);
         }
 
         public async Task Loading()
@@ -146,25 +175,25 @@ namespace Quarantine.Services
 
         public List<Medication> GetMedications()
         {
-            return _traqJaq.Medications;
+            return _traqer.Medications;
         }
 
         public async Task UpdateMedicine(MedicationType medicationType)
         {
-            _traqJaq.Medications.Single(med => med.MedicationType == medicationType).TimeTaken = DateTime.UtcNow;
+            _traqer.Medications.Single(med => med.MedicationType == medicationType).TimeTaken = DateTime.UtcNow;
 
-            await Save();
+            await Save("medications", Converter<List<Medication>>.ToJson(_traqer.Medications));
         }
 
         public async Task UpdatePump(HandleMilk pump)
         {
             if (pump.MilkState == MilkState.Start)
             {
-                _traqJaq.Pumps.Add(new Milk() { StartTimeUtc = DateTime.UtcNow, CreatedByUserName = UserName });
+                _traqer.Pumps.Add(new Milk() { StartTimeUtc = DateTime.UtcNow, CreatedByUserName = UserName });
             }
             else
             {
-                var pumpToUpdate = _traqJaq.Pumps.Single(p => p.EndTimeUtc == null);
+                var pumpToUpdate = _traqer.Pumps.Single(p => p.EndTimeUtc == null);
 
                 pumpToUpdate.EndTimeUtc = DateTime.UtcNow;
                 pumpToUpdate.Volume = pump.Volume;
@@ -172,31 +201,32 @@ namespace Quarantine.Services
                 pumpToUpdate.IsPumpAndDump = pump.IsPumpAndDump;
             }
 
-            _pumps = new MilkSessionView(_traqJaq.Pumps, GetCurrentPstDate(DateTime.UtcNow), TraqType.Pump);
+            _pumps = new MilkSessionView(_traqer.Pumps, GetCurrentPstDate(DateTime.UtcNow), TraqType.Pump);
 
-            await Save();
+
+            await Save("pumps", Converter<List<Milk>>.ToJson(_traqer.Pumps));
         }
 
         public async Task DiaperChange(Diaper diaperChange)
         {
             diaperChange.CreatedByUserName = UserName;
 
-            _traqJaq.DiaperChanges.Add(diaperChange);
+            _traqer.DiaperChanges.Add(diaperChange);
 
-            _diapers = new DiaperChangeView(_traqJaq.DiaperChanges, GetCurrentPstDate(DateTime.UtcNow));
+            _diapers = new DiaperChangeView(_traqer.DiaperChanges, GetCurrentPstDate(DateTime.UtcNow));
 
-            await Save();
+            await Save("diaperchanges", Converter<List<Diaper>>.ToJson(_traqer.DiaperChanges));
         }
 
         public async Task Feed(HandleMilk feed)
         {
             if (feed.MilkState == MilkState.Start)
             {
-                _traqJaq.Feeds.Add(new Milk() { StartTimeUtc = DateTime.UtcNow, CreatedByUserName = UserName });
+                _traqer.Feeds.Add(new Milk() { StartTimeUtc = DateTime.UtcNow, CreatedByUserName = UserName });
             }
             else
             {
-                var feedToUpdate = _traqJaq.Feeds.Single(p => p.EndTimeUtc == null);
+                var feedToUpdate = _traqer.Feeds.Single(p => p.EndTimeUtc == null);
 
                 feedToUpdate.EndTimeUtc = DateTime.UtcNow;
                 feedToUpdate.Volume = feed.Volume;
@@ -204,9 +234,9 @@ namespace Quarantine.Services
                 feedToUpdate.Chorer = feed.Chorer;
             }
 
-            _feeds = new MilkSessionView(_traqJaq.Feeds, GetCurrentPstDate(DateTime.UtcNow), TraqType.Feed);
+            _feeds = new MilkSessionView(_traqer.Feeds, GetCurrentPstDate(DateTime.UtcNow), TraqType.Feed);
 
-            await Save();
+            await Save("feeds", Converter<List<Milk>>.ToJson(_traqer.Feeds));
         }
     }
 }

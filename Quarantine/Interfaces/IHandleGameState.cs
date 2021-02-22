@@ -7,7 +7,7 @@ namespace Quarantine.Interfaces
 {
     public interface IHandleGameState
     {
-        Task<string> LoadGame(GameType gameType, Guid gameGuid);
-        Task SaveGame(GameType gameType, Guid gameGuid, string game);
+        Task<string> LoadGame(GameType gameType, string gameFile);
+        Task SaveGame(GameType gameType, string gameFile, string game);
     }
 }

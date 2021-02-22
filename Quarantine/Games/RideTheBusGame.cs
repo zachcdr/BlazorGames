@@ -101,7 +101,7 @@ namespace Quarantine.Games
 
         public async Task<RideTheBus> Load()
         {
-            var gameResponse = await _gameState.LoadGame(Game.GameType, Game.Id);
+            var gameResponse = await _gameState.LoadGame(Game.GameType, Game.Id.ToString());
 
             Game = Converter<RideTheBus>.FromJson(gameResponse);
 
@@ -281,7 +281,7 @@ namespace Quarantine.Games
         {
             Game.LastModified = DateTime.UtcNow;
 
-            await _gameState.SaveGame(Game.GameType, Game.Id, Converter<RideTheBus>.ToJson(Game));
+            await _gameState.SaveGame(Game.GameType, Game.Id.ToString(), Converter<RideTheBus>.ToJson(Game));
         }
 
         private void CyclePlayer()
@@ -304,7 +304,7 @@ namespace Quarantine.Games
 
         private async void Load(Guid id)
         {
-            var gameResponse = await _gameState.LoadGame(GameType.RideTheBus, id);
+            var gameResponse = await _gameState.LoadGame(GameType.RideTheBus, id.ToString());
 
             Game = Converter<RideTheBus>.FromJson(gameResponse);
         }

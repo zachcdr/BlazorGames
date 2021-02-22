@@ -3,7 +3,11 @@
 @using Quarantine.Models;
 @using Quarantine.Models.Enums;
 
-@if (Session != null)
+@if (Session == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
 {
     <div class="row" style="float: left;">
         <button type="button" @onclick="InvokeStats" style="padding-bottom: 0px;" class="btn"><span class="oi oi-pie-chart"></span></button>

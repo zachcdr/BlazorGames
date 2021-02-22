@@ -20,11 +20,11 @@ namespace Quarantine.Repositories
             _blobServiceClient = new BlobServiceClient(settings.Value.BlobStorageConnectionString);
         }
 
-        public async Task<string> LoadGame(GameType gameType, Guid gameGuid)
+        public async Task<string> LoadGame(GameType gameType, string gameFile)
         {
             // Create a local file in the ./data/ directory for uploading and downloading
             string localPath = "./gamedata/";
-            var file = $"{gameGuid}.json";
+            var file = $"{gameFile}.json";
 
             string downloadFilePath = Path.Combine(localPath, $"{Guid.NewGuid()}-{file}");
 
@@ -52,11 +52,11 @@ namespace Quarantine.Repositories
             return blob;
         }
 
-        public async Task SaveGame(GameType gameType, Guid gameGuid, string game)
+        public async Task SaveGame(GameType gameType, string gamePath, string game)
         {
             // Create a local file in the ./data/ directory for uploading and downloading
             string localPath = $"./gamedata/";
-            var file = $"{gameGuid}.json";
+            var file = $"{gamePath}.json";
 
             string localFilePath = Path.Combine(localPath, $"{Guid.NewGuid()}-{file}");
 
@@ -86,7 +86,7 @@ namespace Quarantine.Repositories
             // List all blobs in the container
             await foreach (var blobItem in containerClient.GetBlobsAsync())
             {
-                games.Add(await LoadGame(gameType, new Guid(blobItem.Name.Replace(".json", ""))));
+                games.Add(await LoadGame(gameType, blobItem.Name.Replace(".json", "")));
             }
 
             return games;
