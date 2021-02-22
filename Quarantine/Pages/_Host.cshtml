@@ -37,5 +37,11 @@
     <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
     <script src="~/js/stats.js"></script>
+
+    <script>
+        Blazor.defaultReconnectionHandler._reconnectCallback = function (d) {
+            document.location.reload();
+        }
+    </script>
 </body>
 </html>

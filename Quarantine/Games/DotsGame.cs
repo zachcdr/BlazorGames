@@ -36,7 +36,7 @@ namespace Quarantine.Games
         #region Private Methods
         private async void Load(Guid id)
         {
-            var gameResponse = await _gameState.LoadGame(GameType.Dots, id);
+            var gameResponse = await _gameState.LoadGame(GameType.Dots, id.ToString());
 
             Game = Converter<Dots>.FromJson(gameResponse);
         }
@@ -45,12 +45,12 @@ namespace Quarantine.Games
         {
             Game.LastModified = DateTime.UtcNow;
 
-            await _gameState.SaveGame(Game.GameType, Game.Id, Converter<Dots>.ToJson(Game));
+            await _gameState.SaveGame(Game.GameType, Game.Id.ToString(), Converter<Dots>.ToJson(Game));
         }
         #endregion
         public async Task<Dots> Load()
         {
-            var gameResponse = await _gameState.LoadGame(Game.GameType, Game.Id);
+            var gameResponse = await _gameState.LoadGame(Game.GameType, Game.Id.ToString());
 
             Game = Converter<Dots>.FromJson(gameResponse);
 

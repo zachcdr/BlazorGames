@@ -10,15 +10,15 @@ namespace Quarantine.Repositories
 	public class LocalGameRepo : IHandleGameState, IHandleRetreivingGames
 	{
 		#region Public methods
-		public async Task<string> LoadGame(GameType gameType, Guid gameGuid)
+		public async Task<string> LoadGame(GameType gameType, string gameFile)
 		{
 			var path = $"C:/Quarantine/Games/{gameType}";
-			var file = $"{gameGuid}.json";
+			var file = $"{gameFile}.json";
 
 			return await Task.Run(() => FileProcessor.ReadFile(path, file));
 		}
 
-		public async Task SaveGame(GameType gameType, Guid gameGuid, string game)
+		public async Task SaveGame(GameType gameType, string gameGuid, string game)
 		{
 			var path = $"C:/Quarantine/Games/{gameType}";
 			var file = $"{gameGuid}.json";
@@ -34,7 +34,7 @@ namespace Quarantine.Repositories
 
 			foreach (var file in files)
 			{
-				games.Add(await LoadGame(gameType, new Guid(file)));
+				games.Add(await LoadGame(gameType, file));
 			}
 
 			return games;

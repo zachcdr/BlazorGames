@@ -3,7 +3,12 @@
 @using Quarantine.Models.Enums;
 @using System.Threading;
 
-@if (Session != null)
+
+@if (Session == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
 {
     <div style="padding: 5px">
         @if (saving)
