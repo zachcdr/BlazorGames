@@ -43,11 +43,17 @@ namespace Quarantine.Models
 
         public IEnumerable<Milk> DailyMilks { get; private set; }
         public int DailyVolume { get => GetDailyVolume(); }
+        public int DailyMinutes { get => GetDailyMunites(); }
         public TraqType TraqType { get; private set; }
 
         private int GetDailyVolume()
         {
             return DailyMilks.Sum(p => p.Volume == null ? 0 : (int)p.Volume);
+        }
+
+        private int GetDailyMunites()
+        {
+            return DailyMilks.Sum(d => d.DurationValue);
         }
     }
 }

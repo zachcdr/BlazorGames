@@ -6,6 +6,7 @@ namespace Quarantine.Models
 {
     public class Diaper
     {
+        public int Id { get; set; }
         public DateTime ChangeTimePst { get => GetStartTimePst(); }
         public DateTime ChangeTimeUtc { get; set; }
         public List<DiaperType> DiaperTypes { get; set; }

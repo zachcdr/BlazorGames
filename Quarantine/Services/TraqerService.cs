@@ -185,11 +185,18 @@ namespace Quarantine.Services
             await Save("medications", Converter<List<Medication>>.ToJson(_traqer.Medications));
         }
 
-        public async Task UpdatePump(HandleMilk pump)
+        public async Task StartFinishSession(HandleMilk pump)
         {
             if (pump.MilkState == MilkState.Start)
             {
-                _traqer.Pumps.Add(new Milk() { StartTimeUtc = DateTime.UtcNow, CreatedByUserName = UserName });
+                var id = 1;
+
+                if (_traqer.Pumps.Count > 0)
+                {
+                    id = _traqer.Pumps.OrderByDescending(f => f.Id).First().Id + 1;
+                }
+
+                _traqer.Pumps.Add(new Milk() { StartTimeUtc = DateTime.UtcNow, CreatedByUserName = UserName, Id = _traqer.Pumps.Count + 1 });
             }
             else
             {
@@ -203,12 +210,20 @@ namespace Quarantine.Services
 
             _pumps = new MilkSessionView(_traqer.Pumps, GetCurrentPstDate(DateTime.UtcNow), TraqType.Pump);
 
-
             await Save("pumps", Converter<List<Milk>>.ToJson(_traqer.Pumps));
         }
 
         public async Task DiaperChange(Diaper diaperChange)
         {
+            var id = 1;
+
+            if (_traqer.DiaperChanges.Count > 0)
+            {
+                id = _traqer.DiaperChanges.OrderByDescending(f => f.Id).First().Id + 1;
+            }
+
+            diaperChange.Id = id;
+
             diaperChange.CreatedByUserName = UserName;
 
             _traqer.DiaperChanges.Add(diaperChange);
@@ -222,7 +237,14 @@ namespace Quarantine.Services
         {
             if (feed.MilkState == MilkState.Start)
             {
-                _traqer.Feeds.Add(new Milk() { StartTimeUtc = DateTime.UtcNow, CreatedByUserName = UserName });
+                var id = 1;
+
+                if (_traqer.Feeds.Count > 0)
+                {
+                    id = _traqer.Feeds.OrderByDescending(f => f.Id).First().Id + 1;
+                }
+
+                _traqer.Feeds.Add(new Milk() { StartTimeUtc = DateTime.UtcNow, CreatedByUserName = UserName, Id = id });
             }
             else
             {
@@ -237,6 +259,35 @@ namespace Quarantine.Services
             _feeds = new MilkSessionView(_traqer.Feeds, GetCurrentPstDate(DateTime.UtcNow), TraqType.Feed);
 
             await Save("feeds", Converter<List<Milk>>.ToJson(_traqer.Feeds));
+        }
+
+        public async Task UpdateMilk(MilkEditView milkEditView)
+        {
+            Milk milk;
+
+            switch (milkEditView.MilkType)
+            {
+                case MilkType.Pump:
+                    milk = _traqer.Pumps.Single(p => p.Id == milkEditView.Id);
+
+                    milk.Volume = milkEditView.Volume;
+                    milk.EndTimeUtc = milk.StartTimeUtc.AddMinutes((int)milkEditView.Duration);
+
+                    _pumps = new MilkSessionView(_traqer.Pumps, GetCurrentPstDate(DateTime.UtcNow), TraqType.Pump);
+
+                    await Save("pumps", Converter<List<Milk>>.ToJson(_traqer.Pumps));
+                    break;
+                case MilkType.Feed:
+                    milk = _traqer.Feeds.Single(p => p.Id == milkEditView.Id);
+
+                    milk.Volume = milkEditView.Volume;
+                    milk.EndTimeUtc = milk.StartTimeUtc.AddMinutes((int)milkEditView.Duration);
+
+                    _feeds = new MilkSessionView(_traqer.Feeds, GetCurrentPstDate(DateTime.UtcNow), TraqType.Feed);
+
+                    await Save("feeds", Converter<List<Milk>>.ToJson(_traqer.Feeds));
+                    break;
+            }
         }
     }
 }
