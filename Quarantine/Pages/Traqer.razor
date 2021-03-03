@@ -65,9 +65,13 @@ else
                                     {
                                         <VolumeStats HourlyStats="traqerService.Pumps.HourlyVolumeStats" DailyStats="traqerService.Pumps.DailyVolumeStats"></VolumeStats>
                                     }
+                                    else if (editMilk)
+                                    {
+                                        <MilkEdit InboundMilk="milkToEdit" MilkType="MilkType.Pump" OutboundMilk="EditMilk"></MilkEdit>
+                                    }
                                     else
                                     {
-                                        <MilkSession Session="traqerService.Pumps" HandleMilk="UpdatePump" CycleDay="CyclePumps" ShowStats="ShowStats"></MilkSession>
+                                        <MilkSession Session="traqerService.Pumps" HandleMilk="UpdatePump" CycleDay="CyclePumps" ShowStats="ShowStats" Edit="EditMilk"></MilkSession>
                                     }
                                     break;
                                 case TraqType.Diaper:
@@ -85,9 +89,13 @@ else
                                     {
                                         <ChorerStats Stats="traqerService.Feeds.ChorerStats"></ChorerStats>
                                     }
+                                    else if (editMilk)
+                                    {
+                                        <MilkEdit InboundMilk="milkToEdit" MilkType="MilkType.Feed" OutboundMilk="EditMilk"></MilkEdit>
+                                    }
                                     else
                                     {
-                                        <MilkSession Session="traqerService.Feeds" HandleMilk="UpdateFeed" CycleDay="CycleFeeds" ShowStats="ShowStats"></MilkSession>
+                                        <MilkSession Session="traqerService.Feeds" HandleMilk="UpdateFeed" CycleDay="CycleFeeds" ShowStats="ShowStats" Edit="EditMilk"></MilkSession>
                                     }
                                     break;
                             }
@@ -109,6 +117,8 @@ else
     private string localPassword;
     private bool isAuthenticated;
     private bool showStats;
+    private bool editMilk;
+    private Milk milkToEdit;
 
     protected override async Task OnInitializedAsync()
     {
@@ -150,12 +160,20 @@ else
     private void Toggle(TraqType traqType)
     {
         showStats = false;
+        editMilk = false;
         traqerService.ToggleTraq(traqType);
     }
 
     private void ShowStats(bool show)
     {
         showStats = show;
+        StateHasChanged();
+    }
+
+    private void EditMilk(Milk milk)
+    {
+        milkToEdit = milk;
+        editMilk = true;
         StateHasChanged();
     }
 
@@ -181,7 +199,13 @@ else
 
     private async Task UpdatePump(HandleMilk pump)
     {
-        await traqerService.UpdatePump(pump);
+        await traqerService.StartFinishSession(pump);
+    }
+
+    private async Task EditMilk(MilkEditView milkEditView)
+    {
+        await traqerService.UpdateMilk(milkEditView);
+        editMilk = false;
     }
 
     private async Task DiaperChange(Diaper diaperChange)

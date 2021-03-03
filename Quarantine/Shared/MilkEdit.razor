@@ -1,0 +1,68 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Quarantine.Models;
+@using Quarantine.Models.Enums;
+
+@if (milkEditView != null)
+{
+    if (saving)
+    {
+        <p><em>Saving...</em></p>
+    }
+    else
+    {
+        <EditForm Model="@milkEditView" OnValidSubmit="@UpdateMilk">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <div class="maxwidth">
+                <div>
+                    <label for="volume">Volume (ml): </label>
+                    <br />
+                    <input id="volume" type="tel" @bind="@milkEditView.Volume" class="jaq-input">
+                </div>
+                <div>
+                    <label for="duration">Duration (minutes): </label>
+                    <br />
+                    <input id="duration" type="tel" @bind="@milkEditView.Duration" class="jaq-input">
+                </div>
+                <div style="padding-top: 5px">
+                    <button class="btn btn-success btn-block" type="submit">Update</button>
+                </div>
+            </div>
+        </EditForm>
+    }
+}
+
+@code {
+    private MilkEditView milkEditView;
+    private bool saving;
+
+    [Parameter]
+    public MilkType MilkType { get; set; }
+    [Parameter]
+    public Milk InboundMilk { get; set; }
+    [Parameter]
+    public EventCallback<MilkEditView> OutboundMilk { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Run(() => milkEditView = new MilkEditView()
+        {
+            Id = InboundMilk.Id,
+            Volume = Convert.ToInt32(InboundMilk.Volume),
+            Duration = (int)Math.Floor(((DateTime)InboundMilk.EndTimeUtc - InboundMilk.StartTimeUtc).TotalMinutes)
+        });
+
+        StateHasChanged();
+    }
+
+    private async Task UpdateMilk()
+    {
+        saving = true;
+
+        milkEditView.MilkType = MilkType;
+
+        await OutboundMilk.InvokeAsync(milkEditView);
+
+        saving = false;
+    }
+}
