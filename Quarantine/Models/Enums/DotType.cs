@@ -13,7 +13,10 @@ namespace Quarantine.Models.Enums
         WinTheHole,
         Pulley,
         Chippie,
-        [Description("KP (Par 3s")]
-        ClosestToPin
+        [Description("KP (Par 3s)")]
+        ClosestToPin,
+        Bingo,
+        Bango,
+        Bongo
     }
 }

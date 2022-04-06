@@ -27,7 +27,7 @@ else
         }
 
         @*<div style="padding-bottom: 5px">
-                <button class="maxwidth btn btn-info btn-block" type="button" @onclick="ToggleNewGroup">New Group</button>
+            <button class="maxwidth btn btn-info btn-block" type="button" @onclick="ToggleNewGroup">New Group</button>
             </div>*@
 
         @if (NewGroup)
@@ -74,10 +74,8 @@ else
             iterator++;
         }
     }
-    if (showScores || dotsGame.Game.GameState == GameState.Complete)
-    {
-        <GolferScores Golfers="@dotsGame.Game.Groups.SelectMany(g => g.Golfers)"></GolferScores>
-    }
+
+    <GolferScores Golfers="@dotsGame.Game.Groups.SelectMany(g => g.Golfers)"></GolferScores>
 }
 
 @code {
