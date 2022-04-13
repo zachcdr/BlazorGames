@@ -65,20 +65,35 @@ namespace Quarantine.Games
 
         public async Task CreateGame(InitiateDots newGame)
         {
-            AddNewGroup(newGame.PlayerName, newGame.GolfRoundType);
+            AddNewGroup(newGame.PlayerName, newGame.GolfRoundType, newGame.NineType);
             Game.Name = newGame.GameName.Trim();
             Game.Password = newGame.Password;
             Game.DotTypes = newGame.DotTypes;
             Game.GolfRoundType = newGame.GolfRoundType;
+            Game.NineType = newGame.NineType;
+
+            if (!string.IsNullOrWhiteSpace(newGame.CourseName))
+            {
+                Game.Groups.ForEach(g => g.CourseName = newGame.CourseName);
+
+                if (string.IsNullOrWhiteSpace(newGame.CourseTeeBox))
+                {
+                    var course = CourseSelection.SelectCourse(newGame.CourseName);
+
+                    newGame.CourseTeeBox = course.CourseHoles.First().Tees.First().Color;
+                }
+
+                Game.Groups.ForEach(g => g.CourseTeeBox = newGame.CourseTeeBox);
+            }
 
             await Save();
         }
 
-        public void AddNewGroup(string playerName, GolfRoundType golfRoundType)
+        public void AddNewGroup(string playerName, GolfRoundType golfRoundType, NineType? nineType)
         {
-            var newGroup = new GolfGroup();
+            var newGroup = new GolfGroup(nineType);
             newGroup.Name = $"Group #{Game.Groups.Count + 1}";
-            newGroup.AddPlayer(new Player() { Name = playerName.Trim() }, golfRoundType);
+            newGroup.AddPlayer(new Player() { Name = playerName.Trim() }, golfRoundType, nineType);
             Game.Groups.Add(newGroup);
         }
 

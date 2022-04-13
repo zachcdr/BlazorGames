@@ -7,6 +7,7 @@
 @using Quarantine.Models.Enums;
 @using Quarantine.Games;
 @using Quarantine.Responses;
+@using System.Linq;
 @using Microsoft.AspNetCore.WebUtilities;
 @inject IHandleRetreivingGames _iServiceGames;
 @inject IHandleGameState _gameState;
@@ -17,20 +18,20 @@
 
 <p>A simple solution to keeping track of dots</p>
 
-@if (ServiceResponse != null && !ServiceResponse.IsSuccess)
+@if (_serviceResponse != null && !_serviceResponse.IsSuccess)
 {
     <div class="alert alert-danger">
-        @ServiceResponse.Message
+        @_serviceResponse.Message
     </div>
 }
 
-@if (ServiceResponse?.Data == null)
+@if (_serviceResponse?.Data == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    @if (!showCreateGameForm)
+    @if (!_showCreateGameForm)
     {
         <div class="maxwidth" style="padding: 5px">
             <button class="btn btn-info btn-block" type="button" @onclick="ToggleGameSubmissionForm">New Game</button>
@@ -43,32 +44,43 @@ else
         </div>
     }
 
-    @if (showCreateGameForm)
+    @if (_showCreateGameForm)
     {
-        <EditForm Model="@NewGame" OnValidSubmit="@SubmitNewGame">
+        <EditForm Model="@_newGame" OnValidSubmit="@SubmitNewGame">
             <DataAnnotationsValidator />
             <ValidationSummary />
             <div>
                 <label for="playerName">Player Name: </label>
-                <InputText id="playerName" @bind-Value="NewGame.PlayerName"></InputText>
+                <InputText id="playerName" @bind-Value="_newGame.PlayerName"></InputText>
             </div>
             <div>
                 <label for="gameName">Game Name: </label>
-                <InputText id="gameName" @bind-Value="NewGame.GameName"></InputText>
+                <InputText id="gameName" @bind-Value="_newGame.GameName"></InputText>
             </div>
             <div>
                 <label style="padding-right: 20px" for="password">Password: </label>
-                <InputText id="password" @bind-Value="NewGame.Password"></InputText>
+                <InputText id="password" @bind-Value="_newGame.Password"></InputText>
             </div>
             <div>
                 <label style="padding-right: 20px" for="roundType">Round: </label>
                 <div name="roundType">
-                    <input type="radio" name="eighteen" id="@GolfRoundType.Eighteen" value="@GolfRoundType.Eighteen" @onchange="RadioSelection" checked=@(RadioValue == GolfRoundType.Eighteen) />
+                    <input type="radio" name="eighteen" id="@GolfRoundType.Eighteen" value="@GolfRoundType.Eighteen" @onchange="RoundTypeSelection" checked=@(_golfRoundType == GolfRoundType.Eighteen) />
                     <label for="@GolfRoundType.Eighteen">@GolfRoundType.Eighteen.ToString()</label>
-                    <input type="radio" name="nine" id="@GolfRoundType.Nine" value="@GolfRoundType.Nine" @onchange="RadioSelection" checked=@(RadioValue == GolfRoundType.Nine) />
+                    <input type="radio" name="nine" id="@GolfRoundType.Nine" value="@GolfRoundType.Nine" @onchange="RoundTypeSelection" checked=@(_golfRoundType == GolfRoundType.Nine) />
                     <label for="@GolfRoundType.Nine">@GolfRoundType.Nine.ToString()</label>
                 </div>
             </div>
+            @if (_golfRoundType == GolfRoundType.Nine)
+            {
+                <div>
+                    <div name="nineType">
+                        <input type="radio" name="front" id="@NineType.Front" value="@NineType.Front" @onchange="NineTypeSelection" checked=@(_nineType == NineType.Front) />
+                        <label for="@NineType.Front">@NineType.Front.ToString()</label>
+                        <input type="radio" name="back" id="@NineType.Back" value="@NineType.Back" @onchange="NineTypeSelection" checked=@(_nineType == NineType.Back) />
+                        <label for="@NineType.Back">@NineType.Back.ToString()</label>
+                    </div>
+                </div>
+            }
             <div>
                 <label style="padding-right: 20px" for="availableDots">Dots: </label>
                 <div name="availableDots">
@@ -83,13 +95,41 @@ else
                     }
                 </div>
             </div>
+            <div>
+                <label style="padding-right: 20px" for="courses">Course: </label>
+                <div name="courses">
+                    <select class="custom-select maxwidth" style="margin-bottom: 5px;" @onchange="OnCourseChanged">
+                        <option value="Select" selected disabled="disabled">(Choose Course)</option>
+                        @foreach (var course in CourseSelection.Courses)
+                        {
+                            <option value="@course.Name">@course.Name</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            @if (_course != null)
+            {
+                <div>
+                    <label style="padding-right: 20px" for="courses">Teebox: </label>
+                    <div name="courses">
+                        <select class="custom-select maxwidth" style="margin-bottom: 5px;" @onchange="OnTeeChanged">
+                            <option value="Select" selected disabled="disabled">(Choose Teebox)</option>
+                            @foreach (var tee in _course.CourseHoles.First().Tees)
+                            {
+                                var total = _course.CourseHoles.SelectMany(c => c.Tees.Where(t => t.Color == tee.Color)).Sum(t => t.Yards);
+                                <option value="@tee.Color">@tee.Color (@total)</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            }
             <div class="maxwidth" style="padding-bottom: 25px">
                 <button class="btn btn-success btn-block" type="submit">Create Game</button>
             </div>
         </EditForm>
     }
 
-    @if (!showTable)
+    @if (!_showTable)
     {
         <div class="maxwidth" style="padding: 5px">
             <button class="btn btn-info btn-block" type="button" @onclick="ToggleGamesTable">Show Existing Games</button>
@@ -102,23 +142,21 @@ else
         </div>
     }
 
-    @if (showTable)
+    @if (_showTable)
     {
         <table class="table">
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Game State</th>
-                    <th>Password Protected</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var game in ServiceResponse?.Data)
+                @foreach (var game in _serviceResponse?.Data)
                 {
                     <tr>
                         <td @onclick="(async () => await JoinGame(game))" style="color: blue; cursor: pointer;">@game.Name</td>
                         <td>@game.GameState.GetDescription()</td>
-                        <td>@game.IsPasswordProtected</td>
                     </tr>
                 }
             </tbody>
@@ -127,68 +165,82 @@ else
 }
 
 @code {
-    private GameService gameService;
-    private DotsGame dotsGame;
-    private ServiceResponse<IList<GameDetails>> ServiceResponse;
-    private bool showCreateGameForm;
-    private bool showTable;
-    private InitiateDots NewGame = new InitiateDots();
-    private List<DotType> dotTypes = ((DotType[])Enum.GetValues(typeof(DotType))).ToList();
+    private GameService _gameService;
+    private DotsGame _dotsGame;
+    private ServiceResponse<IList<GameDetails>> _serviceResponse;
+    private bool _showCreateGameForm;
+    private bool _showTable;
+    private InitiateDots _newGame = new InitiateDots();
+    private List<DotType> _dotTypes = ((DotType[])Enum.GetValues(typeof(DotType))).ToList();
+    private Course _course;
+    private NineType _nineType = NineType.Front;
+    private GolfRoundType _golfRoundType = GolfRoundType.Eighteen;
 
-    GolfRoundType RadioValue = GolfRoundType.Eighteen;
-    void RadioSelection(ChangeEventArgs args)
+    void RoundTypeSelection(ChangeEventArgs args)
     {
         Enum.TryParse(args.Value.ToString(), out GolfRoundType roundType);
-        RadioValue = roundType;
+        _golfRoundType = roundType;
+    }
+
+    void NineTypeSelection(ChangeEventArgs args)
+    {
+        Enum.TryParse(args.Value.ToString(), out NineType nineType);
+        _nineType = nineType;
     }
 
     protected override async Task OnInitializedAsync()
     {
-        gameService = new GameService(_iServiceGames);
+        _gameService = new GameService(_iServiceGames);
 
-        ServiceResponse = await gameService.GetGames(Models.Enums.GameType.Dots);
+        _serviceResponse = await _gameService.GetGames(Models.Enums.GameType.Dots);
     }
 
     private void CheckboxClicked(DotType dot)
     {
-        if (dotTypes.Contains(dot))
+        if (_dotTypes.Contains(dot))
         {
-            dotTypes.Remove(dot);
+            _dotTypes.Remove(dot);
         }
         else
         {
-            dotTypes.Add(dot);
+            _dotTypes.Add(dot);
         }
     }
 
     private void ToggleGameSubmissionForm()
     {
-        showCreateGameForm = !showCreateGameForm;
+        _showCreateGameForm = !_showCreateGameForm;
     }
 
     private void ToggleGamesTable()
     {
-        showTable = !showTable; ;
+        _showTable = !_showTable; ;
     }
 
     private async Task SubmitNewGame()
     {
-        dotsGame = new DotsGame(_gameState);
+        _dotsGame = new DotsGame(_gameState);
 
-        NewGame.GolfRoundType = RadioValue;
+        if (_golfRoundType == GolfRoundType.Nine)
+        {
+            _newGame.NineType = _nineType;
+        }
 
-        NewGame.DotTypes = dotTypes;
+        _newGame.GolfRoundType = _golfRoundType;
+        _newGame.DotTypes = _dotTypes;
+        _newGame.CourseName = _course?.Name;
+        _newGame.CourseTeeBox = _course?.SelectedTees;
 
-        await dotsGame.CreateGame(NewGame);
+        await _dotsGame.CreateGame(_newGame);
 
-        var query = new Dictionary<string, string> { { "name", NewGame.PlayerName.Trim() } };
+        var query = new Dictionary<string, string> { { "name", _newGame.PlayerName.Trim() } };
 
-        NavigationManager.NavigateTo(QueryHelpers.AddQueryString($"/dots/{dotsGame.Game.Id}", query));
+        NavigationManager.NavigateTo(QueryHelpers.AddQueryString($"/dots/{_dotsGame.Game.Id}", query));
     }
 
     private async Task JoinGame(GameDetails game)
     {
-        if (game.IsPasswordProtected)
+        if (game.IsPasswordProtected && game.GameState != GameState.Complete)
         {
             string input = await jsRuntime.InvokeAsync<string>("passwordPrompt.showPrompt", "Enter Password (case sensitive)");
 
@@ -201,6 +253,16 @@ else
         {
             NavigationManager.NavigateTo($"/dots/{game.Id}");
         }
+    }
+
+    private void OnCourseChanged(ChangeEventArgs e)
+    {
+        _course = CourseSelection.SelectCourse(e.Value as string);
+    }
+
+    private void OnTeeChanged(ChangeEventArgs e)
+    {
+        _course.SelectTees(e.Value as string);
     }
 }
 

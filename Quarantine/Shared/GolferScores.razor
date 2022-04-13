@@ -1,15 +1,16 @@
 ﻿@using Microsoft.AspNetCore.Components;
 @using Quarantine.Models;
 
-@if (Golfers != null)
+@if (Group?.Golfers != null)
 {
-    var golferViews = Golfers.Select(g => new GolferScoreView(g)).OrderByDescending(gsv => gsv.TotalDots);
-    <table class="table">
+    var golferViews = Group.Golfers.Select(g => new GolferScoreView(g));
+    <h5>Totals</h5>
+    <table class="table maxwidth">
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Total Dots</th>
-                <th>Round Score</th>
+                <th>Score</th>
+                <th>Dots</th>
             </tr>
         </thead>
         <tbody>
@@ -17,15 +18,80 @@
             {
                 <tr>
                     <td>@golfer.Name</td>
-                    <td>@golfer.TotalDots</td>
                     <td>@golfer.RoundScore</td>
+                    <td>@golfer.TotalDots</td>
                 </tr>
             }
         </tbody>
     </table>
+    <h5>Score</h5>
+    <div class="horizontal-scroll maxwidth" style="margin-bottom: 15px;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    @foreach (var hole in Group.Golfers.First().Holes)
+                    {
+                        <th style="cursor: pointer;" @onclick="@(e => GoToHole(hole.Id))">@hole.Id</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var golfer in Group.Golfers)
+                {
+                    <tr>
+                        <td>@golfer.Name</td>
+                        @foreach (var hole in golfer.Holes)
+                        {
+                            <td>@hole.Score</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <h5>Dots</h5>
+    <div class="horizontal-scroll maxwidth">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    @foreach (var hole in Group.Golfers.First().Holes)
+                    {
+                        <th>@hole.Id</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var golfer in Group.Golfers)
+                {
+                    <tr>
+                        <td>@golfer.Name</td>
+                        @foreach (var hole in golfer.Holes)
+                        {
+                            <td>@hole.Dots.Count</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
 
 @code {
     [Parameter]
-    public IEnumerable<Golfer> Golfers { get; set; }
+    public GolfGroup Group { get; set; }
+    [Parameter]
+    public EventCallback<HoleUpdate> HoleUpdate { get; set; }
+
+    private async Task GoToHole(int currentHole)
+    {
+        await PerformUpdate(currentHole);
+    }
+
+    private async Task PerformUpdate(int currentHole)
+    {
+        Group.Golfers.ForEach(g => g.IsVisible = false);
+        await HoleUpdate.InvokeAsync(new Models.HoleUpdate() { Golfers = Group.Golfers, CurrentHole = currentHole, GroupId = Group.Id, CompleteGame = false });
+    }
 }

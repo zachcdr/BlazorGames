@@ -41,6 +41,9 @@
     <script>
         Blazor.defaultReconnectionHandler._reconnectCallback = function (d) {
             document.location.reload();
+        } 
+        function OnScrollEvent() {
+            document.documentElement.scrollTop = 0;
         }
     </script>
 </body>

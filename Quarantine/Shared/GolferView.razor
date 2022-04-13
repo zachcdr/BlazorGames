@@ -5,9 +5,8 @@
 
 @if (Golfer != null)
 {
-    <input @bind="@currentHole.Score" type="tel" class="score-field" maxlength="1" onClick="this.select();" >
     <div>
-        <label style="padding-right: 20px" for="availableDots">Dots: </label>
+        <label style="padding-right: 20px; font-weight: bold;" for="availableDots">Dots: </label>
         <div name="availableDots">
             @foreach (var dot in DotTypes)
             {

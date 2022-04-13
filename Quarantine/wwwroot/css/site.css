@@ -126,6 +126,12 @@ app {
     color: red;
 }
 
+.horizontal-scroll {
+    width: 90vw;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
 .switch {
     position: relative;
     display: inline-block;
@@ -180,7 +186,7 @@ input:checked + .slider:before {
 /* Score Enter */
 .score-field {
     float: right;
-    width: 50px;
+    width: 75px;
     height: 50px;
     text-align: center;
     font-size: xx-large;
