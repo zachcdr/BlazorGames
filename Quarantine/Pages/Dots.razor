@@ -17,65 +17,30 @@ else
 {
     @if (dotsGame.Game.GameState == GameState.New)
     {
-        var iterator = 1;
+        <b>@dotsGame.Game.Name</b>
+
         @foreach (var group in dotsGame.Game.Groups)
         {
-            <b>Group #@iterator</b>
-            <GolfGroupView Group="@group" GolfRoundType="@dotsGame.Game.GolfRoundType"></GolfGroupView>
-            iterator++;
+            <GolfGroupView Group="@group" GolfRoundType="@dotsGame.Game.GolfRoundType" NineType="@dotsGame.Game.NineType"></GolfGroupView>
             <br />
         }
 
-        @*<div style="padding-bottom: 5px">
-            <button class="maxwidth btn btn-info btn-block" type="button" @onclick="ToggleNewGroup">New Group</button>
-            </div>*@
-
-        @if (NewGroup)
-        {
-            <EditForm Model="@NewPlayer" OnValidSubmit="@SubmitGroup">
-                <DataAnnotationsValidator />
-                <ValidationSummary />
-                <div>
-                    <label for="playerName">Player Name: </label>
-                    <InputText id="playerName" @bind-Value="NewPlayer.Name"></InputText>
-                </div>
-                <div style="padding-top: 5px">
-                    <button class="maxwidth btn btn-success btn-block" type="submit">Create Group</button>
-                </div>
-            </EditForm>
-        }
         <div style="padding-bottom: 5px">
             <button class="maxwidth btn btn-danger btn-block" type="button" @onclick="Start">Start</button>
         </div>
     }
     else if (dotsGame.Game.GameState == GameState.InProgress)
     {
-        var iterator = 1;
-        foreach (var group in dotsGame.Game.Groups)
-        {
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" @onclick="eventArgs => { Toggle(group.Id); }">
-                            Group #@iterator
-                        </button>
-                    </h5>
-                </div>
-                @if (group.IsVisible)
-                {
-                    <div>
-                        <div class="card-body">
-                            <HoleView AvailableDots="@dotsGame.Game.DotTypes" Group="group" MaxHole="(int)dotsGame.Game.GolfRoundType" HoleUpdate="UpdateGame"></HoleView>
-                        </div>
-                    </div>
-                }
-            </div>
-
-            iterator++;
-        }
+        <div class="card-body">
+            <HoleView AvailableDots="@dotsGame.Game.DotTypes" Group="dotsGame.Game.Groups.First()" HoleUpdate="UpdateGame"></HoleView>
+        </div>
     }
+    <br />
 
-    <GolferScores Golfers="@dotsGame.Game.Groups.SelectMany(g => g.Golfers)"></GolferScores>
+    @if (dotsGame.Game.GameState != GameState.New)
+    {
+        <GolferScores Group="dotsGame.Game.Groups.First()" HoleUpdate="UpdateGame"></GolferScores>
+    }
 }
 
 @code {
@@ -83,7 +48,6 @@ else
     public string GameId { get; set; }
     public IList<string> Options { get; set; }
     public Player NewPlayer = new Player();
-    protected bool NewGroup = false;
     protected bool showScores = false;
     protected bool IsReplayDisabled = false;
 
@@ -97,18 +61,6 @@ else
         {
             await Task.Run(() => Thread.Sleep(100));
         }
-    }
-
-    private void ToggleNewGroup()
-    {
-        NewGroup = !NewGroup;
-    }
-
-    private void SubmitGroup()
-    {
-        dotsGame.AddNewGroup(NewPlayer.Name, dotsGame.Game.GolfRoundType);
-        NewPlayer = new Player();
-        NewGroup = !NewGroup;
     }
 
     private async Task Start()
@@ -141,5 +93,7 @@ else
         }
 
         await dotsGame.UpdateHole(holeUpdate);
+
+        await jsRuntime.InvokeVoidAsync("OnScrollEvent");
     }
 }

@@ -20,7 +20,7 @@
             <label for="playerName">Player Name: </label>
             <InputText id="playerName" @bind-Value="NewPlayer.Name"></InputText>
         </div>
-            <button class="maxwidth btn btn-success btn-block" type="submit">Add Player to @Group.Name</button>
+        <button class="maxwidth btn btn-success btn-block" style="margin-top: 10px;" type="submit">Add Player</button>
     </EditForm>
 }
 
@@ -29,12 +29,14 @@
     public GolfGroup Group { get; set; }
     [Parameter]
     public GolfRoundType GolfRoundType { get; set; }
+    [Parameter]
+    public NineType? NineType { get; set; }
 
     public Player NewPlayer = new Player();
 
     private void SubmitPlayer()
     {
-        Group.AddPlayer(NewPlayer, GolfRoundType);
+        Group.AddPlayer(NewPlayer, GolfRoundType, NineType);
         NewPlayer = new Player();
     }
 }

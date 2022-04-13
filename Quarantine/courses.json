@@ -1,0 +1,1449 @@
+[
+  {
+    "name": "Snohomish Golf Course",
+    "holes": [
+      {
+        "number": 1,
+        "par": 5,
+        "handicap": 4,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 524
+          },
+          {
+            "color": "GOLD",
+            "yards": 517
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "par": 4,
+        "handicap": 18,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 342
+          },
+          {
+            "color": "GOLD",
+            "yards": 332
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "par": 4,
+        "handicap": 8,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 433
+          },
+          {
+            "color": "GOLD",
+            "yards": 421
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "par": 4,
+        "handicap": 12,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 377
+          },
+          {
+            "color": "GOLD",
+            "yards": 371
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "par": 3,
+        "handicap": 14,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 192
+          },
+          {
+            "color": "GOLD",
+            "yards": 165
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "par": 4,
+        "handicap": 2,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 410
+          },
+          {
+            "color": "GOLD",
+            "yards": 402
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "par": 5,
+        "handicap": 10,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 527
+          },
+          {
+            "color": "GOLD",
+            "yards": 455
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "par": 3,
+        "handicap": 16,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 244
+          },
+          {
+            "color": "GOLD",
+            "yards": 156
+          }
+        ]
+      },
+      {
+        "number": 9,
+        "par": 4,
+        "handicap": 6,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 350
+          },
+          {
+            "color": "GOLD",
+            "yards": 335
+          }
+        ]
+      },
+      {
+        "number": 10,
+        "par": 5,
+        "handicap": 3,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 512
+          },
+          {
+            "color": "GOLD",
+            "yards": 482
+          }
+        ]
+      },
+      {
+        "number": 11,
+        "par": 3,
+        "handicap": 17,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 158
+          },
+          {
+            "color": "GOLD",
+            "yards": 148
+          }
+        ]
+      },
+      {
+        "number": 12,
+        "par": 4,
+        "handicap": 13,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 387
+          },
+          {
+            "color": "GOLD",
+            "yards": 309
+          }
+        ]
+      },
+      {
+        "number": 13,
+        "par": 3,
+        "handicap": 15,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 135
+          },
+          {
+            "color": "GOLD",
+            "yards": 126
+          }
+        ]
+      },
+      {
+        "number": 14,
+        "par": 4,
+        "handicap": 9,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 443
+          },
+          {
+            "color": "GOLD",
+            "yards": 432
+          }
+        ]
+      },
+      {
+        "number": 15,
+        "par": 4,
+        "handicap": 11,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 389
+          },
+          {
+            "color": "GOLD",
+            "yards": 382
+          }
+        ]
+      },
+      {
+        "number": 16,
+        "par": 4,
+        "handicap": 1,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 446
+          },
+          {
+            "color": "GOLD",
+            "yards": 436
+          }
+        ]
+      },
+      {
+        "number": 17,
+        "par": 4,
+        "handicap": 7,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 403
+          },
+          {
+            "color": "GOLD",
+            "yards": 326
+          }
+        ]
+      },
+      {
+        "number": 18,
+        "par": 5,
+        "handicap": 5,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 541
+          },
+          {
+            "color": "GOLD",
+            "yards": 530
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "The Cedars at Dungeness",
+    "holes": [
+      {
+        "number": 1,
+        "par": 4,
+        "handicap": 13,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 340
+          },
+          {
+            "color": "COPPER",
+            "yards": 332
+          },
+          {
+            "color": "COMBO",
+            "yards": 332
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "par": 4,
+        "handicap": 9,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 395
+          },
+          {
+            "color": "COPPER",
+            "yards": 353
+          },
+          {
+            "color": "COMBO",
+            "yards": 353
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "par": 5,
+        "handicap": 7,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 490
+          },
+          {
+            "color": "COPPER",
+            "yards": 463
+          },
+          {
+            "color": "COMBO",
+            "yards": 438
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "par": 3,
+        "handicap": 15,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 185
+          },
+          {
+            "color": "COPPER",
+            "yards": 152
+          },
+          {
+            "color": "COMBO",
+            "yards": 152
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "par": 4,
+        "handicap": 5,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 382
+          },
+          {
+            "color": "COPPER",
+            "yards": 382
+          },
+          {
+            "color": "COMBO",
+            "yards": 334
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "par": 5,
+        "handicap": 11,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 504
+          },
+          {
+            "color": "COPPER",
+            "yards": 439
+          },
+          {
+            "color": "COMBO",
+            "yards": 439
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "par": 5,
+        "handicap": 1,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 579
+          },
+          {
+            "color": "COPPER",
+            "yards": 548
+          },
+          {
+            "color": "COMBO",
+            "yards": 458
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "par": 3,
+        "handicap": 17,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 159
+          },
+          {
+            "color": "COPPER",
+            "yards": 144
+          },
+          {
+            "color": "COMBO",
+            "yards": 144
+          }
+        ]
+      },
+      {
+        "number": 9,
+        "par": 4,
+        "handicap": 3,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 409
+          },
+          {
+            "color": "COPPER",
+            "yards": 360
+          },
+          {
+            "color": "COMBO",
+            "yards": 302
+          }
+        ]
+      },
+      {
+        "number": 10,
+        "par": 4,
+        "handicap": 4,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 382
+          },
+          {
+            "color": "COPPER",
+            "yards": 365
+          },
+          {
+            "color": "COMBO",
+            "yards": 319
+          }
+        ]
+      },
+      {
+        "number": 11,
+        "par": 3,
+        "handicap": 18,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 163
+          },
+          {
+            "color": "COPPER",
+            "yards": 138
+          },
+          {
+            "color": "COMBO",
+            "yards": 138
+          }
+        ]
+      },
+      {
+        "number": 12,
+        "par": 4,
+        "handicap": 12,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 337
+          },
+          {
+            "color": "COPPER",
+            "yards": 316
+          },
+          {
+            "color": "COMBO",
+            "yards": 316
+          }
+        ]
+      },
+      {
+        "number": 13,
+        "par": 4,
+        "handicap": 14,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 313
+          },
+          {
+            "color": "COPPER",
+            "yards": 305
+          },
+          {
+            "color": "COMBO",
+            "yards": 305
+          }
+        ]
+      },
+      {
+        "number": 14,
+        "par": 5,
+        "handicap": 8,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 548
+          },
+          {
+            "color": "COPPER",
+            "yards": 518
+          },
+          {
+            "color": "COMBO",
+            "yards": 471
+          }
+        ]
+      },
+      {
+        "number": 15,
+        "par": 4,
+        "handicap": 2,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 420
+          },
+          {
+            "color": "COPPER",
+            "yards": 378
+          },
+          {
+            "color": "COMBO",
+            "yards": 299
+          }
+        ]
+      },
+      {
+        "number": 16,
+        "par": 4,
+        "handicap": 10,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 416
+          },
+          {
+            "color": "COPPER",
+            "yards": 357
+          },
+          {
+            "color": "COMBO",
+            "yards": 357
+          }
+        ]
+      },
+      {
+        "number": 17,
+        "par": 3,
+        "handicap": 16,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 191
+          },
+          {
+            "color": "COPPER",
+            "yards": 143
+          },
+          {
+            "color": "COMBO",
+            "yards": 143
+          }
+        ]
+      },
+      {
+        "number": 18,
+        "par": 4,
+        "handicap": 6,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 392
+          },
+          {
+            "color": "COPPER",
+            "yards": 380
+          },
+          {
+            "color": "COMBO",
+            "yards": 334
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sunland Golf Club",
+    "holes": [
+      {
+        "number": 1,
+        "par": 5,
+        "handicap": 9,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 510
+          },
+          {
+            "color": "BLUE",
+            "yards": 499
+          },
+          {
+            "color": "WHITE",
+            "yards": 465
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "par": 3,
+        "handicap": 17,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 186
+          },
+          {
+            "color": "BLUE",
+            "yards": 169
+          },
+          {
+            "color": "WHITE",
+            "yards": 158
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "par": 4,
+        "handicap": 1,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 437
+          },
+          {
+            "color": "BLUE",
+            "yards": 413
+          },
+          {
+            "color": "WHITE",
+            "yards": 358
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "par": 4,
+        "handicap": 15,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 333
+          },
+          {
+            "color": "BLUE",
+            "yards": 326
+          },
+          {
+            "color": "WHITE",
+            "yards": 309
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "par": 3,
+        "handicap": 13,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 175
+          },
+          {
+            "color": "BLUE",
+            "yards": 161
+          },
+          {
+            "color": "WHITE",
+            "yards": 148
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "par": 4,
+        "handicap": 11,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 346
+          },
+          {
+            "color": "BLUE",
+            "yards": 327
+          },
+          {
+            "color": "WHITE",
+            "yards": 310
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "par": 5,
+        "handicap": 7,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 505
+          },
+          {
+            "color": "BLUE",
+            "yards": 492
+          },
+          {
+            "color": "WHITE",
+            "yards": 448
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "par": 4,
+        "handicap": 5,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 367
+          },
+          {
+            "color": "BLUE",
+            "yards": 350
+          },
+          {
+            "color": "WHITE",
+            "yards": 339
+          }
+        ]
+      },
+      {
+        "number": 9,
+        "par": 4,
+        "handicap": 3,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 387
+          },
+          {
+            "color": "BLUE",
+            "yards": 373
+          },
+          {
+            "color": "WHITE",
+            "yards": 349
+          }
+        ]
+      },
+      {
+        "number": 10,
+        "par": 4,
+        "handicap": 4,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 369
+          },
+          {
+            "color": "BLUE",
+            "yards": 359
+          },
+          {
+            "color": "WHITE",
+            "yards": 347
+          }
+        ]
+      },
+      {
+        "number": 11,
+        "par": 4,
+        "handicap": 2,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 392
+          },
+          {
+            "color": "BLUE",
+            "yards": 383
+          },
+          {
+            "color": "WHITE",
+            "yards": 352
+          }
+        ]
+      },
+      {
+        "number": 12,
+        "par": 5,
+        "handicap": 10,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 488
+          },
+          {
+            "color": "BLUE",
+            "yards": 475
+          },
+          {
+            "color": "WHITE",
+            "yards": 465
+          }
+        ]
+      },
+      {
+        "number": 13,
+        "par": 4,
+        "handicap": 6,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 364
+          },
+          {
+            "color": "BLUE",
+            "yards": 353
+          },
+          {
+            "color": "WHITE",
+            "yards": 330
+          }
+        ]
+      },
+      {
+        "number": 14,
+        "par": 4,
+        "handicap": 16,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 340
+          },
+          {
+            "color": "BLUE",
+            "yards": 322
+          },
+          {
+            "color": "WHITE",
+            "yards": 261
+          }
+        ]
+      },
+      {
+        "number": 15,
+        "par": 3,
+        "handicap": 12,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 149
+          },
+          {
+            "color": "BLUE",
+            "yards": 140
+          },
+          {
+            "color": "WHITE",
+            "yards": 126
+          }
+        ]
+      },
+      {
+        "number": 16,
+        "par": 4,
+        "handicap": 8,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 325
+          },
+          {
+            "color": "BLUE",
+            "yards": 310
+          },
+          {
+            "color": "WHITE",
+            "yards": 300
+          }
+        ]
+      },
+      {
+        "number": 17,
+        "par": 3,
+        "handicap": 18,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 132
+          },
+          {
+            "color": "BLUE",
+            "yards": 122
+          },
+          {
+            "color": "WHITE",
+            "yards": 113
+          }
+        ]
+      },
+      {
+        "number": 18,
+        "par": 5,
+        "handicap": 14,
+        "tees": [
+          {
+            "color": "BLACK",
+            "yards": 460
+          },
+          {
+            "color": "BLUE",
+            "yards": 449
+          },
+          {
+            "color": "WHITE",
+            "yards": 427
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Maplewood Golf Course",
+    "holes": [
+      {
+        "number": 1,
+        "par": 4,
+        "handicap": 4,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 320
+          },
+          {
+            "color": "WHITE",
+            "yards": 290
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "par": 3,
+        "handicap": 12,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 163
+          },
+          {
+            "color": "WHITE",
+            "yards": 128
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "par": 4,
+        "handicap": 6,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 380
+          },
+          {
+            "color": "WHITE",
+            "yards": 350
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "par": 4,
+        "handicap": 8,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 327
+          },
+          {
+            "color": "WHITE",
+            "yards": 303
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "par": 5,
+        "handicap": 16,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 493
+          },
+          {
+            "color": "WHITE",
+            "yards": 475
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "par": 3,
+        "handicap": 18,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 139
+          },
+          {
+            "color": "WHITE",
+            "yards": 122
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "par": 5,
+        "handicap": 2,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 561
+          },
+          {
+            "color": "WHITE",
+            "yards": 526
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "par": 4,
+        "handicap": 10,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 312
+          },
+          {
+            "color": "WHITE",
+            "yards": 309
+          }
+        ]
+      },
+      {
+        "number": 9,
+        "par": 4,
+        "handicap": 14,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 350
+          },
+          {
+            "color": "WHITE",
+            "yards": 310
+          }
+        ]
+      },
+      {
+        "number": 10,
+        "par": 5,
+        "handicap": 3,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 510
+          },
+          {
+            "color": "WHITE",
+            "yards": 490
+          }
+        ]
+      },
+      {
+        "number": 11,
+        "par": 4,
+        "handicap": 1,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 401
+          },
+          {
+            "color": "WHITE",
+            "yards": 380
+          }
+        ]
+      },
+      {
+        "number": 12,
+        "par": 3,
+        "handicap": 9,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 170
+          },
+          {
+            "color": "WHITE",
+            "yards": 150
+          }
+        ]
+      },
+      {
+        "number": 13,
+        "par": 4,
+        "handicap": 5,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 370
+          },
+          {
+            "color": "WHITE",
+            "yards": 350
+          }
+        ]
+      },
+      {
+        "number": 14,
+        "par": 3,
+        "handicap": 17,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 130
+          },
+          {
+            "color": "WHITE",
+            "yards": 120
+          }
+        ]
+      },
+      {
+        "number": 15,
+        "par": 5,
+        "handicap": 15,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 460
+          },
+          {
+            "color": "WHITE",
+            "yards": 425
+          }
+        ]
+      },
+      {
+        "number": 16,
+        "par": 4,
+        "handicap": 11,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 365
+          },
+          {
+            "color": "WHITE",
+            "yards": 350
+          }
+        ]
+      },
+      {
+        "number": 17,
+        "par": 4,
+        "handicap": 7,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 371
+          },
+          {
+            "color": "WHITE",
+            "yards": 365
+          }
+        ]
+      },
+      {
+        "number": 18,
+        "par": 4,
+        "handicap": 13,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 290
+          },
+          {
+            "color": "WHITE",
+            "yards": 255
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fosters Golf Links",
+    "holes": [
+      {
+        "number": 1,
+        "par": 4,
+        "handicap": 5,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 324
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "par": 4,
+        "handicap": 11,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 300
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "par": 4,
+        "handicap": 9,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 295
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "par": 4,
+        "handicap": 7,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 302
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "par": 4,
+        "handicap": 15,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 144
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "par": 4,
+        "handicap": 1,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 420
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "par": 4,
+        "handicap": 3,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 334
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "par": 4,
+        "handicap": 17,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 268
+          }
+        ]
+      },
+      {
+        "number": 9,
+        "par": 3,
+        "handicap": 13,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 124
+          }
+        ]
+      },
+      {
+        "number": 10,
+        "par": 5,
+        "handicap": 4,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 445
+          }
+        ]
+      },
+      {
+        "number": 11,
+        "par": 3,
+        "handicap": 16,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 135
+          }
+        ]
+      },
+      {
+        "number": 12,
+        "par": 4,
+        "handicap": 2,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 326
+          }
+        ]
+      },
+      {
+        "number": 13,
+        "par": 4,
+        "handicap": 8,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 290
+          }
+        ]
+      },
+      {
+        "number": 14,
+        "par": 4,
+        "handicap": 14,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 248
+          }
+        ]
+      },
+      {
+        "number": 15,
+        "par": 4,
+        "handicap": 12,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 224
+          }
+        ]
+      },
+      {
+        "number": 16,
+        "par": 3,
+        "handicap": 18,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 120
+          }
+        ]
+      },
+      {
+        "number": 17,
+        "par": 3,
+        "handicap": 10,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 220
+          }
+        ]
+      },
+      {
+        "number": 18,
+        "par": 4,
+        "handicap": 6,
+        "tees": [
+          {
+            "color": "BLUE",
+            "yards": 285
+          }
+        ]
+      }
+    ]
+  }
+]

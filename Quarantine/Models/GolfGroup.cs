@@ -6,11 +6,11 @@ namespace Quarantine.Models
 {
     public class GolfGroup
     {
-        public GolfGroup()
+        public GolfGroup(NineType? nineType)
         {
             Id = Guid.NewGuid();
             Golfers = new List<Golfer>();
-            CurrentHole = 1;
+            CurrentHole = nineType == NineType.Back ? 10 : 1;
         }
 
         public Guid Id { get; set; }
@@ -18,7 +18,9 @@ namespace Quarantine.Models
         public List<Golfer> Golfers { get; set; }
         public bool IsVisible { get; set; }
         public int CurrentHole { get; set; }
-        public void AddPlayer(Player player, GolfRoundType golfRoundType)
+        public string CourseName { get; set; }
+        public string CourseTeeBox { get; set; }
+        public void AddPlayer(Player player, GolfRoundType golfRoundType, NineType? nineType)
         {
             var golfer = new Golfer()
             {
@@ -28,15 +30,31 @@ namespace Quarantine.Models
                 Holes = new List<Hole>()
             };
 
-            int iterator = 1;
-            while (iterator <= (int)golfRoundType)
+            if (golfRoundType == GolfRoundType.Eighteen || nineType == NineType.Front)
             {
-                golfer.Holes.Add(new Hole()
+                int iterator = 1;
+                while (iterator <= (int)golfRoundType)
                 {
-                    Id = iterator
-                });
+                    golfer.Holes.Add(new Hole()
+                    {
+                        Id = iterator
+                    });
 
-                iterator++;
+                    iterator++;
+                } 
+            }
+            else
+            {
+                int iterator = 10;
+                while (iterator <= 18)
+                {
+                    golfer.Holes.Add(new Hole()
+                    {
+                        Id = iterator
+                    });
+
+                    iterator++;
+                }
             }
 
             Golfers.Add(golfer);

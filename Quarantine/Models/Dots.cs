@@ -1,8 +1,5 @@
 ﻿using Quarantine.Models.Enums;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Quarantine.Models
 {
@@ -12,8 +9,10 @@ namespace Quarantine.Models
         {
             GameType = GameType.Dots;
         }
+
         public List<DotType> DotTypes { get; set; }
         public List<GolfGroup> Groups { get; set; }
         public GolfRoundType GolfRoundType { get; set; }
+        public NineType? NineType { get; set; }
     }
 }
