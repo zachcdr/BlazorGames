@@ -8,7 +8,7 @@
     <table class="table maxwidth">
         <thead>
             <tr>
-                <th>Name</th>
+                <th></th>
                 <th>Score</th>
                 <th>Dots</th>
             </tr>
@@ -17,7 +17,7 @@
             @foreach (var golfer in golferViews)
             {
                 <tr>
-                    <td>@golfer.Name</td>
+                    <th>@golfer.Name</th>
                     <td>@golfer.RoundScore</td>
                     <td>@golfer.TotalDots</td>
                 </tr>
@@ -29,22 +29,42 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th></th>
                     @foreach (var hole in Group.Golfers.First().Holes)
                     {
                         <th style="cursor: pointer;" @onclick="@(e => GoToHole(hole.Id))">@hole.Id</th>
+
+                        @if (hole.Id == 9)
+                        {
+                            <th>IN</th>
+                        }
+                        else if (hole.Id == 18)
+                        {
+                            <th>OUT</th>
+                        }
                     }
+                    <th>TOT</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var golfer in Group.Golfers)
                 {
                     <tr>
-                        <td>@golfer.Name</td>
+                        <th>@golfer.Name</th>
                         @foreach (var hole in golfer.Holes)
                         {
                             <td>@hole.Score</td>
+
+                            @if (hole.Id == 9)
+                            {
+                                <th>@golfer.Holes.Where(h => h.Id <= 9).Sum(h => h.Score)</th>
+                            }
+                            else if (hole.Id == 18)
+                            {
+                                <th>@golfer.Holes.Where(h => h.Id > 9).Sum(h => h.Score)</th>
+                            }
                         }
+                        <th>@golfer.Holes.Sum(h => h.Score)</th>
                     </tr>
                 }
             </tbody>
@@ -55,22 +75,42 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th></th>
                     @foreach (var hole in Group.Golfers.First().Holes)
                     {
                         <th>@hole.Id</th>
+
+                        @if (hole.Id == 9)
+                        {
+                            <th>IN</th>
+                        }
+                        else if (hole.Id == 18)
+                        {
+                            <th>OUT</th>
+                        }
                     }
+                    <th>TOT</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var golfer in Group.Golfers)
                 {
                     <tr>
-                        <td>@golfer.Name</td>
+                        <th>@golfer.Name</th>
                         @foreach (var hole in golfer.Holes)
                         {
                             <td>@hole.Dots.Count</td>
+
+                            @if (hole.Id == 9)
+                            {
+                                <th>@golfer.Holes.Where(h => h.Id <= 9).Sum(h => h.Dots.Count)</th>
+                            }
+                            else if (hole.Id == 18)
+                            {
+                                <th>@golfer.Holes.Where(h => h.Id > 9).Sum(h => h.Dots.Count)</th>
+                            }
                         }
+                        <th>@golfer.Holes.Sum(h => h.Dots.Count)</th>
                     </tr>
                 }
             </tbody>
