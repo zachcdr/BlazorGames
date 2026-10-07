@@ -1,44 +1,37 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Quarantine.Helpers
 {
     public static class FileProcessor
     {
-        #region Public Methods
         public static string ReadFile(string path, string file)
         {
             DirectoryCheck(path);
-
-            using (StreamReader reader = new StreamReader($"{path}/{file}"))
-            {
-                return reader.ReadToEnd();
-            }
+            using StreamReader streamReader = new StreamReader(path + "/" + file);
+            return streamReader.ReadToEnd();
         }
 
         public static void WriteFile(string contents, string path, string file)
         {
             DirectoryCheck(path);
-
-            File.WriteAllText($"{path}/{file}", contents);
+            File.WriteAllText(path + "/" + file, contents);
         }
 
         public static List<string> GetFiles(string path)
         {
             DirectoryCheck(path);
-
-            DirectoryInfo d = new DirectoryInfo(path);
-            FileInfo[] Files = d.GetFiles();
-            var files = new List<string>();
-            foreach (FileInfo file in Files)
+            DirectoryInfo directoryInfo = new DirectoryInfo(path);
+            FileInfo[] files = directoryInfo.GetFiles();
+            List<string> list = new List<string>();
+            FileInfo[] array = files;
+            foreach (FileInfo fileInfo in array)
             {
-                var f = file.Name.Replace(".json", "");
-                files.Add(f);
+                string item = fileInfo.Name.Replace(".json", "");
+                list.Add(item);
             }
-
-            return files;
+            return list;
         }
-        #endregion
 
         private static void DirectoryCheck(string path)
         {

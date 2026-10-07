@@ -1,65 +1,105 @@
-﻿@page "/dots/{GameId}"
+@page "/dots/{GameId}"
+@using System.Threading
+@using Quarantine.Games
+@using Quarantine.Interfaces
+@using Quarantine.Models
+@using Quarantine.Models.Enums
+@inject IJSRuntime jsRuntime
+@inject NavigationManager navManager
+@inject IHandleGameState _gameState
 
-@using Quarantine.Models;
-@using Quarantine.Interfaces;
-@using Quarantine.Shared;
-@using Quarantine.Models.Enums;
-@using System.Threading;
-@inject IHandleGameState _gameState;
-@inject NavigationManager navManager;
-@inject IJSRuntime jsRuntime;
+<div class="golf">
+    <div class="golf-wrap">
+        <a class="golf-back" href="dots">‹ All games</a>
 
-@if (dotsGame?.Game == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    @if (dotsGame.Game.GameState == GameState.New)
-    {
-        <b>@dotsGame.Game.Name</b>
-
-        @foreach (var group in dotsGame.Game.Groups)
+        @if (dotsGame?.Game == null)
         {
-            <GolfGroupView Group="@group" GolfRoundType="@dotsGame.Game.GolfRoundType" NineType="@dotsGame.Game.NineType"></GolfGroupView>
-            <br />
+            for (var i = 0; i < 4; i++)
+            {
+                <div class="golf-skeleton"></div>
+            }
         }
+        else
+        {
+            var game = dotsGame.Game;
+            var group = game.Groups.First();
 
-        <div style="padding-bottom: 5px">
-            <button class="maxwidth btn btn-danger btn-block" type="button" @onclick="Start">Start</button>
-        </div>
-    }
-    else if (dotsGame.Game.GameState == GameState.InProgress)
-    {
-        <div class="card-body">
-            <HoleView AvailableDots="@dotsGame.Game.DotTypes" Group="dotsGame.Game.Groups.First()" HoleUpdate="UpdateGame"></HoleView>
-        </div>
-    }
-    <br />
+            <header class="golf-header">
+                <span class="golf-eyebrow">
+                    @(game.GameState == GameState.New ? "Setting up" : game.GameState == GameState.InProgress ? "● Live round" : "Final")
+                </span>
+                <h1 class="golf-title">@game.Name</h1>
+                <div class="golf-tags">
+                    <span class="golf-tag">@(game.GolfRoundType == GolfRoundType.Nine ? $"{game.NineType ?? NineType.Front} 9" : "18 holes")</span>
+                    @if (!string.IsNullOrWhiteSpace(group.CourseName))
+                    {
+                        <span class="golf-tag">⛳ @group.CourseName</span>
+                    }
+                    @if (!string.IsNullOrWhiteSpace(group.CourseTeeBox))
+                    {
+                        <span class="golf-tag">@group.CourseTeeBox tees</span>
+                    }
+                    <span class="golf-tag">@group.Golfers.Count @(group.Golfers.Count == 1 ? "player" : "players")</span>
+                </div>
+            </header>
 
-    @if (dotsGame.Game.GameState != GameState.New)
-    {
-        <GolferScores Group="dotsGame.Game.Groups.First()" HoleUpdate="UpdateGame"></GolferScores>
-    }
-}
+            if (game.GameState == GameState.New)
+            {
+                <div class="golf-card">
+                    <h2 class="golf-card-title">Who's playing?</h2>
+                    @foreach (GolfGroup golfGroup in game.Groups)
+                    {
+                        <GolfGroupView Group="@golfGroup" GolfRoundType="@game.GolfRoundType" NineType="@game.NineType" />
+                    }
+                </div>
+                <button class="golf-btn golf-btn-primary golf-btn-lg golf-btn-block" type="button" @onclick="Start">Tee Off ⛳</button>
+            }
+            else
+            {
+                if (game.GameState == GameState.InProgress)
+                {
+                    <HoleView AvailableDots="@game.DotTypes" Group="@group" HoleUpdate="UpdateGame" />
+                    <p class="golf-section-label">Round so far</p>
+                }
+                else
+                {
+                    <div class="golf-final">
+                        <span class="golf-final-icon">🏆</span>
+                        <div>
+                            <b>Round complete</b>
+                            Final scores and dots are below.
+                        </div>
+                    </div>
+                }
+                <GolferScores Group="@group" HoleUpdate="UpdateGame" />
+            }
+        }
+    </div>
+</div>
 
 @code {
+    public Player NewPlayer = new Player();
+
+    protected bool showScores;
+
+    protected bool IsReplayDisabled;
+
+    private DotsGame dotsGame;
+
     [Parameter]
     public string GameId { get; set; }
-    public IList<string> Options { get; set; }
-    public Player NewPlayer = new Player();
-    protected bool showScores = false;
-    protected bool IsReplayDisabled = false;
 
-    private Quarantine.Games.DotsGame dotsGame;
+    public IList<string> Options { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        dotsGame = new Games.DotsGame(_gameState, new Guid(GameId));
-
+        dotsGame = new DotsGame(_gameState, new Guid(GameId));
         while (dotsGame.Game == null)
         {
-            await Task.Run(() => Thread.Sleep(100));
+            await Task.Run(delegate
+            {
+                Thread.Sleep(100);
+            });
         }
     }
 
@@ -71,29 +111,28 @@ else
 
     private void Toggle(Guid groupId)
     {
-        dotsGame.Game.Groups.ForEach(g => g.IsVisible = false);
-        dotsGame.Game.Groups.Single(g => g.Id == groupId).IsVisible = true;
+        dotsGame.Game.Groups.ForEach(delegate(GolfGroup g)
+        {
+            g.IsVisible = false;
+        });
+        dotsGame.Game.Groups.Single((GolfGroup g) => g.Id == groupId).IsVisible = true;
     }
 
     private async Task UpdateGame(HoleUpdate holeUpdate)
     {
         if (holeUpdate.CompleteGame)
         {
-            string message = "";
-
-            if (dotsGame.Game.Groups.Any(group => group.Golfers.Any(golfer => golfer.Holes.Any(hole => hole.Score == 0))))
+            string text = "";
+            if (dotsGame.Game.Groups.Any((GolfGroup group) => group.Golfers.Any((Golfer golfer) => golfer.Holes.Any((Hole hole) => hole.Score == 0))))
             {
-                message = "There are unentered scores within your group.\r\n";
+                text = "There are unentered scores within your group.\r\n";
             }
-
-            if (!await jsRuntime.InvokeAsync<bool>("confirm", $"{message}Are you sure you wish to complete your round?"))
+            if (!(await jsRuntime.InvokeAsync<bool>("confirm", text + "Are you sure you wish to complete your round?")))
             {
                 return;
             }
         }
-
         await dotsGame.UpdateHole(holeUpdate);
-
         await jsRuntime.InvokeVoidAsync("OnScrollEvent");
     }
 }

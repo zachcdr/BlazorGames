@@ -1,159 +1,156 @@
-﻿@page "/traqer/{name}"
-
-@using Microsoft.Extensions.Options;
-@using Quarantine.Interfaces;
-@using Quarantine.Services;
-@using Quarantine.ExtensionMethods;
-@using Quarantine.Models;
-@using Quarantine.Models.Enums;
-@using Quarantine.Responses;
-@using System.Threading;
-@inject IHandleRetreivingGames _iServiceGames;
-@inject IHandleGameState _gameState;
-@inject IOptions<ApplicationSettings> _settings;
-@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@page "/traqer/{name}"
+@using System.Threading
+@using Blazored.LocalStorage
+@using Microsoft.Extensions.Options
+@using Quarantine.ExtensionMethods
+@using Quarantine.Interfaces
+@using Quarantine.Models
+@using Quarantine.Models.Enums
+@using Quarantine.Responses
+@using Quarantine.Services
+@inject ILocalStorageService localStorage
+@inject IOptions<ApplicationSettings> _settings
+@inject IHandleGameState _gameState
+@inject IHandleRetreivingGames _iServiceGames
 
 @if (ServiceResponse != null && !ServiceResponse.IsSuccess)
 {
-    <div class="alert alert-danger">
-        @ServiceResponse.Message
+    <div class="alert alert-danger">@ServiceResponse.Message</div>
+}
+@if (traqerService == null || !traqerService.IsLoaded)
+{
+    <p><em>Loading...</em></p>
+    return;
+}
+<h1>@traqerService.Title</h1>
+<p>@traqerService.Description</p>
+@if (!isAuthenticated)
+{
+    <EditForm Model="@simplePassword" OnSubmit="Authenticate">
+            <div class="maxwidth">
+                <label for="password">Password: </label>
+                <input id="password" class="maxwidth" type="password" @bind="simplePassword.Password" />
+            </div>
+    </EditForm>
+    return;
+}
+@foreach (TraqTypeView traqView in traqerService.TraqTypeViews)
+{
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">
+                <button class="btn btn-link" @onclick="@(() => Toggle(traqView.TraqType))">@(traqView.TraqType.GetDescription())</button>
+            </h5>
+        </div>
+        @if (traqView.IsVisible)
+        {
+            <div>
+                <div class="card-body">
+                    @switch (traqView.TraqType)
+                    {
+                        case TraqType.Medicine:
+                        <Medications Meds="@((IEnumerable<Medication>)traqerService.GetMedications())" MedicineType="UpdateMedicine" />
+                        break;
+                        case TraqType.Pump:
+                        if (showStats)
+                        {
+                            <VolumeStats HourlyStats="@traqerService.Pumps.HourlyVolumeStats" DailyStats="@traqerService.Pumps.DailyVolumeStats" />
+                        }
+                        else if (editMilk)
+                        {
+                            <MilkEdit InboundMilk="@milkToEdit" MilkType="@MilkType.Pump" OutboundMilk="EditMilk" />
+                        }
+                        else
+                        {
+                            <MilkSession Session="@traqerService.Pumps" HandleMilk="UpdatePump" CycleDay="CyclePumps" ShowStats="ShowStats" Edit="EditMilk" />
+                        }
+                        break;
+                        case TraqType.Diaper:
+                        if (showStats)
+                        {
+                            <ChorerStats Stats="@traqerService.Diapers.ChorerStats" />
+                        }
+                        else
+                        {
+                            <Diapers Session="@traqerService.Diapers" DiaperContents="DiaperChange" CycleDay="CycleDiapers" ShowStats="ShowStats" />
+                        }
+                        break;
+                        case TraqType.Feed:
+                        if (showStats)
+                        {
+                            <ChorerStats Stats="@traqerService.Feeds.ChorerStats" />
+                        }
+                        else if (editMilk)
+                        {
+                            <MilkEdit InboundMilk="@milkToEdit" MilkType="@MilkType.Feed" OutboundMilk="EditMilk" />
+                        }
+                        else
+                        {
+                            <MilkSession Session="@traqerService.Feeds" HandleMilk="UpdateFeed" CycleDay="CycleFeeds" ShowStats="ShowStats" Edit="EditMilk" />
+                        }
+                        break;
+                    }
+                </div>
+            </div>
+        }
     </div>
 }
 
-@if (traqerService == null || traqerService.IsLoaded == false)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <h1>@traqerService.Title</h1>
-
-    <p>@traqerService.Description</p>
-
-    @if (!isAuthenticated)
-    {
-        <EditForm Model="@simplePassword" OnSubmit="@Authenticate">
-            <div class="maxwidth">
-                <label for="password">Password: </label>
-                <input id="password" @bind-value="@simplePassword.Password" class="maxwidth" type="password">
-            </div>
-        </EditForm>
-    }
-    else
-    {
-        @foreach (var traqView in traqerService.TraqTypeViews)
-        {
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" @onclick="eventArgs => { Toggle(traqView.TraqType); }">
-                            @traqView.TraqType.GetDescription()
-                        </button>
-                    </h5>
-                </div>
-                @if (traqView.IsVisible)
-                {
-                    <div>
-                        <div class="card-body">
-                            @switch (traqView.TraqType)
-                            {
-                                case TraqType.Medicine:
-                                    <Medications Meds="traqerService.GetMedications()" MedicineType="UpdateMedicine"></Medications>
-                                    break;
-                                case TraqType.Pump:
-                                    if (showStats)
-                                    {
-                                        <VolumeStats HourlyStats="traqerService.Pumps.HourlyVolumeStats" DailyStats="traqerService.Pumps.DailyVolumeStats"></VolumeStats>
-                                    }
-                                    else if (editMilk)
-                                    {
-                                        <MilkEdit InboundMilk="milkToEdit" MilkType="MilkType.Pump" OutboundMilk="EditMilk"></MilkEdit>
-                                    }
-                                    else
-                                    {
-                                        <MilkSession Session="traqerService.Pumps" HandleMilk="UpdatePump" CycleDay="CyclePumps" ShowStats="ShowStats" Edit="EditMilk"></MilkSession>
-                                    }
-                                    break;
-                                case TraqType.Diaper:
-                                    if (showStats)
-                                    {
-                                        <ChorerStats Stats="traqerService.Diapers.ChorerStats"></ChorerStats>
-                                    }
-                                    else
-                                    {
-                                        <Diapers Session="traqerService.Diapers" DiaperContents="DiaperChange" CycleDay="CycleDiapers" ShowStats="ShowStats"></Diapers>
-                                    }
-                                    break;
-                                case TraqType.Feed:
-                                    if (showStats)
-                                    {
-                                        <ChorerStats Stats="traqerService.Feeds.ChorerStats"></ChorerStats>
-                                    }
-                                    else if (editMilk)
-                                    {
-                                        <MilkEdit InboundMilk="milkToEdit" MilkType="MilkType.Feed" OutboundMilk="EditMilk"></MilkEdit>
-                                    }
-                                    else
-                                    {
-                                        <MilkSession Session="traqerService.Feeds" HandleMilk="UpdateFeed" CycleDay="CycleFeeds" ShowStats="ShowStats" Edit="EditMilk"></MilkSession>
-                                    }
-                                    break;
-                            }
-                        </div>
-                    </div>
-                }
-            </div>
-        }
-    }
-}
-
 @code {
+    private TraqerService traqerService;
+
+    private ServiceResponse<IList<GameDetails>> ServiceResponse;
+
+    private const int listLimit = 10;
+
+    private SimplePassword simplePassword = new SimplePassword();
+
+    private string localPassword;
+
+    private bool isAuthenticated;
+
+    private bool showStats;
+
+    private bool editMilk;
+
+    private Milk milkToEdit;
+
     [Parameter]
     public string name { get; set; }
-    private TraqerService traqerService;
-    private ServiceResponse<IList<GameDetails>> ServiceResponse;
-    private const int listLimit = 10;
-    private SimplePassword simplePassword = new SimplePassword();
-    private string localPassword;
-    private bool isAuthenticated;
-    private bool showStats;
-    private bool editMilk;
-    private Milk milkToEdit;
 
     protected override async Task OnInitializedAsync()
     {
-        Enum.TryParse(name, out GameType gameType);
-
-        traqerService = new TraqerService(_gameState, gameType);
-
+        Enum.TryParse<GameType>(name, out var result);
+        traqerService = new TraqerService(_gameState, result);
         await traqerService.Loading();
-
         CheckRefreshStatus();
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
+        if (!firstRender)
         {
-            while (traqerService == null || traqerService.IsLoaded == false)
+            return;
+        }
+        while (traqerService == null || !traqerService.IsLoaded)
+        {
+            await Task.Run(delegate
             {
-                await Task.Run(() => Thread.Sleep(500));
-            }
-
-            localPassword = await localStorage.GetItemAsync<string>("traqJaq_auth");
-
-            if (localPassword == _settings.Value.TraqJaqPasswordKyleah)
-            {
-                isAuthenticated = true;
-                traqerService.UserName = "Kyleah";
-                StateHasChanged();
-            }
-            else if (localPassword == _settings.Value.TraqJaqPasswordZach)
-            {
-                isAuthenticated = true;
-                traqerService.UserName = "Zach";
-                StateHasChanged();
-            }
+                Thread.Sleep(500);
+            });
+        }
+        localPassword = await localStorage.GetItemAsync<string>("traqJaq_auth");
+        if (localPassword == _settings.Value.TraqJaqPasswordKyleah)
+        {
+            isAuthenticated = true;
+            traqerService.UserName = "Kyleah";
+            StateHasChanged();
+        }
+        else if (localPassword == _settings.Value.TraqJaqPasswordZach)
+        {
+            isAuthenticated = true;
+            traqerService.UserName = "Zach";
+            StateHasChanged();
         }
     }
 
@@ -181,12 +178,13 @@ else
     {
         while (true)
         {
-            await Task.Run(() => Thread.Sleep(100));
-
+            await Task.Run(delegate
+            {
+                Thread.Sleep(100);
+            });
             if (traqerService != null && traqerService.RefreshView)
             {
                 traqerService.RefreshView = false;
-
                 StateHasChanged();
             }
         }
@@ -222,13 +220,13 @@ else
     {
         if (simplePassword.Password == _settings.Value.TraqJaqPasswordKyleah)
         {
-            await localStorage.SetItemAsync("traqJaq_auth", simplePassword.Password);
+            await localStorage.SetItemAsync<string>("traqJaq_auth", simplePassword.Password);
             isAuthenticated = true;
             traqerService.UserName = "Kyleah";
         }
         else if (simplePassword.Password == _settings.Value.TraqJaqPasswordZach)
         {
-            await localStorage.SetItemAsync("traqJaq_auth", simplePassword.Password);
+            await localStorage.SetItemAsync<string>("traqJaq_auth", simplePassword.Password);
             isAuthenticated = true;
             traqerService.UserName = "Zach";
         }
@@ -238,12 +236,12 @@ else
     {
         switch (dayCycleType)
         {
-            case DayCycleType.Next:
-                traqerService.FreshFeeds(traqerService.Feeds.SessionDate.AddDays(1));
-                break;
-            case DayCycleType.Previous:
-                traqerService.FreshFeeds(traqerService.Feeds.SessionDate.AddDays(-1));
-                break;
+        case DayCycleType.Next:
+            traqerService.FreshFeeds(traqerService.Feeds.SessionDate.AddDays(1.0));
+            break;
+        case DayCycleType.Previous:
+            traqerService.FreshFeeds(traqerService.Feeds.SessionDate.AddDays(-1.0));
+            break;
         }
     }
 
@@ -251,12 +249,12 @@ else
     {
         switch (dayCycleType)
         {
-            case DayCycleType.Next:
-                traqerService.FreshPumps(traqerService.Pumps.SessionDate.AddDays(1));
-                break;
-            case DayCycleType.Previous:
-                traqerService.FreshPumps(traqerService.Pumps.SessionDate.AddDays(-1));
-                break;
+        case DayCycleType.Next:
+            traqerService.FreshPumps(traqerService.Pumps.SessionDate.AddDays(1.0));
+            break;
+        case DayCycleType.Previous:
+            traqerService.FreshPumps(traqerService.Pumps.SessionDate.AddDays(-1.0));
+            break;
         }
     }
 
@@ -264,13 +262,12 @@ else
     {
         switch (dayCycleType)
         {
-            case DayCycleType.Next:
-                traqerService.FreshDiapers(traqerService.Diapers.SessionDate.AddDays(1));
-                break;
-            case DayCycleType.Previous:
-                traqerService.FreshDiapers(traqerService.Diapers.SessionDate.AddDays(-1));
-                break;
+        case DayCycleType.Next:
+            traqerService.FreshDiapers(traqerService.Diapers.SessionDate.AddDays(1.0));
+            break;
+        case DayCycleType.Previous:
+            traqerService.FreshDiapers(traqerService.Diapers.SessionDate.AddDays(-1.0));
+            break;
         }
     }
 }
-

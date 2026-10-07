@@ -1,0 +1,84 @@
+@page "/nfl-pickems/weeks"
+@using Quarantine.Interfaces
+@using Quarantine.Helpers
+@inject NavigationManager NavigationManager
+@inject INflScheduleService ScheduleService
+
+<div class="nfl">
+    <div class="nfl-wrap">
+        <header class="nfl-header">
+            <div>
+                <span class="nfl-eyebrow">Pick'em League</span>
+                <h1 class="nfl-title">NFL Pickems</h1>
+                <p class="nfl-sub">Pick a week to make your picks or check the scoreboard.</p>
+            </div>
+        </header>
+
+        <button type="button" class="nfl-hero" @onclick="@(() => Navigate("Totals"))">
+            <span class="nfl-hero-icon">🏆</span>
+            <span>
+                <span class="nfl-hero-title">Season Standings</span><br />
+                <span class="nfl-hero-sub">Total wins across every week</span>
+            </span>
+            <span class="nfl-hero-arrow">›</span>
+        </button>
+
+        <p class="nfl-section-label">Weeks</p>
+        <div class="nfl-week-grid">
+            @for (var i = 1; i <= 18; i++)
+            {
+                var week = i;
+                var state = GetState(week);
+                <button type="button" class="nfl-week is-@state" @onclick="@(() => Navigate(week.ToString()))">
+                    <span class="nfl-week-label">Week</span>
+                    <span class="nfl-week-num">@week</span>
+                    @if (state != "loading")
+                    {
+                        <span class="nfl-week-tag">@(state == "done" ? "Final" : state == "current" ? "This Week" : "Upcoming")</span>
+                    }
+                </button>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    // A week counts as finished this long after its last kickoff.
+    private static readonly TimeSpan GameLength = TimeSpan.FromHours(4);
+
+    private Dictionary<int, DateTime> _lastKickoffByWeek;
+    private int? _currentWeek;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var schedule = await ScheduleService.GetSchedule();
+        _lastKickoffByWeek = schedule
+            .Where(g => NflPickLock.IsScheduled(g.GameTimeUtc))
+            .GroupBy(g => g.Week)
+            .ToDictionary(g => g.Key, g => g.Max(game => game.GameTimeUtc));
+        _currentWeek = _lastKickoffByWeek
+            .Where(w => w.Value + GameLength > DateTime.UtcNow)
+            .Select(w => (int?)w.Key)
+            .Min();
+    }
+
+    private string GetState(int week)
+    {
+        if (_lastKickoffByWeek == null)
+        {
+            return "loading";
+        }
+        if (week == _currentWeek)
+        {
+            return "current";
+        }
+        return _lastKickoffByWeek.TryGetValue(week, out var lastKickoff) && lastKickoff + GameLength <= DateTime.UtcNow
+            ? "done"
+            : "upcoming";
+    }
+
+    private void Navigate(string week)
+    {
+        NavigationManager.NavigateTo("/nfl-pickems/weeks/" + week);
+    }
+}

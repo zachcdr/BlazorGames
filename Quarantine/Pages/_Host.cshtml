@@ -1,9 +1,13 @@
-﻿@page "/"
+@page "/"
 @namespace Quarantine.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = null;
 }
+
+@* Rebuilt from the standard Blazor Server template: the original _Host.cshtml was compiled into
+   Quarantine.Views.dll, which wasn't part of the recovery. If you recover that DLL, swap in the
+   original so any extra <script>/<link> tags (e.g. charting libraries) come back too. *@
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +16,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chap App</title>
     <base href="~/" />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="css/nfl-pickems.css" rel="stylesheet" />
+    <link href="css/dots.css" rel="stylesheet" />
+    <link href="css/ridethebus.css" rel="stylesheet" />
+    <link href="css/shell.css" rel="stylesheet" />
 </head>
 <body>
     <app>
@@ -32,19 +46,7 @@
     </div>
 
     <script src="_framework/blazor.server.js"></script>
-    <script src="~/scripts/PasswordPrompt.js"></script>
-    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-    <script src="~/js/stats.js"></script>
-
-    <script>
-        Blazor.defaultReconnectionHandler._reconnectCallback = function (d) {
-            document.location.reload();
-        } 
-        function OnScrollEvent() {
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
+    @* Fallbacks for the JS functions the app calls. Any real versions in your own wwwroot scripts take priority. *@
+    <script src="js/recovered-stubs.js"></script>
 </body>
 </html>

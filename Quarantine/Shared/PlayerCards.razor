@@ -1,53 +1,29 @@
-﻿@using Microsoft.AspNetCore.Components;
-@using Quarantine.Models;
+@using Quarantine.Models
 
-@if (Cards.Count > 0)
+@if (Cards != null && Cards.Count > 0)
 {
-    <tr>
-        <td>
-            @if (Cards[0].IsVisible)
+    <div class="bar-cards @(Small ? "is-small" : "")">
+        @for (var i = 0; i < Math.Min(4, Cards.Count); i++)
+        {
+            var card = Cards[i];
+            @* Keyed by position (not card name, which can repeat in older games) plus face up/down,
+               so the image re-mounts when it turns over and the flip animation replays. *@
+            if (card.IsVisible)
             {
-                <img class="card-table" src="../Images/@Cards[0].FileName" alt="Card image cap">
+                <img @key="@($"{i}-up")" class="bar-card is-up" src="@("Images/" + card.FileName)" alt="@($"{card.Value} of {card.Suit}s")" />
             }
             else
             {
-                <img class="card-table" src="../Images/CardBackground.png" alt="Card image cap">
+                <img @key="@($"{i}-down")" class="bar-card" src="Images/CardBackground.png" alt="Face-down card" />
             }
-        </td>
-        <td>
-            @if (Cards[1].IsVisible)
-            {
-                <img class="card-table" src="../Images/@Cards[1].FileName" alt="Card image cap">
-            }
-            else
-            {
-                <img class="card-table" src="../Images/CardBackground.png" alt="Card image cap">
-            }
-        </td>
-        <td>
-            @if (Cards[2].IsVisible)
-            {
-                <img class="card-table" src="../Images/@Cards[2].FileName" alt="Card image cap">
-            }
-            else
-            {
-                <img class="card-table" src="../Images/CardBackground.png" alt="Card image cap">
-            }
-        </td>
-        <td>
-            @if (Cards[3].IsVisible)
-            {
-                <img class="card-table" src="../Images/@Cards[3].FileName" alt="Card image cap">
-            }
-            else
-            {
-                <img class="card-table" src="../Images/CardBackground.png" alt="Card image cap">
-            }
-        </td>
-    </tr>
+        }
+    </div>
 }
 
 @code {
     [Parameter]
     public IList<Card> Cards { get; set; }
+
+    [Parameter]
+    public bool Small { get; set; }
 }

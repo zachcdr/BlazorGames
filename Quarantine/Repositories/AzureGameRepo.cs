@@ -1,19 +1,22 @@
-﻿using Azure.Storage.Blobs;
-using Azure.Storage.Blobs.Models;
-using Quarantine.Interfaces;
-using Quarantine.Models.Enums;
 using System;
-using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Azure.Storage.Blobs;
+using Microsoft.Extensions.Options;
+using Quarantine.Interfaces;
 using Quarantine.Models;
+using Quarantine.Models.Enums;
 
 namespace Quarantine.Repositories
 {
+    /// <summary>
+    /// Stores each game's state as a JSON blob. The container name is the GameType in lower case
+    /// (e.g. "nflpickems"), and the blob name is "{gameFile}.json".
+    /// </summary>
     public class AzureGameRepo : IHandleGameState, IHandleRetreivingGames
     {
-        private BlobServiceClient _blobServiceClient;
+        private readonly BlobServiceClient _blobServiceClient;
 
         public AzureGameRepo(IOptions<ApplicationSettings> settings)
         {
@@ -22,56 +25,46 @@ namespace Quarantine.Repositories
 
         public async Task<string> LoadGame(GameType gameType, string gameFile)
         {
-            // Create a local file in the ./data/ directory for uploading and downloading
-            string localPath = "./gamedata/";
-            var file = $"{gameFile}.json";
+            var localPath = "./gamedata/";
+            Directory.CreateDirectory(localPath);
+            var fileName = gameFile + ".json";
+            var downloadFilePath = Path.Combine(localPath, $"{Guid.NewGuid()}-{fileName}");
 
-            string downloadFilePath = Path.Combine(localPath, $"{Guid.NewGuid()}-{file}");
+            var containerClient = _blobServiceClient.GetBlobContainerClient(gameType.ToString().ToLower());
+            var blobClient = containerClient.GetBlobClient(fileName);
 
-            // Create the container and return a container client object
-            BlobContainerClient containerClient = _blobServiceClient.GetBlobContainerClient(gameType.ToString().ToLower());
-
-            // Get a reference to a blob
-            BlobClient blobClient = containerClient.GetBlobClient(file);
-            // Download the blob's contents and save it to a file
-            BlobDownloadInfo download = await blobClient.DownloadAsync();
-            using (FileStream fs = File.OpenWrite(downloadFilePath))
+            var download = (await blobClient.DownloadAsync()).Value;
+            using (var fs = File.OpenWrite(downloadFilePath))
             {
                 await download.Content.CopyToAsync(fs);
             }
 
-            var blob = string.Empty;
-
-            using (StreamReader reader = new StreamReader(downloadFilePath))
+            string result;
+            using (var reader = new StreamReader(downloadFilePath))
             {
-                blob = reader.ReadToEnd();
+                result = reader.ReadToEnd();
             }
 
             File.Delete(downloadFilePath);
-
-            return blob;
+            return result;
         }
 
         public async Task SaveGame(GameType gameType, string gamePath, string game)
         {
-            // Create a local file in the ./data/ directory for uploading and downloading
-            string localPath = $"./gamedata/";
-            var file = $"{gamePath}.json";
+            var localPath = "./gamedata/";
+            Directory.CreateDirectory(localPath);
+            var fileName = gamePath + ".json";
+            var localFilePath = Path.Combine(localPath, $"{Guid.NewGuid()}-{fileName}");
 
-            string localFilePath = Path.Combine(localPath, $"{Guid.NewGuid()}-{file}");
-
-            // Write text to the file
             await File.WriteAllTextAsync(localFilePath, game);
 
-            // Create the container and return a container client object
-            BlobContainerClient containerClient = _blobServiceClient.GetBlobContainerClient(gameType.ToString().ToLower());
+            var containerClient = _blobServiceClient.GetBlobContainerClient(gameType.ToString().ToLower());
+            var blobClient = containerClient.GetBlobClient(fileName);
 
-            // Get a reference to a blob
-            BlobClient blobClient = containerClient.GetBlobClient(file);
-
-            using FileStream uploadFileStream = File.OpenRead(localFilePath);
-            await blobClient.UploadAsync(uploadFileStream, true);
-            uploadFileStream.Close();
+            using (var uploadFileStream = File.OpenRead(localFilePath))
+            {
+                await blobClient.UploadAsync(uploadFileStream, overwrite: true);
+            }
 
             File.Delete(localFilePath);
         }
@@ -79,11 +72,8 @@ namespace Quarantine.Repositories
         public async Task<IList<string>> GetGames(GameType gameType)
         {
             var games = new List<string>();
+            var containerClient = _blobServiceClient.GetBlobContainerClient(gameType.ToString().ToLower());
 
-            // Create the container and return a container client object
-            BlobContainerClient containerClient = _blobServiceClient.GetBlobContainerClient(gameType.ToString().ToLower());
-
-            // List all blobs in the container
             await foreach (var blobItem in containerClient.GetBlobsAsync())
             {
                 games.Add(await LoadGame(gameType, blobItem.Name.Replace(".json", "")));

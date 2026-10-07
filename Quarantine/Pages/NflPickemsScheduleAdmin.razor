@@ -1,0 +1,86 @@
+@page "/nfl-pickems/admin/{WeekId}"
+@using Quarantine.Interfaces
+@using Quarantine.Models.NflPickems
+@using Quarantine.Helpers
+@inject NavigationManager NavigationManager
+@inject INflTeamService TeamService
+@inject INflScheduleService ScheduleService
+
+<div class="nfl">
+    <div class="nfl-wrap">
+        <a class="nfl-back" href="nfl-pickems/weeks/@WeekId">‹ Week @WeekId scoreboard</a>
+
+        <header class="nfl-header">
+            <div>
+                <span class="nfl-eyebrow">Commissioner</span>
+                <h1 class="nfl-title">Week @WeekId Scores</h1>
+                <p class="nfl-sub">Enter final scores and kickoff times (UTC).</p>
+            </div>
+        </header>
+
+        @if (_schedule == null || _teams == null)
+        {
+            for (var i = 0; i < 6; i++)
+            {
+                <div class="nfl-skeleton" style="height: 9rem;"></div>
+            }
+        }
+        else
+        {
+            foreach (var game in _schedule.Where(g => g.Week == Convert.ToInt32(WeekId)).OrderBy(g => g.GameTimeUtc).ToList())
+            {
+                var homeTeam = _teams.Single(t => t.Id == game.HomeTeam.TeamId);
+                var awayTeam = _teams.Single(t => t.Id == game.AwayTeam.TeamId);
+
+                <div class="nfl-game">
+                    <div class="nfl-game-meta">
+                        <span>@NflTeamStyle.Kickoff(game.GameTimeUtc)</span>
+                    </div>
+                    <div class="nfl-matchup">
+                        <div class="nfl-score-team">
+                            <NflTeamBadge Name="@awayTeam.Name" Large="true" />
+                            <span class="nfl-team-name">@awayTeam.Name</span>
+                            <input class="nfl-input" type="tel" maxlength="2" onClick="this.select();" @bind="game.AwayTeam.Score" />
+                        </div>
+                        <span class="nfl-at">@@</span>
+                        <div class="nfl-score-team">
+                            <NflTeamBadge Name="@homeTeam.Name" Large="true" />
+                            <span class="nfl-team-name">@homeTeam.Name</span>
+                            <input class="nfl-input" type="tel" maxlength="2" onClick="this.select();" @bind="game.HomeTeam.Score" />
+                        </div>
+                    </div>
+                    <div class="nfl-kickoff-edit">
+                        <input class="nfl-input nfl-input-wide" onClick="this.select();" @bind="game.GameTimeUtc" />
+                    </div>
+                </div>
+            }
+
+            <div class="nfl-savebar">
+                <div class="nfl-savebar-inner">
+                    <span class="nfl-savebar-status">Week <b>@WeekId</b></span>
+                    <button @onclick="Save" class="nfl-btn nfl-btn-primary nfl-btn-lg">Save Scores</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private List<Game> _schedule;
+    private List<Team> _teams;
+
+    [Parameter]
+    public string WeekId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _schedule = await ScheduleService.GetSchedule();
+        _teams = await TeamService.GetTeams();
+    }
+
+    private async Task Save()
+    {
+        await ScheduleService.SaveSchedule(_schedule);
+        NavigationManager.NavigateTo("/nfl-pickems/weeks/" + WeekId);
+    }
+}

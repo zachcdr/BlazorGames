@@ -1,7 +1,5 @@
-﻿using Quarantine.Models;
-using Quarantine.Models.Enums;
-using System;
 using System.Threading.Tasks;
+using Quarantine.Models.Enums;
 
 namespace Quarantine.Interfaces
 {

@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 
 namespace Quarantine.Models.Enums
 {
@@ -8,6 +8,7 @@ namespace Quarantine.Models.Enums
         RideTheBus,
         Dots,
         TraqJaq,
-        TraqNiko
+        TraceAce,
+        NflPickems
     }
 }

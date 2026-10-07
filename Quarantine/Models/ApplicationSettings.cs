@@ -1,4 +1,4 @@
-﻿namespace Quarantine.Models
+namespace Quarantine.Models
 {
     public class ApplicationSettings
     {

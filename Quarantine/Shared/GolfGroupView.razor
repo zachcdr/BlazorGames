@@ -1,38 +1,44 @@
-﻿@using Microsoft.AspNetCore.Components;
-@using Quarantine.Models;
-@using Quarantine.Models.Enums;
+@using Quarantine.Helpers
+@using Quarantine.Models
+@using Quarantine.Models.Enums
 
 @if (Group != null)
 {
-    var iterator = 1;
-    foreach (var golfer in Group.Golfers)
-    {
-        <div>
-            <label for="@golfer.Name">Player #@iterator: </label>
-            <label name="@golfer.Name">@golfer.Name</label>
-        </div>
-        iterator++;
-    }
-    <EditForm Model="@NewPlayer" OnValidSubmit="@SubmitPlayer">
+    var num = 0;
+    <div class="golf-roster">
+        @foreach (Golfer golfer in Group.Golfers)
+        {
+            num++;
+            <div class="golf-roster-item">
+                <span class="golf-avatar">@GolfStyle.Initials(golfer.Name)</span>
+                @golfer.Name
+                <span class="golf-roster-num">Player @num</span>
+            </div>
+        }
+    </div>
+
+    <EditForm Model="@NewPlayer" OnValidSubmit="SubmitPlayer">
         <DataAnnotationsValidator />
         <ValidationSummary />
-        <div>
-            <label for="playerName">Player Name: </label>
-            <InputText id="playerName" @bind-Value="NewPlayer.Name"></InputText>
+        <label class="golf-label" for="playerName">Add a player</label>
+        <div class="golf-add">
+            <InputText id="playerName" class="golf-input" placeholder="Name" @bind-Value="NewPlayer.Name" />
+            <button class="golf-btn golf-btn-green" type="submit">＋ Add</button>
         </div>
-        <button class="maxwidth btn btn-success btn-block" style="margin-top: 10px;" type="submit">Add Player</button>
     </EditForm>
 }
 
 @code {
+    public Player NewPlayer = new Player();
+
     [Parameter]
     public GolfGroup Group { get; set; }
+
     [Parameter]
     public GolfRoundType GolfRoundType { get; set; }
+
     [Parameter]
     public NineType? NineType { get; set; }
-
-    public Player NewPlayer = new Player();
 
     private void SubmitPlayer()
     {

@@ -1,38 +1,28 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">Chap App</a>
-    <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
+<div class="top-row shell-brand-row">
+    <a class="shell-brand" href="">
+        <img src="apple-touch-icon.png" alt="" class="shell-brand-logo" />
+        <span>Chap App</span>
+    </a>
+    <button class="shell-toggler" aria-label="Toggle menu" @onclick="ToggleNavMenu">
+        <span></span><span></span><span></span>
     </button>
 </div>
-
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="ridethebus">
-                <span class="oi oi-trash" aria-hidden="true"></span> Ride The Bus
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="dots">
-                <span class="oi oi-target" aria-hidden="true"></span> Dot Game
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="traqer/TraqJaq">
-                <span class="oi oi-heart" aria-hidden="true"></span> TraqJaq
-            </NavLink>
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="traqer/TraqNiko">
-                <span class="oi oi-pulse" aria-hidden="true"></span> TraqNiko
-            </NavLink>
-        </li>
-    </ul>
+<div class="@NavMenuCssClass shell-nav-wrap" @onclick="ToggleNavMenu">
+    <nav class="shell-nav">
+        <NavLink class="shell-link" href="" Match="NavLinkMatch.All">
+            <span class="shell-icon" style="--tile: #475569;">🏠</span> Home
+        </NavLink>
+        <span class="shell-nav-label">Games</span>
+        <NavLink class="shell-link" href="nfl-pickems/weeks">
+            <span class="shell-icon" style="--tile: #0f766e;">🏈</span> NFL Pickems
+        </NavLink>
+        <NavLink class="shell-link" href="dots">
+            <span class="shell-icon" style="--tile: #17503a;">⛳</span> Dot Game
+        </NavLink>
+        <NavLink class="shell-link" href="ridethebus">
+            <span class="shell-icon" style="--tile: #b45309;">🚌</span> Ride The Bus
+        </NavLink>
+    </nav>
 </div>
 
 @code {

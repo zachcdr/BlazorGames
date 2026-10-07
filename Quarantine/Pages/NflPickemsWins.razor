@@ -1,0 +1,187 @@
+@page "/nfl-pickems/weeks/{weekId}"
+@using Quarantine.Interfaces
+@using Quarantine.Models.NflPickems
+@inject IJSRuntime jsRuntime
+@inject NavigationManager NavigationManager
+@inject INflWinService WinService
+@inject Quarantine.Services.NflCommissionerSession CommissionerSession
+@using Quarantine.Helpers
+
+<div class="nfl">
+    <div class="nfl-wrap">
+        <a class="nfl-back" href="nfl-pickems/weeks">‹ All weeks</a>
+
+        <header class="nfl-header">
+            <div>
+                <span class="nfl-eyebrow">@(WeekId == "Totals" ? "Season" : "Scoreboard")</span>
+                <h1 class="nfl-title">@_title</h1>
+            </div>
+            @if (WeekId != "Totals")
+            {
+                <button class="nfl-btn nfl-btn-gold" @onclick="Admin">⚙ Admin</button>
+            }
+        </header>
+
+        @if (_players == null)
+        {
+            for (var i = 0; i < 6; i++)
+            {
+                <div class="nfl-skeleton"></div>
+            }
+        }
+        else
+        {
+            <div class="nfl-board">
+                @{ var rank = 0; }
+                @foreach (var player in _players)
+                {
+                    rank++;
+                    var pickCount = player.Picks.Count(p => p.PickedId != 0);
+                    var gameCount = player.Picks.Count;
+
+                    <div class="nfl-player @(player.ArePicksVisible ? "is-open" : "")">
+                        <div class="nfl-player-row">
+                            <span class="nfl-rank @(rank <= 3 ? "nfl-rank-" + rank : "")">@rank</span>
+                            <span class="nfl-player-name">
+                                @player.Name
+                                @if (WeekId != "Totals")
+                                {
+                                    <span class="nfl-player-meta">@pickCount of @gameCount picked</span>
+                                }
+                            </span>
+                            <span class="nfl-wins">
+                                <span class="nfl-wins-num">@player.Wins</span>
+                                <span class="nfl-wins-label">Wins</span>
+                            </span>
+                            @if (WeekId != "Totals")
+                            {
+                                <div class="nfl-player-actions">
+                                    <button class="nfl-btn nfl-btn-ghost" @onclick="@(e => TogglePicks(player.Id))">
+                                        @(player.ArePicksVisible ? "Hide" : "View")
+                                        <span class="nfl-count">@pickCount</span>
+                                    </button>
+                                    <button class="nfl-btn nfl-btn-primary" @onclick="@(() => CreatePicks(player.Id))">
+                                        @(pickCount > 0 ? "Edit Picks" : "Make Picks")
+                                    </button>
+                                </div>
+                            }
+                        </div>
+
+                        @if (player.ArePicksVisible)
+                        {
+                            var index = 0;
+                            var count = player.Picks.Count;
+                            <div class="nfl-picks">
+                                @foreach (var pick in player.Picks.OrderBy(p => p.GameTimeUtc))
+                                {
+                                    index++;
+                                    var isFinal = pick.IsWinner != null;
+                                    var lineClass = !isFinal ? "" : (pick.IsWinner.Value ? "is-win" : "is-loss");
+                                    var awayPicked = pick.PickedId == pick.AwayTeam.Id;
+                                    var homePicked = pick.PickedId == pick.HomeTeam.Id;
+
+                                    <div class="nfl-line @lineClass">
+                                        <div class="nfl-line-team @(awayPicked ? "is-picked" : "")">
+                                            <NflTeamBadge Name="@pick.AwayTeam.Name" />
+                                            <span class="nfl-line-name">@pick.AwayTeam.Name</span>
+                                        </div>
+                                        <div class="nfl-line-mid">
+                                            @if (isFinal)
+                                            {
+                                                <span class="nfl-line-score">@pick.AwayTeam.Score – @pick.HomeTeam.Score</span>
+                                                <span class="nfl-result @(pick.IsWinner.Value ? "nfl-result-w" : "nfl-result-l")">@(pick.IsWinner.Value ? "WIN" : "LOSS")</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="nfl-result nfl-result-tbd">@(pick.PickedId == 0 ? "NO PICK" : "TBD")</span>
+                                            }
+                                        </div>
+                                        <div class="nfl-line-team is-home @(homePicked ? "is-picked" : "")">
+                                            <NflTeamBadge Name="@pick.HomeTeam.Name" />
+                                            <span class="nfl-line-name">@pick.HomeTeam.Name</span>
+                                        </div>
+                                    </div>
+
+                                    @if (index == count)
+                                    {
+                                        <div class="nfl-tiebreak">
+                                            <span>Tie Breaker · Total Points</span>
+                                            <span class="nfl-tiebreak-num">@pick.TieBreaker</span>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private string _title;
+    private List<PlayerPickView> _players;
+
+    [Parameter]
+    public string WeekId { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        int? week = null;
+        if (WeekId != "Totals")
+        {
+            week = Convert.ToInt32(WeekId);
+            _title = $"Week {week}";
+        }
+        else
+        {
+            _title = "Totals";
+        }
+        _players = await WinService.GetPlayerPickViews(week);
+    }
+
+    private void TogglePicks(int playerId)
+    {
+        var player = _players.Single(p => p.Id == playerId);
+        player.ArePicksVisible = !player.ArePicksVisible;
+    }
+
+    private async Task CreatePicks(int playerId)
+    {
+        var player = _players.Single(p => p.Id == playerId);
+
+        if (string.IsNullOrWhiteSpace(player.Password))
+        {
+            NavigationManager.NavigateTo($"/nfl-pickems/weeks/{WeekId}/players/{playerId}/picks");
+            return;
+        }
+
+        var input = await jsRuntime.InvokeAsync<string>("passwordPrompt.showPrompt", "Enter Password (case sensitive)");
+        if (string.IsNullOrEmpty(input))
+        {
+            return;
+        }
+
+        // Only Chap's password overrides the pick locks (and unlocks anyone's picks).
+        var commissioner = _players.SingleOrDefault(p => p.Id == NflPickLock.CommissionerPlayerId);
+        if (!string.IsNullOrEmpty(commissioner?.Password) && input == commissioner.Password)
+        {
+            CommissionerSession.IsUnlocked = true;
+            NavigationManager.NavigateTo($"/nfl-pickems/weeks/{WeekId}/admin/{playerId}/picks");
+        }
+        else if (input == player.Password)
+        {
+            NavigationManager.NavigateTo($"/nfl-pickems/weeks/{WeekId}/players/{playerId}/picks");
+        }
+    }
+
+    private async Task Admin()
+    {
+        var input = await jsRuntime.InvokeAsync<string>("passwordPrompt.showPrompt", "Enter Admin Password (case sensitive)");
+        if (input == "Super")
+        {
+            NavigationManager.NavigateTo("/nfl-pickems/admin/" + WeekId);
+        }
+    }
+}

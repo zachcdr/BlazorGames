@@ -1,90 +1,96 @@
-﻿using Quarantine.Models.Enums;
 using System;
+using Quarantine.Models.Enums;
 
 namespace Quarantine.Models
 {
     public class Medication
     {
         public MedicationType MedicationType { get; set; }
-        public string Quantity { get => GetQuantity(); }
+
+        public string Quantity => GetQuantity();
+
         public DateTime TimeTaken { get; set; }
-        public DateTime NextDose { get => GetNextDose(); }
+
+        public DateTime NextDose => GetNextDose();
+
         public bool IsEnabled { get; set; }
 
         private string GetQuantity()
         {
-            var prettyQuantity = string.Empty;
-
+            string result = string.Empty;
             switch (MedicationType)
             {
-                case MedicationType.Ibuprofen:
-                    prettyQuantity = "3";
-                    break;
-                case MedicationType.Tylenol:
-                    prettyQuantity = "2";
-                    break;
-                case MedicationType.Oxycodone:
-                    prettyQuantity = "1-2";
-                    break;
-                case MedicationType.StoolSoftener:
-                    prettyQuantity = "1-2";
-                    break;
-                case MedicationType.Miralax:
-                    prettyQuantity = "Full Serving";
-                    break;
-                case MedicationType.PreNatal:
-                    prettyQuantity = "4";
-                    break;
-                case MedicationType.VitaminD:
-                    prettyQuantity = "1";
-                    break;
-                case MedicationType.SunflowerLecithin:
-                    prettyQuantity = "1";
-                    break;
-                case MedicationType.GasReliever:
-                    prettyQuantity = "0.2 ml";
-                    break;
+            case MedicationType.Ibuprofen:
+                result = "1";
+                break;
+            case MedicationType.Tylenol:
+                result = "2";
+                break;
+            case MedicationType.Oxycodone:
+                result = "1-2";
+                break;
+            case MedicationType.StoolSoftener:
+                result = "1-3";
+                break;
+            case MedicationType.Miralax:
+                result = "Full Serving";
+                break;
+            case MedicationType.PreNatal:
+                result = "4";
+                break;
+            case MedicationType.VitaminD:
+                result = "1";
+                break;
+            case MedicationType.SunflowerLecithin:
+                result = "1";
+                break;
+            case MedicationType.GasReliever:
+                result = "0.2 ml";
+                break;
+            case MedicationType.Antibiotics:
+                result = "1";
+                break;
             }
-
-            return prettyQuantity;
+            return result;
         }
 
         private DateTime GetNextDose()
         {
-            var newDate = Convert.ToDateTime(TimeTaken.ToString());
-
+            DateTime result = Convert.ToDateTime(TimeTaken.ToString());
             switch (MedicationType)
             {
-                case MedicationType.Ibuprofen:
-                    newDate = newDate.AddHours(6);
-                    break;
-                case MedicationType.Tylenol:
-                    newDate = newDate.AddHours(6);
-                    break;
-                case MedicationType.Oxycodone:
-                    newDate = newDate.AddHours(4);
-                    break;
-                case MedicationType.StoolSoftener:
-                    newDate = newDate.AddHours(24);
-                    break;
-                case MedicationType.Miralax:
-                    newDate = newDate.AddHours(24);
-                    break;
-                case MedicationType.PreNatal:
-                    newDate = newDate.AddHours(24);
-                    break;
-                case MedicationType.SunflowerLecithin:
-                    newDate = newDate.AddHours(12);
-                    break;
-                case MedicationType.VitaminD:
-                    newDate = newDate.AddHours(24);
-                    break;
-                case MedicationType.GasReliever:
-                    newDate = newDate.AddHours(4);
-                    break;
+            case MedicationType.Ibuprofen:
+                result = result.AddHours(6.0);
+                break;
+            case MedicationType.Tylenol:
+                result = result.AddHours(6.0);
+                break;
+            case MedicationType.Oxycodone:
+                result = result.AddHours(4.0);
+                break;
+            case MedicationType.StoolSoftener:
+                result = result.AddHours(24.0);
+                break;
+            case MedicationType.Miralax:
+                result = result.AddHours(24.0);
+                break;
+            case MedicationType.PreNatal:
+                result = result.AddHours(24.0);
+                break;
+            case MedicationType.SunflowerLecithin:
+                result = result.AddHours(12.0);
+                break;
+            case MedicationType.VitaminD:
+                result = result.AddHours(24.0);
+                break;
+            case MedicationType.GasReliever:
+                result = result.AddHours(4.0);
+                break;
+            case MedicationType.Antibiotics:
+                result = result.AddHours(12.0);
+                break;
             }
-
-            return newDate;
+            return result;
         }
     }
 }

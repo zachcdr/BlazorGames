@@ -1,11 +1,11 @@
-﻿using Quarantine.Helpers;
-using Quarantine.Interfaces;
-using Quarantine.Models;
-using Quarantine.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Quarantine.Helpers;
+using Quarantine.Interfaces;
+using Quarantine.Models;
+using Quarantine.Models.Enums;
 
 namespace Quarantine.Games
 {
@@ -18,8 +18,7 @@ namespace Quarantine.Games
         public DotsGame(IHandleGameState gameState, Guid? id = null)
         {
             _gameState = gameState;
-
-            if (id == null)
+            if (!id.HasValue)
             {
                 Game = new Dots();
                 Game.Id = Guid.NewGuid();
@@ -29,31 +28,24 @@ namespace Quarantine.Games
             }
             else
             {
-                Load((Guid)id);
+                Load(id.Value);
             }
         }
 
-        #region Private Methods
         private async void Load(Guid id)
         {
-            var gameResponse = await _gameState.LoadGame(GameType.Dots, id.ToString());
-
-            Game = Converter<Dots>.FromJson(gameResponse);
+            Game = Converter<Dots>.FromJson(await _gameState.LoadGame(GameType.Dots, id.ToString()));
         }
 
         private async Task Save()
         {
             Game.LastModified = DateTime.UtcNow;
-
             await _gameState.SaveGame(Game.GameType, Game.Id.ToString(), Converter<Dots>.ToJson(Game));
         }
-        #endregion
+
         public async Task<Dots> Load()
         {
-            var gameResponse = await _gameState.LoadGame(Game.GameType, Game.Id.ToString());
-
-            Game = Converter<Dots>.FromJson(gameResponse);
-
+            Game = Converter<Dots>.FromJson(await _gameState.LoadGame(Game.GameType, Game.Id.ToString()));
             return Game;
         }
 
@@ -71,50 +63,51 @@ namespace Quarantine.Games
             Game.DotTypes = newGame.DotTypes;
             Game.GolfRoundType = newGame.GolfRoundType;
             Game.NineType = newGame.NineType;
-
             if (!string.IsNullOrWhiteSpace(newGame.CourseName))
             {
-                Game.Groups.ForEach(g => g.CourseName = newGame.CourseName);
-
+                Game.Groups.ForEach(delegate(GolfGroup g)
+                {
+                    g.CourseName = newGame.CourseName;
+                });
                 if (string.IsNullOrWhiteSpace(newGame.CourseTeeBox))
                 {
-                    var course = CourseSelection.SelectCourse(newGame.CourseName);
-
+                    Course course = CourseSelection.SelectCourse(newGame.CourseName);
                     newGame.CourseTeeBox = course.CourseHoles.First().Tees.First().Color;
                 }
-
-                Game.Groups.ForEach(g => g.CourseTeeBox = newGame.CourseTeeBox);
+                Game.Groups.ForEach(delegate(GolfGroup g)
+                {
+                    g.CourseTeeBox = newGame.CourseTeeBox;
+                });
             }
-
             await Save();
         }
 
         public void AddNewGroup(string playerName, GolfRoundType golfRoundType, NineType? nineType)
         {
-            var newGroup = new GolfGroup(nineType);
-            newGroup.Name = $"Group #{Game.Groups.Count + 1}";
-            newGroup.AddPlayer(new Player() { Name = playerName.Trim() }, golfRoundType, nineType);
-            Game.Groups.Add(newGroup);
+            GolfGroup golfGroup = new GolfGroup(nineType);
+            golfGroup.Name = $"Group #{Game.Groups.Count + 1}";
+            golfGroup.AddPlayer(new Player
+            {
+                Name = playerName.Trim()
+            }, golfRoundType, nineType);
+            Game.Groups.Add(golfGroup);
         }
 
         public async Task Start()
         {
             Game.GameState = GameState.InProgress;
-
             await Save();
         }
 
         public async Task UpdateHole(HoleUpdate holeUpdate)
         {
-            var group = Game.Groups.Single(g => g.Id == holeUpdate.GroupId);
-            group.CurrentHole = holeUpdate.CurrentHole;
-            group.Golfers = holeUpdate.Golfers;
-
+            GolfGroup golfGroup = Game.Groups.Single((GolfGroup g) => g.Id == holeUpdate.GroupId);
+            golfGroup.CurrentHole = holeUpdate.CurrentHole;
+            golfGroup.Golfers = holeUpdate.Golfers;
             if (holeUpdate.CompleteGame)
             {
                 Game.GameState = GameState.Complete;
             }
-
             await Save();
         }
     }

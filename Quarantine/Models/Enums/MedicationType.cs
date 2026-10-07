@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 
 namespace Quarantine.Models.Enums
 {
@@ -17,6 +17,7 @@ namespace Quarantine.Models.Enums
         [Description("Sunflower Lecithin")]
         SunflowerLecithin,
         [Description("Gas Reliever")]
-        GasReliever
+        GasReliever,
+        Antibiotics
     }
 }

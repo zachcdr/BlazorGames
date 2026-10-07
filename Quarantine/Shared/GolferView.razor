@@ -1,34 +1,35 @@
-﻿@using Microsoft.AspNetCore.Components;
-@using Quarantine.ExtensionMethods;
-@using Quarantine.Models;
-@using Quarantine.Models.Enums;
+@using Quarantine.ExtensionMethods
+@using Quarantine.Helpers
+@using Quarantine.Models
+@using Quarantine.Models.Enums
 
 @if (Golfer != null)
 {
-    <div>
-        <label style="padding-right: 20px; font-weight: bold;" for="availableDots">Dots: </label>
-        <div name="availableDots">
-            @foreach (var dot in DotTypes)
-            {
-                var text = dot.GetDescription();
-                <label class="switch">
-                    <input type="checkbox" checked="@currentHole.Dots.Contains(dot)" @onchange="eventArgs => { CheckboxClicked(dot); }">
-                    <span class="slider round"></span>
-                </label>
-                @text <br />
-            }
-        </div>
+    <span class="golf-label">Dots on this hole</span>
+    <div class="golf-dot-grid">
+        @foreach (DotType dot in DotTypes)
+        {
+            var isOn = currentHole.Dots.Contains(dot);
+            <button type="button" class="golf-dot @(isOn ? "is-on" : "")" aria-pressed="@(isOn ? "true" : "false")"
+                    @onclick="@(() => CheckboxClicked(dot))">
+                <span class="golf-dot-icon">@GolfStyle.DotIcon(dot)</span>
+                @dot.GetDescription()
+            </button>
+        }
     </div>
 }
 
 @code {
     [Parameter]
     public Golfer Golfer { get; set; }
+
     [Parameter]
     public List<DotType> DotTypes { get; set; }
+
     [Parameter]
     public int CurrentHole { get; set; }
-    private Hole currentHole { get => Golfer?.Holes?.Single(h => h.Id == CurrentHole); }
+
+    private Hole currentHole => Golfer?.Holes?.Single((Hole h) => h.Id == CurrentHole);
 
     private void CheckboxClicked(DotType dot)
     {

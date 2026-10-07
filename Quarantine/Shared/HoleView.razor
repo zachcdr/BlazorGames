@@ -1,69 +1,116 @@
-﻿@using Microsoft.AspNetCore.Components;
-@using Quarantine.Models;
-@using Quarantine.Models.Enums;
+@using Quarantine.Helpers
+@using Quarantine.Models
+@using Quarantine.Models.Enums
 
 @if (Group != null)
 {
     currentHole = Group.CurrentHole;
-    <div>
-        <h5>
-            <b>#@currentHole</b>
-            @if (Group.CourseName != null)
-            {
-                var course = CourseSelection.SelectCourse(Group.CourseName);
-                course.SelectTees(Group.CourseTeeBox);
-                var hole = course.GetHole(currentHole);
-                <b>Par @hole.Par @(hole.Yards)yds @(hole.Handicap)hcp</b>
-            }
-        </h5>
-    </div>
-    <div id="accordion" class="maxwidth">
-        @foreach (var golfer in Group.Golfers)
+    var holes = Group.Golfers.First().Holes;
+    var isLastHole = currentHole >= holes.Last().Id;
+    SelectedHole holeInfo = null;
+    if (Group.CourseName != null)
+    {
+        Course course = CourseSelection.SelectCourse(Group.CourseName);
+        if (course != null)
         {
-            <div style="padding-bottom: 5px;">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <button class="btn btn-outline-dark btn-lg" style="width: 150px; font-size: 15px; font-weight: bold; padding: 13px;" 
-                        @onclick="eventArgs => { Toggle(golfer.Id); }" data-toggle="collapse" data-target="#@golfer.Name" aria-expanded="true" aria-controls="@golfer.Name">
-                            @golfer.Name
-                        </button>
-                        <input @bind="@golfer.Holes.Single(h => h.Id == currentHole).Score" type="tel" class="score-field" maxlength="2" onClick="this.select();">
-                    </div>
-                    @if (golfer.IsVisible)
-                    {
-                        <div id="@golfer.Name" aria-labelledby="headingOne" data-parent="#accordion">
-                            <div class="card-body">
-                                <GolferView DotTypes="@AvailableDots" CurrentHole="@currentHole" Golfer="@golfer"></GolferView>
-                            </div>
-                        </div>
-                    }
-                </div>
+            course.SelectTees(Group.CourseTeeBox);
+            holeInfo = course.GetHole(currentHole);
+        }
+    }
+
+    <div class="golf-hole-hero">
+        <div class="golf-flag">@currentHole</div>
+        <div>
+            <div class="golf-hole-label">Now playing</div>
+            <div class="golf-hole-title">Hole @currentHole</div>
+        </div>
+        @if (holeInfo != null)
+        {
+            <div class="golf-hole-stats">
+                <div><b>@holeInfo.Par</b><span>Par</span></div>
+                <div><b>@holeInfo.Yards</b><span>Yards</span></div>
+                <div><b>@holeInfo.Handicap</b><span>Hcp</span></div>
             </div>
         }
-        <div style="padding-bottom: 5px">
-            <button class="btn btn-info btn-block" style="width: 100%;" type="button" @onclick="Next">Next</button>
-        </div>
-        <div style="padding-bottom: 5px">
-            <button class="btn btn-warning btn-block" style="width: 100%;" type="button" @onclick="Previous">Previous</button>
-        </div>
+    </div>
+
+    <div class="golf-strip">
+        @foreach (Hole h in holes)
+        {
+            var holeId = h.Id;
+            var isPlayed = Group.Golfers.All(g => g.Holes.Single(x => x.Id == holeId).Score > 0);
+            <button type="button" class="golf-pip @(holeId == currentHole ? "is-current" : isPlayed ? "is-played" : "")"
+                    @onclick="@(() => GoToHole(holeId))">
+                @holeId
+            </button>
+        }
+    </div>
+
+    <div class="golf-players">
+        @foreach (Golfer golfer in Group.Golfers)
+        {
+            var hole = golfer.Holes.Single((Hole h) => h.Id == currentHole);
+            var dotCount = hole.Dots.Count;
+            <div class="golf-player @(golfer.IsVisible ? "is-open" : "")">
+                <div class="golf-player-row">
+                    <button type="button" class="golf-player-toggle" @onclick="@(() => Toggle(golfer.Id))">
+                        <span class="golf-avatar">@GolfStyle.Initials(golfer.Name)</span>
+                        <span class="golf-player-text">
+                            <span class="golf-player-name">@golfer.Name</span>
+                            <span class="golf-player-sub @(dotCount > 0 ? "has-dots" : "")">
+                                @(dotCount == 0 ? "Tap to add dots" : dotCount == 1 ? "● 1 dot" : $"● {dotCount} dots")
+                            </span>
+                        </span>
+                        <span class="golf-chevron">▾</span>
+                    </button>
+                    <input type="tel" class="golf-score-input" maxlength="2" placeholder="–" aria-label="@($"{golfer.Name} score")"
+                           onClick="this.select();" value="@(hole.Score == 0 ? "" : hole.Score.ToString())"
+                           @onchange="@(e => SetScore(hole, e))" />
+                </div>
+                @if (golfer.IsVisible)
+                {
+                    <div class="golf-player-dots">
+                        <GolferView DotTypes="@AvailableDots" CurrentHole="@currentHole" Golfer="@golfer" />
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="golf-nav">
+        <button type="button" class="golf-btn golf-btn-ghost golf-btn-lg" disabled="@(currentHole <= holes.First().Id)" @onclick="Previous">‹ Prev</button>
+        <button type="button" class="golf-btn golf-btn-primary golf-btn-lg" @onclick="Next">@(isLastHole ? "Finish Round 🏁" : "Next Hole ›")</button>
     </div>
 }
 
 @code {
+    private int currentHole;
+
     [Parameter]
     public GolfGroup Group { get; set; }
+
     [Parameter]
     public List<DotType> AvailableDots { get; set; }
+
     [Parameter]
     public EventCallback<HoleUpdate> HoleUpdate { get; set; }
-    private int currentHole;
+
+    private void SetScore(Hole hole, ChangeEventArgs e)
+    {
+        hole.Score = int.TryParse(e.Value?.ToString(), out var score) ? score : 0;
+    }
+
+    private async Task GoToHole(int holeId)
+    {
+        currentHole = holeId;
+        await PerformUpdate();
+    }
 
     private async Task Previous()
     {
         if (currentHole > Group.Golfers.First().Holes.First().Id)
         {
             currentHole--;
-
             await PerformUpdate();
         }
     }
@@ -73,31 +120,40 @@
         if (currentHole < Group.Golfers.First().Holes.Last().Id)
         {
             currentHole++;
-
             await PerformUpdate();
         }
         else
         {
-            await PerformUpdate(true);
+            await PerformUpdate(gameOver: true);
         }
     }
 
     private void Toggle(int golferId)
     {
-        if (Group.Golfers.Single(g => g.Id == golferId).IsVisible)
+        if (Group.Golfers.Single((Golfer g) => g.Id == golferId).IsVisible)
         {
-            Group.Golfers.Single(g => g.Id == golferId).IsVisible = false;
+            Group.Golfers.Single((Golfer g) => g.Id == golferId).IsVisible = false;
+            return;
         }
-        else
+        Group.Golfers.ForEach(delegate(Golfer g)
         {
-            Group.Golfers.ForEach(g => g.IsVisible = false);
-            Group.Golfers.Single(g => g.Id == golferId).IsVisible = true;
-        }
+            g.IsVisible = false;
+        });
+        Group.Golfers.Single((Golfer g) => g.Id == golferId).IsVisible = true;
     }
 
     private async Task PerformUpdate(bool gameOver = false)
     {
-        Group.Golfers.ForEach(g => g.IsVisible = false);
-        await HoleUpdate.InvokeAsync(new Models.HoleUpdate() { Golfers = Group.Golfers, CurrentHole = currentHole, GroupId = Group.Id, CompleteGame = gameOver });
+        Group.Golfers.ForEach(delegate(Golfer g)
+        {
+            g.IsVisible = false;
+        });
+        await HoleUpdate.InvokeAsync(new HoleUpdate
+        {
+            Golfers = Group.Golfers,
+            CurrentHole = currentHole,
+            GroupId = Group.Id,
+            CompleteGame = gameOver
+        });
     }
 }
