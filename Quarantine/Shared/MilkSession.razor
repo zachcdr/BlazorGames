@@ -1,33 +1,30 @@
-﻿@using Microsoft.AspNetCore.Components;
-@using Quarantine.Models;
-@using Quarantine.Models.Enums;
-@using System.Threading;
-
+@using System.Threading
+@using Quarantine.Models
+@using Quarantine.Models.Enums
 
 @if (Session == null)
 {
     <p><em>Loading...</em></p>
+    return;
 }
-else
-{
-    <div style="padding: 5px">
-        @if (saving)
-        {
-            <p><em>Saving...</em></p>
-        }
-        else if (Session.IsActiveSession)
-        {
-            <EditForm Model="@handle" OnValidSubmit="@Finish">
+<div style="padding: 5px">
+    @if (saving)
+    {
+        <p><em>Saving...</em></p>
+    }
+    else if (Session.IsActiveSession)
+    {
+        <EditForm Model="@handle" OnValidSubmit="Finish">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
                 @if (Session.TraqType == TraqType.Feed)
                 {
                     <div>
                         <label style="padding-right: 13px" for="feeder">Feeder: </label>
-                        <select style="width: 55%;" name="feeder" @onchange=@ChorerSelection>
-                            @foreach (var chorer in ((Chorer[])Enum.GetValues(typeof(Chorer))).ToList())
+                        <select style="width: 55%;" name="feeder" @onchange="ChorerSelection">
+                            @foreach (Chorer item in ((Chorer[])Enum.GetValues(typeof(Chorer))).ToList())
                             {
-                                <option value=@chorer>@chorer</option>
+                                <option value="@item">@item</option>
                             }
                         </select>
                     </div>
@@ -37,97 +34,110 @@ else
                     <div>
                         <label style="padding-right: 30px" for="pumpAndDump">P&D: </label>
                         <label class="switch">
-                            <input name="pumpAndDump" type="checkbox" @onchange="@Toggle">
+                            <input name="pumpAndDump" type="checkbox" @onchange="Toggle" />
                             <span class="slider round"></span>
                         </label>
                     </div>
                 }
                 <div class="maxwidth">
                     <label style="padding-right: 9px;" for="volume">Volume: </label>
-                    <input id="volume" type="tel" @bind-value="@handle.Volume" class="jaq-input">
+                    <input id="volume" type="tel" class="jaq-input" @bind="handle.Volume" />
                     <button class="btn btn-danger btn-block" type="submit">Finish</button>
                 </div>
-            </EditForm>
-        }
-        else
+        </EditForm>
+    }
+    else
+    {
+        <div class="row" style="float: right;">
+            <label style="font-weight: bold;">@(Session.SessionDate.ToShortDateString()) : @Session.DailyVolume ml - @Session.DailyMinutes minutes</label>
+        </div>
+        if (Session.TraqType == TraqType.Feed)
         {
-            <div class="row" style="float: right;">
-                <label style="font-weight: bold;">@Session.SessionDate.ToShortDateString() : @Session.DailyVolume ml - @Session.DailyMinutes minutes</label>
-            </div>
-            @if (Session.TraqType == TraqType.Feed)
-            {
-                <div class="row" style="float: left;">
-                    <button type="button" @onclick="InvokeStats" style="padding-bottom: 0px;" class="btn"><span class="oi oi-pie-chart"></span></button>
-                </div>
-            }
-            else if (Session.TraqType == TraqType.Pump)
-            {
-                <div class="row" style="float: left;">
-                    <button type="button" @onclick="InvokeStats" style="padding-bottom: 0px;" class="btn"><span class="oi oi-graph"></span></button>
-                </div>
-            }
-            <div class="row justify-content-center" style="margin-top: 2rem;">
-                @if (Session.IsMinDate)
-                {
-                    <button class="btn btn-warning" disabled><span class="oi oi-caret-left"></span></button>
-                }
-                else
-                {
-                    <button class="btn btn-warning" type="button" @onclick="async () => { await Cycle(DayCycleType.Previous); }"><span class="oi oi-caret-left"></span></button>
-                }
-                <button class="btn btn-success milk-start" type="button" @onclick="async () => { await StartOrFinish(MilkState.Start); }">Start  #@(Session.Total + 1)</button>
-                @if (Session.IsMaxDate)
-                {
-                    <button class="btn btn-warning" disabled><span class="oi oi-caret-right"></span></button>
-                }
-                else
-                {
-                    <button class="btn btn-warning" type="button" @onclick="async () => { await Cycle(DayCycleType.Next); }"><span class="oi oi-caret-right"></span></button>
-                }
+            <div class="row" style="float: left;">
+                <button type="button" @onclick="InvokeStats" style="padding-bottom: 0px;" class="btn">
+                    <span class="oi oi-pie-chart"></span>
+                </button>
             </div>
         }
-    </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Start</th>
-                <th>Duration</th>
-                <th>Volume(ml)</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var milk in Session.DailyMilks)
+        else if (Session.TraqType == TraqType.Pump)
+        {
+            <div class="row" style="float: left;">
+                <button type="button" @onclick="InvokeStats" style="padding-bottom: 0px;" class="btn">
+                    <span class="oi oi-graph"></span>
+                </button>
+            </div>
+        }
+        <div class="row justify-content-center" style="margin-top: 2rem;">
+            @if (Session.IsMinDate)
             {
-                <tr @onclick="async () => { await EditMilk(milk); }">
-                    <td>@milk.StartTimePst.ToShortTimeString()</td>
-                    <td>@milk.Duration</td>
-                    <td>@milk.Volume</td>
-                </tr>
+                <button class="btn btn-warning" disabled><span class="oi oi-caret-left"></span></button>
             }
-        </tbody>
-    </table>
-}
+            else
+            {
+                <button class="btn btn-warning" type="button" @onclick="@(async () => await Cycle(DayCycleType.Previous))">
+                    <span class="oi oi-caret-left"></span>
+                </button>
+            }
+            <button class="btn btn-success milk-start" type="button" @onclick="@(async () => await StartOrFinish(MilkState.Start))">Start #@((Session.Total + 1))</button>
+            @if (Session.IsMaxDate)
+            {
+                <button class="btn btn-warning" disabled><span class="oi oi-caret-right"></span></button>
+            }
+            else
+            {
+                <button class="btn btn-warning" type="button" @onclick="@(async () => await Cycle(DayCycleType.Next))">
+                    <span class="oi oi-caret-right"></span>
+                </button>
+            }
+        </div>
+    }
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Start</th>
+            <th>Duration</th>
+            <th>Volume(ml)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Milk milk in Session.DailyMilks)
+        {
+            <tr @onclick="@(async () => await EditMilk(milk))">
+                <td>@(milk.StartTimePst.ToShortTimeString())</td>
+                <td>@milk.Duration</td>
+                <td>@milk.Volume</td>
+            </tr>
+        }
+    </tbody>
+</table>
 
 @code {
     private HandleMilk handle = new HandleMilk();
+
     private bool saving;
+
+    private Chorer chorer;
 
     [Parameter]
     public MilkSessionView Session { get; set; }
+
     [Parameter]
     public EventCallback<HandleMilk> HandleMilk { get; set; }
+
     [Parameter]
     public EventCallback<Milk> Edit { get; set; }
+
     [Parameter]
     public EventCallback<DayCycleType> CycleDay { get; set; }
+
     [Parameter]
     public EventCallback<bool> ShowStats { get; set; }
 
-    private Chorer chorer = Chorer.Kyleah;
-    void ChorerSelection(ChangeEventArgs args)
+    private void ChorerSelection(ChangeEventArgs args)
     {
-        Enum.TryParse(args.Value.ToString(), out Chorer user);
-        chorer = user;
+        Enum.TryParse<Chorer>(args.Value.ToString(), out var result);
+        chorer = result;
     }
 
     protected override async Task OnInitializedAsync()
@@ -143,16 +153,12 @@ else
     private async Task StartOrFinish(MilkState pumpState)
     {
         saving = true;
-
         handle.MilkState = pumpState;
-
         if (Session.TraqType == TraqType.Feed)
         {
             handle.Chorer = chorer;
         }
-
         await HandleMilk.InvokeAsync(handle);
-
         saving = false;
     }
 
@@ -173,7 +179,7 @@ else
 
     private async Task EditMilk(Milk milk)
     {
-        if (milk.EndTimeUtc != null)
+        if (milk.EndTimeUtc.HasValue)
         {
             await Edit.InvokeAsync(milk);
         }
@@ -183,9 +189,11 @@ else
     {
         while (true)
         {
-            await Task.Run(() => Thread.Sleep(5000));
-
-            await InvokeAsync(StateHasChanged);
+            await Task.Run(delegate
+            {
+                Thread.Sleep(5000);
+            });
+            await InvokeAsync((Action)base.StateHasChanged);
         }
     }
 }

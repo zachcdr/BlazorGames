@@ -1,236 +1,294 @@
-﻿@page "/ridethebus/{GameId}"
+@page "/ridethebus/{GameId}"
+@using System.Threading
+@using Microsoft.AspNetCore.WebUtilities
+@using Quarantine.Games
+@using Quarantine.Interfaces
+@using Quarantine.Models
+@using Quarantine.Models.Enums
+@inject IJSRuntime jsRuntime
+@inject NavigationManager navManager
+@inject IHandleGameState _gameState
 
-@using Quarantine.Models;
-@using Quarantine.Interfaces;
-@using Quarantine.Shared;
-@using Quarantine.Models.Enums;
-@using System.Threading;
-@using Microsoft.AspNetCore.WebUtilities;
-@inject IHandleGameState _gameState;
-@inject NavigationManager navManager;
-@inject IJSRuntime jsRuntime;
+<div class="bar">
+    <div class="bar-wrap">
+        <a class="bar-back" href="ridethebus">‹ All games</a>
 
-@if (rideTheBus == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-
-    @if (rideTheBus.GameState == GameState.New && NewPlayer.Id == 0 && rideTheBus.Players.Count < 10)
-    {
-        <EditForm Model="@NewPlayer" OnValidSubmit="@SubmitPlayer">
-            <DataAnnotationsValidator />
-            <ValidationSummary />
-            <p>
-                <label for="playerName">Player Name: </label>
-                <InputText id="playerName" @bind-Value="NewPlayer.Name"></InputText>
-            </p>
-            <button class="btn btn-success" disabled="@IsJoinDisabled" type="submit">Join Game</button>
-        </EditForm>
-    }
-
-    <h2>- @rideTheBus.Name -</h2>
-
-    @if (ShowTable || (rideTheBus.GameState != GameState.Complete && (NewPlayer.Id == 0 || rideTheBus.GameState == GameState.New)))
-    {
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>State</th>
-                    <th>Drinks</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var player in rideTheBus.Players)
-                {
-                    <tr>
-                        <td><a @onclick="(async () => await SwitchPlayer(player.Name))">@player.Name</a></td>
-                        <td>@player.State</td>
-                        <td>@player.Drinks</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
-
-    @if (rideTheBus.GameState == GameState.Complete)
-    {
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>TotalDrinks</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var player in rideTheBus.Players.OrderByDescending(p => p.TotalDrinks))
-                {
-                    <tr>
-                        <td>@player.Name</td>
-                        <td>@player.TotalDrinks</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
-
-    @if (rideTheBus.Players.Any(player => player.State == PlayerState.Turn))
-    {
-        var player = rideTheBus.Players.Single(player => player.State == PlayerState.Turn);
-
-        <div style="padding: 5px" class="alert alert-success maxwidth">
-            <b>It is @player.Name's turn</b>
-        </div>
-    }
-
-    @if (NewPlayer.Id != 0)
-    {
-        <b>Playing as: @NewPlayer.Name</b>
-    }
-
-    @if (rideTheBus.Round == RideTheBusRounds.RideTheBus)
-    {
-        <h3>The Bus</h3>
-        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(12, 4)"></PlayerCards>
-        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(8, 4)"></PlayerCards>
-        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(4, 4)"></PlayerCards>
-        <PlayerCards Cards="@rideTheBus.Bus.ToList().GetRange(0, 4)"></PlayerCards>
-    }
-
-    @if (NewPlayer.Cards.Count() > 0)
-    {
-        <div style="padding-top: 25px"><h3>Your Cards</h3></div>
-
-        @foreach (var player in rideTheBus.Players)
+        @if (rideTheBus == null)
         {
-            @if (player.Drinks > 0)
+            for (var i = 0; i < 4; i++)
             {
-                if (player == NewPlayer)
-                {
-                    <div style="padding: 5px" class="alert alert-danger maxwidth">
-                        <b>@player.Name drink @player.Drinks</b>
-                    </div>
-                }
-                else
-                {
-                    <div style="padding: 5px" class="alert alert-success maxwidth">
-                        <b>@player.Name drink @player.Drinks</b>
-                    </div>
-                }
+                <div class="bar-skeleton"></div>
             }
         }
-
-        <PlayerCards Cards="@NewPlayer.Cards"></PlayerCards>
-    }
-
-    @if (Options?.Count > 0)
-    {
-        @foreach (string option in Options)
+        else
         {
-            <div class="maxwidth" style="padding: 5px">
-                <button class="btn btn-primary btn-block" type="button" @onclick="(async () => { await SubmitTurn(option); })">@option</button>
+            var turnPlayer = rideTheBus.Players.FirstOrDefault((Drinker player) => player.State == PlayerState.Turn);
+            var isMyTurn = turnPlayer != null && NewPlayer.Id != 0 && turnPlayer.Name == NewPlayer.Name;
+            var pendingGives = rideTheBus.PendingGives ?? new List<PendingGive>();
+            var myPick = NewPlayer.Id == 0 ? null : pendingGives.FirstOrDefault(g => g.PlayerId == NewPlayer.Id);
+            var waitingOn = pendingGives
+                .Where(g => g.PlayerId != NewPlayer.Id)
+                .Select(g => rideTheBus.Players.FirstOrDefault(p => p.Id == g.PlayerId)?.Name)
+                .Where(n => n != null)
+                .ToList();
+
+            <header class="bar-header">
+                <span class="bar-eyebrow">
+                    @(rideTheBus.GameState == GameState.New ? "Waiting for players" : rideTheBus.GameState == GameState.InProgress ? "● Game on" : "Last call")
+                </span>
+                <h1 class="bar-title">@rideTheBus.Name</h1>
+                @if (NewPlayer.Id != 0)
+                {
+                    <span class="bar-chip">🃏 Playing as @NewPlayer.Name</span>
+                }
+            </header>
+
+            @if (rideTheBus.GameState == GameState.New && NewPlayer.Id == 0 && rideTheBus.Players.Count < 10)
+            {
+                <div class="bar-panel">
+                    <h2 class="bar-panel-title">Pull up a seat</h2>
+                    <EditForm Model="@NewPlayer" OnValidSubmit="SubmitPlayer">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+                        <div class="bar-join">
+                            <InputText id="playerName" class="bar-input" placeholder="Your name" @bind-Value="NewPlayer.Name" />
+                            <button class="bar-btn bar-btn-amber" disabled="@IsJoinDisabled" type="submit">Join</button>
+                        </div>
+                    </EditForm>
+                </div>
+            }
+
+            @if (rideTheBus.GameState == GameState.InProgress)
+            {
+                var roundNames = new[] { "Red or Black", "Higher or Lower", "Inside or Outside", "Name the Suit", "Ride the Bus" };
+                <div class="bar-rounds">
+                    @for (var r = 0; r < roundNames.Length; r++)
+                    {
+                        var round = r;
+                        var current = (int)rideTheBus.Round;
+                        <div class="bar-round @(round == current ? "is-current" : round < current ? "is-done" : "")">
+                            <b>@(round + 1)</b>@roundNames[round]
+                        </div>
+                    }
+                </div>
+            }
+
+            @if (turnPlayer != null)
+            {
+                <div class="bar-banner @(isMyTurn ? "is-you" : "")">
+                    <span class="bar-banner-icon">@(isMyTurn ? "👉" : "⏳")</span>
+                    @(isMyTurn ? "Your turn!" : $"It's {turnPlayer.Name}'s turn")
+                </div>
+            }
+
+            @if (rideTheBus.GameState == GameState.Complete)
+            {
+                var rank = 0;
+                <p class="bar-label">Final tab</p>
+                <div class="bar-players" style="margin-bottom: 1rem;">
+                    @foreach (Drinker item in rideTheBus.Players.OrderByDescending((Drinker p) => p.TotalDrinks))
+                    {
+                        rank++;
+                        <div class="bar-player @(rank == 1 ? "is-first" : "")">
+                            <span class="bar-rank">@rank</span>
+                            <span class="bar-avatar">@Initial(item.Name)</span>
+                            <span class="bar-player-text">
+                                <span class="bar-player-name">@item.Name</span>
+                                @if (rank == 1)
+                                {
+                                    <span class="bar-player-state">🍻 Drank the most</span>
+                                }
+                            </span>
+                            <span class="bar-player-stat"><b>@item.TotalDrinks</b><span>Drinks</span></span>
+                        </div>
+                    }
+                </div>
+            }
+
+            @if (rideTheBus.Round == RideTheBusRounds.RideTheBus)
+            {
+                <div class="bar-felt">
+                    <h2 class="bar-felt-title">🚌 The Bus</h2>
+                    <div class="bar-cards is-small bar-bus-legend">
+                        <span>Give</span><span>Take</span><span>Give</span><span>Take</span>
+                    </div>
+                    <PlayerCards Small="true" Cards="@((IList<Card>)rideTheBus.Bus.ToList().GetRange(12, 4))" />
+                    <PlayerCards Small="true" Cards="@((IList<Card>)rideTheBus.Bus.ToList().GetRange(8, 4))" />
+                    <PlayerCards Small="true" Cards="@((IList<Card>)rideTheBus.Bus.ToList().GetRange(4, 4))" />
+                    <PlayerCards Small="true" Cards="@((IList<Card>)rideTheBus.Bus.ToList().GetRange(0, 4))" />
+                    <p class="bar-bus-note">Bottom row 1 drink, up to 4 on top · corners double</p>
+                </div>
+            }
+
+            @if (myPick != null)
+            {
+                <div class="bar-give">
+                    <div class="bar-give-head">
+                        <span class="bar-give-num">@myPick.Drinks</span>
+                        <div>
+                            <div class="bar-give-title">@(myPick.FromBus ? "You've got a match!" : "Nailed it!")</div>
+                            <div class="bar-give-sub">Pick who drinks @myPick.Drinks</div>
+                        </div>
+                    </div>
+                    <div class="bar-give-grid">
+                        @foreach (Drinker target in rideTheBus.Players.Where(p => p.Id != NewPlayer.Id))
+                        {
+                            <button type="button" class="bar-give-btn" disabled="@IsGiving" @onclick="@(async () => await Give(target.Id))">
+                                <span class="bar-avatar">@Initial(target.Name)</span>
+                                @target.Name
+                            </button>
+                        }
+                    </div>
+                </div>
+            }
+            else if (waitingOn.Any())
+            {
+                <div class="bar-banner">
+                    <span class="bar-banner-icon">🫵</span>
+                    Waiting on @string.Join(", ", waitingOn) to pick who drinks…
+                </div>
+            }
+
+            @if (NewPlayer.Cards.Count() > 0)
+            {
+                <div class="bar-felt">
+                    <h2 class="bar-felt-title">Your hand</h2>
+                    @if (rideTheBus.Players.Any((Drinker p) => p.Drinks > 0))
+                    {
+                        <div class="bar-drinks">
+                            @foreach (Drinker player3 in rideTheBus.Players.Where((Drinker p) => p.Drinks > 0))
+                            {
+                                var isMe = player3 == NewPlayer;
+                                <span class="bar-drink @(isMe ? "is-you" : "")">
+                                    🍺 @(isMe ? "You drink" : player3.Name + " drinks") <b>@player3.Drinks</b>
+                                </span>
+                            }
+                        </div>
+                    }
+                    <PlayerCards Cards="@NewPlayer.Cards" />
+                </div>
+            }
+
+            @if (Options != null && Options.Count > 0)
+            {
+                <div class="bar-options">
+                    @foreach (string option in Options)
+                    {
+                        <button class="bar-option @OptionClass(option)" type="button" @onclick="@(async () => await SubmitTurn(option))">
+                            <span class="bar-option-icon">@OptionIcon(option)</span>
+                            @option
+                        </button>
+                    }
+                </div>
+            }
+
+            <div class="bar-actions">
+                @if (NewPlayer.IsAdmin && rideTheBus.GameState == GameState.New && rideTheBus.Players.Count > 1)
+                {
+                    <button class="bar-btn bar-btn-amber bar-btn-lg bar-btn-block" type="button" @onclick="StartGame">Deal 'em 🃏</button>
+                }
+                @if (NewPlayer.State == PlayerState.Turn && myPick == null && rideTheBus.GameState == GameState.InProgress && rideTheBus.Round != RideTheBusRounds.RideTheBus)
+                {
+                    <button class="bar-btn bar-btn-amber bar-btn-lg bar-btn-block" type="button" @onclick="PlayTurn">Play Turn</button>
+                }
+                @if (NewPlayer.IsAdmin && rideTheBus.GameState != GameState.Complete && rideTheBus.Round == RideTheBusRounds.RideTheBus)
+                {
+                    <button disabled="@(IsFlipDisabled || pendingGives.Any())" class="bar-btn bar-btn-red bar-btn-lg bar-btn-block" type="button" @onclick="PlayRideTheBus">@(pendingGives.Any() ? "Waiting on picks…" : "Flip 🔄")</button>
+                }
+                @if (rideTheBus.GameState == GameState.Complete && NewPlayer.IsAdmin)
+                {
+                    <button disabled="@IsReplayDisabled" class="bar-btn bar-btn-amber bar-btn-lg bar-btn-block" type="button" @onclick="Replay">Another round 🔁</button>
+                }
             </div>
+
+            @if (ShowTable || (rideTheBus.GameState != GameState.Complete && (NewPlayer.Id == 0 || rideTheBus.GameState == GameState.New)))
+            {
+                <p class="bar-label">At the table · @rideTheBus.Players.Count @(rideTheBus.Players.Count == 1 ? "player" : "players")</p>
+                <div class="bar-players">
+                    @foreach (Drinker player2 in rideTheBus.Players)
+                    {
+                        var isTurn = player2.State == PlayerState.Turn || player2.State == PlayerState.PlayingTurn;
+                        <button type="button" class="bar-player @(isTurn ? "is-turn" : "") @(NewPlayer.Id != 0 && player2.Name == NewPlayer.Name ? "is-me" : "")"
+                                title="Play as @player2.Name" @onclick="@(async () => await SwitchPlayer(player2.Name))">
+                            <span class="bar-avatar">@Initial(player2.Name)</span>
+                            <span class="bar-player-text">
+                                <span class="bar-player-name">@player2.Name</span>
+                                <span class="bar-player-state">@StateText(player2)</span>
+                            </span>
+                            <span class="bar-player-stat"><b>@player2.TotalDrinks</b><span>Drinks</span></span>
+                        </button>
+                    }
+                </div>
+            }
         }
-    }
-
-    @if (NewPlayer.IsAdmin && rideTheBus.GameState == GameState.New && rideTheBus.Players.Count > 1)
-    {
-        <div class="maxwidth" style="padding: 5px">
-            <button class="btn btn-primary btn-block" type="button" @onclick="StartGame">Start Game</button>
-        </div>
-    }
-
-    @if (NewPlayer.State == PlayerState.Turn && rideTheBus.GameState == GameState.InProgress && rideTheBus.Round != RideTheBusRounds.RideTheBus)
-    {
-        <div class="maxwidth" style="padding: 5px">
-            <button class="btn btn-success btn-block" type="button" @onclick="PlayTurn">Play Turn</button>
-        </div>
-    }
-
-    @if (NewPlayer.IsAdmin && rideTheBus.GameState != GameState.Complete && rideTheBus.Round == RideTheBusRounds.RideTheBus)
-    {
-        <div class="maxwidth" style="padding-top: 5px; padding-bottom: 50px">
-            <button disabled="@IsFlipDisabled" class="btn btn-danger btn-block" type="button" @onclick="PlayRideTheBus">Flip</button>
-        </div>
-    }
-
-    @if (rideTheBus.GameState == GameState.Complete && NewPlayer.IsAdmin)
-    {
-        <div class="maxwidth" style="padding-top: 5px; padding-bottom: 50px">
-            <button disabled="@IsReplayDisabled" class="btn btn-info btn-block" type="button" @onclick="Replay">Replay</button>
-        </div>
-    }
-}
+    </div>
+</div>
 
 @code {
+    public Drinker NewPlayer = new Drinker
+    {
+        State = PlayerState.WaitingTurn
+    };
+
+    public bool ShowTable;
+
+    protected bool IsJoinDisabled;
+
+    protected bool IsFlipDisabled;
+
+    protected bool IsReplayDisabled;
+
+    private RideTheBusGame rideThebusBusGame;
+
+    private Quarantine.Models.RideTheBus rideTheBus;
+
     [Parameter]
     public string GameId { get; set; }
-    public IList<string> Options { get; set; }
-    public Drinker NewPlayer = new Drinker() { State = PlayerState.WaitingTurn };
-    public bool ShowTable = false;
-    protected bool IsJoinDisabled = false;
-    protected bool IsFlipDisabled = false;
-    protected bool IsReplayDisabled = false;
 
-    private Quarantine.Games.RideTheBusGame rideThebusBusGame;
-    private Models.RideTheBus rideTheBus;
+    public IList<string> Options { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        var uri = navManager.ToAbsoluteUri(navManager.Uri);
-
-        var name = "";
-
-        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("name", out var param))
+        Uri uri = navManager.ToAbsoluteUri(navManager.Uri);
+        string name = "";
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("name", out var value))
         {
-            name = param.First();
+            name = ((IEnumerable<string>)(object)value).First();
         }
-
-        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("showtable", out var show))
+        if (QueryHelpers.ParseQuery(uri.Query).TryGetValue("showtable", out var _))
         {
             ShowTable = true;
         }
-
-        rideThebusBusGame = new Games.RideTheBusGame(_gameState, new Guid(GameId));
-
+        rideThebusBusGame = new RideTheBusGame(_gameState, new Guid(GameId));
         while (rideThebusBusGame.Game == null)
         {
-            await Task.Run(() => Thread.Sleep(500));
+            await Task.Run(delegate
+            {
+                Thread.Sleep(500);
+            });
         }
-
         rideTheBus = rideThebusBusGame.Game;
-
         if (!string.IsNullOrWhiteSpace(name))
         {
-            NewPlayer = rideThebusBusGame.Game.Players.Single(player => player.Name.ToLower() == name.ToLower());
-
-            if (NewPlayer.State == PlayerState.PlayingTurn)
+            NewPlayer = rideThebusBusGame.Game.Players.Single((Drinker player) => player.Name.ToLower() == name.ToLower());
+            if (NewPlayer.State == PlayerState.PlayingTurn && !rideThebusBusGame.HasPendingGive(NewPlayer.Id))
             {
                 NewPlayer.State = PlayerState.Turn;
             }
         }
-
         Refresh();
     }
 
     private async Task SubmitPlayer()
     {
         IsJoinDisabled = true;
-
         NewPlayer.Name = NewPlayer.Name.Trim();
-
-        if (!rideTheBus.Players.Any(p => p.Name.ToLower() == NewPlayer.Name.ToLower()))
+        if (!rideTheBus.Players.Any((Drinker p) => p.Name.ToLower() == NewPlayer.Name.ToLower()))
         {
-
             await rideThebusBusGame.Join(NewPlayer);
-
-            var query = new Dictionary<string, string> { { "name", NewPlayer.Name } };
-
-            navManager.NavigateTo(QueryHelpers.AddQueryString($"/ridethebus/{rideThebusBusGame.Game.Id}", query));
+            Dictionary<string, string> dictionary = new Dictionary<string, string> { { "name", NewPlayer.Name } };
+            navManager.NavigateTo(QueryHelpers.AddQueryString($"/ridethebus/{rideThebusBusGame.Game.Id}", (IDictionary<string, string>)dictionary));
         }
-
         IsJoinDisabled = false;
     }
 
@@ -238,87 +296,157 @@ else
     {
         while (true)
         {
-            if (string.IsNullOrWhiteSpace(NewPlayer.Name) || NewPlayer.State == Models.Enums.PlayerState.WaitingTurn)
+            if (string.IsNullOrWhiteSpace(NewPlayer.Name) || NewPlayer.State == PlayerState.WaitingTurn)
             {
-                var loadedGame = await rideThebusBusGame.Load();
-
-                if (loadedGame.LastModified > rideTheBus.LastModified)
+                Quarantine.Models.RideTheBus rideTheBus = await rideThebusBusGame.Peek();
+                if (_busy == 0 && rideTheBus.LastModified > this.rideTheBus.LastModified)
                 {
-                    rideTheBus = loadedGame;
-
+                    rideThebusBusGame.Game = rideTheBus;
+                    this.rideTheBus = rideTheBus;
                     if (NewPlayer.Id > 0)
                     {
-                        NewPlayer = loadedGame.Players.Single(player => player.Name == NewPlayer.Name);
+                        NewPlayer = rideTheBus.Players.Single((Drinker player) => player.Name == NewPlayer.Name);
                     }
-
                     StateHasChanged();
                 }
             }
-
-            await Task.Run(() => Thread.Sleep(1500));
+            await Task.Run(delegate
+            {
+                Thread.Sleep(1500);
+            });
         }
     }
 
     private async Task Replay()
     {
         IsReplayDisabled = true;
-
-        rideThebusBusGame.Game.Restart();
-
-        await StartGame();
+        await Act(async () =>
+        {
+            rideThebusBusGame.Game.Restart();
+            await rideThebusBusGame.DealAndStart();
+        });
     }
 
     private async Task StartGame()
     {
-        await rideThebusBusGame.Deal();
-        await rideThebusBusGame.Start();
+        await Act(() => rideThebusBusGame.DealAndStart());
+    }
+
+    // While an action runs, the background refresh must not swap the game object out from under it.
+    private int _busy;
+
+    private async Task Act(Func<Task> action)
+    {
+        _busy++;
+        try
+        {
+            await action();
+            SyncFromGame();
+        }
+        finally
+        {
+            _busy--;
+        }
     }
 
     private async Task PlayTurn()
     {
-        Options = await rideThebusBusGame.Play();
+        await Act(async () => Options = await rideThebusBusGame.Play());
     }
 
     private async Task PlayRideTheBus()
     {
-        var visibleCards = rideTheBus.Bus.Where(c => c.IsVisible).Count();
-
         IsFlipDisabled = true;
-
-        await rideThebusBusGame.PlayRideTheBus();
-
-        while (visibleCards == rideTheBus.Bus.Where(c => c.IsVisible).Count())
-        {
-            await Task.Run(() => Thread.Sleep(500));
-        }
-
+        await Act(() => rideThebusBusGame.PlayRideTheBus());
         IsFlipDisabled = false;
+    }
+
+    protected bool IsGiving;
+
+    private async Task Give(int targetId)
+    {
+        IsGiving = true;
+        await Act(() => rideThebusBusGame.GiveDrinks(NewPlayer.Id, targetId));
+        IsGiving = false;
+    }
+
+    /// <summary>Points the page at the game's latest state (the game reloads itself before flips and picks).</summary>
+    private void SyncFromGame()
+    {
+        rideTheBus = rideThebusBusGame.Game;
+        if (NewPlayer.Id > 0)
+        {
+            NewPlayer = rideTheBus.Players.Single((Drinker player) => player.Name == NewPlayer.Name);
+        }
     }
 
     private async Task SubmitTurn(string choice)
     {
-        await rideThebusBusGame.SubmitTurn(choice);
+        await Act(() => rideThebusBusGame.SubmitTurn(choice));
         Options = null;
     }
 
     private async Task SwitchPlayer(string name)
     {
-        bool confirmed = await jsRuntime.InvokeAsync<bool>("confirm", $"Are you sure you want to play as {name}?");
-
-        if (confirmed)
+        if (await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to play as " + name + "?"))
         {
-
             rideTheBus = await rideThebusBusGame.PlayerSwitch(name);
-
-            NewPlayer = rideTheBus.Players.Single(player => player.Name == name);
-
-            var query = new Dictionary<string, string> { { "name", name } };
-
-            navManager.NavigateTo(QueryHelpers.AddQueryString($"/ridethebus/{GameId}", query));
-
+            NewPlayer = rideTheBus.Players.Single((Drinker player) => player.Name == name);
+            Dictionary<string, string> dictionary = new Dictionary<string, string> { { "name", name } };
+            navManager.NavigateTo(QueryHelpers.AddQueryString("/ridethebus/" + GameId, (IDictionary<string, string>)dictionary));
             Options = null;
-
             StateHasChanged();
+        }
+    }
+    private static string Initial(string name)
+    {
+        return string.IsNullOrWhiteSpace(name) ? "?" : name.Trim().Substring(0, 1).ToUpperInvariant();
+    }
+
+    private static string StateText(Drinker player)
+    {
+        switch (player.State)
+        {
+            case PlayerState.Turn:
+                return "Up now";
+            case PlayerState.PlayingTurn:
+                return "Choosing…";
+            default:
+                return player.IsAdmin ? "Dealer" : "Waiting";
+        }
+    }
+
+    private static string OptionClass(string option)
+    {
+        switch (option)
+        {
+            case "Red": return "is-red";
+            case "Black": return "is-black";
+            case "Higher": return "is-up";
+            case "Lower": return "is-down";
+            case "Inside": return "is-in";
+            case "Outside": return "is-out";
+            case "Heart":
+            case "Diamond": return "is-suit-red";
+            default: return "is-suit-black";
+        }
+    }
+
+    private static string OptionIcon(string option)
+    {
+        switch (option)
+        {
+            case "Red": return "🟥";
+            case "Black": return "⬛";
+            case "Higher": return "⬆";
+            case "Lower": return "⬇";
+            case "Inside": return "→←";
+            case "Outside": return "←→";
+            case "Heart": return "♥";
+            case "Diamond": return "♦";
+            case "Club": return "♣";
+            case "Spade": return "♠";
+            default: return "";
         }
     }
 }

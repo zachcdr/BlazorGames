@@ -1,76 +1,93 @@
-﻿@page "/ridethebus"
+@page "/ridethebus"
+@using Microsoft.AspNetCore.WebUtilities
+@using Quarantine.Games
+@using Quarantine.Interfaces
+@using Quarantine.Models
+@using Quarantine.Models.Enums
+@using Quarantine.Responses
+@using Quarantine.Services
+@using Quarantine.ExtensionMethods
+@inject IJSRuntime jsRuntime
+@inject NavigationManager NavigationManager
+@inject IHandleGameState _gameState
+@inject IHandleRetreivingGames _iServiceGames
 
-@using Quarantine.Interfaces;
-@using Quarantine.Services;
-@using Quarantine.Models;
-@using Quarantine.Games;
-@using Quarantine.Responses;
-@using Microsoft.AspNetCore.WebUtilities;
-@inject IHandleRetreivingGames _iServiceGames;
-@inject IHandleGameState _gameState;
-@inject NavigationManager NavigationManager;
-@inject IJSRuntime jsRuntime;
+<div class="bar">
+    <div class="bar-wrap">
+        <header class="bar-header">
+            <span class="bar-eyebrow">Last call</span>
+            <h1 class="bar-title">Ride The Bus</h1>
+            <p class="bar-sub">Red or black? Higher or lower? Guess wrong and you drink.</p>
+        </header>
 
-<h1>Ride The Bus</h1>
+        @if (ServiceResponse != null && !ServiceResponse.IsSuccess)
+        {
+            <div class="bar-panel" style="color: #ffb4b6;">@ServiceResponse.Message</div>
+        }
 
-<p>Lists all existing and previous Ride The Bus games.</p>
-
-@if (ServiceResponse != null && !ServiceResponse.IsSuccess)
-{
-    <div class="alert alert-danger">
-        @ServiceResponse.Message
-    </div>
-}
-
-@if (ServiceResponse?.Data == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-
-    <EditForm Model="@NewGame" OnValidSubmit="@SubmitNewGame">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
-        <p>
-            <label for="playerName">Player Name: </label>
-            <InputText id="playerName" @bind-Value="NewGame.PlayerName"></InputText>
-        </p>
-        <p>
-            <label for="gameName">Game Name: </label>
-            <InputText id="gameName" @bind-Value="NewGame.GameName"></InputText>
-        </p>
-        <p>
-            <label style="padding-right: 20px" for="password">Password: </label>
-            <InputText id="password" @bind-Value="NewGame.Password"></InputText>
-        </p>
-        <div style="padding-bottom: 25px"><button class="btn btn-primary" type="submit">Create Game</button></div>
-    </EditForm>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Game Type</th>
-                <th>Game State</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var game in ServiceResponse?.Data)
+        @if (ServiceResponse?.Data == null)
+        {
+            for (var i = 0; i < 4; i++)
             {
-                <tr>
-                    <td @onclick="(async() => await JoinGame(game))" style="color: blue; cursor: pointer;">@game.Name</td>
-                    <td>@game.GameType</td>
-                    <td>@game.GameState</td>
-                </tr>
+                <div class="bar-skeleton"></div>
             }
-        </tbody>
-    </table>
-}
+        }
+        else
+        {
+            <div class="bar-panel">
+                <h2 class="bar-panel-title">Start a game</h2>
+                <EditForm Model="@NewGame" OnValidSubmit="SubmitNewGame">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="bar-row">
+                        <div class="bar-field">
+                            <label class="bar-field-label" for="playerName">Your name</label>
+                            <InputText id="playerName" class="bar-input" placeholder="e.g. Chap" @bind-Value="NewGame.PlayerName" />
+                        </div>
+                        <div class="bar-field">
+                            <label class="bar-field-label" for="gameName">Game name</label>
+                            <InputText id="gameName" class="bar-input" placeholder="e.g. Friday Night" @bind-Value="NewGame.GameName" />
+                        </div>
+                    </div>
+                    <div class="bar-field">
+                        <label class="bar-field-label" for="password">Password (optional)</label>
+                        <InputText id="password" class="bar-input" placeholder="Leave blank for an open game" @bind-Value="NewGame.Password" />
+                    </div>
+                    <button class="bar-btn bar-btn-amber bar-btn-lg bar-btn-block" type="submit">Create Game 🚌</button>
+                </EditForm>
+            </div>
+
+            <p class="bar-label">Games</p>
+            @if (!ServiceResponse.Data.Any())
+            {
+                <div class="bar-empty">No games yet. Start the first round above!</div>
+            }
+            else
+            {
+                <div class="bar-games">
+                    @foreach (GameDetails game in ServiceResponse.Data.OrderBy(g => g.GameState == GameState.Complete).ThenByDescending(g => g.CreatedOn))
+                    {
+                        var pillClass = game.GameState == GameState.New ? "bar-pill-new" : game.GameState == GameState.InProgress ? "bar-pill-live" : "bar-pill-done";
+                        <button type="button" class="bar-game" @onclick="@(async () => await JoinGame(game))">
+                            <span class="bar-game-icon">@(game.GameState == GameState.Complete ? "🍻" : "🃏")</span>
+                            <span class="bar-game-text">
+                                <span class="bar-game-name">@game.Name</span>
+                                <span class="bar-game-meta">@GameMeta(game)</span>
+                            </span>
+                            <span class="bar-pill @pillClass">@(game.GameState.GetDescription())</span>
+                        </button>
+                    }
+                </div>
+            }
+        }
+    </div>
+</div>
 
 @code {
     private GameService _gameService;
+
     private RideTheBusGame rideThebusBusGame;
+
     private ServiceResponse<IList<GameDetails>> ServiceResponse;
 
     private InitiateGame NewGame = new InitiateGame();
@@ -78,30 +95,30 @@ else
     protected override async Task OnInitializedAsync()
     {
         _gameService = new GameService(_iServiceGames);
-
-        ServiceResponse = await _gameService.GetGames(Models.Enums.GameType.RideTheBus);
+        ServiceResponse = await _gameService.GetGames(GameType.RideTheBus);
     }
 
     private async Task SubmitNewGame()
     {
         rideThebusBusGame = new RideTheBusGame(_gameState);
-
         rideThebusBusGame.AssignName(NewGame.GameName.Trim(), NewGame.Password);
-
-        await rideThebusBusGame.Join(new Drinker() { Name = NewGame.PlayerName.Trim() });
-
-        var query = new Dictionary<string, string> { { "name", NewGame.PlayerName.Trim() } };
-
-        NavigationManager.NavigateTo(QueryHelpers.AddQueryString($"/ridethebus/{rideThebusBusGame.Game.Id}", query));
+        await rideThebusBusGame.Join(new Drinker
+        {
+            Name = NewGame.PlayerName.Trim()
+        });
+        Dictionary<string, string> dictionary = new Dictionary<string, string> { 
+        {
+            "name",
+            NewGame.PlayerName.Trim()
+        } };
+        NavigationManager.NavigateTo(QueryHelpers.AddQueryString($"/ridethebus/{rideThebusBusGame.Game.Id}", (IDictionary<string, string>)dictionary));
     }
 
     private async Task JoinGame(GameDetails game)
     {
         if (game.IsPasswordProtected)
         {
-            string input = await jsRuntime.InvokeAsync<string>("passwordPrompt.showPrompt", "Enter Password (case sensitive)");
-
-            if (input == game.Password)
+            if (await jsRuntime.InvokeAsync<string>("passwordPrompt.showPrompt", "Enter Password (case sensitive)") == game.Password)
             {
                 NavigationManager.NavigateTo($"/ridethebus/{game.Id}");
             }
@@ -110,5 +127,18 @@ else
         {
             NavigationManager.NavigateTo($"/ridethebus/{game.Id}");
         }
+    }
+    private static string GameMeta(GameDetails game)
+    {
+        var parts = new List<string>();
+        if (game.CreatedOn != default)
+        {
+            parts.Add(game.CreatedOn.ToString("MMM d, yyyy"));
+        }
+        if (game.IsPasswordProtected)
+        {
+            parts.Add("🔒 Password");
+        }
+        return string.Join(" · ", parts);
     }
 }

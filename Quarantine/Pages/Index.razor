@@ -1,68 +1,86 @@
-﻿@page "/"
-@using Quarantine.ExtensionMethods;
-@using Quarantine.Models.Enums;
+@page "/"
+@using Quarantine.ExtensionMethods
+@using Quarantine.Models.Enums
 
-<h1>Welcome</h1>
-
-<p>I am using this platform in an iterative process to learn Blazor while having some fun.</p>
-<p>Below is a list of available games and thier rules. You can also browse straight to a game via the nav menu.</p>
-
-<div>
-    <b>Games</b>
-</div>
-<div id="accordion">
-    <div class="card">
-        <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-                <button class="btn btn-link" @onclick="eventArgs => { Toggle(GameType.RideTheBus); }">
-                    @GameType.RideTheBus.GetDescription()
-                </button>
-            </h5>
-        </div>
-        @if (ExpandedGames.Contains(GameType.RideTheBus))
-        {
+<div class="home">
+    <div class="home-wrap">
+        <header class="home-hero">
+            <img src="apple-touch-icon.png" alt="" class="home-logo" />
             <div>
-                <div class="card-body">
-                    <p>
-                        - To play, you must either create a new game, or join an existing<br />
-                        - To create a game, fill out the Player Name, Game Name, and optional Password field - the game will be created and added to the list of available games<br />
-                        - The creator of the game has the ability to start the game and is in charge of 'flipping' cards during the 'Ride The Bus' portion<br />
-                        - To join an existing game, select the game from the game list, enter a password if prompted, enter your name, and press join<br />
-                        - If the game has already started, you may press the name of your player in the displayed table and confirm you want to play as that player
-                    </p>
-                    <p>
-                        <b>NOTES:</b>
-                        - Drinks are randomly assigned.<br />
-                        - Each game is limited to <b>9</b> players.<br />
-                        - Once a game starts, no additional players can be added.<br />
-                        - Have fun and drink responsibly.<br />
-                        - This is most definitely a <b>Beta</b>.
-                    </p>
-                </div>
+                <h1 class="home-title">The Chap App</h1>
+                <p class="home-sub">A little home for our games, built for fun (and to learn Blazor along the way).</p>
             </div>
-        }
-    </div>
-    <div class="card">
-        <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-                <button class="btn btn-link" @onclick="eventArgs => { Toggle(GameType.Dots); }">
-                    @GameType.Dots.GetDescription()
-                </button>
-            </h5>
+        </header>
+
+        <p class="home-label">Jump in</p>
+        <div class="home-grid">
+            <a class="home-card" href="nfl-pickems/weeks" style="--from: #0f2a3d; --to: #0a0f1c; --accent: #22c55e;">
+                <span class="home-card-emoji">🏈</span>
+                <span class="home-card-go">›</span>
+                <span class="home-card-icon">🏈</span>
+                <span class="home-card-title">NFL Pickems</span>
+                <span class="home-card-desc">Pick every game, chase the season title.</span>
+            </a>
+            <a class="home-card" href="dots" style="--from: #17503a; --to: #0c2a1f; --accent: #d4a62a;">
+                <span class="home-card-emoji">⛳</span>
+                <span class="home-card-go">›</span>
+                <span class="home-card-icon">⛳</span>
+                <span class="home-card-title">Dot Game</span>
+                <span class="home-card-desc">Golf scorecard with Hogans, Arnies and more.</span>
+            </a>
+            <a class="home-card" href="ridethebus" style="--from: #5a2a0a; --to: #1c1008; --accent: #f59e0b;">
+                <span class="home-card-emoji">🚌</span>
+                <span class="home-card-go">›</span>
+                <span class="home-card-icon">🚌</span>
+                <span class="home-card-title">Ride The Bus</span>
+                <span class="home-card-desc">The card drinking game, no deck required.</span>
+            </a>
         </div>
-        @if (ExpandedGames.Contains(GameType.Dots))
-        {
-            <div>
-                <div class="card-body">
-                    <p>
-                        - To play, you must either create a new game, or join an existing<br />
-                        - To create a game, fill out the Player Name, Game Name, and optional Password field - the game will be created and added to the list of available games<br />
-                        - You can now add players to your game<br />
-                        - Once a game is started you will not be able to add anymore players
-                    </p>
-                </div>
+
+        <p class="home-label">How to play</p>
+        <div class="home-rules">
+            <div class="home-rule @(ExpandedGames.Contains(GameType.RideTheBus) ? "is-open" : "")">
+                <button class="home-rule-head" @onclick="@(() => Toggle(GameType.RideTheBus))">
+                    <span>🚌</span> @(GameType.RideTheBus.GetDescription())
+                    <span class="home-rule-chevron">▾</span>
+                </button>
+                @if (ExpandedGames.Contains(GameType.RideTheBus))
+                {
+                    <div class="home-rule-body">
+                        <ul>
+                            <li>To play, create a new game or join an existing one.</li>
+                            <li>To create a game, fill out the Player Name, Game Name and optional Password. The game is added to the list of available games.</li>
+                            <li>The creator of the game can start it and is in charge of "flipping" cards during the Ride The Bus portion.</li>
+                            <li>To join, pick the game from the list, enter the password if prompted, enter your name and press Join.</li>
+                            <li>If the game has already started, tap your player's name in the table and confirm you want to play as that player.</li>
+                            <li><b>The bus:</b> bottom row is 1 drink, up to 4 on top, and corners double. On a <b>Take</b> column, anyone with a match drinks (once per matching card). On a <b>Give</b> column, anyone with a match picks who drinks.</li>
+                            <li><b>Same card = double:</b> on Higher or Lower, or Inside or Outside, flipping the same value as a card you're guessing against doubles your drinks (4 and 6).</li>
+                        </ul>
+                        <div class="home-note">
+                            Guess right and you pick who drinks · Up to <b>9</b> players per game · No new players once a game starts · Still very much a <b>beta</b>. Have fun and drink responsibly.
+                        </div>
+                    </div>
+                }
             </div>
-        }
+            <div class="home-rule @(ExpandedGames.Contains(GameType.Dots) ? "is-open" : "")">
+                <button class="home-rule-head" @onclick="@(() => Toggle(GameType.Dots))">
+                    <span>⛳</span> @(GameType.Dots.GetDescription())
+                    <span class="home-rule-chevron">▾</span>
+                </button>
+                @if (ExpandedGames.Contains(GameType.Dots))
+                {
+                    <div class="home-rule-body">
+                        <ul>
+                            <li>To play, create a new game or join an existing one.</li>
+                            <li>To create a game, fill out the Player Name, Game Name and optional Password. The game is added to the list of available games.</li>
+                            <li>Add the rest of your group before teeing off.</li>
+                            <li>Once a game starts, no more players can be added.</li>
+                        </ul>
+                    </div>
+                }
+            </div>
+        </div>
+
     </div>
 </div>
 

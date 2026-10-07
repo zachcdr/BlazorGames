@@ -1,18 +1,19 @@
-﻿using Quarantine.Helpers;
-using Quarantine.Interfaces;
-using Quarantine.Models;
-using Quarantine.Models.Enums;
-using Quarantine.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Quarantine.Helpers;
+using Quarantine.Interfaces;
+using Quarantine.Models;
+using Quarantine.Models.Enums;
+using Quarantine.Responses;
 
 namespace Quarantine.Services
 {
     public class GameService
     {
         private readonly IHandleRetreivingGames _gameRepo;
+
         public GameService(IHandleRetreivingGames handleRetreivingGames)
         {
             _gameRepo = handleRetreivingGames;
@@ -22,20 +23,17 @@ namespace Quarantine.Services
         {
             try
             {
-                var gameResponse = await _gameRepo.GetGames(gameType);
-
-                var gameDetails = new List<GameDetails>();
-
-                foreach (var game in gameResponse)
+                IList<string> list = await _gameRepo.GetGames(gameType);
+                List<GameDetails> list2 = new List<GameDetails>();
+                foreach (string item in list)
                 {
-                    gameDetails.Add(Converter<GameDetails>.FromJson(game));
+                    list2.Add(Converter<GameDetails>.FromJson(item));
                 }
-
-                return new ServiceResponse<IList<GameDetails>>(gameDetails.OrderByDescending(g => g.CreatedOn).ToList(), true);
+                return new ServiceResponse<IList<GameDetails>>(list2.OrderByDescending((GameDetails g) => g.CreatedOn).ToList(), isSuccess: true);
             }
             catch (Exception ex)
             {
-                return new ServiceResponse<IList<GameDetails>>(null, false, ex.Message);
+                return new ServiceResponse<IList<GameDetails>>(null, isSuccess: false, ex.Message);
             }
         }
     }

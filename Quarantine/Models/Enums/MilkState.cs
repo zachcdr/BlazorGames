@@ -1,4 +1,4 @@
-﻿namespace Quarantine.Models.Enums
+namespace Quarantine.Models.Enums
 {
     public enum MilkState
     {

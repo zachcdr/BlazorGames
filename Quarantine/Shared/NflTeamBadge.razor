@@ -1,0 +1,13 @@
+@using Quarantine.Helpers
+
+<span class="nfl-badge @(Large ? "nfl-badge-lg" : "")" style="@NflTeamStyle.CssVars(Name)" title="@Name">
+    @NflTeamStyle.Abbreviation(Name)
+</span>
+
+@code {
+    [Parameter]
+    public string Name { get; set; }
+
+    [Parameter]
+    public bool Large { get; set; }
+}

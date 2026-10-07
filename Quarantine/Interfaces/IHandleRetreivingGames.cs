@@ -1,6 +1,6 @@
-﻿using Quarantine.Models.Enums;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Quarantine.Models.Enums;
 
 namespace Quarantine.Interfaces
 {

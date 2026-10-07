@@ -1,29 +1,34 @@
-﻿using Quarantine.Models.Enums;
 using System;
 using System.Collections.Generic;
+using Quarantine.Models.Enums;
 
 namespace Quarantine.Models
 {
     public class RideTheBus : CardGame
     {
+        public IList<Card> Bus { get; set; }
+
+        public RideTheBusRounds Round { get; set; }
+
+        /// <summary>Drinks waiting for a player to pick who takes them.</summary>
+        public IList<PendingGive> PendingGives { get; set; }
+
         public RideTheBus()
         {
-            Players = new List<Drinker>();
-            Deck = GetDeck();
+            base.Players = new List<Drinker>();
+            base.Deck = GetDeck();
             Bus = new List<Card>();
-            CreatedOn = DateTime.UtcNow;
-            GameType = GameType.RideTheBus;
+            PendingGives = new List<PendingGive>();
+            base.CreatedOn = DateTime.UtcNow;
+            base.GameType = GameType.RideTheBus;
         }
-        public IList<Card> Bus { get; set; }
-        public RideTheBusRounds Round { get; set; }
 
         public void Restart()
         {
-            Deck = GetDeck();
-
+            base.Deck = GetDeck();
             Bus = new List<Card>();
-            
-            foreach (var player in Players)
+            PendingGives = new List<PendingGive>();
+            foreach (Drinker player in base.Players)
             {
                 player.Cards = new List<Card>();
                 player.Drinks = 0;
@@ -32,13 +37,14 @@ namespace Quarantine.Models
 
         private IList<Card> GetDeck()
         {
-            var deck = new List<Card>();
-
-            foreach (Suit suit in (Suit[])Enum.GetValues(typeof(Suit)))
+            List<Card> list = new List<Card>();
+            Suit[] array = (Suit[])Enum.GetValues(typeof(Suit));
+            foreach (Suit suit in array)
             {
-                foreach (Value value in (Value[])Enum.GetValues(typeof(Value)))
+                Value[] array2 = (Value[])Enum.GetValues(typeof(Value));
+                foreach (Value value in array2)
                 {
-                    deck.Add(new Card()
+                    list.Add(new Card
                     {
                         Value = value,
                         Suit = suit,
@@ -46,8 +52,7 @@ namespace Quarantine.Models
                     });
                 }
             }
-
-            return deck;
+            return list;
         }
     }
 }

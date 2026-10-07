@@ -1,62 +1,61 @@
-﻿using Quarantine.Models.Enums;
 using System;
 using System.Collections.Generic;
+using Quarantine.Models.Enums;
 
 namespace Quarantine.Models
 {
     public class GolfGroup
     {
+        public Guid Id { get; set; }
+
+        public string Name { get; set; }
+
+        public List<Golfer> Golfers { get; set; }
+
+        public bool IsVisible { get; set; }
+
+        public int CurrentHole { get; set; }
+
+        public string CourseName { get; set; }
+
+        public string CourseTeeBox { get; set; }
+
         public GolfGroup(NineType? nineType)
         {
             Id = Guid.NewGuid();
             Golfers = new List<Golfer>();
-            CurrentHole = nineType == NineType.Back ? 10 : 1;
+            CurrentHole = ((nineType != NineType.Back) ? 1 : 10);
         }
 
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public List<Golfer> Golfers { get; set; }
-        public bool IsVisible { get; set; }
-        public int CurrentHole { get; set; }
-        public string CourseName { get; set; }
-        public string CourseTeeBox { get; set; }
         public void AddPlayer(Player player, GolfRoundType golfRoundType, NineType? nineType)
         {
-            var golfer = new Golfer()
+            Golfer golfer = new Golfer
             {
                 Id = Golfers.Count + 1,
                 Name = player.Name,
-                IsAdmin = Golfers.Count == 0,
+                IsAdmin = (Golfers.Count == 0),
                 Holes = new List<Hole>()
             };
-
             if (golfRoundType == GolfRoundType.Eighteen || nineType == NineType.Front)
             {
-                int iterator = 1;
-                while (iterator <= (int)golfRoundType)
+                for (int i = 1; i <= (int)golfRoundType; i++)
                 {
-                    golfer.Holes.Add(new Hole()
+                    golfer.Holes.Add(new Hole
                     {
-                        Id = iterator
+                        Id = i
                     });
-
-                    iterator++;
-                } 
+                }
             }
             else
             {
-                int iterator = 10;
-                while (iterator <= 18)
+                for (int j = 10; j <= 18; j++)
                 {
-                    golfer.Holes.Add(new Hole()
+                    golfer.Holes.Add(new Hole
                     {
-                        Id = iterator
+                        Id = j
                     });
-
-                    iterator++;
                 }
             }
-
             Golfers.Add(golfer);
         }
     }

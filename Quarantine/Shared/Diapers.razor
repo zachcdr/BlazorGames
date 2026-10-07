@@ -1,141 +1,150 @@
-﻿@using Microsoft.AspNetCore.Components;
-@using Quarantine.ExtensionMethods;
-@using Quarantine.Models;
-@using Quarantine.Models.Enums;
+@using Quarantine.ExtensionMethods
+@using Quarantine.Models
+@using Quarantine.Models.Enums
 
 @if (Session == null)
 {
     <p><em>Loading...</em></p>
+    return;
+}
+@if (saving)
+{
+    <p><em>Saving...</em></p>
 }
 else
 {
-    if (saving)
-    {
-        <p><em>Saving...</em></p>
-    }
-    else
-    {
-        <div class="row" style="float: left;">
-            <button type="button" @onclick="InvokeStats" style="padding-bottom: 0px;" class="btn"><span class="oi oi-pie-chart"></span></button>
-        </div>
-        <div class="row" style="float: right;">
-            <label style="font-weight: bold;">@Session.SessionDate.ToShortDateString()</label>
-        </div>
-        <div style="margin-top: 2rem;">
-            <label style="padding-right: 20px" for="availableDiaperContents">Diaper Contents: </label>
-            <div name="availableDiaperContents">
-                @foreach (var diaperType in ((DiaperType[])Enum.GetValues(typeof(DiaperType))).ToList())
-                {
-                    var text = diaperType.GetDescription();
-                    <label class="switch">
-                        <input type="checkbox" checked="@diaperContents.Contains(diaperType)" @onchange="eventArgs => { Toggle(diaperType); }">
-                        <span class="slider round"></span>
-                    </label>
-                    @text <br />
-                }
-            </div>
-            <div>
-                <label style="padding-right: 20px" for="changer">Changer: </label>
-                <select style="width: 55%;" name="changer" @onchange=@ChorerSelection>
-                    @foreach (var chorer in ((Chorer[])Enum.GetValues(typeof(Chorer))).ToList())
-                    {
-                        <option value=@chorer>@chorer</option>
-                    }
-                </select>
-            </div>
-            <div class="row justify-content-center" style="margin-top: 2rem;">
-                @if (Session.IsMinDate)
-                {
-                    <button class="btn btn-warning" disabled><span class="oi oi-caret-left"></span></button>
-                }
-                else
-                {
-                    <button class="btn btn-warning" type="button" @onclick="async () => { await Cycle(DayCycleType.Previous); }"><span class="oi oi-caret-left"></span></button>
-                }
-                <button class="btn btn-success milk-start" type="button" @onclick="async () => { await ChangeDiaper(); }">Change Diaper  #@(Session.Total + 1)</button>
-                @if (Session.IsMaxDate)
-                {
-                    <button class="btn btn-warning" disabled><span class="oi oi-caret-right"></span></button>
-                }
-                else
-                {
-                    <button class="btn btn-warning" type="button" @onclick="async () => { await Cycle(DayCycleType.Next); }"><span class="oi oi-caret-right"></span></button>
-                }
-            </div>
-        </div>
-    }
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Contents</th>
-                <th>Changed By</th>
-                <th>Changed At</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var diaper in Session.DailyChanges)
+    <div class="row" style="float: left;">
+        <button type="button" @onclick="InvokeStats" style="padding-bottom: 0px;" class="btn">
+            <span class="oi oi-pie-chart"></span>
+        </button>
+    </div>
+    <div class="row" style="float: right;">
+        <label style="font-weight: bold;">@(Session.SessionDate.ToShortDateString())</label>
+    </div>
+    <div style="margin-top: 2rem;">
+        <label style="padding-right: 20px" for="availableDiaperContents">Diaper Contents: </label>
+        <div name="availableDiaperContents">
+            @foreach (DiaperType diaperType in ((DiaperType[])Enum.GetValues(typeof(DiaperType))).ToList())
             {
-                <tr>
-                    <td>
-                        @foreach (var diaperType in diaper.DiaperTypes)
-                        {
-                            var text = diaperType.GetDescription();
-                            @text<br />
-                        }
-                    </td>
-                    <td>@diaper.Chorer?.GetDescription()</td>
-                    <td>@GetFormattedDate(diaper.ChangeTimeUtc)</td>
-                </tr>
+                string description = diaperType.GetDescription();
+                <label class="switch">
+                    <input type="checkbox" checked="@(diaperContents.Contains(diaperType))" @onchange="@(() => Toggle(diaperType))" />
+                    <span class="slider round"></span>
+                </label>
+                @:@description
+                <br>
             }
-        </tbody>
-    </table>
+        </div>
+        <div>
+            <label style="padding-right: 20px" for="changer">Changer: </label>
+            <select style="width: 55%;" name="changer" @onchange="ChorerSelection">
+                @foreach (Chorer item in ((Chorer[])Enum.GetValues(typeof(Chorer))).ToList())
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+        </div>
+        <div class="row justify-content-center" style="margin-top: 2rem;">
+            @if (Session.IsMinDate)
+            {
+                <button class="btn btn-warning" disabled><span class="oi oi-caret-left"></span></button>
+            }
+            else
+            {
+                <button class="btn btn-warning" type="button" @onclick="@(async () => await Cycle(DayCycleType.Previous))">
+                    <span class="oi oi-caret-left"></span>
+                </button>
+            }
+            <button class="btn btn-success milk-start" type="button" @onclick="@(async () => await ChangeDiaper())">Change Diaper #@((Session.Total + 1))</button>
+            @if (Session.IsMaxDate)
+            {
+                <button class="btn btn-warning" disabled><span class="oi oi-caret-right"></span></button>
+            }
+            else
+            {
+                <button class="btn btn-warning" type="button" @onclick="@(async () => await Cycle(DayCycleType.Next))">
+                    <span class="oi oi-caret-right"></span>
+                </button>
+            }
+        </div>
+    </div>
 }
+<table class="table">
+    <thead>
+        <tr>
+            <th>Contents</th>
+            <th>Changed By</th>
+            <th>Changed At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Diaper dailyChange in Session.DailyChanges)
+        {
+            <tr>
+                <td>
+                    @foreach (DiaperType diaperType2 in dailyChange.DiaperTypes)
+                    {
+                        string description2 = diaperType2.GetDescription();
+                        @:@description2
+                        <br>
+                    }
+                </td>
+                <td>
+                    @(dailyChange.Chorer?.GetDescription())
+                </td>
+                <td>@(GetFormattedDate(dailyChange.ChangeTimeUtc))</td>
+            </tr>
+        }
+    </tbody>
+</table>
 
 @code {
     private List<DiaperType> diaperContents = new List<DiaperType>();
+
     private Diaper diaperChange = new Diaper();
+
     private bool saving;
+
+    private Chorer chorer;
 
     [Parameter]
     public DiaperChangeView Session { get; set; }
+
     [Parameter]
     public EventCallback<Diaper> DiaperContents { get; set; }
+
     [Parameter]
     public EventCallback<DayCycleType> CycleDay { get; set; }
+
     [Parameter]
     public EventCallback<bool> ShowStats { get; set; }
 
-    private Chorer chorer = Chorer.Kyleah;
-    void ChorerSelection(ChangeEventArgs args)
+    private void ChorerSelection(ChangeEventArgs args)
     {
-        Enum.TryParse(args.Value.ToString(), out Chorer user);
-        chorer = user;
+        Enum.TryParse<Chorer>(args.Value.ToString(), out var result);
+        chorer = result;
     }
 
     private async Task ChangeDiaper()
     {
         saving = true;
-
         diaperChange.ChangeTimeUtc = DateTime.UtcNow;
         diaperChange.Chorer = chorer;
         diaperChange.DiaperTypes = diaperContents;
         await DiaperContents.InvokeAsync(diaperChange);
         diaperChange = new Diaper();
         diaperContents = new List<DiaperType>();
-
         saving = false;
     }
 
     private string GetFormattedDate(DateTime? utcTime)
     {
-        if (utcTime == null)
+        if (!utcTime.HasValue)
         {
             return "";
         }
-
-        var zone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
-
-        return TimeZoneInfo.ConvertTimeFromUtc(Convert.ToDateTime(utcTime), zone).ToString("MM/dd/yyyy h:mm tt");
+        TimeZoneInfo destinationTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+        return TimeZoneInfo.ConvertTimeFromUtc(Convert.ToDateTime(utcTime), destinationTimeZone).ToString("MM/dd/yyyy h:mm tt");
     }
 
     private void Toggle(DiaperType diaperType)
