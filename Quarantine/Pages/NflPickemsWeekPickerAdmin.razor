@@ -2,6 +2,7 @@
 @using Quarantine.Interfaces
 @using Quarantine.Models.NflPickems
 @using Quarantine.Helpers
+@using System.Globalization
 @inject NavigationManager NavigationManager
 @inject IJSRuntime jsRuntime
 @inject INflPlayerService PlayerService
@@ -17,7 +18,7 @@
             <div>
                 <span class="nfl-eyebrow">Week @WeekId Picks · Admin</span>
                 <h1 class="nfl-title">@(_player?.Name ?? "Loading…")</h1>
-                <p class="nfl-sub">Tap the team you think wins each game. Games before Sunday lock at kickoff; everything else locks Sunday 10:00 AM PT.</p>
+                <p class="nfl-sub">Tap the team you think will win each game. Picks lock Sunday at 10:00 AM PT, or at kickoff for earlier games.</p>
                 @if (IsOverride)
                 {
                     <span class="nfl-chip">⚡ Chap override · nothing is locked</span>
@@ -70,11 +71,11 @@
                         }
                         else if (lockTimeUtc < pick.GameTimeUtc)
                         {
-                            <span>Locks Sun 10:00 AM PT</span>
+                            <span>Locks at @FormatPacific(lockTimeUtc)</span>
                         }
                         else
                         {
-                            <span>Locks at kickoff</span>
+                            <span>Locks at @FormatPacific(pick.GameTimeUtc)</span>
                         }
                     </div>
                     <div class="nfl-matchup">
@@ -153,6 +154,28 @@
         _title = $"Week {WeekId}";
         _player = (await WinService.GetPlayerPickViews(WeekId, PlayerId)).Single();
         _picks = (await PickService.GetPicks()).Where(p => p.PlayerId == PlayerId).ToList();
+    }
+
+    private static readonly TimeZoneInfo PacificZone = GetPacificZone();
+
+    private static TimeZoneInfo GetPacificZone()
+    {
+        try
+        {
+            return TimeZoneInfo.FindSystemTimeZoneById("America/Los_Angeles");
+        }
+        catch (TimeZoneNotFoundException)
+        {
+            return TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+        }
+    }
+
+    private static string FormatPacific(DateTime utc)
+    {
+        var pacific = TimeZoneInfo.ConvertTimeFromUtc(
+            DateTime.SpecifyKind(utc, DateTimeKind.Utc), PacificZone);
+
+        return pacific.ToString("ddd h:mm tt", CultureInfo.InvariantCulture) + " PT";
     }
 
     // Present in the compiled code but never called from this page.

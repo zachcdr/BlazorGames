@@ -215,7 +215,15 @@ namespace Quarantine.Games
                 // House rule: matching a card on Higher or Lower / Inside or Outside doubles the drinks (4 and 6).
                 num *= 2;
             }
-            if (flag2)
+            Drinker onlyOther = OnlyOtherPlayer(player2);
+            if (flag2 && onlyOther != null)
+            {
+                // Two-player game: there's only one person to give to, so skip the pick.
+                onlyOther.Drinks = num;
+                onlyOther.TotalDrinks += num;
+                EndTurn(player2);
+            }
+            else if (flag2)
             {
                 // Correct guess: the player picks who drinks (GiveDrinks), which then passes the turn on.
                 Game.PendingGives.Add(new PendingGive
@@ -255,6 +263,12 @@ namespace Quarantine.Games
                 EndTurn(Game.Players.Single((Drinker p) => p.Id == giverId));
             }
             await Save();
+        }
+
+        /// <summary>The other player in a two-player game (the only possible pick); otherwise null.</summary>
+        private Drinker OnlyOtherPlayer(Drinker giver)
+        {
+            return Game.Players.Count == 2 ? Game.Players.Single((Drinker p) => p.Id != giver.Id) : null;
         }
 
         public bool HasPendingGive(int playerId)
@@ -297,10 +311,19 @@ namespace Quarantine.Games
                 // Give column: everyone holding a match picks who takes their drinks (drinks x matches).
                 foreach (Drinker giver in players)
                 {
+                    int amount = drinks * giver.Cards.Count((Card c) => c.Value == card.Value);
+                    Drinker onlyOther = OnlyOtherPlayer(giver);
+                    if (onlyOther != null)
+                    {
+                        // Two-player game: no pick needed.
+                        onlyOther.Drinks += amount;
+                        onlyOther.TotalDrinks += amount;
+                        continue;
+                    }
                     Game.PendingGives.Add(new PendingGive
                     {
                         PlayerId = giver.Id,
-                        Drinks = drinks * giver.Cards.Count((Card c) => c.Value == card.Value),
+                        Drinks = amount,
                         FromBus = true
                     });
                 }
