@@ -540,7 +540,7 @@
 }
 
 .nfl-line-team.is-picked .nfl-line-name::after {
-    content: " ✓";
+    content: "";
     color: var(--turf);
 }
 
