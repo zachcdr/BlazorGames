@@ -1,8 +1,12 @@
 @page "/nfl-pickems/weeks"
 @using Quarantine.Interfaces
 @using Quarantine.Helpers
+@using Quarantine.Models.NflPickems
+@implements IDisposable
 @inject NavigationManager NavigationManager
 @inject INflScheduleService ScheduleService
+@inject INflWinService WinService
+@inject Quarantine.Services.NflPlayerSession Session
 
 <div class="nfl">
     <div class="nfl-wrap">
@@ -14,31 +18,98 @@
             </div>
         </header>
 
-        <button type="button" class="nfl-hero" @onclick="@(() => Navigate("Totals"))">
-            <span class="nfl-hero-icon">🏆</span>
-            <span>
-                <span class="nfl-hero-title">Season Standings</span><br />
-                <span class="nfl-hero-sub">Total wins across every week</span>
-            </span>
-            <span class="nfl-hero-arrow">›</span>
-        </button>
+        <NflSignIn />
 
-        <p class="nfl-section-label">Weeks</p>
-        <div class="nfl-week-grid">
-            @for (var i = 1; i <= 18; i++)
+        @if (!IsReady)
+        {
+            <div class="nfl-skeleton nfl-hero-skeleton"></div>
+            <p class="nfl-section-label">Weeks</p>
+            <div class="nfl-week-grid">
+                @for (var i = 1; i <= 18; i++)
+                {
+                    <div class="nfl-skeleton nfl-week-skeleton"></div>
+                }
+            </div>
+        }
+        else
+        {
+            @if (_currentWeek.HasValue && _myWeeks != null && _myWeeks.TryGetValue(_currentWeek.Value, out var thisWeek))
             {
-                var week = i;
-                var state = GetState(week);
-                <button type="button" class="nfl-week is-@state" @onclick="@(() => Navigate(week.ToString()))">
-                    <span class="nfl-week-label">Week</span>
-                    <span class="nfl-week-num">@week</span>
-                    @if (state != "loading")
-                    {
-                        <span class="nfl-week-tag">@(state == "done" ? "Final" : state == "current" ? "This Week" : "Upcoming")</span>
-                    }
+                <button type="button" class="nfl-hero nfl-hero-week" @onclick="@(() => Navigate(_currentWeek.Value.ToString()))">
+                    <span class="nfl-hero-icon">🏈</span>
+                    <span>
+                        <span class="nfl-hero-title">Week @_currentWeek</span><br />
+                        <span class="nfl-hero-sub">
+                            @if (!thisWeek.IsOpen)
+                            {
+                                @:Picks open once every kickoff time is in
+                            }
+                            else if (thisWeek.NextLockUtc == null)
+                            {
+                                @:@thisWeek.Picked of @thisWeek.Total picked · locked
+                            }
+                            else if (thisWeek.Picked < thisWeek.Total)
+                            {
+                                @:@thisWeek.Picked of @thisWeek.Total picked · next lock @NflTeamStyle.Kickoff(thisWeek.NextLockUtc.Value)
+                            }
+                            else
+                            {
+                                @:All @thisWeek.Total picked ✓ · next lock @NflTeamStyle.Kickoff(thisWeek.NextLockUtc.Value)
+                            }
+                        </span>
+                    </span>
+                    <span class="nfl-hero-arrow">›</span>
                 </button>
             }
-        </div>
+
+            <button type="button" class="nfl-hero" @onclick="@(() => Navigate("Totals"))">
+                <span class="nfl-hero-icon">🏆</span>
+                <span>
+                    <span class="nfl-hero-title">Season Standings</span><br />
+                    <span class="nfl-hero-sub">Total wins across every week</span>
+                </span>
+                <span class="nfl-hero-arrow">›</span>
+            </button>
+
+            <p class="nfl-section-label">Weeks</p>
+            <div class="nfl-week-grid">
+                @for (var i = 1; i <= 18; i++)
+                {
+                    var week = i;
+                    var state = GetState(week);
+                    WeekStatus mine = null;
+                    _myWeeks?.TryGetValue(week, out mine);
+                    <button type="button" class="nfl-week is-@state" @onclick="@(() => Navigate(week.ToString()))">
+                        <span class="nfl-week-label">Week</span>
+                        @* Only this week and past weeks: a future week showing "0/14" is just noise. *@
+                        @if (mine != null && mine.IsOpen && state != "upcoming")
+                        {
+                            @if (mine.NextLockUtc != null && mine.Picked < mine.Total)
+                            {
+                                <span class="nfl-week-me is-owed" title="Picks still to make">⚠ @mine.Picked/@mine.Total</span>
+                            }
+                            else if (mine.NextLockUtc != null)
+                            {
+                                <span class="nfl-week-me is-set" title="All picked">✓ @mine.Picked/@mine.Total</span>
+                            }
+                            else if (mine.Wins + mine.Losses > 0)
+                            {
+                                <span class="nfl-week-me" title="Your record this week">@mine.Wins–@mine.Losses</span>
+                            }
+                            else
+                            {
+                                <span class="nfl-week-me" title="Picked">@mine.Picked/@mine.Total</span>
+                            }
+                        }
+                        <span class="nfl-week-num">@week</span>
+                        @if (state != "loading")
+                        {
+                            <span class="nfl-week-tag">@(state == "done" ? "Final" : state == "current" ? "This Week" : "Upcoming")</span>
+                        }
+                    </button>
+                }
+            </div>
+        }
     </div>
 </div>
 
@@ -46,13 +117,35 @@
     // A week counts as finished this long after its last kickoff.
     private static readonly TimeSpan GameLength = TimeSpan.FromHours(4);
 
+    private List<Game> _schedule;
     private Dictionary<int, DateTime> _lastKickoffByWeek;
     private int? _currentWeek;
 
+    // The signed-in player's picks, by week. Null when nobody is signed in.
+    private Dictionary<int, WeekStatus> _myWeeks;
+    private int? _myWeeksPlayerId;
+
+    // Show placeholders until everything is in, rather than a grid that fills in piece by piece.
+    private bool IsReady => _lastKickoffByWeek != null && Session.IsLoaded && (!Session.IsSignedIn || _myWeeks != null);
+
+    private class WeekStatus
+    {
+        public int Picked { get; set; }
+        public int Total { get; set; }
+        public int Wins { get; set; }
+        public int Losses { get; set; }
+        public bool IsOpen { get; set; }
+
+        /// <summary>When the next still-open game locks; null once the whole week is locked.</summary>
+        public DateTime? NextLockUtc { get; set; }
+    }
+
     protected override async Task OnInitializedAsync()
     {
-        var schedule = await ScheduleService.GetSchedule();
-        _lastKickoffByWeek = schedule
+        Session.Changed += OnSessionChanged;
+
+        _schedule = await ScheduleService.GetSchedule();
+        _lastKickoffByWeek = _schedule
             .Where(g => NflPickLock.IsScheduled(g.GameTimeUtc))
             .GroupBy(g => g.Week)
             .ToDictionary(g => g.Key, g => g.Max(game => game.GameTimeUtc));
@@ -60,6 +153,80 @@
             .Where(w => w.Value + GameLength > DateTime.UtcNow)
             .Select(w => (int?)w.Key)
             .Min();
+
+        await LoadMyWeeks();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Session.LoadAsync();
+            await LoadMyWeeks();
+            // LoadMyWeeks returns early when nobody is signed in, so redraw here to swap the placeholders for the grid.
+            StateHasChanged();
+        }
+    }
+
+    private async Task LoadMyWeeks()
+    {
+        // Called once the schedule loads, after the first render, and on every session change. Those can finish in
+        // either order, so wait until both the schedule and the session are ready; then only reload when the player changes.
+        if (_schedule == null || !Session.IsLoaded)
+        {
+            return;
+        }
+
+        var playerId = Session.Player?.Id;
+        if (playerId == _myWeeksPlayerId)
+        {
+            return;
+        }
+
+        _myWeeksPlayerId = playerId;
+        if (playerId == null)
+        {
+            _myWeeks = null;
+            StateHasChanged();
+            return;
+        }
+
+        _myWeeks = null;
+        StateHasChanged();
+        var weekByGameId = _schedule.ToDictionary(g => g.Id, g => g.Week);
+        PlayerPickView me;
+        try
+        {
+            me = (await WinService.GetPlayerPickViews(null, playerId)).Single();
+        }
+        catch (Exception)
+        {
+            // Show the plain grid rather than loading forever; the badges are a nice-to-have.
+            _myWeeks = new Dictionary<int, WeekStatus>();
+            StateHasChanged();
+            return;
+        }
+        _myWeeks = me.Picks
+            .Where(g => weekByGameId.ContainsKey(g.GameId))
+            .GroupBy(g => weekByGameId[g.GameId])
+            .ToDictionary(week => week.Key, week =>
+            {
+                var weekTimes = week.Select(g => g.GameTimeUtc).ToList();
+                var openLocks = week
+                    .Select(g => NflPickLock.LockTimeUtc(g.GameTimeUtc, weekTimes))
+                    .Where(lockTime => lockTime > DateTime.UtcNow)
+                    .ToList();
+                return new WeekStatus
+                {
+                    Picked = week.Count(g => g.PickedId != 0),
+                    Total = week.Count(),
+                    Wins = week.Count(g => g.IsWinner == true),
+                    Losses = week.Count(g => g.IsWinner == false),
+                    IsOpen = NflPickLock.IsWeekScheduled(weekTimes),
+                    NextLockUtc = openLocks.Count == 0 ? (DateTime?)null : openLocks.Min()
+                };
+            });
+        StateHasChanged();
     }
 
     private string GetState(int week)
@@ -80,5 +247,19 @@
     private void Navigate(string week)
     {
         NavigationManager.NavigateTo("/nfl-pickems/weeks/" + week);
+    }
+
+    private void OnSessionChanged()
+    {
+        InvokeAsync(async () =>
+        {
+            await LoadMyWeeks();
+            StateHasChanged();
+        });
+    }
+
+    public void Dispose()
+    {
+        Session.Changed -= OnSessionChanged;
     }
 }

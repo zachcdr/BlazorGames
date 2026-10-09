@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Quarantine.Helpers;
 using Quarantine.Interfaces;
@@ -21,7 +23,26 @@ namespace Quarantine.Repositories
             string file = gameGuid + ".json";
             await Task.Run(delegate
             {
+                // File names can contain "/" (e.g. "2026/picks/5/10"), so create any sub-folders first.
+                Directory.CreateDirectory(Path.GetDirectoryName(Path.Combine(path, file)));
                 FileProcessor.WriteFile(game, path, file);
+            });
+        }
+
+        public async Task<IList<string>> ListGameFiles(GameType gameType, string prefix)
+        {
+            string root = $"C:/Quarantine/Games/{gameType}/";
+            return await Task.Run(() =>
+            {
+                if (!Directory.Exists(root))
+                {
+                    return new List<string>();
+                }
+                return (IList<string>)Directory.GetFiles(root, "*.json", SearchOption.AllDirectories)
+                    .Select(f => Path.GetRelativePath(root, f).Replace('\\', '/'))
+                    .Select(f => f.Substring(0, f.Length - ".json".Length))
+                    .Where(f => f.StartsWith(prefix))
+                    .ToList();
             });
         }
 

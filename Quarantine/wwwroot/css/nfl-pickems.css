@@ -822,7 +822,8 @@
 .nfl-input-wide {
     width: 100%;
     font-family: var(--body);
-    font-size: .9rem;
+    /* 16px minimum: iOS Safari zooms into any smaller field on focus and stays zoomed afterwards. */
+    font-size: 1rem;
     letter-spacing: 0;
 }
 
@@ -946,4 +947,279 @@
 
 .nfl-header .nfl-chip {
     margin-top: .75rem;
+}
+
+/* ---------- Sign in ---------- */
+
+.nfl-signin-skeleton {
+    height: 3rem;
+    margin-bottom: 1.25rem;
+}
+
+.nfl-signin {
+    margin-bottom: 1.5rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid rgba(251, 191, 36, .35);
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, rgba(251, 191, 36, .1), var(--card) 70%);
+}
+
+.nfl-signin-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-top: .9rem;
+}
+
+    .nfl-signin-fields .nfl-input {
+        flex: 1 1 12rem;
+        width: auto;
+    }
+
+    .nfl-signin-fields select.nfl-input option {
+        background: var(--bg);
+        color: var(--text);
+    }
+
+.nfl-signin-error {
+    margin: .6rem 0 0;
+    color: var(--red);
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.nfl-me {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1.25rem;
+    padding: .6rem .9rem;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--card);
+    font-size: .9rem;
+}
+
+.nfl-me-label {
+    color: var(--muted);
+}
+
+.nfl-me-name {
+    font-weight: 700;
+    color: #fff;
+}
+
+.nfl-me-switch {
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--accent);
+    font-size: .85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .nfl-me-switch:hover {
+        text-decoration: underline;
+    }
+
+.nfl-player.is-me {
+    border-color: rgba(34, 197, 94, .45);
+    box-shadow: 0 0 0 1px rgba(34, 197, 94, .2);
+}
+
+
+/* ---------- My Picks (week page) ---------- */
+
+.nfl-mine {
+    margin-bottom: 2rem;
+}
+
+.nfl-mine-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+    .nfl-mine-head .nfl-section-label b {
+        color: #fff;
+    }
+
+.nfl-mine-sub {
+    margin: -.4rem 0 1rem;
+    font-size: .85rem;
+}
+
+.nfl-mine-chip {
+    margin: -.4rem 0 1rem;
+}
+
+.nfl-save-status {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    font-size: .8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+    .nfl-save-status.is-saved {
+        color: var(--turf);
+    }
+
+    .nfl-save-status.is-error {
+        color: var(--red);
+        cursor: pointer;
+    }
+
+.nfl-game.is-win {
+    border-color: rgba(34, 197, 94, .45);
+}
+
+.nfl-game.is-loss {
+    border-color: rgba(244, 63, 94, .35);
+}
+
+.nfl-game-final {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.nfl-standings-label {
+    margin-top: .5rem;
+}
+
+
+.nfl-tiebreak-hidden {
+    color: var(--muted);
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+/* ---------- Weeks grid: the signed-in player's status ---------- */
+
+.nfl-week-me {
+    position: absolute;
+    top: .8rem;
+    right: .75rem;
+    color: var(--muted);
+    font-size: .7rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+    .nfl-week-me.is-owed {
+        color: var(--gold);
+    }
+
+    .nfl-week-me.is-set {
+        color: var(--turf);
+    }
+
+.nfl-hero-week {
+    border-color: rgba(34, 197, 94, .45);
+    background:
+        radial-gradient(400px 200px at 0 0, rgba(34, 197, 94, .25), transparent 70%),
+        linear-gradient(135deg, #10241a, #141c2f 60%);
+}
+
+    .nfl-hero-week:hover {
+        border-color: rgba(34, 197, 94, .8);
+        box-shadow: 0 18px 40px -18px rgba(34, 197, 94, .5);
+    }
+
+    .nfl-hero-week .nfl-hero-icon {
+        background: rgba(34, 197, 94, .15);
+    }
+
+    .nfl-hero-week .nfl-hero-title,
+    .nfl-hero-week .nfl-hero-arrow {
+        color: var(--turf);
+    }
+
+
+/* ---------- Weeks page placeholders ---------- */
+
+.nfl-hero-skeleton {
+    height: 5.6rem;
+    margin-bottom: 1.75rem;
+}
+
+.nfl-week-skeleton {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 0;
+    border-radius: 16px;
+}
+
+
+/* ---------- My Picks: collapsible summary bar ---------- */
+
+.nfl-mine-head {
+    align-items: center;
+    margin-bottom: .9rem;
+    padding: .35rem .9rem .35rem .35rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--card);
+}
+
+.nfl-mine.is-open .nfl-mine-head {
+    border-color: var(--line-strong);
+}
+
+.nfl-mine:not(.is-open) {
+    margin-bottom: 1.25rem;
+}
+
+.nfl-mine-toggle {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: .75rem;
+    padding: .55rem .6rem;
+    border: 0;
+    border-radius: 12px;
+    background: none;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+}
+
+    .nfl-mine-toggle:hover .nfl-mine-chevron {
+        color: #fff;
+    }
+
+.nfl-mine-title {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #fff;
+}
+
+.nfl-mine-count {
+    color: var(--muted);
+    font-size: .85rem;
+}
+
+    .nfl-mine-count b {
+        color: #fff;
+    }
+
+.nfl-mine-chevron {
+    margin-left: auto;
+    color: var(--accent);
+    font-size: .8rem;
+    font-weight: 600;
+    white-space: nowrap;
 }

@@ -1,0 +1,116 @@
+@using Quarantine.Interfaces
+@using Quarantine.Models.NflPickems
+@using Quarantine.Services
+@implements IDisposable
+@inject NflPlayerSession Session
+@inject INflPlayerService PlayerService
+
+@* Who's using this device. Shows a sign-in card until someone signs in, then a "Playing as" bar. *@
+
+@if (!Session.IsLoaded)
+{
+    <div class="nfl-skeleton nfl-signin-skeleton"></div>
+}
+else if (Session.IsSignedIn)
+{
+    <div class="nfl-me">
+        <span class="nfl-me-label">Playing as</span>
+        <span class="nfl-me-name">@Session.Player.Name</span>
+        @if (Session.IsCommissioner)
+        {
+            <span class="nfl-chip">⚡ Commissioner</span>
+        }
+        <button type="button" class="nfl-me-switch" @onclick="SignOut">Switch</button>
+    </div>
+}
+else
+{
+    <form class="nfl-signin" @onsubmit="SignIn">
+        <div class="nfl-signin-head">
+            <div class="nfl-tb-title">Who are you?</div>
+            <p class="nfl-tb-help">Sign in once and this device remembers you. First time? The password you enter becomes yours.</p>
+        </div>
+        <div class="nfl-signin-fields">
+            <select class="nfl-input nfl-input-wide" @bind="_playerId" aria-label="Player">
+                <option value="0">Pick your name…</option>
+                @if (_players != null)
+                {
+                    @foreach (var player in _players)
+                    {
+                        <option value="@player.Id">@player.Name</option>
+                    }
+                }
+            </select>
+            <input class="nfl-input nfl-input-wide" type="password" placeholder="Password (case sensitive)"
+                   autocomplete="current-password" aria-label="Password" @bind="_password" />
+            <button type="submit" class="nfl-btn nfl-btn-primary" disabled="@_isSigningIn">
+                @if (_isSigningIn)
+                {
+                    <span class="nfl-spinner"></span>
+                }
+                Sign In
+            </button>
+        </div>
+        @if (_error != null)
+        {
+            <p class="nfl-signin-error">@_error</p>
+        }
+    </form>
+}
+
+@code {
+    private List<Player> _players;
+    private int _playerId;
+    private string _password;
+    private string _error;
+    private bool _isSigningIn;
+
+    protected override void OnInitialized()
+    {
+        Session.Changed += OnSessionChanged;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Session.LoadAsync();
+            if (!Session.IsSignedIn)
+            {
+                await LoadPlayers();
+            }
+        }
+    }
+
+    private async Task LoadPlayers()
+    {
+        _players = (await PlayerService.GetPlayers()).OrderBy(p => p.Name).ToList();
+        StateHasChanged();
+    }
+
+    private async Task SignIn()
+    {
+        _isSigningIn = true;
+        _error = await Session.SignInAsync(_playerId, _password);
+        _isSigningIn = false;
+        _password = null;
+    }
+
+    private async Task SignOut()
+    {
+        _playerId = 0;
+        _error = null;
+        await Session.SignOutAsync();
+        await LoadPlayers();
+    }
+
+    private void OnSessionChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        Session.Changed -= OnSessionChanged;
+    }
+}

@@ -1,11 +1,13 @@
 @page "/nfl-pickems/weeks/{weekId}"
 @using Quarantine.Interfaces
 @using Quarantine.Models.NflPickems
-@inject IJSRuntime jsRuntime
 @inject NavigationManager NavigationManager
 @inject INflWinService WinService
-@inject Quarantine.Services.NflCommissionerSession CommissionerSession
+@inject INflPickService PickService
+@inject Quarantine.Services.NflPlayerSession Session
 @using Quarantine.Helpers
+@using System.Threading
+@implements IDisposable
 
 <div class="nfl">
     <div class="nfl-wrap">
@@ -16,13 +18,94 @@
                 <span class="nfl-eyebrow">@(WeekId == "Totals" ? "Season" : "Scoreboard")</span>
                 <h1 class="nfl-title">@_title</h1>
             </div>
-            @if (WeekId != "Totals")
+            @if (WeekId != "Totals" && Session.IsCommissioner)
             {
-                <button class="nfl-btn nfl-btn-gold" @onclick="Admin">⚙ Admin</button>
+                <a class="nfl-btn nfl-btn-gold" href="nfl-pickems/admin/@WeekId">⚙ Admin</a>
             }
         </header>
 
-        @if (_players == null)
+        @if (WeekId != "Totals")
+        {
+            <NflSignIn />
+        }
+
+        @{ var me = WeekId == "Totals" ? null : _players?.SingleOrDefault(p => p.Id == Session.Player?.Id); }
+        @if (me != null && Session.IsLoaded)
+        {
+            var games = me.Picks.OrderBy(p => p.GameTimeUtc).ToList();
+            var weekTimes = games.Select(g => g.GameTimeUtc).ToList();
+            var isWeekOpen = NflPickLock.IsWeekScheduled(weekTimes);
+            var pickedCount = games.Count(g => g.PickedId != 0);
+            var lastGame = games.LastOrDefault();
+
+            <section class="nfl-mine @(_isMineOpen ? "is-open" : "")">
+                <div class="nfl-mine-head">
+                    <button type="button" class="nfl-mine-toggle" aria-expanded="@(_isMineOpen ? "true" : "false")"
+                            @onclick="@(() => _isMineOpen = !_isMineOpen)">
+                        <span class="nfl-mine-title">My Picks</span>
+                        <span class="nfl-mine-count"><b>@pickedCount</b> / @games.Count</span>
+                        <span class="nfl-mine-chevron">@(_isMineOpen ? "Hide ▴" : "Show ▾")</span>
+                    </button>
+                    @if (_saveError)
+                    {
+                        <button type="button" class="nfl-save-status is-error" @onclick="@(() => SaveMyPicks(me))">⚠ Not saved · Retry</button>
+                    }
+                    else if (_pendingSaves > 0)
+                    {
+                        <span class="nfl-save-status"><span class="nfl-spinner"></span> Saving…</span>
+                    }
+                    else if (_hasSaved)
+                    {
+                        <span class="nfl-save-status is-saved">✓ Saved</span>
+                    }
+                </div>
+                @if (_isMineOpen)
+                {
+                    @if (Session.IsCommissioner)
+                    {
+                        <span class="nfl-chip nfl-mine-chip">⚡ Commissioner · nothing is locked</span>
+                    }
+                    else
+                    {
+                        <p class="nfl-sub nfl-mine-sub">Tap a team to pick it; it saves right away. Picks lock Sunday at 10:00 AM PT, or at kickoff for earlier games.</p>
+                    }
+
+                    @foreach (var game in games)
+                    {
+                        <NflGameCard Game="game"
+                                     IsLocked="!CanEdit(game, weekTimes)"
+                                     IsOverride="Session.IsCommissioner"
+                                     IsWeekOpen="isWeekOpen"
+                                     LockTimeUtc="NflPickLock.LockTimeUtc(game.GameTimeUtc, weekTimes)"
+                                     OnPick="@(teamId => Pick(me, game, teamId))" />
+                    }
+
+                    @if (lastGame != null)
+                    {
+                        var tieBreakerLocked = !CanEdit(lastGame, weekTimes) || lastGame.PickedId == 0;
+                        <div class="nfl-tb-card">
+                            <div>
+                                <div class="nfl-tb-title">Tie Breaker</div>
+                                <p class="nfl-tb-help">
+                                    Total combined points in the last game (@lastGame.AwayTeam.Name @@ @lastGame.HomeTeam.Name).
+                                    @if (lastGame.PickedId == 0 && CanEdit(lastGame, weekTimes))
+                                    {
+                                        <br /><span>Pick that game first.</span>
+                                    }
+                                </p>
+                            </div>
+                            <input disabled="@tieBreakerLocked" class="nfl-input" type="tel" maxlength="3"
+                                   onClick="this.select();" value="@lastGame.TieBreaker"
+                                   @onchange="@(e => SetTieBreaker(me, lastGame, e.Value?.ToString()))" />
+                        </div>
+                    }
+                }
+            </section>
+
+            <p class="nfl-section-label nfl-standings-label">Standings</p>
+        }
+
+        @if (_players == null || (WeekId != "Totals" && !Session.IsLoaded))
         {
             for (var i = 0; i < 6; i++)
             {
@@ -38,8 +121,9 @@
                     rank++;
                     var pickCount = player.Picks.Count(p => p.PickedId != 0);
                     var gameCount = player.Picks.Count;
+                    var isMe = Session.Player?.Id == player.Id;
 
-                    <div class="nfl-player @(player.ArePicksVisible ? "is-open" : "")">
+                    <div class="nfl-player @(player.ArePicksVisible ? "is-open" : "") @(isMe ? "is-me" : "")">
                         <div class="nfl-player-row">
                             <span class="nfl-rank @(rank <= 3 ? "nfl-rank-" + rank : "")">@rank</span>
                             <span class="nfl-player-name">
@@ -60,9 +144,10 @@
                                         @(player.ArePicksVisible ? "Hide" : "View")
                                         <span class="nfl-count">@pickCount</span>
                                     </button>
-                                    <button class="nfl-btn nfl-btn-primary" @onclick="@(() => CreatePicks(player.Id))">
-                                        @(pickCount > 0 ? "Edit Picks" : "Make Picks")
-                                    </button>
+                                    @if (!isMe && Session.IsCommissioner)
+                                    {
+                                        <button class="nfl-btn nfl-btn-gold" @onclick="@(() => OverridePicks(player.Id))">⚡ Override</button>
+                                    }
                                 </div>
                             }
                         </div>
@@ -71,14 +156,16 @@
                         {
                             var index = 0;
                             var count = player.Picks.Count;
+                            var playerWeekTimes = player.Picks.Select(p => p.GameTimeUtc).ToList();
                             <div class="nfl-picks">
                                 @foreach (var pick in player.Picks.OrderBy(p => p.GameTimeUtc))
                                 {
                                     index++;
+                                    var isHidden = IsHidden(player, pick, playerWeekTimes);
                                     var isFinal = pick.IsWinner != null;
                                     var lineClass = !isFinal ? "" : (pick.IsWinner.Value ? "is-win" : "is-loss");
-                                    var awayPicked = pick.PickedId == pick.AwayTeam.Id;
-                                    var homePicked = pick.PickedId == pick.HomeTeam.Id;
+                                    var awayPicked = !isHidden && pick.PickedId == pick.AwayTeam.Id;
+                                    var homePicked = !isHidden && pick.PickedId == pick.HomeTeam.Id;
 
                                     <div class="nfl-line @lineClass">
                                         <div class="nfl-line-team @(awayPicked ? "is-picked" : "")">
@@ -91,9 +178,17 @@
                                                 <span class="nfl-line-score">@pick.AwayTeam.Score – @pick.HomeTeam.Score</span>
                                                 <span class="nfl-result @(pick.IsWinner.Value ? "nfl-result-w" : "nfl-result-l")">@(pick.IsWinner.Value ? "WIN" : "LOSS")</span>
                                             }
+                                            else if (pick.PickedId == 0)
+                                            {
+                                                <span class="nfl-result nfl-result-tbd">NO PICK</span>
+                                            }
+                                            else if (isHidden)
+                                            {
+                                                <span class="nfl-result nfl-result-tbd" title="Shown once this game locks">🔒 PICKED</span>
+                                            }
                                             else
                                             {
-                                                <span class="nfl-result nfl-result-tbd">@(pick.PickedId == 0 ? "NO PICK" : "TBD")</span>
+                                                <span class="nfl-result nfl-result-tbd">TBD</span>
                                             }
                                         </div>
                                         <div class="nfl-line-team is-home @(homePicked ? "is-picked" : "")">
@@ -106,7 +201,14 @@
                                     {
                                         <div class="nfl-tiebreak">
                                             <span>Tie Breaker · Total Points</span>
-                                            <span class="nfl-tiebreak-num">@pick.TieBreaker</span>
+                                            @if (isHidden)
+                                            {
+                                                <span class="nfl-tiebreak-hidden">🔒 Shown at lock</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="nfl-tiebreak-num">@pick.TieBreaker</span>
+                                            }
                                         </div>
                                     }
                                 }
@@ -123,8 +225,22 @@
     private string _title;
     private List<PlayerPickView> _players;
 
+    // Saves run one at a time, each sending the player's latest picks, so a quick tap can't be overwritten by an older save.
+    private readonly SemaphoreSlim _saveLock = new SemaphoreSlim(1, 1);
+    private int _pendingSaves;
+
+    // My Picks starts collapsed so the standings are easy to reach.
+    private bool _isMineOpen;
+    private bool _hasSaved;
+    private bool _saveError;
+
     [Parameter]
     public string WeekId { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Session.Changed += OnSessionChanged;
+    }
 
     protected override async Task OnParametersSetAsync()
     {
@@ -141,47 +257,105 @@
         _players = await WinService.GetPlayerPickViews(week);
     }
 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Session.LoadAsync();
+        }
+    }
+
     private void TogglePicks(int playerId)
     {
         var player = _players.Single(p => p.Id == playerId);
         player.ArePicksVisible = !player.ArePicksVisible;
     }
 
-    private async Task CreatePicks(int playerId)
+    private void OverridePicks(int playerId)
     {
-        var player = _players.Single(p => p.Id == playerId);
+        // Chap edits other players' picks on the admin page, which ignores the pick locks.
+        NavigationManager.NavigateTo($"/nfl-pickems/weeks/{WeekId}/admin/{playerId}/picks");
+    }
 
-        if (string.IsNullOrWhiteSpace(player.Password))
+    /// <summary>
+    /// Other players' picks stay secret until each game locks, so nobody can copy them. You always see your own,
+    /// and Chap sees everyone's. Nobody is signed in while prerendering, so the default is hidden.
+    /// </summary>
+    private bool IsHidden(PlayerPickView player, GamePickView game, List<DateTime> weekTimes)
+    {
+        return player.Id != Session.Player?.Id
+            && !Session.IsCommissioner
+            && !NflPickLock.IsLocked(game.GameTimeUtc, weekTimes);
+    }
+
+    private bool CanEdit(GamePickView game, List<DateTime> weekTimes)
+    {
+        return Session.IsCommissioner || !NflPickLock.IsLocked(game.GameTimeUtc, weekTimes);
+    }
+
+    private async Task Pick(PlayerPickView me, GamePickView game, int teamId)
+    {
+        if (!CanEdit(game, me.Picks.Select(p => p.GameTimeUtc).ToList()) || game.PickedId == teamId)
         {
-            NavigationManager.NavigateTo($"/nfl-pickems/weeks/{WeekId}/players/{playerId}/picks");
             return;
         }
 
-        var input = await jsRuntime.InvokeAsync<string>("passwordPrompt.showPrompt", "Enter Password (case sensitive)");
-        if (string.IsNullOrEmpty(input))
+        game.PickedId = teamId;
+        if (game.AwayTeam.Score != game.HomeTeam.Score)
+        {
+            // Chap picking a game that's already final: score it straight away.
+            var winnerId = game.AwayTeam.Score > game.HomeTeam.Score ? game.AwayTeam.Id : game.HomeTeam.Id;
+            game.IsWinner = winnerId == teamId;
+        }
+        await SaveMyPicks(me);
+    }
+
+    private async Task SetTieBreaker(PlayerPickView me, GamePickView lastGame, string value)
+    {
+        if (!CanEdit(lastGame, me.Picks.Select(p => p.GameTimeUtc).ToList()) || lastGame.PickedId == 0
+            || !int.TryParse(value, out var tieBreaker) || tieBreaker < 0 || tieBreaker == lastGame.TieBreaker)
         {
             return;
         }
 
-        // Only Chap's password overrides the pick locks (and unlocks anyone's picks).
-        var commissioner = _players.SingleOrDefault(p => p.Id == NflPickLock.CommissionerPlayerId);
-        if (!string.IsNullOrEmpty(commissioner?.Password) && input == commissioner.Password)
+        lastGame.TieBreaker = tieBreaker;
+        await SaveMyPicks(me);
+    }
+
+    private async Task SaveMyPicks(PlayerPickView me)
+    {
+        _pendingSaves++;
+        _saveError = false;
+        await _saveLock.WaitAsync();
+        try
         {
-            CommissionerSession.IsUnlocked = true;
-            NavigationManager.NavigateTo($"/nfl-pickems/weeks/{WeekId}/admin/{playerId}/picks");
+            // Locked games are never written, so a pick can't be added or changed after its lock time.
+            var weekTimes = me.Picks.Select(p => p.GameTimeUtc).ToList();
+            var picks = me.Picks
+                .Where(g => g.PickedId != 0 && CanEdit(g, weekTimes))
+                .Select(g => new Pick { PlayerId = me.Id, GameId = g.GameId, TeamId = g.PickedId, TieBreaker = g.TieBreaker })
+                .ToList();
+            await PickService.SavePicks(picks);
+            _hasSaved = true;
         }
-        else if (input == player.Password)
+        catch (Exception)
         {
-            NavigationManager.NavigateTo($"/nfl-pickems/weeks/{WeekId}/players/{playerId}/picks");
+            _saveError = true;
+        }
+        finally
+        {
+            _pendingSaves--;
+            _saveLock.Release();
         }
     }
 
-    private async Task Admin()
+    private void OnSessionChanged()
     {
-        var input = await jsRuntime.InvokeAsync<string>("passwordPrompt.showPrompt", "Enter Admin Password (case sensitive)");
-        if (input == "Super")
-        {
-            NavigationManager.NavigateTo("/nfl-pickems/admin/" + WeekId);
-        }
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        Session.Changed -= OnSessionChanged;
     }
 }

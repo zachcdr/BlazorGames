@@ -28,7 +28,8 @@ namespace Quarantine.Repositories
             var localPath = "./gamedata/";
             Directory.CreateDirectory(localPath);
             var fileName = gameFile + ".json";
-            var downloadFilePath = Path.Combine(localPath, $"{Guid.NewGuid()}-{fileName}");
+            // File names can contain "/" (e.g. "2026/picks/5/10.json"), so the temp file is named by Guid only.
+            var downloadFilePath = Path.Combine(localPath, $"{Guid.NewGuid()}.json");
 
             var containerClient = _blobServiceClient.GetBlobContainerClient(gameType.ToString().ToLower());
             var blobClient = containerClient.GetBlobClient(fileName);
@@ -54,7 +55,7 @@ namespace Quarantine.Repositories
             var localPath = "./gamedata/";
             Directory.CreateDirectory(localPath);
             var fileName = gamePath + ".json";
-            var localFilePath = Path.Combine(localPath, $"{Guid.NewGuid()}-{fileName}");
+            var localFilePath = Path.Combine(localPath, $"{Guid.NewGuid()}.json");
 
             await File.WriteAllTextAsync(localFilePath, game);
 
@@ -67,6 +68,22 @@ namespace Quarantine.Repositories
             }
 
             File.Delete(localFilePath);
+        }
+
+        public async Task<IList<string>> ListGameFiles(GameType gameType, string prefix)
+        {
+            var files = new List<string>();
+            var containerClient = _blobServiceClient.GetBlobContainerClient(gameType.ToString().ToLower());
+
+            await foreach (var blobItem in containerClient.GetBlobsAsync(prefix: prefix))
+            {
+                if (blobItem.Name.EndsWith(".json"))
+                {
+                    files.Add(blobItem.Name.Substring(0, blobItem.Name.Length - ".json".Length));
+                }
+            }
+
+            return files;
         }
 
         public async Task<IList<string>> GetGames(GameType gameType)

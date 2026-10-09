@@ -5,6 +5,7 @@
 @inject NavigationManager NavigationManager
 @inject INflTeamService TeamService
 @inject INflScheduleService ScheduleService
+@inject Quarantine.Services.NflPlayerSession Session
 
 <div class="nfl">
     <div class="nfl-wrap">
@@ -18,7 +19,7 @@
             </div>
         </header>
 
-        @if (_schedule == null || _teams == null)
+        @if (_schedule == null || _teams == null || !_isAuthorized)
         {
             for (var i = 0; i < 6; i++)
             {
@@ -67,6 +68,7 @@
 
 @code {
     private List<Game> _schedule;
+    private bool _isAuthorized;
     private List<Team> _teams;
 
     [Parameter]
@@ -78,8 +80,33 @@
         _teams = await TeamService.GetTeams();
     }
 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            return;
+        }
+
+        // Scores and kickoff times are Chap's job: anyone else goes back to the scoreboard.
+        await Session.LoadAsync();
+        if (Session.IsCommissioner)
+        {
+            _isAuthorized = true;
+            StateHasChanged();
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/nfl-pickems/weeks/" + WeekId);
+        }
+    }
+
     private async Task Save()
     {
+        if (!_isAuthorized)
+        {
+            return;
+        }
+
         await ScheduleService.SaveSchedule(_schedule);
         NavigationManager.NavigateTo("/nfl-pickems/weeks/" + WeekId);
     }

@@ -48,7 +48,7 @@ namespace Quarantine
             services.AddTransient<INflPlayerService, NflPlayerService>();
             services.AddTransient<INflPickService, NflPickService>();
             services.AddTransient<INflWinService, NflWinService>();
-            services.AddScoped<NflCommissionerSession>();
+            services.AddScoped<NflPlayerSession>();
 
             services.AddBlazoredLocalStorage(config =>
             {

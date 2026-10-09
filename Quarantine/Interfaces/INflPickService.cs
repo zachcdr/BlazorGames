@@ -6,7 +6,11 @@ namespace Quarantine.Interfaces
 {
     public interface INflPickService
     {
-        Task<List<Pick>> GetPicks();
+        /// <summary>
+        /// Picks, optionally narrowed to one week and/or one player. The week filter only narrows the per-player
+        /// files: legacy picks have no week, so callers still need to match picks to that week's games.
+        /// </summary>
+        Task<List<Pick>> GetPicks(int? week = null, int? playerId = null);
         Task SavePicks(List<Pick> picks);
     }
 }

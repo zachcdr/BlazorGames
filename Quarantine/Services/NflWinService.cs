@@ -30,16 +30,22 @@ namespace Quarantine.Services
 
         public async Task<List<PlayerPickView>> GetPlayerPickViews(int? week = null, int? playerId = null)
         {
-            var schedule = await _nflScheduleService.GetSchedule();
-            var teams = await _nflTeamService.GetTeams();
+            // These are independent blob reads, so load them side by side.
+            var scheduleTask = _nflScheduleService.GetSchedule();
+            var teamsTask = _nflTeamService.GetTeams();
+            var picksTask = _nflPickService.GetPicks(week, playerId);
+            var playersTask = _nflPlayerService.GetPlayers();
+            await Task.WhenAll(scheduleTask, teamsTask, picksTask, playersTask);
+
+            var schedule = await scheduleTask;
+            var teams = await teamsTask;
+            var picks = await picksTask;
+            var players = await playersTask;
 
             if (week.HasValue)
             {
                 schedule = schedule.Where(s => s.Week == week.Value).ToList();
             }
-
-            var picks = await _nflPickService.GetPicks();
-            var players = await _nflPlayerService.GetPlayers();
 
             if (playerId.HasValue)
             {

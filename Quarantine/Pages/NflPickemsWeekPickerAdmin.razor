@@ -4,11 +4,9 @@
 @using Quarantine.Helpers
 @using System.Globalization
 @inject NavigationManager NavigationManager
-@inject IJSRuntime jsRuntime
-@inject INflPlayerService PlayerService
 @inject INflPickService PickService
 @inject INflWinService WinService
-@inject Quarantine.Services.NflCommissionerSession CommissionerSession
+@inject Quarantine.Services.NflPlayerSession Session
 
 <div class="nfl">
     <div class="nfl-wrap">
@@ -26,7 +24,7 @@
             </div>
         </header>
 
-        @if (_player == null)
+        @if (_player == null || !_isAuthorized)
         {
             for (var i = 0; i < 6; i++)
             {
@@ -106,9 +104,16 @@
                     <div class="nfl-tb-card">
                         <div>
                             <div class="nfl-tb-title">Tie Breaker</div>
-                            <p class="nfl-tb-help">Total combined points in the last game (@pick.AwayTeam.Name @@ @pick.HomeTeam.Name).</p>
+                            <p class="nfl-tb-help">
+                                Total combined points in the last game (@pick.AwayTeam.Name @@ @pick.HomeTeam.Name).
+                                @if (!anyPicked && !isLocked)
+                                {
+                                    <br /><span>Pick that game first.</span>
+                                }
+                            </p>
                         </div>
-                        <input disabled="@isLocked" class="nfl-input" type="tel" maxlength="3"
+                        @* The tie breaker is saved on the last game's pick, so it can't be entered until that game is picked. *@
+                        <input disabled="@(isLocked || !anyPicked)" class="nfl-input" type="tel" maxlength="3"
                                onClick="this.select();" @bind="pick.TieBreaker" />
                     </div>
                 }
@@ -141,7 +146,10 @@
     private List<Pick> _picks;
     private bool _isSaving;
 
-    private bool IsOverride => CommissionerSession.IsUnlocked;
+    private bool _isAuthorized;
+
+    // Only Chap reaches this page (see OnAfterRenderAsync), and he isn't held to the pick locks.
+    private bool IsOverride => Session.IsCommissioner;
 
     [Parameter]
     public int WeekId { get; set; }
@@ -153,7 +161,26 @@
     {
         _title = $"Week {WeekId}";
         _player = (await WinService.GetPlayerPickViews(WeekId, PlayerId)).Single();
-        _picks = (await PickService.GetPicks()).Where(p => p.PlayerId == PlayerId).ToList();
+        _picks = (await PickService.GetPicks(WeekId, PlayerId)).Where(p => p.PlayerId == PlayerId).ToList();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+        {
+            return;
+        }
+
+        await Session.LoadAsync();
+        if (Session.IsCommissioner)
+        {
+            _isAuthorized = true;
+            StateHasChanged();
+        }
+        else
+        {
+            NavigationManager.NavigateTo($"/nfl-pickems/weeks/{WeekId}");
+        }
     }
 
     private static readonly TimeZoneInfo PacificZone = GetPacificZone();
@@ -178,23 +205,9 @@
         return pacific.ToString("ddd h:mm tt", CultureInfo.InvariantCulture) + " PT";
     }
 
-    // Present in the compiled code but never called from this page.
-    private async Task CreatePassword()
-    {
-        var input = await jsRuntime.InvokeAsync<string>("passwordPrompt.showPrompt", "Please create a new password.");
-        if (string.IsNullOrWhiteSpace(input))
-        {
-            NavigationManager.NavigateTo($"/nfl-pickems/weeks/{WeekId}");
-        }
-        else
-        {
-            await PlayerService.SavePlayerPassword(_player.Id, input);
-        }
-    }
-
     private void AssignPick(int gameId, int teamId)
     {
-        if (!EditableGameIds().Contains(gameId))
+        if (!_isAuthorized || !EditableGameIds().Contains(gameId))
         {
             return;
         }
@@ -220,6 +233,11 @@
 
     private async Task SavePicks()
     {
+        if (!_isAuthorized)
+        {
+            return;
+        }
+
         // The tie breaker is entered on the last game of the week; copy it onto that game's pick.
         var pickView = _player.Picks.SingleOrDefault(p => p.TieBreaker != 0);
         if (pickView != null)
@@ -234,7 +252,6 @@
         // Locked games are never written, so a pick can't be added or changed after its lock time.
         var editableGameIds = EditableGameIds();
         await PickService.SavePicks(_picks.Where(p => editableGameIds.Contains(p.GameId)).ToList());
-        CommissionerSession.IsUnlocked = false;
         NavigationManager.NavigateTo($"/nfl-pickems/weeks/{WeekId}");
     }
 

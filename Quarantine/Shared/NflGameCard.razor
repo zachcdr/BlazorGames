@@ -1,0 +1,87 @@
+@using Quarantine.Helpers
+@using Quarantine.Models.NflPickems
+
+@* One game on the signed-in player's week: open (tap a team to pick), locked (shows the pick), or final (score and result). *@
+
+@{
+    var isFinal = Game.AwayTeam.Score != Game.HomeTeam.Score;
+    var awayPicked = Game.PickedId == Game.AwayTeam.Id;
+    var homePicked = Game.PickedId == Game.HomeTeam.Id;
+    var anyPicked = awayPicked || homePicked;
+    var resultClass = !isFinal || !anyPicked ? "" : Game.IsWinner == true ? "is-win" : "is-loss";
+}
+
+<div class="nfl-game @resultClass">
+    <div class="nfl-game-meta">
+        <span>@NflTeamStyle.Kickoff(Game.GameTimeUtc)</span>
+        @if (isFinal)
+        {
+            <span class="nfl-game-final">
+                Final · @Game.AwayTeam.Score – @Game.HomeTeam.Score
+                @if (anyPicked)
+                {
+                    <span class="nfl-result @(Game.IsWinner == true ? "nfl-result-w" : "nfl-result-l")">@(Game.IsWinner == true ? "WIN" : "LOSS")</span>
+                }
+            </span>
+        }
+        else if (!IsWeekOpen)
+        {
+            <span class="nfl-lock">⏳ Not open yet</span>
+        }
+        else if (IsLocked)
+        {
+            <span class="nfl-lock">🔒 Locked@(anyPicked ? "" : " · no pick")</span>
+        }
+        else if (IsOverride && DateTime.UtcNow >= LockTimeUtc)
+        {
+            <span class="nfl-override">Override</span>
+        }
+        else
+        {
+            <span>Locks @NflTeamStyle.Kickoff(LockTimeUtc)</span>
+        }
+    </div>
+    <div class="nfl-matchup">
+        <button disabled="@IsLocked" @onclick="@(() => OnPick.InvokeAsync(Game.AwayTeam.Id))"
+                style="@NflTeamStyle.CssVars(Game.AwayTeam.Name)"
+                class="nfl-team @(awayPicked ? "is-picked" : anyPicked ? "is-faded" : "")">
+            <NflTeamBadge Name="@Game.AwayTeam.Name" Large="true" />
+            <span class="nfl-team-text">
+                <span class="nfl-team-side">Away</span>
+                <span class="nfl-team-name">@Game.AwayTeam.Name</span>
+            </span>
+        </button>
+        <span class="nfl-at">@@</span>
+        <button disabled="@IsLocked" @onclick="@(() => OnPick.InvokeAsync(Game.HomeTeam.Id))"
+                style="@NflTeamStyle.CssVars(Game.HomeTeam.Name)"
+                class="nfl-team is-home @(homePicked ? "is-picked" : anyPicked ? "is-faded" : "")">
+            <NflTeamBadge Name="@Game.HomeTeam.Name" Large="true" />
+            <span class="nfl-team-text">
+                <span class="nfl-team-side">Home</span>
+                <span class="nfl-team-name">@Game.HomeTeam.Name</span>
+            </span>
+        </button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public GamePickView Game { get; set; }
+
+    /// <summary>True once the pick can't be changed (always false for Chap).</summary>
+    [Parameter]
+    public bool IsLocked { get; set; }
+
+    [Parameter]
+    public bool IsOverride { get; set; }
+
+    [Parameter]
+    public bool IsWeekOpen { get; set; }
+
+    [Parameter]
+    public DateTime LockTimeUtc { get; set; }
+
+    /// <summary>Called with the tapped team's id.</summary>
+    [Parameter]
+    public EventCallback<int> OnPick { get; set; }
+}
