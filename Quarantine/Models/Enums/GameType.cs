@@ -9,6 +9,7 @@ namespace Quarantine.Models.Enums
         Dots,
         TraqJaq,
         TraceAce,
-        NflPickems
+        NflPickems,
+        Cribbage
     }
 }

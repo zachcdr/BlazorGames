@@ -1,0 +1,120 @@
+@page "/cribbage"
+@using Quarantine.Models.Cribbage
+@using Quarantine.Services
+@using Quarantine.Helpers
+@inject CribbageService CribbageService
+@inject NavigationManager NavigationManager
+
+<div class="crib">
+    <div class="crib-wrap">
+        <header class="crib-header">
+            <span class="crib-eyebrow">Card Room</span>
+            <h1 class="crib-title">Cribbage</h1>
+            <p class="crib-sub">Play with real cards. After each count, enter the points and the pegs move for you.</p>
+        </header>
+
+        <form class="crib-new" @onsubmit="Create">
+            <p class="crib-section-label">New game</p>
+            <input class="crib-input crib-input-wide" placeholder="Game name (optional)" @bind="_name" maxlength="40" />
+            <div class="crib-new-players">
+                @for (var i = 0; i < CribbageGame.MaxPlayers; i++)
+                {
+                    var index = i;
+                    <div class="crib-new-player" style="--peg: @CribbageStyle.PegColor(index)">
+                        <span class="crib-peg-dot"></span>
+                        <input class="crib-input crib-input-wide" maxlength="20" @bind="_players[index]"
+                               placeholder="@(index < 2 ? $"Player {index + 1}" : "Player 3 (optional)")" />
+                    </div>
+                }
+            </div>
+            <label class="crib-new-dealer">
+                First crib
+                <select class="crib-input" @bind="_firstDealer">
+                    @for (var i = 0; i < CribbageGame.MaxPlayers; i++)
+                    {
+                        var index = i;
+                        if (index < 2 || !string.IsNullOrWhiteSpace(_players[2]))
+                        {
+                            <option value="@index">@(string.IsNullOrWhiteSpace(_players[index]) ? $"Player {index + 1}" : _players[index].Trim())</option>
+                        }
+                    }
+                </select>
+            </label>
+            @if (_error != null)
+            {
+                <p class="crib-error">@_error</p>
+            }
+            <button type="submit" class="crib-btn crib-btn-peg" disabled="@_isCreating">Start Game</button>
+        </form>
+
+        <p class="crib-section-label">Games</p>
+        @if (_games == null)
+        {
+            <div class="crib-skeleton"></div>
+            <div class="crib-skeleton"></div>
+        }
+        else if (_games.Count == 0)
+        {
+            <p class="crib-empty">No games yet. Start one above.</p>
+        }
+        else
+        {
+            <div class="crib-games">
+                @foreach (var game in _games)
+                {
+                    var winner = game.WinnerIndex;
+                    <a class="crib-game" href="cribbage/@game.Id">
+                        <span class="crib-game-name">@game.Name</span>
+                        <span class="crib-game-scores">
+                            @for (var i = 0; i < game.Players.Count; i++)
+                            {
+                                var index = i;
+                                <span class="crib-game-score @(winner == index ? "is-winner" : "")" style="--peg: @CribbageStyle.PegColor(index)">
+                                    <span class="crib-peg-dot"></span>@game.Players[index].Name <b>@game.Total(index)</b>
+                                </span>
+                            }
+                        </span>
+                        <span class="crib-game-status">
+                            @(winner.HasValue ? $"🏆 {game.Players[winner.Value].Name} won" : $"Deal {game.DealNumber}") · @game.LastModified.ToString("MMM d")
+                        </span>
+                    </a>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private List<CribbageGame> _games;
+    private string _name;
+    private string[] _players = new string[CribbageGame.MaxPlayers];
+    private int _firstDealer;
+    private string _error;
+    private bool _isCreating;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _games = await CribbageService.GetGames();
+    }
+
+    private async Task Create()
+    {
+        _error = null;
+        var names = _players.Where(p => !string.IsNullOrWhiteSpace(p)).Select(p => p.Trim()).ToList();
+        if (string.IsNullOrWhiteSpace(_players[0]) || string.IsNullOrWhiteSpace(_players[1]))
+        {
+            _error = "Enter at least two players.";
+            return;
+        }
+        if (names.Distinct(StringComparer.OrdinalIgnoreCase).Count() != names.Count)
+        {
+            _error = "Give each player a different name.";
+            return;
+        }
+
+        _isCreating = true;
+        var name = string.IsNullOrWhiteSpace(_name) ? string.Join(" vs ", names) : _name.Trim();
+        var game = await CribbageService.CreateGame(name, names, Math.Min(_firstDealer, names.Count - 1));
+        NavigationManager.NavigateTo($"/cribbage/{game.Id}");
+    }
+}

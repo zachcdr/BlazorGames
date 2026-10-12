@@ -198,6 +198,7 @@
                                     var lineClass = !isFinal ? "" : (pick.IsWinner.Value ? "is-win" : "is-loss");
                                     var awayPicked = !isHidden && pick.PickedId == pick.AwayTeam.Id;
                                     var homePicked = !isHidden && pick.PickedId == pick.HomeTeam.Id;
+                                    var isTie = (pick.AwayTeam.Score == pick.HomeTeam.Score) && (pick.AwayTeam.Score + pick.HomeTeam.Score) > 0;
 
                                     <div class="nfl-line @lineClass">
                                         <div class="nfl-line-team @(awayPicked ? "is-picked" : "")">
@@ -217,6 +218,11 @@
                                             else if (isHidden)
                                             {
                                                 <span class="nfl-result nfl-result-tbd" title="Shown once this game locks">🔒 PICKED</span>
+                                            }
+                                            else if (isTie)
+                                            {
+                                                <span class="nfl-line-score">@pick.AwayTeam.Score – @pick.HomeTeam.Score</span>
+                                                <span class="nfl-result nfl-result-tbd">TIE</span>
                                             }
                                             else
                                             {

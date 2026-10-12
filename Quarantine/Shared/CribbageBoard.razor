@@ -1,0 +1,110 @@
+@using Quarantine.Helpers
+@using Quarantine.Models.Cribbage
+@using static Quarantine.Helpers.CribbageStyle
+
+@*
+    The board: four rows of 30 holes that snake back and forth (1-30, 31-60, 61-90, 91-120), one lane per player.
+    Start is top left and 121 is bottom left. The turn into 61 is the double-skunk line, the turn into 91 the skunk line.
+    Pegs are positioned with a CSS transform so they glide to their new hole.
+*@
+
+<svg class="crib-board" viewBox="0 0 @Num(Width) @Num(Height)" role="img" aria-label="@AriaLabel">
+    <defs>
+        <linearGradient id="crib-wood" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#8a5a32" />
+            <stop offset=".55" stop-color="#6e4325" />
+            <stop offset="1" stop-color="#57331b" />
+        </linearGradient>
+    </defs>
+
+    <rect class="crib-board-wood" x="1" y="1" width="@Num(Width - 2)" height="@Num(Height - 2)" rx="14" fill="url(#crib-wood)" />
+
+    @* Turns between rows. The 60 → 61 and 90 → 91 turns are the skunk lines. *@
+    @for (var row = 0; row < 3; row++)
+    {
+        var isRight = row % 2 == 0;
+        var isSkunk = row == 1 || row == 2;
+        var x = isRight ? RowEndX + TurnInset : PadX - TurnInset;
+        <path class="crib-turn @(isSkunk ? "is-skunk" : "")"
+              d="M @Num(x) @Num(LaneMidY(row)) A @Num(RowHeight / 2) @Num(RowHeight / 2) 0 0 @(isRight ? 1 : 0) @Num(x) @Num(LaneMidY(row + 1))" />
+    }
+
+    @* Track bands behind each row of holes. *@
+    @for (var row = 0; row < 4; row++)
+    {
+        <rect class="crib-band" x="@Num(PadX - 7)" y="@Num(RowTop(row) - 6)" width="@Num(RowEndX - PadX + 14)" height="@Num(LaneSpan + 12)" rx="7" />
+    }
+
+    @for (var lane = 0; lane < Lanes; lane++)
+    {
+        for (var hole = 1; hole < CribbageGame.WinningScore; hole++)
+        {
+            var (hx, hy) = Position(hole, lane);
+            <circle class="crib-hole" cx="@Num(hx)" cy="@Num(hy)" r="2.3" />
+        }
+        var (sx, sy) = Position(0, lane);
+        var (fx, fy) = Position(CribbageGame.WinningScore, lane);
+        <circle class="crib-hole is-end" cx="@Num(sx)" cy="@Num(sy)" r="3" />
+        <circle class="crib-hole is-end" cx="@Num(fx)" cy="@Num(fy)" r="3" />
+    }
+
+    <text class="crib-board-label" x="@Num(PadX - 22)" y="@Num(RowTop(0) - 9)" text-anchor="middle">START</text>
+    <text class="crib-board-label" x="@Num(PadX - 22)" y="@Num(RowTop(3) + LaneSpan + 15)" text-anchor="middle">121</text>
+    <text class="crib-board-label is-skunk" x="@Num(PadX - TurnInset - RowHeight / 2 + 10)" y="@Num((LaneMidY(1) + LaneMidY(2)) / 2 + 3)" text-anchor="middle">61</text>
+    <text class="crib-board-label is-skunk" x="@Num(RowEndX + TurnInset + RowHeight / 2 - 10)" y="@Num((LaneMidY(2) + LaneMidY(3)) / 2 + 3)" text-anchor="middle">91</text>
+
+    @for (var lane = 0; lane < Lanes; lane++)
+    {
+        var total = Game.Total(lane);
+        var back = Game.BackPeg(lane);
+        var (bx, by) = Position(back, lane);
+        var (px, py) = Position(total, lane);
+        <circle @key="@($"back-{lane}")" class="crib-peg is-back @(back == total ? "is-hidden" : "")" r="3.6" cx="0" cy="0"
+                fill="@PegColor(lane)" style="transform: translate(@(Num(bx))px, @(Num(by))px)" />
+        <circle @key="@($"front-{lane}")" class="crib-peg" r="4.6" cx="0" cy="0"
+                fill="@PegColor(lane)" style="transform: translate(@(Num(px))px, @(Num(py))px)" />
+    }
+</svg>
+
+@code {
+    private const double HoleGap = 13;
+    private const double GroupGap = 7;
+    private const double PadX = 46;
+    private const double PadY = 22;
+    private const double LaneGap = 11;
+    private const double RowSpacing = 18;
+    private const double TurnInset = 6;
+
+    [Parameter]
+    public CribbageGame Game { get; set; }
+
+    private int Lanes => Game.Players.Count;
+    private double LaneSpan => (Lanes - 1) * LaneGap;
+    private double RowHeight => LaneSpan + RowSpacing;
+    private double RowEndX => PadX + 29 * HoleGap + 5 * GroupGap;
+    private double Width => RowEndX + PadX;
+    private double Height => PadY * 2 + 3 * RowHeight + LaneSpan;
+
+    private string AriaLabel => string.Join(", ", Game.Players.Select((p, i) => $"{p.Name} {Game.Total(i)}"));
+
+    private double RowTop(int row) => PadY + row * RowHeight;
+    private double LaneMidY(int row) => RowTop(row) + LaneSpan / 2;
+
+    /// <summary>Where a peg sits for a score: 0 is the start hole, 121 the finish hole.</summary>
+    private (double x, double y) Position(int score, int lane)
+    {
+        if (score <= 0)
+        {
+            return (PadX - 22, RowTop(0) + lane * LaneGap);
+        }
+        if (score >= CribbageGame.WinningScore)
+        {
+            return (PadX - 22, RowTop(3) + lane * LaneGap);
+        }
+
+        var row = (score - 1) / 30;
+        var step = (score - 1) % 30;
+        var column = row % 2 == 0 ? step : 29 - step;
+        return (PadX + column * HoleGap + column / 5 * GroupGap, RowTop(row) + lane * LaneGap);
+    }
+}
