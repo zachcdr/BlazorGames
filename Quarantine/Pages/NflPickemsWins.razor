@@ -20,7 +20,15 @@
             </div>
             @if (WeekId != "Totals" && Session.IsCommissioner)
             {
-                <a class="nfl-btn nfl-btn-gold" href="nfl-pickems/admin/@WeekId">⚙ Admin</a>
+                <div class="nfl-header-actions">
+                    <button type="button" class="nfl-btn @(Session.HasOverride ? "nfl-btn-gold" : "nfl-btn-ghost")"
+                            aria-pressed="@(Session.HasOverride ? "true" : "false")"
+                            title="Turn off to see the week the way everyone else does"
+                            @onclick="@(() => Session.SetOverrideMode(!Session.IsOverrideMode))">
+                        ⚡ Override
+                    </button>
+                    <a class="nfl-btn nfl-btn-gold" href="nfl-pickems/admin/@WeekId">⚙ Admin</a>
+                </div>
             }
         </header>
 
@@ -61,7 +69,7 @@
                 </div>
                 @if (_isMineOpen)
                 {
-                    @if (Session.IsCommissioner)
+                    @if (Session.HasOverride)
                     {
                         <span class="nfl-chip nfl-mine-chip">⚡ Commissioner · nothing is locked</span>
                     }
@@ -74,7 +82,7 @@
                     {
                         <NflGameCard Game="game"
                                      IsLocked="!CanEdit(game, weekTimes)"
-                                     IsOverride="Session.IsCommissioner"
+                                     IsOverride="Session.HasOverride"
                                      IsWeekOpen="isWeekOpen"
                                      LockTimeUtc="NflPickLock.LockTimeUtc(game.GameTimeUtc, weekTimes)"
                                      OnPick="@(teamId => Pick(me, game, teamId))" />
@@ -105,7 +113,37 @@
             <p class="nfl-section-label nfl-standings-label">Standings</p>
         }
 
-        @if (_players == null || (WeekId != "Totals" && !Session.IsLoaded))
+        @if (WeekId == "Totals")
+        {
+            @if (_totals == null)
+            {
+                for (var i = 0; i < 6; i++)
+                {
+                    <div class="nfl-skeleton"></div>
+                }
+            }
+            else
+            {
+                <div class="nfl-board">
+                    @{ var totalRank = 0; }
+                    @foreach (var total in _totals)
+                    {
+                        totalRank++;
+                        <div class="nfl-player @(Session.Player?.Id == total.PlayerId ? "is-me" : "")">
+                            <div class="nfl-player-row">
+                                <span class="nfl-rank @(totalRank <= 3 ? "nfl-rank-" + totalRank : "")">@totalRank</span>
+                                <span class="nfl-player-name">@total.Name</span>
+                                <span class="nfl-wins">
+                                    <span class="nfl-wins-num">@total.Wins</span>
+                                    <span class="nfl-wins-label">Wins</span>
+                                </span>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        }
+        else if (_players == null || !Session.IsLoaded)
         {
             for (var i = 0; i < 6; i++)
             {
@@ -128,28 +166,22 @@
                             <span class="nfl-rank @(rank <= 3 ? "nfl-rank-" + rank : "")">@rank</span>
                             <span class="nfl-player-name">
                                 @player.Name
-                                @if (WeekId != "Totals")
-                                {
-                                    <span class="nfl-player-meta">@pickCount of @gameCount picked</span>
-                                }
+                                <span class="nfl-player-meta">@pickCount of @gameCount picked</span>
                             </span>
                             <span class="nfl-wins">
                                 <span class="nfl-wins-num">@player.Wins</span>
                                 <span class="nfl-wins-label">Wins</span>
                             </span>
-                            @if (WeekId != "Totals")
-                            {
-                                <div class="nfl-player-actions">
-                                    <button class="nfl-btn nfl-btn-ghost" @onclick="@(e => TogglePicks(player.Id))">
-                                        @(player.ArePicksVisible ? "Hide" : "View")
-                                        <span class="nfl-count">@pickCount</span>
-                                    </button>
-                                    @if (!isMe && Session.IsCommissioner)
-                                    {
-                                        <button class="nfl-btn nfl-btn-gold" @onclick="@(() => OverridePicks(player.Id))">⚡ Override</button>
-                                    }
-                                </div>
-                            }
+                            <div class="nfl-player-actions">
+                                <button class="nfl-btn nfl-btn-ghost" @onclick="@(e => TogglePicks(player.Id))">
+                                    @(player.ArePicksVisible ? "Hide" : "View")
+                                    <span class="nfl-count">@pickCount</span>
+                                </button>
+                                @if (!isMe && Session.HasOverride)
+                                {
+                                    <button class="nfl-btn nfl-btn-gold" @onclick="@(() => OverridePicks(player.Id))">⚡ Override</button>
+                                }
+                            </div>
                         </div>
 
                         @if (player.ArePicksVisible)
@@ -224,6 +256,10 @@
 @code {
     private string _title;
     private List<PlayerPickView> _players;
+    private List<PlayerTotal> _totals;
+
+    // Set when Chap changes a pick on a game that's already final, so the season totals snapshot gets rebuilt.
+    private bool _totalsStale;
 
     // Saves run one at a time, each sending the player's latest picks, so a quick tap can't be overwritten by an older save.
     private readonly SemaphoreSlim _saveLock = new SemaphoreSlim(1, 1);
@@ -244,17 +280,19 @@
 
     protected override async Task OnParametersSetAsync()
     {
-        int? week = null;
-        if (WeekId != "Totals")
+        _players = null;
+        _totals = null;
+        if (WeekId == "Totals")
         {
-            week = Convert.ToInt32(WeekId);
-            _title = $"Week {week}";
+            _title = "Totals";
+            _totals = await WinService.GetSeasonTotals();
         }
         else
         {
-            _title = "Totals";
+            var week = Convert.ToInt32(WeekId);
+            _title = $"Week {week}";
+            _players = await WinService.GetPlayerPickViews(week);
         }
-        _players = await WinService.GetPlayerPickViews(week);
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -284,13 +322,13 @@
     private bool IsHidden(PlayerPickView player, GamePickView game, List<DateTime> weekTimes)
     {
         return player.Id != Session.Player?.Id
-            && !Session.IsCommissioner
+            && !Session.HasOverride
             && !NflPickLock.IsLocked(game.GameTimeUtc, weekTimes);
     }
 
     private bool CanEdit(GamePickView game, List<DateTime> weekTimes)
     {
-        return Session.IsCommissioner || !NflPickLock.IsLocked(game.GameTimeUtc, weekTimes);
+        return Session.HasOverride || !NflPickLock.IsLocked(game.GameTimeUtc, weekTimes);
     }
 
     private async Task Pick(PlayerPickView me, GamePickView game, int teamId)
@@ -306,6 +344,7 @@
             // Chap picking a game that's already final: score it straight away.
             var winnerId = game.AwayTeam.Score > game.HomeTeam.Score ? game.AwayTeam.Id : game.HomeTeam.Id;
             game.IsWinner = winnerId == teamId;
+            _totalsStale = true;
         }
         await SaveMyPicks(me);
     }
@@ -319,6 +358,10 @@
         }
 
         lastGame.TieBreaker = tieBreaker;
+        if (lastGame.AwayTeam.Score != lastGame.HomeTeam.Score)
+        {
+            _totalsStale = true;
+        }
         await SaveMyPicks(me);
     }
 
@@ -336,6 +379,11 @@
                 .Select(g => new Pick { PlayerId = me.Id, GameId = g.GameId, TeamId = g.PickedId, TieBreaker = g.TieBreaker })
                 .ToList();
             await PickService.SavePicks(picks);
+            if (_totalsStale)
+            {
+                await WinService.RefreshSeasonTotals();
+                _totalsStale = false;
+            }
             _hasSaved = true;
         }
         catch (Exception)

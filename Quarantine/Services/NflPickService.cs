@@ -9,14 +9,12 @@ using Quarantine.Models.NflPickems;
 namespace Quarantine.Services
 {
     /// <summary>
-    /// Picks are saved as one file per player per week: "{Season}/picks/{week}/{playerId}.json".
+    /// Picks are saved as one file per player per week: "{year}/picks/{week}/{playerId}.json".
     /// (Picks from before that layout were migrated out of the old "Week4Picks" file, which is kept only as a backup.)
     /// </summary>
     public class NflPickService : INflPickService
     {
-        private const int Season = 2026;
-
-        private static readonly string PicksPrefix = $"{Season}/picks/";
+        private static readonly string PicksPrefix = $"{NflSeason.Year}/picks/";
 
         private readonly IHandleGameState _handleGameState;
         private readonly INflScheduleService _nflScheduleService;
@@ -29,7 +27,7 @@ namespace Quarantine.Services
 
         public async Task<List<Pick>> GetPicks(int? week = null, int? playerId = null)
         {
-            // File names are "{Season}/picks/{week}/{playerId}", so one listing narrows to just the files needed.
+            // File names are "{year}/picks/{week}/{playerId}", so one listing narrows to just the files needed.
             // Any failed read throws instead of returning fewer picks, so a save can never be based on a partial view.
             var prefix = week.HasValue ? $"{PicksPrefix}{week.Value}/" : PicksPrefix;
             var files = (await _handleGameState.ListGameFiles(GameType.NflPickems, prefix))

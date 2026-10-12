@@ -15,7 +15,8 @@ namespace Quarantine.Services
     /// Which NFL Pickems player is using this browser. Signing in once stores a server-signed token in
     /// localStorage, so the player stays signed in on that device. The token carries a hash of the player's
     /// password, so changing the password signs every device out.
-    /// Signing in as Chap (the commissioner) bypasses every pick lock and lets him edit anyone's picks.
+    /// Chap (the commissioner) plays like everyone else until he turns on override mode, which bypasses every pick
+    /// lock, shows everyone's picks, and lets him edit anyone's. Override mode is per tab and starts off.
     /// </summary>
     public class NflPlayerSession
     {
@@ -35,6 +36,17 @@ namespace Quarantine.Services
         public bool IsLoaded { get; private set; }
         public bool IsSignedIn => Player != null;
         public bool IsCommissioner => Player?.Id == NflPickLock.CommissionerPlayerId;
+
+        public bool IsOverrideMode { get; private set; }
+
+        /// <summary>Chap with override mode on: locks are off and every pick is visible.</summary>
+        public bool HasOverride => IsCommissioner && IsOverrideMode;
+
+        public void SetOverrideMode(bool isOn)
+        {
+            IsOverrideMode = isOn && IsCommissioner;
+            Changed?.Invoke();
+        }
 
         /// <summary>Raised after loading, signing in, or signing out.</summary>
         public event Action Changed;
@@ -77,6 +89,7 @@ namespace Quarantine.Services
 
             await _jsRuntime.InvokeVoidAsync("nflSession.set", _protector.Protect($"{player.Id}|{PasswordStamp(player.Password)}"));
             Player = player;
+            IsOverrideMode = false;
             Changed?.Invoke();
             return null;
         }
@@ -85,6 +98,7 @@ namespace Quarantine.Services
         {
             await _jsRuntime.InvokeVoidAsync("nflSession.clear");
             Player = null;
+            IsOverrideMode = false;
             Changed?.Invoke();
         }
 

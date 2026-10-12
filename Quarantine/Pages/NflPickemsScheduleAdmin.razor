@@ -5,6 +5,7 @@
 @inject NavigationManager NavigationManager
 @inject INflTeamService TeamService
 @inject INflScheduleService ScheduleService
+@inject INflWinService WinService
 @inject Quarantine.Services.NflPlayerSession Session
 
 <div class="nfl">
@@ -59,7 +60,9 @@
             <div class="nfl-savebar">
                 <div class="nfl-savebar-inner">
                     <span class="nfl-savebar-status">Week <b>@WeekId</b></span>
-                    <button @onclick="Save" class="nfl-btn nfl-btn-primary nfl-btn-lg">Save Scores</button>
+                    <button disabled="@_isSaving" @onclick="Save" class="nfl-btn nfl-btn-primary nfl-btn-lg">
+                        @(_isSaving ? "Saving..." : "Save Scores")
+                    </button>
                 </div>
             </div>
         }
@@ -70,6 +73,7 @@
     private List<Game> _schedule;
     private bool _isAuthorized;
     private List<Team> _teams;
+    private bool _isSaving = false;
 
     [Parameter]
     public string WeekId { get; set; }
@@ -102,12 +106,24 @@
 
     private async Task Save()
     {
-        if (!_isAuthorized)
+        if (!_isAuthorized || _isSaving)
         {
             return;
         }
 
-        await ScheduleService.SaveSchedule(_schedule);
-        NavigationManager.NavigateTo("/nfl-pickems/weeks/" + WeekId);
+        try
+        {
+            _isSaving = true;
+
+            await Task.Yield();
+            await ScheduleService.SaveSchedule(_schedule);
+            // New scores change who won, so rebuild the season totals snapshot.
+            await WinService.RefreshSeasonTotals();
+            NavigationManager.NavigateTo("/nfl-pickems/weeks/" + WeekId);
+        }
+        finally
+        {
+            _isSaving = false;
+        }
     }
 }

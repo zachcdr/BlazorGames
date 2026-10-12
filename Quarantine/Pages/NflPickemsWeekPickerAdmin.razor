@@ -148,8 +148,8 @@
 
     private bool _isAuthorized;
 
-    // Only Chap reaches this page (see OnAfterRenderAsync), and he isn't held to the pick locks.
-    private bool IsOverride => Session.IsCommissioner;
+    // Only Chap with override mode on reaches this page (see OnAfterRenderAsync), and he isn't held to the pick locks.
+    private bool IsOverride => Session.HasOverride;
 
     [Parameter]
     public int WeekId { get; set; }
@@ -172,7 +172,7 @@
         }
 
         await Session.LoadAsync();
-        if (Session.IsCommissioner)
+        if (Session.HasOverride)
         {
             _isAuthorized = true;
             StateHasChanged();
@@ -252,6 +252,8 @@
         // Locked games are never written, so a pick can't be added or changed after its lock time.
         var editableGameIds = EditableGameIds();
         await PickService.SavePicks(_picks.Where(p => editableGameIds.Contains(p.GameId)).ToList());
+        // Overrides can change picks on games that are already final, so rebuild the season totals snapshot.
+        await WinService.RefreshSeasonTotals();
         NavigationManager.NavigateTo($"/nfl-pickems/weeks/{WeekId}");
     }
 
