@@ -16,9 +16,9 @@ else if (Session.IsSignedIn)
     <div class="nfl-me">
         <span class="nfl-me-label">Playing as</span>
         <span class="nfl-me-name">@Session.Player.Name</span>
-        @if (Session.IsCommissioner)
+        @if (Session.HasOverride)
         {
-            <span class="nfl-chip">⚡ Commissioner</span>
+            <span class="nfl-chip">⚡ Override</span>
         }
         <button type="button" class="nfl-me-switch" @onclick="SignOut">Switch</button>
     </div>

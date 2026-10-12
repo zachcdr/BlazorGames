@@ -1223,3 +1223,11 @@
     font-weight: 600;
     white-space: nowrap;
 }
+
+
+.nfl-header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: .5rem;
+}
