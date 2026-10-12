@@ -1,0 +1,266 @@
+@page "/cribbage/{GameId:guid}"
+@using Quarantine.Models.Cribbage
+@using Quarantine.Services
+@using Quarantine.Helpers
+@using System.Threading
+@implements IDisposable
+@inject CribbageService CribbageService
+
+<div class="crib">
+    <div class="crib-wrap">
+        <a class="crib-back" href="cribbage">‹ All games</a>
+
+        @if (_notFound)
+        {
+            <p class="crib-empty">That game doesn't exist anymore.</p>
+        }
+        else if (_game == null)
+        {
+            <div class="crib-skeleton crib-skeleton-board"></div>
+            <div class="crib-skeleton"></div>
+            <div class="crib-skeleton"></div>
+        }
+        else
+        {
+            var winner = _game.WinnerIndex;
+
+            <header class="crib-header">
+                <span class="crib-eyebrow">Cribbage · Deal @_game.DealNumber</span>
+                <h1 class="crib-title">@_game.Name</h1>
+            </header>
+
+            @if (winner.HasValue)
+            {
+                <div class="crib-winner" style="--peg: @CribbageStyle.PegColor(winner.Value)">
+                    <span class="crib-winner-title">🏆 @_game.Players[winner.Value].Name wins!</span>
+                    @for (var i = 0; i < _game.Players.Count; i++)
+                    {
+                        var skunk = _game.SkunkFor(i);
+                        if (skunk != null)
+                        {
+                            <span class="crib-winner-skunk">🦨 @skunk on @_game.Players[i].Name (@_game.Total(i))</span>
+                        }
+                    }
+                </div>
+            }
+
+            <CribbageBoard Game="_game" />
+
+            <div class="crib-players">
+                @for (var i = 0; i < _game.Players.Count; i++)
+                {
+                    var index = i;
+                    var last = _game.LastScore(index);
+                    <div class="crib-player @(winner == index ? "is-winner" : "")" style="--peg: @CribbageStyle.PegColor(index)">
+                        <div class="crib-player-head">
+                            <span class="crib-peg-dot"></span>
+                            <span class="crib-player-name">@_game.Players[index].Name</span>
+                            @if (_game.DealerIndex == index && !winner.HasValue)
+                            {
+                                <span class="crib-crib-badge" title="Dealer: it's their crib">Crib</span>
+                            }
+                            <span class="crib-player-total">@_game.Total(index)</span>
+                        </div>
+                        <div class="crib-player-meta">
+                            @if (last != null)
+                            {
+                                <span>Last +@last.Points</span>
+                            }
+                            <span>@(CribbageGame.WinningScore - _game.Total(index)) to go</span>
+                        </div>
+                        @if (!winner.HasValue)
+                        {
+                            <form class="crib-entry" @onsubmit="@(() => AddScore(index))">
+                                <input class="crib-input" type="number" inputmode="numeric" min="1" max="@CribbageService.MaxPointsPerEntry"
+                                       placeholder="Points" aria-label="Points for @_game.Players[index].Name" @bind="_inputs[index]" />
+                                <button type="submit" class="crib-btn crib-btn-peg" disabled="@_isBusy">Peg it</button>
+                            </form>
+                        }
+                    </div>
+                }
+            </div>
+
+            @if (_error != null)
+            {
+                <p class="crib-error">@_error</p>
+            }
+
+            <div class="crib-actions">
+                @if (!winner.HasValue)
+                {
+                    var nextDealer = (_game.DealerIndex + 1) % _game.Players.Count;
+                    <button type="button" class="crib-btn" disabled="@_isBusy" @onclick="NextDeal">
+                        Next deal · @_game.Players[nextDealer].Name's crib
+                    </button>
+                }
+                @if (_game.Entries.Any())
+                {
+                    <button type="button" class="crib-btn crib-btn-ghost" disabled="@_isBusy" @onclick="Undo">↶ Undo @UndoLabel()</button>
+                }
+            </div>
+
+            @if (_game.Entries.Any())
+            {
+                <p class="crib-section-label">History</p>
+                <ol class="crib-history">
+                    @foreach (var line in History())
+                    {
+                        <li class="@(line.IsDeal ? "is-deal" : "")" style="@(line.IsDeal ? "" : $"--peg: {CribbageStyle.PegColor(line.PlayerIndex)}")">@line.Text</li>
+                    }
+                </ol>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    private static readonly TimeSpan PollInterval = TimeSpan.FromSeconds(2);
+
+    private CribbageGame _game;
+    private bool _notFound;
+    private bool _isBusy;
+    private string _error;
+    private string[] _inputs = new string[CribbageGame.MaxPlayers];
+    private readonly CancellationTokenSource _polling = new CancellationTokenSource();
+
+    [Parameter]
+    public Guid GameId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _game = await CribbageService.GetGame(GameId);
+        }
+        catch (Exception)
+        {
+            _notFound = true;
+        }
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _ = PollForChanges(_polling.Token);
+        }
+    }
+
+    /// <summary>Picks up scores entered on other phones. Stops when the page is closed.</summary>
+    private async Task PollForChanges(CancellationToken token)
+    {
+        while (!token.IsCancellationRequested)
+        {
+            try
+            {
+                await Task.Delay(PollInterval, token);
+                if (_isBusy || _game == null)
+                {
+                    continue;
+                }
+                var latest = await CribbageService.GetGame(GameId);
+                if (!_isBusy && latest.LastModified > _game.LastModified)
+                {
+                    _game = latest;
+                    await InvokeAsync(StateHasChanged);
+                }
+            }
+            catch (TaskCanceledException)
+            {
+                return;
+            }
+            catch (Exception)
+            {
+                // A missed refresh is fine; try again next time.
+            }
+        }
+    }
+
+    private async Task AddScore(int playerIndex)
+    {
+        _error = null;
+        if (!int.TryParse(_inputs[playerIndex], out var points) || points < 1 || points > CribbageService.MaxPointsPerEntry)
+        {
+            _error = $"Enter between 1 and {CribbageService.MaxPointsPerEntry} points.";
+            return;
+        }
+
+        await Change(() => CribbageService.AddScore(GameId, playerIndex, points));
+        _inputs[playerIndex] = null;
+    }
+
+    private Task NextDeal()
+    {
+        return Change(() => CribbageService.NextDeal(GameId));
+    }
+
+    private Task Undo()
+    {
+        return Change(() => CribbageService.Undo(GameId));
+    }
+
+    private async Task Change(Func<Task<CribbageGame>> change)
+    {
+        _isBusy = true;
+        _error = null;
+        try
+        {
+            _game = await change();
+        }
+        catch (Exception)
+        {
+            _error = "Couldn't save that. Check your connection and try again.";
+        }
+        finally
+        {
+            _isBusy = false;
+        }
+    }
+
+    private string UndoLabel()
+    {
+        var last = _game.Entries.Last();
+        return last.Kind == CribbageEntryKind.NextDeal ? "new deal" : $"{_game.Players[last.PlayerIndex].Name} +{last.Points}";
+    }
+
+    private class HistoryLine
+    {
+        public string Text { get; set; }
+        public bool IsDeal { get; set; }
+        public int PlayerIndex { get; set; }
+    }
+
+    /// <summary>Newest first, with each score's running total.</summary>
+    private List<HistoryLine> History()
+    {
+        var running = new int[_game.Players.Count];
+        var deal = 1;
+        var lines = new List<HistoryLine>();
+        foreach (var entry in _game.Entries)
+        {
+            if (entry.Kind == CribbageEntryKind.NextDeal)
+            {
+                deal++;
+                var dealer = (_game.FirstDealerIndex + deal - 1) % _game.Players.Count;
+                lines.Add(new HistoryLine { IsDeal = true, Text = $"Deal {deal} · {_game.Players[dealer].Name}'s crib" });
+            }
+            else
+            {
+                running[entry.PlayerIndex] = Math.Min(CribbageGame.WinningScore, running[entry.PlayerIndex] + entry.Points);
+                lines.Add(new HistoryLine
+                {
+                    PlayerIndex = entry.PlayerIndex,
+                    Text = $"{_game.Players[entry.PlayerIndex].Name} +{entry.Points} → {running[entry.PlayerIndex]}"
+                });
+            }
+        }
+        lines.Reverse();
+        return lines;
+    }
+
+    public void Dispose()
+    {
+        _polling.Cancel();
+        _polling.Dispose();
+    }
+}

@@ -1,0 +1,505 @@
+/* ==========================================================================
+   Cribbage — "Card Room" theme. Walnut board, brass accents, cream score
+   cards on dark felt. Everything is scoped under .crib.
+   ========================================================================== */
+
+.crib {
+    --felt: #10201b;
+    --felt-2: #162b24;
+    --card: #fbf6ea;
+    --card-2: #f1e8d3;
+    --ink: #2a1d12;
+    --ink-soft: #7a6650;
+    --line: rgba(42, 29, 18, .14);
+    --brass: #d9a441;
+    --brass-dim: rgba(217, 164, 65, .18);
+    --cream: #f4ead5;
+    --muted: #a9b8b0;
+    --red: #e0453a;
+    --radius: 16px;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+    position: relative;
+    min-height: 100vh;
+    margin: -1.1rem -1.5rem 0;
+    padding: 1.5rem 1rem 5rem;
+    color: var(--cream);
+    font-family: var(--body);
+    background:
+        radial-gradient(900px 420px at 50% -120px, rgba(217, 164, 65, .14), transparent 70%),
+        radial-gradient(120% 80% at 50% 120%, rgba(0, 0, 0, .5), transparent 60%),
+        var(--felt);
+}
+
+@media (min-width: 768px) {
+    .crib {
+        margin-left: -2rem;
+        padding: 2rem 2.5rem 5rem;
+    }
+}
+
+.crib-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.crib *, .crib *::before, .crib *::after {
+    box-sizing: border-box;
+}
+
+/* ---------- Header ---------- */
+
+.crib-back {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--muted);
+    font-size: .85rem;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+
+    .crib-back:hover {
+        color: #fff;
+    }
+
+.crib-header {
+    margin-bottom: 1.25rem;
+}
+
+.crib-eyebrow {
+    color: var(--brass);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.crib-title {
+    margin: .2rem 0 0;
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 7vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: #fff;
+}
+
+.crib-sub {
+    margin: .4rem 0 0;
+    color: var(--muted);
+    font-size: .95rem;
+}
+
+.crib-section-label {
+    margin: 1.5rem 0 .65rem;
+    color: var(--muted);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+/* ---------- Board ---------- */
+
+.crib-board {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .45));
+}
+
+.crib-board-wood {
+    stroke: rgba(0, 0, 0, .35);
+    stroke-width: 1;
+}
+
+.crib-band {
+    fill: rgba(0, 0, 0, .12);
+}
+
+.crib-turn {
+    fill: none;
+    stroke: rgba(0, 0, 0, .22);
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+    .crib-turn.is-skunk {
+        stroke: #d9a441;
+        stroke-dasharray: 3 3;
+    }
+
+.crib-hole {
+    fill: #2b1709;
+}
+
+    .crib-hole.is-end {
+        fill: #1d0f05;
+        stroke: rgba(217, 164, 65, .55);
+        stroke-width: .8;
+    }
+
+.crib-board-label {
+    fill: rgba(244, 234, 213, .7);
+    font-family: var(--body);
+    font-size: 7.5px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+    .crib-board-label.is-skunk {
+        fill: #f6d27a;
+    }
+
+.crib-peg {
+    stroke: rgba(255, 255, 255, .85);
+    stroke-width: 1;
+    transition: transform .7s cubic-bezier(.34, 1.3, .64, 1), opacity .3s;
+}
+
+    .crib-peg.is-back {
+        opacity: .5;
+        stroke-width: .6;
+    }
+
+    .crib-peg.is-hidden {
+        opacity: 0;
+    }
+
+/* ---------- Winner ---------- */
+
+.crib-winner {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    margin-bottom: 1rem;
+    padding: .9rem 1.1rem;
+    border: 1px solid var(--brass);
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, rgba(217, 164, 65, .22), var(--felt-2) 70%);
+}
+
+.crib-winner-title {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.crib-winner-skunk {
+    color: #f6d27a;
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+/* ---------- Player score cards ---------- */
+
+.crib-players {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: .75rem;
+    margin-top: 1.25rem;
+}
+
+.crib-player {
+    padding: .9rem 1rem 1rem;
+    border-top: 5px solid var(--peg);
+    border-radius: var(--radius);
+    background: var(--card);
+    color: var(--ink);
+    box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .6);
+}
+
+    .crib-player.is-winner {
+        box-shadow: 0 0 0 2px var(--brass), 0 10px 24px -14px rgba(0, 0, 0, .6);
+    }
+
+.crib-player-head {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.crib-peg-dot {
+    display: inline-block;
+    flex: none;
+    width: .7rem;
+    height: .7rem;
+    border-radius: 50%;
+    background: var(--peg);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, .8);
+}
+
+.crib-player-name {
+    overflow: hidden;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.crib-crib-badge {
+    padding: .1rem .45rem;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--brass);
+    font-size: .65rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.crib-player-total {
+    margin-left: auto;
+    font-family: var(--serif);
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.crib-player-meta {
+    display: flex;
+    justify-content: space-between;
+    margin: .3rem 0 .7rem;
+    color: var(--ink-soft);
+    font-size: .78rem;
+}
+
+.crib-entry {
+    display: flex;
+    gap: .5rem;
+}
+
+/* ---------- Inputs & buttons ---------- */
+
+.crib-input {
+    min-width: 0;
+    flex: 1;
+    padding: .55rem .7rem;
+    border: 2px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--ink);
+    /* 16px minimum: iOS Safari zooms into any smaller field on focus and stays zoomed afterwards. */
+    font-size: 1rem;
+}
+
+    .crib-input:focus {
+        outline: none;
+        border-color: var(--brass);
+        box-shadow: 0 0 0 3px var(--brass-dim);
+    }
+
+.crib-input-wide {
+    width: 100%;
+}
+
+.crib-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    padding: .6rem 1rem;
+    border: 1px solid rgba(244, 234, 213, .25);
+    border-radius: 12px;
+    background: var(--felt-2);
+    color: var(--cream);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .15s, border-color .15s;
+}
+
+    .crib-btn:hover:not(:disabled) {
+        border-color: var(--brass);
+    }
+
+    .crib-btn:disabled {
+        opacity: .5;
+        cursor: default;
+    }
+
+.crib-btn-peg {
+    border-color: transparent;
+    background: var(--brass);
+    color: #2a1d12;
+}
+
+    .crib-btn-peg:hover:not(:disabled) {
+        background: #e6b552;
+    }
+
+.crib-btn-ghost {
+    background: transparent;
+}
+
+.crib-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-top: 1rem;
+}
+
+.crib-error {
+    margin: .75rem 0 0;
+    color: #ff8a80;
+    font-size: .88rem;
+    font-weight: 600;
+}
+
+/* ---------- History ---------- */
+
+.crib-history {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .crib-history li {
+        padding: .45rem .75rem;
+        border-left: 3px solid var(--peg, transparent);
+        color: var(--cream);
+        font-size: .9rem;
+    }
+
+        .crib-history li + li {
+            margin-top: .2rem;
+        }
+
+        .crib-history li.is-deal {
+            border-left: 0;
+            color: var(--brass);
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+/* ---------- Lobby ---------- */
+
+.crib-new {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    padding: 1rem 1.1rem 1.1rem;
+    border-radius: var(--radius);
+    background: var(--card);
+    color: var(--ink);
+}
+
+    .crib-new .crib-section-label {
+        margin: 0;
+        color: var(--ink-soft);
+    }
+
+.crib-new-players {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.crib-new-player {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.crib-new-dealer {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: .88rem;
+    font-weight: 600;
+}
+
+.crib-new .crib-btn-peg {
+    align-self: flex-start;
+}
+
+.crib-new .crib-error {
+    margin: 0;
+    color: var(--red);
+}
+
+.crib-games {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.crib-game {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    padding: .85rem 1rem;
+    border: 1px solid rgba(244, 234, 213, .12);
+    border-radius: var(--radius);
+    background: var(--felt-2);
+    color: var(--cream);
+    text-decoration: none !important;
+    transition: border-color .15s, transform .15s;
+}
+
+    .crib-game:hover {
+        border-color: var(--brass);
+        color: var(--cream);
+        transform: translateY(-2px);
+    }
+
+.crib-game-name {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.crib-game-scores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem 1rem;
+    font-size: .9rem;
+}
+
+.crib-game-score {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+    .crib-game-score.is-winner b {
+        color: var(--brass);
+    }
+
+.crib-game-status {
+    color: var(--muted);
+    font-size: .78rem;
+}
+
+.crib-empty {
+    color: var(--muted);
+}
+
+/* ---------- Loading ---------- */
+
+.crib-skeleton {
+    height: 4.5rem;
+    margin-bottom: .65rem;
+    border-radius: var(--radius);
+    background: linear-gradient(90deg, var(--felt-2) 0%, #1f3a31 50%, var(--felt-2) 100%);
+    background-size: 200% 100%;
+    animation: crib-shimmer 1.2s linear infinite;
+}
+
+.crib-skeleton-board {
+    height: auto;
+    aspect-ratio: 5 / 2;
+}
+
+@keyframes crib-shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .crib *, .crib *::before, .crib *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
