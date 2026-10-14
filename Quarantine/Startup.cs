@@ -34,7 +34,10 @@ namespace Quarantine
                 options.JsonSerializerOptions.IgnoreNullValues = true;
             });
             services.AddRazorPages();
-            services.AddServerSideBlazor();
+            // Phones drop the connection every time the app is backgrounded. Keep a dropped session around for
+            // 10 minutes (default 3) so coming back reconnects to it instead of starting over.
+            services.AddServerSideBlazor()
+                .AddCircuitOptions(options => options.DisconnectedCircuitRetentionPeriod = System.TimeSpan.FromMinutes(10));
 
             services.AddSingleton<WeatherForecastService>();
 

@@ -1231,3 +1231,12 @@
     justify-content: flex-end;
     gap: .5rem;
 }
+
+/* While My Picks is open, its bar (count + save status + Hide) sticks to the top of the screen as you scroll the
+   game cards. Sticky stays inside its section, so it scrolls away once you're past your picks. */
+.nfl-mine.is-open .nfl-mine-head {
+    position: sticky;
+    top: calc(.5rem + env(safe-area-inset-top, 0px));
+    z-index: 5;
+    box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .75);
+}
