@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0071",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Dive in!",
+  "durationMs": 5500,
+  "difficulty": 2,
+  "theme": "reef",
+  "params": {
+    "a": 34,
+    "op": "+",
+    "b": 6,
+    "options": [
+      28,
+      41,
+      30,
+      40
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

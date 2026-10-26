@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0083",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the monkey's banana",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "monkey",
+  "params": {
+    "points": [
+      [
+        15,
+        30
+      ],
+      [
+        25,
+        60
+      ],
+      [
+        45,
+        80
+      ],
+      [
+        70,
+        85
+      ],
+      [
+        88,
+        70
+      ]
+    ],
+    "tolerance": 11,
+    "fadeMs": 2500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

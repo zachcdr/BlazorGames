@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0047",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "treasure",
+  "params": {
+    "left": {
+      "emoji": "🥇",
+      "name": "Gold cube"
+    },
+    "right": {
+      "emoji": "🟠",
+      "name": "Copper cube"
+    },
+    "answer": "left",
+    "explanation": "Gold is about 19.3 g/cm³; copper is about 9 g/cm³."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

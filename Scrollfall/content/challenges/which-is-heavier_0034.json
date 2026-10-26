@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0034",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "treetops",
+  "params": {
+    "left": {
+      "emoji": "🦧",
+      "name": "Orangutan"
+    },
+    "right": {
+      "emoji": "🦥",
+      "name": "Sloth"
+    },
+    "answer": "left",
+    "explanation": "Adult orangutans weigh ~40-90 kg; a sloth is only about 4-6 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

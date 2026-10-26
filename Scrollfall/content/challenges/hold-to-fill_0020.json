@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0020",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the coconut to the line",
+  "durationMs": 3500,
+  "difficulty": 5,
+  "theme": "desert island",
+  "params": {
+    "item": "🥥",
+    "fillPerSecond": 130,
+    "targetFrom": 75,
+    "targetTo": 95
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

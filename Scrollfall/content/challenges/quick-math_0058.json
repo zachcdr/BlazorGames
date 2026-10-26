@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0058",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Dig for treasure!",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "pirates",
+  "params": {
+    "a": 7,
+    "op": "×",
+    "b": 9,
+    "options": [
+      63,
+      72,
+      36,
+      56
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0090",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the big top tent",
+  "durationMs": 3500,
+  "difficulty": 1,
+  "theme": "big top",
+  "params": {
+    "points": [
+      [
+        15,
+        80
+      ],
+      [
+        15,
+        45
+      ],
+      [
+        50,
+        15
+      ],
+      [
+        85,
+        45
+      ],
+      [
+        85,
+        80
+      ]
+    ],
+    "tolerance": 14,
+    "fadeMs": 4500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "memory-flash_0110",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Find the teapot!",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "tea time",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 350,
+    "targetCell": 21,
+    "item": "🫖",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "☕"
+      },
+      {
+        "cell": 5,
+        "item": "🍵"
+      },
+      {
+        "cell": 9,
+        "item": "🧋"
+      },
+      {
+        "cell": 13,
+        "item": "🥛"
+      },
+      {
+        "cell": 16,
+        "item": "🍶"
+      },
+      {
+        "cell": 19,
+        "item": "🍼"
+      },
+      {
+        "cell": 2,
+        "item": "🫙"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

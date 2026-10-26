@@ -1,0 +1,28 @@
+{
+  "id": "memory-flash_0102",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the pizza?",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "takeout",
+  "params": {
+    "rows": 2,
+    "cols": 3,
+    "flashMs": 1400,
+    "targetCell": 5,
+    "item": "🍕",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🥦"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

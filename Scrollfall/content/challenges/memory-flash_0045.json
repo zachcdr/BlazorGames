@@ -1,0 +1,36 @@
+{
+  "id": "memory-flash_0045",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where did the snake hide?",
+  "durationMs": 5500,
+  "difficulty": 3,
+  "theme": "sand snakes",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "flashMs": 800,
+    "targetCell": 6,
+    "item": "🐍",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🦎"
+      },
+      {
+        "cell": 10,
+        "item": "🦂"
+      },
+      {
+        "cell": 11,
+        "item": "🌵"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "odd-one-out_0027",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Find the different face",
+  "durationMs": 5000,
+  "difficulty": 4,
+  "theme": "grumpy crew",
+  "params": {
+    "items": [
+      "😠",
+      "😠",
+      "😠",
+      "😠",
+      "😠",
+      "😡",
+      "😠",
+      "😠"
+    ],
+    "answerIndex": 5
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

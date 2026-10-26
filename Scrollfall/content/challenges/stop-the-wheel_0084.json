@@ -1,0 +1,40 @@
+{
+  "id": "stop-the-wheel_0084",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on purple",
+  "durationMs": 6500,
+  "difficulty": 3,
+  "theme": "flower bed",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d"
+      },
+      {
+        "color": "#f76b15"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#8e4ec6"
+      }
+    ],
+    "targetSegment": 5,
+    "speed": 0.9,
+    "startAngle": 310
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

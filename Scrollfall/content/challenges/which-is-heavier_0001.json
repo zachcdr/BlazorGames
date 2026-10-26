@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0001",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "animals",
+  "params": {
+    "left": {
+      "emoji": "🐘",
+      "name": "Elephant"
+    },
+    "right": {
+      "emoji": "🦒",
+      "name": "Giraffe"
+    },
+    "answer": "left",
+    "explanation": "An elephant can weigh 6 tonnes; a giraffe about 1."
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "tap-count_0071",
+  "template": "tap-count",
+  "version": 1,
+  "prompt": "Tap the banana exactly 4 times",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "jungle snacks",
+  "params": {
+    "targetCount": 4,
+    "target": "🍌",
+    "distractors": []
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0081",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the snake slither",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "snake",
+  "params": {
+    "points": [
+      [
+        10,
+        50
+      ],
+      [
+        30,
+        30
+      ],
+      [
+        50,
+        50
+      ],
+      [
+        70,
+        70
+      ],
+      [
+        90,
+        50
+      ]
+    ],
+    "tolerance": 13,
+    "fadeMs": 4000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

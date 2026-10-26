@@ -1,0 +1,70 @@
+{
+  "id": "stop-the-wheel_0078",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the meteor",
+  "durationMs": 6000,
+  "difficulty": 5,
+  "theme": "extinction day",
+  "params": {
+    "segments": [
+      {
+        "color": "#30a46c",
+        "label": "🦖"
+      },
+      {
+        "color": "#12a594",
+        "label": "🦕"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🥚"
+      },
+      {
+        "color": "#12a594",
+        "label": "🦴"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🌋"
+      },
+      {
+        "color": "#12a594",
+        "label": "🌴"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🌿"
+      },
+      {
+        "color": "#12a594",
+        "label": "🐾"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🪨"
+      },
+      {
+        "color": "#12a594",
+        "label": "☄️"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🐊"
+      },
+      {
+        "color": "#12a594",
+        "label": "🦎"
+      }
+    ],
+    "targetSegment": 9,
+    "speed": 0.5,
+    "startAngle": 40
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

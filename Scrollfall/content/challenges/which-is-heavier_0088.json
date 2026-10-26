@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0088",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5500,
+  "difficulty": 3,
+  "theme": "instruments",
+  "params": {
+    "left": {
+      "emoji": "🎼",
+      "name": "Concert harp"
+    },
+    "right": {
+      "emoji": "🎹",
+      "name": "Upright piano"
+    },
+    "answer": "right",
+    "explanation": "An upright piano weighs 200+ kg; a concert harp is around 40 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0059",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Split the booty!",
+  "durationMs": 5500,
+  "difficulty": 3,
+  "theme": "pirates",
+  "params": {
+    "a": 56,
+    "op": "÷",
+    "b": 7,
+    "options": [
+      7,
+      9,
+      49,
+      8
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

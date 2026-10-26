@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0056",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Load the cannons!",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "pirates",
+  "params": {
+    "a": 4,
+    "op": "×",
+    "b": 6,
+    "options": [
+      28,
+      24,
+      20,
+      10
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

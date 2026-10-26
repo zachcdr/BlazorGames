@@ -1,0 +1,23 @@
+{
+  "id": "tap-count_0034",
+  "template": "tap-count",
+  "version": 1,
+  "prompt": "Tap the carrot exactly 6 times",
+  "durationMs": 5500,
+  "difficulty": 2,
+  "theme": "kitchen",
+  "params": {
+    "targetCount": 6,
+    "target": "🥕",
+    "distractors": [
+      "🌽",
+      "🧅"
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

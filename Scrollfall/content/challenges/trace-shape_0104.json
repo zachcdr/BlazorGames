@@ -1,0 +1,49 @@
+{
+  "id": "trace-shape_0104",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the oscilloscope wave",
+  "durationMs": 4000,
+  "difficulty": 3,
+  "theme": "physics",
+  "params": {
+    "points": [
+      [
+        8,
+        50
+      ],
+      [
+        22,
+        25
+      ],
+      [
+        36,
+        50
+      ],
+      [
+        50,
+        75
+      ],
+      [
+        64,
+        50
+      ],
+      [
+        78,
+        25
+      ],
+      [
+        92,
+        50
+      ]
+    ],
+    "tolerance": 10,
+    "fadeMs": 2000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

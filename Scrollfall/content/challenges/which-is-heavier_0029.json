@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0029",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "insects",
+  "params": {
+    "left": {
+      "emoji": "🐝",
+      "name": "Honeybee"
+    },
+    "right": {
+      "emoji": "🦋",
+      "name": "Monarch butterfly"
+    },
+    "answer": "right",
+    "explanation": "A monarch is about 0.5 g; a honeybee is roughly 0.1 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

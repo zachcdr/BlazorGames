@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0054",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Pyramid power!",
+  "durationMs": 6500,
+  "difficulty": 4,
+  "theme": "pyramids",
+  "params": {
+    "a": 12,
+    "op": "×",
+    "b": 8,
+    "options": [
+      96,
+      84,
+      108,
+      69
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

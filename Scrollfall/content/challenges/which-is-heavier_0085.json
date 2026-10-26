@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0085",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "audio gear",
+  "params": {
+    "left": {
+      "emoji": "🎧",
+      "name": "Earbuds (pair)"
+    },
+    "right": {
+      "emoji": "🎧",
+      "name": "Studio headphones"
+    },
+    "answer": "right",
+    "explanation": "Studio headphones weigh a few hundred grams; earbuds weigh about 10 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

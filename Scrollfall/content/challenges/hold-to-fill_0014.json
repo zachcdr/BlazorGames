@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0014",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the goblet to the line",
+  "durationMs": 5500,
+  "difficulty": 2,
+  "theme": "captain's feast",
+  "params": {
+    "item": "🍷",
+    "fillPerSecond": 30,
+    "targetFrom": 50,
+    "targetTo": 68
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

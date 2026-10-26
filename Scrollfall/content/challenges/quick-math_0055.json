@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0055",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Mirage maths!",
+  "durationMs": 7500,
+  "difficulty": 5,
+  "theme": "mirage",
+  "params": {
+    "a": 108,
+    "op": "÷",
+    "b": 9,
+    "options": [
+      9,
+      11,
+      12,
+      13
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

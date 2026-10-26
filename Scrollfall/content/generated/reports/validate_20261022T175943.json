@@ -1,0 +1,427 @@
+{
+  "createdAt": "2026-10-22T17:59:43.731Z",
+  "dryRun": false,
+  "files": [
+    "content\\generated\\hold-to-fill_20261022T175613.json",
+    "content\\generated\\quick-math_20261022T175500.json",
+    "content\\generated\\sequence-memory_20261022T175534.json"
+  ],
+  "summary": [
+    {
+      "template": "hold-to-fill",
+      "candidates": 50,
+      "accepted": 50,
+      "rejected": 0,
+      "rejectionRate": "0%"
+    },
+    {
+      "template": "quick-math",
+      "candidates": 50,
+      "accepted": 46,
+      "rejected": 4,
+      "rejectionRate": "8%"
+    },
+    {
+      "template": "sequence-memory",
+      "candidates": 50,
+      "accepted": 45,
+      "rejected": 5,
+      "rejectionRate": "10%"
+    }
+  ],
+  "byStage": {
+    "generate": 0,
+    "shape": 0,
+    "schema": 0,
+    "lint": 0,
+    "duplicate": 9,
+    "fact": 0,
+    "bot": 0
+  },
+  "approved": [
+    "hold-to-fill_0011",
+    "hold-to-fill_0012",
+    "hold-to-fill_0013",
+    "hold-to-fill_0014",
+    "hold-to-fill_0015",
+    "hold-to-fill_0016",
+    "hold-to-fill_0017",
+    "hold-to-fill_0018",
+    "hold-to-fill_0019",
+    "hold-to-fill_0020",
+    "hold-to-fill_0021",
+    "hold-to-fill_0022",
+    "hold-to-fill_0023",
+    "hold-to-fill_0024",
+    "hold-to-fill_0025",
+    "hold-to-fill_0026",
+    "hold-to-fill_0027",
+    "hold-to-fill_0028",
+    "hold-to-fill_0029",
+    "hold-to-fill_0030",
+    "hold-to-fill_0031",
+    "hold-to-fill_0032",
+    "hold-to-fill_0033",
+    "hold-to-fill_0034",
+    "hold-to-fill_0035",
+    "hold-to-fill_0036",
+    "hold-to-fill_0037",
+    "hold-to-fill_0038",
+    "hold-to-fill_0039",
+    "hold-to-fill_0040",
+    "hold-to-fill_0041",
+    "hold-to-fill_0042",
+    "hold-to-fill_0043",
+    "hold-to-fill_0044",
+    "hold-to-fill_0045",
+    "hold-to-fill_0046",
+    "hold-to-fill_0047",
+    "hold-to-fill_0048",
+    "hold-to-fill_0049",
+    "hold-to-fill_0050",
+    "hold-to-fill_0051",
+    "hold-to-fill_0052",
+    "hold-to-fill_0053",
+    "hold-to-fill_0054",
+    "hold-to-fill_0055",
+    "hold-to-fill_0056",
+    "hold-to-fill_0057",
+    "hold-to-fill_0058",
+    "hold-to-fill_0059",
+    "hold-to-fill_0060",
+    "quick-math_0011",
+    "quick-math_0012",
+    "quick-math_0013",
+    "quick-math_0014",
+    "quick-math_0015",
+    "quick-math_0016",
+    "quick-math_0017",
+    "quick-math_0018",
+    "quick-math_0019",
+    "quick-math_0020",
+    "quick-math_0021",
+    "quick-math_0022",
+    "quick-math_0023",
+    "quick-math_0024",
+    "quick-math_0025",
+    "quick-math_0026",
+    "quick-math_0027",
+    "quick-math_0028",
+    "quick-math_0029",
+    "quick-math_0030",
+    "quick-math_0031",
+    "quick-math_0032",
+    "quick-math_0033",
+    "quick-math_0034",
+    "quick-math_0035",
+    "quick-math_0036",
+    "quick-math_0037",
+    "quick-math_0038",
+    "quick-math_0039",
+    "quick-math_0040",
+    "quick-math_0041",
+    "quick-math_0042",
+    "quick-math_0043",
+    "quick-math_0044",
+    "quick-math_0045",
+    "quick-math_0046",
+    "quick-math_0047",
+    "quick-math_0048",
+    "quick-math_0049",
+    "quick-math_0050",
+    "quick-math_0051",
+    "quick-math_0052",
+    "quick-math_0053",
+    "quick-math_0054",
+    "quick-math_0055",
+    "quick-math_0056",
+    "sequence-memory_0011",
+    "sequence-memory_0012",
+    "sequence-memory_0013",
+    "sequence-memory_0014",
+    "sequence-memory_0015",
+    "sequence-memory_0016",
+    "sequence-memory_0017",
+    "sequence-memory_0018",
+    "sequence-memory_0019",
+    "sequence-memory_0020",
+    "sequence-memory_0021",
+    "sequence-memory_0022",
+    "sequence-memory_0023",
+    "sequence-memory_0024",
+    "sequence-memory_0025",
+    "sequence-memory_0026",
+    "sequence-memory_0027",
+    "sequence-memory_0028",
+    "sequence-memory_0029",
+    "sequence-memory_0030",
+    "sequence-memory_0031",
+    "sequence-memory_0032",
+    "sequence-memory_0033",
+    "sequence-memory_0034",
+    "sequence-memory_0035",
+    "sequence-memory_0036",
+    "sequence-memory_0037",
+    "sequence-memory_0038",
+    "sequence-memory_0039",
+    "sequence-memory_0040",
+    "sequence-memory_0041",
+    "sequence-memory_0042",
+    "sequence-memory_0043",
+    "sequence-memory_0044",
+    "sequence-memory_0045",
+    "sequence-memory_0046",
+    "sequence-memory_0047",
+    "sequence-memory_0048",
+    "sequence-memory_0049",
+    "sequence-memory_0050",
+    "sequence-memory_0051",
+    "sequence-memory_0052",
+    "sequence-memory_0053",
+    "sequence-memory_0054",
+    "sequence-memory_0055"
+  ],
+  "rejections": [
+    {
+      "file": "content\\generated\\quick-math_20261022T175500.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Tighten up!",
+        "durationMs": 4000,
+        "difficulty": 1,
+        "theme": "tools",
+        "params": {
+          "a": 9,
+          "op": "−",
+          "b": 4,
+          "options": [
+            5,
+            4,
+            6,
+            13
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T175500.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Catch the answer!",
+        "durationMs": 5000,
+        "difficulty": 2,
+        "theme": "ocean",
+        "params": {
+          "a": 7,
+          "op": "×",
+          "b": 6,
+          "options": [
+            42,
+            48,
+            36,
+            49
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T175500.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Swim to it!",
+        "durationMs": 5000,
+        "difficulty": 2,
+        "theme": "ocean",
+        "params": {
+          "a": 56,
+          "op": "÷",
+          "b": 8,
+          "options": [
+            6,
+            8,
+            7,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T175500.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Quick maths!",
+        "durationMs": 6000,
+        "difficulty": 3,
+        "theme": "ocean",
+        "params": {
+          "a": 47,
+          "op": "+",
+          "b": 38,
+          "options": [
+            75,
+            95,
+            84,
+            85
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\sequence-memory_20261022T175534.json",
+      "template": "sequence-memory",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "sequence-memory",
+        "prompt": "Repeat the star map",
+        "durationMs": 7000,
+        "difficulty": 2,
+        "theme": "star map",
+        "params": {
+          "rows": 3,
+          "cols": 3,
+          "sequence": [
+            4,
+            0,
+            8,
+            2
+          ],
+          "showMs": 650,
+          "gapMs": 250
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\sequence-memory_20261022T175534.json",
+      "template": "sequence-memory",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "sequence-memory",
+        "prompt": "Copy the sequence",
+        "durationMs": 7500,
+        "difficulty": 3,
+        "theme": "dragonflies",
+        "params": {
+          "rows": 3,
+          "cols": 3,
+          "sequence": [
+            6,
+            2,
+            4,
+            7,
+            1
+          ],
+          "showMs": 500,
+          "gapMs": 200
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\sequence-memory_20261022T175534.json",
+      "template": "sequence-memory",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "sequence-memory",
+        "prompt": "Copy the sequence",
+        "durationMs": 6000,
+        "difficulty": 1,
+        "theme": "ocean",
+        "params": {
+          "rows": 2,
+          "cols": 2,
+          "sequence": [
+            3,
+            0,
+            2
+          ],
+          "showMs": 800,
+          "gapMs": 300
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\sequence-memory_20261022T175534.json",
+      "template": "sequence-memory",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "sequence-memory",
+        "prompt": "Tap the waves in order",
+        "durationMs": 7000,
+        "difficulty": 2,
+        "theme": "waves",
+        "params": {
+          "rows": 3,
+          "cols": 3,
+          "sequence": [
+            4,
+            0,
+            8,
+            2
+          ],
+          "showMs": 600,
+          "gapMs": 250
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\sequence-memory_20261022T175534.json",
+      "template": "sequence-memory",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "sequence-memory",
+        "prompt": "Remember the dive",
+        "durationMs": 8000,
+        "difficulty": 4,
+        "theme": "deep sea",
+        "params": {
+          "rows": 4,
+          "cols": 4,
+          "sequence": [
+            12,
+            3,
+            9,
+            6,
+            0,
+            15
+          ],
+          "showMs": 400,
+          "gapMs": 150
+        }
+      }
+    }
+  ]
+}

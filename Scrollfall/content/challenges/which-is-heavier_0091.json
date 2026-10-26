@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0091",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "party toys",
+  "params": {
+    "left": {
+      "emoji": "💦",
+      "name": "Water balloon"
+    },
+    "right": {
+      "emoji": "🎈",
+      "name": "Air balloon"
+    },
+    "answer": "left",
+    "explanation": "Water is far denser than air, so the water-filled balloon weighs much more."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

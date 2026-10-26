@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0023",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 2,
+  "theme": "insects",
+  "params": {
+    "left": {
+      "emoji": "🐝",
+      "name": "Honeybee"
+    },
+    "right": {
+      "emoji": "🦟",
+      "name": "Mosquito"
+    },
+    "answer": "left",
+    "explanation": "A honeybee is about 100 mg; a mosquito is only 2 to 3 mg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

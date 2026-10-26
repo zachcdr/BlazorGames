@@ -1,0 +1,38 @@
+{
+  "id": "stop-the-wheel_0031",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the ghost",
+  "durationMs": 7000,
+  "difficulty": 1,
+  "theme": "halloween",
+  "params": {
+    "segments": [
+      {
+        "color": "#f76b15",
+        "label": "🎃"
+      },
+      {
+        "color": "#12a594",
+        "label": "👻"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🦇"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🧟"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 0.6,
+    "startAngle": 120
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

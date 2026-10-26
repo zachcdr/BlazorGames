@@ -1,0 +1,31 @@
+{
+  "id": "sequence-memory_0029",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Survive the asteroid field",
+  "durationMs": 8500,
+  "difficulty": 5,
+  "theme": "asteroids",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "sequence": [
+      10,
+      1,
+      13,
+      6,
+      3,
+      15,
+      8,
+      4
+    ],
+    "showMs": 300,
+    "gapMs": 110
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

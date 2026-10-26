@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0012",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Bug math!",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "insects",
+  "params": {
+    "a": 9,
+    "op": "−",
+    "b": 4,
+    "options": [
+      5,
+      4,
+      6,
+      13
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

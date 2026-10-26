@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0014",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "zoo",
+  "params": {
+    "left": {
+      "emoji": "🐻‍❄️",
+      "name": "Polar bear"
+    },
+    "right": {
+      "emoji": "🐆",
+      "name": "Cheetah"
+    },
+    "answer": "left",
+    "explanation": "Polar bears weigh 350+ kg; a cheetah is about 50 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

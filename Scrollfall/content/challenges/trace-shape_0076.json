@@ -1,0 +1,65 @@
+{
+  "id": "trace-shape_0076",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the starfish",
+  "durationMs": 5500,
+  "difficulty": 4,
+  "theme": "starfish",
+  "params": {
+    "points": [
+      [
+        50,
+        12
+      ],
+      [
+        61,
+        37
+      ],
+      [
+        88,
+        40
+      ],
+      [
+        67,
+        58
+      ],
+      [
+        73,
+        84
+      ],
+      [
+        50,
+        70
+      ],
+      [
+        27,
+        84
+      ],
+      [
+        33,
+        58
+      ],
+      [
+        12,
+        40
+      ],
+      [
+        39,
+        37
+      ],
+      [
+        50,
+        12
+      ]
+    ],
+    "tolerance": 7,
+    "fadeMs": 1800
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

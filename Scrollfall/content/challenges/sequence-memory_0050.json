@@ -1,0 +1,27 @@
+{
+  "id": "sequence-memory_0050",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Repeat the pattern",
+  "durationMs": 7500,
+  "difficulty": 2,
+  "theme": "tide",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "sequence": [
+      7,
+      3,
+      5,
+      1
+    ],
+    "showMs": 650,
+    "gapMs": 250
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "stop-the-wheel_0088",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the cactus",
+  "durationMs": 8000,
+  "difficulty": 5,
+  "theme": "blooms",
+  "params": {
+    "segments": [
+      {
+        "color": "#30a46c",
+        "label": "🌱"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🌸"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🌼"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🌻"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🌹"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🌷"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🪻"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🌵"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🍀"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🍁"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🌴"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🪴"
+      }
+    ],
+    "targetSegment": 7,
+    "speed": 0.55,
+    "startAngle": 20
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

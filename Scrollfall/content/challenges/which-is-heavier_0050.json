@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0050",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 5,
+  "theme": "treasure",
+  "params": {
+    "left": {
+      "emoji": "🥇",
+      "name": "Gold cube"
+    },
+    "right": {
+      "emoji": "🔘",
+      "name": "Lead cube"
+    },
+    "answer": "left",
+    "explanation": "Gold is about 19.3 g/cm³; lead is about 11.3 g/cm³."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

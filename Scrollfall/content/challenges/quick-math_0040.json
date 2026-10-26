@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0040",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Count the eggs!",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "kitchen",
+  "params": {
+    "a": 8,
+    "op": "−",
+    "b": 3,
+    "options": [
+      5,
+      4,
+      6,
+      11
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

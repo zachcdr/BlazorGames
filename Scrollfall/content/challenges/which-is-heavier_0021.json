@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0021",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "insects",
+  "params": {
+    "left": {
+      "emoji": "🐜",
+      "name": "Ant"
+    },
+    "right": {
+      "emoji": "🕷️",
+      "name": "Tarantula"
+    },
+    "answer": "right",
+    "explanation": "A tarantula weighs tens of grams; an ant only a few milligrams."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

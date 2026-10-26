@@ -1,0 +1,29 @@
+{
+  "id": "sequence-memory_0026",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Remember the orbit",
+  "durationMs": 7500,
+  "difficulty": 4,
+  "theme": "orbit",
+  "params": {
+    "rows": 4,
+    "cols": 3,
+    "sequence": [
+      11,
+      2,
+      6,
+      0,
+      9,
+      4
+    ],
+    "showMs": 400,
+    "gapMs": 150
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

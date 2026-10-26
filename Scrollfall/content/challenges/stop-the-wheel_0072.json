@@ -1,0 +1,37 @@
+{
+  "id": "stop-the-wheel_0072",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on yellow",
+  "durationMs": 7500,
+  "difficulty": 2,
+  "theme": "fossil dig",
+  "params": {
+    "segments": [
+      {
+        "color": "#d6409f"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#e5484d"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 0.6,
+    "startAngle": 15
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

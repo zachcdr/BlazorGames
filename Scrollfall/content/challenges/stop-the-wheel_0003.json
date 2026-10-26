@@ -1,0 +1,40 @@
+{
+  "id": "stop-the-wheel_0003",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on green",
+  "durationMs": 6000,
+  "difficulty": 2,
+  "theme": "colors",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#8e4ec6"
+      },
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#f76b15"
+      }
+    ],
+    "targetSegment": 4,
+    "speed": 0.8,
+    "startAngle": 200
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

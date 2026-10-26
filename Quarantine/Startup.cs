@@ -82,6 +82,10 @@ namespace Quarantine
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapBlazorHub();
+                // Scrollfall is a separate static app built into wwwroot/scrollfall (see the Scrollfall repo's
+                // `npm run publish:to`). Its own files are served by UseStaticFiles; this keeps the Blazor
+                // fallback below from swallowing /scrollfall and /scrollfall/.
+                endpoints.MapFallbackToFile("scrollfall/{**path}", "scrollfall/index.html");
                 endpoints.MapFallbackToPage("/_Host");
             });
         }

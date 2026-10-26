@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0046",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5500,
+  "difficulty": 3,
+  "theme": "treasure",
+  "params": {
+    "left": {
+      "emoji": "🥇",
+      "name": "Gold bar (400 oz)"
+    },
+    "right": {
+      "emoji": "🧱",
+      "name": "Clay house brick"
+    },
+    "answer": "left",
+    "explanation": "A standard gold bar is about 12.4 kg; a clay brick about 3 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

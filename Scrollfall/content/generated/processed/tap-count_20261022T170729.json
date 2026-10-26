@@ -1,0 +1,790 @@
+{
+  "template": "tap-count",
+  "createdAt": "2026-10-22T17:07:29.333Z",
+  "requested": 50,
+  "calls": [
+    {
+      "theme": "birthday party",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "tap-count",
+          "prompt": "Tap the balloon exactly 3 times",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "birthday party",
+          "params": {
+            "targetCount": 3,
+            "target": "🎈",
+            "distractors": []
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the cake exactly 4 times",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "birthday cake",
+          "params": {
+            "targetCount": 4,
+            "target": "🎂",
+            "distractors": []
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the gift exactly 6 times",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "presents",
+          "params": {
+            "targetCount": 6,
+            "target": "🎁",
+            "distractors": [
+              "🧹"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the party popper exactly 5 times",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "party time",
+          "params": {
+            "targetCount": 5,
+            "target": "🎉",
+            "distractors": [
+              "🎈"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the candy exactly 7 times",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "party snacks",
+          "params": {
+            "targetCount": 7,
+            "target": "🍬",
+            "distractors": [
+              "🍫",
+              "🍭"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the soft serve exactly 8 times",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "ice cream",
+          "params": {
+            "targetCount": 8,
+            "target": "🍦",
+            "distractors": [
+              "🍨",
+              "🍧"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the confetti ball exactly 10 times",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "confetti",
+          "params": {
+            "targetCount": 10,
+            "target": "🎊",
+            "distractors": [
+              "🎉",
+              "🎈",
+              "🎁"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the cupcake exactly 12 times",
+          "durationMs": 6500,
+          "difficulty": 4,
+          "theme": "sweet treats",
+          "params": {
+            "targetCount": 12,
+            "target": "🧁",
+            "distractors": [
+              "🍰",
+              "🎂",
+              "🍩"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the party face exactly 15 times",
+          "durationMs": 7000,
+          "difficulty": 5,
+          "theme": "party guests",
+          "params": {
+            "targetCount": 15,
+            "target": "🥳",
+            "distractors": [
+              "😀",
+              "😄",
+              "🤩",
+              "😎",
+              "😆"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the pizza exactly 18 times",
+          "durationMs": 8000,
+          "difficulty": 5,
+          "theme": "party food",
+          "params": {
+            "targetCount": 18,
+            "target": "🍕",
+            "distractors": [
+              "🍔",
+              "🍟",
+              "🌭",
+              "🧀",
+              "🥪"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "weather",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "tap-count",
+          "prompt": "Tap the umbrella exactly 3 times",
+          "durationMs": 3000,
+          "difficulty": 1,
+          "theme": "rainy day",
+          "params": {
+            "targetCount": 3,
+            "target": "🌂",
+            "distractors": []
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the kite exactly 4 times",
+          "durationMs": 3500,
+          "difficulty": 1,
+          "theme": "windy",
+          "params": {
+            "targetCount": 4,
+            "target": "🪁",
+            "distractors": []
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the snowman exactly 6 times",
+          "durationMs": 4000,
+          "difficulty": 2,
+          "theme": "winter",
+          "params": {
+            "targetCount": 6,
+            "target": "⛄",
+            "distractors": [
+              "🔥"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the rainbow exactly 7 times",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "after rain",
+          "params": {
+            "targetCount": 7,
+            "target": "🌈",
+            "distractors": [
+              "🌵"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the lightning exactly 8 times",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "storm",
+          "params": {
+            "targetCount": 8,
+            "target": "⚡",
+            "distractors": [
+              "🔥",
+              "💧"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the cyclone exactly 9 times",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "storm",
+          "params": {
+            "targetCount": 9,
+            "target": "🌀",
+            "distractors": [
+              "🌊",
+              "💨"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the droplet exactly 11 times",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "rain",
+          "params": {
+            "targetCount": 11,
+            "target": "💧",
+            "distractors": [
+              "🌊",
+              "💦",
+              "🫧"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the moon exactly 12 times",
+          "durationMs": 6500,
+          "difficulty": 4,
+          "theme": "night sky",
+          "params": {
+            "targetCount": 12,
+            "target": "🌙",
+            "distractors": [
+              "🌛",
+              "🌜",
+              "⭐"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the sun exactly 15 times",
+          "durationMs": 7500,
+          "difficulty": 5,
+          "theme": "sunny",
+          "params": {
+            "targetCount": 15,
+            "target": "🌞",
+            "distractors": [
+              "🌝",
+              "🌕",
+              "🟡",
+              "🌻"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the snowflake exactly 18 times",
+          "durationMs": 8500,
+          "difficulty": 5,
+          "theme": "blizzard",
+          "params": {
+            "targetCount": 18,
+            "target": "❄️",
+            "distractors": [
+              "🧊",
+              "💎",
+              "⛄",
+              "🤍",
+              "🥶"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "kitchen",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "tap-count",
+          "prompt": "Tap the egg exactly 2 times",
+          "durationMs": 3000,
+          "difficulty": 1,
+          "theme": "kitchen",
+          "params": {
+            "targetCount": 2,
+            "target": "🥚",
+            "distractors": []
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the pizza exactly 4 times",
+          "durationMs": 3500,
+          "difficulty": 1,
+          "theme": "kitchen",
+          "params": {
+            "targetCount": 4,
+            "target": "🍕",
+            "distractors": []
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the lemon exactly 3 times",
+          "durationMs": 4000,
+          "difficulty": 2,
+          "theme": "kitchen",
+          "params": {
+            "targetCount": 3,
+            "target": "🍋",
+            "distractors": [
+              "🧀"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the carrot exactly 6 times",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "kitchen",
+          "params": {
+            "targetCount": 6,
+            "target": "🥕",
+            "distractors": [
+              "🌽",
+              "🧅"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the fork exactly 7 times",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "kitchen",
+          "params": {
+            "targetCount": 7,
+            "target": "🍴",
+            "distractors": [
+              "🥄",
+              "🔪"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the tomato exactly 8 times",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "kitchen",
+          "params": {
+            "targetCount": 8,
+            "target": "🍅",
+            "distractors": [
+              "🍎",
+              "🍓",
+              "🍒"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the stew pot exactly 9 times",
+          "durationMs": 5500,
+          "difficulty": 4,
+          "theme": "kitchen",
+          "params": {
+            "targetCount": 9,
+            "target": "🍲",
+            "distractors": [
+              "🥣",
+              "🍜",
+              "🍛"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the salt exactly 10 times",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "kitchen",
+          "params": {
+            "targetCount": 10,
+            "target": "🧂",
+            "distractors": [
+              "🍬",
+              "🥛",
+              "🧈"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the bread exactly 12 times",
+          "durationMs": 6500,
+          "difficulty": 5,
+          "theme": "kitchen",
+          "params": {
+            "targetCount": 12,
+            "target": "🍞",
+            "distractors": [
+              "🥖",
+              "🥐",
+              "🥯",
+              "🧇"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the peach exactly 15 times",
+          "durationMs": 7000,
+          "difficulty": 5,
+          "theme": "kitchen",
+          "params": {
+            "targetCount": 15,
+            "target": "🍑",
+            "distractors": [
+              "🍎",
+              "🍊",
+              "🍅",
+              "🍒",
+              "🍓"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "museum",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "tap-count",
+          "prompt": "Tap the statue exactly 3 times",
+          "durationMs": 3000,
+          "difficulty": 1,
+          "theme": "museum",
+          "params": {
+            "targetCount": 3,
+            "target": "🗿",
+            "distractors": []
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the painting exactly 4 times",
+          "durationMs": 3500,
+          "difficulty": 1,
+          "theme": "museum",
+          "params": {
+            "targetCount": 4,
+            "target": "🖼️",
+            "distractors": []
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the bone exactly 5 times",
+          "durationMs": 4000,
+          "difficulty": 2,
+          "theme": "fossils",
+          "params": {
+            "targetCount": 5,
+            "target": "🦴",
+            "distractors": [
+              "🪨"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the vase exactly 6 times",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "antiques",
+          "params": {
+            "targetCount": 6,
+            "target": "🏺",
+            "distractors": [
+              "🪴"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the dinosaur exactly 7 times",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "natural history",
+          "params": {
+            "targetCount": 7,
+            "target": "🦕",
+            "distractors": [
+              "🐢",
+              "🦎"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the crown exactly 8 times",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "royal gallery",
+          "params": {
+            "targetCount": 8,
+            "target": "👑",
+            "distractors": [
+              "🎩",
+              "🪙"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the coin exactly 9 times",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "treasure room",
+          "params": {
+            "targetCount": 9,
+            "target": "🪙",
+            "distractors": [
+              "🟡",
+              "🌕",
+              "🥇"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the museum exactly 11 times",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "museum",
+          "params": {
+            "targetCount": 11,
+            "target": "🏛️",
+            "distractors": [
+              "🏦",
+              "⛪",
+              "🏯",
+              "🕌"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the old key exactly 12 times",
+          "durationMs": 6500,
+          "difficulty": 5,
+          "theme": "vault",
+          "params": {
+            "targetCount": 12,
+            "target": "🗝️",
+            "distractors": [
+              "🔑",
+              "🔒",
+              "🪝",
+              "🧷"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the ticket exactly 14 times",
+          "durationMs": 7000,
+          "difficulty": 5,
+          "theme": "entry desk",
+          "params": {
+            "targetCount": 14,
+            "target": "🎟️",
+            "distractors": [
+              "🎫",
+              "📜",
+              "🧾",
+              "🪪",
+              "🏷️"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "ocean",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "tap-count",
+          "prompt": "Tap the octopus exactly 3 times",
+          "durationMs": 3000,
+          "difficulty": 1,
+          "theme": "ocean",
+          "params": {
+            "targetCount": 3,
+            "target": "🐙",
+            "distractors": []
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the shell exactly 4 times",
+          "durationMs": 3500,
+          "difficulty": 1,
+          "theme": "beach",
+          "params": {
+            "targetCount": 4,
+            "target": "🐚",
+            "distractors": []
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the whale exactly 6 times",
+          "durationMs": 4000,
+          "difficulty": 2,
+          "theme": "ocean",
+          "params": {
+            "targetCount": 6,
+            "target": "🐋",
+            "distractors": [
+              "🐟"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the crab exactly 5 times",
+          "durationMs": 4000,
+          "difficulty": 2,
+          "theme": "beach",
+          "params": {
+            "targetCount": 5,
+            "target": "🦀",
+            "distractors": [
+              "🐚",
+              "🦞"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the tropical fish exactly 7 times",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "reef",
+          "params": {
+            "targetCount": 7,
+            "target": "🐠",
+            "distractors": [
+              "🐙",
+              "🦀"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the dolphin exactly 8 times",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "ocean",
+          "params": {
+            "targetCount": 8,
+            "target": "🐬",
+            "distractors": [
+              "🐋",
+              "🐟",
+              "🦈"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the shark exactly 9 times",
+          "durationMs": 5000,
+          "difficulty": 4,
+          "theme": "deep sea",
+          "params": {
+            "targetCount": 9,
+            "target": "🦈",
+            "distractors": [
+              "🐬",
+              "🐋",
+              "🐟"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the fish exactly 11 times",
+          "durationMs": 5500,
+          "difficulty": 4,
+          "theme": "reef",
+          "params": {
+            "targetCount": 11,
+            "target": "🐟",
+            "distractors": [
+              "🐠",
+              "🐡",
+              "🦈",
+              "🐬"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the squid exactly 14 times",
+          "durationMs": 6000,
+          "difficulty": 5,
+          "theme": "deep sea",
+          "params": {
+            "targetCount": 14,
+            "target": "🦑",
+            "distractors": [
+              "🐙",
+              "🦐",
+              "🦞",
+              "🐡",
+              "🐚"
+            ]
+          }
+        },
+        {
+          "template": "tap-count",
+          "prompt": "Tap the spouting whale exactly 16 times",
+          "durationMs": 6500,
+          "difficulty": 5,
+          "theme": "ocean",
+          "params": {
+            "targetCount": 16,
+            "target": "🐳",
+            "distractors": [
+              "🐋",
+              "🐬",
+              "🦈",
+              "🐟",
+              "🐠"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

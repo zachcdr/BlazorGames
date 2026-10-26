@@ -1,0 +1,28 @@
+{
+  "id": "memory-flash_0062",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Find the tent!",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "campsite",
+  "params": {
+    "rows": 2,
+    "cols": 3,
+    "flashMs": 1400,
+    "targetCell": 1,
+    "item": "⛺",
+    "decoys": [
+      {
+        "cell": 4,
+        "item": "🌲"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

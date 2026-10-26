@@ -1,0 +1,32 @@
+{
+  "id": "memory-flash_0064",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the flashlight?",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "night gear",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "flashMs": 1100,
+    "targetCell": 4,
+    "item": "🔦",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "🕯️"
+      },
+      {
+        "cell": 8,
+        "item": "🔋"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

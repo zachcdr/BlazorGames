@@ -1,0 +1,26 @@
+{
+  "id": "odd-one-out_0041",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the one that isn't school gear",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "supplies",
+  "params": {
+    "items": [
+      "✏️",
+      "📏",
+      "📚",
+      "✂️",
+      "🍕",
+      "🖍️"
+    ],
+    "answerIndex": 4
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

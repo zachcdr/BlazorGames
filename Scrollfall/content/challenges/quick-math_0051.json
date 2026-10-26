@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0051",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Dune dash!",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "dunes",
+  "params": {
+    "a": 9,
+    "op": "×",
+    "b": 6,
+    "options": [
+      45,
+      63,
+      54,
+      56
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

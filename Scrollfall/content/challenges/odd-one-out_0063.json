@@ -1,0 +1,25 @@
+{
+  "id": "odd-one-out_0063",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the one that isn't a bird",
+  "durationMs": 5500,
+  "difficulty": 2,
+  "theme": "jungle birds",
+  "params": {
+    "items": [
+      "🦜",
+      "🐍",
+      "🦉",
+      "🦅",
+      "🦆"
+    ],
+    "answerIndex": 1
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

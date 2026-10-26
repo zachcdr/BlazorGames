@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0071",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "rainforest",
+  "params": {
+    "left": {
+      "emoji": "🐆",
+      "name": "Jaguar"
+    },
+    "right": {
+      "emoji": "🐦",
+      "name": "Toucan"
+    },
+    "answer": "left",
+    "explanation": "Jaguars weigh ~60-100 kg; a toucan is only about 0.5 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

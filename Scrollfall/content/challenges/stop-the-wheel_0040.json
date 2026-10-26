@@ -1,0 +1,38 @@
+{
+  "id": "stop-the-wheel_0040",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the camel",
+  "durationMs": 6000,
+  "difficulty": 1,
+  "theme": "desert",
+  "params": {
+    "segments": [
+      {
+        "color": "#30a46c",
+        "label": "🌵"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🐪"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "☀️"
+      },
+      {
+        "color": "#12a594",
+        "label": "🌴"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 0.4,
+    "startAngle": 30
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

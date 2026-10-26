@@ -1,0 +1,23 @@
+{
+  "id": "memory-flash_0032",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the fern?",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "jungle",
+  "params": {
+    "rows": 2,
+    "cols": 3,
+    "flashMs": 1400,
+    "targetCell": 4,
+    "item": "🌿",
+    "decoys": []
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

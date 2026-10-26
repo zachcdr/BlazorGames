@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0077",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the turtle?",
+  "durationMs": 4500,
+  "difficulty": 4,
+  "theme": "sea life",
+  "params": {
+    "rows": 4,
+    "cols": 5,
+    "flashMs": 600,
+    "targetCell": 15,
+    "item": "🐢",
+    "decoys": [
+      {
+        "cell": 3,
+        "item": "🐊"
+      },
+      {
+        "cell": 8,
+        "item": "🦀"
+      },
+      {
+        "cell": 12,
+        "item": "🐸"
+      },
+      {
+        "cell": 18,
+        "item": "🐚"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

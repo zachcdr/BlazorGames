@@ -1,0 +1,25 @@
+{
+  "id": "sequence-memory_0021",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Copy the twin stars",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "space",
+  "params": {
+    "rows": 2,
+    "cols": 2,
+    "sequence": [
+      3,
+      0
+    ],
+    "showMs": 900,
+    "gapMs": 400
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

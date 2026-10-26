@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0025",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "garden",
+  "params": {
+    "left": {
+      "emoji": "🐞",
+      "name": "Ladybug"
+    },
+    "right": {
+      "emoji": "🐝",
+      "name": "Bumblebee"
+    },
+    "answer": "right",
+    "explanation": "A bumblebee worker weighs several times more than a ladybug."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

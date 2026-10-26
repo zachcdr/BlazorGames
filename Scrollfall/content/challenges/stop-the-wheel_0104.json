@@ -1,0 +1,54 @@
+{
+  "id": "stop-the-wheel_0104",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the balloon",
+  "durationMs": 6500,
+  "difficulty": 4,
+  "theme": "carnival games",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d",
+        "label": "🎺"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🥁"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🎭"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🪁"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🎈"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🧸"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🎯"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🍬"
+      }
+    ],
+    "targetSegment": 4,
+    "speed": 0.8,
+    "startAngle": 15
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0057",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Hoist the sails!",
+  "durationMs": 5500,
+  "difficulty": 2,
+  "theme": "pirates",
+  "params": {
+    "a": 53,
+    "op": "+",
+    "b": 6,
+    "options": [
+      49,
+      59,
+      58,
+      69
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

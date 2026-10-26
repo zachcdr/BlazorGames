@@ -1,0 +1,45 @@
+{
+  "id": "trace-shape_0098",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the stunt lightning bolt",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "stunt show",
+  "params": {
+    "points": [
+      [
+        70,
+        8
+      ],
+      [
+        28,
+        38
+      ],
+      [
+        62,
+        44
+      ],
+      [
+        24,
+        72
+      ],
+      [
+        58,
+        78
+      ],
+      [
+        34,
+        92
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 800
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0011",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "zoo",
+  "params": {
+    "left": {
+      "emoji": "🐘",
+      "name": "Elephant"
+    },
+    "right": {
+      "emoji": "🐿️",
+      "name": "Meerkat"
+    },
+    "answer": "left",
+    "explanation": "An African elephant weighs ~6,000 kg; a meerkat under 1 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

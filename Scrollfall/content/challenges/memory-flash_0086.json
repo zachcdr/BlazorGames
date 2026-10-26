@@ -1,0 +1,36 @@
+{
+  "id": "memory-flash_0086",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the toolbox?",
+  "durationMs": 4500,
+  "difficulty": 3,
+  "theme": "garage",
+  "params": {
+    "rows": 4,
+    "cols": 3,
+    "flashMs": 900,
+    "targetCell": 10,
+    "item": "🧰",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "💼"
+      },
+      {
+        "cell": 4,
+        "item": "🎒"
+      },
+      {
+        "cell": 8,
+        "item": "📦"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

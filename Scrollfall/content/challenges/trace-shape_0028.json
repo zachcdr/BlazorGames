@@ -1,0 +1,73 @@
+{
+  "id": "trace-shape_0028",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the snail shell",
+  "durationMs": 7500,
+  "difficulty": 4,
+  "theme": "snails",
+  "params": {
+    "points": [
+      [
+        10,
+        10
+      ],
+      [
+        90,
+        10
+      ],
+      [
+        90,
+        90
+      ],
+      [
+        10,
+        90
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        76,
+        24
+      ],
+      [
+        76,
+        76
+      ],
+      [
+        24,
+        76
+      ],
+      [
+        24,
+        38
+      ],
+      [
+        62,
+        38
+      ],
+      [
+        62,
+        62
+      ],
+      [
+        38,
+        62
+      ],
+      [
+        38,
+        52
+      ]
+    ],
+    "tolerance": 7,
+    "fadeMs": 1200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

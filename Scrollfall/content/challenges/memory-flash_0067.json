@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0067",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Find the marshmallow!",
+  "durationMs": 4000,
+  "difficulty": 4,
+  "theme": "campfire snacks",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "flashMs": 700,
+    "targetCell": 14,
+    "item": "🍡",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🍢"
+      },
+      {
+        "cell": 6,
+        "item": "🍥"
+      },
+      {
+        "cell": 9,
+        "item": "🍬"
+      },
+      {
+        "cell": 11,
+        "item": "🍘"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

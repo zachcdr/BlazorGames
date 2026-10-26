@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0076",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "canopy birds",
+  "params": {
+    "left": {
+      "emoji": "🦅",
+      "name": "Harpy eagle"
+    },
+    "right": {
+      "emoji": "🦜",
+      "name": "Scarlet macaw"
+    },
+    "answer": "left",
+    "explanation": "Harpy eagles weigh ~4-9 kg; scarlet macaws are only about 1 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0084",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "strings",
+  "params": {
+    "left": {
+      "emoji": "🎸",
+      "name": "Ukulele"
+    },
+    "right": {
+      "emoji": "🎸",
+      "name": "Electric bass guitar"
+    },
+    "answer": "right",
+    "explanation": "A bass guitar is typically about 4 kg; a ukulele is well under 1 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

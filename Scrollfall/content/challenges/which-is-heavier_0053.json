@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0053",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "toys",
+  "params": {
+    "left": {
+      "emoji": "⛳",
+      "name": "Golf ball"
+    },
+    "right": {
+      "emoji": "⚾",
+      "name": "Baseball"
+    },
+    "answer": "right",
+    "explanation": "A baseball weighs about 145 g; a golf ball is at most 46 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

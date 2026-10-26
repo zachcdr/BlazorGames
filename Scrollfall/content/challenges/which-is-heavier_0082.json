@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0082",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "brass band",
+  "params": {
+    "left": {
+      "emoji": "🎺",
+      "name": "Trumpet"
+    },
+    "right": {
+      "emoji": "📯",
+      "name": "Tuba"
+    },
+    "answer": "right",
+    "explanation": "A tuba weighs roughly 8-12 kg; a trumpet is only about 1 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

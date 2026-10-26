@@ -1,0 +1,27 @@
+{
+  "id": "sequence-memory_0032",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Hop the lily pads",
+  "durationMs": 7000,
+  "difficulty": 2,
+  "theme": "lily pads",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "sequence": [
+      4,
+      0,
+      8,
+      2
+    ],
+    "showMs": 600,
+    "gapMs": 250
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

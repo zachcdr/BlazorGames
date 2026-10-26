@@ -1,0 +1,34 @@
+{
+  "id": "stop-the-wheel_0051",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the statue",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "museum",
+  "params": {
+    "segments": [
+      {
+        "color": "#ffc53d",
+        "label": "🗿"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🎨"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🦴"
+      }
+    ],
+    "targetSegment": 0,
+    "speed": 0.4,
+    "startAngle": 200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

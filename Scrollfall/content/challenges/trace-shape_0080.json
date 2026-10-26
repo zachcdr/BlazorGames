@@ -1,0 +1,33 @@
+{
+  "id": "trace-shape_0080",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the giraffe's long neck",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "giraffe",
+  "params": {
+    "points": [
+      [
+        40,
+        90
+      ],
+      [
+        40,
+        25
+      ],
+      [
+        65,
+        15
+      ]
+    ],
+    "tolerance": 14,
+    "fadeMs": 4500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

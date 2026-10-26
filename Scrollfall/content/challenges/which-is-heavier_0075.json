@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0075",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "rainforest",
+  "params": {
+    "left": {
+      "emoji": "🐆",
+      "name": "Jaguar"
+    },
+    "right": {
+      "emoji": "🐗",
+      "name": "Lowland tapir"
+    },
+    "answer": "right",
+    "explanation": "Lowland tapirs weigh ~150-250 kg; jaguars are ~60-100 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

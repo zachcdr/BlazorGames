@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0064",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "kitchen",
+  "params": {
+    "left": {
+      "emoji": "🍗",
+      "name": "Whole chicken"
+    },
+    "right": {
+      "emoji": "🦃",
+      "name": "Whole turkey"
+    },
+    "answer": "right",
+    "explanation": "A whole turkey is usually 5+ kg; a whole chicken is about 1.5-2 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

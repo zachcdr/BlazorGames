@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0031",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "jungle",
+  "params": {
+    "left": {
+      "emoji": "🐘",
+      "name": "Elephant"
+    },
+    "right": {
+      "emoji": "🐒",
+      "name": "Monkey"
+    },
+    "answer": "left",
+    "explanation": "An adult elephant weighs several tonnes; a monkey just a few kilograms."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "sequence-memory_0047",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Rush-hour breakfast! Repeat it",
+  "durationMs": 8500,
+  "difficulty": 5,
+  "theme": "breakfast",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "sequence": [
+      5,
+      12,
+      3,
+      9,
+      0,
+      14,
+      7
+    ],
+    "showMs": 320,
+    "gapMs": 150
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

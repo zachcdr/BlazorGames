@@ -1,0 +1,70 @@
+{
+  "id": "stop-the-wheel_0066",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the ghost",
+  "durationMs": 8000,
+  "difficulty": 5,
+  "theme": "haunted halls",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d",
+        "label": "🕯️"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🦇"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🕸️"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "💀"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🎃"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "👻"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🪦"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🧛"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🔮"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🕷️"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🗝️"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🧟"
+      }
+    ],
+    "targetSegment": 5,
+    "speed": 0.55,
+    "startAngle": 95
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

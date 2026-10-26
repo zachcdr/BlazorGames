@@ -1,0 +1,24 @@
+{
+  "id": "tap-count_0077",
+  "template": "tap-count",
+  "version": 1,
+  "prompt": "Tap the butterfly exactly 10 times",
+  "durationMs": 7500,
+  "difficulty": 4,
+  "theme": "jungle bugs",
+  "params": {
+    "targetCount": 10,
+    "target": "🦋",
+    "distractors": [
+      "🐝",
+      "🪲",
+      "🐞"
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

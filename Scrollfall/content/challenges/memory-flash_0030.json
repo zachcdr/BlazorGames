@@ -1,0 +1,56 @@
+{
+  "id": "memory-flash_0030",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the nut and bolt?",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "tools",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 300,
+    "targetCell": 3,
+    "item": "🔩",
+    "decoys": [
+      {
+        "cell": 6,
+        "item": "⚙️"
+      },
+      {
+        "cell": 9,
+        "item": "🪙"
+      },
+      {
+        "cell": 12,
+        "item": "🔘"
+      },
+      {
+        "cell": 15,
+        "item": "🛞"
+      },
+      {
+        "cell": 17,
+        "item": "⛓️"
+      },
+      {
+        "cell": 20,
+        "item": "🧷"
+      },
+      {
+        "cell": 23,
+        "item": "📍"
+      },
+      {
+        "cell": 24,
+        "item": "🔧"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

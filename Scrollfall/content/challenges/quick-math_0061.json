@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0061",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Quick maths, matey!",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "pirates",
+  "params": {
+    "a": 11,
+    "op": "×",
+    "b": 8,
+    "options": [
+      88,
+      86,
+      96,
+      80
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

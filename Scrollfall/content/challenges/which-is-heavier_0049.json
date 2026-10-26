@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0049",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "treasure",
+  "params": {
+    "left": {
+      "emoji": "🟡",
+      "name": "Real gold nugget"
+    },
+    "right": {
+      "emoji": "✨",
+      "name": "Fool's gold (pyrite)"
+    },
+    "answer": "left",
+    "explanation": "Gold is about 19.3 g/cm³; pyrite only about 5 g/cm³."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

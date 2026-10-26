@@ -1,0 +1,31 @@
+{
+  "id": "sequence-memory_0055",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Tap them in order",
+  "durationMs": 9000,
+  "difficulty": 5,
+  "theme": "storm",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "sequence": [
+      15,
+      6,
+      9,
+      0,
+      10,
+      3,
+      12,
+      5
+    ],
+    "showMs": 300,
+    "gapMs": 100
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

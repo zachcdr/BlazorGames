@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0063",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "kitchen",
+  "params": {
+    "left": {
+      "emoji": "🥣",
+      "name": "Stand mixer"
+    },
+    "right": {
+      "emoji": "🍞",
+      "name": "Toaster"
+    },
+    "answer": "left",
+    "explanation": "A stand mixer is about 10 kg; a typical toaster is only 2-3 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

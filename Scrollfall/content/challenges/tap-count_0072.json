@@ -1,0 +1,22 @@
+{
+  "id": "tap-count_0072",
+  "template": "tap-count",
+  "version": 1,
+  "prompt": "Tap the parrot exactly 5 times",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "jungle birds",
+  "params": {
+    "targetCount": 5,
+    "target": "🦜",
+    "distractors": [
+      "🌴"
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "stop-the-wheel_0069",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the horse",
+  "durationMs": 7000,
+  "difficulty": 2,
+  "theme": "royal stable",
+  "params": {
+    "segments": [
+      {
+        "color": "#ffc53d",
+        "label": "🦅"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🐺"
+      },
+      {
+        "color": "#12a594",
+        "label": "🐴"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🐓"
+      }
+    ],
+    "targetSegment": 2,
+    "speed": 0.7,
+    "startAngle": 140
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

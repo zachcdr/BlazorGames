@@ -1,0 +1,48 @@
+{
+  "id": "memory-flash_0079",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the dolphin?",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "ocean",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 350,
+    "targetCell": 22,
+    "item": "🐬",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🐳"
+      },
+      {
+        "cell": 6,
+        "item": "🐋"
+      },
+      {
+        "cell": 10,
+        "item": "🦈"
+      },
+      {
+        "cell": 14,
+        "item": "🐟"
+      },
+      {
+        "cell": 18,
+        "item": "🦭"
+      },
+      {
+        "cell": 20,
+        "item": "🐡"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

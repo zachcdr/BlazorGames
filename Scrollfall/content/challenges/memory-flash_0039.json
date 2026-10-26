@@ -1,0 +1,48 @@
+{
+  "id": "memory-flash_0039",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Spot the T-Rex!",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "dinosaurs",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 400,
+    "targetCell": 19,
+    "item": "🦖",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "🦕"
+      },
+      {
+        "cell": 4,
+        "item": "🐊"
+      },
+      {
+        "cell": 7,
+        "item": "🦎"
+      },
+      {
+        "cell": 11,
+        "item": "🐉"
+      },
+      {
+        "cell": 15,
+        "item": "🦕"
+      },
+      {
+        "cell": 23,
+        "item": "🐲"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

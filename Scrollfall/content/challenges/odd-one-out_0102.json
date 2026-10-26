@@ -1,0 +1,26 @@
+{
+  "id": "odd-one-out_0102",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the one that isn't a plant",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "jungle plants",
+  "params": {
+    "items": [
+      "🌴",
+      "🌿",
+      "🌺",
+      "🍃",
+      "🐛",
+      "🌱"
+    ],
+    "answerIndex": 4
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

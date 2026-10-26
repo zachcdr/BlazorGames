@@ -1,0 +1,37 @@
+{
+  "id": "trace-shape_0023",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the carrot",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "veggies",
+  "params": {
+    "points": [
+      [
+        25,
+        20
+      ],
+      [
+        75,
+        20
+      ],
+      [
+        50,
+        85
+      ],
+      [
+        25,
+        20
+      ]
+    ],
+    "tolerance": 12,
+    "fadeMs": 2500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

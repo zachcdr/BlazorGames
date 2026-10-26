@@ -1,0 +1,32 @@
+{
+  "id": "memory-flash_0074",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where did the surfer go?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "surfing",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "flashMs": 1100,
+    "targetCell": 7,
+    "item": "🏄",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🌊"
+      },
+      {
+        "cell": 9,
+        "item": "🏐"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

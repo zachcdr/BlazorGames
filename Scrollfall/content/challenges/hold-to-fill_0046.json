@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0046",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the honey jar to the line",
+  "durationMs": 4500,
+  "difficulty": 3,
+  "theme": "pantry",
+  "params": {
+    "item": "🍯",
+    "fillPerSecond": 55,
+    "targetFrom": 70,
+    "targetTo": 81
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0012",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "zoo",
+  "params": {
+    "left": {
+      "emoji": "🦩",
+      "name": "Flamingo"
+    },
+    "right": {
+      "emoji": "🦛",
+      "name": "Hippo"
+    },
+    "answer": "right",
+    "explanation": "A hippo weighs ~1,500 kg; a flamingo only about 3 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

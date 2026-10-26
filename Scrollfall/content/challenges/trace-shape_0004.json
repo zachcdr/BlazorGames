@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0004",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the square",
+  "durationMs": 6000,
+  "difficulty": 2,
+  "theme": "shapes",
+  "params": {
+    "points": [
+      [
+        25,
+        25
+      ],
+      [
+        75,
+        25
+      ],
+      [
+        75,
+        75
+      ],
+      [
+        25,
+        75
+      ],
+      [
+        25,
+        25
+      ]
+    ],
+    "tolerance": 10,
+    "fadeMs": 1800
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

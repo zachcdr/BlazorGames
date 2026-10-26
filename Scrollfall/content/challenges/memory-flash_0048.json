@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0048",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the clay vase?",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "ruins",
+  "params": {
+    "rows": 4,
+    "cols": 5,
+    "flashMs": 550,
+    "targetCell": 3,
+    "item": "🏺",
+    "decoys": [
+      {
+        "cell": 11,
+        "item": "🍯"
+      },
+      {
+        "cell": 15,
+        "item": "🪣"
+      },
+      {
+        "cell": 18,
+        "item": "🫙"
+      },
+      {
+        "cell": 6,
+        "item": "🧭"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

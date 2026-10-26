@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0007",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "jungle",
+  "params": {
+    "left": {
+      "emoji": "🐆",
+      "name": "Leopard"
+    },
+    "right": {
+      "emoji": "🦍",
+      "name": "Gorilla"
+    },
+    "answer": "right",
+    "explanation": "A gorilla weighs ~160 kg; a leopard ~60 kg."
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

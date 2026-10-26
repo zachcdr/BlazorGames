@@ -1,0 +1,73 @@
+{
+  "id": "trace-shape_0032",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the donut",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "donuts",
+  "params": {
+    "points": [
+      [
+        82,
+        50
+      ],
+      [
+        77.7,
+        66
+      ],
+      [
+        66,
+        77.7
+      ],
+      [
+        50,
+        82
+      ],
+      [
+        34,
+        77.7
+      ],
+      [
+        22.3,
+        66
+      ],
+      [
+        18,
+        50
+      ],
+      [
+        22.3,
+        34
+      ],
+      [
+        34,
+        22.3
+      ],
+      [
+        50,
+        18
+      ],
+      [
+        66,
+        22.3
+      ],
+      [
+        77.7,
+        34
+      ],
+      [
+        82,
+        50
+      ]
+    ],
+    "tolerance": 14,
+    "fadeMs": 3500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

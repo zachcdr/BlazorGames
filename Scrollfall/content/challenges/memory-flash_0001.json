@@ -1,0 +1,23 @@
+{
+  "id": "memory-flash_0001",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the cat?",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "pets",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "flashMs": 1200,
+    "targetCell": 4,
+    "item": "🐱",
+    "decoys": []
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

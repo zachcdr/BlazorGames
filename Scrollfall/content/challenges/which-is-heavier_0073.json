@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0073",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "rainforest",
+  "params": {
+    "left": {
+      "emoji": "🦥",
+      "name": "Three-toed sloth"
+    },
+    "right": {
+      "emoji": "🦫",
+      "name": "Capybara"
+    },
+    "answer": "right",
+    "explanation": "Capybaras weigh ~35-65 kg; a three-toed sloth is just 4-6 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

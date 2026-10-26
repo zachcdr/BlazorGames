@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0009",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "treasure",
+  "params": {
+    "left": {
+      "emoji": "🥇",
+      "name": "Gold bar"
+    },
+    "right": {
+      "emoji": "🥈",
+      "name": "Silver bar"
+    },
+    "answer": "left",
+    "explanation": "Gold is almost twice as dense as silver."
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

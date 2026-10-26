@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0051",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "toys",
+  "params": {
+    "left": {
+      "emoji": "🏓",
+      "name": "Ping-pong ball"
+    },
+    "right": {
+      "emoji": "🎳",
+      "name": "Bowling ball"
+    },
+    "answer": "right",
+    "explanation": "A ping-pong ball weighs 2.7 g; a bowling ball weighs several kilograms."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

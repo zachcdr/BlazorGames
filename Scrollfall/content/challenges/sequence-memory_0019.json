@@ -1,0 +1,30 @@
+{
+  "id": "sequence-memory_0019",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Catch the aurora lights",
+  "durationMs": 8500,
+  "difficulty": 5,
+  "theme": "aurora",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "sequence": [
+      9,
+      2,
+      14,
+      5,
+      0,
+      11,
+      7
+    ],
+    "showMs": 320,
+    "gapMs": 130
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

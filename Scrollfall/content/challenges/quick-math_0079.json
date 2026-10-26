@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0079",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Swing to the answer!",
+  "durationMs": 5500,
+  "difficulty": 2,
+  "theme": "vines",
+  "params": {
+    "a": 47,
+    "op": "+",
+    "b": 6,
+    "options": [
+      63,
+      53,
+      52,
+      43
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

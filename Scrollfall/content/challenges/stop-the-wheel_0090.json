@@ -1,0 +1,31 @@
+{
+  "id": "stop-the-wheel_0090",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on teal",
+  "durationMs": 7500,
+  "difficulty": 1,
+  "theme": "pond water",
+  "params": {
+    "segments": [
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#d6409f"
+      }
+    ],
+    "targetSegment": 0,
+    "speed": 0.35,
+    "startAngle": 200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0003",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the zigzag",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "lightning",
+  "params": {
+    "points": [
+      [
+        15,
+        25
+      ],
+      [
+        40,
+        45
+      ],
+      [
+        20,
+        60
+      ],
+      [
+        60,
+        75
+      ],
+      [
+        85,
+        70
+      ]
+    ],
+    "tolerance": 10,
+    "fadeMs": 1800
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

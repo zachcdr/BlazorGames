@@ -1,0 +1,37 @@
+{
+  "id": "stop-the-wheel_0091",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on pink",
+  "durationMs": 7000,
+  "difficulty": 2,
+  "theme": "lotus bloom",
+  "params": {
+    "segments": [
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#d6409f"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#f76b15"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 0.5,
+    "startAngle": 75
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

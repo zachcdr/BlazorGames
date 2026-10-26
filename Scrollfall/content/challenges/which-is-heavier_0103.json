@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0103",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "juggling",
+  "params": {
+    "left": {
+      "emoji": "🎳",
+      "name": "Bowling ball"
+    },
+    "right": {
+      "emoji": "🏐",
+      "name": "Volleyball"
+    },
+    "answer": "left",
+    "explanation": "A bowling ball weighs about 3-7 kg; a volleyball is only about 270 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

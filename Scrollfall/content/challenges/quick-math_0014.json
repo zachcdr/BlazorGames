@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0014",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Share the beetles!",
+  "durationMs": 6000,
+  "difficulty": 2,
+  "theme": "insects",
+  "params": {
+    "a": 56,
+    "op": "÷",
+    "b": 8,
+    "options": [
+      6,
+      8,
+      9,
+      7
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

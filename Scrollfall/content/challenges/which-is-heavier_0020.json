@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0020",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 5,
+  "theme": "zoo shop",
+  "params": {
+    "left": {
+      "emoji": "🪶",
+      "name": "Aluminium lion statue"
+    },
+    "right": {
+      "emoji": "🦁",
+      "name": "Iron lion statue"
+    },
+    "answer": "right",
+    "explanation": "Iron is nearly 3x denser than aluminium, so it weighs far more."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

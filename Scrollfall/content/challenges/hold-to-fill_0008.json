@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0008",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the tank to the line",
+  "durationMs": 5000,
+  "difficulty": 4,
+  "theme": "city",
+  "params": {
+    "item": "⛽",
+    "fillPerSecond": 70,
+    "targetFrom": 60,
+    "targetTo": 72
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

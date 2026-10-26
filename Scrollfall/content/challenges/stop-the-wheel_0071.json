@@ -1,0 +1,31 @@
+{
+  "id": "stop-the-wheel_0071",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on orange",
+  "durationMs": 7000,
+  "difficulty": 1,
+  "theme": "lava land",
+  "params": {
+    "segments": [
+      {
+        "color": "#f76b15"
+      },
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#8e4ec6"
+      }
+    ],
+    "targetSegment": 0,
+    "speed": 0.5,
+    "startAngle": 90
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

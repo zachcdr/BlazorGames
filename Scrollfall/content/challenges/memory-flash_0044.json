@@ -1,0 +1,32 @@
+{
+  "id": "memory-flash_0044",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Find the water drop!",
+  "durationMs": 5500,
+  "difficulty": 2,
+  "theme": "oasis",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "flashMs": 900,
+    "targetCell": 8,
+    "item": "💧",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🔥"
+      },
+      {
+        "cell": 4,
+        "item": "🌵"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

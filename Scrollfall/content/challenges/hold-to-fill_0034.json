@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0034",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the flask to the line",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "witch doctor",
+  "params": {
+    "item": "🧪",
+    "fillPerSecond": 35,
+    "targetFrom": 60,
+    "targetTo": 73
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

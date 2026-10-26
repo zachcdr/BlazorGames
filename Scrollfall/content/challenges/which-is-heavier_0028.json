@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0028",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "insects",
+  "params": {
+    "left": {
+      "emoji": "🪲",
+      "name": "Goliath beetle"
+    },
+    "right": {
+      "emoji": "🐦",
+      "name": "Hummingbird"
+    },
+    "answer": "left",
+    "explanation": "Goliath beetles can top 50 g; a hummingbird weighs about 3 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

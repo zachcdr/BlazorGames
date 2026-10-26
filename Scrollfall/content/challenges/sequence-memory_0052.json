@@ -1,0 +1,28 @@
+{
+  "id": "sequence-memory_0052",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Trace the reef",
+  "durationMs": 8000,
+  "difficulty": 3,
+  "theme": "coral reef",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "sequence": [
+      11,
+      4,
+      6,
+      1,
+      9
+    ],
+    "showMs": 480,
+    "gapMs": 200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

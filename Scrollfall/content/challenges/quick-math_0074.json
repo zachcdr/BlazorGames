@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0074",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Quick maths!",
+  "durationMs": 7000,
+  "difficulty": 4,
+  "theme": "pearls",
+  "params": {
+    "a": 68,
+    "op": "+",
+    "b": 27,
+    "options": [
+      85,
+      94,
+      41,
+      95
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

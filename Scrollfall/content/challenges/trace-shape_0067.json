@@ -1,0 +1,53 @@
+{
+  "id": "trace-shape_0067",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the city block spiral",
+  "durationMs": 5500,
+  "difficulty": 4,
+  "theme": "city blocks",
+  "params": {
+    "points": [
+      [
+        15,
+        15
+      ],
+      [
+        85,
+        15
+      ],
+      [
+        85,
+        85
+      ],
+      [
+        15,
+        85
+      ],
+      [
+        15,
+        35
+      ],
+      [
+        65,
+        35
+      ],
+      [
+        65,
+        65
+      ],
+      [
+        35,
+        65
+      ]
+    ],
+    "tolerance": 7,
+    "fadeMs": 1200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

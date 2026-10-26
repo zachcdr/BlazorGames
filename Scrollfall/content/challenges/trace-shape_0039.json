@@ -1,0 +1,81 @@
+{
+  "id": "trace-shape_0039",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the croissant",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "pastry",
+  "params": {
+    "points": [
+      [
+        8,
+        64
+      ],
+      [
+        16,
+        44
+      ],
+      [
+        28,
+        32
+      ],
+      [
+        38,
+        26
+      ],
+      [
+        50,
+        18
+      ],
+      [
+        62,
+        26
+      ],
+      [
+        72,
+        32
+      ],
+      [
+        84,
+        44
+      ],
+      [
+        92,
+        64
+      ],
+      [
+        80,
+        56
+      ],
+      [
+        64,
+        46
+      ],
+      [
+        50,
+        42
+      ],
+      [
+        36,
+        46
+      ],
+      [
+        20,
+        56
+      ],
+      [
+        8,
+        64
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 600
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

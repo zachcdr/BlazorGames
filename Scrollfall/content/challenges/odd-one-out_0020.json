@@ -1,0 +1,29 @@
+{
+  "id": "odd-one-out_0020",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Find the different leaf",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "jungle",
+  "params": {
+    "items": [
+      "🌿",
+      "🌿",
+      "🌿",
+      "🌿",
+      "🌿",
+      "🍀",
+      "🌿",
+      "🌿",
+      "🌿"
+    ],
+    "answerIndex": 5
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

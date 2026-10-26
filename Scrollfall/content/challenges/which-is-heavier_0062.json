@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0062",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "kitchen",
+  "params": {
+    "left": {
+      "emoji": "🥄",
+      "name": "Wooden spoon"
+    },
+    "right": {
+      "emoji": "🍳",
+      "name": "Cast-iron skillet"
+    },
+    "answer": "right",
+    "explanation": "A cast-iron skillet is ~2-3 kg; a wooden spoon is only ~50 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

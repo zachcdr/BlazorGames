@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0032",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "tropical fruit",
+  "params": {
+    "left": {
+      "emoji": "🍌",
+      "name": "Banana"
+    },
+    "right": {
+      "emoji": "🥥",
+      "name": "Coconut"
+    },
+    "answer": "right",
+    "explanation": "A whole coconut weighs about 500-800 g; a banana only about 120 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

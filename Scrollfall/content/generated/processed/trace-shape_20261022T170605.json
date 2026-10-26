@@ -1,0 +1,2667 @@
+{
+  "template": "trace-shape",
+  "createdAt": "2026-10-22T17:06:05.018Z",
+  "requested": 50,
+  "calls": [
+    {
+      "theme": "fruit market",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the banana",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "fruit market",
+          "params": {
+            "points": [
+              [
+                15,
+                35
+              ],
+              [
+                30,
+                60
+              ],
+              [
+                50,
+                75
+              ],
+              [
+                70,
+                72
+              ],
+              [
+                85,
+                55
+              ]
+            ],
+            "tolerance": 14,
+            "fadeMs": 4000
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the basket handle",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "fruit market",
+          "params": {
+            "points": [
+              [
+                15,
+                70
+              ],
+              [
+                22,
+                45
+              ],
+              [
+                38,
+                28
+              ],
+              [
+                50,
+                24
+              ],
+              [
+                62,
+                28
+              ],
+              [
+                78,
+                45
+              ],
+              [
+                85,
+                70
+              ]
+            ],
+            "tolerance": 14,
+            "fadeMs": 4500
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the strawberry",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "fruit market",
+          "params": {
+            "points": [
+              [
+                18,
+                25
+              ],
+              [
+                82,
+                25
+              ],
+              [
+                70,
+                60
+              ],
+              [
+                50,
+                86
+              ],
+              [
+                30,
+                60
+              ],
+              [
+                18,
+                25
+              ]
+            ],
+            "tolerance": 10,
+            "fadeMs": 2200
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the melon slice",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "fruit market",
+          "params": {
+            "points": [
+              [
+                12,
+                35
+              ],
+              [
+                88,
+                35
+              ],
+              [
+                80,
+                55
+              ],
+              [
+                65,
+                70
+              ],
+              [
+                50,
+                76
+              ],
+              [
+                35,
+                70
+              ],
+              [
+                20,
+                55
+              ],
+              [
+                12,
+                35
+              ]
+            ],
+            "tolerance": 9,
+            "fadeMs": 2000
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the pear",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "fruit market",
+          "params": {
+            "points": [
+              [
+                50,
+                12
+              ],
+              [
+                58,
+                22
+              ],
+              [
+                60,
+                38
+              ],
+              [
+                72,
+                52
+              ],
+              [
+                78,
+                70
+              ],
+              [
+                68,
+                86
+              ],
+              [
+                50,
+                90
+              ],
+              [
+                32,
+                86
+              ],
+              [
+                22,
+                70
+              ],
+              [
+                28,
+                52
+              ],
+              [
+                40,
+                38
+              ],
+              [
+                42,
+                22
+              ],
+              [
+                50,
+                12
+              ]
+            ],
+            "tolerance": 7,
+            "fadeMs": 1500
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the leaf",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "fruit market",
+          "params": {
+            "points": [
+              [
+                50,
+                10
+              ],
+              [
+                70,
+                24
+              ],
+              [
+                78,
+                46
+              ],
+              [
+                66,
+                70
+              ],
+              [
+                50,
+                88
+              ],
+              [
+                34,
+                70
+              ],
+              [
+                22,
+                46
+              ],
+              [
+                30,
+                24
+              ],
+              [
+                50,
+                10
+              ]
+            ],
+            "tolerance": 8,
+            "fadeMs": 1400
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the apple",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "fruit market",
+          "params": {
+            "points": [
+              [
+                50,
+                28
+              ],
+              [
+                38,
+                20
+              ],
+              [
+                22,
+                24
+              ],
+              [
+                14,
+                42
+              ],
+              [
+                20,
+                66
+              ],
+              [
+                34,
+                84
+              ],
+              [
+                50,
+                80
+              ],
+              [
+                66,
+                84
+              ],
+              [
+                80,
+                66
+              ],
+              [
+                86,
+                42
+              ],
+              [
+                78,
+                24
+              ],
+              [
+                62,
+                20
+              ],
+              [
+                50,
+                28
+              ]
+            ],
+            "tolerance": 7,
+            "fadeMs": 1000
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the orange peel spiral",
+          "durationMs": 7000,
+          "difficulty": 4,
+          "theme": "fruit market",
+          "params": {
+            "points": [
+              [
+                58,
+                50
+              ],
+              [
+                57.1,
+                57.1
+              ],
+              [
+                50,
+                62
+              ],
+              [
+                40.1,
+                59.9
+              ],
+              [
+                34,
+                50
+              ],
+              [
+                37.3,
+                37.3
+              ],
+              [
+                50,
+                30
+              ],
+              [
+                65.6,
+                34.4
+              ],
+              [
+                74,
+                50
+              ],
+              [
+                68.4,
+                68.4
+              ],
+              [
+                50,
+                78
+              ],
+              [
+                28.8,
+                71.2
+              ],
+              [
+                18,
+                50
+              ],
+              [
+                26,
+                26
+              ],
+              [
+                50,
+                14
+              ],
+              [
+                76.9,
+                23.1
+              ],
+              [
+                90,
+                50
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 1200
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the squash S",
+          "durationMs": 5000,
+          "difficulty": 5,
+          "theme": "fruit market",
+          "params": {
+            "points": [
+              [
+                78,
+                22
+              ],
+              [
+                62,
+                12
+              ],
+              [
+                38,
+                12
+              ],
+              [
+                22,
+                24
+              ],
+              [
+                24,
+                40
+              ],
+              [
+                42,
+                50
+              ],
+              [
+                60,
+                56
+              ],
+              [
+                76,
+                66
+              ],
+              [
+                76,
+                80
+              ],
+              [
+                60,
+                90
+              ],
+              [
+                38,
+                90
+              ],
+              [
+                22,
+                78
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 600
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the pineapple crown",
+          "durationMs": 8000,
+          "difficulty": 5,
+          "theme": "fruit market",
+          "params": {
+            "points": [
+              [
+                9,
+                14
+              ],
+              [
+                22,
+                86
+              ],
+              [
+                35,
+                14
+              ],
+              [
+                48,
+                86
+              ],
+              [
+                61,
+                14
+              ],
+              [
+                74,
+                86
+              ],
+              [
+                87,
+                14
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 800
+          }
+        }
+      ]
+    },
+    {
+      "theme": "garden",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the raindrop",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "rain",
+          "params": {
+            "points": [
+              [
+                50,
+                15
+              ],
+              [
+                70,
+                50
+              ],
+              [
+                72,
+                68
+              ],
+              [
+                60,
+                82
+              ],
+              [
+                50,
+                85
+              ],
+              [
+                40,
+                82
+              ],
+              [
+                28,
+                68
+              ],
+              [
+                30,
+                50
+              ],
+              [
+                50,
+                15
+              ]
+            ],
+            "tolerance": 13,
+            "fadeMs": 3000
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the wavy vine",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "vines",
+          "params": {
+            "points": [
+              [
+                10,
+                50
+              ],
+              [
+                25,
+                30
+              ],
+              [
+                40,
+                50
+              ],
+              [
+                55,
+                70
+              ],
+              [
+                70,
+                50
+              ],
+              [
+                85,
+                30
+              ]
+            ],
+            "tolerance": 14,
+            "fadeMs": 3500
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the carrot",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "veggies",
+          "params": {
+            "points": [
+              [
+                25,
+                20
+              ],
+              [
+                75,
+                20
+              ],
+              [
+                50,
+                85
+              ],
+              [
+                25,
+                20
+              ]
+            ],
+            "tolerance": 12,
+            "fadeMs": 2500
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the greenhouse",
+          "durationMs": 6000,
+          "difficulty": 2,
+          "theme": "greenhouse",
+          "params": {
+            "points": [
+              [
+                50,
+                12
+              ],
+              [
+                88,
+                40
+              ],
+              [
+                88,
+                85
+              ],
+              [
+                12,
+                85
+              ],
+              [
+                12,
+                40
+              ],
+              [
+                50,
+                12
+              ]
+            ],
+            "tolerance": 10,
+            "fadeMs": 2000
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the flower pot",
+          "durationMs": 6500,
+          "difficulty": 3,
+          "theme": "flower pot",
+          "params": {
+            "points": [
+              [
+                14,
+                16
+              ],
+              [
+                86,
+                16
+              ],
+              [
+                86,
+                36
+              ],
+              [
+                78,
+                36
+              ],
+              [
+                70,
+                86
+              ],
+              [
+                30,
+                86
+              ],
+              [
+                22,
+                36
+              ],
+              [
+                14,
+                36
+              ],
+              [
+                14,
+                16
+              ]
+            ],
+            "tolerance": 9,
+            "fadeMs": 1600
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the tulip",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "flowers",
+          "params": {
+            "points": [
+              [
+                50,
+                90
+              ],
+              [
+                50,
+                58
+              ],
+              [
+                28,
+                48
+              ],
+              [
+                25,
+                20
+              ],
+              [
+                42,
+                38
+              ],
+              [
+                50,
+                18
+              ],
+              [
+                58,
+                38
+              ],
+              [
+                75,
+                20
+              ],
+              [
+                72,
+                48
+              ],
+              [
+                50,
+                58
+              ]
+            ],
+            "tolerance": 7,
+            "fadeMs": 1500
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the picket fence",
+          "durationMs": 7000,
+          "difficulty": 4,
+          "theme": "fence",
+          "params": {
+            "points": [
+              [
+                8,
+                82
+              ],
+              [
+                8,
+                42
+              ],
+              [
+                17,
+                26
+              ],
+              [
+                26,
+                42
+              ],
+              [
+                26,
+                82
+              ],
+              [
+                38,
+                82
+              ],
+              [
+                38,
+                42
+              ],
+              [
+                47,
+                26
+              ],
+              [
+                56,
+                42
+              ],
+              [
+                56,
+                82
+              ],
+              [
+                68,
+                82
+              ],
+              [
+                68,
+                42
+              ],
+              [
+                77,
+                26
+              ],
+              [
+                86,
+                42
+              ],
+              [
+                86,
+                82
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 1100
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the snail shell",
+          "durationMs": 7500,
+          "difficulty": 4,
+          "theme": "snails",
+          "params": {
+            "points": [
+              [
+                10,
+                10
+              ],
+              [
+                90,
+                10
+              ],
+              [
+                90,
+                90
+              ],
+              [
+                10,
+                90
+              ],
+              [
+                10,
+                24
+              ],
+              [
+                76,
+                24
+              ],
+              [
+                76,
+                76
+              ],
+              [
+                24,
+                76
+              ],
+              [
+                24,
+                38
+              ],
+              [
+                62,
+                38
+              ],
+              [
+                62,
+                62
+              ],
+              [
+                38,
+                62
+              ],
+              [
+                38,
+                52
+              ]
+            ],
+            "tolerance": 7,
+            "fadeMs": 1200
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the bee's zigzag",
+          "durationMs": 7000,
+          "difficulty": 5,
+          "theme": "bees",
+          "params": {
+            "points": [
+              [
+                8,
+                20
+              ],
+              [
+                18,
+                80
+              ],
+              [
+                28,
+                20
+              ],
+              [
+                38,
+                80
+              ],
+              [
+                48,
+                20
+              ],
+              [
+                58,
+                80
+              ],
+              [
+                68,
+                20
+              ],
+              [
+                78,
+                80
+              ],
+              [
+                88,
+                20
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 700
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the hedge maze",
+          "durationMs": 6500,
+          "difficulty": 5,
+          "theme": "hedge maze",
+          "params": {
+            "points": [
+              [
+                10,
+                15
+              ],
+              [
+                90,
+                15
+              ],
+              [
+                90,
+                32
+              ],
+              [
+                10,
+                32
+              ],
+              [
+                10,
+                49
+              ],
+              [
+                90,
+                49
+              ],
+              [
+                90,
+                66
+              ],
+              [
+                10,
+                66
+              ],
+              [
+                10,
+                83
+              ],
+              [
+                90,
+                83
+              ]
+            ],
+            "tolerance": 7,
+            "fadeMs": 900
+          }
+        }
+      ]
+    },
+    {
+      "theme": "bakery",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the baguette",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "bread",
+          "params": {
+            "points": [
+              [
+                14,
+                50
+              ],
+              [
+                24,
+                36
+              ],
+              [
+                76,
+                36
+              ],
+              [
+                86,
+                50
+              ],
+              [
+                76,
+                64
+              ],
+              [
+                24,
+                64
+              ],
+              [
+                14,
+                50
+              ]
+            ],
+            "tolerance": 13,
+            "fadeMs": 3000
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the donut",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "donuts",
+          "params": {
+            "points": [
+              [
+                82,
+                50
+              ],
+              [
+                77.7,
+                66
+              ],
+              [
+                66,
+                77.7
+              ],
+              [
+                50,
+                82
+              ],
+              [
+                34,
+                77.7
+              ],
+              [
+                22.3,
+                66
+              ],
+              [
+                18,
+                50
+              ],
+              [
+                22.3,
+                34
+              ],
+              [
+                34,
+                22.3
+              ],
+              [
+                50,
+                18
+              ],
+              [
+                66,
+                22.3
+              ],
+              [
+                77.7,
+                34
+              ],
+              [
+                82,
+                50
+              ]
+            ],
+            "tolerance": 14,
+            "fadeMs": 3500
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the cake slice",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "cake",
+          "params": {
+            "points": [
+              [
+                20,
+                30
+              ],
+              [
+                80,
+                55
+              ],
+              [
+                20,
+                75
+              ],
+              [
+                20,
+                30
+              ]
+            ],
+            "tolerance": 10,
+            "fadeMs": 2000
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the icing drizzle",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "icing",
+          "params": {
+            "points": [
+              [
+                8,
+                50
+              ],
+              [
+                18.5,
+                30
+              ],
+              [
+                29,
+                50
+              ],
+              [
+                39.5,
+                70
+              ],
+              [
+                50,
+                50
+              ],
+              [
+                60.5,
+                30
+              ],
+              [
+                71,
+                50
+              ],
+              [
+                81.5,
+                70
+              ],
+              [
+                92,
+                50
+              ]
+            ],
+            "tolerance": 9,
+            "fadeMs": 2200
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the heart cookie",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "cookies",
+          "params": {
+            "points": [
+              [
+                50,
+                85
+              ],
+              [
+                20,
+                55
+              ],
+              [
+                12,
+                38
+              ],
+              [
+                17,
+                22
+              ],
+              [
+                30,
+                15
+              ],
+              [
+                42,
+                20
+              ],
+              [
+                50,
+                32
+              ],
+              [
+                58,
+                20
+              ],
+              [
+                70,
+                15
+              ],
+              [
+                83,
+                22
+              ],
+              [
+                88,
+                38
+              ],
+              [
+                80,
+                55
+              ],
+              [
+                50,
+                85
+              ]
+            ],
+            "tolerance": 8,
+            "fadeMs": 1800
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the cupcake",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "cupcakes",
+          "params": {
+            "points": [
+              [
+                36,
+                88
+              ],
+              [
+                64,
+                88
+              ],
+              [
+                70,
+                62
+              ],
+              [
+                84,
+                58
+              ],
+              [
+                76,
+                40
+              ],
+              [
+                62,
+                34
+              ],
+              [
+                50,
+                12
+              ],
+              [
+                38,
+                34
+              ],
+              [
+                24,
+                40
+              ],
+              [
+                16,
+                58
+              ],
+              [
+                30,
+                62
+              ],
+              [
+                36,
+                88
+              ]
+            ],
+            "tolerance": 8,
+            "fadeMs": 1600
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the icing S",
+          "durationMs": 5000,
+          "difficulty": 4,
+          "theme": "icing",
+          "params": {
+            "points": [
+              [
+                76,
+                24
+              ],
+              [
+                66,
+                15
+              ],
+              [
+                50,
+                12
+              ],
+              [
+                34,
+                15
+              ],
+              [
+                24,
+                26
+              ],
+              [
+                26,
+                38
+              ],
+              [
+                38,
+                47
+              ],
+              [
+                50,
+                50
+              ],
+              [
+                62,
+                54
+              ],
+              [
+                74,
+                63
+              ],
+              [
+                76,
+                75
+              ],
+              [
+                66,
+                85
+              ],
+              [
+                50,
+                88
+              ],
+              [
+                34,
+                85
+              ],
+              [
+                24,
+                76
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 900
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the cinnamon roll",
+          "durationMs": 7000,
+          "difficulty": 4,
+          "theme": "pastry",
+          "params": {
+            "points": [
+              [
+                58,
+                50
+              ],
+              [
+                57.1,
+                57.1
+              ],
+              [
+                50,
+                62
+              ],
+              [
+                40.1,
+                59.9
+              ],
+              [
+                34,
+                50
+              ],
+              [
+                37.3,
+                37.3
+              ],
+              [
+                50,
+                30
+              ],
+              [
+                65.6,
+                34.4
+              ],
+              [
+                74,
+                50
+              ],
+              [
+                68.4,
+                68.4
+              ],
+              [
+                50,
+                78
+              ],
+              [
+                28.8,
+                71.2
+              ],
+              [
+                18,
+                50
+              ],
+              [
+                26,
+                26
+              ],
+              [
+                50,
+                14
+              ],
+              [
+                76.9,
+                23.1
+              ],
+              [
+                90,
+                50
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 1200
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the gingerbread man",
+          "durationMs": 5500,
+          "difficulty": 5,
+          "theme": "cookies",
+          "params": {
+            "points": [
+              [
+                50,
+                7
+              ],
+              [
+                58,
+                10
+              ],
+              [
+                61,
+                18
+              ],
+              [
+                58,
+                26
+              ],
+              [
+                57,
+                30
+              ],
+              [
+                70,
+                32
+              ],
+              [
+                86,
+                36
+              ],
+              [
+                90,
+                44
+              ],
+              [
+                84,
+                52
+              ],
+              [
+                66,
+                50
+              ],
+              [
+                68,
+                66
+              ],
+              [
+                76,
+                90
+              ],
+              [
+                60,
+                92
+              ],
+              [
+                50,
+                72
+              ],
+              [
+                40,
+                92
+              ],
+              [
+                24,
+                90
+              ],
+              [
+                32,
+                66
+              ],
+              [
+                34,
+                50
+              ],
+              [
+                16,
+                52
+              ],
+              [
+                10,
+                44
+              ],
+              [
+                14,
+                36
+              ],
+              [
+                30,
+                32
+              ],
+              [
+                43,
+                30
+              ],
+              [
+                42,
+                26
+              ],
+              [
+                39,
+                18
+              ],
+              [
+                42,
+                10
+              ],
+              [
+                50,
+                7
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 700
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the croissant",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "pastry",
+          "params": {
+            "points": [
+              [
+                8,
+                64
+              ],
+              [
+                16,
+                44
+              ],
+              [
+                28,
+                32
+              ],
+              [
+                38,
+                26
+              ],
+              [
+                50,
+                18
+              ],
+              [
+                62,
+                26
+              ],
+              [
+                72,
+                32
+              ],
+              [
+                84,
+                44
+              ],
+              [
+                92,
+                64
+              ],
+              [
+                80,
+                56
+              ],
+              [
+                64,
+                46
+              ],
+              [
+                50,
+                42
+              ],
+              [
+                36,
+                46
+              ],
+              [
+                20,
+                56
+              ],
+              [
+                8,
+                64
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 600
+          }
+        }
+      ]
+    },
+    {
+      "theme": "science lab",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the petri dish",
+          "durationMs": 4500,
+          "difficulty": 1,
+          "theme": "biology",
+          "params": {
+            "points": [
+              [
+                86,
+                50
+              ],
+              [
+                81.2,
+                68
+              ],
+              [
+                68,
+                81.2
+              ],
+              [
+                50,
+                86
+              ],
+              [
+                32,
+                81.2
+              ],
+              [
+                18.8,
+                68
+              ],
+              [
+                14,
+                50
+              ],
+              [
+                18.8,
+                32
+              ],
+              [
+                32,
+                18.8
+              ],
+              [
+                50,
+                14
+              ],
+              [
+                68,
+                18.8
+              ],
+              [
+                81.2,
+                32
+              ],
+              [
+                86,
+                50
+              ]
+            ],
+            "tolerance": 12,
+            "fadeMs": 4000
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the beaker",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "glassware",
+          "params": {
+            "points": [
+              [
+                28,
+                12
+              ],
+              [
+                28,
+                86
+              ],
+              [
+                72,
+                86
+              ],
+              [
+                72,
+                12
+              ]
+            ],
+            "tolerance": 13,
+            "fadeMs": 3500
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the lightning bolt",
+          "durationMs": 4000,
+          "difficulty": 2,
+          "theme": "electricity",
+          "params": {
+            "points": [
+              [
+                65,
+                10
+              ],
+              [
+                28,
+                52
+              ],
+              [
+                58,
+                52
+              ],
+              [
+                35,
+                90
+              ]
+            ],
+            "tolerance": 12,
+            "fadeMs": 2500
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the flask",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "chemistry",
+          "params": {
+            "points": [
+              [
+                40,
+                12
+              ],
+              [
+                40,
+                40
+              ],
+              [
+                15,
+                82
+              ],
+              [
+                85,
+                82
+              ],
+              [
+                60,
+                40
+              ],
+              [
+                60,
+                12
+              ]
+            ],
+            "tolerance": 9,
+            "fadeMs": 2000
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the benzene ring",
+          "durationMs": 4000,
+          "difficulty": 2,
+          "theme": "chemistry",
+          "params": {
+            "points": [
+              [
+                50,
+                16
+              ],
+              [
+                79.4,
+                33
+              ],
+              [
+                79.4,
+                67
+              ],
+              [
+                50,
+                84
+              ],
+              [
+                20.6,
+                67
+              ],
+              [
+                20.6,
+                33
+              ],
+              [
+                50,
+                16
+              ]
+            ],
+            "tolerance": 9,
+            "fadeMs": 2200
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the S for Science",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "science lab",
+          "params": {
+            "points": [
+              [
+                80,
+                22
+              ],
+              [
+                60,
+                12
+              ],
+              [
+                38,
+                14
+              ],
+              [
+                24,
+                28
+              ],
+              [
+                30,
+                44
+              ],
+              [
+                50,
+                50
+              ],
+              [
+                70,
+                58
+              ],
+              [
+                76,
+                72
+              ],
+              [
+                62,
+                87
+              ],
+              [
+                40,
+                88
+              ],
+              [
+                20,
+                78
+              ]
+            ],
+            "tolerance": 8,
+            "fadeMs": 1800
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the heartbeat",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "medical",
+          "params": {
+            "points": [
+              [
+                8,
+                60
+              ],
+              [
+                24,
+                60
+              ],
+              [
+                30,
+                50
+              ],
+              [
+                36,
+                60
+              ],
+              [
+                42,
+                60
+              ],
+              [
+                50,
+                15
+              ],
+              [
+                60,
+                88
+              ],
+              [
+                66,
+                60
+              ],
+              [
+                72,
+                60
+              ],
+              [
+                78,
+                48
+              ],
+              [
+                84,
+                60
+              ],
+              [
+                92,
+                60
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 1500
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the square spiral",
+          "durationMs": 7000,
+          "difficulty": 4,
+          "theme": "science lab",
+          "params": {
+            "points": [
+              [
+                10,
+                10
+              ],
+              [
+                90,
+                10
+              ],
+              [
+                90,
+                90
+              ],
+              [
+                10,
+                90
+              ],
+              [
+                10,
+                30
+              ],
+              [
+                70,
+                30
+              ],
+              [
+                70,
+                70
+              ],
+              [
+                30,
+                70
+              ],
+              [
+                30,
+                50
+              ],
+              [
+                50,
+                50
+              ]
+            ],
+            "tolerance": 8,
+            "fadeMs": 1300
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the signal wave",
+          "durationMs": 5500,
+          "difficulty": 4,
+          "theme": "physics",
+          "params": {
+            "points": [
+              [
+                8,
+                50
+              ],
+              [
+                15,
+                30
+              ],
+              [
+                22,
+                50
+              ],
+              [
+                29,
+                70
+              ],
+              [
+                36,
+                50
+              ],
+              [
+                43,
+                30
+              ],
+              [
+                50,
+                50
+              ],
+              [
+                57,
+                70
+              ],
+              [
+                64,
+                50
+              ],
+              [
+                71,
+                30
+              ],
+              [
+                78,
+                50
+              ],
+              [
+                85,
+                70
+              ],
+              [
+                92,
+                50
+              ]
+            ],
+            "tolerance": 7,
+            "fadeMs": 1200
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the lab maze",
+          "durationMs": 6500,
+          "difficulty": 5,
+          "theme": "science lab",
+          "params": {
+            "points": [
+              [
+                10,
+                10
+              ],
+              [
+                90,
+                10
+              ],
+              [
+                90,
+                30
+              ],
+              [
+                10,
+                30
+              ],
+              [
+                10,
+                50
+              ],
+              [
+                90,
+                50
+              ],
+              [
+                90,
+                70
+              ],
+              [
+                10,
+                70
+              ],
+              [
+                10,
+                90
+              ],
+              [
+                90,
+                90
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 700
+          }
+        }
+      ]
+    },
+    {
+      "theme": "pond",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the water drop",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "pond",
+          "params": {
+            "points": [
+              [
+                50,
+                15
+              ],
+              [
+                70,
+                55
+              ],
+              [
+                68,
+                75
+              ],
+              [
+                50,
+                85
+              ],
+              [
+                32,
+                75
+              ],
+              [
+                30,
+                55
+              ],
+              [
+                50,
+                15
+              ]
+            ],
+            "tolerance": 12,
+            "fadeMs": 3500
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the frog hop",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "frog",
+          "params": {
+            "points": [
+              [
+                10,
+                75
+              ],
+              [
+                25,
+                45
+              ],
+              [
+                50,
+                25
+              ],
+              [
+                75,
+                45
+              ],
+              [
+                90,
+                75
+              ]
+            ],
+            "tolerance": 14,
+            "fadeMs": 4000
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the water wave",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "water",
+          "params": {
+            "points": [
+              [
+                10,
+                50
+              ],
+              [
+                20,
+                25
+              ],
+              [
+                30,
+                50
+              ],
+              [
+                40,
+                75
+              ],
+              [
+                50,
+                50
+              ],
+              [
+                60,
+                25
+              ],
+              [
+                70,
+                50
+              ],
+              [
+                80,
+                75
+              ],
+              [
+                90,
+                50
+              ]
+            ],
+            "tolerance": 8,
+            "fadeMs": 2500
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the fishing hook",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "fishing",
+          "params": {
+            "points": [
+              [
+                60,
+                10
+              ],
+              [
+                60,
+                58
+              ],
+              [
+                54,
+                74
+              ],
+              [
+                40,
+                84
+              ],
+              [
+                26,
+                78
+              ],
+              [
+                20,
+                64
+              ],
+              [
+                22,
+                50
+              ]
+            ],
+            "tolerance": 9,
+            "fadeMs": 2200
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the lily pad",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "lily pad",
+          "params": {
+            "points": [
+              [
+                50,
+                50
+              ],
+              [
+                81.2,
+                68
+              ],
+              [
+                56.2,
+                85.5
+              ],
+              [
+                26.9,
+                77.6
+              ],
+              [
+                14,
+                50
+              ],
+              [
+                26.9,
+                22.4
+              ],
+              [
+                56.2,
+                14.5
+              ],
+              [
+                81.2,
+                32
+              ],
+              [
+                50,
+                50
+              ]
+            ],
+            "tolerance": 8,
+            "fadeMs": 1800
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the turtle shell",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "turtle",
+          "params": {
+            "points": [
+              [
+                50,
+                14
+              ],
+              [
+                80,
+                31
+              ],
+              [
+                80,
+                69
+              ],
+              [
+                50,
+                86
+              ],
+              [
+                20,
+                69
+              ],
+              [
+                20,
+                31
+              ],
+              [
+                50,
+                14
+              ]
+            ],
+            "tolerance": 9,
+            "fadeMs": 1600
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the fish",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "fish",
+          "params": {
+            "points": [
+              [
+                10,
+                50
+              ],
+              [
+                30,
+                32
+              ],
+              [
+                56,
+                32
+              ],
+              [
+                72,
+                42
+              ],
+              [
+                90,
+                28
+              ],
+              [
+                90,
+                72
+              ],
+              [
+                72,
+                58
+              ],
+              [
+                56,
+                68
+              ],
+              [
+                30,
+                68
+              ],
+              [
+                10,
+                50
+              ]
+            ],
+            "tolerance": 7,
+            "fadeMs": 1500
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the snaking eel",
+          "durationMs": 7000,
+          "difficulty": 4,
+          "theme": "eel",
+          "params": {
+            "points": [
+              [
+                12,
+                20
+              ],
+              [
+                85,
+                20
+              ],
+              [
+                85,
+                40
+              ],
+              [
+                15,
+                40
+              ],
+              [
+                15,
+                60
+              ],
+              [
+                85,
+                60
+              ],
+              [
+                85,
+                80
+              ],
+              [
+                20,
+                80
+              ]
+            ],
+            "tolerance": 7,
+            "fadeMs": 1200
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the ripple spiral",
+          "durationMs": 7000,
+          "difficulty": 5,
+          "theme": "ripples",
+          "params": {
+            "points": [
+              [
+                90,
+                50
+              ],
+              [
+                76.9,
+                76.9
+              ],
+              [
+                50,
+                86
+              ],
+              [
+                26,
+                74
+              ],
+              [
+                18,
+                50
+              ],
+              [
+                28.8,
+                28.8
+              ],
+              [
+                50,
+                22
+              ],
+              [
+                68.4,
+                31.6
+              ],
+              [
+                74,
+                50
+              ],
+              [
+                65.6,
+                65.6
+              ],
+              [
+                50,
+                70
+              ],
+              [
+                37.3,
+                62.7
+              ],
+              [
+                34,
+                50
+              ],
+              [
+                40.1,
+                40.1
+              ],
+              [
+                50,
+                38
+              ],
+              [
+                57.1,
+                42.9
+              ],
+              [
+                58,
+                50
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 1200
+          }
+        },
+        {
+          "template": "trace-shape",
+          "prompt": "Trace the lightning bolt",
+          "durationMs": 5000,
+          "difficulty": 5,
+          "theme": "storm",
+          "params": {
+            "points": [
+              [
+                58,
+                8
+              ],
+              [
+                26,
+                56
+              ],
+              [
+                50,
+                56
+              ],
+              [
+                38,
+                92
+              ],
+              [
+                76,
+                40
+              ],
+              [
+                52,
+                40
+              ]
+            ],
+            "tolerance": 6,
+            "fadeMs": 900
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "trace-shape_0092",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the juggler's S",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "juggling",
+  "params": {
+    "points": [
+      [
+        75,
+        20
+      ],
+      [
+        40,
+        15
+      ],
+      [
+        22,
+        30
+      ],
+      [
+        35,
+        48
+      ],
+      [
+        65,
+        55
+      ],
+      [
+        78,
+        72
+      ],
+      [
+        60,
+        88
+      ],
+      [
+        25,
+        82
+      ]
+    ],
+    "tolerance": 10,
+    "fadeMs": 2500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

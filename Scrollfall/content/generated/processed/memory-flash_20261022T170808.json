@@ -1,0 +1,1439 @@
+{
+  "template": "memory-flash",
+  "createdAt": "2026-10-22T17:08:08.156Z",
+  "requested": 50,
+  "calls": [
+    {
+      "theme": "halloween",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the pumpkin?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "halloween",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "flashMs": 1500,
+            "targetCell": 3,
+            "item": "🎃",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the ghost?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "halloween",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1200,
+            "targetCell": 7,
+            "item": "👻",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the bat?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "halloween",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1000,
+            "targetCell": 0,
+            "item": "🦇",
+            "decoys": [
+              {
+                "cell": 5,
+                "item": "👻"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the spider?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "halloween",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 900,
+            "targetCell": 8,
+            "item": "🕷️",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🦇"
+              },
+              {
+                "cell": 4,
+                "item": "🕸️"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the skull?",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "halloween",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "flashMs": 800,
+            "targetCell": 6,
+            "item": "💀",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "👻"
+              },
+              {
+                "cell": 5,
+                "item": "🎃"
+              },
+              {
+                "cell": 10,
+                "item": "🦇"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the candy?",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "halloween",
+          "params": {
+            "rows": 4,
+            "cols": 3,
+            "flashMs": 800,
+            "targetCell": 10,
+            "item": "🍬",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🍭"
+              },
+              {
+                "cell": 4,
+                "item": "🍫"
+              },
+              {
+                "cell": 7,
+                "item": "🎃"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the wizard?",
+          "durationMs": 5000,
+          "difficulty": 4,
+          "theme": "halloween",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 600,
+            "targetCell": 13,
+            "item": "🧙",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🧛"
+              },
+              {
+                "cell": 6,
+                "item": "🧟"
+              },
+              {
+                "cell": 9,
+                "item": "🧚"
+              },
+              {
+                "cell": 14,
+                "item": "👹"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the crystal ball?",
+          "durationMs": 5000,
+          "difficulty": 4,
+          "theme": "halloween",
+          "params": {
+            "rows": 4,
+            "cols": 5,
+            "flashMs": 500,
+            "targetCell": 3,
+            "item": "🔮",
+            "decoys": [
+              {
+                "cell": 8,
+                "item": "🧿"
+              },
+              {
+                "cell": 11,
+                "item": "🎱"
+              },
+              {
+                "cell": 15,
+                "item": "🌕"
+              },
+              {
+                "cell": 18,
+                "item": "🪄"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the real pumpkin!",
+          "durationMs": 5000,
+          "difficulty": 5,
+          "theme": "halloween",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 400,
+            "targetCell": 22,
+            "item": "🎃",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🍊"
+              },
+              {
+                "cell": 4,
+                "item": "🧡"
+              },
+              {
+                "cell": 7,
+                "item": "🏀"
+              },
+              {
+                "cell": 13,
+                "item": "🟠"
+              },
+              {
+                "cell": 16,
+                "item": "🍅"
+              },
+              {
+                "cell": 19,
+                "item": "🍊"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the ghost?",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "halloween",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 300,
+            "targetCell": 6,
+            "item": "👻",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "💀"
+              },
+              {
+                "cell": 3,
+                "item": "☁️"
+              },
+              {
+                "cell": 9,
+                "item": "👽"
+              },
+              {
+                "cell": 11,
+                "item": "🥛"
+              },
+              {
+                "cell": 14,
+                "item": "☁️"
+              },
+              {
+                "cell": 18,
+                "item": "💀"
+              },
+              {
+                "cell": 23,
+                "item": "🦴"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "tools",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the hammer?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "tools",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "flashMs": 1400,
+            "targetCell": 3,
+            "item": "🔨",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the toolbox?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "tools",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1200,
+            "targetCell": 7,
+            "item": "🧰",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the axe?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "tools",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1000,
+            "targetCell": 8,
+            "item": "🪓",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🔨"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the magnet?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "tools",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "flashMs": 1000,
+            "targetCell": 5,
+            "item": "🧲",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🔩"
+              },
+              {
+                "cell": 10,
+                "item": "⚙️"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the screwdriver?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "tools",
+          "params": {
+            "rows": 4,
+            "cols": 3,
+            "flashMs": 800,
+            "targetCell": 10,
+            "item": "🪛",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🔧"
+              },
+              {
+                "cell": 6,
+                "item": "🔩"
+              },
+              {
+                "cell": 8,
+                "item": "🔨"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the flashlight?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "tools",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 800,
+            "targetCell": 2,
+            "item": "🔦",
+            "decoys": [
+              {
+                "cell": 5,
+                "item": "🕯️"
+              },
+              {
+                "cell": 9,
+                "item": "💡"
+              },
+              {
+                "cell": 14,
+                "item": "🔋"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the pickaxe?",
+          "durationMs": 4500,
+          "difficulty": 4,
+          "theme": "tools",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 600,
+            "targetCell": 13,
+            "item": "⛏️",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "⚒️"
+              },
+              {
+                "cell": 3,
+                "item": "🪓"
+              },
+              {
+                "cell": 6,
+                "item": "🔨"
+              },
+              {
+                "cell": 10,
+                "item": "🔧"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the ruler?",
+          "durationMs": 4500,
+          "difficulty": 4,
+          "theme": "tools",
+          "params": {
+            "rows": 5,
+            "cols": 4,
+            "flashMs": 500,
+            "targetCell": 6,
+            "item": "📏",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "📐"
+              },
+              {
+                "cell": 8,
+                "item": "✂️"
+              },
+              {
+                "cell": 11,
+                "item": "📌"
+              },
+              {
+                "cell": 15,
+                "item": "🖇️"
+              },
+              {
+                "cell": 19,
+                "item": "📎"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the wrench?",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "tools",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 400,
+            "targetCell": 18,
+            "item": "🔧",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🪛"
+              },
+              {
+                "cell": 4,
+                "item": "🔩"
+              },
+              {
+                "cell": 7,
+                "item": "⚙️"
+              },
+              {
+                "cell": 11,
+                "item": "🔨"
+              },
+              {
+                "cell": 13,
+                "item": "🛠️"
+              },
+              {
+                "cell": 16,
+                "item": "🪚"
+              },
+              {
+                "cell": 22,
+                "item": "🗜️"
+              },
+              {
+                "cell": 24,
+                "item": "⛓️"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the nut and bolt?",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "tools",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 300,
+            "targetCell": 3,
+            "item": "🔩",
+            "decoys": [
+              {
+                "cell": 6,
+                "item": "⚙️"
+              },
+              {
+                "cell": 9,
+                "item": "🪙"
+              },
+              {
+                "cell": 12,
+                "item": "🔘"
+              },
+              {
+                "cell": 15,
+                "item": "🛞"
+              },
+              {
+                "cell": 17,
+                "item": "⛓️"
+              },
+              {
+                "cell": 20,
+                "item": "🧷"
+              },
+              {
+                "cell": 23,
+                "item": "📍"
+              },
+              {
+                "cell": 24,
+                "item": "🔧"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "dinosaurs",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the T-Rex?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "dinosaurs",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "flashMs": 1500,
+            "targetCell": 3,
+            "item": "🦖",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the fern?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "jungle",
+          "params": {
+            "rows": 2,
+            "cols": 3,
+            "flashMs": 1400,
+            "targetCell": 4,
+            "item": "🌿",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the long-neck dino!",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "dinosaurs",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1200,
+            "targetCell": 0,
+            "item": "🦕",
+            "decoys": [
+              {
+                "cell": 8,
+                "item": "🌿"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the bone?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "fossils",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1100,
+            "targetCell": 7,
+            "item": "🦴",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🌴"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the volcano?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "prehistoric",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "flashMs": 900,
+            "targetCell": 5,
+            "item": "🌋",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🪨"
+              },
+              {
+                "cell": 10,
+                "item": "🔥"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the lizard?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "reptiles",
+          "params": {
+            "rows": 4,
+            "cols": 3,
+            "flashMs": 900,
+            "targetCell": 9,
+            "item": "🦎",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🐊"
+              },
+              {
+                "cell": 4,
+                "item": "🐍"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the long-neck?",
+          "durationMs": 4000,
+          "difficulty": 4,
+          "theme": "dinosaurs",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 700,
+            "targetCell": 6,
+            "item": "🦕",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🦖"
+              },
+              {
+                "cell": 5,
+                "item": "🐊"
+              },
+              {
+                "cell": 14,
+                "item": "🦎"
+              },
+              {
+                "cell": 11,
+                "item": "🐢"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the dino egg!",
+          "durationMs": 4000,
+          "difficulty": 4,
+          "theme": "nest",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 650,
+            "targetCell": 13,
+            "item": "🥚",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🪺"
+              },
+              {
+                "cell": 8,
+                "item": "🐣"
+              },
+              {
+                "cell": 10,
+                "item": "🍳"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Spot the T-Rex!",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "dinosaurs",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 400,
+            "targetCell": 19,
+            "item": "🦖",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🦕"
+              },
+              {
+                "cell": 4,
+                "item": "🐊"
+              },
+              {
+                "cell": 7,
+                "item": "🦎"
+              },
+              {
+                "cell": 11,
+                "item": "🐉"
+              },
+              {
+                "cell": 15,
+                "item": "🦕"
+              },
+              {
+                "cell": 23,
+                "item": "🐲"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the tooth?",
+          "durationMs": 3500,
+          "difficulty": 5,
+          "theme": "fossils",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 300,
+            "targetCell": 21,
+            "item": "🦷",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🦴"
+              },
+              {
+                "cell": 8,
+                "item": "🪨"
+              },
+              {
+                "cell": 11,
+                "item": "🦴"
+              },
+              {
+                "cell": 14,
+                "item": "🐚"
+              },
+              {
+                "cell": 18,
+                "item": "🦴"
+              },
+              {
+                "cell": 24,
+                "item": "🧊"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "desert",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the cactus?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "desert",
+          "params": {
+            "rows": 2,
+            "cols": 3,
+            "flashMs": 1500,
+            "targetCell": 5,
+            "item": "🌵",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the camel?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "caravan",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "flashMs": 1300,
+            "targetCell": 1,
+            "item": "🐪",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the scorpion?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "desert",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1000,
+            "targetCell": 0,
+            "item": "🦂",
+            "decoys": [
+              {
+                "cell": 6,
+                "item": "🌵"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the water drop!",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "oasis",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 900,
+            "targetCell": 8,
+            "item": "💧",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🔥"
+              },
+              {
+                "cell": 4,
+                "item": "🌵"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where did the snake hide?",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "sand snakes",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "flashMs": 800,
+            "targetCell": 6,
+            "item": "🐍",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🦎"
+              },
+              {
+                "cell": 10,
+                "item": "🦂"
+              },
+              {
+                "cell": 11,
+                "item": "🌵"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Which cell had the camel?",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "caravan",
+          "params": {
+            "rows": 4,
+            "cols": 3,
+            "flashMs": 750,
+            "targetCell": 10,
+            "item": "🐪",
+            "decoys": [
+              {
+                "cell": 3,
+                "item": "🐫"
+              },
+              {
+                "cell": 0,
+                "item": "🦅"
+              },
+              {
+                "cell": 5,
+                "item": "🏺"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Remember the cactus!",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "desert",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 600,
+            "targetCell": 13,
+            "item": "🌵",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🌴"
+              },
+              {
+                "cell": 7,
+                "item": "🪨"
+              },
+              {
+                "cell": 4,
+                "item": "🦎"
+              },
+              {
+                "cell": 9,
+                "item": "🌴"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the clay vase?",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "ruins",
+          "params": {
+            "rows": 4,
+            "cols": 5,
+            "flashMs": 550,
+            "targetCell": 3,
+            "item": "🏺",
+            "decoys": [
+              {
+                "cell": 11,
+                "item": "🍯"
+              },
+              {
+                "cell": 15,
+                "item": "🪣"
+              },
+              {
+                "cell": 18,
+                "item": "🫙"
+              },
+              {
+                "cell": 6,
+                "item": "🧭"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Spot the scorpion!",
+          "durationMs": 5000,
+          "difficulty": 5,
+          "theme": "bug hunt",
+          "params": {
+            "rows": 5,
+            "cols": 4,
+            "flashMs": 400,
+            "targetCell": 14,
+            "item": "🦂",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🦀"
+              },
+              {
+                "cell": 5,
+                "item": "🐜"
+              },
+              {
+                "cell": 9,
+                "item": "🦞"
+              },
+              {
+                "cell": 18,
+                "item": "🦎"
+              },
+              {
+                "cell": 7,
+                "item": "🐍"
+              },
+              {
+                "cell": 12,
+                "item": "🪲"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the blazing sun?",
+          "durationMs": 5000,
+          "difficulty": 5,
+          "theme": "heat wave",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 350,
+            "targetCell": 19,
+            "item": "🌞",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🌕"
+              },
+              {
+                "cell": 4,
+                "item": "🟡"
+              },
+              {
+                "cell": 7,
+                "item": "🔆"
+              },
+              {
+                "cell": 11,
+                "item": "⭐"
+              },
+              {
+                "cell": 13,
+                "item": "🌟"
+              },
+              {
+                "cell": 16,
+                "item": "🍋"
+              },
+              {
+                "cell": 21,
+                "item": "🧀"
+              },
+              {
+                "cell": 24,
+                "item": "🌼"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "robots",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the robot?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "robots",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "flashMs": 1500,
+            "targetCell": 3,
+            "item": "🤖",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the battery?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "robots",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1300,
+            "targetCell": 6,
+            "item": "🔋",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the wrench?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "repair bay",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1100,
+            "targetCell": 0,
+            "item": "🔧",
+            "decoys": [
+              {
+                "cell": 5,
+                "item": "🔩"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the lightbulb?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "gadgets",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "flashMs": 1000,
+            "targetCell": 10,
+            "item": "💡",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🔋"
+              },
+              {
+                "cell": 6,
+                "item": "🧲"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the real robot!",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "robots",
+          "params": {
+            "rows": 4,
+            "cols": 3,
+            "flashMs": 900,
+            "targetCell": 7,
+            "item": "🤖",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "👾"
+              },
+              {
+                "cell": 2,
+                "item": "👽"
+              },
+              {
+                "cell": 9,
+                "item": "📟"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the robot arm?",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "cyborgs",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 800,
+            "targetCell": 13,
+            "item": "🦾",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🦿"
+              },
+              {
+                "cell": 5,
+                "item": "💪"
+              },
+              {
+                "cell": 8,
+                "item": "🦿"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the plug?",
+          "durationMs": 5000,
+          "difficulty": 4,
+          "theme": "power up",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 600,
+            "targetCell": 5,
+            "item": "🔌",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🔋"
+              },
+              {
+                "cell": 3,
+                "item": "💡"
+              },
+              {
+                "cell": 10,
+                "item": "🪫"
+              },
+              {
+                "cell": 14,
+                "item": "🔋"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Spot the robot among aliens!",
+          "durationMs": 5000,
+          "difficulty": 4,
+          "theme": "robots",
+          "params": {
+            "rows": 5,
+            "cols": 4,
+            "flashMs": 550,
+            "targetCell": 18,
+            "item": "🤖",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "👾"
+              },
+              {
+                "cell": 6,
+                "item": "👽"
+              },
+              {
+                "cell": 9,
+                "item": "🎃"
+              },
+              {
+                "cell": 13,
+                "item": "👻"
+              },
+              {
+                "cell": 15,
+                "item": "👾"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Which cell had the robot?",
+          "durationMs": 5000,
+          "difficulty": 5,
+          "theme": "robot army",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 400,
+            "targetCell": 11,
+            "item": "🤖",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "👾"
+              },
+              {
+                "cell": 4,
+                "item": "🦾"
+              },
+              {
+                "cell": 7,
+                "item": "👽"
+              },
+              {
+                "cell": 14,
+                "item": "🎮"
+              },
+              {
+                "cell": 16,
+                "item": "👾"
+              },
+              {
+                "cell": 20,
+                "item": "📟"
+              },
+              {
+                "cell": 23,
+                "item": "🧠"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the bolt?",
+          "durationMs": 5000,
+          "difficulty": 5,
+          "theme": "scrap yard",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 300,
+            "targetCell": 22,
+            "item": "🔩",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🔧"
+              },
+              {
+                "cell": 4,
+                "item": "🪛"
+              },
+              {
+                "cell": 6,
+                "item": "🔗"
+              },
+              {
+                "cell": 8,
+                "item": "🔨"
+              },
+              {
+                "cell": 12,
+                "item": "🧲"
+              },
+              {
+                "cell": 14,
+                "item": "🔧"
+              },
+              {
+                "cell": 17,
+                "item": "🪛"
+              },
+              {
+                "cell": 19,
+                "item": "🔗"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0016",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "zoo",
+  "params": {
+    "left": {
+      "emoji": "🦤",
+      "name": "Ostrich"
+    },
+    "right": {
+      "emoji": "🐦",
+      "name": "Emu"
+    },
+    "answer": "left",
+    "explanation": "Ostriches weigh ~100+ kg; emus are lighter at about 30-45 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

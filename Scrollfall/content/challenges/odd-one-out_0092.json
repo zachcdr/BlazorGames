@@ -1,0 +1,26 @@
+{
+  "id": "odd-one-out_0092",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the one that isn't a fruit",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "orchard",
+  "params": {
+    "items": [
+      "🥕",
+      "🍎",
+      "🍐",
+      "🍓",
+      "🍊",
+      "🍇"
+    ],
+    "answerIndex": 0
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

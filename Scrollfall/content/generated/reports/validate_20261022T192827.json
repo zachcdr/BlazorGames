@@ -1,0 +1,764 @@
+{
+  "createdAt": "2026-10-22T19:28:27.962Z",
+  "dryRun": false,
+  "files": [
+    "content\\generated\\quick-math_20261022T192746.json"
+  ],
+  "summary": [
+    {
+      "template": "quick-math",
+      "candidates": 60,
+      "accepted": 33,
+      "rejected": 27,
+      "rejectionRate": "45%"
+    }
+  ],
+  "byStage": {
+    "generate": 0,
+    "shape": 0,
+    "schema": 0,
+    "lint": 0,
+    "duplicate": 27,
+    "fact": 0,
+    "bot": 0
+  },
+  "approved": [
+    "quick-math_0048",
+    "quick-math_0049",
+    "quick-math_0050",
+    "quick-math_0051",
+    "quick-math_0052",
+    "quick-math_0053",
+    "quick-math_0054",
+    "quick-math_0055",
+    "quick-math_0056",
+    "quick-math_0057",
+    "quick-math_0058",
+    "quick-math_0059",
+    "quick-math_0060",
+    "quick-math_0061",
+    "quick-math_0062",
+    "quick-math_0063",
+    "quick-math_0064",
+    "quick-math_0065",
+    "quick-math_0066",
+    "quick-math_0067",
+    "quick-math_0068",
+    "quick-math_0069",
+    "quick-math_0070",
+    "quick-math_0071",
+    "quick-math_0072",
+    "quick-math_0073",
+    "quick-math_0074",
+    "quick-math_0075",
+    "quick-math_0076",
+    "quick-math_0077",
+    "quick-math_0078",
+    "quick-math_0079",
+    "quick-math_0080"
+  ],
+  "rejections": [
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Quick maths!",
+        "durationMs": 4500,
+        "difficulty": 1,
+        "theme": "desert",
+        "params": {
+          "a": 9,
+          "op": "−",
+          "b": 4,
+          "options": [
+            5,
+            6,
+            4,
+            13
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Beat the heat!",
+        "durationMs": 7000,
+        "difficulty": 5,
+        "theme": "scorching",
+        "params": {
+          "a": 7,
+          "op": "×",
+          "b": 8,
+          "options": [
+            54,
+            56,
+            63,
+            48
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Count the coins!",
+        "durationMs": 4500,
+        "difficulty": 1,
+        "theme": "pirates",
+        "params": {
+          "a": 6,
+          "op": "+",
+          "b": 7,
+          "options": [
+            12,
+            14,
+            13,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Ahoy, tap it!",
+        "durationMs": 4000,
+        "difficulty": 1,
+        "theme": "pirates",
+        "params": {
+          "a": 9,
+          "op": "−",
+          "b": 4,
+          "options": [
+            5,
+            4,
+            6,
+            13
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Crack the vault!",
+        "durationMs": 8000,
+        "difficulty": 5,
+        "theme": "pirates",
+        "params": {
+          "a": 12,
+          "op": "×",
+          "b": 9,
+          "options": [
+            96,
+            117,
+            108,
+            120
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Goal count!",
+        "durationMs": 4500,
+        "difficulty": 1,
+        "theme": "soccer",
+        "params": {
+          "a": 6,
+          "op": "+",
+          "b": 7,
+          "options": [
+            12,
+            14,
+            13,
+            42
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Score check!",
+        "durationMs": 4500,
+        "difficulty": 1,
+        "theme": "basketball",
+        "params": {
+          "a": 9,
+          "op": "−",
+          "b": 4,
+          "options": [
+            4,
+            5,
+            6,
+            13
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Quick maths!",
+        "durationMs": 8000,
+        "difficulty": 5,
+        "theme": "boxing",
+        "params": {
+          "a": 7,
+          "op": "×",
+          "b": 8,
+          "options": [
+            54,
+            56,
+            63,
+            65
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Quick maths!",
+        "durationMs": 4000,
+        "difficulty": 1,
+        "theme": "fish",
+        "params": {
+          "a": 6,
+          "op": "+",
+          "b": 7,
+          "options": [
+            12,
+            14,
+            13,
+            15
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Tap the answer",
+        "durationMs": 4000,
+        "difficulty": 1,
+        "theme": "waves",
+        "params": {
+          "a": 9,
+          "op": "−",
+          "b": 4,
+          "options": [
+            6,
+            5,
+            13,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Solve it!",
+        "durationMs": 6000,
+        "difficulty": 3,
+        "theme": "shells",
+        "params": {
+          "a": 7,
+          "op": "×",
+          "b": 6,
+          "options": [
+            42,
+            48,
+            36,
+            43
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Deep dive maths!",
+        "durationMs": 8000,
+        "difficulty": 5,
+        "theme": "deep sea",
+        "params": {
+          "a": 12,
+          "op": "×",
+          "b": 9,
+          "options": [
+            96,
+            108,
+            99,
+            118
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Count the parrots!",
+        "durationMs": 4500,
+        "difficulty": 1,
+        "theme": "rainforest",
+        "params": {
+          "a": 6,
+          "op": "+",
+          "b": 7,
+          "options": [
+            12,
+            13,
+            14,
+            42
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Frogs hop away!",
+        "durationMs": 4000,
+        "difficulty": 1,
+        "theme": "frogs",
+        "params": {
+          "a": 9,
+          "op": "−",
+          "b": 4,
+          "options": [
+            13,
+            4,
+            6,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Quick maths!",
+        "durationMs": 5000,
+        "difficulty": 2,
+        "theme": "jungle",
+        "params": {
+          "a": 5,
+          "op": "×",
+          "b": 4,
+          "options": [
+            9,
+            15,
+            20,
+            25
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Tap the answer",
+        "durationMs": 5500,
+        "difficulty": 3,
+        "theme": "toucans",
+        "params": {
+          "a": 8,
+          "op": "×",
+          "b": 6,
+          "options": [
+            56,
+            42,
+            54,
+            48
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Share the fruit!",
+        "durationMs": 6000,
+        "difficulty": 3,
+        "theme": "rainforest",
+        "params": {
+          "a": 72,
+          "op": "÷",
+          "b": 9,
+          "options": [
+            7,
+            8,
+            9,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Swing through the vines!",
+        "durationMs": 6000,
+        "difficulty": 4,
+        "theme": "vines",
+        "params": {
+          "a": 12,
+          "op": "×",
+          "b": 6,
+          "options": [
+            27,
+            66,
+            72,
+            78
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Rain is falling fast!",
+        "durationMs": 6500,
+        "difficulty": 4,
+        "theme": "rain",
+        "params": {
+          "a": 68,
+          "op": "−",
+          "b": 29,
+          "options": [
+            49,
+            39,
+            97,
+            38
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Beat the jaguar!",
+        "durationMs": 7500,
+        "difficulty": 5,
+        "theme": "jaguar",
+        "params": {
+          "a": 12,
+          "op": "×",
+          "b": 9,
+          "options": [
+            96,
+            99,
+            117,
+            108
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Count the parrots!",
+        "durationMs": 4500,
+        "difficulty": 1,
+        "theme": "jungle",
+        "params": {
+          "a": 6,
+          "op": "+",
+          "b": 7,
+          "options": [
+            12,
+            14,
+            13,
+            16
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Monkeys ate some bananas!",
+        "durationMs": 4000,
+        "difficulty": 1,
+        "theme": "bananas",
+        "params": {
+          "a": 9,
+          "op": "−",
+          "b": 4,
+          "options": [
+            5,
+            4,
+            6,
+            13
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Solve it!",
+        "durationMs": 6000,
+        "difficulty": 3,
+        "theme": "safari",
+        "params": {
+          "a": 8,
+          "op": "×",
+          "b": 9,
+          "options": [
+            72,
+            63,
+            81,
+            27
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Tap the answer",
+        "durationMs": 6500,
+        "difficulty": 4,
+        "theme": "jungle",
+        "params": {
+          "a": 11,
+          "op": "×",
+          "b": 9,
+          "options": [
+            98,
+            99,
+            90,
+            108
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Cross the river fast!",
+        "durationMs": 7000,
+        "difficulty": 4,
+        "theme": "river",
+        "params": {
+          "a": 82,
+          "op": "−",
+          "b": 37,
+          "options": [
+            45,
+            55,
+            35,
+            44
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Beat the tiger!",
+        "durationMs": 7500,
+        "difficulty": 5,
+        "theme": "tiger",
+        "params": {
+          "a": 12,
+          "op": "×",
+          "b": 9,
+          "options": [
+            120,
+            96,
+            109,
+            108
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\quick-math_20261022T192746.json",
+      "template": "quick-math",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "quick-math",
+        "prompt": "Last vine, stay sharp!",
+        "durationMs": 8000,
+        "difficulty": 5,
+        "theme": "vines",
+        "params": {
+          "a": 132,
+          "op": "÷",
+          "b": 12,
+          "options": [
+            12,
+            10,
+            11,
+            13
+          ]
+        }
+      }
+    }
+  ]
+}

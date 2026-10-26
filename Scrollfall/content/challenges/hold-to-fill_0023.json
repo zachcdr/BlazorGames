@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0023",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Wind the yo-yo to the line",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "yo-yo",
+  "params": {
+    "item": "🪀",
+    "fillPerSecond": 35,
+    "targetFrom": 55,
+    "targetTo": 70
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

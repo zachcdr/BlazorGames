@@ -1,0 +1,28 @@
+{
+  "id": "memory-flash_0072",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Find the seashell!",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "seashore",
+  "params": {
+    "rows": 2,
+    "cols": 3,
+    "flashMs": 1400,
+    "targetCell": 4,
+    "item": "🐚",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "🌊"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

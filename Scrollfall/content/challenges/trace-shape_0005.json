@@ -1,0 +1,37 @@
+{
+  "id": "trace-shape_0005",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the triangle",
+  "durationMs": 6000,
+  "difficulty": 2,
+  "theme": "shapes",
+  "params": {
+    "points": [
+      [
+        50,
+        18
+      ],
+      [
+        84,
+        78
+      ],
+      [
+        16,
+        78
+      ],
+      [
+        50,
+        18
+      ]
+    ],
+    "tolerance": 10,
+    "fadeMs": 1500
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

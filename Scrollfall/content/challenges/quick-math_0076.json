@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0076",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Bananas for everyone!",
+  "durationMs": 5500,
+  "difficulty": 2,
+  "theme": "bananas",
+  "params": {
+    "a": 42,
+    "op": "+",
+    "b": 5,
+    "options": [
+      47,
+      37,
+      46,
+      52
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0021",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Stuff the teddy to the line",
+  "durationMs": 6000,
+  "difficulty": 1,
+  "theme": "plush toys",
+  "params": {
+    "item": "🧸",
+    "fillPerSecond": 20,
+    "targetFrom": 50,
+    "targetTo": 70
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

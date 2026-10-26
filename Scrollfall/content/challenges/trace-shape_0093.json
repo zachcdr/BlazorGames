@@ -1,0 +1,45 @@
+{
+  "id": "trace-shape_0093",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the magic top hat",
+  "durationMs": 4000,
+  "difficulty": 3,
+  "theme": "magic show",
+  "params": {
+    "points": [
+      [
+        10,
+        80
+      ],
+      [
+        30,
+        80
+      ],
+      [
+        30,
+        22
+      ],
+      [
+        70,
+        22
+      ],
+      [
+        70,
+        80
+      ],
+      [
+        90,
+        80
+      ]
+    ],
+    "tolerance": 9,
+    "fadeMs": 2200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

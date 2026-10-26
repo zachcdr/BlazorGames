@@ -1,0 +1,48 @@
+{
+  "id": "memory-flash_0049",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Spot the scorpion!",
+  "durationMs": 5000,
+  "difficulty": 5,
+  "theme": "bug hunt",
+  "params": {
+    "rows": 5,
+    "cols": 4,
+    "flashMs": 400,
+    "targetCell": 14,
+    "item": "🦂",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🦀"
+      },
+      {
+        "cell": 5,
+        "item": "🐜"
+      },
+      {
+        "cell": 9,
+        "item": "🦞"
+      },
+      {
+        "cell": 18,
+        "item": "🦎"
+      },
+      {
+        "cell": 7,
+        "item": "🐍"
+      },
+      {
+        "cell": 12,
+        "item": "🪲"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

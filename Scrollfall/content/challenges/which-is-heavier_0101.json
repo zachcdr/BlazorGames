@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0101",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "circus",
+  "params": {
+    "left": {
+      "emoji": "🐘",
+      "name": "Circus elephant"
+    },
+    "right": {
+      "emoji": "🤡",
+      "name": "Clown"
+    },
+    "answer": "left",
+    "explanation": "An adult elephant weighs several tonnes; a person weighs well under 200 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

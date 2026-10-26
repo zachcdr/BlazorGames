@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0048",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Pour the wine to the line",
+  "durationMs": 3500,
+  "difficulty": 4,
+  "theme": "dinner",
+  "params": {
+    "item": "🍷",
+    "fillPerSecond": 85,
+    "targetFrom": 80,
+    "targetTo": 93
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

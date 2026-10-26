@@ -1,0 +1,32 @@
+{
+  "id": "memory-flash_0094",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Tap the mittens!",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "winter wear",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "flashMs": 1100,
+    "targetCell": 9,
+    "item": "🧤",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "🧣"
+      },
+      {
+        "cell": 5,
+        "item": "🧢"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

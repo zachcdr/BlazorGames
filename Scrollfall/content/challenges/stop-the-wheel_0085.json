@@ -1,0 +1,46 @@
+{
+  "id": "stop-the-wheel_0085",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the broccoli",
+  "durationMs": 7000,
+  "difficulty": 3,
+  "theme": "veggie patch",
+  "params": {
+    "segments": [
+      {
+        "color": "#f76b15",
+        "label": "🥕"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🌽"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🍅"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🥦"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🍆"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🫐"
+      }
+    ],
+    "targetSegment": 3,
+    "speed": 0.9,
+    "startAngle": 75
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

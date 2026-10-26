@@ -1,0 +1,1483 @@
+{
+  "template": "memory-flash",
+  "createdAt": "2026-10-22T17:34:49.431Z",
+  "requested": 50,
+  "calls": [
+    {
+      "theme": "camping",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the campfire?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "camping",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "flashMs": 1500,
+            "targetCell": 3,
+            "item": "🔥",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the tent!",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "campsite",
+          "params": {
+            "rows": 2,
+            "cols": 3,
+            "flashMs": 1400,
+            "targetCell": 1,
+            "item": "⛺",
+            "decoys": [
+              {
+                "cell": 4,
+                "item": "🌲"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the boot?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "hiking",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1200,
+            "targetCell": 6,
+            "item": "🥾",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🧦"
+              },
+              {
+                "cell": 4,
+                "item": "🎒"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the flashlight?",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "night gear",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1100,
+            "targetCell": 4,
+            "item": "🔦",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🕯️"
+              },
+              {
+                "cell": 8,
+                "item": "🔋"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the bear?",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "wildlife",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "flashMs": 900,
+            "targetCell": 9,
+            "item": "🐻",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🦌"
+              },
+              {
+                "cell": 5,
+                "item": "🦊"
+              },
+              {
+                "cell": 10,
+                "item": "🦝"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the compass!",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "navigation",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 900,
+            "targetCell": 2,
+            "item": "🧭",
+            "decoys": [
+              {
+                "cell": 5,
+                "item": "🗺️"
+              },
+              {
+                "cell": 8,
+                "item": "⏰"
+              },
+              {
+                "cell": 13,
+                "item": "🔭"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the marshmallow!",
+          "durationMs": 4000,
+          "difficulty": 4,
+          "theme": "campfire snacks",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 700,
+            "targetCell": 14,
+            "item": "🍡",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🍢"
+              },
+              {
+                "cell": 6,
+                "item": "🍥"
+              },
+              {
+                "cell": 9,
+                "item": "🍬"
+              },
+              {
+                "cell": 11,
+                "item": "🍘"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the owl?",
+          "durationMs": 4000,
+          "difficulty": 4,
+          "theme": "night sky",
+          "params": {
+            "rows": 4,
+            "cols": 5,
+            "flashMs": 650,
+            "targetCell": 3,
+            "item": "🦉",
+            "decoys": [
+              {
+                "cell": 7,
+                "item": "🦇"
+              },
+              {
+                "cell": 10,
+                "item": "🐦"
+              },
+              {
+                "cell": 13,
+                "item": "🦅"
+              },
+              {
+                "cell": 16,
+                "item": "🌙"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Spot the wolf!",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "wilderness",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 400,
+            "targetCell": 21,
+            "item": "🐺",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🐕"
+              },
+              {
+                "cell": 6,
+                "item": "🦊"
+              },
+              {
+                "cell": 12,
+                "item": "🐻"
+              },
+              {
+                "cell": 14,
+                "item": "🐗"
+              },
+              {
+                "cell": 18,
+                "item": "🦝"
+              },
+              {
+                "cell": 24,
+                "item": "🐶"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the fishing rod?",
+          "durationMs": 3500,
+          "difficulty": 5,
+          "theme": "lake fishing",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 350,
+            "targetCell": 11,
+            "item": "🎣",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🐟"
+              },
+              {
+                "cell": 4,
+                "item": "🐠"
+              },
+              {
+                "cell": 8,
+                "item": "🪝"
+              },
+              {
+                "cell": 13,
+                "item": "🐡"
+              },
+              {
+                "cell": 17,
+                "item": "🦈"
+              },
+              {
+                "cell": 20,
+                "item": "🪱"
+              },
+              {
+                "cell": 22,
+                "item": "🦆"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "beach",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the crab?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "beach",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "flashMs": 1500,
+            "targetCell": 3,
+            "item": "🦀",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the seashell!",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "seashore",
+          "params": {
+            "rows": 2,
+            "cols": 3,
+            "flashMs": 1400,
+            "targetCell": 4,
+            "item": "🐚",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🌊"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the ice cream?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "snacks",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1200,
+            "targetCell": 0,
+            "item": "🍦",
+            "decoys": [
+              {
+                "cell": 5,
+                "item": "🍉"
+              },
+              {
+                "cell": 7,
+                "item": "🥤"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where did the surfer go?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "surfing",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "flashMs": 1100,
+            "targetCell": 7,
+            "item": "🏄",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🌊"
+              },
+              {
+                "cell": 9,
+                "item": "🏐"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the tropical fish?",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "reef",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 900,
+            "targetCell": 10,
+            "item": "🐠",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🐟"
+              },
+              {
+                "cell": 5,
+                "item": "🦈"
+              },
+              {
+                "cell": 14,
+                "item": "🐙"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the beach umbrella!",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "sun gear",
+          "params": {
+            "rows": 4,
+            "cols": 3,
+            "flashMs": 800,
+            "targetCell": 2,
+            "item": "☂️",
+            "decoys": [
+              {
+                "cell": 4,
+                "item": "🌂"
+              },
+              {
+                "cell": 8,
+                "item": "👒"
+              },
+              {
+                "cell": 11,
+                "item": "🧢"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the turtle?",
+          "durationMs": 4500,
+          "difficulty": 4,
+          "theme": "sea life",
+          "params": {
+            "rows": 4,
+            "cols": 5,
+            "flashMs": 600,
+            "targetCell": 15,
+            "item": "🐢",
+            "decoys": [
+              {
+                "cell": 3,
+                "item": "🐊"
+              },
+              {
+                "cell": 8,
+                "item": "🦀"
+              },
+              {
+                "cell": 12,
+                "item": "🐸"
+              },
+              {
+                "cell": 18,
+                "item": "🐚"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Spot the palm tree!",
+          "durationMs": 4500,
+          "difficulty": 4,
+          "theme": "island",
+          "params": {
+            "rows": 5,
+            "cols": 4,
+            "flashMs": 550,
+            "targetCell": 1,
+            "item": "🌴",
+            "decoys": [
+              {
+                "cell": 6,
+                "item": "🌵"
+              },
+              {
+                "cell": 9,
+                "item": "🌳"
+              },
+              {
+                "cell": 13,
+                "item": "🌲"
+              },
+              {
+                "cell": 16,
+                "item": "🎋"
+              },
+              {
+                "cell": 19,
+                "item": "🌿"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the dolphin?",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "ocean",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 350,
+            "targetCell": 22,
+            "item": "🐬",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🐳"
+              },
+              {
+                "cell": 6,
+                "item": "🐋"
+              },
+              {
+                "cell": 10,
+                "item": "🦈"
+              },
+              {
+                "cell": 14,
+                "item": "🐟"
+              },
+              {
+                "cell": 18,
+                "item": "🦭"
+              },
+              {
+                "cell": 20,
+                "item": "🐡"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where were the sunglasses?",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "beach style",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 300,
+            "targetCell": 8,
+            "item": "🕶️",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "👓"
+              },
+              {
+                "cell": 4,
+                "item": "🥽"
+              },
+              {
+                "cell": 12,
+                "item": "👙"
+              },
+              {
+                "cell": 14,
+                "item": "🩴"
+              },
+              {
+                "cell": 17,
+                "item": "👒"
+              },
+              {
+                "cell": 21,
+                "item": "🧴"
+              },
+              {
+                "cell": 24,
+                "item": "🩱"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "tools",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the hammer?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "tools",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "flashMs": 1500,
+            "targetCell": 2,
+            "item": "🔨",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the saw!",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "workshop",
+          "params": {
+            "rows": 2,
+            "cols": 3,
+            "flashMs": 1400,
+            "targetCell": 4,
+            "item": "🪚",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the wrench?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "tools",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1200,
+            "targetCell": 0,
+            "item": "🔧",
+            "decoys": [
+              {
+                "cell": 4,
+                "item": "🔩"
+              },
+              {
+                "cell": 8,
+                "item": "🧲"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Catch the magnet!",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "gadgets",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1100,
+            "targetCell": 7,
+            "item": "🧲",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🔦"
+              },
+              {
+                "cell": 5,
+                "item": "🔋"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the screwdriver?",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "tools",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "flashMs": 900,
+            "targetCell": 6,
+            "item": "🪛",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🔧"
+              },
+              {
+                "cell": 3,
+                "item": "🔩"
+              },
+              {
+                "cell": 9,
+                "item": "🔨"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the toolbox?",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "garage",
+          "params": {
+            "rows": 4,
+            "cols": 3,
+            "flashMs": 900,
+            "targetCell": 10,
+            "item": "🧰",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "💼"
+              },
+              {
+                "cell": 4,
+                "item": "🎒"
+              },
+              {
+                "cell": 8,
+                "item": "📦"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Snip! Where were the scissors?",
+          "durationMs": 4500,
+          "difficulty": 4,
+          "theme": "crafting",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 750,
+            "targetCell": 3,
+            "item": "✂️",
+            "decoys": [
+              {
+                "cell": 5,
+                "item": "🔪"
+              },
+              {
+                "cell": 9,
+                "item": "📏"
+              },
+              {
+                "cell": 12,
+                "item": "🪡"
+              },
+              {
+                "cell": 14,
+                "item": "📌"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the hook?",
+          "durationMs": 4000,
+          "difficulty": 4,
+          "theme": "hardware",
+          "params": {
+            "rows": 4,
+            "cols": 5,
+            "flashMs": 650,
+            "targetCell": 16,
+            "item": "🪝",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🧷"
+              },
+              {
+                "cell": 7,
+                "item": "🔗"
+              },
+              {
+                "cell": 11,
+                "item": "⛓️"
+              },
+              {
+                "cell": 18,
+                "item": "🪢"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Spot the key!",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "locksmith",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 450,
+            "targetCell": 8,
+            "item": "🔑",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🗝️"
+              },
+              {
+                "cell": 4,
+                "item": "🔒"
+              },
+              {
+                "cell": 12,
+                "item": "🔐"
+              },
+              {
+                "cell": 17,
+                "item": "🔓"
+              },
+              {
+                "cell": 20,
+                "item": "🪙"
+              },
+              {
+                "cell": 23,
+                "item": "🔔"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Spot the ladder!",
+          "durationMs": 3500,
+          "difficulty": 5,
+          "theme": "construction",
+          "params": {
+            "rows": 5,
+            "cols": 4,
+            "flashMs": 350,
+            "targetCell": 13,
+            "item": "🪜",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🧱"
+              },
+              {
+                "cell": 3,
+                "item": "🛠️"
+              },
+              {
+                "cell": 6,
+                "item": "🪣"
+              },
+              {
+                "cell": 8,
+                "item": "⚙️"
+              },
+              {
+                "cell": 10,
+                "item": "🧹"
+              },
+              {
+                "cell": 16,
+                "item": "🪠"
+              },
+              {
+                "cell": 19,
+                "item": "🧺"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "winter",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the snowman?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "winter",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "flashMs": 1500,
+            "targetCell": 3,
+            "item": "⛄",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the scarf!",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "winter wear",
+          "params": {
+            "rows": 2,
+            "cols": 3,
+            "flashMs": 1400,
+            "targetCell": 1,
+            "item": "🧣",
+            "decoys": [
+              {
+                "cell": 4,
+                "item": "🧤"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where were the skis?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "ski trip",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1200,
+            "targetCell": 6,
+            "item": "🎿",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "❄️"
+              },
+              {
+                "cell": 8,
+                "item": "☃️"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Tap the mittens!",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "winter wear",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "flashMs": 1100,
+            "targetCell": 9,
+            "item": "🧤",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🧣"
+              },
+              {
+                "cell": 5,
+                "item": "🧢"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the sled?",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "snow day",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 900,
+            "targetCell": 2,
+            "item": "🛷",
+            "decoys": [
+              {
+                "cell": 5,
+                "item": "⛸️"
+              },
+              {
+                "cell": 10,
+                "item": "🎿"
+              },
+              {
+                "cell": 13,
+                "item": "🏂"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the penguin!",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "arctic",
+          "params": {
+            "rows": 3,
+            "cols": 5,
+            "flashMs": 900,
+            "targetCell": 14,
+            "item": "🐧",
+            "decoys": [
+              {
+                "cell": 3,
+                "item": "🐦"
+              },
+              {
+                "cell": 7,
+                "item": "🦆"
+              },
+              {
+                "cell": 10,
+                "item": "🐻‍❄️"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the cocoa?",
+          "durationMs": 4200,
+          "difficulty": 4,
+          "theme": "cozy winter",
+          "params": {
+            "rows": 4,
+            "cols": 5,
+            "flashMs": 700,
+            "targetCell": 11,
+            "item": "☕",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🍵"
+              },
+              {
+                "cell": 6,
+                "item": "🫖"
+              },
+              {
+                "cell": 13,
+                "item": "🥛"
+              },
+              {
+                "cell": 17,
+                "item": "🍫"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Spot the reindeer!",
+          "durationMs": 4000,
+          "difficulty": 4,
+          "theme": "holiday",
+          "params": {
+            "rows": 5,
+            "cols": 4,
+            "flashMs": 600,
+            "targetCell": 0,
+            "item": "🦌",
+            "decoys": [
+              {
+                "cell": 5,
+                "item": "🐴"
+              },
+              {
+                "cell": 9,
+                "item": "🐐"
+              },
+              {
+                "cell": 14,
+                "item": "🐏"
+              },
+              {
+                "cell": 18,
+                "item": "🐑"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Catch the snowflake!",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "blizzard",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 400,
+            "targetCell": 21,
+            "item": "❄️",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🧊"
+              },
+              {
+                "cell": 5,
+                "item": "💎"
+              },
+              {
+                "cell": 8,
+                "item": "⭐"
+              },
+              {
+                "cell": 12,
+                "item": "🌨️"
+              },
+              {
+                "cell": 16,
+                "item": "💧"
+              },
+              {
+                "cell": 19,
+                "item": "☁️"
+              },
+              {
+                "cell": 24,
+                "item": "🫧"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the ice cube?",
+          "durationMs": 3800,
+          "difficulty": 5,
+          "theme": "deep freeze",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 350,
+            "targetCell": 7,
+            "item": "🧊",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "❄️"
+              },
+              {
+                "cell": 3,
+                "item": "💠"
+              },
+              {
+                "cell": 11,
+                "item": "🪟"
+              },
+              {
+                "cell": 13,
+                "item": "💎"
+              },
+              {
+                "cell": 16,
+                "item": "🔹"
+              },
+              {
+                "cell": 18,
+                "item": "🥶"
+              },
+              {
+                "cell": 22,
+                "item": "🫧"
+              },
+              {
+                "cell": 24,
+                "item": "🧂"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "kitchen",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the frying pan?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "kitchen",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "flashMs": 1500,
+            "targetCell": 2,
+            "item": "🍳",
+            "decoys": []
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the pizza?",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "takeout",
+          "params": {
+            "rows": 2,
+            "cols": 3,
+            "flashMs": 1400,
+            "targetCell": 5,
+            "item": "🍕",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🥦"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the cupcake!",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "baking",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1200,
+            "targetCell": 0,
+            "item": "🧁",
+            "decoys": [
+              {
+                "cell": 4,
+                "item": "🍎"
+              },
+              {
+                "cell": 8,
+                "item": "🥕"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the croissant?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "breakfast",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "flashMs": 1100,
+            "targetCell": 7,
+            "item": "🥐",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🍞"
+              },
+              {
+                "cell": 3,
+                "item": "🧀"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the knife?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "cutlery",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "flashMs": 900,
+            "targetCell": 9,
+            "item": "🔪",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🥄"
+              },
+              {
+                "cell": 5,
+                "item": "🍴"
+              },
+              {
+                "cell": 10,
+                "item": "🥢"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the salt?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "pantry",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 900,
+            "targetCell": 6,
+            "item": "🧂",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "🫙"
+              },
+              {
+                "cell": 11,
+                "item": "🥫"
+              },
+              {
+                "cell": 14,
+                "item": "🍯"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Spot the lemon!",
+          "durationMs": 4500,
+          "difficulty": 4,
+          "theme": "fresh produce",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "flashMs": 700,
+            "targetCell": 15,
+            "item": "🍋",
+            "decoys": [
+              {
+                "cell": 2,
+                "item": "🍊"
+              },
+              {
+                "cell": 5,
+                "item": "🍈"
+              },
+              {
+                "cell": 8,
+                "item": "🧅"
+              },
+              {
+                "cell": 9,
+                "item": "🍐"
+              },
+              {
+                "cell": 12,
+                "item": "🫒"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Where was the spoon?",
+          "durationMs": 4500,
+          "difficulty": 4,
+          "theme": "utensils",
+          "params": {
+            "rows": 4,
+            "cols": 5,
+            "flashMs": 650,
+            "targetCell": 11,
+            "item": "🥄",
+            "decoys": [
+              {
+                "cell": 1,
+                "item": "🍴"
+              },
+              {
+                "cell": 6,
+                "item": "🔪"
+              },
+              {
+                "cell": 13,
+                "item": "🥢"
+              },
+              {
+                "cell": 17,
+                "item": "🫕"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Spot the donut!",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "sweet treats",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 400,
+            "targetCell": 3,
+            "item": "🍩",
+            "decoys": [
+              {
+                "cell": 7,
+                "item": "🍪"
+              },
+              {
+                "cell": 10,
+                "item": "🥯"
+              },
+              {
+                "cell": 14,
+                "item": "🧇"
+              },
+              {
+                "cell": 18,
+                "item": "🍰"
+              },
+              {
+                "cell": 22,
+                "item": "🥨"
+              },
+              {
+                "cell": 24,
+                "item": "🍘"
+              }
+            ]
+          }
+        },
+        {
+          "template": "memory-flash",
+          "prompt": "Find the teapot!",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "tea time",
+          "params": {
+            "rows": 5,
+            "cols": 5,
+            "flashMs": 350,
+            "targetCell": 21,
+            "item": "🫖",
+            "decoys": [
+              {
+                "cell": 0,
+                "item": "☕"
+              },
+              {
+                "cell": 5,
+                "item": "🍵"
+              },
+              {
+                "cell": 9,
+                "item": "🧋"
+              },
+              {
+                "cell": 13,
+                "item": "🥛"
+              },
+              {
+                "cell": 16,
+                "item": "🍶"
+              },
+              {
+                "cell": 19,
+                "item": "🍼"
+              },
+              {
+                "cell": 2,
+                "item": "🫙"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

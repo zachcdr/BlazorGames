@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0010",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Brain teaser!",
+  "durationMs": 7000,
+  "difficulty": 5,
+  "theme": "numbers",
+  "params": {
+    "a": 12,
+    "op": "×",
+    "b": 9,
+    "options": [
+      96,
+      108,
+      118,
+      99
+    ]
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

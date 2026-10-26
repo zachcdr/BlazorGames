@@ -1,0 +1,37 @@
+{
+  "id": "trace-shape_0072",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the crab scuttle",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "crab",
+  "params": {
+    "points": [
+      [
+        10,
+        20
+      ],
+      [
+        88,
+        34
+      ],
+      [
+        12,
+        56
+      ],
+      [
+        88,
+        70
+      ]
+    ],
+    "tolerance": 8,
+    "fadeMs": 2500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "trace-shape_0046",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the heartbeat",
+  "durationMs": 5500,
+  "difficulty": 3,
+  "theme": "medical",
+  "params": {
+    "points": [
+      [
+        8,
+        60
+      ],
+      [
+        24,
+        60
+      ],
+      [
+        30,
+        50
+      ],
+      [
+        36,
+        60
+      ],
+      [
+        42,
+        60
+      ],
+      [
+        50,
+        15
+      ],
+      [
+        60,
+        88
+      ],
+      [
+        66,
+        60
+      ],
+      [
+        72,
+        60
+      ],
+      [
+        78,
+        48
+      ],
+      [
+        84,
+        60
+      ],
+      [
+        92,
+        60
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 1500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

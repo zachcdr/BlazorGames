@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0026",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "garden",
+  "params": {
+    "left": {
+      "emoji": "🐦",
+      "name": "Hummingbird"
+    },
+    "right": {
+      "emoji": "🐝",
+      "name": "Honeybee"
+    },
+    "answer": "left",
+    "explanation": "A hummingbird is about 3 g; a honeybee is only about 0.1 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

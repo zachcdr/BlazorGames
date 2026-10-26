@@ -1,0 +1,31 @@
+{
+  "id": "sequence-memory_0010",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Copy the sequence",
+  "durationMs": 10000,
+  "difficulty": 5,
+  "theme": "patterns",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "sequence": [
+      7,
+      2,
+      13,
+      8,
+      4,
+      11,
+      14,
+      1
+    ],
+    "showMs": 350,
+    "gapMs": 120
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

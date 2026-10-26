@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0015",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Butterfly boost!",
+  "durationMs": 6500,
+  "difficulty": 3,
+  "theme": "insects",
+  "params": {
+    "a": 47,
+    "op": "+",
+    "b": 38,
+    "options": [
+      75,
+      84,
+      85,
+      95
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

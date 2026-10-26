@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0104",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "animal act",
+  "params": {
+    "left": {
+      "emoji": "🦁",
+      "name": "Adult lion"
+    },
+    "right": {
+      "emoji": "🐒",
+      "name": "Capuchin monkey"
+    },
+    "answer": "left",
+    "explanation": "Adult lions weigh well over 100 kg; capuchins weigh only 3-4 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

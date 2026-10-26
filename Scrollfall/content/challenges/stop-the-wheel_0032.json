@@ -1,0 +1,37 @@
+{
+  "id": "stop-the-wheel_0032",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on green",
+  "durationMs": 6500,
+  "difficulty": 2,
+  "theme": "halloween",
+  "params": {
+    "segments": [
+      {
+        "color": "#f76b15"
+      },
+      {
+        "color": "#8e4ec6"
+      },
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#e5484d"
+      },
+      {
+        "color": "#ffc53d"
+      }
+    ],
+    "targetSegment": 2,
+    "speed": 0.8,
+    "startAngle": 200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

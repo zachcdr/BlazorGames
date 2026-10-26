@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0052",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Share the water!",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "oasis",
+  "params": {
+    "a": 72,
+    "op": "÷",
+    "b": 8,
+    "options": [
+      8,
+      9,
+      7,
+      10
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

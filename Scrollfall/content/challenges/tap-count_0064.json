@@ -1,0 +1,23 @@
+{
+  "id": "tap-count_0064",
+  "template": "tap-count",
+  "version": 1,
+  "prompt": "Tap the cupcake exactly 7 times",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "sweet treats",
+  "params": {
+    "targetCount": 7,
+    "target": "🧁",
+    "distractors": [
+      "🍰",
+      "🍩"
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

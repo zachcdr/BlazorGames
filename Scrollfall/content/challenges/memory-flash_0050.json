@@ -1,0 +1,56 @@
+{
+  "id": "memory-flash_0050",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the blazing sun?",
+  "durationMs": 5000,
+  "difficulty": 5,
+  "theme": "heat wave",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 350,
+    "targetCell": 19,
+    "item": "🌞",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "🌕"
+      },
+      {
+        "cell": 4,
+        "item": "🟡"
+      },
+      {
+        "cell": 7,
+        "item": "🔆"
+      },
+      {
+        "cell": 11,
+        "item": "⭐"
+      },
+      {
+        "cell": 13,
+        "item": "🌟"
+      },
+      {
+        "cell": 16,
+        "item": "🍋"
+      },
+      {
+        "cell": 21,
+        "item": "🧀"
+      },
+      {
+        "cell": 24,
+        "item": "🌼"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

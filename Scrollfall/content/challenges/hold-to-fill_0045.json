@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0045",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the soda cup to the line",
+  "durationMs": 4500,
+  "difficulty": 3,
+  "theme": "diner",
+  "params": {
+    "item": "🥤",
+    "fillPerSecond": 50,
+    "targetFrom": 62,
+    "targetTo": 74
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

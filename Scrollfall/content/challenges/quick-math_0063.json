@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0063",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Tap the answer",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "tennis",
+  "params": {
+    "a": 3,
+    "op": "×",
+    "b": 5,
+    "options": [
+      8,
+      12,
+      18,
+      15
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

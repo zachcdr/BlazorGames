@@ -1,0 +1,32 @@
+{
+  "id": "memory-flash_0005",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the frog?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "pond",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "flashMs": 800,
+    "targetCell": 13,
+    "item": "🐸",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🐢"
+      },
+      {
+        "cell": 7,
+        "item": "🐟"
+      }
+    ]
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

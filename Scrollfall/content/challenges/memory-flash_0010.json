@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0010",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the dog?",
+  "durationMs": 5000,
+  "difficulty": 5,
+  "theme": "pets",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 400,
+    "targetCell": 21,
+    "item": "🐶",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🐱"
+      },
+      {
+        "cell": 10,
+        "item": "🐱"
+      },
+      {
+        "cell": 14,
+        "item": "🐭"
+      },
+      {
+        "cell": 23,
+        "item": "🐹"
+      }
+    ]
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

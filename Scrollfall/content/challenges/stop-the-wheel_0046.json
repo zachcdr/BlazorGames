@@ -1,0 +1,46 @@
+{
+  "id": "stop-the-wheel_0046",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on orange",
+  "durationMs": 7000,
+  "difficulty": 4,
+  "theme": "sunset",
+  "params": {
+    "segments": [
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#e5484d"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#f76b15"
+      },
+      {
+        "color": "#8e4ec6"
+      },
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#d6409f"
+      }
+    ],
+    "targetSegment": 4,
+    "speed": 0.8,
+    "startAngle": 250
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

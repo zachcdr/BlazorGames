@@ -1,0 +1,29 @@
+{
+  "id": "odd-one-out_0088",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Find the different bug",
+  "durationMs": 4500,
+  "difficulty": 4,
+  "theme": "buzzing swarm",
+  "params": {
+    "items": [
+      "🐝",
+      "🐝",
+      "🐝",
+      "🐝",
+      "🐝",
+      "🐝",
+      "🐝",
+      "🪰",
+      "🐝"
+    ],
+    "answerIndex": 7
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0096",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "ball toys",
+  "params": {
+    "left": {
+      "emoji": "🎾",
+      "name": "Tennis ball"
+    },
+    "right": {
+      "emoji": "⚾",
+      "name": "Baseball"
+    },
+    "answer": "right",
+    "explanation": "A baseball is about 145 g, roughly 2.5 times a tennis ball's ~58 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

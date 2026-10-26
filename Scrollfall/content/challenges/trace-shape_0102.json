@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0102",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the pulse line",
+  "durationMs": 3500,
+  "difficulty": 2,
+  "theme": "lab monitor",
+  "params": {
+    "points": [
+      [
+        10,
+        70
+      ],
+      [
+        30,
+        30
+      ],
+      [
+        50,
+        70
+      ],
+      [
+        70,
+        30
+      ],
+      [
+        90,
+        70
+      ]
+    ],
+    "tolerance": 11,
+    "fadeMs": 3000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

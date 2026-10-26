@@ -1,0 +1,48 @@
+{
+  "id": "memory-flash_0019",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Find the real pumpkin!",
+  "durationMs": 5000,
+  "difficulty": 5,
+  "theme": "halloween",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 400,
+    "targetCell": 22,
+    "item": "🎃",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🍊"
+      },
+      {
+        "cell": 4,
+        "item": "🧡"
+      },
+      {
+        "cell": 7,
+        "item": "🏀"
+      },
+      {
+        "cell": 13,
+        "item": "🟠"
+      },
+      {
+        "cell": 16,
+        "item": "🍅"
+      },
+      {
+        "cell": 19,
+        "item": "🍊"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

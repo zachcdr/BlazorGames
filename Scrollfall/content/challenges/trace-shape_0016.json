@@ -1,0 +1,57 @@
+{
+  "id": "trace-shape_0016",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the leaf",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "fruit market",
+  "params": {
+    "points": [
+      [
+        50,
+        10
+      ],
+      [
+        70,
+        24
+      ],
+      [
+        78,
+        46
+      ],
+      [
+        66,
+        70
+      ],
+      [
+        50,
+        88
+      ],
+      [
+        34,
+        70
+      ],
+      [
+        22,
+        46
+      ],
+      [
+        30,
+        24
+      ],
+      [
+        50,
+        10
+      ]
+    ],
+    "tolerance": 8,
+    "fadeMs": 1400
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0062",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Solve it, sailor!",
+  "durationMs": 7000,
+  "difficulty": 4,
+  "theme": "pirates",
+  "params": {
+    "a": 67,
+    "op": "+",
+    "b": 28,
+    "options": [
+      94,
+      85,
+      96,
+      95
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

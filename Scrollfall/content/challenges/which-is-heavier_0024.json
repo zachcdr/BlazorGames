@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0024",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "home bugs",
+  "params": {
+    "left": {
+      "emoji": "🪰",
+      "name": "Housefly"
+    },
+    "right": {
+      "emoji": "🪳",
+      "name": "American cockroach"
+    },
+    "answer": "right",
+    "explanation": "An American cockroach is about 1 g; a housefly is around 12 mg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

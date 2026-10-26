@@ -1,0 +1,26 @@
+{
+  "id": "sequence-memory_0011",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Watch the snowflakes",
+  "durationMs": 6500,
+  "difficulty": 1,
+  "theme": "snowfall",
+  "params": {
+    "rows": 2,
+    "cols": 2,
+    "sequence": [
+      3,
+      0,
+      2
+    ],
+    "showMs": 800,
+    "gapMs": 400
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

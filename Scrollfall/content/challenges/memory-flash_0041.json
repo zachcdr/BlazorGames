@@ -1,0 +1,23 @@
+{
+  "id": "memory-flash_0041",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the cactus?",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "desert",
+  "params": {
+    "rows": 2,
+    "cols": 3,
+    "flashMs": 1500,
+    "targetCell": 5,
+    "item": "🌵",
+    "decoys": []
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

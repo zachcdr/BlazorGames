@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0018",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the powder keg to the line",
+  "durationMs": 4000,
+  "difficulty": 4,
+  "theme": "cannon deck",
+  "params": {
+    "item": "🛢️",
+    "fillPerSecond": 90,
+    "targetFrom": 72,
+    "targetTo": 86
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

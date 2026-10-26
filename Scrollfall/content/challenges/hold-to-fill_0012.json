@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0012",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the jug to the line",
+  "durationMs": 6000,
+  "difficulty": 1,
+  "theme": "treasure hunt",
+  "params": {
+    "item": "🏺",
+    "fillPerSecond": 25,
+    "targetFrom": 45,
+    "targetTo": 65
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

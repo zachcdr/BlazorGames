@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0016",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Swarm sum!",
+  "durationMs": 6500,
+  "difficulty": 3,
+  "theme": "insects",
+  "params": {
+    "a": 12,
+    "op": "×",
+    "b": 11,
+    "options": [
+      132,
+      121,
+      144,
+      123
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "tap-count_0031",
+  "template": "tap-count",
+  "version": 1,
+  "prompt": "Tap the egg exactly 2 times",
+  "durationMs": 3000,
+  "difficulty": 1,
+  "theme": "kitchen",
+  "params": {
+    "targetCount": 2,
+    "target": "🥚",
+    "distractors": []
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

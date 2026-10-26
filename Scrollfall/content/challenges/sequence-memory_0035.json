@@ -1,0 +1,29 @@
+{
+  "id": "sequence-memory_0035",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Repeat the pattern",
+  "durationMs": 8000,
+  "difficulty": 4,
+  "theme": "splashes",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "sequence": [
+      9,
+      2,
+      14,
+      5,
+      12,
+      0
+    ],
+    "showMs": 400,
+    "gapMs": 150
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

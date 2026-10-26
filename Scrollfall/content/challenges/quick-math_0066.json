@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0066",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Share the points!",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "rugby",
+  "params": {
+    "a": 72,
+    "op": "÷",
+    "b": 9,
+    "options": [
+      7,
+      63,
+      8,
+      9
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0027",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the pickaxe?",
+  "durationMs": 4500,
+  "difficulty": 4,
+  "theme": "tools",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "flashMs": 600,
+    "targetCell": 13,
+    "item": "⛏️",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "⚒️"
+      },
+      {
+        "cell": 3,
+        "item": "🪓"
+      },
+      {
+        "cell": 6,
+        "item": "🔨"
+      },
+      {
+        "cell": 10,
+        "item": "🔧"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

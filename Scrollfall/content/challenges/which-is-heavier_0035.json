@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0035",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "river",
+  "params": {
+    "left": {
+      "emoji": "🐍",
+      "name": "King cobra"
+    },
+    "right": {
+      "emoji": "🐊",
+      "name": "Saltwater crocodile"
+    },
+    "answer": "right",
+    "explanation": "Adult male saltwater crocs weigh hundreds of kg; king cobras ~6 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

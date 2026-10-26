@@ -1,0 +1,57 @@
+{
+  "id": "trace-shape_0052",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the water wave",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "water",
+  "params": {
+    "points": [
+      [
+        10,
+        50
+      ],
+      [
+        20,
+        25
+      ],
+      [
+        30,
+        50
+      ],
+      [
+        40,
+        75
+      ],
+      [
+        50,
+        50
+      ],
+      [
+        60,
+        25
+      ],
+      [
+        70,
+        50
+      ],
+      [
+        80,
+        75
+      ],
+      [
+        90,
+        50
+      ]
+    ],
+    "tolerance": 8,
+    "fadeMs": 2500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

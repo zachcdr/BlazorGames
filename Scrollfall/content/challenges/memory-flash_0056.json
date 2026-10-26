@@ -1,0 +1,36 @@
+{
+  "id": "memory-flash_0056",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the robot arm?",
+  "durationMs": 5500,
+  "difficulty": 3,
+  "theme": "cyborgs",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "flashMs": 800,
+    "targetCell": 13,
+    "item": "🦾",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🦿"
+      },
+      {
+        "cell": 5,
+        "item": "💪"
+      },
+      {
+        "cell": 8,
+        "item": "🦿"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

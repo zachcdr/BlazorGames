@@ -1,0 +1,69 @@
+{
+  "id": "trace-shape_0089",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the cobra's S-curve",
+  "durationMs": 3500,
+  "difficulty": 5,
+  "theme": "cobra",
+  "params": {
+    "points": [
+      [
+        80,
+        18
+      ],
+      [
+        60,
+        10
+      ],
+      [
+        35,
+        12
+      ],
+      [
+        22,
+        25
+      ],
+      [
+        25,
+        40
+      ],
+      [
+        40,
+        50
+      ],
+      [
+        60,
+        55
+      ],
+      [
+        76,
+        65
+      ],
+      [
+        78,
+        80
+      ],
+      [
+        65,
+        90
+      ],
+      [
+        40,
+        92
+      ],
+      [
+        20,
+        85
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 800
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

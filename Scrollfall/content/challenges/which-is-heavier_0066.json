@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0066",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "kitchen",
+  "params": {
+    "left": {
+      "emoji": "🥚",
+      "name": "Large egg"
+    },
+    "right": {
+      "emoji": "🍅",
+      "name": "Cherry tomato"
+    },
+    "answer": "left",
+    "explanation": "A large egg is about 50-60 g; a cherry tomato is roughly 10-20 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

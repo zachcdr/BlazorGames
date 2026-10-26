@@ -1,0 +1,32 @@
+{
+  "id": "memory-flash_0084",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Catch the magnet!",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "gadgets",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "flashMs": 1100,
+    "targetCell": 7,
+    "item": "🧲",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🔦"
+      },
+      {
+        "cell": 5,
+        "item": "🔋"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

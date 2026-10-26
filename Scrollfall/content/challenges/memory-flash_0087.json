@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0087",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Snip! Where were the scissors?",
+  "durationMs": 4500,
+  "difficulty": 4,
+  "theme": "crafting",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "flashMs": 750,
+    "targetCell": 3,
+    "item": "✂️",
+    "decoys": [
+      {
+        "cell": 5,
+        "item": "🔪"
+      },
+      {
+        "cell": 9,
+        "item": "📏"
+      },
+      {
+        "cell": 12,
+        "item": "🪡"
+      },
+      {
+        "cell": 14,
+        "item": "📌"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

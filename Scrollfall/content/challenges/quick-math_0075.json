@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0075",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Shark attack! Solve!",
+  "durationMs": 7500,
+  "difficulty": 5,
+  "theme": "sharks",
+  "params": {
+    "a": 132,
+    "op": "÷",
+    "b": 12,
+    "options": [
+      12,
+      10,
+      11,
+      13
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

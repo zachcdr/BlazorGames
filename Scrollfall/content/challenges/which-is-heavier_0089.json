@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0089",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "woodwinds",
+  "params": {
+    "left": {
+      "emoji": "🎶",
+      "name": "Clarinet"
+    },
+    "right": {
+      "emoji": "🎶",
+      "name": "Bassoon"
+    },
+    "answer": "right",
+    "explanation": "A bassoon weighs about 3 kg; a clarinet is only around 0.7 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

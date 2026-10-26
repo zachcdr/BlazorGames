@@ -1,0 +1,31 @@
+{
+  "id": "stop-the-wheel_0041",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on teal",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "oasis",
+  "params": {
+    "segments": [
+      {
+        "color": "#f76b15"
+      },
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#8e4ec6"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 0.35,
+    "startAngle": 90
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

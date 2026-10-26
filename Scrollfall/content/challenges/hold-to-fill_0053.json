@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0053",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the otter's tub to the line",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "sea otter",
+  "params": {
+    "item": "🛁",
+    "fillPerSecond": 40,
+    "targetFrom": 50,
+    "targetTo": 68
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

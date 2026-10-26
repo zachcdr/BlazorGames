@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0078",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5500,
+  "difficulty": 4,
+  "theme": "jungle snakes",
+  "params": {
+    "left": {
+      "emoji": "🐍",
+      "name": "Green anaconda"
+    },
+    "right": {
+      "emoji": "🐍",
+      "name": "Boa constrictor"
+    },
+    "answer": "left",
+    "explanation": "Adult green anacondas often exceed 30 kg; boas are typically 10-18 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

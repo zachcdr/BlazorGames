@@ -1,0 +1,52 @@
+{
+  "id": "memory-flash_0020",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the ghost?",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "halloween",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 300,
+    "targetCell": 6,
+    "item": "👻",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "💀"
+      },
+      {
+        "cell": 3,
+        "item": "☁️"
+      },
+      {
+        "cell": 9,
+        "item": "👽"
+      },
+      {
+        "cell": 11,
+        "item": "🥛"
+      },
+      {
+        "cell": 14,
+        "item": "☁️"
+      },
+      {
+        "cell": 18,
+        "item": "💀"
+      },
+      {
+        "cell": 23,
+        "item": "🦴"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

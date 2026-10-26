@@ -1,0 +1,32 @@
+{
+  "id": "memory-flash_0024",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the magnet?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "tools",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "flashMs": 1000,
+    "targetCell": 5,
+    "item": "🧲",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "🔩"
+      },
+      {
+        "cell": 10,
+        "item": "⚙️"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

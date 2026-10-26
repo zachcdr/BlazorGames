@@ -1,0 +1,26 @@
+{
+  "id": "odd-one-out_0005",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the odd one out",
+  "durationMs": 4000,
+  "difficulty": 2,
+  "theme": "weather",
+  "params": {
+    "items": [
+      "🌧️",
+      "🌧️",
+      "🌧️",
+      "🌧️",
+      "⛈️",
+      "🌧️"
+    ],
+    "answerIndex": 4
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

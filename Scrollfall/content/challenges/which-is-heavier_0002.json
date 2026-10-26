@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0002",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "ocean",
+  "params": {
+    "left": {
+      "emoji": "🐘",
+      "name": "Elephant"
+    },
+    "right": {
+      "emoji": "🐳",
+      "name": "Blue whale"
+    },
+    "answer": "right",
+    "explanation": "A blue whale outweighs about 25 elephants."
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

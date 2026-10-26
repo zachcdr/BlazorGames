@@ -1,0 +1,29 @@
+{
+  "id": "sequence-memory_0036",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Catch the fireflies",
+  "durationMs": 7500,
+  "difficulty": 4,
+  "theme": "night pond",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "sequence": [
+      1,
+      10,
+      4,
+      7,
+      0,
+      11
+    ],
+    "showMs": 380,
+    "gapMs": 150
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

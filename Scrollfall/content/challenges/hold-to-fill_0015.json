@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0015",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the potion flask to the line",
+  "durationMs": 4500,
+  "difficulty": 3,
+  "theme": "sea witch",
+  "params": {
+    "item": "🧪",
+    "fillPerSecond": 50,
+    "targetFrom": 60,
+    "targetTo": 72
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

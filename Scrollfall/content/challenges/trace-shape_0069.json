@@ -1,0 +1,65 @@
+{
+  "id": "trace-shape_0069",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace S for Subway",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "subway",
+  "params": {
+    "points": [
+      [
+        82,
+        25
+      ],
+      [
+        65,
+        12
+      ],
+      [
+        40,
+        12
+      ],
+      [
+        22,
+        25
+      ],
+      [
+        25,
+        42
+      ],
+      [
+        50,
+        50
+      ],
+      [
+        75,
+        58
+      ],
+      [
+        78,
+        75
+      ],
+      [
+        60,
+        88
+      ],
+      [
+        35,
+        88
+      ],
+      [
+        18,
+        75
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 700
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

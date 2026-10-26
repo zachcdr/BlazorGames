@@ -1,0 +1,29 @@
+{
+  "id": "sequence-memory_0018",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Copy the ski tracks",
+  "durationMs": 8000,
+  "difficulty": 4,
+  "theme": "skiing",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "sequence": [
+      5,
+      10,
+      1,
+      8,
+      2,
+      7
+    ],
+    "showMs": 380,
+    "gapMs": 170
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

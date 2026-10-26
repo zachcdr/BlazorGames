@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0070",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the gentle wave",
+  "durationMs": 3500,
+  "difficulty": 1,
+  "theme": "ocean waves",
+  "params": {
+    "points": [
+      [
+        10,
+        50
+      ],
+      [
+        30,
+        30
+      ],
+      [
+        50,
+        50
+      ],
+      [
+        70,
+        70
+      ],
+      [
+        90,
+        50
+      ]
+    ],
+    "tolerance": 14,
+    "fadeMs": 4500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "memory-flash_0070",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the fishing rod?",
+  "durationMs": 3500,
+  "difficulty": 5,
+  "theme": "lake fishing",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 350,
+    "targetCell": 11,
+    "item": "🎣",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "🐟"
+      },
+      {
+        "cell": 4,
+        "item": "🐠"
+      },
+      {
+        "cell": 8,
+        "item": "🪝"
+      },
+      {
+        "cell": 13,
+        "item": "🐡"
+      },
+      {
+        "cell": 17,
+        "item": "🦈"
+      },
+      {
+        "cell": 20,
+        "item": "🪱"
+      },
+      {
+        "cell": 22,
+        "item": "🦆"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

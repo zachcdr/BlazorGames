@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0035",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the smoothie to the line",
+  "durationMs": 4000,
+  "difficulty": 3,
+  "theme": "jungle bar",
+  "params": {
+    "item": "🥤",
+    "fillPerSecond": 50,
+    "targetFrom": 65,
+    "targetTo": 77
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

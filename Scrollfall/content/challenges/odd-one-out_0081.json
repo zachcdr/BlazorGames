@@ -1,0 +1,24 @@
+{
+  "id": "odd-one-out_0081",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the one that isn't an insect",
+  "durationMs": 6000,
+  "difficulty": 1,
+  "theme": "garden bugs",
+  "params": {
+    "items": [
+      "🐌",
+      "🐝",
+      "🦋",
+      "🐜"
+    ],
+    "answerIndex": 0
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

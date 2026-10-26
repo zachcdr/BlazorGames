@@ -1,0 +1,61 @@
+{
+  "id": "trace-shape_0056",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the fish",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "fish",
+  "params": {
+    "points": [
+      [
+        10,
+        50
+      ],
+      [
+        30,
+        32
+      ],
+      [
+        56,
+        32
+      ],
+      [
+        72,
+        42
+      ],
+      [
+        90,
+        28
+      ],
+      [
+        90,
+        72
+      ],
+      [
+        72,
+        58
+      ],
+      [
+        56,
+        68
+      ],
+      [
+        30,
+        68
+      ],
+      [
+        10,
+        50
+      ]
+    ],
+    "tolerance": 7,
+    "fadeMs": 1500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

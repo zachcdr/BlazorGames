@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0004",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Pump the balloon to the line",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "party",
+  "params": {
+    "item": "🎈",
+    "fillPerSecond": 40,
+    "targetFrom": 50,
+    "targetTo": 65
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

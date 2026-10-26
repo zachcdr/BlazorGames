@@ -1,0 +1,61 @@
+{
+  "id": "trace-shape_0047",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the square spiral",
+  "durationMs": 7000,
+  "difficulty": 4,
+  "theme": "science lab",
+  "params": {
+    "points": [
+      [
+        10,
+        10
+      ],
+      [
+        90,
+        10
+      ],
+      [
+        90,
+        90
+      ],
+      [
+        10,
+        90
+      ],
+      [
+        10,
+        30
+      ],
+      [
+        70,
+        30
+      ],
+      [
+        70,
+        70
+      ],
+      [
+        30,
+        70
+      ],
+      [
+        30,
+        50
+      ],
+      [
+        50,
+        50
+      ]
+    ],
+    "tolerance": 8,
+    "fadeMs": 1300
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

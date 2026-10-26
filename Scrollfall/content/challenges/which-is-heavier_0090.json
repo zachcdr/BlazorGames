@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0090",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 5,
+  "theme": "saxophones",
+  "params": {
+    "left": {
+      "emoji": "🎷",
+      "name": "Baritone sax"
+    },
+    "right": {
+      "emoji": "🎷",
+      "name": "Alto sax"
+    },
+    "answer": "left",
+    "explanation": "A baritone sax is about 6+ kg; an alto sax is roughly 2-3 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

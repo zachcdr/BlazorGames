@@ -1,0 +1,30 @@
+{
+  "id": "sequence-memory_0028",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Chart the constellation",
+  "durationMs": 7500,
+  "difficulty": 5,
+  "theme": "constellation",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "sequence": [
+      5,
+      14,
+      2,
+      9,
+      12,
+      7,
+      0
+    ],
+    "showMs": 320,
+    "gapMs": 120
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "sequence-memory_0009",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Tap them in order",
+  "durationMs": 10000,
+  "difficulty": 5,
+  "theme": "patterns",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "sequence": [
+      0,
+      5,
+      10,
+      15,
+      11,
+      6,
+      1
+    ],
+    "showMs": 400,
+    "gapMs": 150
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

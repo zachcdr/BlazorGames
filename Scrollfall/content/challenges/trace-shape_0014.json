@@ -1,0 +1,53 @@
+{
+  "id": "trace-shape_0014",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the melon slice",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "fruit market",
+  "params": {
+    "points": [
+      [
+        12,
+        35
+      ],
+      [
+        88,
+        35
+      ],
+      [
+        80,
+        55
+      ],
+      [
+        65,
+        70
+      ],
+      [
+        50,
+        76
+      ],
+      [
+        35,
+        70
+      ],
+      [
+        20,
+        55
+      ],
+      [
+        12,
+        35
+      ]
+    ],
+    "tolerance": 9,
+    "fadeMs": 2000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

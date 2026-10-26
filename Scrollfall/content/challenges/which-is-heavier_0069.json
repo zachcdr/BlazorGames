@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0069",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "kitchen",
+  "params": {
+    "left": {
+      "emoji": "🍯",
+      "name": "Jar of honey"
+    },
+    "right": {
+      "emoji": "🫒",
+      "name": "Jar of cooking oil"
+    },
+    "answer": "left",
+    "explanation": "Honey is ~1.4 g/mL; cooking oil is lighter at about 0.9 g/mL."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

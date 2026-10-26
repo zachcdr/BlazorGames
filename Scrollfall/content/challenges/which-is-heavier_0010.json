@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0010",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "space",
+  "params": {
+    "left": {
+      "emoji": "🌕",
+      "name": "The Moon"
+    },
+    "right": {
+      "emoji": "🌍",
+      "name": "Earth"
+    },
+    "answer": "right",
+    "explanation": "Earth has about 81 times the mass of the Moon."
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

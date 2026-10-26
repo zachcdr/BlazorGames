@@ -1,0 +1,89 @@
+{
+  "id": "trace-shape_0097",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the hypnotist's spiral",
+  "durationMs": 6000,
+  "difficulty": 5,
+  "theme": "hypnosis",
+  "params": {
+    "points": [
+      [
+        92,
+        50
+      ],
+      [
+        78,
+        78
+      ],
+      [
+        50,
+        88
+      ],
+      [
+        25,
+        76
+      ],
+      [
+        16,
+        50
+      ],
+      [
+        27,
+        27
+      ],
+      [
+        50,
+        20
+      ],
+      [
+        70,
+        30
+      ],
+      [
+        76,
+        50
+      ],
+      [
+        67,
+        67
+      ],
+      [
+        50,
+        72
+      ],
+      [
+        36,
+        64
+      ],
+      [
+        32,
+        50
+      ],
+      [
+        39,
+        39
+      ],
+      [
+        50,
+        36
+      ],
+      [
+        58,
+        42
+      ],
+      [
+        60,
+        50
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 1000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

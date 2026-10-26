@@ -1,0 +1,34 @@
+{
+  "id": "stop-the-wheel_0064",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on orange",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "siege fire",
+  "params": {
+    "segments": [
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#f76b15"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#e5484d"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 1.4,
+    "startAngle": 250
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

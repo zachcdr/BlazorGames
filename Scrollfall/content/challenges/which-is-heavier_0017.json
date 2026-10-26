@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0017",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "reptile house",
+  "params": {
+    "left": {
+      "emoji": "🦎",
+      "name": "Komodo dragon"
+    },
+    "right": {
+      "emoji": "🐊",
+      "name": "Nile crocodile"
+    },
+    "answer": "right",
+    "explanation": "Nile crocodiles reach ~400 kg; Komodo dragons about 70 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

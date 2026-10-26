@@ -1,0 +1,25 @@
+{
+  "id": "odd-one-out_0002",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the one that can't fly",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "animals",
+  "params": {
+    "items": [
+      "🦅",
+      "🦉",
+      "🐧",
+      "🦜",
+      "🐝"
+    ],
+    "answerIndex": 2
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

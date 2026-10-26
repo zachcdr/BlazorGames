@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0092",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "toys",
+  "params": {
+    "left": {
+      "emoji": "🏀",
+      "name": "Basketball"
+    },
+    "right": {
+      "emoji": "🎳",
+      "name": "Bowling ball"
+    },
+    "answer": "right",
+    "explanation": "A bowling ball weighs about 3.6-7 kg; a basketball is only about 0.6 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

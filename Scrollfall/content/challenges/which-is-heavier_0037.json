@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0037",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5500,
+  "difficulty": 3,
+  "theme": "sky",
+  "params": {
+    "left": {
+      "emoji": "🦜",
+      "name": "Toucan"
+    },
+    "right": {
+      "emoji": "🦅",
+      "name": "Harpy eagle"
+    },
+    "answer": "right",
+    "explanation": "Harpy eagles weigh ~4-9 kg; a toucan is under 1 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "trace-shape_0055",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the turtle shell",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "turtle",
+  "params": {
+    "points": [
+      [
+        50,
+        14
+      ],
+      [
+        80,
+        31
+      ],
+      [
+        80,
+        69
+      ],
+      [
+        50,
+        86
+      ],
+      [
+        20,
+        69
+      ],
+      [
+        20,
+        31
+      ],
+      [
+        50,
+        14
+      ]
+    ],
+    "tolerance": 9,
+    "fadeMs": 1600
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

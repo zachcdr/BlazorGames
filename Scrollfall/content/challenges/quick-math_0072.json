@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0072",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Make a splash!",
+  "durationMs": 6500,
+  "difficulty": 3,
+  "theme": "tides",
+  "params": {
+    "a": 63,
+    "op": "−",
+    "b": 21,
+    "options": [
+      42,
+      32,
+      52,
+      84
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

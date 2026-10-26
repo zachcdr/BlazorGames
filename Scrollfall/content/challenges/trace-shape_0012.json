@@ -1,0 +1,49 @@
+{
+  "id": "trace-shape_0012",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the basket handle",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "fruit market",
+  "params": {
+    "points": [
+      [
+        15,
+        70
+      ],
+      [
+        22,
+        45
+      ],
+      [
+        38,
+        28
+      ],
+      [
+        50,
+        24
+      ],
+      [
+        62,
+        28
+      ],
+      [
+        78,
+        45
+      ],
+      [
+        85,
+        70
+      ]
+    ],
+    "tolerance": 14,
+    "fadeMs": 4500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "trace-shape_0101",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the lightning spark",
+  "durationMs": 3500,
+  "difficulty": 2,
+  "theme": "electricity",
+  "params": {
+    "points": [
+      [
+        65,
+        10
+      ],
+      [
+        35,
+        50
+      ],
+      [
+        65,
+        50
+      ],
+      [
+        40,
+        90
+      ]
+    ],
+    "tolerance": 11,
+    "fadeMs": 3500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

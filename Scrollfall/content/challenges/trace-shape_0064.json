@@ -1,0 +1,37 @@
+{
+  "id": "trace-shape_0064",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the lightning bolt",
+  "durationMs": 4000,
+  "difficulty": 3,
+  "theme": "storm",
+  "params": {
+    "points": [
+      [
+        65,
+        8
+      ],
+      [
+        30,
+        50
+      ],
+      [
+        58,
+        50
+      ],
+      [
+        30,
+        92
+      ]
+    ],
+    "tolerance": 8,
+    "fadeMs": 1800
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

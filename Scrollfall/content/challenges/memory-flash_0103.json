@@ -1,0 +1,32 @@
+{
+  "id": "memory-flash_0103",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Find the cupcake!",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "baking",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "flashMs": 1200,
+    "targetCell": 0,
+    "item": "🧁",
+    "decoys": [
+      {
+        "cell": 4,
+        "item": "🍎"
+      },
+      {
+        "cell": 8,
+        "item": "🥕"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

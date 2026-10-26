@@ -1,0 +1,1947 @@
+{
+  "template": "stop-the-wheel",
+  "createdAt": "2026-10-22T17:31:03.645Z",
+  "requested": 50,
+  "calls": [
+    {
+      "theme": "castle",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on green",
+          "durationMs": 8000,
+          "difficulty": 1,
+          "theme": "drawbridge",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#3e63dd"
+              }
+            ],
+            "targetSegment": 2,
+            "speed": 0.4,
+            "startAngle": 30
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on purple",
+          "durationMs": 7500,
+          "difficulty": 2,
+          "theme": "royal banners",
+          "params": {
+            "segments": [
+              {
+                "color": "#f76b15"
+              },
+              {
+                "color": "#8e4ec6"
+              },
+              {
+                "color": "#12a594"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#d6409f"
+              }
+            ],
+            "targetSegment": 1,
+            "speed": 0.6,
+            "startAngle": 200
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the sword",
+          "durationMs": 7000,
+          "difficulty": 3,
+          "theme": "armory",
+          "params": {
+            "segments": [
+              {
+                "color": "#3e63dd",
+                "label": "⚔️"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🛡️"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🏹"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🔨"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🪓"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🔱"
+              }
+            ],
+            "targetSegment": 0,
+            "speed": 0.8,
+            "startAngle": 75
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on green",
+          "durationMs": 7000,
+          "difficulty": 3,
+          "theme": "castle garden",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#3e63dd"
+              }
+            ],
+            "targetSegment": 5,
+            "speed": 0.5,
+            "startAngle": 310
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on orange",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "siege fire",
+          "params": {
+            "segments": [
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#f76b15"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#e5484d"
+              }
+            ],
+            "targetSegment": 1,
+            "speed": 1.4,
+            "startAngle": 250
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the dragon",
+          "durationMs": 6500,
+          "difficulty": 4,
+          "theme": "dragon keep",
+          "params": {
+            "segments": [
+              {
+                "color": "#8e4ec6",
+                "label": "🐉"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🏰"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🧙"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🦇"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🗡️"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "👻"
+              }
+            ],
+            "targetSegment": 0,
+            "speed": 1,
+            "startAngle": 15
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the ghost",
+          "durationMs": 8000,
+          "difficulty": 5,
+          "theme": "haunted halls",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d",
+                "label": "🕯️"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🦇"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🕸️"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "💀"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🎃"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "👻"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🪦"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🧛"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🔮"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🕷️"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🗝️"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🧟"
+              }
+            ],
+            "targetSegment": 5,
+            "speed": 0.55,
+            "startAngle": 95
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on yellow",
+          "durationMs": 7500,
+          "difficulty": 5,
+          "theme": "dungeon gems",
+          "params": {
+            "segments": [
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#12a594"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#12a594"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#12a594"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#12a594"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#ffc53d"
+              }
+            ],
+            "targetSegment": 9,
+            "speed": 0.65,
+            "startAngle": 180
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the castle",
+          "durationMs": 8000,
+          "difficulty": 1,
+          "theme": "kingdom view",
+          "params": {
+            "segments": [
+              {
+                "color": "#30a46c",
+                "label": "🏰"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🌲"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🐑"
+              }
+            ],
+            "targetSegment": 0,
+            "speed": 0.3,
+            "startAngle": 60
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the horse",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "royal stable",
+          "params": {
+            "segments": [
+              {
+                "color": "#ffc53d",
+                "label": "🦅"
+              },
+              {
+                "color": "#d6409f",
+                "label": "🐺"
+              },
+              {
+                "color": "#12a594",
+                "label": "🐴"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🐓"
+              }
+            ],
+            "targetSegment": 2,
+            "speed": 0.7,
+            "startAngle": 140
+          }
+        }
+      ]
+    },
+    {
+      "theme": "dinosaurs",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on green",
+          "durationMs": 8000,
+          "difficulty": 1,
+          "theme": "baby dino",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#3e63dd"
+              }
+            ],
+            "targetSegment": 1,
+            "speed": 0.3,
+            "startAngle": 200
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on orange",
+          "durationMs": 7000,
+          "difficulty": 1,
+          "theme": "lava land",
+          "params": {
+            "segments": [
+              {
+                "color": "#f76b15"
+              },
+              {
+                "color": "#12a594"
+              },
+              {
+                "color": "#8e4ec6"
+              }
+            ],
+            "targetSegment": 0,
+            "speed": 0.5,
+            "startAngle": 90
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on yellow",
+          "durationMs": 7500,
+          "difficulty": 2,
+          "theme": "fossil dig",
+          "params": {
+            "segments": [
+              {
+                "color": "#d6409f"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#e5484d"
+              }
+            ],
+            "targetSegment": 1,
+            "speed": 0.6,
+            "startAngle": 15
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the T. rex",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "jurassic",
+          "params": {
+            "segments": [
+              {
+                "color": "#30a46c",
+                "label": "🦕"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🦖"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🥚"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🌋"
+              },
+              {
+                "color": "#12a594",
+                "label": "🌴"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🦴"
+              }
+            ],
+            "targetSegment": 1,
+            "speed": 0.7,
+            "startAngle": 250
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on purple",
+          "durationMs": 6500,
+          "difficulty": 3,
+          "theme": "dino colors",
+          "params": {
+            "segments": [
+              {
+                "color": "#12a594"
+              },
+              {
+                "color": "#f76b15"
+              },
+              {
+                "color": "#d6409f"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#8e4ec6"
+              },
+              {
+                "color": "#ffc53d"
+              }
+            ],
+            "targetSegment": 4,
+            "speed": 0.9,
+            "startAngle": 310
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the egg",
+          "durationMs": 7000,
+          "difficulty": 3,
+          "theme": "dino nest",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d",
+                "label": "🦴"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🌿"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🥚"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🦕"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🌋"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🦖"
+              },
+              {
+                "color": "#d6409f",
+                "label": "🐊"
+              },
+              {
+                "color": "#12a594",
+                "label": "🪨"
+              }
+            ],
+            "targetSegment": 2,
+            "speed": 0.6,
+            "startAngle": 75
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the volcano",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "volcano valley",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d",
+                "label": "🦖"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🌴"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🥚"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🌋"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🦴"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🪨"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🦕"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🌿"
+              }
+            ],
+            "targetSegment": 3,
+            "speed": 0.8,
+            "startAngle": 180
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the footprint",
+          "durationMs": 6500,
+          "difficulty": 4,
+          "theme": "dino tracks",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d",
+                "label": "🦖"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🦕"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🥚"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🦴"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🌋"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🌴"
+              },
+              {
+                "color": "#d6409f",
+                "label": "🌿"
+              },
+              {
+                "color": "#12a594",
+                "label": "🐾"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🪨"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🐊"
+              }
+            ],
+            "targetSegment": 7,
+            "speed": 0.6,
+            "startAngle": 330
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the meteor",
+          "durationMs": 6000,
+          "difficulty": 5,
+          "theme": "extinction day",
+          "params": {
+            "segments": [
+              {
+                "color": "#30a46c",
+                "label": "🦖"
+              },
+              {
+                "color": "#12a594",
+                "label": "🦕"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🥚"
+              },
+              {
+                "color": "#12a594",
+                "label": "🦴"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🌋"
+              },
+              {
+                "color": "#12a594",
+                "label": "🌴"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🌿"
+              },
+              {
+                "color": "#12a594",
+                "label": "🐾"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🪨"
+              },
+              {
+                "color": "#12a594",
+                "label": "☄️"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🐊"
+              },
+              {
+                "color": "#12a594",
+                "label": "🦎"
+              }
+            ],
+            "targetSegment": 9,
+            "speed": 0.5,
+            "startAngle": 40
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on pink",
+          "durationMs": 5500,
+          "difficulty": 5,
+          "theme": "rare dino",
+          "params": {
+            "segments": [
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#d6409f"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#30a46c"
+              }
+            ],
+            "targetSegment": 5,
+            "speed": 0.55,
+            "startAngle": 275
+          }
+        }
+      ]
+    },
+    {
+      "theme": "garden",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on green",
+          "durationMs": 8000,
+          "difficulty": 1,
+          "theme": "leaf",
+          "params": {
+            "segments": [
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#d6409f"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#8e4ec6"
+              }
+            ],
+            "targetSegment": 2,
+            "speed": 0.35,
+            "startAngle": 90
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on orange",
+          "durationMs": 7500,
+          "difficulty": 1,
+          "theme": "pumpkin patch",
+          "params": {
+            "segments": [
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#8e4ec6"
+              },
+              {
+                "color": "#f76b15"
+              }
+            ],
+            "targetSegment": 2,
+            "speed": 0.4,
+            "startAngle": 250
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on red",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "tomatoes",
+          "params": {
+            "segments": [
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#12a594"
+              }
+            ],
+            "targetSegment": 3,
+            "speed": 0.6,
+            "startAngle": 15
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the ladybug",
+          "durationMs": 6500,
+          "difficulty": 2,
+          "theme": "garden bugs",
+          "params": {
+            "segments": [
+              {
+                "color": "#ffc53d",
+                "label": "🐝"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🦋"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🐞"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🐛"
+              }
+            ],
+            "targetSegment": 2,
+            "speed": 0.7,
+            "startAngle": 200
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on purple",
+          "durationMs": 6500,
+          "difficulty": 3,
+          "theme": "flower bed",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#f76b15"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#12a594"
+              },
+              {
+                "color": "#8e4ec6"
+              }
+            ],
+            "targetSegment": 5,
+            "speed": 0.9,
+            "startAngle": 310
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the broccoli",
+          "durationMs": 7000,
+          "difficulty": 3,
+          "theme": "veggie patch",
+          "params": {
+            "segments": [
+              {
+                "color": "#f76b15",
+                "label": "🥕"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🌽"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🍅"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🥦"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🍆"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🫐"
+              }
+            ],
+            "targetSegment": 3,
+            "speed": 0.9,
+            "startAngle": 75
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the basket",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "garden shed",
+          "params": {
+            "segments": [
+              {
+                "color": "#30a46c",
+                "label": "🪣"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🧤"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🌱"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "✂️"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🚿"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🪵"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🧺"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🔦"
+              }
+            ],
+            "targetSegment": 6,
+            "speed": 0.7,
+            "startAngle": 340
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on teal",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "watering can",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#8e4ec6"
+              },
+              {
+                "color": "#f76b15"
+              },
+              {
+                "color": "#d6409f"
+              },
+              {
+                "color": "#12a594"
+              }
+            ],
+            "targetSegment": 7,
+            "speed": 0.8,
+            "startAngle": 130
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the cactus",
+          "durationMs": 8000,
+          "difficulty": 5,
+          "theme": "blooms",
+          "params": {
+            "segments": [
+              {
+                "color": "#30a46c",
+                "label": "🌱"
+              },
+              {
+                "color": "#d6409f",
+                "label": "🌸"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🌼"
+              },
+              {
+                "color": "#d6409f",
+                "label": "🌻"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🌹"
+              },
+              {
+                "color": "#d6409f",
+                "label": "🌷"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🪻"
+              },
+              {
+                "color": "#d6409f",
+                "label": "🌵"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🍀"
+              },
+              {
+                "color": "#d6409f",
+                "label": "🍁"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🌴"
+              },
+              {
+                "color": "#d6409f",
+                "label": "🪴"
+              }
+            ],
+            "targetSegment": 7,
+            "speed": 0.55,
+            "startAngle": 20
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the frog",
+          "durationMs": 7000,
+          "difficulty": 5,
+          "theme": "yard critters",
+          "params": {
+            "segments": [
+              {
+                "color": "#30a46c",
+                "label": "🐇"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🦔"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🐓"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🦆"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🐢"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🐿️"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🦉"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🐦"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🐸"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🐌"
+              }
+            ],
+            "targetSegment": 8,
+            "speed": 0.65,
+            "startAngle": 275
+          }
+        }
+      ]
+    },
+    {
+      "theme": "pond",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on green",
+          "durationMs": 8000,
+          "difficulty": 1,
+          "theme": "lily pad",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#ffc53d"
+              }
+            ],
+            "targetSegment": 1,
+            "speed": 0.3,
+            "startAngle": 20
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on teal",
+          "durationMs": 7500,
+          "difficulty": 1,
+          "theme": "pond water",
+          "params": {
+            "segments": [
+              {
+                "color": "#12a594"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#d6409f"
+              }
+            ],
+            "targetSegment": 0,
+            "speed": 0.35,
+            "startAngle": 200
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on pink",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "lotus bloom",
+          "params": {
+            "segments": [
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#d6409f"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#f76b15"
+              }
+            ],
+            "targetSegment": 1,
+            "speed": 0.5,
+            "startAngle": 75
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the frog",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "pond pals",
+          "params": {
+            "segments": [
+              {
+                "color": "#30a46c",
+                "label": "🐸"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🦆"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🐟"
+              },
+              {
+                "color": "#12a594",
+                "label": "🐢"
+              }
+            ],
+            "targetSegment": 0,
+            "speed": 0.6,
+            "startAngle": 310
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on purple",
+          "durationMs": 6500,
+          "difficulty": 3,
+          "theme": "dragonfly",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#8e4ec6"
+              },
+              {
+                "color": "#f76b15"
+              }
+            ],
+            "targetSegment": 4,
+            "speed": 0.8,
+            "startAngle": 135
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the duck",
+          "durationMs": 6500,
+          "difficulty": 3,
+          "theme": "pond critters",
+          "params": {
+            "segments": [
+              {
+                "color": "#30a46c",
+                "label": "🐸"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🐟"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🦆"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🐌"
+              },
+              {
+                "color": "#d6409f",
+                "label": "🪷"
+              },
+              {
+                "color": "#12a594",
+                "label": "🐛"
+              }
+            ],
+            "targetSegment": 2,
+            "speed": 0.75,
+            "startAngle": 250
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on teal",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "koi",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#8e4ec6"
+              },
+              {
+                "color": "#f76b15"
+              },
+              {
+                "color": "#d6409f"
+              },
+              {
+                "color": "#12a594"
+              }
+            ],
+            "targetSegment": 7,
+            "speed": 0.8,
+            "startAngle": 90
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the turtle",
+          "durationMs": 6500,
+          "difficulty": 4,
+          "theme": "shoreline",
+          "params": {
+            "segments": [
+              {
+                "color": "#ffc53d",
+                "label": "🐸"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🦆"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🐟"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🪷"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🐢"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🦋"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🐌"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🦀"
+              }
+            ],
+            "targetSegment": 4,
+            "speed": 0.7,
+            "startAngle": 200
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the swan",
+          "durationMs": 8000,
+          "difficulty": 5,
+          "theme": "busy pond",
+          "params": {
+            "segments": [
+              {
+                "color": "#30a46c",
+                "label": "🐸"
+              },
+              {
+                "color": "#12a594",
+                "label": "🦆"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🐟"
+              },
+              {
+                "color": "#12a594",
+                "label": "🪷"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🐢"
+              },
+              {
+                "color": "#12a594",
+                "label": "🦋"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🐌"
+              },
+              {
+                "color": "#12a594",
+                "label": "🦀"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🦐"
+              },
+              {
+                "color": "#12a594",
+                "label": "🐠"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🐛"
+              },
+              {
+                "color": "#12a594",
+                "label": "🦢"
+              }
+            ],
+            "targetSegment": 11,
+            "speed": 0.55,
+            "startAngle": 15
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the bat",
+          "durationMs": 7500,
+          "difficulty": 5,
+          "theme": "night pond",
+          "params": {
+            "segments": [
+              {
+                "color": "#3e63dd",
+                "label": "🌙"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "⭐"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🦉"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🦇"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🐸"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🦗"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🦟"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🪰"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🐍"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🐊"
+              }
+            ],
+            "targetSegment": 3,
+            "speed": 0.65,
+            "startAngle": 280
+          }
+        }
+      ]
+    },
+    {
+      "theme": "circus",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on orange",
+          "durationMs": 8000,
+          "difficulty": 1,
+          "theme": "circus tent",
+          "params": {
+            "segments": [
+              {
+                "color": "#8e4ec6"
+              },
+              {
+                "color": "#f76b15"
+              },
+              {
+                "color": "#12a594"
+              },
+              {
+                "color": "#d6409f"
+              }
+            ],
+            "targetSegment": 1,
+            "speed": 0.3,
+            "startAngle": 200
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on yellow",
+          "durationMs": 7500,
+          "difficulty": 1,
+          "theme": "ticket booth",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#12a594"
+              }
+            ],
+            "targetSegment": 1,
+            "speed": 0.35,
+            "startAngle": 10
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on green",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "big top",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#8e4ec6"
+              }
+            ],
+            "targetSegment": 2,
+            "speed": 0.6,
+            "startAngle": 75
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the clown",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "clown car",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d",
+                "label": "🎩"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🎺"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🥁"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🤡"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🎟️"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🍿"
+              }
+            ],
+            "targetSegment": 3,
+            "speed": 0.5,
+            "startAngle": 300
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on pink",
+          "durationMs": 6500,
+          "difficulty": 3,
+          "theme": "juggling",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#30a46c"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#d6409f"
+              },
+              {
+                "color": "#f76b15"
+              }
+            ],
+            "targetSegment": 4,
+            "speed": 0.9,
+            "startAngle": 130
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the elephant",
+          "durationMs": 7000,
+          "difficulty": 3,
+          "theme": "animal parade",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d",
+                "label": "🎪"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🤹"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🐘"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🎠"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🎈"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🦁"
+              },
+              {
+                "color": "#d6409f",
+                "label": "🎟️"
+              },
+              {
+                "color": "#12a594",
+                "label": "🍿"
+              }
+            ],
+            "targetSegment": 2,
+            "speed": 0.7,
+            "startAngle": 222
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the balloon",
+          "durationMs": 6500,
+          "difficulty": 4,
+          "theme": "carnival games",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d",
+                "label": "🎺"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🥁"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🎭"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🪁"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🎈"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🧸"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🎯"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🍬"
+              }
+            ],
+            "targetSegment": 4,
+            "speed": 0.8,
+            "startAngle": 15
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the top hat",
+          "durationMs": 7000,
+          "difficulty": 4,
+          "theme": "magic show",
+          "params": {
+            "segments": [
+              {
+                "color": "#8e4ec6",
+                "label": "🪄"
+              },
+              {
+                "color": "#12a594",
+                "label": "🐇"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🃏"
+              },
+              {
+                "color": "#12a594",
+                "label": "🔮"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "✨"
+              },
+              {
+                "color": "#12a594",
+                "label": "🕊️"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🎴"
+              },
+              {
+                "color": "#12a594",
+                "label": "🌟"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🎩"
+              },
+              {
+                "color": "#12a594",
+                "label": "🎁"
+              }
+            ],
+            "targetSegment": 8,
+            "speed": 0.6,
+            "startAngle": 88
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop on the fire",
+          "durationMs": 8000,
+          "difficulty": 5,
+          "theme": "fire ring",
+          "params": {
+            "segments": [
+              {
+                "color": "#e5484d",
+                "label": "🤡"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🎪"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🤹"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🐘"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🎠"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🎈"
+              },
+              {
+                "color": "#e5484d",
+                "label": "🦁"
+              },
+              {
+                "color": "#3e63dd",
+                "label": "🎟️"
+              },
+              {
+                "color": "#30a46c",
+                "label": "🍿"
+              },
+              {
+                "color": "#ffc53d",
+                "label": "🎩"
+              },
+              {
+                "color": "#8e4ec6",
+                "label": "🐒"
+              },
+              {
+                "color": "#f76b15",
+                "label": "🔥"
+              }
+            ],
+            "targetSegment": 11,
+            "speed": 0.55,
+            "startAngle": 341
+          }
+        },
+        {
+          "template": "stop-the-wheel",
+          "prompt": "Stop the wheel on teal",
+          "durationMs": 5500,
+          "difficulty": 5,
+          "theme": "tightrope",
+          "params": {
+            "segments": [
+              {
+                "color": "#f76b15"
+              },
+              {
+                "color": "#d6409f"
+              },
+              {
+                "color": "#3e63dd"
+              },
+              {
+                "color": "#12a594"
+              },
+              {
+                "color": "#ffc53d"
+              },
+              {
+                "color": "#8e4ec6"
+              },
+              {
+                "color": "#e5484d"
+              }
+            ],
+            "targetSegment": 3,
+            "speed": 0.95,
+            "startAngle": 250
+          }
+        }
+      ]
+    }
+  ]
+}

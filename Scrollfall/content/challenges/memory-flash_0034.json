@@ -1,0 +1,28 @@
+{
+  "id": "memory-flash_0034",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the bone?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "fossils",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "flashMs": 1100,
+    "targetCell": 7,
+    "item": "🦴",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🌴"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

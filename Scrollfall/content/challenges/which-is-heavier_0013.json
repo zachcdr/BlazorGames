@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0013",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "zoo",
+  "params": {
+    "left": {
+      "emoji": "🐒",
+      "name": "Chimpanzee"
+    },
+    "right": {
+      "emoji": "🦍",
+      "name": "Gorilla"
+    },
+    "answer": "right",
+    "explanation": "Adult gorillas weigh ~100-180 kg; chimps about 40-65 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

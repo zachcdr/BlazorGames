@@ -1,0 +1,31 @@
+{
+  "id": "stop-the-wheel_0081",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on orange",
+  "durationMs": 7500,
+  "difficulty": 1,
+  "theme": "pumpkin patch",
+  "params": {
+    "segments": [
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#8e4ec6"
+      },
+      {
+        "color": "#f76b15"
+      }
+    ],
+    "targetSegment": 2,
+    "speed": 0.4,
+    "startAngle": 250
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

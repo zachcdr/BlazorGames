@@ -1,0 +1,49 @@
+{
+  "id": "trace-shape_0044",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the benzene ring",
+  "durationMs": 4000,
+  "difficulty": 2,
+  "theme": "chemistry",
+  "params": {
+    "points": [
+      [
+        50,
+        16
+      ],
+      [
+        79.4,
+        33
+      ],
+      [
+        79.4,
+        67
+      ],
+      [
+        50,
+        84
+      ],
+      [
+        20.6,
+        67
+      ],
+      [
+        20.6,
+        33
+      ],
+      [
+        50,
+        16
+      ]
+    ],
+    "tolerance": 9,
+    "fadeMs": 2200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

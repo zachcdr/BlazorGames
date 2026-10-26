@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0043",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Slice it up!",
+  "durationMs": 6000,
+  "difficulty": 2,
+  "theme": "kitchen",
+  "params": {
+    "a": 45,
+    "op": "÷",
+    "b": 5,
+    "options": [
+      8,
+      10,
+      40,
+      9
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

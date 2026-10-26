@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0030",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 5,
+  "theme": "bee products",
+  "params": {
+    "left": {
+      "emoji": "🍯",
+      "name": "Cup of honey"
+    },
+    "right": {
+      "emoji": "🫒",
+      "name": "Cup of olive oil"
+    },
+    "answer": "left",
+    "explanation": "Honey is about 1.4 g/mL; olive oil is about 0.92 g/mL."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

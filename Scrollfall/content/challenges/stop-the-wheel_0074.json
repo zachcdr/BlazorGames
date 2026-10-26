@@ -1,0 +1,40 @@
+{
+  "id": "stop-the-wheel_0074",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on purple",
+  "durationMs": 6500,
+  "difficulty": 3,
+  "theme": "dino colors",
+  "params": {
+    "segments": [
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#f76b15"
+      },
+      {
+        "color": "#d6409f"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#8e4ec6"
+      },
+      {
+        "color": "#ffc53d"
+      }
+    ],
+    "targetSegment": 4,
+    "speed": 0.9,
+    "startAngle": 310
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}
