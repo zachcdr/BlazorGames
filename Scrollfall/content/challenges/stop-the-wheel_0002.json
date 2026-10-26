@@ -1,0 +1,38 @@
+{
+  "id": "stop-the-wheel_0002",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the taco",
+  "durationMs": 6000,
+  "difficulty": 2,
+  "theme": "kitchen",
+  "params": {
+    "segments": [
+      {
+        "color": "#f76b15",
+        "label": "🍕"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🍔"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🌮"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🍣"
+      }
+    ],
+    "targetSegment": 2,
+    "speed": 0.7,
+    "startAngle": 0
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

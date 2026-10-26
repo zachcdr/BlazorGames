@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0068",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5500,
+  "difficulty": 4,
+  "theme": "kitchen",
+  "params": {
+    "left": {
+      "emoji": "🥬",
+      "name": "Iceberg lettuce head"
+    },
+    "right": {
+      "emoji": "🥔",
+      "name": "Medium potato"
+    },
+    "answer": "left",
+    "explanation": "An iceberg head is ~500-600 g; a medium potato is about 150-200 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

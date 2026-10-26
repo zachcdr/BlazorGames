@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0067",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "kitchen",
+  "params": {
+    "left": {
+      "emoji": "🍞",
+      "name": "Slice of bread"
+    },
+    "right": {
+      "emoji": "🧈",
+      "name": "Stick of butter"
+    },
+    "answer": "right",
+    "explanation": "A US butter stick is 113 g; a bread slice is only about 25-40 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

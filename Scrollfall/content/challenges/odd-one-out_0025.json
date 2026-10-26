@@ -1,0 +1,27 @@
+{
+  "id": "odd-one-out_0025",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the one that isn't nautical",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "sailing",
+  "params": {
+    "items": [
+      "⚓",
+      "🧭",
+      "🛟",
+      "🎈",
+      "⛵",
+      "🚢",
+      "🌊"
+    ],
+    "answerIndex": 3
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

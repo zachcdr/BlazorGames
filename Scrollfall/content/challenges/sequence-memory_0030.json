@@ -1,0 +1,26 @@
+{
+  "id": "sequence-memory_0030",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Follow the frog",
+  "durationMs": 6000,
+  "difficulty": 1,
+  "theme": "pond frog",
+  "params": {
+    "rows": 2,
+    "cols": 2,
+    "sequence": [
+      3,
+      0,
+      2
+    ],
+    "showMs": 800,
+    "gapMs": 300
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

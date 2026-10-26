@@ -1,0 +1,70 @@
+{
+  "id": "stop-the-wheel_0019",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the robot arm",
+  "durationMs": 8000,
+  "difficulty": 5,
+  "theme": "factory",
+  "params": {
+    "segments": [
+      {
+        "color": "#3e63dd",
+        "label": "🤖"
+      },
+      {
+        "color": "#e5484d",
+        "label": "👾"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🔋"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🔧"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "⚙️"
+      },
+      {
+        "color": "#e5484d",
+        "label": "💡"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🧲"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🛰️"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🚀"
+      },
+      {
+        "color": "#e5484d",
+        "label": "📡"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🦾"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🕹️"
+      }
+    ],
+    "targetSegment": 10,
+    "speed": 0.55,
+    "startAngle": 180
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

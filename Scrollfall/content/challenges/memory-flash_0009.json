@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0009",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the bee?",
+  "durationMs": 5000,
+  "difficulty": 4,
+  "theme": "garden",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 600,
+    "targetCell": 12,
+    "item": "🐝",
+    "decoys": [
+      {
+        "cell": 6,
+        "item": "🌸"
+      },
+      {
+        "cell": 8,
+        "item": "🌼"
+      },
+      {
+        "cell": 16,
+        "item": "🌻"
+      },
+      {
+        "cell": 18,
+        "item": "🐞"
+      }
+    ]
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

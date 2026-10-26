@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0095",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "flying toys",
+  "params": {
+    "left": {
+      "emoji": "🥏",
+      "name": "Ultimate frisbee"
+    },
+    "right": {
+      "emoji": "🎾",
+      "name": "Tennis ball"
+    },
+    "answer": "left",
+    "explanation": "An ultimate disc is 175 g; a tennis ball is only about 58 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

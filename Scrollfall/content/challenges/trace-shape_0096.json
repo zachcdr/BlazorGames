@@ -1,0 +1,73 @@
+{
+  "id": "trace-shape_0096",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the trapeze heart",
+  "durationMs": 4500,
+  "difficulty": 4,
+  "theme": "heart act",
+  "params": {
+    "points": [
+      [
+        50,
+        90
+      ],
+      [
+        22,
+        62
+      ],
+      [
+        10,
+        40
+      ],
+      [
+        14,
+        24
+      ],
+      [
+        28,
+        14
+      ],
+      [
+        42,
+        18
+      ],
+      [
+        50,
+        32
+      ],
+      [
+        58,
+        18
+      ],
+      [
+        72,
+        14
+      ],
+      [
+        86,
+        24
+      ],
+      [
+        90,
+        40
+      ],
+      [
+        78,
+        62
+      ],
+      [
+        50,
+        90
+      ]
+    ],
+    "tolerance": 7,
+    "fadeMs": 1500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "trace-shape_0086",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the panda's heart",
+  "durationMs": 4500,
+  "difficulty": 4,
+  "theme": "panda",
+  "params": {
+    "points": [
+      [
+        50,
+        85
+      ],
+      [
+        20,
+        55
+      ],
+      [
+        15,
+        35
+      ],
+      [
+        28,
+        20
+      ],
+      [
+        42,
+        22
+      ],
+      [
+        50,
+        35
+      ],
+      [
+        58,
+        22
+      ],
+      [
+        72,
+        20
+      ],
+      [
+        85,
+        35
+      ],
+      [
+        80,
+        55
+      ],
+      [
+        50,
+        85
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 1200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

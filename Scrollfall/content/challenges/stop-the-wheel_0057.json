@@ -1,0 +1,46 @@
+{
+  "id": "stop-the-wheel_0057",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the crown",
+  "durationMs": 6500,
+  "difficulty": 4,
+  "theme": "royal relics",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d",
+        "label": "🗿"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🏺"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🖼️"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "👑"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🦴"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🔮"
+      }
+    ],
+    "targetSegment": 3,
+    "speed": 1,
+    "startAngle": 160
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

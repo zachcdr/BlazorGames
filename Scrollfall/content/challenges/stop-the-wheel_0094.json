@@ -1,0 +1,46 @@
+{
+  "id": "stop-the-wheel_0094",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the duck",
+  "durationMs": 6500,
+  "difficulty": 3,
+  "theme": "pond critters",
+  "params": {
+    "segments": [
+      {
+        "color": "#30a46c",
+        "label": "🐸"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🐟"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🦆"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🐌"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🪷"
+      },
+      {
+        "color": "#12a594",
+        "label": "🐛"
+      }
+    ],
+    "targetSegment": 2,
+    "speed": 0.75,
+    "startAngle": 250
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

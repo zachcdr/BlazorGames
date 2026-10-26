@@ -1,0 +1,48 @@
+{
+  "id": "memory-flash_0069",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Spot the wolf!",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "wilderness",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 400,
+    "targetCell": 21,
+    "item": "🐺",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🐕"
+      },
+      {
+        "cell": 6,
+        "item": "🦊"
+      },
+      {
+        "cell": 12,
+        "item": "🐻"
+      },
+      {
+        "cell": 14,
+        "item": "🐗"
+      },
+      {
+        "cell": 18,
+        "item": "🦝"
+      },
+      {
+        "cell": 24,
+        "item": "🐶"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

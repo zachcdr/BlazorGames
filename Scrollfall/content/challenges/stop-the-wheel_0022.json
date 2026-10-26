@@ -1,0 +1,38 @@
+{
+  "id": "stop-the-wheel_0022",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the crown",
+  "durationMs": 6000,
+  "difficulty": 1,
+  "theme": "royalty",
+  "params": {
+    "segments": [
+      {
+        "color": "#3e63dd",
+        "label": "🏰"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "👑"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🐉"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🗡️"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 0.5,
+    "startAngle": 90
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

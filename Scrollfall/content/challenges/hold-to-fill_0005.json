@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0005",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the bucket to the line",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "beach",
+  "params": {
+    "item": "🪣",
+    "fillPerSecond": 45,
+    "targetFrom": 75,
+    "targetTo": 88
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

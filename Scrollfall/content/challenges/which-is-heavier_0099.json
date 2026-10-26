@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0099",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "metal balls",
+  "params": {
+    "left": {
+      "emoji": "⚪",
+      "name": "Aluminum ball"
+    },
+    "right": {
+      "emoji": "⚫",
+      "name": "Lead ball"
+    },
+    "answer": "right",
+    "explanation": "Lead is about 11.3 g/cm³; aluminum is only about 2.7 g/cm³."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

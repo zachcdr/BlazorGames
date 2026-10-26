@@ -1,0 +1,54 @@
+{
+  "id": "stop-the-wheel_0096",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the turtle",
+  "durationMs": 6500,
+  "difficulty": 4,
+  "theme": "shoreline",
+  "params": {
+    "segments": [
+      {
+        "color": "#ffc53d",
+        "label": "🐸"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🦆"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🐟"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🪷"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🐢"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🦋"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🐌"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🦀"
+      }
+    ],
+    "targetSegment": 4,
+    "speed": 0.7,
+    "startAngle": 200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

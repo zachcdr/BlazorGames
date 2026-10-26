@@ -1,0 +1,31 @@
+{
+  "id": "sequence-memory_0048",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Tap the full buffet in order",
+  "durationMs": 9000,
+  "difficulty": 5,
+  "theme": "breakfast",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "sequence": [
+      10,
+      1,
+      14,
+      6,
+      3,
+      12,
+      8,
+      5
+    ],
+    "showMs": 300,
+    "gapMs": 130
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

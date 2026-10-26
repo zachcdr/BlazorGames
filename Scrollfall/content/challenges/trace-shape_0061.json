@@ -1,0 +1,33 @@
+{
+  "id": "trace-shape_0061",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the radio tower",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "skyline",
+  "params": {
+    "points": [
+      [
+        20,
+        90
+      ],
+      [
+        50,
+        10
+      ],
+      [
+        80,
+        90
+      ]
+    ],
+    "tolerance": 13,
+    "fadeMs": 4000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

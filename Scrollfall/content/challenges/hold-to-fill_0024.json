@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0024",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the slime jar to the line",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "slime",
+  "params": {
+    "item": "🫙",
+    "fillPerSecond": 40,
+    "targetFrom": 60,
+    "targetTo": 75
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

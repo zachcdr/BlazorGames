@@ -1,0 +1,36 @@
+{
+  "id": "memory-flash_0015",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the skull?",
+  "durationMs": 5500,
+  "difficulty": 3,
+  "theme": "halloween",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "flashMs": 800,
+    "targetCell": 6,
+    "item": "💀",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "👻"
+      },
+      {
+        "cell": 5,
+        "item": "🎃"
+      },
+      {
+        "cell": 10,
+        "item": "🦇"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

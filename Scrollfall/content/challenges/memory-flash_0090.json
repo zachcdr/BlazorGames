@@ -1,0 +1,52 @@
+{
+  "id": "memory-flash_0090",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Spot the ladder!",
+  "durationMs": 3500,
+  "difficulty": 5,
+  "theme": "construction",
+  "params": {
+    "rows": 5,
+    "cols": 4,
+    "flashMs": 350,
+    "targetCell": 13,
+    "item": "🪜",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🧱"
+      },
+      {
+        "cell": 3,
+        "item": "🛠️"
+      },
+      {
+        "cell": 6,
+        "item": "🪣"
+      },
+      {
+        "cell": 8,
+        "item": "⚙️"
+      },
+      {
+        "cell": 10,
+        "item": "🧹"
+      },
+      {
+        "cell": 16,
+        "item": "🪠"
+      },
+      {
+        "cell": 19,
+        "item": "🧺"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

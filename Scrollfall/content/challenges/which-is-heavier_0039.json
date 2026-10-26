@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0039",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "jungle wood",
+  "params": {
+    "left": {
+      "emoji": "🪵",
+      "name": "Block of balsa wood"
+    },
+    "right": {
+      "emoji": "🌳",
+      "name": "Block of teak wood"
+    },
+    "answer": "right",
+    "explanation": "Teak is about 4x denser than ultra-light balsa."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

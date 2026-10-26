@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0047",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Solve it!",
+  "durationMs": 6500,
+  "difficulty": 3,
+  "theme": "kitchen",
+  "params": {
+    "a": 82,
+    "op": "−",
+    "b": 37,
+    "options": [
+      45,
+      55,
+      35,
+      54
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

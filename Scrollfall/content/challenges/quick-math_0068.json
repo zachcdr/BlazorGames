@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0068",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Pedal fast!",
+  "durationMs": 6500,
+  "difficulty": 4,
+  "theme": "cycling",
+  "params": {
+    "a": 11,
+    "op": "×",
+    "b": 9,
+    "options": [
+      99,
+      98,
+      108,
+      90
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

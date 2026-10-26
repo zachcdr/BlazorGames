@@ -1,0 +1,23 @@
+{
+  "id": "memory-flash_0002",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the star?",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "space",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "flashMs": 1000,
+    "targetCell": 2,
+    "item": "⭐",
+    "decoys": []
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

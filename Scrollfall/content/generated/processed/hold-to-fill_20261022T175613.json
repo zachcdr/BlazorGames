@@ -1,0 +1,687 @@
+{
+  "template": "hold-to-fill",
+  "createdAt": "2026-10-22T17:56:13.012Z",
+  "requested": 50,
+  "calls": [
+    {
+      "theme": "pirates",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the mug with grog to the line",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "pirates",
+          "params": {
+            "item": "🍺",
+            "fillPerSecond": 20,
+            "targetFrom": 40,
+            "targetTo": 60
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the jug to the line",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "treasure hunt",
+          "params": {
+            "item": "🏺",
+            "fillPerSecond": 25,
+            "targetFrom": 45,
+            "targetTo": 65
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the rum bottle to the line",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "pirates",
+          "params": {
+            "item": "🍾",
+            "fillPerSecond": 35,
+            "targetFrom": 55,
+            "targetTo": 70
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the goblet to the line",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "captain's feast",
+          "params": {
+            "item": "🍷",
+            "fillPerSecond": 30,
+            "targetFrom": 50,
+            "targetTo": 68
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the potion flask to the line",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "sea witch",
+          "params": {
+            "item": "🧪",
+            "fillPerSecond": 50,
+            "targetFrom": 60,
+            "targetTo": 72
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the rum glass to the line",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "pirates",
+          "params": {
+            "item": "🥃",
+            "fillPerSecond": 55,
+            "targetFrom": 65,
+            "targetTo": 77
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the lantern to the line",
+          "durationMs": 4000,
+          "difficulty": 4,
+          "theme": "night watch",
+          "params": {
+            "item": "🏮",
+            "fillPerSecond": 80,
+            "targetFrom": 70,
+            "targetTo": 83
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the powder keg to the line",
+          "durationMs": 4000,
+          "difficulty": 4,
+          "theme": "cannon deck",
+          "params": {
+            "item": "🛢️",
+            "fillPerSecond": 90,
+            "targetFrom": 72,
+            "targetTo": 86
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the loot sack to the line",
+          "durationMs": 3500,
+          "difficulty": 5,
+          "theme": "pirates",
+          "params": {
+            "item": "💰",
+            "fillPerSecond": 110,
+            "targetFrom": 78,
+            "targetTo": 95
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the coconut to the line",
+          "durationMs": 3500,
+          "difficulty": 5,
+          "theme": "desert island",
+          "params": {
+            "item": "🥥",
+            "fillPerSecond": 130,
+            "targetFrom": 75,
+            "targetTo": 95
+          }
+        }
+      ]
+    },
+    {
+      "theme": "toys",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "hold-to-fill",
+          "prompt": "Stuff the teddy to the line",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "plush toys",
+          "params": {
+            "item": "🧸",
+            "fillPerSecond": 20,
+            "targetFrom": 50,
+            "targetTo": 70
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the bath to the line",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "bath toys",
+          "params": {
+            "item": "🛁",
+            "fillPerSecond": 25,
+            "targetFrom": 40,
+            "targetTo": 60
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Wind the yo-yo to the line",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "yo-yo",
+          "params": {
+            "item": "🪀",
+            "fillPerSecond": 35,
+            "targetFrom": 55,
+            "targetTo": 70
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the slime jar to the line",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "slime",
+          "params": {
+            "item": "🫙",
+            "fillPerSecond": 40,
+            "targetFrom": 60,
+            "targetTo": 75
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the water gun to the line",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "summer toys",
+          "params": {
+            "item": "🔫",
+            "fillPerSecond": 55,
+            "targetFrom": 65,
+            "targetTo": 77
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the doll's bottle to the line",
+          "durationMs": 4000,
+          "difficulty": 3,
+          "theme": "dolls",
+          "params": {
+            "item": "🍼",
+            "fillPerSecond": 50,
+            "targetFrom": 40,
+            "targetTo": 54
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fuel the toy rocket to the line",
+          "durationMs": 4000,
+          "difficulty": 4,
+          "theme": "space toys",
+          "params": {
+            "item": "🚀",
+            "fillPerSecond": 80,
+            "targetFrom": 72,
+            "targetTo": 85
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fuel the toy car to the line",
+          "durationMs": 3500,
+          "difficulty": 4,
+          "theme": "toy cars",
+          "params": {
+            "item": "🚗",
+            "fillPerSecond": 90,
+            "targetFrom": 74,
+            "targetTo": 88
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Charge the battery to the line",
+          "durationMs": 3500,
+          "difficulty": 5,
+          "theme": "robot toys",
+          "params": {
+            "item": "🔋",
+            "fillPerSecond": 130,
+            "targetFrom": 75,
+            "targetTo": 95
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the potion to the line",
+          "durationMs": 3500,
+          "difficulty": 5,
+          "theme": "chemistry set",
+          "params": {
+            "item": "🧪",
+            "fillPerSecond": 110,
+            "targetFrom": 76,
+            "targetTo": 93
+          }
+        }
+      ]
+    },
+    {
+      "theme": "jungle",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the coconut to the line",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "jungle",
+          "params": {
+            "item": "🥥",
+            "fillPerSecond": 20,
+            "targetFrom": 50,
+            "targetTo": 70
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the clay jar to the line",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "ruins",
+          "params": {
+            "item": "🏺",
+            "fillPerSecond": 25,
+            "targetFrom": 40,
+            "targetTo": 60
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the honey pot to the line",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "bear snack",
+          "params": {
+            "item": "🍯",
+            "fillPerSecond": 30,
+            "targetFrom": 55,
+            "targetTo": 70
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the flask to the line",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "witch doctor",
+          "params": {
+            "item": "🧪",
+            "fillPerSecond": 35,
+            "targetFrom": 60,
+            "targetTo": 73
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the smoothie to the line",
+          "durationMs": 4000,
+          "difficulty": 3,
+          "theme": "jungle bar",
+          "params": {
+            "item": "🥤",
+            "fillPerSecond": 50,
+            "targetFrom": 65,
+            "targetTo": 77
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the bath tub to the line",
+          "durationMs": 4000,
+          "difficulty": 3,
+          "theme": "elephant bath",
+          "params": {
+            "item": "🛁",
+            "fillPerSecond": 60,
+            "targetFrom": 70,
+            "targetTo": 82
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the lotion bottle to the line",
+          "durationMs": 3500,
+          "difficulty": 4,
+          "theme": "bug spray",
+          "params": {
+            "item": "🧴",
+            "fillPerSecond": 80,
+            "targetFrom": 75,
+            "targetTo": 88
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the baby bottle to the line",
+          "durationMs": 3500,
+          "difficulty": 4,
+          "theme": "baby monkey",
+          "params": {
+            "item": "🍼",
+            "fillPerSecond": 90,
+            "targetFrom": 76,
+            "targetTo": 90
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the teapot to the line",
+          "durationMs": 3200,
+          "difficulty": 5,
+          "theme": "explorer camp",
+          "params": {
+            "item": "🫖",
+            "fillPerSecond": 110,
+            "targetFrom": 78,
+            "targetTo": 95
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the bowl to the line",
+          "durationMs": 3000,
+          "difficulty": 5,
+          "theme": "jungle stew",
+          "params": {
+            "item": "🥣",
+            "fillPerSecond": 130,
+            "targetFrom": 70,
+            "targetTo": 92
+          }
+        }
+      ]
+    },
+    {
+      "theme": "kitchen",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the mug to the line",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "kitchen",
+          "params": {
+            "item": "☕",
+            "fillPerSecond": 25,
+            "targetFrom": 55,
+            "targetTo": 75
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Pour the milk to the line",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "kitchen",
+          "params": {
+            "item": "🥛",
+            "fillPerSecond": 30,
+            "targetFrom": 50,
+            "targetTo": 68
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the teacup to the line",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "tea time",
+          "params": {
+            "item": "🍵",
+            "fillPerSecond": 35,
+            "targetFrom": 60,
+            "targetTo": 76
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the teapot to the line",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "kitchen",
+          "params": {
+            "item": "🫖",
+            "fillPerSecond": 40,
+            "targetFrom": 65,
+            "targetTo": 79
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the soda cup to the line",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "diner",
+          "params": {
+            "item": "🥤",
+            "fillPerSecond": 50,
+            "targetFrom": 62,
+            "targetTo": 74
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the honey jar to the line",
+          "durationMs": 4500,
+          "difficulty": 3,
+          "theme": "pantry",
+          "params": {
+            "item": "🍯",
+            "fillPerSecond": 55,
+            "targetFrom": 70,
+            "targetTo": 81
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the cocktail glass to the line",
+          "durationMs": 4000,
+          "difficulty": 4,
+          "theme": "bar",
+          "params": {
+            "item": "🍸",
+            "fillPerSecond": 70,
+            "targetFrom": 78,
+            "targetTo": 89
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Pour the wine to the line",
+          "durationMs": 3500,
+          "difficulty": 4,
+          "theme": "dinner",
+          "params": {
+            "item": "🍷",
+            "fillPerSecond": 85,
+            "targetFrom": 80,
+            "targetTo": 93
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the pot to the line",
+          "durationMs": 3500,
+          "difficulty": 5,
+          "theme": "kitchen",
+          "params": {
+            "item": "🍲",
+            "fillPerSecond": 110,
+            "targetFrom": 78,
+            "targetTo": 95
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the juice box to the line",
+          "durationMs": 3500,
+          "difficulty": 5,
+          "theme": "lunchbox",
+          "params": {
+            "item": "🧃",
+            "fillPerSecond": 130,
+            "targetFrom": 75,
+            "targetTo": 95
+          }
+        }
+      ]
+    },
+    {
+      "theme": "ocean",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "hold-to-fill",
+          "prompt": "Inflate the life ring to the line",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "ocean rescue",
+          "params": {
+            "item": "🛟",
+            "fillPerSecond": 30,
+            "targetFrom": 40,
+            "targetTo": 70
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Puff the pufferfish to the line",
+          "durationMs": 5500,
+          "difficulty": 1,
+          "theme": "sea life",
+          "params": {
+            "item": "🐡",
+            "fillPerSecond": 25,
+            "targetFrom": 35,
+            "targetTo": 65
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the otter's tub to the line",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "sea otter",
+          "params": {
+            "item": "🛁",
+            "fillPerSecond": 40,
+            "targetFrom": 50,
+            "targetTo": 68
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the seawater jar to the line",
+          "durationMs": 4000,
+          "difficulty": 2,
+          "theme": "ocean",
+          "params": {
+            "item": "🫙",
+            "fillPerSecond": 45,
+            "targetFrom": 55,
+            "targetTo": 70
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the coconut to the line",
+          "durationMs": 4000,
+          "difficulty": 3,
+          "theme": "beach",
+          "params": {
+            "item": "🥥",
+            "fillPerSecond": 55,
+            "targetFrom": 60,
+            "targetTo": 72
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the pool to the line",
+          "durationMs": 4000,
+          "difficulty": 3,
+          "theme": "seaside",
+          "params": {
+            "item": "🏊",
+            "fillPerSecond": 60,
+            "targetFrom": 65,
+            "targetTo": 77
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Blow the bubble to the line",
+          "durationMs": 3500,
+          "difficulty": 4,
+          "theme": "underwater",
+          "params": {
+            "item": "🫧",
+            "fillPerSecond": 80,
+            "targetFrom": 70,
+            "targetTo": 83
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the tropical drink to the line",
+          "durationMs": 3500,
+          "difficulty": 4,
+          "theme": "tropical",
+          "params": {
+            "item": "🍹",
+            "fillPerSecond": 90,
+            "targetFrom": 72,
+            "targetTo": 86
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the sea potion to the line",
+          "durationMs": 3500,
+          "difficulty": 5,
+          "theme": "sea magic",
+          "params": {
+            "item": "🧪",
+            "fillPerSecond": 120,
+            "targetFrom": 76,
+            "targetTo": 95
+          }
+        },
+        {
+          "template": "hold-to-fill",
+          "prompt": "Fill the message bottle to the line",
+          "durationMs": 3500,
+          "difficulty": 5,
+          "theme": "castaway",
+          "params": {
+            "item": "🍾",
+            "fillPerSecond": 130,
+            "targetFrom": 72,
+            "targetTo": 93
+          }
+        }
+      ]
+    }
+  ]
+}

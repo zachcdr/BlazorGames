@@ -1,0 +1,28 @@
+{
+  "id": "sequence-memory_0025",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Visit the planets in order",
+  "durationMs": 7000,
+  "difficulty": 3,
+  "theme": "planets",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "sequence": [
+      10,
+      3,
+      5,
+      0,
+      8
+    ],
+    "showMs": 480,
+    "gapMs": 180
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

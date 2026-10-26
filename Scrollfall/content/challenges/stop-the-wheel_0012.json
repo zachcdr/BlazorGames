@@ -1,0 +1,34 @@
+{
+  "id": "stop-the-wheel_0012",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the battery",
+  "durationMs": 7000,
+  "difficulty": 1,
+  "theme": "robot parts",
+  "params": {
+    "segments": [
+      {
+        "color": "#3e63dd",
+        "label": "🤖"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🔋"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🔧"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 0.5,
+    "startAngle": 120
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

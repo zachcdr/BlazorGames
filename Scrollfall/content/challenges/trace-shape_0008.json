@@ -1,0 +1,45 @@
+{
+  "id": "trace-shape_0008",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the star",
+  "durationMs": 8000,
+  "difficulty": 4,
+  "theme": "space",
+  "params": {
+    "points": [
+      [
+        50,
+        12
+      ],
+      [
+        72.3,
+        80.7
+      ],
+      [
+        13.9,
+        38.3
+      ],
+      [
+        86.1,
+        38.3
+      ],
+      [
+        27.7,
+        80.7
+      ],
+      [
+        50,
+        12
+      ]
+    ],
+    "tolerance": 9,
+    "fadeMs": 1500
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

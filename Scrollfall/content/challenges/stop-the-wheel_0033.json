@@ -1,0 +1,46 @@
+{
+  "id": "stop-the-wheel_0033",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the spider",
+  "durationMs": 6000,
+  "difficulty": 2,
+  "theme": "spooky",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d",
+        "label": "🕷️"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🎃"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "💀"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🍬"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🦇"
+      },
+      {
+        "color": "#12a594",
+        "label": "👻"
+      }
+    ],
+    "targetSegment": 0,
+    "speed": 0.9,
+    "startAngle": 75
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

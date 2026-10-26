@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0105",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 5500,
+  "difficulty": 3,
+  "theme": "balloons",
+  "params": {
+    "left": {
+      "emoji": "🎈",
+      "name": "Helium balloon"
+    },
+    "right": {
+      "emoji": "🎈",
+      "name": "Air-filled balloon"
+    },
+    "answer": "right",
+    "explanation": "Helium is much lighter than air, so the air-filled balloon weighs more."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

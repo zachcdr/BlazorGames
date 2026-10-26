@@ -1,0 +1,37 @@
+{
+  "id": "trace-shape_0085",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the tiger's lightning stripe",
+  "durationMs": 4000,
+  "difficulty": 3,
+  "theme": "tiger",
+  "params": {
+    "points": [
+      [
+        60,
+        10
+      ],
+      [
+        30,
+        50
+      ],
+      [
+        55,
+        50
+      ],
+      [
+        35,
+        90
+      ]
+    ],
+    "tolerance": 8,
+    "fadeMs": 2000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

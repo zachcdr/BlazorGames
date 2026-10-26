@@ -1,0 +1,53 @@
+{
+  "id": "trace-shape_0107",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the lab tubing",
+  "durationMs": 5500,
+  "difficulty": 5,
+  "theme": "science lab",
+  "params": {
+    "points": [
+      [
+        10,
+        12
+      ],
+      [
+        90,
+        12
+      ],
+      [
+        90,
+        36
+      ],
+      [
+        10,
+        36
+      ],
+      [
+        10,
+        60
+      ],
+      [
+        90,
+        60
+      ],
+      [
+        90,
+        84
+      ],
+      [
+        10,
+        84
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 800
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

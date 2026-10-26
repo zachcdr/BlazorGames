@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0065",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Spike it!",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "volleyball",
+  "params": {
+    "a": 8,
+    "op": "×",
+    "b": 6,
+    "options": [
+      42,
+      48,
+      54,
+      14
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

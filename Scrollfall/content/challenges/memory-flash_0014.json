@@ -1,0 +1,32 @@
+{
+  "id": "memory-flash_0014",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the spider?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "halloween",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "flashMs": 900,
+    "targetCell": 8,
+    "item": "🕷️",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🦇"
+      },
+      {
+        "cell": 4,
+        "item": "🕸️"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

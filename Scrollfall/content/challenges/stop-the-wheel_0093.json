@@ -1,0 +1,40 @@
+{
+  "id": "stop-the-wheel_0093",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on purple",
+  "durationMs": 6500,
+  "difficulty": 3,
+  "theme": "dragonfly",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#8e4ec6"
+      },
+      {
+        "color": "#f76b15"
+      }
+    ],
+    "targetSegment": 4,
+    "speed": 0.8,
+    "startAngle": 135
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0013",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Leg count!",
+  "durationMs": 6000,
+  "difficulty": 2,
+  "theme": "insects",
+  "params": {
+    "a": 6,
+    "op": "×",
+    "b": 7,
+    "options": [
+      36,
+      42,
+      48,
+      13
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

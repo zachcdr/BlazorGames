@@ -1,0 +1,29 @@
+{
+  "id": "odd-one-out_0048",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the odd one out",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "books",
+  "params": {
+    "items": [
+      "📘",
+      "📘",
+      "📘",
+      "📘",
+      "📘",
+      "📘",
+      "📘",
+      "📗",
+      "📘"
+    ],
+    "answerIndex": 7
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

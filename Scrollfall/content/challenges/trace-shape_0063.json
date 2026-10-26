@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0063",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the zigzag street",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "street",
+  "params": {
+    "points": [
+      [
+        10,
+        25
+      ],
+      [
+        30,
+        75
+      ],
+      [
+        50,
+        25
+      ],
+      [
+        70,
+        75
+      ],
+      [
+        90,
+        25
+      ]
+    ],
+    "tolerance": 10,
+    "fadeMs": 2500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

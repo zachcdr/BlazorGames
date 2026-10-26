@@ -1,0 +1,23 @@
+{
+  "id": "tap-count_0026",
+  "template": "tap-count",
+  "version": 1,
+  "prompt": "Tap the cyclone exactly 9 times",
+  "durationMs": 7000,
+  "difficulty": 3,
+  "theme": "storm",
+  "params": {
+    "targetCount": 9,
+    "target": "🌀",
+    "distractors": [
+      "🌊",
+      "💨"
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

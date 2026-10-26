@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0073",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Swim to it!",
+  "durationMs": 6500,
+  "difficulty": 4,
+  "theme": "dolphins",
+  "params": {
+    "a": 12,
+    "op": "×",
+    "b": 6,
+    "options": [
+      66,
+      72,
+      78,
+      27
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

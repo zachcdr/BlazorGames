@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0065",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 5500,
+  "difficulty": 2,
+  "theme": "kitchen",
+  "params": {
+    "left": {
+      "emoji": "🌾",
+      "name": "Cup of flour"
+    },
+    "right": {
+      "emoji": "💧",
+      "name": "Cup of water"
+    },
+    "answer": "right",
+    "explanation": "A cup of water is ~237 g; a cup of flour is only ~120-130 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

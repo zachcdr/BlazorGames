@@ -1,0 +1,49 @@
+{
+  "id": "trace-shape_0031",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the baguette",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "bread",
+  "params": {
+    "points": [
+      [
+        14,
+        50
+      ],
+      [
+        24,
+        36
+      ],
+      [
+        76,
+        36
+      ],
+      [
+        86,
+        50
+      ],
+      [
+        76,
+        64
+      ],
+      [
+        24,
+        64
+      ],
+      [
+        14,
+        50
+      ]
+    ],
+    "tolerance": 13,
+    "fadeMs": 3000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

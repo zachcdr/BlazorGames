@@ -1,0 +1,28 @@
+{
+  "id": "sequence-memory_0024",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Copy the meteor path",
+  "durationMs": 7000,
+  "difficulty": 3,
+  "theme": "meteors",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "sequence": [
+      6,
+      2,
+      4,
+      7,
+      1
+    ],
+    "showMs": 500,
+    "gapMs": 200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

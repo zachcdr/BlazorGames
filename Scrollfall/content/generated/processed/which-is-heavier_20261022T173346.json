@@ -1,0 +1,987 @@
+{
+  "template": "which-is-heavier",
+  "createdAt": "2026-10-22T17:33:46.903Z",
+  "requested": 50,
+  "calls": [
+    {
+      "theme": "kitchen",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "kitchen",
+          "params": {
+            "left": {
+              "emoji": "🍉",
+              "name": "Watermelon"
+            },
+            "right": {
+              "emoji": "🍇",
+              "name": "Grape"
+            },
+            "answer": "left",
+            "explanation": "A watermelon weighs several kilograms; a grape is only a few grams."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "kitchen",
+          "params": {
+            "left": {
+              "emoji": "🥄",
+              "name": "Wooden spoon"
+            },
+            "right": {
+              "emoji": "🍳",
+              "name": "Cast-iron skillet"
+            },
+            "answer": "right",
+            "explanation": "A cast-iron skillet is ~2-3 kg; a wooden spoon is only ~50 g."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "kitchen",
+          "params": {
+            "left": {
+              "emoji": "🥣",
+              "name": "Stand mixer"
+            },
+            "right": {
+              "emoji": "🍞",
+              "name": "Toaster"
+            },
+            "answer": "left",
+            "explanation": "A stand mixer is about 10 kg; a typical toaster is only 2-3 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "kitchen",
+          "params": {
+            "left": {
+              "emoji": "🍗",
+              "name": "Whole chicken"
+            },
+            "right": {
+              "emoji": "🦃",
+              "name": "Whole turkey"
+            },
+            "answer": "right",
+            "explanation": "A whole turkey is usually 5+ kg; a whole chicken is about 1.5-2 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Same size: which is heavier?",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "kitchen",
+          "params": {
+            "left": {
+              "emoji": "🌾",
+              "name": "Cup of flour"
+            },
+            "right": {
+              "emoji": "💧",
+              "name": "Cup of water"
+            },
+            "answer": "right",
+            "explanation": "A cup of water is ~237 g; a cup of flour is only ~120-130 g."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "kitchen",
+          "params": {
+            "left": {
+              "emoji": "🥚",
+              "name": "Large egg"
+            },
+            "right": {
+              "emoji": "🍅",
+              "name": "Cherry tomato"
+            },
+            "answer": "left",
+            "explanation": "A large egg is about 50-60 g; a cherry tomato is roughly 10-20 g."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "kitchen",
+          "params": {
+            "left": {
+              "emoji": "🍞",
+              "name": "Slice of bread"
+            },
+            "right": {
+              "emoji": "🧈",
+              "name": "Stick of butter"
+            },
+            "answer": "right",
+            "explanation": "A US butter stick is 113 g; a bread slice is only about 25-40 g."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5500,
+          "difficulty": 4,
+          "theme": "kitchen",
+          "params": {
+            "left": {
+              "emoji": "🥬",
+              "name": "Iceberg lettuce head"
+            },
+            "right": {
+              "emoji": "🥔",
+              "name": "Medium potato"
+            },
+            "answer": "left",
+            "explanation": "An iceberg head is ~500-600 g; a medium potato is about 150-200 g."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Same size: which is heavier?",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "kitchen",
+          "params": {
+            "left": {
+              "emoji": "🍯",
+              "name": "Jar of honey"
+            },
+            "right": {
+              "emoji": "🫒",
+              "name": "Jar of cooking oil"
+            },
+            "answer": "left",
+            "explanation": "Honey is ~1.4 g/mL; cooking oil is lighter at about 0.9 g/mL."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Same size: which is heavier?",
+          "durationMs": 6000,
+          "difficulty": 5,
+          "theme": "kitchen",
+          "params": {
+            "left": {
+              "emoji": "🥣",
+              "name": "Cup of rolled oats"
+            },
+            "right": {
+              "emoji": "🫘",
+              "name": "Cup of dry lentils"
+            },
+            "answer": "right",
+            "explanation": "A cup of dry lentils is ~190 g; a cup of rolled oats is only ~90 g."
+          }
+        }
+      ]
+    },
+    {
+      "theme": "rainforest",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "rainforest",
+          "params": {
+            "left": {
+              "emoji": "🐆",
+              "name": "Jaguar"
+            },
+            "right": {
+              "emoji": "🐦",
+              "name": "Toucan"
+            },
+            "answer": "left",
+            "explanation": "Jaguars weigh ~60-100 kg; a toucan is only about 0.5 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "jungle snacks",
+          "params": {
+            "left": {
+              "emoji": "🍌",
+              "name": "Banana"
+            },
+            "right": {
+              "emoji": "🥥",
+              "name": "Coconut"
+            },
+            "answer": "right",
+            "explanation": "A banana is ~120 g; a whole coconut is typically 0.5 kg or more."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "rainforest",
+          "params": {
+            "left": {
+              "emoji": "🦥",
+              "name": "Three-toed sloth"
+            },
+            "right": {
+              "emoji": "🦫",
+              "name": "Capybara"
+            },
+            "answer": "right",
+            "explanation": "Capybaras weigh ~35-65 kg; a three-toed sloth is just 4-6 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Same size: which is heavier?",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "rainy day",
+          "params": {
+            "left": {
+              "emoji": "💧",
+              "name": "Bucket of rainwater"
+            },
+            "right": {
+              "emoji": "🍃",
+              "name": "Bucket of dry leaves"
+            },
+            "answer": "left",
+            "explanation": "Water is dense; loose dry leaves are mostly air, so they weigh far less."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "rainforest",
+          "params": {
+            "left": {
+              "emoji": "🐆",
+              "name": "Jaguar"
+            },
+            "right": {
+              "emoji": "🐗",
+              "name": "Lowland tapir"
+            },
+            "answer": "right",
+            "explanation": "Lowland tapirs weigh ~150-250 kg; jaguars are ~60-100 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "canopy birds",
+          "params": {
+            "left": {
+              "emoji": "🦅",
+              "name": "Harpy eagle"
+            },
+            "right": {
+              "emoji": "🦜",
+              "name": "Scarlet macaw"
+            },
+            "answer": "left",
+            "explanation": "Harpy eagles weigh ~4-9 kg; scarlet macaws are only about 1 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "creepy crawlies",
+          "params": {
+            "left": {
+              "emoji": "🐸",
+              "name": "Poison dart frog"
+            },
+            "right": {
+              "emoji": "🕷️",
+              "name": "Goliath birdeater"
+            },
+            "answer": "right",
+            "explanation": "Goliath birdeaters reach ~150 g; dart frogs weigh just a few grams."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5500,
+          "difficulty": 4,
+          "theme": "jungle snakes",
+          "params": {
+            "left": {
+              "emoji": "🐍",
+              "name": "Green anaconda"
+            },
+            "right": {
+              "emoji": "🐍",
+              "name": "Boa constrictor"
+            },
+            "answer": "left",
+            "explanation": "Adult green anacondas often exceed 30 kg; boas are typically 10-18 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 6000,
+          "difficulty": 5,
+          "theme": "river hunters",
+          "params": {
+            "left": {
+              "emoji": "🐈",
+              "name": "Ocelot"
+            },
+            "right": {
+              "emoji": "🦦",
+              "name": "Giant otter"
+            },
+            "answer": "right",
+            "explanation": "Giant otters weigh ~25-32 kg; ocelots are about 10-15 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5500,
+          "difficulty": 4,
+          "theme": "jungle primates",
+          "params": {
+            "left": {
+              "emoji": "🦍",
+              "name": "Adult male gorilla"
+            },
+            "right": {
+              "emoji": "🐒",
+              "name": "Adult chimpanzee"
+            },
+            "answer": "left",
+            "explanation": "Male gorillas weigh ~140-180 kg; chimpanzees are ~40-60 kg."
+          }
+        }
+      ]
+    },
+    {
+      "theme": "music",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "music",
+          "params": {
+            "left": {
+              "emoji": "🎹",
+              "name": "Grand piano"
+            },
+            "right": {
+              "emoji": "🎸",
+              "name": "Acoustic guitar"
+            },
+            "answer": "left",
+            "explanation": "A grand piano weighs hundreds of kg; an acoustic guitar is about 2 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "brass band",
+          "params": {
+            "left": {
+              "emoji": "🎺",
+              "name": "Trumpet"
+            },
+            "right": {
+              "emoji": "📯",
+              "name": "Tuba"
+            },
+            "answer": "right",
+            "explanation": "A tuba weighs roughly 8-12 kg; a trumpet is only about 1 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "orchestra",
+          "params": {
+            "left": {
+              "emoji": "🎻",
+              "name": "Cello"
+            },
+            "right": {
+              "emoji": "🎻",
+              "name": "Violin"
+            },
+            "answer": "left",
+            "explanation": "A cello weighs about 3-4 kg; a violin is only around 0.4-0.5 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "strings",
+          "params": {
+            "left": {
+              "emoji": "🎸",
+              "name": "Ukulele"
+            },
+            "right": {
+              "emoji": "🎸",
+              "name": "Electric bass guitar"
+            },
+            "answer": "right",
+            "explanation": "A bass guitar is typically about 4 kg; a ukulele is well under 1 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "audio gear",
+          "params": {
+            "left": {
+              "emoji": "🎧",
+              "name": "Earbuds (pair)"
+            },
+            "right": {
+              "emoji": "🎧",
+              "name": "Studio headphones"
+            },
+            "answer": "right",
+            "explanation": "Studio headphones weigh a few hundred grams; earbuds weigh about 10 g."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "records",
+          "params": {
+            "left": {
+              "emoji": "📀",
+              "name": "Vinyl LP record"
+            },
+            "right": {
+              "emoji": "💿",
+              "name": "CD"
+            },
+            "answer": "left",
+            "explanation": "A standard LP weighs about 120-180 g; a CD is only around 15 g."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "orchestra",
+          "params": {
+            "left": {
+              "emoji": "🎼",
+              "name": "Concert harp"
+            },
+            "right": {
+              "emoji": "🎻",
+              "name": "Cello"
+            },
+            "answer": "left",
+            "explanation": "A concert harp weighs roughly 35-45 kg; a cello is about 3-4 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "instruments",
+          "params": {
+            "left": {
+              "emoji": "🎼",
+              "name": "Concert harp"
+            },
+            "right": {
+              "emoji": "🎹",
+              "name": "Upright piano"
+            },
+            "answer": "right",
+            "explanation": "An upright piano weighs 200+ kg; a concert harp is around 40 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "woodwinds",
+          "params": {
+            "left": {
+              "emoji": "🎶",
+              "name": "Clarinet"
+            },
+            "right": {
+              "emoji": "🎶",
+              "name": "Bassoon"
+            },
+            "answer": "right",
+            "explanation": "A bassoon weighs about 3 kg; a clarinet is only around 0.7 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 6000,
+          "difficulty": 5,
+          "theme": "saxophones",
+          "params": {
+            "left": {
+              "emoji": "🎷",
+              "name": "Baritone sax"
+            },
+            "right": {
+              "emoji": "🎷",
+              "name": "Alto sax"
+            },
+            "answer": "left",
+            "explanation": "A baritone sax is about 6+ kg; an alto sax is roughly 2-3 kg."
+          }
+        }
+      ]
+    },
+    {
+      "theme": "toys",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "which-is-heavier",
+          "prompt": "Same size: which is heavier?",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "party toys",
+          "params": {
+            "left": {
+              "emoji": "💦",
+              "name": "Water balloon"
+            },
+            "right": {
+              "emoji": "🎈",
+              "name": "Air balloon"
+            },
+            "answer": "left",
+            "explanation": "Water is far denser than air, so the water-filled balloon weighs much more."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "toys",
+          "params": {
+            "left": {
+              "emoji": "🏀",
+              "name": "Basketball"
+            },
+            "right": {
+              "emoji": "🎳",
+              "name": "Bowling ball"
+            },
+            "answer": "right",
+            "explanation": "A bowling ball weighs about 3.6-7 kg; a basketball is only about 0.6 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "ball toys",
+          "params": {
+            "left": {
+              "emoji": "⚾",
+              "name": "Baseball"
+            },
+            "right": {
+              "emoji": "⛳",
+              "name": "Golf ball"
+            },
+            "answer": "left",
+            "explanation": "A baseball is about 145 g; a golf ball is at most 45.9 g."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Same size: which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "building blocks",
+          "params": {
+            "left": {
+              "emoji": "🧽",
+              "name": "Foam block"
+            },
+            "right": {
+              "emoji": "🪵",
+              "name": "Solid wooden block"
+            },
+            "answer": "right",
+            "explanation": "Foam is mostly air, so a solid wooden block of the same size weighs far more."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "flying toys",
+          "params": {
+            "left": {
+              "emoji": "🥏",
+              "name": "Ultimate frisbee"
+            },
+            "right": {
+              "emoji": "🎾",
+              "name": "Tennis ball"
+            },
+            "answer": "left",
+            "explanation": "An ultimate disc is 175 g; a tennis ball is only about 58 g."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "ball toys",
+          "params": {
+            "left": {
+              "emoji": "🎾",
+              "name": "Tennis ball"
+            },
+            "right": {
+              "emoji": "⚾",
+              "name": "Baseball"
+            },
+            "answer": "right",
+            "explanation": "A baseball is about 145 g, roughly 2.5 times a tennis ball's ~58 g."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Same size: which is heavier?",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "marbles",
+          "params": {
+            "left": {
+              "emoji": "🔩",
+              "name": "Steel marble"
+            },
+            "right": {
+              "emoji": "🔮",
+              "name": "Glass marble"
+            },
+            "answer": "left",
+            "explanation": "Steel is about 7.8 g/cm³ while glass is about 2.5 g/cm³."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5500,
+          "difficulty": 4,
+          "theme": "bowling",
+          "params": {
+            "left": {
+              "emoji": "🎳",
+              "name": "Bowling pin"
+            },
+            "right": {
+              "emoji": "🏀",
+              "name": "Basketball"
+            },
+            "answer": "left",
+            "explanation": "A bowling pin is about 1.5 kg; a basketball is only about 0.6 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Same size: which is heavier?",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "metal balls",
+          "params": {
+            "left": {
+              "emoji": "⚪",
+              "name": "Aluminum ball"
+            },
+            "right": {
+              "emoji": "⚫",
+              "name": "Lead ball"
+            },
+            "answer": "right",
+            "explanation": "Lead is about 11.3 g/cm³; aluminum is only about 2.7 g/cm³."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 6000,
+          "difficulty": 5,
+          "theme": "tiny toys",
+          "params": {
+            "left": {
+              "emoji": "🧱",
+              "name": "LEGO 2x4 brick"
+            },
+            "right": {
+              "emoji": "🔵",
+              "name": "Glass marble (16 mm)"
+            },
+            "answer": "right",
+            "explanation": "A 16 mm glass marble is about 5 g; a LEGO 2x4 brick is about 2.5 g."
+          }
+        }
+      ]
+    },
+    {
+      "theme": "circus",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "circus",
+          "params": {
+            "left": {
+              "emoji": "🐘",
+              "name": "Circus elephant"
+            },
+            "right": {
+              "emoji": "🤡",
+              "name": "Clown"
+            },
+            "answer": "left",
+            "explanation": "An adult elephant weighs several tonnes; a person weighs well under 200 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "magic show",
+          "params": {
+            "left": {
+              "emoji": "🎩",
+              "name": "Top hat"
+            },
+            "right": {
+              "emoji": "⚒️",
+              "name": "Anvil"
+            },
+            "answer": "right",
+            "explanation": "A hat weighs a few hundred grams; an iron anvil weighs tens of kilograms."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "juggling",
+          "params": {
+            "left": {
+              "emoji": "🎳",
+              "name": "Bowling ball"
+            },
+            "right": {
+              "emoji": "🏐",
+              "name": "Volleyball"
+            },
+            "answer": "left",
+            "explanation": "A bowling ball weighs about 3-7 kg; a volleyball is only about 270 g."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "animal act",
+          "params": {
+            "left": {
+              "emoji": "🦁",
+              "name": "Adult lion"
+            },
+            "right": {
+              "emoji": "🐒",
+              "name": "Capuchin monkey"
+            },
+            "answer": "left",
+            "explanation": "Adult lions weigh well over 100 kg; capuchins weigh only 3-4 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Same size: which is heavier?",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "balloons",
+          "params": {
+            "left": {
+              "emoji": "🎈",
+              "name": "Helium balloon"
+            },
+            "right": {
+              "emoji": "🎈",
+              "name": "Air-filled balloon"
+            },
+            "answer": "right",
+            "explanation": "Helium is much lighter than air, so the air-filled balloon weighs more."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "big cats",
+          "params": {
+            "left": {
+              "emoji": "🐻‍❄️",
+              "name": "Polar bear"
+            },
+            "right": {
+              "emoji": "🐅",
+              "name": "Tiger"
+            },
+            "answer": "left",
+            "explanation": "Adult polar bears often top 400 kg; even big tigers are usually under 300 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Same size: which is heavier?",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "fairground",
+          "params": {
+            "left": {
+              "emoji": "☁️",
+              "name": "Ball of cotton candy"
+            },
+            "right": {
+              "emoji": "🍬",
+              "name": "Ball of solid sugar"
+            },
+            "answer": "right",
+            "explanation": "Cotton candy is mostly air; solid sugar packs far more mass into the space."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5000,
+          "difficulty": 4,
+          "theme": "big top",
+          "params": {
+            "left": {
+              "emoji": "🦏",
+              "name": "White rhino"
+            },
+            "right": {
+              "emoji": "🐘",
+              "name": "African elephant"
+            },
+            "answer": "right",
+            "explanation": "African elephants average 4-6 tonnes; white rhinos about 2 tonnes."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Which is heavier?",
+          "durationMs": 5500,
+          "difficulty": 4,
+          "theme": "animal act",
+          "params": {
+            "left": {
+              "emoji": "🐎",
+              "name": "Horse"
+            },
+            "right": {
+              "emoji": "🐅",
+              "name": "Tiger"
+            },
+            "answer": "left",
+            "explanation": "A typical horse weighs 400-600 kg; tigers usually weigh around 100-250 kg."
+          }
+        },
+        {
+          "template": "which-is-heavier",
+          "prompt": "Same size: which is heavier?",
+          "durationMs": 6000,
+          "difficulty": 5,
+          "theme": "strongman",
+          "params": {
+            "left": {
+              "emoji": "🔩",
+              "name": "Steel block"
+            },
+            "right": {
+              "emoji": "🥇",
+              "name": "Gold block"
+            },
+            "answer": "right",
+            "explanation": "Gold is about 19 g/cm³; steel is only about 8 g/cm³."
+          }
+        }
+      ]
+    }
+  ]
+}

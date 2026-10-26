@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0102",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "magic show",
+  "params": {
+    "left": {
+      "emoji": "🎩",
+      "name": "Top hat"
+    },
+    "right": {
+      "emoji": "⚒️",
+      "name": "Anvil"
+    },
+    "answer": "right",
+    "explanation": "A hat weighs a few hundred grams; an iron anvil weighs tens of kilograms."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

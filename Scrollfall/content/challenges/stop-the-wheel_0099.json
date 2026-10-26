@@ -1,0 +1,31 @@
+{
+  "id": "stop-the-wheel_0099",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on yellow",
+  "durationMs": 7500,
+  "difficulty": 1,
+  "theme": "ticket booth",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#12a594"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 0.35,
+    "startAngle": 10
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

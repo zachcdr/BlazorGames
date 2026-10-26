@@ -1,0 +1,46 @@
+{
+  "id": "stop-the-wheel_0004",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the frog",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "animals",
+  "params": {
+    "segments": [
+      {
+        "color": "#12a594",
+        "label": "🐶"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🐱"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🐸"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🦊"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🐷"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🐳"
+      }
+    ],
+    "targetSegment": 2,
+    "speed": 1,
+    "startAngle": 45
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

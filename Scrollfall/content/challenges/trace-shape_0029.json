@@ -1,0 +1,57 @@
+{
+  "id": "trace-shape_0029",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the bee's zigzag",
+  "durationMs": 7000,
+  "difficulty": 5,
+  "theme": "bees",
+  "params": {
+    "points": [
+      [
+        8,
+        20
+      ],
+      [
+        18,
+        80
+      ],
+      [
+        28,
+        20
+      ],
+      [
+        38,
+        80
+      ],
+      [
+        48,
+        20
+      ],
+      [
+        58,
+        80
+      ],
+      [
+        68,
+        20
+      ],
+      [
+        78,
+        80
+      ],
+      [
+        88,
+        20
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 700
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

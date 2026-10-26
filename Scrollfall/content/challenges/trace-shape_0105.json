@@ -1,0 +1,81 @@
+{
+  "id": "trace-shape_0105",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the stirring spiral",
+  "durationMs": 5000,
+  "difficulty": 4,
+  "theme": "chemistry",
+  "params": {
+    "points": [
+      [
+        90,
+        50
+      ],
+      [
+        77,
+        77
+      ],
+      [
+        50,
+        86
+      ],
+      [
+        26,
+        74
+      ],
+      [
+        18,
+        50
+      ],
+      [
+        29,
+        29
+      ],
+      [
+        50,
+        22
+      ],
+      [
+        68,
+        32
+      ],
+      [
+        74,
+        50
+      ],
+      [
+        66,
+        66
+      ],
+      [
+        50,
+        70
+      ],
+      [
+        37,
+        63
+      ],
+      [
+        34,
+        50
+      ],
+      [
+        40,
+        40
+      ],
+      [
+        50,
+        38
+      ]
+    ],
+    "tolerance": 7,
+    "fadeMs": 1500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0079",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 5,
+  "theme": "river hunters",
+  "params": {
+    "left": {
+      "emoji": "🐈",
+      "name": "Ocelot"
+    },
+    "right": {
+      "emoji": "🦦",
+      "name": "Giant otter"
+    },
+    "answer": "right",
+    "explanation": "Giant otters weigh ~25-32 kg; ocelots are about 10-15 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

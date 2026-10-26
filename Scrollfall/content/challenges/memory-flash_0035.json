@@ -1,0 +1,32 @@
+{
+  "id": "memory-flash_0035",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the volcano?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "prehistoric",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "flashMs": 900,
+    "targetCell": 5,
+    "item": "🌋",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🪨"
+      },
+      {
+        "cell": 10,
+        "item": "🔥"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0106",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "big cats",
+  "params": {
+    "left": {
+      "emoji": "🐻‍❄️",
+      "name": "Polar bear"
+    },
+    "right": {
+      "emoji": "🐅",
+      "name": "Tiger"
+    },
+    "answer": "left",
+    "explanation": "Adult polar bears often top 400 kg; even big tigers are usually under 300 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0047",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Remember the cactus!",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "desert",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "flashMs": 600,
+    "targetCell": 13,
+    "item": "🌵",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🌴"
+      },
+      {
+        "cell": 7,
+        "item": "🪨"
+      },
+      {
+        "cell": 4,
+        "item": "🦎"
+      },
+      {
+        "cell": 9,
+        "item": "🌴"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

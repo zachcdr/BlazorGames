@@ -1,0 +1,65 @@
+{
+  "id": "trace-shape_0010",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the spiral",
+  "durationMs": 9000,
+  "difficulty": 5,
+  "theme": "ocean",
+  "params": {
+    "points": [
+      [
+        50,
+        50
+      ],
+      [
+        60,
+        50
+      ],
+      [
+        60,
+        62
+      ],
+      [
+        40,
+        62
+      ],
+      [
+        40,
+        38
+      ],
+      [
+        72,
+        38
+      ],
+      [
+        72,
+        74
+      ],
+      [
+        28,
+        74
+      ],
+      [
+        28,
+        26
+      ],
+      [
+        84,
+        26
+      ],
+      [
+        84,
+        86
+      ]
+    ],
+    "tolerance": 7,
+    "fadeMs": 1000
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

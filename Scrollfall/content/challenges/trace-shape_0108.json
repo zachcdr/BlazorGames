@@ -1,0 +1,49 @@
+{
+  "id": "trace-shape_0108",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the lightning storm",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "tesla coil",
+  "params": {
+    "points": [
+      [
+        50,
+        8
+      ],
+      [
+        30,
+        25
+      ],
+      [
+        62,
+        38
+      ],
+      [
+        25,
+        55
+      ],
+      [
+        68,
+        68
+      ],
+      [
+        32,
+        82
+      ],
+      [
+        60,
+        92
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 700
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

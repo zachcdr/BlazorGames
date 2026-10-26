@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0094",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "building blocks",
+  "params": {
+    "left": {
+      "emoji": "🧽",
+      "name": "Foam block"
+    },
+    "right": {
+      "emoji": "🪵",
+      "name": "Solid wooden block"
+    },
+    "answer": "right",
+    "explanation": "Foam is mostly air, so a solid wooden block of the same size weighs far more."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0060",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Steer the ship!",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "pirates",
+  "params": {
+    "a": 48,
+    "op": "−",
+    "b": 25,
+    "options": [
+      22,
+      23,
+      33,
+      73
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

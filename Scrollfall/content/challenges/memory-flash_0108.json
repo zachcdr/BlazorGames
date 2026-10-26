@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0108",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the spoon?",
+  "durationMs": 4500,
+  "difficulty": 4,
+  "theme": "utensils",
+  "params": {
+    "rows": 4,
+    "cols": 5,
+    "flashMs": 650,
+    "targetCell": 11,
+    "item": "🥄",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🍴"
+      },
+      {
+        "cell": 6,
+        "item": "🔪"
+      },
+      {
+        "cell": 13,
+        "item": "🥢"
+      },
+      {
+        "cell": 17,
+        "item": "🫕"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

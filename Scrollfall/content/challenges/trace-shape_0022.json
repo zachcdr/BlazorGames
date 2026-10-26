@@ -1,0 +1,45 @@
+{
+  "id": "trace-shape_0022",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the wavy vine",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "vines",
+  "params": {
+    "points": [
+      [
+        10,
+        50
+      ],
+      [
+        25,
+        30
+      ],
+      [
+        40,
+        50
+      ],
+      [
+        55,
+        70
+      ],
+      [
+        70,
+        50
+      ],
+      [
+        85,
+        30
+      ]
+    ],
+    "tolerance": 14,
+    "fadeMs": 3500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

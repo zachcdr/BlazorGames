@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0059",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "toys",
+  "params": {
+    "left": {
+      "emoji": "🏐",
+      "name": "Volleyball"
+    },
+    "right": {
+      "emoji": "🏀",
+      "name": "Basketball"
+    },
+    "answer": "right",
+    "explanation": "A basketball weighs about 600 g; a volleyball about 270 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

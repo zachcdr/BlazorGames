@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0044",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Tap the answer",
+  "durationMs": 6000,
+  "difficulty": 2,
+  "theme": "kitchen",
+  "params": {
+    "a": 9,
+    "op": "×",
+    "b": 8,
+    "options": [
+      72,
+      81,
+      63,
+      27
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0049",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Camel caravan!",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "camels",
+  "params": {
+    "a": 4,
+    "op": "×",
+    "b": 7,
+    "options": [
+      24,
+      32,
+      11,
+      28
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

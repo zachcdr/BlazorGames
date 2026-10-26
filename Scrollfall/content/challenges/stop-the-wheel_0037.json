@@ -1,0 +1,62 @@
+{
+  "id": "stop-the-wheel_0037",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the witch",
+  "durationMs": 8000,
+  "difficulty": 4,
+  "theme": "witching hour",
+  "params": {
+    "segments": [
+      {
+        "color": "#f76b15",
+        "label": "🎃"
+      },
+      {
+        "color": "#12a594",
+        "label": "👻"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🦇"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🕷️"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "💀"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🍬"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🧙"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🌙"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🧛"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🕯️"
+      }
+    ],
+    "targetSegment": 6,
+    "speed": 0.65,
+    "startAngle": 180
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

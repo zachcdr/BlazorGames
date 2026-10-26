@@ -1,0 +1,53 @@
+{
+  "id": "trace-shape_0009",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the stairs",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "city",
+  "params": {
+    "points": [
+      [
+        15,
+        85
+      ],
+      [
+        15,
+        65
+      ],
+      [
+        35,
+        65
+      ],
+      [
+        35,
+        45
+      ],
+      [
+        55,
+        45
+      ],
+      [
+        55,
+        25
+      ],
+      [
+        75,
+        25
+      ],
+      [
+        75,
+        10
+      ]
+    ],
+    "tolerance": 8,
+    "fadeMs": 1200
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "stop-the-wheel_0016",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the gear",
+  "durationMs": 7000,
+  "difficulty": 3,
+  "theme": "workshop",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d",
+        "label": "🤖"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🔋"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🔧"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "⚙️"
+      },
+      {
+        "color": "#e5484d",
+        "label": "💡"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🧲"
+      }
+    ],
+    "targetSegment": 3,
+    "speed": 0.85,
+    "startAngle": 310
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

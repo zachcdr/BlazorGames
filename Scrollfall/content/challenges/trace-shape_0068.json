@@ -1,0 +1,69 @@
+{
+  "id": "trace-shape_0068",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the skyline",
+  "durationMs": 5000,
+  "difficulty": 5,
+  "theme": "skyline",
+  "params": {
+    "points": [
+      [
+        10,
+        85
+      ],
+      [
+        10,
+        55
+      ],
+      [
+        25,
+        55
+      ],
+      [
+        25,
+        25
+      ],
+      [
+        40,
+        25
+      ],
+      [
+        40,
+        60
+      ],
+      [
+        55,
+        60
+      ],
+      [
+        55,
+        15
+      ],
+      [
+        70,
+        15
+      ],
+      [
+        70,
+        45
+      ],
+      [
+        90,
+        45
+      ],
+      [
+        90,
+        85
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 900
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

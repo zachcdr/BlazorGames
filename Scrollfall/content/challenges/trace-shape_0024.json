@@ -1,0 +1,45 @@
+{
+  "id": "trace-shape_0024",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the greenhouse",
+  "durationMs": 6000,
+  "difficulty": 2,
+  "theme": "greenhouse",
+  "params": {
+    "points": [
+      [
+        50,
+        12
+      ],
+      [
+        88,
+        40
+      ],
+      [
+        88,
+        85
+      ],
+      [
+        12,
+        85
+      ],
+      [
+        12,
+        40
+      ],
+      [
+        50,
+        12
+      ]
+    ],
+    "tolerance": 10,
+    "fadeMs": 2000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

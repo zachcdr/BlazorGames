@@ -1,0 +1,44 @@
+{
+  "id": "memory-flash_0107",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Spot the lemon!",
+  "durationMs": 4500,
+  "difficulty": 4,
+  "theme": "fresh produce",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "flashMs": 700,
+    "targetCell": 15,
+    "item": "🍋",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🍊"
+      },
+      {
+        "cell": 5,
+        "item": "🍈"
+      },
+      {
+        "cell": 8,
+        "item": "🧅"
+      },
+      {
+        "cell": 9,
+        "item": "🍐"
+      },
+      {
+        "cell": 12,
+        "item": "🫒"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

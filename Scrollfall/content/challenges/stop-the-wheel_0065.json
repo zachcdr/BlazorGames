@@ -1,0 +1,46 @@
+{
+  "id": "stop-the-wheel_0065",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the dragon",
+  "durationMs": 6500,
+  "difficulty": 4,
+  "theme": "dragon keep",
+  "params": {
+    "segments": [
+      {
+        "color": "#8e4ec6",
+        "label": "🐉"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🏰"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🧙"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🦇"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🗡️"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "👻"
+      }
+    ],
+    "targetSegment": 0,
+    "speed": 1,
+    "startAngle": 15
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

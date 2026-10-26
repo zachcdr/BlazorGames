@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0066",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace M for Metro",
+  "durationMs": 4500,
+  "difficulty": 4,
+  "theme": "metro",
+  "params": {
+    "points": [
+      [
+        10,
+        85
+      ],
+      [
+        10,
+        15
+      ],
+      [
+        50,
+        60
+      ],
+      [
+        90,
+        15
+      ],
+      [
+        90,
+        85
+      ]
+    ],
+    "tolerance": 7,
+    "fadeMs": 1500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

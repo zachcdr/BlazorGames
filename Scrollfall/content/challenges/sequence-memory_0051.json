@@ -1,0 +1,28 @@
+{
+  "id": "sequence-memory_0051",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Copy the jellyfish",
+  "durationMs": 7500,
+  "difficulty": 3,
+  "theme": "jellyfish",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "sequence": [
+      6,
+      2,
+      4,
+      8,
+      1
+    ],
+    "showMs": 500,
+    "gapMs": 200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

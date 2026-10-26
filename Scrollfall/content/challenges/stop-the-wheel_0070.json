@@ -1,0 +1,34 @@
+{
+  "id": "stop-the-wheel_0070",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on green",
+  "durationMs": 8000,
+  "difficulty": 1,
+  "theme": "baby dino",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d"
+      },
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#3e63dd"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 0.3,
+    "startAngle": 200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

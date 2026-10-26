@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0083",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "orchestra",
+  "params": {
+    "left": {
+      "emoji": "🎻",
+      "name": "Cello"
+    },
+    "right": {
+      "emoji": "🎻",
+      "name": "Violin"
+    },
+    "answer": "left",
+    "explanation": "A cello weighs about 3-4 kg; a violin is only around 0.4-0.5 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

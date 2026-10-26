@@ -1,0 +1,45 @@
+{
+  "id": "trace-shape_0099",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the test tube",
+  "durationMs": 3500,
+  "difficulty": 1,
+  "theme": "science lab",
+  "params": {
+    "points": [
+      [
+        30,
+        15
+      ],
+      [
+        30,
+        70
+      ],
+      [
+        40,
+        85
+      ],
+      [
+        60,
+        85
+      ],
+      [
+        70,
+        70
+      ],
+      [
+        70,
+        15
+      ]
+    ],
+    "tolerance": 14,
+    "fadeMs": 4500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

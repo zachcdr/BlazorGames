@@ -1,0 +1,37 @@
+{
+  "id": "stop-the-wheel_0061",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on purple",
+  "durationMs": 7500,
+  "difficulty": 2,
+  "theme": "royal banners",
+  "params": {
+    "segments": [
+      {
+        "color": "#f76b15"
+      },
+      {
+        "color": "#8e4ec6"
+      },
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#d6409f"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 0.6,
+    "startAngle": 200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

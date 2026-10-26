@@ -1,0 +1,37 @@
+{
+  "id": "trace-shape_0041",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the beaker",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "glassware",
+  "params": {
+    "points": [
+      [
+        28,
+        12
+      ],
+      [
+        28,
+        86
+      ],
+      [
+        72,
+        86
+      ],
+      [
+        72,
+        12
+      ]
+    ],
+    "tolerance": 13,
+    "fadeMs": 3500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "stop-the-wheel_0014",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the rocket",
+  "durationMs": 6500,
+  "difficulty": 2,
+  "theme": "space bots",
+  "params": {
+    "segments": [
+      {
+        "color": "#12a594",
+        "label": "🤖"
+      },
+      {
+        "color": "#d6409f",
+        "label": "👾"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🚀"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🛰️"
+      }
+    ],
+    "targetSegment": 2,
+    "speed": 0.9,
+    "startAngle": 200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

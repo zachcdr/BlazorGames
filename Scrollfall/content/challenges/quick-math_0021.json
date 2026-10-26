@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0021",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Spooky maths!",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "halloween",
+  "params": {
+    "a": 6,
+    "op": "+",
+    "b": 7,
+    "options": [
+      12,
+      13,
+      14,
+      16
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

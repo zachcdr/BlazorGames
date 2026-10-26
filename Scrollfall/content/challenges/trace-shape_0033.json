@@ -1,0 +1,37 @@
+{
+  "id": "trace-shape_0033",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the cake slice",
+  "durationMs": 4500,
+  "difficulty": 2,
+  "theme": "cake",
+  "params": {
+    "points": [
+      [
+        20,
+        30
+      ],
+      [
+        80,
+        55
+      ],
+      [
+        20,
+        75
+      ],
+      [
+        20,
+        30
+      ]
+    ],
+    "tolerance": 10,
+    "fadeMs": 2000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

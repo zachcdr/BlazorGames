@@ -1,0 +1,23 @@
+{
+  "id": "memory-flash_0004",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the key?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "treasure",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "flashMs": 900,
+    "targetCell": 9,
+    "item": "🔑",
+    "decoys": []
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

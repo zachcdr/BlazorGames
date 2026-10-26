@@ -1,0 +1,29 @@
+{
+  "id": "odd-one-out_0059",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the one that isn't a body part",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "halloween",
+  "params": {
+    "items": [
+      "👁️",
+      "👂",
+      "👃",
+      "👄",
+      "🦷",
+      "🧠",
+      "🦴",
+      "🎩",
+      "👁️"
+    ],
+    "answerIndex": 7
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

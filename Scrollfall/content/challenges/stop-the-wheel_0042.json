@@ -1,0 +1,37 @@
+{
+  "id": "stop-the-wheel_0042",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on red",
+  "durationMs": 6000,
+  "difficulty": 2,
+  "theme": "canyon",
+  "params": {
+    "segments": [
+      {
+        "color": "#f76b15"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#e5484d"
+      },
+      {
+        "color": "#d6409f"
+      }
+    ],
+    "targetSegment": 3,
+    "speed": 0.6,
+    "startAngle": 15
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "trace-shape_0065",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the Ferris wheel",
+  "durationMs": 4500,
+  "difficulty": 3,
+  "theme": "fairground",
+  "params": {
+    "points": [
+      [
+        85,
+        50
+      ],
+      [
+        80,
+        67
+      ],
+      [
+        67,
+        80
+      ],
+      [
+        50,
+        85
+      ],
+      [
+        33,
+        80
+      ],
+      [
+        20,
+        67
+      ],
+      [
+        15,
+        50
+      ],
+      [
+        20,
+        33
+      ],
+      [
+        33,
+        20
+      ],
+      [
+        50,
+        15
+      ],
+      [
+        67,
+        20
+      ],
+      [
+        80,
+        33
+      ],
+      [
+        85,
+        50
+      ]
+    ],
+    "tolerance": 9,
+    "fadeMs": 2000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "trace-shape_0034",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the icing drizzle",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "icing",
+  "params": {
+    "points": [
+      [
+        8,
+        50
+      ],
+      [
+        18.5,
+        30
+      ],
+      [
+        29,
+        50
+      ],
+      [
+        39.5,
+        70
+      ],
+      [
+        50,
+        50
+      ],
+      [
+        60.5,
+        30
+      ],
+      [
+        71,
+        50
+      ],
+      [
+        81.5,
+        70
+      ],
+      [
+        92,
+        50
+      ]
+    ],
+    "tolerance": 9,
+    "fadeMs": 2200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

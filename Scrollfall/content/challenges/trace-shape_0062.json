@@ -1,0 +1,45 @@
+{
+  "id": "trace-shape_0062",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the little house",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "suburb",
+  "params": {
+    "points": [
+      [
+        20,
+        85
+      ],
+      [
+        20,
+        50
+      ],
+      [
+        50,
+        20
+      ],
+      [
+        80,
+        50
+      ],
+      [
+        80,
+        85
+      ],
+      [
+        20,
+        85
+      ]
+    ],
+    "tolerance": 10,
+    "fadeMs": 2500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

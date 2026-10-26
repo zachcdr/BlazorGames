@@ -1,0 +1,23 @@
+{
+  "id": "memory-flash_0051",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the robot?",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "robots",
+  "params": {
+    "rows": 2,
+    "cols": 2,
+    "flashMs": 1500,
+    "targetCell": 3,
+    "item": "🤖",
+    "decoys": []
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "sequence-memory_0046",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Copy the sequence",
+  "durationMs": 8000,
+  "difficulty": 4,
+  "theme": "breakfast",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "sequence": [
+      13,
+      2,
+      8,
+      11,
+      4,
+      15
+    ],
+    "showMs": 380,
+    "gapMs": 180
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "trace-shape_0048",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the signal wave",
+  "durationMs": 5500,
+  "difficulty": 4,
+  "theme": "physics",
+  "params": {
+    "points": [
+      [
+        8,
+        50
+      ],
+      [
+        15,
+        30
+      ],
+      [
+        22,
+        50
+      ],
+      [
+        29,
+        70
+      ],
+      [
+        36,
+        50
+      ],
+      [
+        43,
+        30
+      ],
+      [
+        50,
+        50
+      ],
+      [
+        57,
+        70
+      ],
+      [
+        64,
+        50
+      ],
+      [
+        71,
+        30
+      ],
+      [
+        78,
+        50
+      ],
+      [
+        85,
+        70
+      ],
+      [
+        92,
+        50
+      ]
+    ],
+    "tolerance": 7,
+    "fadeMs": 1200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

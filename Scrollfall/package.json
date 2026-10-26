@@ -1,0 +1,39 @@
+{
+  "name": "scrollfall",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "engines": {
+    "node": ">=20.18"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "generate": "vite-node scripts/generate.ts --",
+    "validate": "vite-node scripts/validate.ts --",
+    "publish:to": "tsc -b && vite-node scripts/publish.ts --"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^3.25.76",
+    "zustand": "^5.0.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/node": "^20.19.9",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vite-node": "^3.2.4",
+    "vitest": "^3.2.4"
+  }
+}

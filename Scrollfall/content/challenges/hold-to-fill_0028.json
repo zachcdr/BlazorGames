@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0028",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fuel the toy car to the line",
+  "durationMs": 3500,
+  "difficulty": 4,
+  "theme": "toy cars",
+  "params": {
+    "item": "🚗",
+    "fillPerSecond": 90,
+    "targetFrom": 74,
+    "targetTo": 88
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

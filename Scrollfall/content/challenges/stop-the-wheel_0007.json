@@ -1,0 +1,31 @@
+{
+  "id": "stop-the-wheel_0007",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on blue",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "colors",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#ffc53d"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 1.2,
+    "startAngle": 300
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "trace-shape_0087",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the kangaroo hops",
+  "durationMs": 4000,
+  "difficulty": 4,
+  "theme": "kangaroo",
+  "params": {
+    "points": [
+      [
+        10,
+        75
+      ],
+      [
+        20,
+        45
+      ],
+      [
+        30,
+        35
+      ],
+      [
+        40,
+        45
+      ],
+      [
+        50,
+        75
+      ],
+      [
+        60,
+        45
+      ],
+      [
+        70,
+        35
+      ],
+      [
+        80,
+        45
+      ],
+      [
+        90,
+        75
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 1500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

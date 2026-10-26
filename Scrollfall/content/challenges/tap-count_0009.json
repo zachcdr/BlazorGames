@@ -1,0 +1,24 @@
+{
+  "id": "tap-count_0009",
+  "template": "tap-count",
+  "version": 1,
+  "prompt": "Tap the ghost exactly 6 times",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "spooky",
+  "params": {
+    "targetCount": 6,
+    "target": "👻",
+    "distractors": [
+      "🎃",
+      "💀",
+      "🦇"
+    ]
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

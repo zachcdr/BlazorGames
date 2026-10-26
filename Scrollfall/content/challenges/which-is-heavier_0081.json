@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0081",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "music",
+  "params": {
+    "left": {
+      "emoji": "🎹",
+      "name": "Grand piano"
+    },
+    "right": {
+      "emoji": "🎸",
+      "name": "Acoustic guitar"
+    },
+    "answer": "left",
+    "explanation": "A grand piano weighs hundreds of kg; an acoustic guitar is about 2 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

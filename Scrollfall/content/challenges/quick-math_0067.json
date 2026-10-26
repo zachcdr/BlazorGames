@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0067",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Solve it!",
+  "durationMs": 7000,
+  "difficulty": 5,
+  "theme": "hockey",
+  "params": {
+    "a": 84,
+    "op": "÷",
+    "b": 12,
+    "options": [
+      72,
+      8,
+      6,
+      7
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

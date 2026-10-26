@@ -1,0 +1,299 @@
+:root {
+  --bg: #0e0e14;
+  --fg: #f5f5f7;
+  --muted: rgba(245, 245, 247, 0.72);
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.feed {
+  position: fixed;
+  inset: 0;
+  touch-action: none;
+  overflow: hidden;
+}
+
+.feed.empty {
+  display: grid;
+  place-items: center;
+}
+
+.slot {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.slot.settle {
+  transition: transform 160ms ease-out;
+}
+
+.runner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.runner-top {
+  padding: max(16px, env(safe-area-inset-top)) 20px 8px;
+}
+
+.timer-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.timer-fill {
+  height: 100%;
+  background: var(--fg);
+  transform-origin: left center;
+}
+
+.runner:not(.phase-intro) .timer-fill {
+  animation: drain var(--duration) linear forwards;
+}
+
+.phase-result .timer-fill {
+  animation-play-state: paused;
+}
+
+@keyframes drain {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.runner-prompt {
+  margin: 16px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.runner-play {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 16px max(24px, env(safe-area-inset-bottom));
+}
+
+.runner-intro {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(14, 14, 20, 0.86);
+}
+
+.phase-intro .runner-prompt {
+  visibility: hidden;
+}
+
+.runner-intro h2 {
+  margin: 0;
+  font-size: clamp(30px, 9vw, 42px);
+  line-height: 1.15;
+}
+
+.runner-hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.runner-result {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 24px;
+  border-radius: 16px;
+  font-size: 28px;
+  color: #fff;
+  animation: pop 140ms ease-out;
+  pointer-events: none;
+}
+
+.runner-result span {
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+.runner-result.win {
+  background: #1f7a4d;
+}
+
+.runner-result.lose {
+  background: #b3261e;
+}
+
+@keyframes pop {
+  from {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Non-challenge cards: home / creature check-in, sleep, daily summary */
+
+.info-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: max(24px, env(safe-area-inset-top)) 24px max(56px, env(safe-area-inset-bottom));
+  text-align: center;
+  background: linear-gradient(170deg, #22203a, #0e0e14);
+}
+
+.sleep-card {
+  background: linear-gradient(170deg, #121a33, #07080f);
+}
+
+.daily-card {
+  background: linear-gradient(170deg, #1d2f27, #0b120f);
+}
+
+.info-kicker {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.info-banner {
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: rgba(61, 220, 132, 0.18);
+  color: #9ff0c4;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.info-title {
+  margin: 0;
+  font-size: 30px;
+}
+
+.info-text {
+  margin: 0;
+  max-width: 320px;
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.info-small {
+  margin: 0;
+  max-width: 320px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.info-hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.growth {
+  width: min(240px, 70vw);
+  height: 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.growth-fill {
+  height: 100%;
+  background: #3ddc84;
+}
+
+.card-button {
+  margin-top: 8px;
+  min-height: 56px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.daily-score {
+  margin: 0;
+  font-size: 64px;
+  font-variant-numeric: tabular-nums;
+}
+
+.daily-grid {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.daily-badge {
+  position: absolute;
+  left: 50%;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  font-size: 13px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.creature-zzz {
+  fill: #c9d4ff;
+  font-size: 22px;
+  font-weight: 700;
+}

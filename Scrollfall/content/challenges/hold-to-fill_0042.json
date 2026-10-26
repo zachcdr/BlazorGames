@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0042",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Pour the milk to the line",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "kitchen",
+  "params": {
+    "item": "🥛",
+    "fillPerSecond": 30,
+    "targetFrom": 50,
+    "targetTo": 68
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

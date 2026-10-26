@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0053",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Solve it!",
+  "durationMs": 6500,
+  "difficulty": 4,
+  "theme": "sandstorm",
+  "params": {
+    "a": 68,
+    "op": "−",
+    "b": 29,
+    "options": [
+      49,
+      41,
+      38,
+      39
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

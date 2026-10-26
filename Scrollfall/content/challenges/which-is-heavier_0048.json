@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0048",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5500,
+  "difficulty": 4,
+  "theme": "sea",
+  "params": {
+    "left": {
+      "emoji": "🦑",
+      "name": "Giant squid"
+    },
+    "right": {
+      "emoji": "🦈",
+      "name": "Great white shark"
+    },
+    "answer": "right",
+    "explanation": "Great whites typically weigh 700+ kg; giant squid about 200 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

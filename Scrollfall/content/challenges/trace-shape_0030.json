@@ -1,0 +1,61 @@
+{
+  "id": "trace-shape_0030",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the hedge maze",
+  "durationMs": 6500,
+  "difficulty": 5,
+  "theme": "hedge maze",
+  "params": {
+    "points": [
+      [
+        10,
+        15
+      ],
+      [
+        90,
+        15
+      ],
+      [
+        90,
+        32
+      ],
+      [
+        10,
+        32
+      ],
+      [
+        10,
+        49
+      ],
+      [
+        90,
+        49
+      ],
+      [
+        90,
+        66
+      ],
+      [
+        10,
+        66
+      ],
+      [
+        10,
+        83
+      ],
+      [
+        90,
+        83
+      ]
+    ],
+    "tolerance": 7,
+    "fadeMs": 900
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

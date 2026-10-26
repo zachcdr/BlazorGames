@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0039",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the teapot to the line",
+  "durationMs": 3200,
+  "difficulty": 5,
+  "theme": "explorer camp",
+  "params": {
+    "item": "🫖",
+    "fillPerSecond": 110,
+    "targetFrom": 78,
+    "targetTo": 95
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

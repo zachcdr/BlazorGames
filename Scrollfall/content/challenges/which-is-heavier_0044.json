@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0044",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "treasure",
+  "params": {
+    "left": {
+      "emoji": "💎",
+      "name": "1-carat diamond"
+    },
+    "right": {
+      "emoji": "📎",
+      "name": "Paperclip"
+    },
+    "answer": "right",
+    "explanation": "One carat is 0.2 g; a standard paperclip is about 1 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0041",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "pirates",
+  "params": {
+    "left": {
+      "emoji": "💣",
+      "name": "Ship's cannon"
+    },
+    "right": {
+      "emoji": "⚫",
+      "name": "Cannonball"
+    },
+    "answer": "left",
+    "explanation": "A ship's cannon weighed hundreds of kg; a cannonball just a few."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "memory-flash_0007",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the rocket?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "space",
+  "params": {
+    "rows": 4,
+    "cols": 3,
+    "flashMs": 600,
+    "targetCell": 8,
+    "item": "🚀",
+    "decoys": []
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

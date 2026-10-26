@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0084",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the zebra stripes",
+  "durationMs": 4000,
+  "difficulty": 3,
+  "theme": "zebra",
+  "params": {
+    "points": [
+      [
+        15,
+        20
+      ],
+      [
+        85,
+        30
+      ],
+      [
+        15,
+        50
+      ],
+      [
+        85,
+        60
+      ],
+      [
+        15,
+        80
+      ]
+    ],
+    "tolerance": 9,
+    "fadeMs": 2000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

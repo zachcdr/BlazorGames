@@ -1,0 +1,52 @@
+{
+  "id": "stop-the-wheel_0067",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on yellow",
+  "durationMs": 7500,
+  "difficulty": 5,
+  "theme": "dungeon gems",
+  "params": {
+    "segments": [
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#ffc53d"
+      }
+    ],
+    "targetSegment": 9,
+    "speed": 0.65,
+    "startAngle": 180
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

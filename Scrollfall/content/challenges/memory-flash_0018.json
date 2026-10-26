@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0018",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the crystal ball?",
+  "durationMs": 5000,
+  "difficulty": 4,
+  "theme": "halloween",
+  "params": {
+    "rows": 4,
+    "cols": 5,
+    "flashMs": 500,
+    "targetCell": 3,
+    "item": "🔮",
+    "decoys": [
+      {
+        "cell": 8,
+        "item": "🧿"
+      },
+      {
+        "cell": 11,
+        "item": "🎱"
+      },
+      {
+        "cell": 15,
+        "item": "🌕"
+      },
+      {
+        "cell": 18,
+        "item": "🪄"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

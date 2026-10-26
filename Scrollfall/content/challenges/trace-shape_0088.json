@@ -1,0 +1,61 @@
+{
+  "id": "trace-shape_0088",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the coiled python",
+  "durationMs": 6000,
+  "difficulty": 5,
+  "theme": "python",
+  "params": {
+    "points": [
+      [
+        10,
+        10
+      ],
+      [
+        90,
+        10
+      ],
+      [
+        90,
+        90
+      ],
+      [
+        20,
+        90
+      ],
+      [
+        20,
+        30
+      ],
+      [
+        70,
+        30
+      ],
+      [
+        70,
+        70
+      ],
+      [
+        40,
+        70
+      ],
+      [
+        40,
+        50
+      ],
+      [
+        55,
+        50
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 1000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

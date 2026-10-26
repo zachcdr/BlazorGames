@@ -1,0 +1,25 @@
+{
+  "id": "sequence-memory_0031",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Copy the ripple",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "ripples",
+  "params": {
+    "rows": 2,
+    "cols": 2,
+    "sequence": [
+      1,
+      2
+    ],
+    "showMs": 900,
+    "gapMs": 300
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

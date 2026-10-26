@@ -1,0 +1,73 @@
+{
+  "id": "trace-shape_0078",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the heart in the sand",
+  "durationMs": 3500,
+  "difficulty": 5,
+  "theme": "sand heart",
+  "params": {
+    "points": [
+      [
+        50,
+        88
+      ],
+      [
+        25,
+        62
+      ],
+      [
+        12,
+        42
+      ],
+      [
+        14,
+        26
+      ],
+      [
+        26,
+        16
+      ],
+      [
+        40,
+        18
+      ],
+      [
+        50,
+        30
+      ],
+      [
+        60,
+        18
+      ],
+      [
+        74,
+        16
+      ],
+      [
+        86,
+        26
+      ],
+      [
+        88,
+        42
+      ],
+      [
+        75,
+        62
+      ],
+      [
+        50,
+        88
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 600
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

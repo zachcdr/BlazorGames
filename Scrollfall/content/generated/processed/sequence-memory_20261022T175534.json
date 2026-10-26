@@ -1,0 +1,1039 @@
+{
+  "template": "sequence-memory",
+  "createdAt": "2026-10-22T17:55:34.621Z",
+  "requested": 50,
+  "calls": [
+    {
+      "theme": "winter",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "sequence-memory",
+          "prompt": "Watch the snowflakes",
+          "durationMs": 6500,
+          "difficulty": 1,
+          "theme": "snowfall",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "sequence": [
+              3,
+              0,
+              2
+            ],
+            "showMs": 800,
+            "gapMs": 400
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the sequence",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "ice cubes",
+          "params": {
+            "rows": 2,
+            "cols": 3,
+            "sequence": [
+              4,
+              1
+            ],
+            "showMs": 900,
+            "gapMs": 400
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Repeat the frost",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "frost",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "sequence": [
+              4,
+              0,
+              8,
+              2
+            ],
+            "showMs": 650,
+            "gapMs": 250
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Tap the sled path",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "sledding",
+          "params": {
+            "rows": 2,
+            "cols": 4,
+            "sequence": [
+              6,
+              1,
+              3,
+              4
+            ],
+            "showMs": 600,
+            "gapMs": 300
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Tap them in order",
+          "durationMs": 7500,
+          "difficulty": 3,
+          "theme": "igloo",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "sequence": [
+              7,
+              2,
+              4,
+              0,
+              5
+            ],
+            "showMs": 500,
+            "gapMs": 200
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Follow the cocoa steam",
+          "durationMs": 7500,
+          "difficulty": 3,
+          "theme": "hot cocoa",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "sequence": [
+              11,
+              3,
+              6,
+              0,
+              9
+            ],
+            "showMs": 480,
+            "gapMs": 220
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Remember the blizzard",
+          "durationMs": 8000,
+          "difficulty": 4,
+          "theme": "blizzard",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              12,
+              3,
+              9,
+              6,
+              0,
+              15
+            ],
+            "showMs": 400,
+            "gapMs": 150
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the ski tracks",
+          "durationMs": 8000,
+          "difficulty": 4,
+          "theme": "skiing",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "sequence": [
+              5,
+              10,
+              1,
+              8,
+              2,
+              7
+            ],
+            "showMs": 380,
+            "gapMs": 170
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Catch the aurora lights",
+          "durationMs": 8500,
+          "difficulty": 5,
+          "theme": "aurora",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              9,
+              2,
+              14,
+              5,
+              0,
+              11,
+              7
+            ],
+            "showMs": 320,
+            "gapMs": 130
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Repeat the ice crackle",
+          "durationMs": 9000,
+          "difficulty": 5,
+          "theme": "ice crack",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              3,
+              12,
+              6,
+              9,
+              1,
+              14,
+              4,
+              10
+            ],
+            "showMs": 300,
+            "gapMs": 120
+          }
+        }
+      ]
+    },
+    {
+      "theme": "space",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the twin stars",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "space",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "sequence": [
+              3,
+              0
+            ],
+            "showMs": 900,
+            "gapMs": 400
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Follow the comet",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "comets",
+          "params": {
+            "rows": 2,
+            "cols": 3,
+            "sequence": [
+              4,
+              1,
+              5
+            ],
+            "showMs": 800,
+            "gapMs": 300
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Repeat the star map",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "star map",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "sequence": [
+              4,
+              0,
+              8,
+              2
+            ],
+            "showMs": 650,
+            "gapMs": 250
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Tap the launch order",
+          "durationMs": 6500,
+          "difficulty": 2,
+          "theme": "rockets",
+          "params": {
+            "rows": 2,
+            "cols": 4,
+            "sequence": [
+              7,
+              2,
+              5,
+              0
+            ],
+            "showMs": 600,
+            "gapMs": 250
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the meteor path",
+          "durationMs": 7000,
+          "difficulty": 3,
+          "theme": "meteors",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "sequence": [
+              6,
+              2,
+              4,
+              7,
+              1
+            ],
+            "showMs": 500,
+            "gapMs": 200
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Visit the planets in order",
+          "durationMs": 7000,
+          "difficulty": 3,
+          "theme": "planets",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "sequence": [
+              10,
+              3,
+              5,
+              0,
+              8
+            ],
+            "showMs": 480,
+            "gapMs": 180
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Remember the orbit",
+          "durationMs": 7500,
+          "difficulty": 4,
+          "theme": "orbit",
+          "params": {
+            "rows": 4,
+            "cols": 3,
+            "sequence": [
+              11,
+              2,
+              6,
+              0,
+              9,
+              4
+            ],
+            "showMs": 400,
+            "gapMs": 150
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Match the satellite pings",
+          "durationMs": 7200,
+          "difficulty": 4,
+          "theme": "satellites",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              12,
+              3,
+              9,
+              6,
+              0,
+              15
+            ],
+            "showMs": 380,
+            "gapMs": 140
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Chart the constellation",
+          "durationMs": 7500,
+          "difficulty": 5,
+          "theme": "constellation",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              5,
+              14,
+              2,
+              9,
+              12,
+              7,
+              0
+            ],
+            "showMs": 320,
+            "gapMs": 120
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Survive the asteroid field",
+          "durationMs": 8500,
+          "difficulty": 5,
+          "theme": "asteroids",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              10,
+              1,
+              13,
+              6,
+              3,
+              15,
+              8,
+              4
+            ],
+            "showMs": 300,
+            "gapMs": 110
+          }
+        }
+      ]
+    },
+    {
+      "theme": "pond",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "sequence-memory",
+          "prompt": "Follow the frog",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "pond frog",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "sequence": [
+              3,
+              0,
+              2
+            ],
+            "showMs": 800,
+            "gapMs": 300
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the ripple",
+          "durationMs": 5000,
+          "difficulty": 1,
+          "theme": "ripples",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "sequence": [
+              1,
+              2
+            ],
+            "showMs": 900,
+            "gapMs": 300
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Hop the lily pads",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "lily pads",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "sequence": [
+              4,
+              0,
+              8,
+              2
+            ],
+            "showMs": 600,
+            "gapMs": 250
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Tap them in order",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "ducklings",
+          "params": {
+            "rows": 2,
+            "cols": 3,
+            "sequence": [
+              5,
+              1,
+              3,
+              0
+            ],
+            "showMs": 650,
+            "gapMs": 250
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the sequence",
+          "durationMs": 7500,
+          "difficulty": 3,
+          "theme": "dragonflies",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "sequence": [
+              6,
+              2,
+              4,
+              7,
+              1
+            ],
+            "showMs": 500,
+            "gapMs": 200
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Follow the koi",
+          "durationMs": 8000,
+          "difficulty": 3,
+          "theme": "koi pond",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "sequence": [
+              11,
+              3,
+              6,
+              0,
+              9
+            ],
+            "showMs": 550,
+            "gapMs": 200
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Repeat the pattern",
+          "durationMs": 8000,
+          "difficulty": 4,
+          "theme": "splashes",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              9,
+              2,
+              14,
+              5,
+              12,
+              0
+            ],
+            "showMs": 400,
+            "gapMs": 150
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Catch the fireflies",
+          "durationMs": 7500,
+          "difficulty": 4,
+          "theme": "night pond",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "sequence": [
+              1,
+              10,
+              4,
+              7,
+              0,
+              11
+            ],
+            "showMs": 380,
+            "gapMs": 150
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Tap them in order",
+          "durationMs": 9000,
+          "difficulty": 5,
+          "theme": "tadpoles",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              12,
+              3,
+              9,
+              6,
+              15,
+              0,
+              5,
+              10
+            ],
+            "showMs": 300,
+            "gapMs": 120
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the sequence",
+          "durationMs": 8500,
+          "difficulty": 5,
+          "theme": "frog chorus",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              7,
+              13,
+              2,
+              8,
+              0,
+              11,
+              4
+            ],
+            "showMs": 320,
+            "gapMs": 130
+          }
+        }
+      ]
+    },
+    {
+      "theme": "breakfast",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the sequence",
+          "durationMs": 6500,
+          "difficulty": 1,
+          "theme": "breakfast",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "sequence": [
+              0,
+              3,
+              1
+            ],
+            "showMs": 800,
+            "gapMs": 400
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Flip the pancakes in order",
+          "durationMs": 7000,
+          "difficulty": 1,
+          "theme": "breakfast",
+          "params": {
+            "rows": 2,
+            "cols": 3,
+            "sequence": [
+              4,
+              1,
+              2
+            ],
+            "showMs": 900,
+            "gapMs": 400
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Repeat the pattern",
+          "durationMs": 7500,
+          "difficulty": 2,
+          "theme": "breakfast",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "sequence": [
+              4,
+              0,
+              8,
+              2
+            ],
+            "showMs": 650,
+            "gapMs": 300
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Tap the toast in order",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "breakfast",
+          "params": {
+            "rows": 2,
+            "cols": 4,
+            "sequence": [
+              7,
+              2,
+              5,
+              0
+            ],
+            "showMs": 600,
+            "gapMs": 300
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the egg cracks",
+          "durationMs": 8000,
+          "difficulty": 3,
+          "theme": "breakfast",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "sequence": [
+              6,
+              2,
+              4,
+              8,
+              1
+            ],
+            "showMs": 500,
+            "gapMs": 250
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Repeat the cereal pour",
+          "durationMs": 7500,
+          "difficulty": 3,
+          "theme": "breakfast",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "sequence": [
+              10,
+              3,
+              7,
+              0,
+              5
+            ],
+            "showMs": 480,
+            "gapMs": 220
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Tap the waffle squares",
+          "durationMs": 8000,
+          "difficulty": 4,
+          "theme": "breakfast",
+          "params": {
+            "rows": 4,
+            "cols": 3,
+            "sequence": [
+              11,
+              2,
+              6,
+              9,
+              0,
+              4
+            ],
+            "showMs": 400,
+            "gapMs": 200
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the sequence",
+          "durationMs": 8000,
+          "difficulty": 4,
+          "theme": "breakfast",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              13,
+              2,
+              8,
+              11,
+              4,
+              15
+            ],
+            "showMs": 380,
+            "gapMs": 180
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Rush-hour breakfast! Repeat it",
+          "durationMs": 8500,
+          "difficulty": 5,
+          "theme": "breakfast",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              5,
+              12,
+              3,
+              9,
+              0,
+              14,
+              7
+            ],
+            "showMs": 320,
+            "gapMs": 150
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Tap the full buffet in order",
+          "durationMs": 9000,
+          "difficulty": 5,
+          "theme": "breakfast",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              10,
+              1,
+              14,
+              6,
+              3,
+              12,
+              8,
+              5
+            ],
+            "showMs": 300,
+            "gapMs": 130
+          }
+        }
+      ]
+    },
+    {
+      "theme": "ocean",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the sequence",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "ocean",
+          "params": {
+            "rows": 2,
+            "cols": 2,
+            "sequence": [
+              3,
+              0,
+              2
+            ],
+            "showMs": 800,
+            "gapMs": 300
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Follow the fish",
+          "durationMs": 6500,
+          "difficulty": 1,
+          "theme": "fish",
+          "params": {
+            "rows": 2,
+            "cols": 3,
+            "sequence": [
+              4,
+              1,
+              5
+            ],
+            "showMs": 750,
+            "gapMs": 300
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Tap the waves in order",
+          "durationMs": 7000,
+          "difficulty": 2,
+          "theme": "waves",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "sequence": [
+              4,
+              0,
+              8,
+              2
+            ],
+            "showMs": 600,
+            "gapMs": 250
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Repeat the pattern",
+          "durationMs": 7500,
+          "difficulty": 2,
+          "theme": "tide",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "sequence": [
+              7,
+              3,
+              5,
+              1
+            ],
+            "showMs": 650,
+            "gapMs": 250
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the jellyfish",
+          "durationMs": 7500,
+          "difficulty": 3,
+          "theme": "jellyfish",
+          "params": {
+            "rows": 3,
+            "cols": 3,
+            "sequence": [
+              6,
+              2,
+              4,
+              8,
+              1
+            ],
+            "showMs": 500,
+            "gapMs": 200
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Trace the reef",
+          "durationMs": 8000,
+          "difficulty": 3,
+          "theme": "coral reef",
+          "params": {
+            "rows": 3,
+            "cols": 4,
+            "sequence": [
+              11,
+              4,
+              6,
+              1,
+              9
+            ],
+            "showMs": 480,
+            "gapMs": 200
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Tap the bubbles in order",
+          "durationMs": 8000,
+          "difficulty": 4,
+          "theme": "bubbles",
+          "params": {
+            "rows": 4,
+            "cols": 3,
+            "sequence": [
+              10,
+              1,
+              7,
+              3,
+              8,
+              5
+            ],
+            "showMs": 450,
+            "gapMs": 180
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Remember the dive",
+          "durationMs": 8000,
+          "difficulty": 4,
+          "theme": "deep sea",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              12,
+              3,
+              9,
+              6,
+              0,
+              15
+            ],
+            "showMs": 400,
+            "gapMs": 150
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Copy the sequence",
+          "durationMs": 8500,
+          "difficulty": 5,
+          "theme": "shark",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              5,
+              14,
+              2,
+              9,
+              11,
+              0,
+              7
+            ],
+            "showMs": 350,
+            "gapMs": 120
+          }
+        },
+        {
+          "template": "sequence-memory",
+          "prompt": "Tap them in order",
+          "durationMs": 9000,
+          "difficulty": 5,
+          "theme": "storm",
+          "params": {
+            "rows": 4,
+            "cols": 4,
+            "sequence": [
+              15,
+              6,
+              9,
+              0,
+              10,
+              3,
+              12,
+              5
+            ],
+            "showMs": 300,
+            "gapMs": 100
+          }
+        }
+      ]
+    }
+  ]
+}

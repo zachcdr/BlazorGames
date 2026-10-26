@@ -1,0 +1,28 @@
+{
+  "id": "sequence-memory_0034",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Follow the koi",
+  "durationMs": 8000,
+  "difficulty": 3,
+  "theme": "koi pond",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "sequence": [
+      11,
+      3,
+      6,
+      0,
+      9
+    ],
+    "showMs": 550,
+    "gapMs": 200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

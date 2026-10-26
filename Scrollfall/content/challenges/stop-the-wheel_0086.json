@@ -1,0 +1,54 @@
+{
+  "id": "stop-the-wheel_0086",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the basket",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "garden shed",
+  "params": {
+    "segments": [
+      {
+        "color": "#30a46c",
+        "label": "🪣"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🧤"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🌱"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "✂️"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🚿"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🪵"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🧺"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🔦"
+      }
+    ],
+    "targetSegment": 6,
+    "speed": 0.7,
+    "startAngle": 340
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

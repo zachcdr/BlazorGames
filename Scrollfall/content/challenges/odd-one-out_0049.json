@@ -1,0 +1,27 @@
+{
+  "id": "odd-one-out_0049",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the one that can't write",
+  "durationMs": 5000,
+  "difficulty": 4,
+  "theme": "writing",
+  "params": {
+    "items": [
+      "📎",
+      "✏️",
+      "🖊️",
+      "🖍️",
+      "✏️",
+      "🖊️",
+      "🖍️"
+    ],
+    "answerIndex": 0
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

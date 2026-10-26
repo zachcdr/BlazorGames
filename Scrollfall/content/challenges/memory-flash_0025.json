@@ -1,0 +1,36 @@
+{
+  "id": "memory-flash_0025",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the screwdriver?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "tools",
+  "params": {
+    "rows": 4,
+    "cols": 3,
+    "flashMs": 800,
+    "targetCell": 10,
+    "item": "🪛",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🔧"
+      },
+      {
+        "cell": 6,
+        "item": "🔩"
+      },
+      {
+        "cell": 8,
+        "item": "🔨"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

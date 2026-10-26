@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0056",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "toys",
+  "params": {
+    "left": {
+      "emoji": "🎱",
+      "name": "Billiard ball"
+    },
+    "right": {
+      "emoji": "🎾",
+      "name": "Tennis ball"
+    },
+    "answer": "left",
+    "explanation": "A pool ball weighs about 160 g; a tennis ball about 58 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "memory-flash_0109",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Spot the donut!",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "sweet treats",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 400,
+    "targetCell": 3,
+    "item": "🍩",
+    "decoys": [
+      {
+        "cell": 7,
+        "item": "🍪"
+      },
+      {
+        "cell": 10,
+        "item": "🥯"
+      },
+      {
+        "cell": 14,
+        "item": "🧇"
+      },
+      {
+        "cell": 18,
+        "item": "🍰"
+      },
+      {
+        "cell": 22,
+        "item": "🥨"
+      },
+      {
+        "cell": 24,
+        "item": "🍘"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

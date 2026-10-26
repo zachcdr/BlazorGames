@@ -1,0 +1,56 @@
+{
+  "id": "memory-flash_0100",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the ice cube?",
+  "durationMs": 3800,
+  "difficulty": 5,
+  "theme": "deep freeze",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 350,
+    "targetCell": 7,
+    "item": "🧊",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "❄️"
+      },
+      {
+        "cell": 3,
+        "item": "💠"
+      },
+      {
+        "cell": 11,
+        "item": "🪟"
+      },
+      {
+        "cell": 13,
+        "item": "💎"
+      },
+      {
+        "cell": 16,
+        "item": "🔹"
+      },
+      {
+        "cell": 18,
+        "item": "🥶"
+      },
+      {
+        "cell": 22,
+        "item": "🫧"
+      },
+      {
+        "cell": 24,
+        "item": "🧂"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

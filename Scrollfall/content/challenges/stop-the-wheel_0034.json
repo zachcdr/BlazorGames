@@ -1,0 +1,40 @@
+{
+  "id": "stop-the-wheel_0034",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on pink",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "halloween",
+  "params": {
+    "segments": [
+      {
+        "color": "#8e4ec6"
+      },
+      {
+        "color": "#f76b15"
+      },
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#d6409f"
+      },
+      {
+        "color": "#30a46c"
+      }
+    ],
+    "targetSegment": 4,
+    "speed": 1,
+    "startAngle": 300
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

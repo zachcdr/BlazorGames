@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0107",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "fairground",
+  "params": {
+    "left": {
+      "emoji": "☁️",
+      "name": "Ball of cotton candy"
+    },
+    "right": {
+      "emoji": "🍬",
+      "name": "Ball of solid sugar"
+    },
+    "answer": "right",
+    "explanation": "Cotton candy is mostly air; solid sugar packs far more mass into the space."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

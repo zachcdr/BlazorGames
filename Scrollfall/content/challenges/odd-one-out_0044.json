@@ -1,0 +1,27 @@
+{
+  "id": "odd-one-out_0044",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the one that isn't a number",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "math",
+  "params": {
+    "items": [
+      "4",
+      "8",
+      "2",
+      "6",
+      "1",
+      "9",
+      "K"
+    ],
+    "answerIndex": 6
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0057",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Blow the bubble to the line",
+  "durationMs": 3500,
+  "difficulty": 4,
+  "theme": "underwater",
+  "params": {
+    "item": "🫧",
+    "fillPerSecond": 80,
+    "targetFrom": 70,
+    "targetTo": 83
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

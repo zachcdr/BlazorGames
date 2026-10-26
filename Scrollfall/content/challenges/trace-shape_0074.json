@@ -1,0 +1,65 @@
+{
+  "id": "trace-shape_0074",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the beach umbrella",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "umbrella",
+  "params": {
+    "points": [
+      [
+        10,
+        45
+      ],
+      [
+        20,
+        28
+      ],
+      [
+        35,
+        18
+      ],
+      [
+        50,
+        15
+      ],
+      [
+        65,
+        18
+      ],
+      [
+        80,
+        28
+      ],
+      [
+        90,
+        45
+      ],
+      [
+        50,
+        45
+      ],
+      [
+        50,
+        80
+      ],
+      [
+        44,
+        89
+      ],
+      [
+        32,
+        88
+      ]
+    ],
+    "tolerance": 8,
+    "fadeMs": 2200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

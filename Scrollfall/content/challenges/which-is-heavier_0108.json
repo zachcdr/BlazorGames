@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0108",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 4,
+  "theme": "big top",
+  "params": {
+    "left": {
+      "emoji": "🦏",
+      "name": "White rhino"
+    },
+    "right": {
+      "emoji": "🐘",
+      "name": "African elephant"
+    },
+    "answer": "right",
+    "explanation": "African elephants average 4-6 tonnes; white rhinos about 2 tonnes."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

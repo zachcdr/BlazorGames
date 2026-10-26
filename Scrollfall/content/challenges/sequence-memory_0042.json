@@ -1,0 +1,27 @@
+{
+  "id": "sequence-memory_0042",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Tap the toast in order",
+  "durationMs": 7000,
+  "difficulty": 2,
+  "theme": "breakfast",
+  "params": {
+    "rows": 2,
+    "cols": 4,
+    "sequence": [
+      7,
+      2,
+      5,
+      0
+    ],
+    "showMs": 600,
+    "gapMs": 300
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

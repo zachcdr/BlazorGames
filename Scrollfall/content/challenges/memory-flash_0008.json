@@ -1,0 +1,36 @@
+{
+  "id": "memory-flash_0008",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the gem?",
+  "durationMs": 5000,
+  "difficulty": 4,
+  "theme": "treasure",
+  "params": {
+    "rows": 5,
+    "cols": 4,
+    "flashMs": 600,
+    "targetCell": 17,
+    "item": "💎",
+    "decoys": [
+      {
+        "cell": 3,
+        "item": "🪙"
+      },
+      {
+        "cell": 9,
+        "item": "👑"
+      },
+      {
+        "cell": 12,
+        "item": "🪙"
+      }
+    ]
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

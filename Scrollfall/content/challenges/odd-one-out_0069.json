@@ -1,0 +1,29 @@
+{
+  "id": "odd-one-out_0069",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the odd one out",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "monkey troop",
+  "params": {
+    "items": [
+      "🐒",
+      "🐒",
+      "🐵",
+      "🐒",
+      "🐒",
+      "🐒",
+      "🐒",
+      "🐒",
+      "🐒"
+    ],
+    "answerIndex": 2
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

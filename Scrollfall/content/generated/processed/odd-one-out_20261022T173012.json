@@ -1,0 +1,972 @@
+{
+  "template": "odd-one-out",
+  "createdAt": "2026-10-22T17:30:12.885Z",
+  "requested": 50,
+  "calls": [
+    {
+      "theme": "jungle",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't an animal",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "jungle",
+          "params": {
+            "items": [
+              "🐒",
+              "🦜",
+              "🐍",
+              "🌴"
+            ],
+            "answerIndex": 3
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't green",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "leafy green",
+          "params": {
+            "items": [
+              "🍅",
+              "🐸",
+              "🌿",
+              "🥒",
+              "🍀"
+            ],
+            "answerIndex": 0
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a bird",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "jungle birds",
+          "params": {
+            "items": [
+              "🦜",
+              "🐍",
+              "🦉",
+              "🦅",
+              "🦆"
+            ],
+            "answerIndex": 1
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a big cat",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "jungle cats",
+          "params": {
+            "items": [
+              "🦁",
+              "🐅",
+              "🐆",
+              "🐅",
+              "🐕",
+              "🐆"
+            ],
+            "answerIndex": 4
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a fruit",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "jungle snacks",
+          "params": {
+            "items": [
+              "🍌",
+              "🍍",
+              "🍄",
+              "🥭",
+              "🍌",
+              "🍍",
+              "🥭"
+            ],
+            "answerIndex": 2
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that doesn't live in a jungle",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "jungle intruder",
+          "params": {
+            "items": [
+              "🦥",
+              "🐊",
+              "🦜",
+              "🐒",
+              "🐍",
+              "🐅",
+              "🐧"
+            ],
+            "answerIndex": 6
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a reptile",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "jungle reptiles",
+          "params": {
+            "items": [
+              "🐍",
+              "🐊",
+              "🦎",
+              "🐢",
+              "🦋",
+              "🐍",
+              "🐊",
+              "🦎"
+            ],
+            "answerIndex": 4
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't an insect",
+          "durationMs": 4500,
+          "difficulty": 4,
+          "theme": "jungle bugs",
+          "params": {
+            "items": [
+              "🐜",
+              "🐝",
+              "🦋",
+              "🕷️",
+              "🐞",
+              "🦗",
+              "🦟",
+              "🐝"
+            ],
+            "answerIndex": 3
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Find the different monkey",
+          "durationMs": 4500,
+          "difficulty": 4,
+          "theme": "monkeys",
+          "params": {
+            "items": [
+              "🙈",
+              "🙈",
+              "🙈",
+              "🙈",
+              "🙈",
+              "🙈",
+              "🙈",
+              "🙉",
+              "🙈"
+            ],
+            "answerIndex": 7
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the odd one out",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "monkey troop",
+          "params": {
+            "items": [
+              "🐒",
+              "🐒",
+              "🐵",
+              "🐒",
+              "🐒",
+              "🐒",
+              "🐒",
+              "🐒",
+              "🐒"
+            ],
+            "answerIndex": 2
+          }
+        }
+      ]
+    },
+    {
+      "theme": "space",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't in space",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "space",
+          "params": {
+            "items": [
+              "🌙",
+              "🪐",
+              "🍕",
+              "⭐"
+            ],
+            "answerIndex": 2
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a space ride",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "space rides",
+          "params": {
+            "items": [
+              "🚀",
+              "🚲",
+              "🛸"
+            ],
+            "answerIndex": 1
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the odd one out",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "moons",
+          "params": {
+            "items": [
+              "🌕",
+              "🌕",
+              "🌕",
+              "🌕",
+              "🌑",
+              "🌕"
+            ],
+            "answerIndex": 4
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a spacecraft",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "spacecraft",
+          "params": {
+            "items": [
+              "🚀",
+              "🛰️",
+              "🛸",
+              "🚜",
+              "🚀",
+              "🛰️"
+            ],
+            "answerIndex": 3
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a moon phase",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "moon phases",
+          "params": {
+            "items": [
+              "🌒",
+              "🌓",
+              "🌔",
+              "🌖",
+              "🌞",
+              "🌗",
+              "🌘"
+            ],
+            "answerIndex": 4
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Find the different alien",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "aliens",
+          "params": {
+            "items": [
+              "👽",
+              "👾",
+              "👽",
+              "👽",
+              "👽",
+              "👽",
+              "👽"
+            ],
+            "answerIndex": 1
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the odd one out",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "launch pad",
+          "params": {
+            "items": [
+              "🚀",
+              "🚀",
+              "🚀",
+              "🚀",
+              "🚀",
+              "🚀",
+              "🛸",
+              "🚀"
+            ],
+            "answerIndex": 6
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Find the different planet",
+          "durationMs": 4000,
+          "difficulty": 4,
+          "theme": "Earth",
+          "params": {
+            "items": [
+              "🌍",
+              "🌍",
+              "🌍",
+              "🌍",
+              "🌍",
+              "🌎",
+              "🌍",
+              "🌍",
+              "🌍"
+            ],
+            "answerIndex": 5
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Find the different star",
+          "durationMs": 4000,
+          "difficulty": 4,
+          "theme": "stars",
+          "params": {
+            "items": [
+              "⭐",
+              "⭐",
+              "🌟",
+              "⭐",
+              "⭐",
+              "⭐",
+              "⭐",
+              "⭐",
+              "⭐"
+            ],
+            "answerIndex": 2
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Find the different moon",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "moon faces",
+          "params": {
+            "items": [
+              "🌕",
+              "🌕",
+              "🌕",
+              "🌕",
+              "🌕",
+              "🌕",
+              "🌕",
+              "🌝",
+              "🌕"
+            ],
+            "answerIndex": 7
+          }
+        }
+      ]
+    },
+    {
+      "theme": "insects",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a bug",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "insects",
+          "params": {
+            "items": [
+              "🐞",
+              "🦋",
+              "🍕",
+              "🐝"
+            ],
+            "answerIndex": 2
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't an insect",
+          "durationMs": 6000,
+          "difficulty": 1,
+          "theme": "garden bugs",
+          "params": {
+            "items": [
+              "🐌",
+              "🐝",
+              "🦋",
+              "🐜"
+            ],
+            "answerIndex": 0
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't an insect",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "flying bugs",
+          "params": {
+            "items": [
+              "🦋",
+              "🐝",
+              "🪰",
+              "🐦",
+              "🦟"
+            ],
+            "answerIndex": 3
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a flower",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "bee garden",
+          "params": {
+            "items": [
+              "🌸",
+              "🌼",
+              "🌻",
+              "🌷",
+              "🐝",
+              "🌹"
+            ],
+            "answerIndex": 4
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the odd one out",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "ant farm",
+          "params": {
+            "items": [
+              "🐜",
+              "🐝",
+              "🐜",
+              "🐜",
+              "🐜",
+              "🐜"
+            ],
+            "answerIndex": 1
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't an insect",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "creepy crawlies",
+          "params": {
+            "items": [
+              "🐜",
+              "🐝",
+              "🦋",
+              "🐞",
+              "🦗",
+              "🕷️"
+            ],
+            "answerIndex": 5
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Find the different bug",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "butterflies",
+          "params": {
+            "items": [
+              "🦋",
+              "🦋",
+              "🦋",
+              "🦋",
+              "🦋",
+              "🦋",
+              "🐛",
+              "🦋"
+            ],
+            "answerIndex": 6
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't an insect",
+          "durationMs": 5000,
+          "difficulty": 4,
+          "theme": "bug intruder",
+          "params": {
+            "items": [
+              "🦗",
+              "🦂",
+              "🐝",
+              "🪰",
+              "🐜",
+              "🦋",
+              "🐞"
+            ],
+            "answerIndex": 1
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Find the different bug",
+          "durationMs": 4500,
+          "difficulty": 4,
+          "theme": "buzzing swarm",
+          "params": {
+            "items": [
+              "🐝",
+              "🐝",
+              "🐝",
+              "🐝",
+              "🐝",
+              "🐝",
+              "🐝",
+              "🪰",
+              "🐝"
+            ],
+            "answerIndex": 7
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the odd one out",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "mosquitoes",
+          "params": {
+            "items": [
+              "🦟",
+              "🦟",
+              "🦟",
+              "🦟",
+              "🪰",
+              "🦟",
+              "🦟",
+              "🦟",
+              "🦟"
+            ],
+            "answerIndex": 4
+          }
+        }
+      ]
+    },
+    {
+      "theme": "farm",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a farm animal",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "farm animals",
+          "params": {
+            "items": [
+              "🐄",
+              "🐖",
+              "🦁",
+              "🐑"
+            ],
+            "answerIndex": 2
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a plant",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "crops",
+          "params": {
+            "items": [
+              "🌽",
+              "🚜",
+              "🌻",
+              "🌾",
+              "🌱"
+            ],
+            "answerIndex": 1
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a fruit",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "orchard",
+          "params": {
+            "items": [
+              "🥕",
+              "🍎",
+              "🍐",
+              "🍓",
+              "🍊",
+              "🍇"
+            ],
+            "answerIndex": 0
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a bird",
+          "durationMs": 4500,
+          "difficulty": 2,
+          "theme": "farmyard",
+          "params": {
+            "items": [
+              "🐓",
+              "🦆",
+              "🦃",
+              "🐓",
+              "🐶",
+              "🦆"
+            ],
+            "answerIndex": 4
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't dairy",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "dairy",
+          "params": {
+            "items": [
+              "🥛",
+              "🧀",
+              "🍞",
+              "🧈",
+              "🥛",
+              "🧀"
+            ],
+            "answerIndex": 2
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a bug",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "field critters",
+          "params": {
+            "items": [
+              "🐝",
+              "🐞",
+              "🐛",
+              "🦋",
+              "🐇",
+              "🐜"
+            ],
+            "answerIndex": 4
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the odd one out",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "flock",
+          "params": {
+            "items": [
+              "🐑",
+              "🐑",
+              "🐑",
+              "🐑",
+              "🐑",
+              "🐐"
+            ],
+            "answerIndex": 5
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a mammal",
+          "durationMs": 5500,
+          "difficulty": 4,
+          "theme": "barnyard",
+          "params": {
+            "items": [
+              "🐖",
+              "🐄",
+              "🐑",
+              "🐐",
+              "🐴",
+              "🐓",
+              "🐄",
+              "🐖"
+            ],
+            "answerIndex": 5
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Find the rooster",
+          "durationMs": 5000,
+          "difficulty": 4,
+          "theme": "chicken coop",
+          "params": {
+            "items": [
+              "🐔",
+              "🐔",
+              "🐔",
+              "🐔",
+              "🐔",
+              "🐔",
+              "🐔",
+              "🐓",
+              "🐔"
+            ],
+            "answerIndex": 7
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the odd one out",
+          "durationMs": 4000,
+          "difficulty": 5,
+          "theme": "apple orchard",
+          "params": {
+            "items": [
+              "🍎",
+              "🍎",
+              "🍏",
+              "🍎",
+              "🍎",
+              "🍎",
+              "🍎",
+              "🍎",
+              "🍎"
+            ],
+            "answerIndex": 2
+          }
+        }
+      ]
+    },
+    {
+      "theme": "rainforest",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't an animal",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "rainforest",
+          "params": {
+            "items": [
+              "🦜",
+              "🐒",
+              "🌴",
+              "🦥"
+            ],
+            "answerIndex": 2
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a bird",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "jungle birds",
+          "params": {
+            "items": [
+              "🐸",
+              "🦜",
+              "🦚",
+              "🦩",
+              "🦉"
+            ],
+            "answerIndex": 0
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a plant",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "jungle plants",
+          "params": {
+            "items": [
+              "🌴",
+              "🌿",
+              "🌺",
+              "🍃",
+              "🐛",
+              "🌱"
+            ],
+            "answerIndex": 4
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the odd one out",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "palm trees",
+          "params": {
+            "items": [
+              "🌴",
+              "🌴",
+              "🌴",
+              "🌳",
+              "🌴",
+              "🌴"
+            ],
+            "answerIndex": 3
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that can't fly",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "canopy fliers",
+          "params": {
+            "items": [
+              "🦋",
+              "🐝",
+              "🦜",
+              "🦅",
+              "🦉",
+              "🐢",
+              "🦆"
+            ],
+            "answerIndex": 5
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a reptile",
+          "durationMs": 5000,
+          "difficulty": 3,
+          "theme": "reptile mixup",
+          "params": {
+            "items": [
+              "🐍",
+              "🦎",
+              "🐊",
+              "🐢",
+              "🐸",
+              "🐍",
+              "🦎"
+            ],
+            "answerIndex": 4
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Find the different monkey",
+          "durationMs": 5000,
+          "difficulty": 4,
+          "theme": "monkeys",
+          "params": {
+            "items": [
+              "🙉",
+              "🙉",
+              "🙉",
+              "🙉",
+              "🙉",
+              "🙉",
+              "🙈",
+              "🙉",
+              "🙉"
+            ],
+            "answerIndex": 6
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't a fruit",
+          "durationMs": 5000,
+          "difficulty": 4,
+          "theme": "tropical fruit",
+          "params": {
+            "items": [
+              "🍌",
+              "🥭",
+              "🍍",
+              "🍊",
+              "🍋",
+              "🥕",
+              "🍌",
+              "🍍"
+            ],
+            "answerIndex": 5
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the odd one out",
+          "durationMs": 6000,
+          "difficulty": 5,
+          "theme": "leaf litter",
+          "params": {
+            "items": [
+              "🍃",
+              "🍃",
+              "🍃",
+              "🍃",
+              "🍃",
+              "🍃",
+              "🍃",
+              "🌿",
+              "🍃"
+            ],
+            "answerIndex": 7
+          }
+        },
+        {
+          "template": "odd-one-out",
+          "prompt": "Tap the one that isn't an insect",
+          "durationMs": 6000,
+          "difficulty": 5,
+          "theme": "jungle bugs",
+          "params": {
+            "items": [
+              "🐜",
+              "🦂",
+              "🐞",
+              "🦋",
+              "🦗",
+              "🐛",
+              "🐝",
+              "🐜",
+              "🐞"
+            ],
+            "answerIndex": 1
+          }
+        }
+      ]
+    }
+  ]
+}

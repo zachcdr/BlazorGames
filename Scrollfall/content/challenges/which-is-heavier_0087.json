@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0087",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "orchestra",
+  "params": {
+    "left": {
+      "emoji": "🎼",
+      "name": "Concert harp"
+    },
+    "right": {
+      "emoji": "🎻",
+      "name": "Cello"
+    },
+    "answer": "left",
+    "explanation": "A concert harp weighs roughly 35-45 kg; a cello is about 3-4 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

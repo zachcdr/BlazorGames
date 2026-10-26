@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0097",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the cocoa?",
+  "durationMs": 4200,
+  "difficulty": 4,
+  "theme": "cozy winter",
+  "params": {
+    "rows": 4,
+    "cols": 5,
+    "flashMs": 700,
+    "targetCell": 11,
+    "item": "☕",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🍵"
+      },
+      {
+        "cell": 6,
+        "item": "🫖"
+      },
+      {
+        "cell": 13,
+        "item": "🥛"
+      },
+      {
+        "cell": 17,
+        "item": "🍫"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

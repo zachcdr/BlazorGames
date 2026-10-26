@@ -1,0 +1,65 @@
+{
+  "id": "trace-shape_0094",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the star",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "star act",
+  "params": {
+    "points": [
+      [
+        50,
+        13
+      ],
+      [
+        60,
+        39
+      ],
+      [
+        88,
+        41
+      ],
+      [
+        66,
+        58
+      ],
+      [
+        74,
+        85
+      ],
+      [
+        50,
+        70
+      ],
+      [
+        26,
+        85
+      ],
+      [
+        34,
+        58
+      ],
+      [
+        12,
+        41
+      ],
+      [
+        40,
+        39
+      ],
+      [
+        50,
+        13
+      ]
+    ],
+    "tolerance": 8,
+    "fadeMs": 2000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

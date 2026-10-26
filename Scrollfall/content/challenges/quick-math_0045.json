@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0045",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Stir and solve!",
+  "durationMs": 6500,
+  "difficulty": 3,
+  "theme": "kitchen",
+  "params": {
+    "a": 47,
+    "op": "+",
+    "b": 36,
+    "options": [
+      73,
+      82,
+      83,
+      93
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

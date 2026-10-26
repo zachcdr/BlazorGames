@@ -1,0 +1,29 @@
+{
+  "id": "trace-shape_0001",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the line",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "basics",
+  "params": {
+    "points": [
+      [
+        15,
+        50
+      ],
+      [
+        85,
+        50
+      ]
+    ],
+    "tolerance": 12,
+    "fadeMs": 2500
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

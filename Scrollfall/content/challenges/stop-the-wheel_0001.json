@@ -1,0 +1,34 @@
+{
+  "id": "stop-the-wheel_0001",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on red",
+  "durationMs": 6000,
+  "difficulty": 1,
+  "theme": "colors",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#ffc53d"
+      }
+    ],
+    "targetSegment": 0,
+    "speed": 0.5,
+    "startAngle": 90
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

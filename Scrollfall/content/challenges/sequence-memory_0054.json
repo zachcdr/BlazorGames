@@ -1,0 +1,30 @@
+{
+  "id": "sequence-memory_0054",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Copy the sequence",
+  "durationMs": 8500,
+  "difficulty": 5,
+  "theme": "shark",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "sequence": [
+      5,
+      14,
+      2,
+      9,
+      11,
+      0,
+      7
+    ],
+    "showMs": 350,
+    "gapMs": 120
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

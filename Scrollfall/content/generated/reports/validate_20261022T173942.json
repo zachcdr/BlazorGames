@@ -1,0 +1,647 @@
+{
+  "createdAt": "2026-10-22T17:39:42.376Z",
+  "dryRun": false,
+  "files": [
+    "content\\generated\\memory-flash_20261022T173449.json",
+    "content\\generated\\odd-one-out_20261022T173012.json",
+    "content\\generated\\stop-the-wheel_20261022T173103.json",
+    "content\\generated\\tap-count_20261022T173411.json",
+    "content\\generated\\trace-shape_20261022T173239.json",
+    "content\\generated\\which-is-heavier_20261022T173346.json"
+  ],
+  "summary": [
+    {
+      "template": "memory-flash",
+      "candidates": 50,
+      "accepted": 50,
+      "rejected": 0,
+      "rejectionRate": "0%"
+    },
+    {
+      "template": "odd-one-out",
+      "candidates": 50,
+      "accepted": 49,
+      "rejected": 1,
+      "rejectionRate": "2%"
+    },
+    {
+      "template": "stop-the-wheel",
+      "candidates": 50,
+      "accepted": 48,
+      "rejected": 2,
+      "rejectionRate": "4%"
+    },
+    {
+      "template": "tap-count",
+      "candidates": 50,
+      "accepted": 47,
+      "rejected": 3,
+      "rejectionRate": "6%"
+    },
+    {
+      "template": "trace-shape",
+      "candidates": 50,
+      "accepted": 49,
+      "rejected": 1,
+      "rejectionRate": "2%"
+    },
+    {
+      "template": "which-is-heavier",
+      "candidates": 50,
+      "accepted": 50,
+      "rejected": 0,
+      "rejectionRate": "0%"
+    }
+  ],
+  "byStage": {
+    "generate": 0,
+    "shape": 0,
+    "schema": 1,
+    "lint": 0,
+    "duplicate": 4,
+    "fact": 0,
+    "bot": 2
+  },
+  "approved": [
+    "memory-flash_0061",
+    "memory-flash_0062",
+    "memory-flash_0063",
+    "memory-flash_0064",
+    "memory-flash_0065",
+    "memory-flash_0066",
+    "memory-flash_0067",
+    "memory-flash_0068",
+    "memory-flash_0069",
+    "memory-flash_0070",
+    "memory-flash_0071",
+    "memory-flash_0072",
+    "memory-flash_0073",
+    "memory-flash_0074",
+    "memory-flash_0075",
+    "memory-flash_0076",
+    "memory-flash_0077",
+    "memory-flash_0078",
+    "memory-flash_0079",
+    "memory-flash_0080",
+    "memory-flash_0081",
+    "memory-flash_0082",
+    "memory-flash_0083",
+    "memory-flash_0084",
+    "memory-flash_0085",
+    "memory-flash_0086",
+    "memory-flash_0087",
+    "memory-flash_0088",
+    "memory-flash_0089",
+    "memory-flash_0090",
+    "memory-flash_0091",
+    "memory-flash_0092",
+    "memory-flash_0093",
+    "memory-flash_0094",
+    "memory-flash_0095",
+    "memory-flash_0096",
+    "memory-flash_0097",
+    "memory-flash_0098",
+    "memory-flash_0099",
+    "memory-flash_0100",
+    "memory-flash_0101",
+    "memory-flash_0102",
+    "memory-flash_0103",
+    "memory-flash_0104",
+    "memory-flash_0105",
+    "memory-flash_0106",
+    "memory-flash_0107",
+    "memory-flash_0108",
+    "memory-flash_0109",
+    "memory-flash_0110",
+    "odd-one-out_0061",
+    "odd-one-out_0062",
+    "odd-one-out_0063",
+    "odd-one-out_0064",
+    "odd-one-out_0065",
+    "odd-one-out_0066",
+    "odd-one-out_0067",
+    "odd-one-out_0068",
+    "odd-one-out_0069",
+    "odd-one-out_0070",
+    "odd-one-out_0071",
+    "odd-one-out_0072",
+    "odd-one-out_0073",
+    "odd-one-out_0074",
+    "odd-one-out_0075",
+    "odd-one-out_0076",
+    "odd-one-out_0077",
+    "odd-one-out_0078",
+    "odd-one-out_0079",
+    "odd-one-out_0080",
+    "odd-one-out_0081",
+    "odd-one-out_0082",
+    "odd-one-out_0083",
+    "odd-one-out_0084",
+    "odd-one-out_0085",
+    "odd-one-out_0086",
+    "odd-one-out_0087",
+    "odd-one-out_0088",
+    "odd-one-out_0089",
+    "odd-one-out_0090",
+    "odd-one-out_0091",
+    "odd-one-out_0092",
+    "odd-one-out_0093",
+    "odd-one-out_0094",
+    "odd-one-out_0095",
+    "odd-one-out_0096",
+    "odd-one-out_0097",
+    "odd-one-out_0098",
+    "odd-one-out_0099",
+    "odd-one-out_0100",
+    "odd-one-out_0101",
+    "odd-one-out_0102",
+    "odd-one-out_0103",
+    "odd-one-out_0104",
+    "odd-one-out_0105",
+    "odd-one-out_0106",
+    "odd-one-out_0107",
+    "odd-one-out_0108",
+    "odd-one-out_0109",
+    "stop-the-wheel_0060",
+    "stop-the-wheel_0061",
+    "stop-the-wheel_0062",
+    "stop-the-wheel_0063",
+    "stop-the-wheel_0064",
+    "stop-the-wheel_0065",
+    "stop-the-wheel_0066",
+    "stop-the-wheel_0067",
+    "stop-the-wheel_0068",
+    "stop-the-wheel_0069",
+    "stop-the-wheel_0070",
+    "stop-the-wheel_0071",
+    "stop-the-wheel_0072",
+    "stop-the-wheel_0073",
+    "stop-the-wheel_0074",
+    "stop-the-wheel_0075",
+    "stop-the-wheel_0076",
+    "stop-the-wheel_0077",
+    "stop-the-wheel_0078",
+    "stop-the-wheel_0079",
+    "stop-the-wheel_0080",
+    "stop-the-wheel_0081",
+    "stop-the-wheel_0082",
+    "stop-the-wheel_0083",
+    "stop-the-wheel_0084",
+    "stop-the-wheel_0085",
+    "stop-the-wheel_0086",
+    "stop-the-wheel_0087",
+    "stop-the-wheel_0088",
+    "stop-the-wheel_0089",
+    "stop-the-wheel_0090",
+    "stop-the-wheel_0091",
+    "stop-the-wheel_0092",
+    "stop-the-wheel_0093",
+    "stop-the-wheel_0094",
+    "stop-the-wheel_0095",
+    "stop-the-wheel_0096",
+    "stop-the-wheel_0097",
+    "stop-the-wheel_0098",
+    "stop-the-wheel_0099",
+    "stop-the-wheel_0100",
+    "stop-the-wheel_0101",
+    "stop-the-wheel_0102",
+    "stop-the-wheel_0103",
+    "stop-the-wheel_0104",
+    "stop-the-wheel_0105",
+    "stop-the-wheel_0106",
+    "stop-the-wheel_0107",
+    "tap-count_0061",
+    "tap-count_0062",
+    "tap-count_0063",
+    "tap-count_0064",
+    "tap-count_0065",
+    "tap-count_0066",
+    "tap-count_0067",
+    "tap-count_0068",
+    "tap-count_0069",
+    "tap-count_0070",
+    "tap-count_0071",
+    "tap-count_0072",
+    "tap-count_0073",
+    "tap-count_0074",
+    "tap-count_0075",
+    "tap-count_0076",
+    "tap-count_0077",
+    "tap-count_0078",
+    "tap-count_0079",
+    "tap-count_0080",
+    "tap-count_0081",
+    "tap-count_0082",
+    "tap-count_0083",
+    "tap-count_0084",
+    "tap-count_0085",
+    "tap-count_0086",
+    "tap-count_0087",
+    "tap-count_0088",
+    "tap-count_0089",
+    "tap-count_0090",
+    "tap-count_0091",
+    "tap-count_0092",
+    "tap-count_0093",
+    "tap-count_0094",
+    "tap-count_0095",
+    "tap-count_0096",
+    "tap-count_0097",
+    "tap-count_0098",
+    "tap-count_0099",
+    "tap-count_0100",
+    "tap-count_0101",
+    "tap-count_0102",
+    "tap-count_0103",
+    "tap-count_0104",
+    "tap-count_0105",
+    "tap-count_0106",
+    "tap-count_0107",
+    "trace-shape_0060",
+    "trace-shape_0061",
+    "trace-shape_0062",
+    "trace-shape_0063",
+    "trace-shape_0064",
+    "trace-shape_0065",
+    "trace-shape_0066",
+    "trace-shape_0067",
+    "trace-shape_0068",
+    "trace-shape_0069",
+    "trace-shape_0070",
+    "trace-shape_0071",
+    "trace-shape_0072",
+    "trace-shape_0073",
+    "trace-shape_0074",
+    "trace-shape_0075",
+    "trace-shape_0076",
+    "trace-shape_0077",
+    "trace-shape_0078",
+    "trace-shape_0079",
+    "trace-shape_0080",
+    "trace-shape_0081",
+    "trace-shape_0082",
+    "trace-shape_0083",
+    "trace-shape_0084",
+    "trace-shape_0085",
+    "trace-shape_0086",
+    "trace-shape_0087",
+    "trace-shape_0088",
+    "trace-shape_0089",
+    "trace-shape_0090",
+    "trace-shape_0091",
+    "trace-shape_0092",
+    "trace-shape_0093",
+    "trace-shape_0094",
+    "trace-shape_0095",
+    "trace-shape_0096",
+    "trace-shape_0097",
+    "trace-shape_0098",
+    "trace-shape_0099",
+    "trace-shape_0100",
+    "trace-shape_0101",
+    "trace-shape_0102",
+    "trace-shape_0103",
+    "trace-shape_0104",
+    "trace-shape_0105",
+    "trace-shape_0106",
+    "trace-shape_0107",
+    "trace-shape_0108",
+    "which-is-heavier_0061",
+    "which-is-heavier_0062",
+    "which-is-heavier_0063",
+    "which-is-heavier_0064",
+    "which-is-heavier_0065",
+    "which-is-heavier_0066",
+    "which-is-heavier_0067",
+    "which-is-heavier_0068",
+    "which-is-heavier_0069",
+    "which-is-heavier_0070",
+    "which-is-heavier_0071",
+    "which-is-heavier_0072",
+    "which-is-heavier_0073",
+    "which-is-heavier_0074",
+    "which-is-heavier_0075",
+    "which-is-heavier_0076",
+    "which-is-heavier_0077",
+    "which-is-heavier_0078",
+    "which-is-heavier_0079",
+    "which-is-heavier_0080",
+    "which-is-heavier_0081",
+    "which-is-heavier_0082",
+    "which-is-heavier_0083",
+    "which-is-heavier_0084",
+    "which-is-heavier_0085",
+    "which-is-heavier_0086",
+    "which-is-heavier_0087",
+    "which-is-heavier_0088",
+    "which-is-heavier_0089",
+    "which-is-heavier_0090",
+    "which-is-heavier_0091",
+    "which-is-heavier_0092",
+    "which-is-heavier_0093",
+    "which-is-heavier_0094",
+    "which-is-heavier_0095",
+    "which-is-heavier_0096",
+    "which-is-heavier_0097",
+    "which-is-heavier_0098",
+    "which-is-heavier_0099",
+    "which-is-heavier_0100",
+    "which-is-heavier_0101",
+    "which-is-heavier_0102",
+    "which-is-heavier_0103",
+    "which-is-heavier_0104",
+    "which-is-heavier_0105",
+    "which-is-heavier_0106",
+    "which-is-heavier_0107",
+    "which-is-heavier_0108",
+    "which-is-heavier_0109",
+    "which-is-heavier_0110"
+  ],
+  "rejections": [
+    {
+      "file": "content\\generated\\odd-one-out_20261022T173012.json",
+      "template": "odd-one-out",
+      "stage": "schema",
+      "reasons": [
+        "prompt: String must contain at most 40 character(s)"
+      ],
+      "item": {
+        "template": "odd-one-out",
+        "prompt": "Tap the one that doesn't live in a jungle",
+        "durationMs": 5000,
+        "difficulty": 3,
+        "theme": "jungle intruder",
+        "params": {
+          "items": [
+            "🦥",
+            "🐊",
+            "🦜",
+            "🐒",
+            "🐍",
+            "🐅",
+            "🐧"
+          ],
+          "answerIndex": 6
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\tap-count_20261022T173411.json",
+      "template": "tap-count",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "tap-count",
+        "prompt": "Tap the party popper exactly 5 times",
+        "durationMs": 4500,
+        "difficulty": 2,
+        "theme": "party poppers",
+        "params": {
+          "targetCount": 5,
+          "target": "🎉",
+          "distractors": [
+            "🎈"
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\tap-count_20261022T173411.json",
+      "template": "tap-count",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "tap-count",
+        "prompt": "Tap the hibiscus exactly 8 times",
+        "durationMs": 5500,
+        "difficulty": 3,
+        "theme": "jungle flowers",
+        "params": {
+          "targetCount": 8,
+          "target": "🌺",
+          "distractors": [
+            "🌸",
+            "🌼"
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\tap-count_20261022T173411.json",
+      "template": "tap-count",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "tap-count",
+        "prompt": "Tap the leopard exactly 9 times",
+        "durationMs": 5500,
+        "difficulty": 4,
+        "theme": "big cats",
+        "params": {
+          "targetCount": 9,
+          "target": "🐆",
+          "distractors": [
+            "🐅",
+            "🦁",
+            "🐈"
+          ]
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\trace-shape_20261022T173239.json",
+      "template": "trace-shape",
+      "stage": "duplicate",
+      "reasons": [
+        "same template and params as an existing challenge"
+      ],
+      "item": {
+        "template": "trace-shape",
+        "prompt": "Trace the clown zigzag",
+        "durationMs": 4500,
+        "difficulty": 2,
+        "theme": "clown",
+        "params": {
+          "points": [
+            [
+              10,
+              25
+            ],
+            [
+              30,
+              75
+            ],
+            [
+              50,
+              25
+            ],
+            [
+              70,
+              75
+            ],
+            [
+              90,
+              25
+            ]
+          ],
+          "tolerance": 10,
+          "fadeMs": 2500
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\stop-the-wheel_20261022T173103.json",
+      "template": "stop-the-wheel",
+      "stage": "bot",
+      "reasons": [
+        "bot lost"
+      ],
+      "item": {
+        "id": "stop-the-wheel_900129",
+        "template": "stop-the-wheel",
+        "version": 1,
+        "prompt": "Stop on the frog",
+        "durationMs": 7000,
+        "difficulty": 5,
+        "theme": "yard critters",
+        "params": {
+          "segments": [
+            {
+              "color": "#30a46c",
+              "label": "🐇"
+            },
+            {
+              "color": "#f76b15",
+              "label": "🦔"
+            },
+            {
+              "color": "#30a46c",
+              "label": "🐓"
+            },
+            {
+              "color": "#f76b15",
+              "label": "🦆"
+            },
+            {
+              "color": "#30a46c",
+              "label": "🐢"
+            },
+            {
+              "color": "#f76b15",
+              "label": "🐿️"
+            },
+            {
+              "color": "#30a46c",
+              "label": "🦉"
+            },
+            {
+              "color": "#f76b15",
+              "label": "🐦"
+            },
+            {
+              "color": "#30a46c",
+              "label": "🐸"
+            },
+            {
+              "color": "#f76b15",
+              "label": "🐌"
+            }
+          ],
+          "targetSegment": 8,
+          "speed": 0.65,
+          "startAngle": 275
+        },
+        "source": "ai",
+        "stats": {
+          "plays": 0,
+          "wins": 0,
+          "skips": 0
+        }
+      }
+    },
+    {
+      "file": "content\\generated\\stop-the-wheel_20261022T173103.json",
+      "template": "stop-the-wheel",
+      "stage": "bot",
+      "reasons": [
+        "bot lost"
+      ],
+      "item": {
+        "id": "stop-the-wheel_900138",
+        "template": "stop-the-wheel",
+        "version": 1,
+        "prompt": "Stop on the swan",
+        "durationMs": 8000,
+        "difficulty": 5,
+        "theme": "busy pond",
+        "params": {
+          "segments": [
+            {
+              "color": "#30a46c",
+              "label": "🐸"
+            },
+            {
+              "color": "#12a594",
+              "label": "🦆"
+            },
+            {
+              "color": "#30a46c",
+              "label": "🐟"
+            },
+            {
+              "color": "#12a594",
+              "label": "🪷"
+            },
+            {
+              "color": "#30a46c",
+              "label": "🐢"
+            },
+            {
+              "color": "#12a594",
+              "label": "🦋"
+            },
+            {
+              "color": "#30a46c",
+              "label": "🐌"
+            },
+            {
+              "color": "#12a594",
+              "label": "🦀"
+            },
+            {
+              "color": "#30a46c",
+              "label": "🦐"
+            },
+            {
+              "color": "#12a594",
+              "label": "🐠"
+            },
+            {
+              "color": "#30a46c",
+              "label": "🐛"
+            },
+            {
+              "color": "#12a594",
+              "label": "🦢"
+            }
+          ],
+          "targetSegment": 11,
+          "speed": 0.55,
+          "startAngle": 15
+        },
+        "source": "ai",
+        "stats": {
+          "plays": 0,
+          "wins": 0,
+          "skips": 0
+        }
+      }
+    }
+  ]
+}

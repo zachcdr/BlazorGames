@@ -1,0 +1,36 @@
+{
+  "id": "memory-flash_0076",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Find the beach umbrella!",
+  "durationMs": 4500,
+  "difficulty": 3,
+  "theme": "sun gear",
+  "params": {
+    "rows": 4,
+    "cols": 3,
+    "flashMs": 800,
+    "targetCell": 2,
+    "item": "☂️",
+    "decoys": [
+      {
+        "cell": 4,
+        "item": "🌂"
+      },
+      {
+        "cell": 8,
+        "item": "👒"
+      },
+      {
+        "cell": 11,
+        "item": "🧢"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

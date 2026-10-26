@@ -1,0 +1,29 @@
+{
+  "id": "sequence-memory_0045",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Tap the waffle squares",
+  "durationMs": 8000,
+  "difficulty": 4,
+  "theme": "breakfast",
+  "params": {
+    "rows": 4,
+    "cols": 3,
+    "sequence": [
+      11,
+      2,
+      6,
+      9,
+      0,
+      4
+    ],
+    "showMs": 400,
+    "gapMs": 200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

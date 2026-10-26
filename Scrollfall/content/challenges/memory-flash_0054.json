@@ -1,0 +1,32 @@
+{
+  "id": "memory-flash_0054",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the lightbulb?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "gadgets",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "flashMs": 1000,
+    "targetCell": 10,
+    "item": "💡",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🔋"
+      },
+      {
+        "cell": 6,
+        "item": "🧲"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

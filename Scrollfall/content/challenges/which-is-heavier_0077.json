@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0077",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5500,
+  "difficulty": 3,
+  "theme": "creepy crawlies",
+  "params": {
+    "left": {
+      "emoji": "🐸",
+      "name": "Poison dart frog"
+    },
+    "right": {
+      "emoji": "🕷️",
+      "name": "Goliath birdeater"
+    },
+    "answer": "right",
+    "explanation": "Goliath birdeaters reach ~150 g; dart frogs weigh just a few grams."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

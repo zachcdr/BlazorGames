@@ -1,0 +1,43 @@
+{
+  "id": "stop-the-wheel_0107",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on teal",
+  "durationMs": 5500,
+  "difficulty": 5,
+  "theme": "tightrope",
+  "params": {
+    "segments": [
+      {
+        "color": "#f76b15"
+      },
+      {
+        "color": "#d6409f"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#12a594"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#8e4ec6"
+      },
+      {
+        "color": "#e5484d"
+      }
+    ],
+    "targetSegment": 3,
+    "speed": 0.95,
+    "startAngle": 250
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

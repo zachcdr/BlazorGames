@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0003",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "home",
+  "params": {
+    "left": {
+      "emoji": "🎈",
+      "name": "Balloon"
+    },
+    "right": {
+      "emoji": "🧱",
+      "name": "Brick"
+    },
+    "answer": "right",
+    "explanation": "A brick weighs about 2 kg; a balloon a few grams."
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

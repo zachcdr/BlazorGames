@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0110",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 5,
+  "theme": "strongman",
+  "params": {
+    "left": {
+      "emoji": "🔩",
+      "name": "Steel block"
+    },
+    "right": {
+      "emoji": "🥇",
+      "name": "Gold block"
+    },
+    "answer": "right",
+    "explanation": "Gold is about 19 g/cm³; steel is only about 8 g/cm³."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

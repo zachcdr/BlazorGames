@@ -1,0 +1,25 @@
+{
+  "id": "sequence-memory_0001",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Repeat the pattern",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "patterns",
+  "params": {
+    "rows": 2,
+    "cols": 2,
+    "sequence": [
+      0,
+      3
+    ],
+    "showMs": 600,
+    "gapMs": 250
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

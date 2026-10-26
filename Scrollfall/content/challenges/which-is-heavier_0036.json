@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0036",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "wild cats",
+  "params": {
+    "left": {
+      "emoji": "🐆",
+      "name": "Jaguar"
+    },
+    "right": {
+      "emoji": "🐈",
+      "name": "Ocelot"
+    },
+    "answer": "left",
+    "explanation": "Jaguars weigh ~55-95 kg; ocelots only about 8-16 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

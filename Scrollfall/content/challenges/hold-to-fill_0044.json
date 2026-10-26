@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0044",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the teapot to the line",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "kitchen",
+  "params": {
+    "item": "🫖",
+    "fillPerSecond": 40,
+    "targetFrom": 65,
+    "targetTo": 79
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

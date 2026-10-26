@@ -1,0 +1,81 @@
+{
+  "id": "trace-shape_0037",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the icing S",
+  "durationMs": 5000,
+  "difficulty": 4,
+  "theme": "icing",
+  "params": {
+    "points": [
+      [
+        76,
+        24
+      ],
+      [
+        66,
+        15
+      ],
+      [
+        50,
+        12
+      ],
+      [
+        34,
+        15
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        26,
+        38
+      ],
+      [
+        38,
+        47
+      ],
+      [
+        50,
+        50
+      ],
+      [
+        62,
+        54
+      ],
+      [
+        74,
+        63
+      ],
+      [
+        76,
+        75
+      ],
+      [
+        66,
+        85
+      ],
+      [
+        50,
+        88
+      ],
+      [
+        34,
+        85
+      ],
+      [
+        24,
+        76
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 900
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

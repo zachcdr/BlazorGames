@@ -1,0 +1,33 @@
+{
+  "id": "trace-shape_0100",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the check mark",
+  "durationMs": 3000,
+  "difficulty": 1,
+  "theme": "lab results",
+  "params": {
+    "points": [
+      [
+        20,
+        55
+      ],
+      [
+        40,
+        80
+      ],
+      [
+        80,
+        20
+      ]
+    ],
+    "tolerance": 14,
+    "fadeMs": 4000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

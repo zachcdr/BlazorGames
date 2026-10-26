@@ -1,0 +1,28 @@
+{
+  "id": "sequence-memory_0044",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Repeat the cereal pour",
+  "durationMs": 7500,
+  "difficulty": 3,
+  "theme": "breakfast",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "sequence": [
+      10,
+      3,
+      7,
+      0,
+      5
+    ],
+    "showMs": 480,
+    "gapMs": 220
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

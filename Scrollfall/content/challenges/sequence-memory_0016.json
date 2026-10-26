@@ -1,0 +1,28 @@
+{
+  "id": "sequence-memory_0016",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Follow the cocoa steam",
+  "durationMs": 7500,
+  "difficulty": 3,
+  "theme": "hot cocoa",
+  "params": {
+    "rows": 3,
+    "cols": 4,
+    "sequence": [
+      11,
+      3,
+      6,
+      0,
+      9
+    ],
+    "showMs": 480,
+    "gapMs": 220
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

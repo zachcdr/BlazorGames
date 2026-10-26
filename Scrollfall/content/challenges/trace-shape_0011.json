@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0011",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the banana",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "fruit market",
+  "params": {
+    "points": [
+      [
+        15,
+        35
+      ],
+      [
+        30,
+        60
+      ],
+      [
+        50,
+        75
+      ],
+      [
+        70,
+        72
+      ],
+      [
+        85,
+        55
+      ]
+    ],
+    "tolerance": 14,
+    "fadeMs": 4000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

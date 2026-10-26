@@ -1,0 +1,48 @@
+{
+  "id": "memory-flash_0040",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the tooth?",
+  "durationMs": 3500,
+  "difficulty": 5,
+  "theme": "fossils",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 300,
+    "targetCell": 21,
+    "item": "🦷",
+    "decoys": [
+      {
+        "cell": 2,
+        "item": "🦴"
+      },
+      {
+        "cell": 8,
+        "item": "🪨"
+      },
+      {
+        "cell": 11,
+        "item": "🦴"
+      },
+      {
+        "cell": 14,
+        "item": "🐚"
+      },
+      {
+        "cell": 18,
+        "item": "🦴"
+      },
+      {
+        "cell": 24,
+        "item": "🧊"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

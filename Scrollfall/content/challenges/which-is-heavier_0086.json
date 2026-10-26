@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0086",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "records",
+  "params": {
+    "left": {
+      "emoji": "📀",
+      "name": "Vinyl LP record"
+    },
+    "right": {
+      "emoji": "💿",
+      "name": "CD"
+    },
+    "answer": "left",
+    "explanation": "A standard LP weighs about 120-180 g; a CD is only around 15 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

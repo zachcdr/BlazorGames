@@ -1,0 +1,62 @@
+{
+  "id": "stop-the-wheel_0047",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the lizard",
+  "durationMs": 8000,
+  "difficulty": 4,
+  "theme": "desert",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d",
+        "label": "🌵"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🐪"
+      },
+      {
+        "color": "#30a46c",
+        "label": "☀️"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🦂"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🐍"
+      },
+      {
+        "color": "#f76b15",
+        "label": "💧"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🌴"
+      },
+      {
+        "color": "#12a594",
+        "label": "🏜️"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🦎"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🌙"
+      }
+    ],
+    "targetSegment": 8,
+    "speed": 0.6,
+    "startAngle": 310
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

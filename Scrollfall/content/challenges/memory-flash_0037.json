@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0037",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the long-neck?",
+  "durationMs": 4000,
+  "difficulty": 4,
+  "theme": "dinosaurs",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "flashMs": 700,
+    "targetCell": 6,
+    "item": "🦕",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🦖"
+      },
+      {
+        "cell": 5,
+        "item": "🐊"
+      },
+      {
+        "cell": 14,
+        "item": "🦎"
+      },
+      {
+        "cell": 11,
+        "item": "🐢"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

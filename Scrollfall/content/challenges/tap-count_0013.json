@@ -1,0 +1,22 @@
+{
+  "id": "tap-count_0013",
+  "template": "tap-count",
+  "version": 1,
+  "prompt": "Tap the gift exactly 6 times",
+  "durationMs": 5500,
+  "difficulty": 2,
+  "theme": "presents",
+  "params": {
+    "targetCount": 6,
+    "target": "🎁",
+    "distractors": [
+      "🧹"
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

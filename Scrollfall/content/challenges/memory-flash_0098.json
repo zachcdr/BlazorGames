@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0098",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Spot the reindeer!",
+  "durationMs": 4000,
+  "difficulty": 4,
+  "theme": "holiday",
+  "params": {
+    "rows": 5,
+    "cols": 4,
+    "flashMs": 600,
+    "targetCell": 0,
+    "item": "🦌",
+    "decoys": [
+      {
+        "cell": 5,
+        "item": "🐴"
+      },
+      {
+        "cell": 9,
+        "item": "🐐"
+      },
+      {
+        "cell": 14,
+        "item": "🐏"
+      },
+      {
+        "cell": 18,
+        "item": "🐑"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

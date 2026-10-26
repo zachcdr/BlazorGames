@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0080",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Share the mangoes!",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "mangoes",
+  "params": {
+    "a": 36,
+    "op": "÷",
+    "b": 4,
+    "options": [
+      8,
+      10,
+      32,
+      9
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

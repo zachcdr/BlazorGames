@@ -1,0 +1,27 @@
+{
+  "id": "sequence-memory_0013",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Repeat the frost",
+  "durationMs": 7000,
+  "difficulty": 2,
+  "theme": "frost",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "sequence": [
+      4,
+      0,
+      8,
+      2
+    ],
+    "showMs": 650,
+    "gapMs": 250
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

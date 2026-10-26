@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0015",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "zoo",
+  "params": {
+    "left": {
+      "emoji": "🦓",
+      "name": "Zebra"
+    },
+    "right": {
+      "emoji": "🦒",
+      "name": "Giraffe"
+    },
+    "answer": "right",
+    "explanation": "Giraffes weigh ~800-1,200 kg; zebras around 300-400 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "memory-flash_0099",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Catch the snowflake!",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "blizzard",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 400,
+    "targetCell": 21,
+    "item": "❄️",
+    "decoys": [
+      {
+        "cell": 1,
+        "item": "🧊"
+      },
+      {
+        "cell": 5,
+        "item": "💎"
+      },
+      {
+        "cell": 8,
+        "item": "⭐"
+      },
+      {
+        "cell": 12,
+        "item": "🌨️"
+      },
+      {
+        "cell": 16,
+        "item": "💧"
+      },
+      {
+        "cell": 19,
+        "item": "☁️"
+      },
+      {
+        "cell": 24,
+        "item": "🫧"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

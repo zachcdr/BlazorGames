@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0056",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the pool to the line",
+  "durationMs": 4000,
+  "difficulty": 3,
+  "theme": "seaside",
+  "params": {
+    "item": "🏊",
+    "fillPerSecond": 60,
+    "targetFrom": 65,
+    "targetTo": 77
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0060",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 5,
+  "theme": "toys",
+  "params": {
+    "left": {
+      "emoji": "⚫",
+      "name": "Steel ball"
+    },
+    "right": {
+      "emoji": "🔘",
+      "name": "Titanium ball"
+    },
+    "answer": "left",
+    "explanation": "Steel is about 7.9 g/cm³; titanium is only about 4.5 g/cm³."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

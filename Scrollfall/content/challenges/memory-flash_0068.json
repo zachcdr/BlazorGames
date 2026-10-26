@@ -1,0 +1,40 @@
+{
+  "id": "memory-flash_0068",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the owl?",
+  "durationMs": 4000,
+  "difficulty": 4,
+  "theme": "night sky",
+  "params": {
+    "rows": 4,
+    "cols": 5,
+    "flashMs": 650,
+    "targetCell": 3,
+    "item": "🦉",
+    "decoys": [
+      {
+        "cell": 7,
+        "item": "🦇"
+      },
+      {
+        "cell": 10,
+        "item": "🐦"
+      },
+      {
+        "cell": 13,
+        "item": "🦅"
+      },
+      {
+        "cell": 16,
+        "item": "🌙"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

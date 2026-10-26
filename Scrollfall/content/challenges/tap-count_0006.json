@@ -1,0 +1,23 @@
+{
+  "id": "tap-count_0006",
+  "template": "tap-count",
+  "version": 1,
+  "prompt": "Tap the cookie exactly 5 times",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "kitchen",
+  "params": {
+    "targetCount": 5,
+    "target": "🍪",
+    "distractors": [
+      "🥦",
+      "🧅"
+    ]
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

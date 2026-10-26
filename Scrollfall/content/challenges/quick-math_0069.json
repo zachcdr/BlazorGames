@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0069",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Lift the answer!",
+  "durationMs": 7000,
+  "difficulty": 4,
+  "theme": "weightlifting",
+  "params": {
+    "a": 76,
+    "op": "−",
+    "b": 48,
+    "options": [
+      38,
+      32,
+      28,
+      18
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

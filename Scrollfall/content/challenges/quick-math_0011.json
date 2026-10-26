@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0011",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Count the ants!",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "insects",
+  "params": {
+    "a": 6,
+    "op": "+",
+    "b": 3,
+    "options": [
+      10,
+      8,
+      9,
+      18
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

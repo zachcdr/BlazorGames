@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0080",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5500,
+  "difficulty": 4,
+  "theme": "jungle primates",
+  "params": {
+    "left": {
+      "emoji": "🦍",
+      "name": "Adult male gorilla"
+    },
+    "right": {
+      "emoji": "🐒",
+      "name": "Adult chimpanzee"
+    },
+    "answer": "left",
+    "explanation": "Male gorillas weigh ~140-180 kg; chimpanzees are ~40-60 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

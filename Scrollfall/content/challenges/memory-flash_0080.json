@@ -1,0 +1,52 @@
+{
+  "id": "memory-flash_0080",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where were the sunglasses?",
+  "durationMs": 4000,
+  "difficulty": 5,
+  "theme": "beach style",
+  "params": {
+    "rows": 5,
+    "cols": 5,
+    "flashMs": 300,
+    "targetCell": 8,
+    "item": "🕶️",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "👓"
+      },
+      {
+        "cell": 4,
+        "item": "🥽"
+      },
+      {
+        "cell": 12,
+        "item": "👙"
+      },
+      {
+        "cell": 14,
+        "item": "🩴"
+      },
+      {
+        "cell": 17,
+        "item": "👒"
+      },
+      {
+        "cell": 21,
+        "item": "🧴"
+      },
+      {
+        "cell": 24,
+        "item": "🩱"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

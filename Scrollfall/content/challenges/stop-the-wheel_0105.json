@@ -1,0 +1,62 @@
+{
+  "id": "stop-the-wheel_0105",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the top hat",
+  "durationMs": 7000,
+  "difficulty": 4,
+  "theme": "magic show",
+  "params": {
+    "segments": [
+      {
+        "color": "#8e4ec6",
+        "label": "🪄"
+      },
+      {
+        "color": "#12a594",
+        "label": "🐇"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🃏"
+      },
+      {
+        "color": "#12a594",
+        "label": "🔮"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "✨"
+      },
+      {
+        "color": "#12a594",
+        "label": "🕊️"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🎴"
+      },
+      {
+        "color": "#12a594",
+        "label": "🌟"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🎩"
+      },
+      {
+        "color": "#12a594",
+        "label": "🎁"
+      }
+    ],
+    "targetSegment": 8,
+    "speed": 0.6,
+    "startAngle": 88
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

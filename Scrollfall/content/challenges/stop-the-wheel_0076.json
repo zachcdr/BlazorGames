@@ -1,0 +1,54 @@
+{
+  "id": "stop-the-wheel_0076",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the volcano",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "volcano valley",
+  "params": {
+    "segments": [
+      {
+        "color": "#e5484d",
+        "label": "🦖"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🌴"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🥚"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🌋"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🦴"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🪨"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🦕"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🌿"
+      }
+    ],
+    "targetSegment": 3,
+    "speed": 0.8,
+    "startAngle": 180
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

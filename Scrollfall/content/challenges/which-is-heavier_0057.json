@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0057",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "toys",
+  "params": {
+    "left": {
+      "emoji": "⬛",
+      "name": "Lead cube"
+    },
+    "right": {
+      "emoji": "⬜",
+      "name": "Aluminium cube"
+    },
+    "answer": "left",
+    "explanation": "Lead is about 4 times denser than aluminium."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

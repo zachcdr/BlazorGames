@@ -1,0 +1,46 @@
+{
+  "id": "stop-the-wheel_0073",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the T. rex",
+  "durationMs": 7000,
+  "difficulty": 2,
+  "theme": "jurassic",
+  "params": {
+    "segments": [
+      {
+        "color": "#30a46c",
+        "label": "🦕"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🦖"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "🥚"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🌋"
+      },
+      {
+        "color": "#12a594",
+        "label": "🌴"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🦴"
+      }
+    ],
+    "targetSegment": 1,
+    "speed": 0.7,
+    "startAngle": 250
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

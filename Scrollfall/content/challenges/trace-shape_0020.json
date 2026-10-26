@@ -1,0 +1,49 @@
+{
+  "id": "trace-shape_0020",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the pineapple crown",
+  "durationMs": 8000,
+  "difficulty": 5,
+  "theme": "fruit market",
+  "params": {
+    "points": [
+      [
+        9,
+        14
+      ],
+      [
+        22,
+        86
+      ],
+      [
+        35,
+        14
+      ],
+      [
+        48,
+        86
+      ],
+      [
+        61,
+        14
+      ],
+      [
+        74,
+        86
+      ],
+      [
+        87,
+        14
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 800
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

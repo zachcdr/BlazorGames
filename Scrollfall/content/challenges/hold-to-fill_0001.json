@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0001",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the cup to the line",
+  "durationMs": 6000,
+  "difficulty": 1,
+  "theme": "drinks",
+  "params": {
+    "item": "🥤",
+    "fillPerSecond": 30,
+    "targetFrom": 60,
+    "targetTo": 80
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

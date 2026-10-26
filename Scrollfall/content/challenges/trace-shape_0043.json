@@ -1,0 +1,45 @@
+{
+  "id": "trace-shape_0043",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the flask",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "chemistry",
+  "params": {
+    "points": [
+      [
+        40,
+        12
+      ],
+      [
+        40,
+        40
+      ],
+      [
+        15,
+        82
+      ],
+      [
+        85,
+        82
+      ],
+      [
+        60,
+        40
+      ],
+      [
+        60,
+        12
+      ]
+    ],
+    "tolerance": 9,
+    "fadeMs": 2000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

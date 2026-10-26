@@ -1,0 +1,58 @@
+{
+  "id": "stop-the-wheel_0079",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop the wheel on pink",
+  "durationMs": 5500,
+  "difficulty": 5,
+  "theme": "rare dino",
+  "params": {
+    "segments": [
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#d6409f"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#30a46c"
+      },
+      {
+        "color": "#ffc53d"
+      },
+      {
+        "color": "#3e63dd"
+      },
+      {
+        "color": "#30a46c"
+      }
+    ],
+    "targetSegment": 5,
+    "speed": 0.55,
+    "startAngle": 275
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

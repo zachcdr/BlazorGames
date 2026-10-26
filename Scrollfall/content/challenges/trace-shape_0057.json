@@ -1,0 +1,53 @@
+{
+  "id": "trace-shape_0057",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the snaking eel",
+  "durationMs": 7000,
+  "difficulty": 4,
+  "theme": "eel",
+  "params": {
+    "points": [
+      [
+        12,
+        20
+      ],
+      [
+        85,
+        20
+      ],
+      [
+        85,
+        40
+      ],
+      [
+        15,
+        40
+      ],
+      [
+        15,
+        60
+      ],
+      [
+        85,
+        60
+      ],
+      [
+        85,
+        80
+      ],
+      [
+        20,
+        80
+      ]
+    ],
+    "tolerance": 7,
+    "fadeMs": 1200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

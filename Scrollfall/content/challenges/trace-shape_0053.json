@@ -1,0 +1,49 @@
+{
+  "id": "trace-shape_0053",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the fishing hook",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "fishing",
+  "params": {
+    "points": [
+      [
+        60,
+        10
+      ],
+      [
+        60,
+        58
+      ],
+      [
+        54,
+        74
+      ],
+      [
+        40,
+        84
+      ],
+      [
+        26,
+        78
+      ],
+      [
+        20,
+        64
+      ],
+      [
+        22,
+        50
+      ]
+    ],
+    "tolerance": 9,
+    "fadeMs": 2200
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

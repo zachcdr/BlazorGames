@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0051",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the frog hop",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "frog",
+  "params": {
+    "points": [
+      [
+        10,
+        75
+      ],
+      [
+        25,
+        45
+      ],
+      [
+        50,
+        25
+      ],
+      [
+        75,
+        45
+      ],
+      [
+        90,
+        75
+      ]
+    ],
+    "tolerance": 14,
+    "fadeMs": 4000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

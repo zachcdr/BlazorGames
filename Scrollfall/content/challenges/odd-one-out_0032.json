@@ -1,0 +1,25 @@
+{
+  "id": "odd-one-out_0032",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the one that isn't an animal",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "bugs",
+  "params": {
+    "items": [
+      "🐝",
+      "🦋",
+      "🍄",
+      "🐞",
+      "🐜"
+    ],
+    "answerIndex": 2
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

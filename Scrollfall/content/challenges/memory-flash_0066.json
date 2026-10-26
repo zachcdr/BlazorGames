@@ -1,0 +1,36 @@
+{
+  "id": "memory-flash_0066",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Find the compass!",
+  "durationMs": 4500,
+  "difficulty": 3,
+  "theme": "navigation",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "flashMs": 900,
+    "targetCell": 2,
+    "item": "🧭",
+    "decoys": [
+      {
+        "cell": 5,
+        "item": "🗺️"
+      },
+      {
+        "cell": 8,
+        "item": "⏰"
+      },
+      {
+        "cell": 13,
+        "item": "🔭"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

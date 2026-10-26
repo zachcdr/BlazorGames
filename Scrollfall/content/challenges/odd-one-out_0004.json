@@ -1,0 +1,26 @@
+{
+  "id": "odd-one-out_0004",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Tap the one that isn't a vehicle",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "city",
+  "params": {
+    "items": [
+      "🚗",
+      "🚲",
+      "🚀",
+      "🏠",
+      "🚂",
+      "🛵"
+    ],
+    "answerIndex": 3
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0052",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 4000,
+  "difficulty": 1,
+  "theme": "toys",
+  "params": {
+    "left": {
+      "emoji": "🏀",
+      "name": "Basketball"
+    },
+    "right": {
+      "emoji": "🎾",
+      "name": "Tennis ball"
+    },
+    "answer": "left",
+    "explanation": "A basketball weighs about 600 g; a tennis ball only about 58 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

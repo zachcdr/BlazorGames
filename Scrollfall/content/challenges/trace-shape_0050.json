@@ -1,0 +1,49 @@
+{
+  "id": "trace-shape_0050",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the water drop",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "pond",
+  "params": {
+    "points": [
+      [
+        50,
+        15
+      ],
+      [
+        70,
+        55
+      ],
+      [
+        68,
+        75
+      ],
+      [
+        50,
+        85
+      ],
+      [
+        32,
+        75
+      ],
+      [
+        30,
+        55
+      ],
+      [
+        50,
+        15
+      ]
+    ],
+    "tolerance": 12,
+    "fadeMs": 3500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

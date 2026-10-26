@@ -1,0 +1,46 @@
+{
+  "id": "stop-the-wheel_0024",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the key",
+  "durationMs": 7000,
+  "difficulty": 2,
+  "theme": "dungeon",
+  "params": {
+    "segments": [
+      {
+        "color": "#8e4ec6",
+        "label": "🏰"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "👑"
+      },
+      {
+        "color": "#30a46c",
+        "label": "🐉"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "🛡️"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🔑"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🕯️"
+      }
+    ],
+    "targetSegment": 4,
+    "speed": 0.6,
+    "startAngle": 30
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

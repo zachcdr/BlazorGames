@@ -1,0 +1,54 @@
+{
+  "id": "stop-the-wheel_0045",
+  "template": "stop-the-wheel",
+  "version": 1,
+  "prompt": "Stop on the water drop",
+  "durationMs": 7000,
+  "difficulty": 3,
+  "theme": "desert",
+  "params": {
+    "segments": [
+      {
+        "color": "#30a46c",
+        "label": "🌵"
+      },
+      {
+        "color": "#f76b15",
+        "label": "🐪"
+      },
+      {
+        "color": "#ffc53d",
+        "label": "☀️"
+      },
+      {
+        "color": "#e5484d",
+        "label": "🦂"
+      },
+      {
+        "color": "#8e4ec6",
+        "label": "🐍"
+      },
+      {
+        "color": "#3e63dd",
+        "label": "💧"
+      },
+      {
+        "color": "#12a594",
+        "label": "🌴"
+      },
+      {
+        "color": "#d6409f",
+        "label": "🏜️"
+      }
+    ],
+    "targetSegment": 5,
+    "speed": 0.6,
+    "startAngle": 75
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

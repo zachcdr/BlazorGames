@@ -1,0 +1,41 @@
+{
+  "id": "trace-shape_0006",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the W",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "letters",
+  "params": {
+    "points": [
+      [
+        12,
+        22
+      ],
+      [
+        30,
+        78
+      ],
+      [
+        50,
+        40
+      ],
+      [
+        70,
+        78
+      ],
+      [
+        88,
+        22
+      ]
+    ],
+    "tolerance": 9,
+    "fadeMs": 1400
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

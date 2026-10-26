@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0078",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Quick maths!",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "jungle",
+  "params": {
+    "a": 4,
+    "op": "×",
+    "b": 8,
+    "options": [
+      12,
+      28,
+      32,
+      36
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

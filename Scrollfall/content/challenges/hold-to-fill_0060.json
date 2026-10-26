@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0060",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the message bottle to the line",
+  "durationMs": 3500,
+  "difficulty": 5,
+  "theme": "castaway",
+  "params": {
+    "item": "🍾",
+    "fillPerSecond": 130,
+    "targetFrom": 72,
+    "targetTo": 93
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

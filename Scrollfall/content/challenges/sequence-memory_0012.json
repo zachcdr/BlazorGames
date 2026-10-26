@@ -1,0 +1,25 @@
+{
+  "id": "sequence-memory_0012",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Copy the sequence",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "ice cubes",
+  "params": {
+    "rows": 2,
+    "cols": 3,
+    "sequence": [
+      4,
+      1
+    ],
+    "showMs": 900,
+    "gapMs": 400
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

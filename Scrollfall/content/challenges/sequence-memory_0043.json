@@ -1,0 +1,28 @@
+{
+  "id": "sequence-memory_0043",
+  "template": "sequence-memory",
+  "version": 1,
+  "prompt": "Copy the egg cracks",
+  "durationMs": 8000,
+  "difficulty": 3,
+  "theme": "breakfast",
+  "params": {
+    "rows": 3,
+    "cols": 3,
+    "sequence": [
+      6,
+      2,
+      4,
+      8,
+      1
+    ],
+    "showMs": 500,
+    "gapMs": 250
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

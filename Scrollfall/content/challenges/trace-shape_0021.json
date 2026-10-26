@@ -1,0 +1,57 @@
+{
+  "id": "trace-shape_0021",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the raindrop",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "rain",
+  "params": {
+    "points": [
+      [
+        50,
+        15
+      ],
+      [
+        70,
+        50
+      ],
+      [
+        72,
+        68
+      ],
+      [
+        60,
+        82
+      ],
+      [
+        50,
+        85
+      ],
+      [
+        40,
+        82
+      ],
+      [
+        28,
+        68
+      ],
+      [
+        30,
+        50
+      ],
+      [
+        50,
+        15
+      ]
+    ],
+    "tolerance": 13,
+    "fadeMs": 3000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "trace-shape_0073",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the sandcastle wall",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "sandcastle",
+  "params": {
+    "points": [
+      [
+        15,
+        85
+      ],
+      [
+        15,
+        35
+      ],
+      [
+        33,
+        35
+      ],
+      [
+        33,
+        52
+      ],
+      [
+        51,
+        52
+      ],
+      [
+        51,
+        35
+      ],
+      [
+        69,
+        35
+      ],
+      [
+        69,
+        85
+      ]
+    ],
+    "tolerance": 8,
+    "fadeMs": 3000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

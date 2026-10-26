@@ -1,0 +1,73 @@
+{
+  "id": "trace-shape_0035",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the heart cookie",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "cookies",
+  "params": {
+    "points": [
+      [
+        50,
+        85
+      ],
+      [
+        20,
+        55
+      ],
+      [
+        12,
+        38
+      ],
+      [
+        17,
+        22
+      ],
+      [
+        30,
+        15
+      ],
+      [
+        42,
+        20
+      ],
+      [
+        50,
+        32
+      ],
+      [
+        58,
+        20
+      ],
+      [
+        70,
+        15
+      ],
+      [
+        83,
+        22
+      ],
+      [
+        88,
+        38
+      ],
+      [
+        80,
+        55
+      ],
+      [
+        50,
+        85
+      ]
+    ],
+    "tolerance": 8,
+    "fadeMs": 1800
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

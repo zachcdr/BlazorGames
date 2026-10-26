@@ -1,0 +1,33 @@
+{
+  "id": "trace-shape_0002",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the V",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "letters",
+  "params": {
+    "points": [
+      [
+        20,
+        20
+      ],
+      [
+        50,
+        80
+      ],
+      [
+        80,
+        20
+      ]
+    ],
+    "tolerance": 11,
+    "fadeMs": 2000
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

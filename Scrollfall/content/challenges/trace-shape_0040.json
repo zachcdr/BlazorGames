@@ -1,0 +1,73 @@
+{
+  "id": "trace-shape_0040",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the petri dish",
+  "durationMs": 4500,
+  "difficulty": 1,
+  "theme": "biology",
+  "params": {
+    "points": [
+      [
+        86,
+        50
+      ],
+      [
+        81.2,
+        68
+      ],
+      [
+        68,
+        81.2
+      ],
+      [
+        50,
+        86
+      ],
+      [
+        32,
+        81.2
+      ],
+      [
+        18.8,
+        68
+      ],
+      [
+        14,
+        50
+      ],
+      [
+        18.8,
+        32
+      ],
+      [
+        32,
+        18.8
+      ],
+      [
+        50,
+        14
+      ],
+      [
+        68,
+        18.8
+      ],
+      [
+        81.2,
+        32
+      ],
+      [
+        86,
+        50
+      ]
+    ],
+    "tolerance": 12,
+    "fadeMs": 4000
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

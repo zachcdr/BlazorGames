@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0008",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 4,
+  "theme": "kitchen",
+  "params": {
+    "left": {
+      "emoji": "💧",
+      "name": "Litre of water"
+    },
+    "right": {
+      "emoji": "🫒",
+      "name": "Litre of olive oil"
+    },
+    "answer": "left",
+    "explanation": "Oil is less dense than water. That is why it floats."
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

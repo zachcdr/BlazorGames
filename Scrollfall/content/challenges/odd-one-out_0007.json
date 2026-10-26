@@ -1,0 +1,29 @@
+{
+  "id": "odd-one-out_0007",
+  "template": "odd-one-out",
+  "version": 1,
+  "prompt": "Find the different face",
+  "durationMs": 4000,
+  "difficulty": 4,
+  "theme": "faces",
+  "params": {
+    "items": [
+      "😀",
+      "😀",
+      "😀",
+      "😀",
+      "😀",
+      "😀",
+      "😀",
+      "😃",
+      "😀"
+    ],
+    "answerIndex": 7
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

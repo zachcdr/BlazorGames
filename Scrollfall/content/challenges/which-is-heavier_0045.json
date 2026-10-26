@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0045",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "desert",
+  "params": {
+    "left": {
+      "emoji": "🫏",
+      "name": "Donkey"
+    },
+    "right": {
+      "emoji": "🐪",
+      "name": "Camel"
+    },
+    "answer": "right",
+    "explanation": "Camels weigh around 500 kg; donkeys about 200 kg."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

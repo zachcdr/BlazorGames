@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0001",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Quick maths!",
+  "durationMs": 5000,
+  "difficulty": 1,
+  "theme": "numbers",
+  "params": {
+    "a": 4,
+    "op": "+",
+    "b": 5,
+    "options": [
+      8,
+      9,
+      10,
+      20
+    ]
+  },
+  "source": "hand",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

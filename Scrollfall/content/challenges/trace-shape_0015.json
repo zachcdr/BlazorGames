@@ -1,0 +1,73 @@
+{
+  "id": "trace-shape_0015",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the pear",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "fruit market",
+  "params": {
+    "points": [
+      [
+        50,
+        12
+      ],
+      [
+        58,
+        22
+      ],
+      [
+        60,
+        38
+      ],
+      [
+        72,
+        52
+      ],
+      [
+        78,
+        70
+      ],
+      [
+        68,
+        86
+      ],
+      [
+        50,
+        90
+      ],
+      [
+        32,
+        86
+      ],
+      [
+        22,
+        70
+      ],
+      [
+        28,
+        52
+      ],
+      [
+        40,
+        38
+      ],
+      [
+        42,
+        22
+      ],
+      [
+        50,
+        12
+      ]
+    ],
+    "tolerance": 7,
+    "fadeMs": 1500
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

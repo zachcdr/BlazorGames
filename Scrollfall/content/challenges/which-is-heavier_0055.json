@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0055",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "toys",
+  "params": {
+    "left": {
+      "emoji": "🥏",
+      "name": "Frisbee"
+    },
+    "right": {
+      "emoji": "🛹",
+      "name": "Skateboard"
+    },
+    "answer": "right",
+    "explanation": "A complete skateboard weighs about 3 kg; a Frisbee about 175 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

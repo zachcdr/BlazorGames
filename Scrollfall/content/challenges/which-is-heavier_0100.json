@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0100",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 5,
+  "theme": "tiny toys",
+  "params": {
+    "left": {
+      "emoji": "🧱",
+      "name": "LEGO 2x4 brick"
+    },
+    "right": {
+      "emoji": "🔵",
+      "name": "Glass marble (16 mm)"
+    },
+    "answer": "right",
+    "explanation": "A 16 mm glass marble is about 5 g; a LEGO 2x4 brick is about 2.5 g."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "trace-shape_0027",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the picket fence",
+  "durationMs": 7000,
+  "difficulty": 4,
+  "theme": "fence",
+  "params": {
+    "points": [
+      [
+        8,
+        82
+      ],
+      [
+        8,
+        42
+      ],
+      [
+        17,
+        26
+      ],
+      [
+        26,
+        42
+      ],
+      [
+        26,
+        82
+      ],
+      [
+        38,
+        82
+      ],
+      [
+        38,
+        42
+      ],
+      [
+        47,
+        26
+      ],
+      [
+        56,
+        42
+      ],
+      [
+        56,
+        82
+      ],
+      [
+        68,
+        82
+      ],
+      [
+        68,
+        42
+      ],
+      [
+        77,
+        26
+      ],
+      [
+        86,
+        42
+      ],
+      [
+        86,
+        82
+      ]
+    ],
+    "tolerance": 6,
+    "fadeMs": 1100
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

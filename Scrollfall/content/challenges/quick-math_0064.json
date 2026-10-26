@@ -1,0 +1,26 @@
+{
+  "id": "quick-math_0064",
+  "template": "quick-math",
+  "version": 1,
+  "prompt": "Sprint sum!",
+  "durationMs": 5500,
+  "difficulty": 2,
+  "theme": "running",
+  "params": {
+    "a": 38,
+    "op": "+",
+    "b": 7,
+    "options": [
+      45,
+      44,
+      35,
+      55
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

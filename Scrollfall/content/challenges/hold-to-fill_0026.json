@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0026",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the doll's bottle to the line",
+  "durationMs": 4000,
+  "difficulty": 3,
+  "theme": "dolls",
+  "params": {
+    "item": "🍼",
+    "fillPerSecond": 50,
+    "targetFrom": 40,
+    "targetTo": 54
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "tap-count_0076",
+  "template": "tap-count",
+  "version": 1,
+  "prompt": "Tap the leopard exactly 9 times",
+  "durationMs": 7000,
+  "difficulty": 4,
+  "theme": "big cats",
+  "params": {
+    "targetCount": 9,
+    "target": "🐆",
+    "distractors": [
+      "🐅",
+      "🦁",
+      "🐈"
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

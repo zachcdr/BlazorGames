@@ -1,0 +1,36 @@
+{
+  "id": "memory-flash_0106",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Where was the salt?",
+  "durationMs": 5000,
+  "difficulty": 3,
+  "theme": "pantry",
+  "params": {
+    "rows": 4,
+    "cols": 4,
+    "flashMs": 900,
+    "targetCell": 6,
+    "item": "🧂",
+    "decoys": [
+      {
+        "cell": 0,
+        "item": "🫙"
+      },
+      {
+        "cell": 11,
+        "item": "🥫"
+      },
+      {
+        "cell": 14,
+        "item": "🍯"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

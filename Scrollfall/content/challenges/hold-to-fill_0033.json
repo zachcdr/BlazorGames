@@ -1,0 +1,21 @@
+{
+  "id": "hold-to-fill_0033",
+  "template": "hold-to-fill",
+  "version": 1,
+  "prompt": "Fill the honey pot to the line",
+  "durationMs": 5000,
+  "difficulty": 2,
+  "theme": "bear snack",
+  "params": {
+    "item": "🍯",
+    "fillPerSecond": 30,
+    "targetFrom": 55,
+    "targetTo": 70
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

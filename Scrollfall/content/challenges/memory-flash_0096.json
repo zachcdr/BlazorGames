@@ -1,0 +1,36 @@
+{
+  "id": "memory-flash_0096",
+  "template": "memory-flash",
+  "version": 1,
+  "prompt": "Find the penguin!",
+  "durationMs": 4500,
+  "difficulty": 3,
+  "theme": "arctic",
+  "params": {
+    "rows": 3,
+    "cols": 5,
+    "flashMs": 900,
+    "targetCell": 14,
+    "item": "🐧",
+    "decoys": [
+      {
+        "cell": 3,
+        "item": "🐦"
+      },
+      {
+        "cell": 7,
+        "item": "🦆"
+      },
+      {
+        "cell": 10,
+        "item": "🐻‍❄️"
+      }
+    ]
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

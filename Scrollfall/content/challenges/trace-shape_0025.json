@@ -1,0 +1,57 @@
+{
+  "id": "trace-shape_0025",
+  "template": "trace-shape",
+  "version": 1,
+  "prompt": "Trace the flower pot",
+  "durationMs": 6500,
+  "difficulty": 3,
+  "theme": "flower pot",
+  "params": {
+    "points": [
+      [
+        14,
+        16
+      ],
+      [
+        86,
+        16
+      ],
+      [
+        86,
+        36
+      ],
+      [
+        78,
+        36
+      ],
+      [
+        70,
+        86
+      ],
+      [
+        30,
+        86
+      ],
+      [
+        22,
+        36
+      ],
+      [
+        14,
+        36
+      ],
+      [
+        14,
+        16
+      ]
+    ],
+    "tolerance": 9,
+    "fadeMs": 1600
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}

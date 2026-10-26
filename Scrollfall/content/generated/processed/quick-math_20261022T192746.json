@@ -1,0 +1,1123 @@
+{
+  "template": "quick-math",
+  "createdAt": "2026-10-22T19:27:46.339Z",
+  "requested": 60,
+  "calls": [
+    {
+      "theme": "desert",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "quick-math",
+          "prompt": "Count the cacti!",
+          "durationMs": 4500,
+          "difficulty": 1,
+          "theme": "cactus",
+          "params": {
+            "a": 8,
+            "op": "+",
+            "b": 5,
+            "options": [
+              12,
+              14,
+              13,
+              40
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Quick maths!",
+          "durationMs": 4500,
+          "difficulty": 1,
+          "theme": "desert",
+          "params": {
+            "a": 9,
+            "op": "−",
+            "b": 4,
+            "options": [
+              5,
+              6,
+              4,
+              13
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Camel caravan!",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "camels",
+          "params": {
+            "a": 4,
+            "op": "×",
+            "b": 7,
+            "options": [
+              24,
+              32,
+              11,
+              28
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Tap the answer",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "oasis",
+          "params": {
+            "a": 47,
+            "op": "+",
+            "b": 8,
+            "options": [
+              65,
+              55,
+              54,
+              56
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Dune dash!",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "dunes",
+          "params": {
+            "a": 9,
+            "op": "×",
+            "b": 6,
+            "options": [
+              45,
+              63,
+              54,
+              56
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Share the water!",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "oasis",
+          "params": {
+            "a": 72,
+            "op": "÷",
+            "b": 8,
+            "options": [
+              8,
+              9,
+              7,
+              10
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Solve it!",
+          "durationMs": 6500,
+          "difficulty": 4,
+          "theme": "sandstorm",
+          "params": {
+            "a": 68,
+            "op": "−",
+            "b": 29,
+            "options": [
+              49,
+              41,
+              38,
+              39
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Pyramid power!",
+          "durationMs": 6500,
+          "difficulty": 4,
+          "theme": "pyramids",
+          "params": {
+            "a": 12,
+            "op": "×",
+            "b": 8,
+            "options": [
+              96,
+              84,
+              108,
+              69
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Beat the heat!",
+          "durationMs": 7000,
+          "difficulty": 5,
+          "theme": "scorching",
+          "params": {
+            "a": 7,
+            "op": "×",
+            "b": 8,
+            "options": [
+              54,
+              56,
+              63,
+              48
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Mirage maths!",
+          "durationMs": 7500,
+          "difficulty": 5,
+          "theme": "mirage",
+          "params": {
+            "a": 108,
+            "op": "÷",
+            "b": 9,
+            "options": [
+              9,
+              11,
+              12,
+              13
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "pirates",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "quick-math",
+          "prompt": "Count the coins!",
+          "durationMs": 4500,
+          "difficulty": 1,
+          "theme": "pirates",
+          "params": {
+            "a": 6,
+            "op": "+",
+            "b": 7,
+            "options": [
+              12,
+              14,
+              13,
+              16
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Ahoy, tap it!",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "pirates",
+          "params": {
+            "a": 9,
+            "op": "−",
+            "b": 4,
+            "options": [
+              5,
+              4,
+              6,
+              13
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Load the cannons!",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "pirates",
+          "params": {
+            "a": 4,
+            "op": "×",
+            "b": 6,
+            "options": [
+              28,
+              24,
+              20,
+              10
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Hoist the sails!",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "pirates",
+          "params": {
+            "a": 53,
+            "op": "+",
+            "b": 6,
+            "options": [
+              49,
+              59,
+              58,
+              69
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Dig for treasure!",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "pirates",
+          "params": {
+            "a": 7,
+            "op": "×",
+            "b": 9,
+            "options": [
+              63,
+              72,
+              36,
+              56
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Split the booty!",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "pirates",
+          "params": {
+            "a": 56,
+            "op": "÷",
+            "b": 7,
+            "options": [
+              7,
+              9,
+              49,
+              8
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Steer the ship!",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "pirates",
+          "params": {
+            "a": 48,
+            "op": "−",
+            "b": 25,
+            "options": [
+              22,
+              23,
+              33,
+              73
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Quick maths, matey!",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "pirates",
+          "params": {
+            "a": 11,
+            "op": "×",
+            "b": 8,
+            "options": [
+              88,
+              86,
+              96,
+              80
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Solve it, sailor!",
+          "durationMs": 7000,
+          "difficulty": 4,
+          "theme": "pirates",
+          "params": {
+            "a": 67,
+            "op": "+",
+            "b": 28,
+            "options": [
+              94,
+              85,
+              96,
+              95
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Crack the vault!",
+          "durationMs": 8000,
+          "difficulty": 5,
+          "theme": "pirates",
+          "params": {
+            "a": 12,
+            "op": "×",
+            "b": 9,
+            "options": [
+              96,
+              117,
+              108,
+              120
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "sports",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "quick-math",
+          "prompt": "Goal count!",
+          "durationMs": 4500,
+          "difficulty": 1,
+          "theme": "soccer",
+          "params": {
+            "a": 6,
+            "op": "+",
+            "b": 7,
+            "options": [
+              12,
+              14,
+              13,
+              42
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Score check!",
+          "durationMs": 4500,
+          "difficulty": 1,
+          "theme": "basketball",
+          "params": {
+            "a": 9,
+            "op": "−",
+            "b": 4,
+            "options": [
+              4,
+              5,
+              6,
+              13
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Tap the answer",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "tennis",
+          "params": {
+            "a": 3,
+            "op": "×",
+            "b": 5,
+            "options": [
+              8,
+              12,
+              18,
+              15
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Sprint sum!",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "running",
+          "params": {
+            "a": 38,
+            "op": "+",
+            "b": 7,
+            "options": [
+              45,
+              44,
+              35,
+              55
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Spike it!",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "volleyball",
+          "params": {
+            "a": 8,
+            "op": "×",
+            "b": 6,
+            "options": [
+              42,
+              48,
+              54,
+              14
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Share the points!",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "rugby",
+          "params": {
+            "a": 72,
+            "op": "÷",
+            "b": 9,
+            "options": [
+              7,
+              63,
+              8,
+              9
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Solve it!",
+          "durationMs": 7000,
+          "difficulty": 5,
+          "theme": "hockey",
+          "params": {
+            "a": 84,
+            "op": "÷",
+            "b": 12,
+            "options": [
+              72,
+              8,
+              6,
+              7
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Pedal fast!",
+          "durationMs": 6500,
+          "difficulty": 4,
+          "theme": "cycling",
+          "params": {
+            "a": 11,
+            "op": "×",
+            "b": 9,
+            "options": [
+              99,
+              98,
+              108,
+              90
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Lift the answer!",
+          "durationMs": 7000,
+          "difficulty": 4,
+          "theme": "weightlifting",
+          "params": {
+            "a": 76,
+            "op": "−",
+            "b": 48,
+            "options": [
+              38,
+              32,
+              28,
+              18
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Quick maths!",
+          "durationMs": 8000,
+          "difficulty": 5,
+          "theme": "boxing",
+          "params": {
+            "a": 7,
+            "op": "×",
+            "b": 8,
+            "options": [
+              54,
+              56,
+              63,
+              65
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "ocean",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "quick-math",
+          "prompt": "Quick maths!",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "fish",
+          "params": {
+            "a": 6,
+            "op": "+",
+            "b": 7,
+            "options": [
+              12,
+              14,
+              13,
+              15
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Tap the answer",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "waves",
+          "params": {
+            "a": 9,
+            "op": "−",
+            "b": 4,
+            "options": [
+              6,
+              5,
+              13,
+              4
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Catch the answer!",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "sailing",
+          "params": {
+            "a": 5,
+            "op": "×",
+            "b": 4,
+            "options": [
+              24,
+              9,
+              20,
+              25
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Dive in!",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "reef",
+          "params": {
+            "a": 34,
+            "op": "+",
+            "b": 6,
+            "options": [
+              28,
+              41,
+              30,
+              40
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Solve it!",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "shells",
+          "params": {
+            "a": 7,
+            "op": "×",
+            "b": 6,
+            "options": [
+              42,
+              48,
+              36,
+              43
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Make a splash!",
+          "durationMs": 6500,
+          "difficulty": 3,
+          "theme": "tides",
+          "params": {
+            "a": 63,
+            "op": "−",
+            "b": 21,
+            "options": [
+              42,
+              32,
+              52,
+              84
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Swim to it!",
+          "durationMs": 6500,
+          "difficulty": 4,
+          "theme": "dolphins",
+          "params": {
+            "a": 12,
+            "op": "×",
+            "b": 6,
+            "options": [
+              66,
+              72,
+              78,
+              27
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Quick maths!",
+          "durationMs": 7000,
+          "difficulty": 4,
+          "theme": "pearls",
+          "params": {
+            "a": 68,
+            "op": "+",
+            "b": 27,
+            "options": [
+              85,
+              94,
+              41,
+              95
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Shark attack! Solve!",
+          "durationMs": 7500,
+          "difficulty": 5,
+          "theme": "sharks",
+          "params": {
+            "a": 132,
+            "op": "÷",
+            "b": 12,
+            "options": [
+              12,
+              10,
+              11,
+              13
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Deep dive maths!",
+          "durationMs": 8000,
+          "difficulty": 5,
+          "theme": "deep sea",
+          "params": {
+            "a": 12,
+            "op": "×",
+            "b": 9,
+            "options": [
+              96,
+              108,
+              99,
+              118
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "rainforest",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "quick-math",
+          "prompt": "Count the parrots!",
+          "durationMs": 4500,
+          "difficulty": 1,
+          "theme": "rainforest",
+          "params": {
+            "a": 6,
+            "op": "+",
+            "b": 7,
+            "options": [
+              12,
+              13,
+              14,
+              42
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Frogs hop away!",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "frogs",
+          "params": {
+            "a": 9,
+            "op": "−",
+            "b": 4,
+            "options": [
+              13,
+              4,
+              6,
+              5
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Quick maths!",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "jungle",
+          "params": {
+            "a": 5,
+            "op": "×",
+            "b": 4,
+            "options": [
+              9,
+              15,
+              20,
+              25
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Bananas for everyone!",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "bananas",
+          "params": {
+            "a": 42,
+            "op": "+",
+            "b": 5,
+            "options": [
+              47,
+              37,
+              46,
+              52
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Tap the answer",
+          "durationMs": 5500,
+          "difficulty": 3,
+          "theme": "toucans",
+          "params": {
+            "a": 8,
+            "op": "×",
+            "b": 6,
+            "options": [
+              56,
+              42,
+              54,
+              48
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Share the fruit!",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "rainforest",
+          "params": {
+            "a": 72,
+            "op": "÷",
+            "b": 9,
+            "options": [
+              7,
+              8,
+              9,
+              6
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Solve it!",
+          "durationMs": 7000,
+          "difficulty": 5,
+          "theme": "canopy",
+          "params": {
+            "a": 84,
+            "op": "÷",
+            "b": 7,
+            "options": [
+              12,
+              11,
+              14,
+              13
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Swing through the vines!",
+          "durationMs": 6000,
+          "difficulty": 4,
+          "theme": "vines",
+          "params": {
+            "a": 12,
+            "op": "×",
+            "b": 6,
+            "options": [
+              27,
+              66,
+              72,
+              78
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Rain is falling fast!",
+          "durationMs": 6500,
+          "difficulty": 4,
+          "theme": "rain",
+          "params": {
+            "a": 68,
+            "op": "−",
+            "b": 29,
+            "options": [
+              49,
+              39,
+              97,
+              38
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Beat the jaguar!",
+          "durationMs": 7500,
+          "difficulty": 5,
+          "theme": "jaguar",
+          "params": {
+            "a": 12,
+            "op": "×",
+            "b": 9,
+            "options": [
+              96,
+              99,
+              117,
+              108
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "theme": "jungle",
+      "model": "claude-sonnet-5-5",
+      "items": [
+        {
+          "template": "quick-math",
+          "prompt": "Count the parrots!",
+          "durationMs": 4500,
+          "difficulty": 1,
+          "theme": "jungle",
+          "params": {
+            "a": 6,
+            "op": "+",
+            "b": 7,
+            "options": [
+              12,
+              14,
+              13,
+              16
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Monkeys ate some bananas!",
+          "durationMs": 4000,
+          "difficulty": 1,
+          "theme": "bananas",
+          "params": {
+            "a": 9,
+            "op": "−",
+            "b": 4,
+            "options": [
+              5,
+              4,
+              6,
+              13
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Quick maths!",
+          "durationMs": 5000,
+          "difficulty": 2,
+          "theme": "jungle",
+          "params": {
+            "a": 4,
+            "op": "×",
+            "b": 8,
+            "options": [
+              12,
+              28,
+              32,
+              36
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Swing to the answer!",
+          "durationMs": 5500,
+          "difficulty": 2,
+          "theme": "vines",
+          "params": {
+            "a": 47,
+            "op": "+",
+            "b": 6,
+            "options": [
+              63,
+              53,
+              52,
+              43
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Solve it!",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "safari",
+          "params": {
+            "a": 8,
+            "op": "×",
+            "b": 9,
+            "options": [
+              72,
+              63,
+              81,
+              27
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Share the mangoes!",
+          "durationMs": 6000,
+          "difficulty": 3,
+          "theme": "mangoes",
+          "params": {
+            "a": 36,
+            "op": "÷",
+            "b": 4,
+            "options": [
+              8,
+              10,
+              32,
+              9
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Tap the answer",
+          "durationMs": 6500,
+          "difficulty": 4,
+          "theme": "jungle",
+          "params": {
+            "a": 11,
+            "op": "×",
+            "b": 9,
+            "options": [
+              98,
+              99,
+              90,
+              108
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Cross the river fast!",
+          "durationMs": 7000,
+          "difficulty": 4,
+          "theme": "river",
+          "params": {
+            "a": 82,
+            "op": "−",
+            "b": 37,
+            "options": [
+              45,
+              55,
+              35,
+              44
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Beat the tiger!",
+          "durationMs": 7500,
+          "difficulty": 5,
+          "theme": "tiger",
+          "params": {
+            "a": 12,
+            "op": "×",
+            "b": 9,
+            "options": [
+              120,
+              96,
+              109,
+              108
+            ]
+          }
+        },
+        {
+          "template": "quick-math",
+          "prompt": "Last vine, stay sharp!",
+          "durationMs": 8000,
+          "difficulty": 5,
+          "theme": "vines",
+          "params": {
+            "a": 132,
+            "op": "÷",
+            "b": 12,
+            "options": [
+              12,
+              10,
+              11,
+              13
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

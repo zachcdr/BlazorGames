@@ -1,0 +1,27 @@
+{
+  "id": "which-is-heavier_0058",
+  "template": "which-is-heavier",
+  "version": 1,
+  "prompt": "Same size: which is heavier?",
+  "durationMs": 6000,
+  "difficulty": 3,
+  "theme": "beach toys",
+  "params": {
+    "left": {
+      "emoji": "🍿",
+      "name": "Bucket of popcorn"
+    },
+    "right": {
+      "emoji": "🪣",
+      "name": "Bucket of dry sand"
+    },
+    "answer": "right",
+    "explanation": "Sand packs far more mass into the same space than airy popcorn."
+  },
+  "source": "ai",
+  "stats": {
+    "plays": 0,
+    "wins": 0,
+    "skips": 0
+  }
+}
